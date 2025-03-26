@@ -455,8 +455,30 @@ function checkAnimations() {
     });
 }
 
+document.addEventListener("scroll", () => {
+    const readTimeBar = document.querySelector(".readtime-progress-bar-block");
+    const indicator = document.querySelector(".readtime-progress-bar-block .progress-bar");
+    const minutesDisplay = document.querySelector(".time-remaining .minutes");
+    const remainingText = document.querySelector(".time-remaining .remainingText");
+    const content = document.querySelector("#single-content-wrapper");
 
+    if (!readTimeBar || !indicator || !minutesDisplay || !remainingText || !content) return;
 
+    const totalReadTime = parseInt(minutesDisplay.dataset.readValue) || 1;
+    const contentHeight = content.scrollHeight - window.innerHeight / 2;
+    const scrollProgress = Math.max(0, Math.min(((window.scrollY - content.offsetTop) / contentHeight) * 100, 100));
+
+    if (scrollProgress > 0) {
+        readTimeBar.classList.add("is-visible");
+        const remainingMinutes = Math.max(1, Math.ceil((100 - scrollProgress) * (totalReadTime / 100)));
+        minutesDisplay.textContent = remainingMinutes;
+        remainingText.textContent = remainingMinutes === 1 ? "minute" : "minutes";
+        indicator.style.width = `${scrollProgress}%`;
+    } else {
+        readTimeBar.classList.remove("is-visible");
+        indicator.style.width = "0%";
+    }
+});
 
 
 const tabsSectionImage = document.querySelectorAll('.tabs-section .image-block img');
