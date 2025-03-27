@@ -1979,7 +1979,6 @@ body.is-light {
             text-decoration: none;
             position: relative;
             overflow: hidden;
-            padding-bottom: 2px;
             @include inline-flex;
             @include align-items(center);
             @include transition(0.3s, ease-in-out);
@@ -2075,8 +2074,15 @@ body.is-light {
                 li {
                     a {
                         font-size: 14px;
+                        padding-bottom: 1px;
                         .icons {
                             margin-right: 8px;
+                        }
+                        &:hover, &:focus {
+                            &::before {
+                                left: 23px;
+                                width: calc(100% - 23px);
+                            }
                         }
                     }
                 }
@@ -2139,8 +2145,18 @@ body.is-light {
                 gap: 10px;
                 li {
                     line-height: 0.7;
-                    border-left: 1px solid rgba($white, 0.8);
                     padding-left: 10px;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        width: 1px;
+                        height: 10px;
+                        background: rgba($white, 0.8);
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: calc(50% - 5px);
+                    }
                     @media (max-width: 767px) {  
                         &:first-child {
                             border-left: none;
@@ -2152,9 +2168,9 @@ body.is-light {
                         font-weight: 400;
                         color: rgba($white, 0.8);
                         line-height: 1;
-                        &::before {            
-                            height: 1px;
-                            bottom: 0;
+                        padding-bottom: 3px;
+                        &:hover, &:focus {
+                            color: $white;
                         }
                     }
                 }
