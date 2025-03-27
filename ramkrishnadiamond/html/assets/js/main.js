@@ -509,6 +509,6 @@ window.addEventListener("scroll", imageAnimation);
 window.addEventListener("load", () => {
     setTimeout(() => {
         imageAnimation()
-    }, 2000);
+    }, 800);
 });
 

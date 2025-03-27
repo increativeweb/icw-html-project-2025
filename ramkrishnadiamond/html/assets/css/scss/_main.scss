@@ -118,11 +118,17 @@
 	}
 
     
-    .is-highlight-section {
+    &.is-highlight-section {
         .hightlight-block {
+            height: 100%;
             padding: 30px;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(7px);
+            ul {
+                li {
+                    margin-bottom: 15px;
+                }
+            }
         }
     }
 }
@@ -1171,9 +1177,11 @@
         img {
             @media (min-width: 1200px) {
                 max-width: 60%;
+                margin: 0 auto;
             }
             @media (max-width: 992px) {
                 max-width: 50%;
+                margin: 0 auto;
             }
         }
     }
@@ -1197,17 +1205,9 @@
             display: block;
             position: relative;
             z-index: 1;
+            @include transition(0.3s, ease-in-out);
+            cursor: url('data:image/svg+xml, <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="30" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.2807 22.0702C24.8507 22.0702 22.0702 24.8507 22.0702 28.2807C22.0702 31.7107 24.8507 34.4912 28.2807 34.4912C29.3521 34.4912 30.3572 34.2209 31.2346 33.7454C31.7647 33.4581 32.2487 33.0957 32.6722 32.6722C33.0957 32.2487 33.4581 31.7647 33.7454 31.2346C34.2209 30.3572 34.4912 29.3521 34.4912 28.2807C34.4912 24.8507 31.7107 22.0702 28.2807 22.0702ZM20 28.2807C20 23.7074 23.7074 20 28.2807 20C32.854 20 36.5614 23.7074 36.5614 28.2807C36.5614 29.705 36.2009 31.0481 35.5655 32.2209C35.3486 32.6212 35.0997 33.0015 34.8223 33.3584L40 38.5361L38.5361 40L33.3584 34.8223C33.0015 35.0996 32.6213 35.3486 32.2209 35.5655C31.0481 36.2009 29.705 36.5614 28.2807 36.5614C23.7074 36.5614 20 32.854 20 28.2807Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M27.2456 27.2453V24.1401H29.3157V27.2453H32.4211V29.3154H29.3157V32.4208H27.2456V29.3154H24.1404V27.2453H27.2456Z" fill="white"/></svg>') 16 16, pointer;
             &.is-video {
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba($black, 0.5);
-                    z-index: 1;
-                }
                 .play-icon {
                     position: absolute;
                     top: calc(50% - 35px);
