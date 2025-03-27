@@ -1778,13 +1778,6 @@
             }
         }
     }
-    
-    p {
-        & + ol:not(.splide__list), & + ul:not(.splide__list) { 
-            margin-top: 15px;
-        }  
-    }
-
     ol:not(.splide__list), ul:not(.splide__list, .check-list) {
         margin: 0;
         padding-left: 20px;
