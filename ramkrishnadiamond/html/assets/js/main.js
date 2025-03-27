@@ -262,7 +262,6 @@ if (navbarToggler) {
 document.addEventListener("DOMContentLoaded", function () {
     // Media Block in Image Caption Animation - call function
     handleScroll ();
-
     checkAnimations();
 
     // Video Player
@@ -362,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (text1 && text2) {
                 text1.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.2s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+                    span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
                     setTimeout(() => {
                         span.style.transform = "translateY(-100%)";
                     }, 100);
@@ -370,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 text2.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.2s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+                    span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
                     setTimeout(() => {
                         span.style.transform = "translateY(0%)";
                     }, 100);
@@ -481,63 +480,35 @@ document.addEventListener("scroll", () => {
 });
 
 
-const tabsSectionImage = document.querySelectorAll('.tabs-section .image-block img');
+/* imageAnimation */ 
+function imageAnimation() {
+    let winHeight = window.innerHeight;
+    let winPos = window.scrollY + winHeight + 50; // Adjusted calculation
 
-const observerImage = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const img = entry.target;
-      if (img.complete) {
-        img.closest('.image-block').classList.add('is-loaded');
-      } else {
-        img.onload = function() {
-          img.closest('.image-block').classList.add('is-loaded');
+    document.querySelectorAll('.media-block .imgSlideInUp').forEach((img) => {
+        let mediaBlock = img.closest('.media-block'); // Find the closest parent with the class 'media-block'
+
+        if (mediaBlock) {
+            let pos = mediaBlock.getBoundingClientRect().top + window.scrollY; // Get element's position
+
+            if (winPos > pos) {
+                mediaBlock.classList.add('is-visible');
+                setTimeout(() => {
+                    mediaBlock.classList.add('is-complete');
+                    setTimeout(() => {
+                        mediaBlock.querySelectorAll('.imgSlideInUp').forEach((el) => el.classList.add('animate'));
+                    }, 20);
+                }, 10);
+            }
         }
-      }
-      observer.unobserve(img);
-    }
-  });
-}, { threshold: 0.1 });
+    });
+}
 
-tabsSectionImage.forEach(img => {
-  observerImage.observe(img);
+// Trigger on scroll
+window.addEventListener("scroll", imageAnimation);
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        imageAnimation()
+    }, 2000);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    function animateCount(element, start, end, duration) {
-        const stepTime = Math.abs(Math.floor(duration / (end - start)));
-        let current = start;
-        const increment = end > start ? 1 : -1;
-
-        const timer = setInterval(() => {
-            current += increment;
-            element.textContent = current + "%";
-            if (current === end) {
-                clearInterval(timer);
-            }
-        }, stepTime);
-    }
-
-    const section = document.querySelector(".metrics-section");
-    const countElements = document.querySelectorAll(".count");
-
-    if (!section) { return; }
-
-    let hasAnimated = false;
-
-    const observerCount = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                countElements.forEach((el) => {
-                    const target = parseInt(el.textContent, 10);
-                    el.textContent = "0";
-                    animateCount(el, 0, target, 2000);
-                });
-                observerCount.disconnect();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observerCount.observe(section);
-});

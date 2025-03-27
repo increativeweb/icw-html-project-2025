@@ -1596,6 +1596,23 @@
     display: block;
     z-index: 5;
     @include transition(0.3s, ease-in-out);
+    .row {        
+        @include justify-content(center);
+        --bs-gutter-x: 50px;
+        & > * {
+            width: auto;
+        }
+        @media (max-width: 992px) {
+            --bs-gutter-x: 30px;
+            overflow: hidden;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            @include flex-wrap(nowrap);
+            @include justify-content(flex-start);
+            &::-webkit-scrollbar { width:6px; height: 5px; background-color:#fafafa; }
+            &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.2); }
+        }
+    }
     @media (max-width: 767px) {
         top: 65px;
     }
@@ -1609,10 +1626,7 @@
         @include flexbox;
         @include align-items(center);
         text-decoration: none;
-        @media (max-width: 767px) {
-            @include flex-direction(column);
-            @include align-items(flex-start);
-        }
+        white-space: nowrap;
         .contact-time {
             font-size: 72px;
             font-weight: 700;
@@ -1624,7 +1638,6 @@
             @include align-items(center);
             font-family: $font-merriweather;
             @media (max-width: 767px) {
-                margin-bottom: 10px;
                 font-size: 40px;
             }
             span {
@@ -1651,7 +1664,6 @@
             margin-left: 15px;
             @media (max-width: 767px) {
                 font-size: 16px;
-                margin-left: 0;
             }
             .contact-city {
                 color: #767676;
