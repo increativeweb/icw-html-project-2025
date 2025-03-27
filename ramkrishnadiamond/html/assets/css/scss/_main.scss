@@ -124,9 +124,21 @@
             padding: 30px;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(7px);
+            @media (max-width: 992px) {
+                height: auto;
+            }
+            @media (max-width: 767px) {
+                padding: 15px;
+            }
             ul {
                 li {
                     margin-bottom: 15px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    @media (max-width: 767px) {
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
@@ -833,7 +845,6 @@
 }
 
 // Process Card
-
 .process-card {
     position: relative;
     padding: 30px;
@@ -1032,6 +1043,7 @@
                 .card-img {
                     order: 2;
                     width: 100%;
+                    margin-bottom: 30px;
                 }
                 .card-content {
                     width: 100%;
@@ -1169,57 +1181,63 @@
 }
 
 // Image Scroll Section
-.image-animation-block {
-    &:not(:last-child) {
-        margin-bottom: 30px;
-        @media (max-width: 767px) {                
-            margin-bottom: 12px;
-        }
+.image-gallery-slider-section {
+    & > .container {
+        max-width: 100%;
+        padding: 0;
     }
-    .image-group-block {
-        margin-top: 30px;
-        @media (max-width: 767px) {                
-            margin-top: 12px;
-        }
-        .image-item {
-            overflow: hidden;
-            display: block;
-            position: relative;
-            z-index: 1;
-            @include transition(0.3s, ease-in-out);
-            cursor: url('data:image/svg+xml, <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="30" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.2807 22.0702C24.8507 22.0702 22.0702 24.8507 22.0702 28.2807C22.0702 31.7107 24.8507 34.4912 28.2807 34.4912C29.3521 34.4912 30.3572 34.2209 31.2346 33.7454C31.7647 33.4581 32.2487 33.0957 32.6722 32.6722C33.0957 32.2487 33.4581 31.7647 33.7454 31.2346C34.2209 30.3572 34.4912 29.3521 34.4912 28.2807C34.4912 24.8507 31.7107 22.0702 28.2807 22.0702ZM20 28.2807C20 23.7074 23.7074 20 28.2807 20C32.854 20 36.5614 23.7074 36.5614 28.2807C36.5614 29.705 36.2009 31.0481 35.5655 32.2209C35.3486 32.6212 35.0997 33.0015 34.8223 33.3584L40 38.5361L38.5361 40L33.3584 34.8223C33.0015 35.0996 32.6213 35.3486 32.2209 35.5655C31.0481 36.2009 29.705 36.5614 28.2807 36.5614C23.7074 36.5614 20 32.854 20 28.2807Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M27.2456 27.2453V24.1401H29.3157V27.2453H32.4211V29.3154H29.3157V32.4208H27.2456V29.3154H24.1404V27.2453H27.2456Z" fill="white"/></svg>') 16 16, pointer;
-            &.is-video {
-                .play-icon {
-                    position: absolute;
-                    top: calc(50% - 35px);
-                    left: calc(50% - 35px);
-                    width: 70px;
-                    height: 70px;
-                    display: inline-block;
-                    background: url('data:image/svg+xml, <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.9865 87.973C68.2796 87.973 87.973 68.2796 87.973 43.9865C87.973 19.6934 68.2796 0 43.9865 0C19.6934 0 0 19.6934 0 43.9865C0 68.2796 19.6934 87.973 43.9865 87.973Z" fill="white" fill-opacity="0.3"/><path d="M65.3894 42.8016C66.0838 43.1833 66.0796 44.1826 65.3819 44.5584L34.4742 61.206C33.808 61.5648 33 61.0823 33 60.3255V26.6907C33 25.9302 33.8152 25.4481 34.4817 25.8143L65.3894 42.8016Z" fill="white" stroke="white"/></svg>') no-repeat center center;
-                    background-size: contain;
-                    @include border-radius(50%);
-                    @include transition(0.2s, ease-in-out);
-                    z-index: 1;
-                }
+    .image-animation-block {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+            @media (max-width: 767px) {                
+                margin-bottom: 12px;
             }
-            img, video {            
-                width: auto;
-                max-height: 310px;
-                object-fit: cover;
-                object-position: center;
+        }
+        .image-group-block {
+            margin-top: 30px;
+            @media (max-width: 767px) {                
+                margin-top: 12px;
+            }
+            .image-item {
+                overflow: hidden;
+                display: block;
+                position: relative;
+                z-index: 1;
                 @include transition(0.3s, ease-in-out);
-                @media (max-width: 767px) {                
-                    max-height: 130px;
+                cursor: url('data:image/svg+xml, <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="30" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.2807 22.0702C24.8507 22.0702 22.0702 24.8507 22.0702 28.2807C22.0702 31.7107 24.8507 34.4912 28.2807 34.4912C29.3521 34.4912 30.3572 34.2209 31.2346 33.7454C31.7647 33.4581 32.2487 33.0957 32.6722 32.6722C33.0957 32.2487 33.4581 31.7647 33.7454 31.2346C34.2209 30.3572 34.4912 29.3521 34.4912 28.2807C34.4912 24.8507 31.7107 22.0702 28.2807 22.0702ZM20 28.2807C20 23.7074 23.7074 20 28.2807 20C32.854 20 36.5614 23.7074 36.5614 28.2807C36.5614 29.705 36.2009 31.0481 35.5655 32.2209C35.3486 32.6212 35.0997 33.0015 34.8223 33.3584L40 38.5361L38.5361 40L33.3584 34.8223C33.0015 35.0996 32.6213 35.3486 32.2209 35.5655C31.0481 36.2009 29.705 36.5614 28.2807 36.5614C23.7074 36.5614 20 32.854 20 28.2807Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M27.2456 27.2453V24.1401H29.3157V27.2453H32.4211V29.3154H29.3157V32.4208H27.2456V29.3154H24.1404V27.2453H27.2456Z" fill="white"/></svg>') 16 16, pointer;
+                &.is-video {
+                    .play-icon {
+                        position: absolute;
+                        top: calc(50% - 35px);
+                        left: calc(50% - 35px);
+                        width: 70px;
+                        height: 70px;
+                        display: inline-block;
+                        background: url('data:image/svg+xml, <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.9865 87.973C68.2796 87.973 87.973 68.2796 87.973 43.9865C87.973 19.6934 68.2796 0 43.9865 0C19.6934 0 0 19.6934 0 43.9865C0 68.2796 19.6934 87.973 43.9865 87.973Z" fill="white" fill-opacity="0.3"/><path d="M65.3894 42.8016C66.0838 43.1833 66.0796 44.1826 65.3819 44.5584L34.4742 61.206C33.808 61.5648 33 61.0823 33 60.3255V26.6907C33 25.9302 33.8152 25.4481 34.4817 25.8143L65.3894 42.8016Z" fill="white" stroke="white"/></svg>') no-repeat center center;
+                        background-size: contain;
+                        @include border-radius(50%);
+                        @include transition(0.2s, ease-in-out);
+                        z-index: 1;
+                    }
                 }
-            }            
-            &:hover {
-                img {
-                    @include transform(scale(1.05));
-                }
-                .play-icon {
-                    @include transform(scale(1.1));
-                    @include box-shadow(0 0px 20px rgba($white, 0.3))
+                img, video {            
+                    width: auto;
+                    max-height: 310px;
+                    object-fit: cover;
+                    object-position: center;
+                    @include transition(0.3s, ease-in-out);
+                    @media (max-width: 767px) {                
+                        max-height: 130px;
+                    }
+                }            
+                &:hover {
+                    img {
+                        @include transform(scale(1.05));
+                    }
+                    .play-icon {
+                        @include transform(scale(1.1));
+                        @include box-shadow(0 0px 20px rgba($white, 0.3))
+                    }
                 }
             }
         }
@@ -1231,12 +1249,16 @@
 	.img-text-box-lists {	
         & > .row {
             @media (min-width: 992px) {
-                --bs-gutter-y: 30px;
-                --bs-gutter-x: 30px;  
+                --bs-gutter-y: 50px;
+                --bs-gutter-x: 50px;  
             }
             @media (min-width: 1400px) {
                 --bs-gutter-y: 70px;
                 --bs-gutter-x: 70px;
+            }
+            @media (max-width: 992px) {
+                --bs-gutter-y: 1.5rem;
+                --bs-gutter-x: 1.5rem;  
             }
         }	
 		.row:not(:last-child) {
@@ -1507,6 +1529,11 @@
         @include border-radius(30px);
         margin-bottom: 5px;
         li {
+            margin-bottom: 0 !important;
+            padding-left: 0 !important;
+            &::before {
+                content: none !important;
+            }
             a {
                 padding: 10px 40px;
                 display: block;
@@ -1518,14 +1545,19 @@
                 color: $black;
                 min-width: 160px;
                 text-align: center;
+                border: 1px solid transparent;
                 @media (max-width: 767px) {
                     padding: 8px 25px;
                     font-size: 14px;
                     min-width: 110px;
                 }
+                &:hover, &:focus {
+                    text-decoration: none;
+                    border-color: $primary;
+                }
                 &.active {
                     background: rgba(255, 255, 255, 0.82);
-                    border: 1px solid $primary;
+                    border-color: $primary;
                     box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.15);
                 }
             }
@@ -1778,57 +1810,59 @@
             }
         }
     }
-    ol:not(.splide__list), ul:not(.splide__list, .check-list) {
-        margin: 0;
-        padding-left: 20px;
+    .media-block {
+        img {
+            margin-top: 0;
+        }
+    }
+    ul, ol {
+        & + * {
+            margin-top: 15px;
+        }
         li {
             margin-bottom: 10px;
-            &::marker {
-                font-weight: 600;
-                color: $primary;
-            }
-        }
-        & + p {
-            margin-top: 20px;
-        }
-    }
-
-    ol:not(.splide__list) { 
-        list-style-type: decimal;
-        li {            
-            list-style-type: decimal;
-        }
-        ul:not(.splide__list) {            
-            margin-top: 10px;
-            margin-bottom: 0;
-            li {
-                list-style-type: disc;
-                &::marker {
-                    font-size: 20px;
-                }
+            @media (max-width: 992px) {
+                margin-bottom: 8px;
             }
         }
     }
 
-    ul:not(.splide__list) {
-        list-style-type: disc;
+    ul {
+        list-style-type: none;
         li {
-            list-style-type: disc;
-            &::marker {
-                font-size: 20px;
-            }
-            ol:not(.splide__list) {
-                margin-top: 5px;
+            font-size: 18px;
+            font-weight: 400;
+            color: $black;
+            list-style-type: none;
+            position: relative;
+            padding-left: 32px;
+            &:last-child {
                 margin-bottom: 0;
-                li {
-                    list-style-type: decimal; 
-                    &::marker {
-                        font-size: 18px;
-                    }
+            }
+            @media (max-width:992px) {
+                font-size: 16px;
+                padding-left: 28px;
+            }
+            &::before {
+                content: '';
+                background: url(../images/icons/icon-check.svg) no-repeat center center;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                flex: none;
+                display: inline-block;
+                margin-top: 2px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                @media (max-width:992px) {
+                    width: 18px;
+                    height: 18px;
                 }
             }
         }
     }
+
     .marker-list {
         padding-left: 35px !important;
         margin-bottom: 20px !important;
@@ -1942,12 +1976,18 @@
             font-size: 16px;
             ul {
                 li {
+                    padding-left: 0;
                     &:not(:last-child) {
                         margin-bottom: 8px;
+                    }
+                    &::before {
+                        content: none;
                     }
                     a {
                         color: $primary;
                         text-decoration: none;
+                        font-weight: 400;
+                        font-size: 16px;
                         @include inline-flex;
                         @include align-items(flex-start);
                         @include transition(0.3s, ease-in-out);

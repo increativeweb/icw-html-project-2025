@@ -51,7 +51,7 @@
             a {
                 color: $black;
                 text-decoration: none;
-                line-height: normal;
+                line-height: 1.5;
                 transition: all 0.3s,background-size 0.8s;
                 background-image: linear-gradient(to right, $primary 0%, $primary 100%);
                 background-position: 0 100%;
@@ -433,20 +433,45 @@
         @include transition(0.3s, ease-in-out);
         padding: 0;
         border: 1px solid #F1F1F1;
-        &:hover,
-        &:focus {
+        .q-icon-search {
+            width: 42px;
+            &:after {
+                background: #090A0C;
+            }
+        }
+        &:hover, &:focus, &:active {
             outline: none;
-            background-color: #090A0C;
-            border-color:  #090A0C;
             .q-icon-search {
+                &::after {
+                    transform: translate(0) scale(1);
+                }
                 svg {
+                    &:first-of-type {
+                        opacity: 0;
+                        transform: translate(30px) scale(.5);
+                    }
+                    &:nth-of-type(2) {
+                        opacity: 1;
+                        transform: translate(0) scale(1);
+                    }
                     path {
                         stroke: $white;
                     }
                 }
             }
             .q-icon-close {
+                &::after {
+                    transform: translate(0) scale(1);
+                }
                 svg {
+                    &:first-of-type {
+                        opacity: 0;
+                        transform: translate(30px) scale(.5);
+                    }
+                    &:nth-of-type(2) {
+                        opacity: 1;
+                        transform: translate(0) scale(1);
+                    }
                     path {
                         fill: $white;
                     }
@@ -457,7 +482,11 @@
             border-color: #000;
         }
         .q-icon-close {
+            width: 42px;
             display: none;
+            &:after {
+                background: #090A0C;
+            }
         }
     }  
     &.active {
@@ -476,7 +505,7 @@
                 display: none;
             }
             .q-icon-close {
-                display: block;
+                @include flexbox;
             }
         }
     }
@@ -738,19 +767,9 @@
         }
     }    
     .social-list {
-        gap: 10px;
         margin-top: 0;
-        margin: 0;
-        padding: 0;
-        list-style-type: none !important;
-        li {
-            list-style-type: none !important;
-        }
-        a {
-            width: 38px;
-            height: 38px;
-        }
-    }  
+    }
+    
 
     .single-content {
         scroll-margin-top: 80px;
@@ -780,6 +799,84 @@
             font-weight: 600;
             @media (max-width: 1200px) { 
                 font-size: 20px;
+            }
+        }
+        
+        ol:not(.splide__list), ul:not(.splide__list) {
+            margin: 0;
+            li {
+                &::marker {
+                    font-weight: 600;
+                    color: $primary;
+                }
+            }
+        }
+
+        ol:not(.splide__list) { 
+            list-style-type: decimal;
+            padding-left: 20px;
+            li {            
+                list-style-type: decimal;
+                @media (min-width: 992px) { 
+                    padding-left: 5px;
+                }
+                @media (max-width: 992px) { 
+                    padding-left: 0;
+                }
+                &::marker {
+                    font-family: $font-merriweather;
+                    font-weight: 700;
+                }
+            }
+            ul:not(.splide__list) {            
+                margin-top: 10px;
+                margin-bottom: 0;
+                list-style-type: none;
+                li {
+                    list-style-type: none;
+                }
+            }
+        }
+
+        ul:not(.splide__list) {           
+            padding-left: 0;
+            li {
+                padding-left: 20px;
+                @media (max-width: 992px) {
+                    padding-left: 15px;
+                }
+                &::before {
+                    width: 8px;
+                    height: 8px;
+                    background: $primary;
+                    @include border-radius(50%);
+                    top: 9px;
+                    margin-top: 0;                    
+                    @media (max-width: 992px) {
+                        width: 6px;
+                        height: 6px;
+                    }
+                }
+                ol:not(.splide__list) {
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    li {
+                        list-style-type: decimal;
+                        @media (min-width: 992px) { 
+                            padding-left: 5px;
+                        }
+                        @media (max-width: 992px) { 
+                            padding-left: 0;
+                        }
+                        &::before {
+                            content: none;
+                        }
+                        &::marker {
+                            font-family: $font-merriweather;
+                            font-weight: 600;
+                        }
+                    }
+                }
             }
         }
     }

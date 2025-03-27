@@ -483,10 +483,10 @@ document.addEventListener("scroll", () => {
 /* imageAnimation */ 
 function imageAnimation() {
     let winHeight = window.innerHeight;
-    let winPos = window.scrollY + winHeight + 50; // Adjusted calculation
+    let winPos = window.scrollY + winHeight + 50; 
 
-    document.querySelectorAll('.media-block .imgSlideInUp').forEach((img) => {
-        let mediaBlock = img.closest('.media-block'); // Find the closest parent with the class 'media-block'
+    document.querySelectorAll('.animated-img .imgSlideInUp').forEach((img) => {
+        let mediaBlock = img.closest('.animated-img'); 
 
         if (mediaBlock) {
             let pos = mediaBlock.getBoundingClientRect().top + window.scrollY; // Get element's position
@@ -509,6 +509,6 @@ window.addEventListener("scroll", imageAnimation);
 window.addEventListener("load", () => {
     setTimeout(() => {
         imageAnimation()
-    }, 800);
+    }, 300);
 });
 
