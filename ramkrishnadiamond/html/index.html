@@ -174,13 +174,13 @@
         <main class="main-content-wrapper">
             <div class="fix-multi-circle-vector"></div>
             <div class="fix-star-vector">
-                <span class="star-vector is-top"></span>
-                <span class="star-vector is-bottom"></span>
+                <span class="star-vector is-top" style="animation: unset; transition: transform 0.6s ease-out , opacity 0.6s ease-out;"></span>
+                <span class="star-vector is-bottom" style="animation: unset; transition: transform 0.6s ease-out , opacity 0.6s ease-out;"></span>
             </div>
             <section class="hero-header is-dark">
                 <div class="container">
                     <div class="hero-content-wrapper">
-                        <div class="row g-lg-5 flex-lg-row-reverse align-items-center">
+                        <div class="row g-35 flex-lg-row-reverse align-items-center">
                             <div class="col-lg-6">
                                 <!-- <div class="media-block is-video">
                                     <div class="inner-video-player">
@@ -813,5 +813,43 @@
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/glightbox.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
+        <script>
+            //star animation
+            $(window).on("scroll", function () {
+                let scrollTop = $(this).scrollTop();
+                let docHeight = $(document).height();
+                let winHeight = $(window).height();
+                let scrollPos = (scrollTop / (docHeight - winHeight)) * 100;
+
+                if (scrollPos <= 50) {
+                    let halfScroll = scrollPos / 50;
+                    let xMovement = halfScroll * 0;
+                    let yMovement = halfScroll * 500;
+                    let scaleValue = 1 + halfScroll * 0.1; 
+                    $(".is-top").css({
+                    transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue}`,
+                    opacity: 1,
+                    });
+                    $(".is-bottom").css({
+                    //   transform: `translate(0 ,0) scale(0.8)`,
+                    opacity: 0,
+                    });
+                } 
+                else {
+                    let halfScroll = (scrollPos - 50) / 50;
+                    let xMovement = -halfScroll * 0;
+                    let yMovement = -halfScroll * 700;
+                    let scaleValue = 1.1 - halfScroll * 0.1;
+                    $(".is-bottom").css({
+                    transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue})`,
+                    opacity: 1,
+                    });
+                    $(".is-top").css({
+                    //   transform: `translate(0 ,0) scale(0.8)`,
+                    opacity: 0,
+                    });
+                }
+            });
+        </script>
     </body>
 </html>

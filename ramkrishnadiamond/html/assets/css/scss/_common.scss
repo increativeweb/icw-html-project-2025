@@ -207,6 +207,10 @@ img {
         --bs-gutter-y: 70px;
         --bs-gutter-x: 70px;
     }
+    @media (max-width: 992px) {
+        --bs-gutter-y: 1.5rem;
+        --bs-gutter-x: 1.5rem;  
+    }
 }
 
 // Border Radius CSS
@@ -580,10 +584,10 @@ img {
 	overflow: hidden; 
     line-height: 0.7;  
     @media (max-width: 992px) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     } 
     @media (max-width: 767px) {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     } 
     img {
         &.mw-50 {
