@@ -116,6 +116,15 @@
             @include border-radius(0 0 24px 24px);
         }
 	}
+
+    
+    .is-highlight-section {
+        .hightlight-block {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(7px);
+        }
+    }
 }
 
 // Section Title CSS
@@ -133,14 +142,6 @@
     &.sticky-title {
         position: sticky;
         top: 150px;
-    }
-    &.with-bg {
-        padding: 30px;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(7px);
-        @media (max-width: 767px) {
-            padding: 15px;
-        }
     }
     &.d-flex {
         @include align-items(flex-start);
@@ -192,19 +193,18 @@
             margin-bottom: 15px;
             font-family: $bodyfont;
         }
-        .icon-list {
-            margin-top: 30px;
-            max-width: 550px;
-        }
-        ul {
-            margin: 20px 0;
-        }
         img {
             margin-top: 30px;
         }
         a {
             margin-bottom: 5px;
             display: inline-block;
+        }
+        p + ul {
+            margin-top: 15px;
+        }
+        ul + p {
+            margin-top: 15px;
         }
         hr {
             border-top: 1px solid rgba($black, 0.2);
@@ -1146,11 +1146,6 @@
             margin-bottom: 0px;
         }
     }
-    @media (max-height: 1200px) {
-        .media-block {
-            margin-bottom: 40px;
-        }
-    }
 }
 
 // CTA Section
@@ -1174,7 +1169,12 @@
             margin-bottom: 30px;
         }
         img {
-            max-width: 50%;
+            @media (min-width: 1200px) {
+                max-width: 60%;
+            }
+            @media (max-width: 992px) {
+                max-width: 50%;
+            }
         }
     }
 }
@@ -1215,7 +1215,7 @@
                     width: 70px;
                     height: 70px;
                     display: inline-block;
-                    background: url('data:image/svg+xml, <svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.5 88.4866C68.7931 88.4866 88.4865 68.7932 88.4865 44.5002C88.4865 20.2071 68.7931 0.513672 44.5 0.513672C20.207 0.513672 0.51355 20.2071 0.51355 44.5002C0.51355 68.7932 20.207 88.4866 44.5 88.4866Z" fill="white" fill-opacity="0.3"/><path d="M72.3981 43.853C73.0904 44.2352 73.0861 45.2318 72.3906 45.6081L32.4759 67.2016C31.8096 67.562 31 67.0796 31 66.3221V22.6943C31 21.933 31.8168 21.4509 32.4833 21.8188L72.3981 43.853Z" fill="white" stroke="white"/></svg>') no-repeat center center;
+                    background: url('data:image/svg+xml, <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.9865 87.973C68.2796 87.973 87.973 68.2796 87.973 43.9865C87.973 19.6934 68.2796 0 43.9865 0C19.6934 0 0 19.6934 0 43.9865C0 68.2796 19.6934 87.973 43.9865 87.973Z" fill="white" fill-opacity="0.3"/><path d="M65.3894 42.8016C66.0838 43.1833 66.0796 44.1826 65.3819 44.5584L34.4742 61.206C33.808 61.5648 33 61.0823 33 60.3255V26.6907C33 25.9302 33.8152 25.4481 34.4817 25.8143L65.3894 42.8016Z" fill="white" stroke="white"/></svg>') no-repeat center center;
                     background-size: contain;
                     @include border-radius(50%);
                     @include transition(0.2s, ease-in-out);

@@ -581,7 +581,7 @@
         }
     }
     .breadcrumb-nav {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         @media (max-width: 992px) {
             margin-bottom: 40px;
         }
@@ -676,7 +676,7 @@
         @media (min-width: 992px) {
             position: -webkit-sticky !important;
             position: sticky !important;
-            top: 110px;
+            top: 170px;
             z-index: 2;
         }
     }
@@ -858,16 +858,21 @@
     top: 90px;
     padding: 0;
     opacity: 0;
-    background-color: $black;
+    background-color: rgba($black, 0.8);
+    backdrop-filter: blur(20px);
     @include transition(0.3s, ease-in-out);
     z-index: 110;
-    padding: 20px 40px;
+    height: 0;
     @media (max-width: 992px) {
         top: 64px;
-        padding: 20px 15px;
     }
     &.is-visible {
         opacity: 1;
+        padding: 20px 40px;
+        height: auto; 
+        @media (max-width: 992px) {
+            padding: 20px 15px;
+        }
         .progress {
             height: 5px;
             .progress-bar {
