@@ -368,6 +368,7 @@
     @include transition(0.3s, ease-in-out);
     @include border-radius(0);
     overflow: hidden;
+    box-shadow: 5px 5px 0px rgba($black, 0.1);
     @media (max-width: 992px) {
         width: 100%;
         margin-bottom: 25px;
@@ -441,7 +442,7 @@
         }
         &:hover, &:focus, &:active {
             outline: none;
-            .q-icon-search {
+            .q-icon-search {                
                 &::after {
                     transform: translateY(0) scale(1);
                 }
@@ -981,7 +982,7 @@
     top: 90px;
     padding: 0;
     opacity: 0;
-    background-color: rgba($black, 0.8);
+    background-color: rgba(#F1F1F1, 0.8);
     backdrop-filter: blur(20px);
     @include transition(0.3s, ease-in-out);
     z-index: 110;
@@ -1004,18 +1005,18 @@
         }
     }
     .progress {
-        background-color: rgba($white, 0.3);
+        background-color: rgba($white, 0.5);
         height: 0;
         width: 100%;
         @include border-radius(0);
         .progress-bar {
-            background-color: $secondary;
+            background-color: $primary;
             height: 0;
             width: 0;
         }
     }
     .time-remaining {
-        color: $white;
+        color: $black;
         flex-grow: 1;
         font-size: 16px;
         font-weight: 700;

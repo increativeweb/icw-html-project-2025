@@ -1283,7 +1283,7 @@ h5, .h5 {
 .social-list {
     @include flexbox;
     @include align-items(center);
-    gap: 10px;
+    gap: 20px;
     margin-top: 30px;
     @media (max-width: 992px) {
         margin-bottom: 40px;
@@ -1298,7 +1298,9 @@ h5, .h5 {
             @include justify-content(Center);
             position: relative;
             overflow: hidden;
-            background: rgba(#F1F1F1, 0.6);
+            background: rgba(#F1F1F1, 0.6);            
+            box-shadow: 5px 5px 0px rgba($black, 0.1);
+            transition: box-shadow 0.2s ease-in-out 0.05s;
             &::before {
                 content: none !important;
             }
@@ -1606,104 +1608,124 @@ h5, .h5 {
         }
         .navbar-toggler {
             display: inline-block;
-			height: 50px;
-			width: 50px;
+            height: 50px;
+            width: 50px;
             flex: none;  
-			padding: 0px; 
-			background-color: transparent; 
-			border: none; 
-			z-index: 1050;
-			cursor: pointer;
+            padding: 0px; 
+            background-color: transparent; 
+            border: none; 
+            z-index: 1050;
+            cursor: pointer;
             pointer-events: all;
             position: relative;	
+            @include border-radius(50%);
             @include transition(0.3s, ease-in-out);	
             @media (max-width: 992px) {
                 height: 40px;
-			    width: 40px;
+                width: 40px;
             }	
-			.btn-toggle-bg {
+            .btn-toggle {
                 width: 100%;
                 height: 100%;
                 @include flexbox;
                 @include align-items(center);
-                @include justify-content(Center);
+                @include justify-content(center);
                 position: relative;
                 @include border-radius(50%);
                 @include transition(0.2s, ease-in-out);
-                &::before {
-                    content: '';
-                    width: 100%;
+                overflow: hidden;     
+                background: $white;   
+                &::after {
+                    content: "";
+                    display: block;
+                    @include border-radius(50%);
                     height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    transform: translateY(101%) scale(0.5);
+                    transform-origin: center top;
+                    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    width: 100%;
+                    background: $black;
+                    z-index: 1;
+                }
+                &.btn-toggle-dot {
+                    svg {
+                        width: 15px;
+                        transform: rotate(0deg);
+                        transform-origin: center;
+                        @include transition(0.2s, ease-in-out);	
+                        z-index: 2;
+                    } 
+                }        
+                &.btn-toggle-close { 
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background: $white;
-                    display: block;
-                    @include border-radius(50%);
-                    z-index: -1;
-                    @include transition(0.3s, ease-in-out);		
-                    will-change: transform;
-                }
-                svg {
-                    width: 15px;
-                    transform: rotate(0deg);
-                    transform: scale(1);
-                    @include transition(0.2s, ease-in-out);	
-                    z-index: 1;
-                } 
-            }
-			.btn-toggle-close {
-                width: 100%;
-                height: 100%;
-                @include flexbox;
-                @include align-items(center);
-                @include justify-content(Center);
-                position: relative;
-                @include border-radius(50%);
-                @include transition(0.2s, ease-in-out);	
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: $white;
-                svg {
-                    width: 15px;
-                    transform: scale(0);
-                    transition-delay: 0.2s;
-                    will-change: transform;
-                    @include transition(0.2s, ease-in-out);	
-                } 
-            }
-            &:hover {
-                .btn-toggle-bg {
+                    opacity: 0;       
+                    @include transform(scale(0));
+                    @include transition(0.2s, ease-in-out);
+                    transition-delay: 0.1s;
                     svg {
-                        transform: rotate(180deg);
+                        position: absolute;
+                        width: 15px;
+                        @include transition(0.3s, cubic-bezier(.165,.84,.44,1));
+                        z-index: 2;
+                        &:nth-of-type(2) {
+                            position: absolute;
+                            opacity: 0;
+                            transform: translateY(30px) scale(.5);
+                            @include transition(0.3s, cubic-bezier(.165,.84,.44,1));
+                        }
+                    } 
+                }
+            }    
+            &:hover {
+                .btn-toggle {
+                    background: $black;
+                    &::after {
+                        transform: translateY(0) scale(1);
                     }
-                    &::before {
-                        animation: animate_toggle_show_btn_scale 0.5s ease;	
+                    &.btn-toggle-dot {
+                        svg {
+                            transform: rotate(180deg);
+                            circle {
+                                fill: $white;
+                            }
+                        }
                     }
                 }
             }
             &.is-visible {  
-                .btn-toggle-bg {                     
-                    svg {
+                .btn-toggle {
+                    &.btn-toggle-dot {      
                         @include transform(scale(0));
                         @include transition(0.2s, ease-in-out);	
+                        transition-delay: 0.1s;
                     }
-                }
-                .btn-toggle-close { 
-                    svg {
-                        @include transform(scale(1));
-                        transition-delay: 0.2s;
-                        @include transition(0.2s, ease-in-out);	
+                    &.btn-toggle-close { 
+                        opacity: 1;                    
+                        @include transform(scale(1));            
                     }
                 }
                 &:hover {
-                    .btn-toggle-bg {
-                        svg {
-                            @include transform(scale(0));
-                        }
-                        &::before {
-                            animation: unset;	
+                    .btn-toggle {
+                        background: $black;
+                        &.btn-toggle-close { 
+                            svg { 
+                                path {
+                                    stroke: $white;
+                                }
+                                &:first-of-type {
+                                    opacity: 0;
+                                    transform: translateY(-30px) scale(.5);
+                                }
+                                &:nth-of-type(2) {
+                                    opacity: 1;
+                                    transform: translateY(0) scale(1);
+                                }
+                            }
                         }
                     }
                 }
@@ -1958,6 +1980,7 @@ h5, .h5 {
                         }
                         .social-list {
                             margin-bottom: 0;
+                            padding-bottom: 5px;
                             @media (max-width: 992px) {
                                 margin-top: 0;
                             }
@@ -1965,6 +1988,7 @@ h5, .h5 {
                                 a { 
                                     width: 40px;
                                     background: rgba($white, 0.2);
+                                    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.1);
                                     &::after {
                                         background: $white;
                                     }
@@ -1974,6 +1998,7 @@ h5, .h5 {
                                         }
                                     }
                                     &:hover, &:focus, &:active {
+                                        box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4);
                                         svg {
                                             path {
                                                 fill: $primary;
@@ -2285,6 +2310,7 @@ body.is-light {
                     a { 
                         width: 40px;
                         background: rgba($white, 0.2);
+                        box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.1);
                         &::after {
                             background: $white;
                         }
@@ -2294,6 +2320,7 @@ body.is-light {
                             }
                         }
                         &:hover, &:focus, &:active {
+                            box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4);
                             svg {
                                 path {
                                     fill: $primary;
