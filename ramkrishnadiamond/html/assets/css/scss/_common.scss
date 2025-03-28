@@ -1323,7 +1323,7 @@ h5, .h5 {
                 &:nth-of-type(2) {
                     position: absolute;
                     opacity: 0;
-                    transform: translateY(-30px) scale(.5);
+                    transform: translateY(30px) scale(.5);
                     z-index: 1;
                     @include transition(0.3s, cubic-bezier(.165,.84,.44,1));
                 }
@@ -1341,7 +1341,7 @@ h5, .h5 {
                     }
                     &:first-of-type {
                         opacity: 0;
-                        transform: translateY(30px) scale(.5);
+                        transform: translateY(-30px) scale(.5);
                     }
                     &:nth-of-type(2) {
                         opacity: 1;
