@@ -443,16 +443,16 @@
             outline: none;
             .q-icon-search {
                 &::after {
-                    transform: translate(0) scale(1);
+                    transform: translateY(0) scale(1);
                 }
                 svg {
                     &:first-of-type {
                         opacity: 0;
-                        transform: translate(30px) scale(.5);
+                        transform: translateY(30px) scale(.5);
                     }
                     &:nth-of-type(2) {
                         opacity: 1;
-                        transform: translate(0) scale(1);
+                        transform: translateY(0) scale(1);
                     }
                     path {
                         stroke: $white;
@@ -461,16 +461,16 @@
             }
             .q-icon-close {
                 &::after {
-                    transform: translate(0) scale(1);
+                    transform: translateY(0) scale(1);
                 }
                 svg {
                     &:first-of-type {
                         opacity: 0;
-                        transform: translate(30px) scale(.5);
+                        transform: translateY(30px) scale(.5);
                     }
                     &:nth-of-type(2) {
                         opacity: 1;
-                        transform: translate(0) scale(1);
+                        transform: translateY(0) scale(1);
                     }
                     path {
                         fill: $white;

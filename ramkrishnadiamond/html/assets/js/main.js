@@ -350,57 +350,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // if (document.querySelector(".btn").length) {
-    document.querySelectorAll(".btn-text .text-animate").forEach(element => {
-        let text = element.textContent;
-        element.innerHTML = text.split("").map(char => `<span>${char === " " ? "&nbsp;" : char}</span>`).join("");
-    });
-    document.querySelectorAll(".btn").forEach(button => {
-        button.addEventListener("mouseenter", function () {
-            let text1 = this.querySelector(".text-animate:nth-child(1)");
-            let text2 = this.querySelector(".text-animate:nth-child(2)");
+    // document.querySelectorAll(".btn-text .text-animate").forEach(element => {
+    //     let text = element.textContent;
+    //     element.innerHTML = text.split("").map(char => `<span>${char === " " ? "&nbsp;" : char}</span>`).join("");
+    // });
+    // document.querySelectorAll(".btn").forEach(button => {
+    //     button.addEventListener("mouseenter", function () {
+    //         let text1 = this.querySelector(".text-animate:nth-child(1)");
+    //         let text2 = this.querySelector(".text-animate:nth-child(2)");
             
-            if (text1 && text2) {
-                text1.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-                    setTimeout(() => {
-                        span.style.transform = "translateY(-100%)";
-                    }, 100);
-                    span.style.opacity = "0";
-                });
+    //         if (text1 && text2) {
+    //             text1.querySelectorAll("span").forEach((span, index) => {
+    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+    //                 setTimeout(() => {
+    //                     span.style.transform = "translateY(-100%)";
+    //                 }, 100);
+    //                 span.style.opacity = "0";
+    //             });
 
-                text2.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-                    setTimeout(() => {
-                        span.style.transform = "translateY(0%)";
-                    }, 100);
-                    span.style.opacity = "1";
-                });
-            }
-        });
+    //             text2.querySelectorAll("span").forEach((span, index) => {
+    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+    //                 setTimeout(() => {
+    //                     span.style.transform = "translateY(0%)";
+    //                 }, 100);
+    //                 span.style.opacity = "1";
+    //             });
+    //         }
+    //     });
 
-        button.addEventListener("mouseleave", function () {
-            let text1 = this.querySelector(".text-animate:nth-child(1)");
-            let text2 = this.querySelector(".text-animate:nth-child(2)");
+    //     button.addEventListener("mouseleave", function () {
+    //         let text1 = this.querySelector(".text-animate:nth-child(1)");
+    //         let text2 = this.querySelector(".text-animate:nth-child(2)");
 
-            if (text1 && text2) {
-                text1.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.2s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-                    setTimeout(() => {
-                        span.style.transform = "translateY(0%)";
-                    }, 100);
-                    span.style.opacity = "1";
-                });
+    //         if (text1 && text2) {
+    //             text1.querySelectorAll("span").forEach((span, index) => {
+    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+    //                 setTimeout(() => {
+    //                     span.style.transform = "translateY(0%)";
+    //                 }, 100);
+    //                 span.style.opacity = "1";
+    //             });
 
-                text2.querySelectorAll("span").forEach((span, index) => {
-                    span.style.transition = `transform 0.2s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-                    setTimeout(() => {
-                        span.style.transform = "translateY(100%)";
-                    }, 100);
-                    span.style.opacity = "0";
-                });
-            }
-        });
-    });
+    //             text2.querySelectorAll("span").forEach((span, index) => {
+    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
+    //                 setTimeout(() => {
+    //                     span.style.transform = "translateY(100%)";
+    //                 }, 100);
+    //                 span.style.opacity = "0";
+    //             });
+    //         }
+    //     });
+    // });
     // }
 
     const $logoBlock = $('.site-vertical-logo');
