@@ -429,9 +429,10 @@ function handleScroll() {
         if (caption) {
             if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
                 caption.classList.add('is-animate');
-            } else {
-                caption.classList.remove('is-animate');
-            }
+            } 
+            // else {
+            //     caption.classList.remove('is-animate');
+            // }
         }
     });
 }
@@ -506,9 +507,5 @@ function imageAnimation() {
 
 // Trigger on scroll
 window.addEventListener("scroll", imageAnimation);
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        imageAnimation()
-    }, 300);
-});
+window.addEventListener("load", imageAnimation);
 

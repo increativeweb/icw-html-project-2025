@@ -802,45 +802,41 @@ img {
         }
     }
 }
+
 // Animation Image
 .animated-img { 
     overflow: hidden; 
-    animation: cubic-bezier(0.25, 0.1, 0.25, 1), 1.5s isLoad; 
-    animation-fill-mode: forwards;        
-    display: block;
-    line-height: 0.7;
-    height: 100%;
-    .imgSlideInUp { 
+    // animation: cubic-bezier(0.25, 0.1, 0.25, 1), 2s isLoad; 
+    animation-fill-mode: forwards;  
+    display: inline-block;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);  
+    
+    .imgSlideInUp {
         display: inline-block; 
-    }             
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }   
+    .animate {
+        animation-name:imgSlideInUp; 
+    }       
     img { 
         display: block; 
         width: 100%; 
-        transform: translateY(40%);
-        @include transition(0.4s, ease-in-out);
+        // transform: translateY(40%);
+        // @include transition(0.6s, ease-in-out);
         transform-origin: top center;
-        opacity: 0;
-    }   
+    }    
     &.is-visible {
         img { 
-            -webkit-transform: translateY(0%); 
             transform: translateY(0%);
-            opacity: 1;
         }
-        &.is-complete {   
+        &.is-complete {    
             animation: cubic-bezier(0.25, 0.1, 0.25, 1), 1.5s isComplete; 
             animation-fill-mode: forwards;
             img { 
                 @include transition(0.6s, ease-in-out);
-            }
+            }  
         }
-    }
-} 
-.imgSlideInUp {
-    animation-fill-mode: both;
-    .animate {
-        animation-name: imgSlideInUp;
-        animation-duration: 1s;
     }
 }
 @keyframes isComplete {
@@ -852,7 +848,7 @@ img {
     100% { clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);}
 }
 @keyframes imgSlideInUp{
-    0% {transform: translateY(40%); @include opacity(0);}
+    0% {transform: translateY(60%); @include opacity(0);}
     to {transform: translateY(0%); @include opacity(1);}    
 }
 
@@ -1326,31 +1322,6 @@ h5, .h5 {
                     path {
                         fill: $white;
                         @include transition(0.2s, ease-in-out);
-                    }
-                }
-            }
-        }
-    }
-}
-
-// Widget Block CSS
-.widget-block {
-    .widget-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: $white;
-        margin-bottom: 5px;
-    }
-    .widget-content {
-        ul {
-            li {
-                color: $white;
-                font-size: 13px;
-                font-weight: 500;
-                a {
-                    color: $white;
-                    &::before {
-                        background-color: $white;
                     }
                 }
             }
@@ -1921,28 +1892,51 @@ h5, .h5 {
                     @media (max-width: 767px) {
                         @include flex-direction(column);
                     }
-                    .widget-block {              
+                    .contact-info {              
                         flex-grow: 1;
                     }
                 }
-                .widget-flex-block {
+                .flex-block {
                     @include flexbox;
                     gap: 30px 60px;
                     overflow: hidden;
                     overflow-x: auto;
+                    &::-webkit-scrollbar { 
+                        width:6px; 
+                        height: 8px; 
+                        background-color:#fafafa; 
+                    }
+                    &::-webkit-scrollbar-thumb { 
+                        background-color:rgba(0,0,0,0.2); 
+                    }
                     @media (max-width: 767px) {
                         gap: 30px;
-                        .widget-block {
+                        .contact-info {
                             min-width: 250px;
                             padding-bottom: 10px;
                         }
                     }
                 }
-                .widget-block {                    
-                    .widget-content {                        
+                .contact-info {
+                    .info-title {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: $white;
+                        margin-bottom: 5px;
+                    }
+                    .info-list {
+                        color: $white;
+                        font-size: 13px;
+                        font-weight: 500;
                         @media (max-width: 767px) {
                             &.d-flex {
                                 width: 100%;
+                            }
+                        }                               
+                        a {
+                            color: $white;
+                            &::before {
+                                background-color: $white;
                             }
                         }
                         .social-list {
