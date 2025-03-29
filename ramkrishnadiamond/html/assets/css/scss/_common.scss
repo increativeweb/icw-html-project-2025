@@ -2041,30 +2041,22 @@ body.is-light {
                     }
                 }
                 .navbar-toggler {
-                    .btn-toggle-bg {
-                        svg {
-                            circle {
-                                fill: $white;
-                            }
-                        }
-                        &::before {
-                            background: $primary;
-                        }
-                    }
-                    .btn-toggle-close {
+                    .btn-toggle {  
                         background: $primary;
-                    }
-                }
-            }
-        }
-        &.fixed-header {
-            .navbar {
-                .navbar-toggler {
-                    .btn-toggle-close {
-                        svg {
-                            path {
-                                stroke: $black;
-                            }
+                        &.btn-toggle-dot {
+                            svg {
+                                circle {
+                                    fill: $white;
+                                }
+                            } 
+                        }        
+                        &.btn-toggle-close {
+                            background: $white; 
+                        }
+                    }    
+                    &:hover {
+                        .btn-toggle {
+                            background: $black;
                         }
                     }
                 }
