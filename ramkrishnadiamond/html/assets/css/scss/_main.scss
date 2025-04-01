@@ -1697,11 +1697,6 @@
 .contact-information-section {
     .scrollspy-content-details {
         padding-top: 200px;  
-        @media (min-width: 992px) {      
-            &:first-child {
-                margin-top: -50px;
-            }
-        }
         @media (max-width: 767px) {
             padding-top: 150px;
             margin-top: -80px;   

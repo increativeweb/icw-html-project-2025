@@ -813,6 +813,7 @@ img {
     
     .imgSlideInUp {
         display: inline-block; 
+        width: 100%;
         animation-duration: 1s;
         animation-fill-mode: both;
     }   
@@ -1524,7 +1525,7 @@ h5, .h5 {
                                     color: $black;
                                     font-size: 14px;
                                     font-weight: 500;
-                                    padding: 15px;
+                                    padding: 10px 12px;
                                     width: 100%;
                                     display: block;
                                     &::before {
@@ -1740,6 +1741,9 @@ h5, .h5 {
                         position: relative;    
                         &:not(:last-child) {
                             margin-bottom: 15px;
+                            @media (max-width:992px) {
+                                margin-bottom: 10px;
+                            }
                         }
                         a {
                             font-size: 42px;
@@ -1806,51 +1810,78 @@ h5, .h5 {
                             }
                         }
                         &.menu-item-has-children {                                                    
-                            .arrow {
-                                background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-                                background-size: 20px !important;
-                                display: inline-block;
-                                width: 30px;
-                                height: 30px;
-                                position: absolute;
-                                top: 17px;
-                                right: 0;
-                                cursor: pointer;   
-                                @include transition(0.3s, ease-in-out);
-                                @media (max-width: 767px) {
-                                    top: 10px;
-                                }
-                                &:hover {
-                                    background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="rgb(7 162 199)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-                                }
-                                &.is-active {   
-                                    background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="rgba(255, 255, 255, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-                                    @include transform(rotate(180deg));
+                            @media (max-width:992px) {
+                                .arrow {
+                                    background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                                    background-size: 20px !important;
+                                    display: inline-block;
+                                    width: 30px;
+                                    height: 30px;
+                                    position: absolute;
+                                    top: 17px;
+                                    right: 0;
+                                    cursor: pointer;   
+                                    @include transition(0.3s, ease-in-out);
+                                    @media (max-width: 767px) {
+                                        top: 10px;
+                                    }
+                                    &:hover {
+                                        background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="rgb(7 162 199)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                                    }
+                                    &.is-active {   
+                                        background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="rgba(255, 255, 255, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                                        @include transform(rotate(180deg));
+                                    }
                                 }
                             }
                             .sub-menu {                                
+                                @media (min-width: 992px) {
+                                    display: flex !important;
+                                }
                                 display: none;
+                                @include align-items(center);
+                                gap: 30px;
                                 min-width: 100%;
-                                margin-top: 10px;
+                                margin-top: 15px;
                                 margin-bottom: 30px;
-                                background: $white;
-                                @include box-shadow(4px 5px 0px rgba(255, 255, 255, 0.3));
                                 li {
                                     margin-bottom: 0;
-                                    &:not(:last-child) {
-                                        border-bottom: 1px solid #F9F9F9;
+                                    @media (max-width: 992px) {
+                                        &:not(:last-child) {
+                                            padding-bottom: 10px;
+                                        }
                                     }
                                     a {
-                                        color: $black;
-                                        font-size: 14px;
+                                        color: rgba($white, 0.7);
+                                        font-size: 18px;
                                         font-weight: 500;
-                                        padding: 15px;
                                         width: 100%;
+                                        @include inline-flex;
+                                        @include align-items(center);
+                                        @include transition(0.3s, ease-in-out);
                                         &::before {
                                             content: none;
                                         }
+                                        @media (max-width: 992px) {
+                                            padding-left: 25px;
+                                            &::after {
+                                                content: '';
+                                                display: inline-block;
+                                                position: absolute;
+                                                left: 0;
+                                                width: 0;
+                                                height: 1px;
+                                                background: $white;
+                                                @include transition(0.3s, ease-in-out);
+                                            }
+                                        }
                                         &:hover, &:focus {
-                                            background-color: #F6F6F6;
+                                            color: $white;
+                                            @media (max-width: 992px) {
+                                                &::after {                                                
+                                                    width: 15px;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -2042,6 +2073,9 @@ body.is-light {
                         }
                         &:hover, &:focus, &:active {
                             color: $primary !important;
+                            .text-animate {
+                                filter: unset;
+                            }
                         }
                     }
                 }
@@ -2583,6 +2617,7 @@ body.is-light {
 	}
 }
 
+// Page Loader
 .preloader {
     position: fixed;
     top: 0;
@@ -2711,5 +2746,40 @@ body.is-light {
                 }
             }
         }
+    }
+}
+
+// Star Mask
+.star-mask {
+    background: url('data:image/svg+xml;utf8,<svg width="180" height="90" viewBox="0 0 180 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 90L30.2674 81.1761C55.1839 73.9122 74.6091 54.3378 81.6821 29.3664L90 0L97.581 28.52C104.456 54.3831 124.531 74.6602 150.324 81.7932L180 90L152.705 96.4818C125.218 103.009 103.691 124.362 96.9408 151.794L90 180L81.5002 149.354C74.1434 122.829 52.9092 102.425 26.1117 96.1321L0 90Z" fill="rgb(223, 185, 59)"/></svg>') no-repeat;
+    background-size: contain;
+    width: 180px;
+    height: 90px;
+    display: block;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+  
+    &.is-red {
+        background: url('data:image/svg+xml;utf8,<svg width="180" height="90" viewBox="0 0 180 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 90L30.2674 81.1761C55.1839 73.9122 74.6091 54.3378 81.6821 29.3664L90 0L97.581 28.52C104.456 54.3831 124.531 74.6602 150.324 81.7932L180 90L152.705 96.4818C125.218 103.009 103.691 124.362 96.9409 151.794L90 180L81.5003 149.354C74.1434 122.829 52.9092 102.425 26.1117 96.1321L0 90Z" fill="rgb(125, 22, 39)"/></svg>') no-repeat;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 0;
+    }
+  
+    &.is-blue {
+        background: url('data:image/svg+xml;utf8,<svg width="180" height="90" viewBox="0 0 180 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 -7.62939e-06L30.2674 -8.82387C55.1839 -16.0878 74.6091 -35.6622 81.6821 -60.6336L90 -90L97.581 -61.48C104.456 -35.6169 124.531 -15.3398 150.324 -8.20681L180 -7.62939e-06L152.705 6.48182C125.218 13.0091 103.691 34.3617 96.9408 61.7943L90 90L81.5002 59.354C74.1434 32.8288 52.9092 12.4252 26.1117 6.13208L0 -7.62939e-06Z" fill="rgb(22, 51, 107)"/></svg>') no-repeat;
+        top: 0;
+        bottom: auto;
+        left: auto;
+        right: 0;
+    }
+  
+    &.is-pacific {
+        background: url('data:image/svg+xml;utf8,<svg width="180" height="89" viewBox="0 0 180 89" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 -1.00001L30.2674 -9.82387C55.1839 -17.0878 74.6091 -36.6622 81.6821 -61.6336L90 -91L97.581 -62.48C104.456 -36.6169 124.531 -16.3398 150.324 -9.20681L180 -1.00001L152.705 5.48182C125.218 12.0091 103.691 33.3617 96.9408 60.7943L90 89L81.5002 58.354C74.1434 31.8288 52.9092 11.4252 26.1117 5.13208L0 -1.00001Z" fill="rgb(7, 162, 199)"/></svg>') no-repeat;
+        top: 0;
+        bottom: auto;
     }
 }

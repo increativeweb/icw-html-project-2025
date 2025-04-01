@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
     }
 
     // Text Animation 
-    
+
     Splitting();
 });
 
@@ -235,6 +235,16 @@ if (navbarToggler) {
                     currentMenuItem.classList.add("active");
                 }, 1000);
             }
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (menuSidebar.classList.contains("show") && !menuSidebar.contains(event.target) && !navbarToggler.contains(event.target)) {
+            menuSidebar.classList.remove("show");
+            mainHeader.classList.remove("is-visible");
+            navbarToggler.classList.toggle("is-visible");
+            document.querySelector('body').classList.remove("overflow-hidden");
+            document.querySelector(".bg-overlay").classList.remove("is-visible");
         }
     });
 }
