@@ -340,7 +340,7 @@
             </section>
             <section class="main-section process-content-section section-title-mw-600 pt-lg-0">
                 <div class="container">
-                    <div class="row g-lg-5">
+                    <div class="row g-35">
                         <div class="col-lg-5 col-xl-6">
                             <div class="section-title">
                                 <h2>Diamond Manufacturing: from Raw to Radiant</h2>
@@ -807,6 +807,23 @@
                 </div>
             </div>
         </footer>
+        <div class="preloader">
+            <div class="loader-container">
+              <svg class="progress-ring" width="200" height="200"><circle class="progress-ring-bg" cx="100" cy="100" r="90"></circle><circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle></svg>
+              <div class="loader-content">
+                <div class="loading-stage">
+                    <div class="stage-current">Loading</div>
+                    <div class="stage-next">Ready</div>
+                </div>
+                <div class="percentage">0</div>
+              </div>
+            </div>
+            <div class="loader-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+          </div>
         <span class="icw-progress-goto"><svg class="progress-circle svg-content" width="40" height="40" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.119, 307.919; stroke-dashoffset: 307.919;"></path></svg></span>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/glightbox.min.js"></script>
@@ -825,12 +842,12 @@
                     let yMovement = halfScroll * 500;
                     let scaleValue = 1 + halfScroll * 0.1; 
                     $(".is-top").css({
-                    transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue}`,
-                    opacity: 1,
+                        transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue}`,
+                        opacity: 1,
                     });
                     $(".is-bottom").css({
-                    //   transform: `translate(0 ,0) scale(0.8)`,
-                    opacity: 0,
+                        //   transform: `translate(0 ,0) scale(0.8)`,
+                        opacity: 0,
                     });
                 } 
                 else {
@@ -839,12 +856,12 @@
                     let yMovement = -halfScroll * 700;
                     let scaleValue = 1.1 - halfScroll * 0.1;
                     $(".is-bottom").css({
-                    transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue})`,
-                    opacity: 1,
+                        transform: `translate(${xMovement}px, ${yMovement}px) scale(${scaleValue})`,
+                        opacity: 1,
                     });
                     $(".is-top").css({
-                    //   transform: `translate(0 ,0) scale(0.8)`,
-                    opacity: 0,
+                        //   transform: `translate(0 ,0) scale(0.8)`,
+                        opacity: 0,
                     });
                 }
             });

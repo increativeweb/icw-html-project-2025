@@ -163,7 +163,7 @@
     }
     &.d-flex {
         @include align-items(flex-start);
-        gap: 30px;
+        gap: 70px;
         @media (max-width: 992px) { 
             @include flex-direction(column);
             gap: 20px;
@@ -177,8 +177,7 @@
         }
         .sort-info {
             p {
-                max-width: 550px;
-                margin-left: auto;
+                max-width: 650px;
                 @media (max-width: 992px) { 
                     max-width: 100%;
                 }
@@ -914,6 +913,11 @@
     }
 }
 .process-content-section {
+    .section-title {
+        @media (min-width: 992px) {
+            padding-right: 40px;
+        }
+    }
     &.with-bottom-border {
         hr {
             margin: 0;
@@ -931,15 +935,18 @@
         width: 55px;
         height: 55px;
         flex: none;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: sticky;
+        top: 120px;
         display: inline-block;
         z-index: 1;
         @include transition(0.3s, ease-in-out);
-        @media (max-width: 767px) {
+        @media (min-width: 992px) {            
+            margin-left: -61px;
+        }
+        @media (max-width: 992px) {
             width: 41px;
             height: 41px;
+            top: 90px;
         }
     }
     &::after {
@@ -950,37 +957,37 @@
         background: rgba($black, 0.2);
         position: absolute;
         top: 0;
-        left: 26px;
-        @media (max-width: 767px) {
-            left: 19px;
+        left: -35px;
+        @media (max-width: 992px) {
+            left: 20px;
         }
     }
-    &.is-icon-sticky {
-        &::before {
-            position: sticky;
-            top: 120px;
-            @media (max-width: 767px) {
-                top: 90px;
-            }
-        }
-    }
+    // &.is-icon-sticky {
+    //     &::before {            
+    //         top: 120px;
+    //         @media (max-width: 767px) {
+    //         }
+    //     }
+    // }
     .progress-bar {
         width: 1px;
         height: 0;
         display: inline-block;
         position: absolute;
         top: 0;
-        left: 26px;
+        left: -35px;
         background: $primary;
         @include transition(0.3s, ease-in-out);
-        @media (max-width: 767px) {
-            left: 19px;
+        @media (max-width: 992px) {
+            left: 20px;
         }
     }
     .process-content-block { 
-        padding-left: 100px;
-        @media (max-width: 767px) {
+        padding-left: 30px;
+        margin-top: -60px;
+        @media (max-width: 992px) {
             padding-left: 60px;
+            margin-top: -50px;
         }  
     }
     .process-card {
@@ -1021,6 +1028,7 @@
         }
         .process-content-block {
             padding-left: 0;
+            margin-top: 0;
         }
         .process-card { 
             display: grid;
@@ -1039,7 +1047,7 @@
             @media (max-width: 992px) {                
                 @include flexbox;
                 @include flex-wrap(wrap);
-                padding-left: 80px;
+                padding-left: 60px;
                 .card-img {
                     order: 2;
                     width: 100%;
@@ -1074,30 +1082,23 @@
                 z-index: 1;
                 @media (max-width: 992px) {                    
                     order: 1;
-                    width: 55px;
+                    width: 41px;
                     position: absolute;
                     left: 0;
                     top: 0;
-                }
-                @media (max-width: 767px) {
-                    width: 41px;
                     margin-top: 0;
                 }
                 svg {
                     width: 55px;
                     height: 55px;
-                    @media (max-width: 767px) {
+                    position: sticky;
+                    top: 110px;
+                    @media (max-width: 992px) {
                         width: 41px;
                         height: 41px;
                     }
                     path {
                         @include transition(0.3s, ease-in-out);
-                    }
-                }
-                &.is-icon-sticky {                    
-                    svg {
-                        position: sticky;
-                        top: 110px;
                     }
                 }
             }

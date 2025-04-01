@@ -124,28 +124,7 @@ jQuery(document).ready(function($) {
         });
     }
 
-    jQuery(window).on('scroll', function() {
-        if ($('.process-content-section').length) {
-            let targetDiv = $('.process-content-wrapper'); 
-            let targetStickyIcon = $('.process-content-wrapper .process-card .card-icon'); 
-            let offsetTop = targetDiv.offset().top;
-            let scrollPosition = $(window).scrollTop();
-
-            if (scrollPosition >= offsetTop - 100) {
-                targetDiv.addClass('is-icon-sticky');
-            } else {
-                targetDiv.removeClass('is-icon-sticky');
-            }
-            if(targetStickyIcon.length) {
-                if (scrollPosition >= offsetTop - 110) {
-                    targetStickyIcon.addClass('is-icon-sticky')
-                } else {
-                    targetStickyIcon.removeClass('is-icon-sticky')
-                }
-            }
-        }
-    });
-
+    // Text Animation 
     Splitting();
 });
 
@@ -415,6 +394,64 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const progressCircle = document.querySelector(".progress-ring-circle");
+    const percentageElement = document.querySelector(".percentage");
+    const stageCurrent = document.querySelector(".stage-current");
+    const stageNext = document.querySelector(".stage-next");
+    const preloader = document.querySelector(".preloader");
+    const shapes = document.querySelectorAll(".shape");
+  
+    const radius = progressCircle.getAttribute("r");
+    const circumference = 2 * Math.PI * radius;
+  
+    const colorStages = [
+        { accent: "#07A2C7", bg: "#131c2e" }
+    ];
+  
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+  
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += 1;
+        progressCircle.style.strokeDashoffset = circumference * (1 - progress / 100);
+        percentageElement.textContent = progress;
+        updateColors(progress);
+        updateShapes(progress);
+  
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+            preloader.style.transform = "translateY(-100vh)";
+                setTimeout(() => {          
+                    preloader.style.display = "none";
+                }, 1200);
+            }, 800);
+            stageCurrent.style.transform = "translateY(-30px)";
+            stageNext.style.transform = "translateY(0px)";
+        }
+    }, 10);
+  
+    function updateColors(progress) {
+        const stage = Math.floor(progress / 50);
+        if (stage < colorStages.length) {
+            progressCircle.style.stroke = colorStages[stage].accent;
+            document.documentElement.style.setProperty("--color-dark", colorStages[stage].bg);
+        }
+    }
+  
+    function updateShapes(progress) {
+        const scaleValue = 0 + (progress / 100) * 2;        
+        shapes.forEach((shape, index) => {
+            if (progress > (index + 1) * 25) {
+                shape.style.transform = `scale(${scaleValue})`;
+            }
+        });
+    }
+});
+  
 
 // Run on scroll
 window.addEventListener("scroll", checkAnimations);
