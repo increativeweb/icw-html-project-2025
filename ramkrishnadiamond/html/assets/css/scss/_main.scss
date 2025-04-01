@@ -512,7 +512,7 @@
 .center-content-section {
     .logo-block {
         text-align: center;
-        margin-bottom: -45px;
+        margin-bottom: -47px;
         img {
             max-width: 650px;
             width: 100%;
@@ -522,7 +522,6 @@
         max-width: 1000px; 
     }
     .logo-block + .section-title {        
-        margin: 1px auto 0 !important;  
         max-width: 1000px;                  
         h2 {
             font-size: 45px;
@@ -1504,18 +1503,18 @@
 // Tabs Section
 .sticky-scrollspy-nav {
     position: sticky;
-    top: 110px;
+    top: 90px;
     z-index: 100;
     @include flexbox;
     @include justify-content(center);
-    margin-bottom: 60px;
-    overflow: hidden;
-    overflow-x: auto;
-    &::-webkit-scrollbar { width:6px; height: 5px; background-color:#fafafa; }
-    &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.2); }
-    @media (max-width: 767px) {
-        margin-bottom: 30px;
-        top: 80px;
+    &.is-sticky {
+        padding: 20px 15px 15px;
+        background: rgba($white, 0.15);
+        backdrop-filter: blur(20px);
+    }
+    @media (max-width: 992px) {
+        top: 64px;
+        padding: 0 15px;
     }
     @media (max-width: 575px) {
         @include justify-content(flex-start);
@@ -1530,6 +1529,14 @@
         padding: 3px;
         @include border-radius(30px);
         margin-bottom: 5px;
+        overflow: hidden;
+        overflow-x: auto;
+        &::-webkit-scrollbar { width:6px; height: 5px; background-color:#fafafa; }
+        &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.2); }
+        @media (max-width: 992px) {            
+            @include border-radius(0px);
+            padding: 5px;
+        }
         li {
             margin-bottom: 0 !important;
             padding-left: 0 !important;
@@ -1565,18 +1572,94 @@
             }
         }
     }
+    &.contact-scrollspy-nav {
+        padding: 50px 0;
+        @media (max-width: 992px) {
+            padding: 30px 0;
+        }
+        &.is-sticky {
+            padding: 20px 0 15px;
+        }
+        ul {
+            background: transparent;
+            border-color: transparent;
+            gap: 50px;
+            li {
+            }
+        }
+        .contact-time-details {
+            @include flexbox;
+            @include align-items(center);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0;
+            .contact-time {
+                font-size: 72px;
+                font-weight: 700;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $primary;
+                -webkit-text-fill-color: transparent;
+                @include transition(0.3s, ease-in-out);
+                @include flexbox;
+                @include align-items(center);
+                font-family: $font-merriweather;
+                @media (max-width: 767px) {
+                    font-size: 40px;
+                }
+                span {
+                    display: inline-block;
+                    line-height: 1;
+                }
+                .time-separator {
+                    line-height: 0.7;
+                    margin-top: -10px;
+                    margin-bottom: 5px;
+                    animation: blink 1.5s infinite;
+                }
+            }
+            &:hover, &:focus, &.active {
+                border-color: transparent;
+                background: transparent;
+                @include box-shadow(none);
+                .contact-time {                
+                    -webkit-text-fill-color: $primary;
+                }
+            }
+            .contact-detail {
+                color: $black;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1;
+                margin-left: 15px;
+                text-align: left;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                }
+                .contact-city {
+                    color: #767676;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
 }
 
 .scrollspy-content {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 200px;
     scroll-margin-bottom: 100px;
-    .content-with-background-block {
-        margin-bottom: 150px;
-        @media (max-width: 992px) {
-            margin-bottom: 80px;
+    .scrollspy-content-details {
+        padding-top: 150px;       
+        @media (min-width: 992px) {      
+            &:first-child {
+                margin-top: -80px;
+            }
+        }
+        @media (max-width: 992px) {      
+            margin-top: -80px;
         }
         @media (max-width: 767px) {
-            margin-bottom: 50px;
+            padding-top: 150px;      
+            margin-top: -100px;
         }
     }
 }
@@ -1637,55 +1720,7 @@
         background: rgba($white, 0.15);
         backdrop-filter: blur(20px);
     }
-    .contact-time-details {
-        @include flexbox;
-        @include align-items(center);
-        text-decoration: none;
-        white-space: nowrap;
-        .contact-time {
-            font-size: 72px;
-            font-weight: 700;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: $primary;
-            -webkit-text-fill-color: transparent;
-            @include transition(0.3s, ease-in-out);
-            @include flexbox;
-            @include align-items(center);
-            font-family: $font-merriweather;
-            @media (max-width: 767px) {
-                font-size: 40px;
-            }
-            span {
-                display: inline-block;
-                line-height: 1;
-            }
-            .time-separator {
-                line-height: 0.7;
-                margin-top: -10px;
-                margin-bottom: 5px;
-                animation: blink 1.5s infinite;
-            }
-        }
-        &:hover, &:focus, &.active {
-            .contact-time {                
-                -webkit-text-fill-color: $primary;
-            }
-        }
-        .contact-detail {
-            color: $black;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 1;
-            margin-left: 15px;
-            @media (max-width: 767px) {
-                font-size: 16px;
-            }
-            .contact-city {
-                color: #767676;
-                margin-top: 5px;
-            }
-        }
-    }
+    
 }
 @keyframes blink {
     0% { opacity: 1 }

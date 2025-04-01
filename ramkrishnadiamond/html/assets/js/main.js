@@ -125,6 +125,7 @@ jQuery(document).ready(function($) {
     }
 
     // Text Animation 
+    
     Splitting();
 });
 
@@ -239,9 +240,14 @@ if (navbarToggler) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Media Block in Image Caption Animation - call function
-    handleScroll ();
+    // Trigger Animations Text
     checkAnimations();
+    // Media Block in Image Caption Animation
+    imageCaptionAnimation();
+    // Image Animation 
+    imageAnimation();
+    // Sticky Nav in Add Class
+    stickyNavScroll();
 
     // Video Player
     const playIcons = document.querySelectorAll(".is-play-icon");
@@ -296,7 +302,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: [0.5] });
 
     videos.forEach((video) => observer.observe(video));
-
     // Trigger Animations Text Script
     if (document.querySelectorAll(".animtext").length > 0) {
         const animtextLine = Splitting({
@@ -326,139 +331,129 @@ document.addEventListener("DOMContentLoaded", function () {
         Array.from(targets).forEach((el) => {
             observer.observe(el, { attributes: true, attributeFilter: ["style"] });
         });
-    }
+    }    
 
-    // if (document.querySelector(".btn").length) {
-    // document.querySelectorAll(".btn-text .text-animate").forEach(element => {
-    //     let text = element.textContent;
-    //     element.innerHTML = text.split("").map(char => `<span>${char === " " ? "&nbsp;" : char}</span>`).join("");
-    // });
-    // document.querySelectorAll(".btn").forEach(button => {
-    //     button.addEventListener("mouseenter", function () {
-    //         let text1 = this.querySelector(".text-animate:nth-child(1)");
-    //         let text2 = this.querySelector(".text-animate:nth-child(2)");
-            
-    //         if (text1 && text2) {
-    //             text1.querySelectorAll("span").forEach((span, index) => {
-    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-    //                 setTimeout(() => {
-    //                     span.style.transform = "translateY(-100%)";
-    //                 }, 100);
-    //                 span.style.opacity = "0";
-    //             });
-
-    //             text2.querySelectorAll("span").forEach((span, index) => {
-    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-    //                 setTimeout(() => {
-    //                     span.style.transform = "translateY(0%)";
-    //                 }, 100);
-    //                 span.style.opacity = "1";
-    //             });
-    //         }
-    //     });
-
-    //     button.addEventListener("mouseleave", function () {
-    //         let text1 = this.querySelector(".text-animate:nth-child(1)");
-    //         let text2 = this.querySelector(".text-animate:nth-child(2)");
-
-    //         if (text1 && text2) {
-    //             text1.querySelectorAll("span").forEach((span, index) => {
-    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-    //                 setTimeout(() => {
-    //                     span.style.transform = "translateY(0%)";
-    //                 }, 100);
-    //                 span.style.opacity = "1";
-    //             });
-
-    //             text2.querySelectorAll("span").forEach((span, index) => {
-    //                 span.style.transition = `transform 0.1s cubic-bezier(.55, 0, .1, 1) ${index * 0.01}s`;
-    //                 setTimeout(() => {
-    //                     span.style.transform = "translateY(100%)";
-    //                 }, 100);
-    //                 span.style.opacity = "0";
-    //             });
-    //         }
-    //     });
-    // });
-    // }
-
-    const $logoBlock = $('.site-vertical-logo');
-    if ($logoBlock.length) {
-        $(window).on('scroll', function() {
-            const logoBlockTop = $logoBlock.offset().top;
-            const windowBottom = $(window).scrollTop() + $(window).height();
-
-            // Toggle class based on footer visibility
-            $logoBlock.toggleClass('is-animate', windowBottom >= logoBlockTop);
-        });
-    }
-    
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const progressCircle = document.querySelector(".progress-ring-circle");
-    const percentageElement = document.querySelector(".percentage");
-    const stageCurrent = document.querySelector(".stage-current");
-    const stageNext = document.querySelector(".stage-next");
+    // Page Loader
     const preloader = document.querySelector(".preloader");
-    const shapes = document.querySelectorAll(".shape");
-  
-    const radius = progressCircle.getAttribute("r");
-    const circumference = 2 * Math.PI * radius;
-  
-    const colorStages = [
-        { accent: "#07A2C7", bg: "#131c2e" }
-    ];
-  
-    progressCircle.style.strokeDasharray = circumference;
-    progressCircle.style.strokeDashoffset = circumference;
-  
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += 1;
-        progressCircle.style.strokeDashoffset = circumference * (1 - progress / 100);
-        percentageElement.textContent = progress;
-        updateColors(progress);
-        updateShapes(progress);
-  
-        if (progress >= 100) {
-            clearInterval(interval);
-            setTimeout(() => {
-            preloader.style.transform = "translateY(-100vh)";
-                setTimeout(() => {          
-                    preloader.style.display = "none";
-                }, 1200);
-            }, 800);
-            stageCurrent.style.transform = "translateY(-30px)";
-            stageNext.style.transform = "translateY(0px)";
-        }
-    }, 10);
-  
-    function updateColors(progress) {
-        const stage = Math.floor(progress / 50);
-        if (stage < colorStages.length) {
-            progressCircle.style.stroke = colorStages[stage].accent;
-            document.documentElement.style.setProperty("--color-dark", colorStages[stage].bg);
-        }
-    }
-  
-    function updateShapes(progress) {
-        const scaleValue = 0 + (progress / 100) * 2;        
-        shapes.forEach((shape, index) => {
-            if (progress > (index + 1) * 25) {
-                shape.style.transform = `scale(${scaleValue})`;
+    if (preloader) {
+        const progressCircle = document.querySelector(".progress-ring-circle");
+        const percentageElement = document.querySelector(".percentage");
+        const stageCurrent = document.querySelector(".stage-current");
+        const stageNext = document.querySelector(".stage-next");
+        const shapes = document.querySelectorAll(".shape");
+    
+        const radius = progressCircle.getAttribute("r");
+        const circumference = 2 * Math.PI * radius;
+    
+        const colorStages = [
+            { accent: "#07A2C7", bg: "#131c2e" }
+        ];
+    
+        progressCircle.style.strokeDasharray = circumference;
+        progressCircle.style.strokeDashoffset = circumference;
+    
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 1;
+            progressCircle.style.strokeDashoffset = circumference * (1 - progress / 100);
+            percentageElement.textContent = progress;
+            updateColors(progress);
+            updateShapes(progress);
+    
+            if (progress >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                preloader.style.transform = "translateY(-100vh)";
+                    setTimeout(() => {          
+                        preloader.style.display = "none";
+                    }, 1200);
+                }, 800);
+                stageCurrent.style.transform = "translateY(-30px)";
+                stageNext.style.transform = "translateY(0px)";
             }
-        });
+        }, 10);
+    
+        function updateColors(progress) {
+            const stage = Math.floor(progress / 50);
+            if (stage < colorStages.length) {
+                progressCircle.style.stroke = colorStages[stage].accent;
+                document.documentElement.style.setProperty("--color-dark", colorStages[stage].bg);
+            }
+        }
+    
+        function updateShapes(progress) {
+            const scaleValue = 0 + (progress / 100) * 2;        
+            shapes.forEach((shape, index) => {
+                if (progress > (index + 1) * 25) {
+                    shape.style.transform = `scale(${scaleValue})`;
+                }
+            });
+        }
+    } else {
+        return
     }
 });
   
 
 // Run on scroll
-window.addEventListener("scroll", checkAnimations);
-document.addEventListener('scroll', handleScroll);
+window.addEventListener("scroll", function () {
+    // Trigger Animations Text
+    checkAnimations();
+    // Media Block in Image Caption Animation
+    imageCaptionAnimation();
+    // Image Animation 
+    imageAnimation();
+    // Sticky Nav in Add Class
+    stickyNavScroll();
+    
+    const readTimeBar = document.querySelector(".readtime-progress-bar-block");
+    if(readTimeBar) {
+        const indicator = document.querySelector(".readtime-progress-bar-block .progress-bar");
+        const minutesDisplay = document.querySelector(".time-remaining .minutes");
+        const remainingText = document.querySelector(".time-remaining .remainingText");
+        const content = document.querySelector("#single-content-wrapper");
+
+        if (!readTimeBar || !indicator || !minutesDisplay || !remainingText || !content) return;
+
+        const totalReadTime = parseInt(minutesDisplay.dataset.readValue) || 1;
+        const contentHeight = content.scrollHeight - window.innerHeight / 2;
+        const scrollProgress = Math.max(0, Math.min(((window.scrollY - content.offsetTop) / contentHeight) * 100, 100));
+
+        if (scrollProgress > 0) {
+            readTimeBar.classList.add("is-visible");
+            const remainingMinutes = Math.max(1, Math.ceil((100 - scrollProgress) * (totalReadTime / 100)));
+            minutesDisplay.textContent = remainingMinutes;
+            remainingText.textContent = remainingMinutes === 1 ? "minute" : "minutes";
+            indicator.style.width = `${scrollProgress}%`;
+        } else {
+            readTimeBar.classList.remove("is-visible");
+            indicator.style.width = "0%";
+        }
+    } 
+
+    // Footer Logo Animation
+    const footerLogo = document.querySelector(".site-vertical-logo");
+    if (footerLogo) {
+        const logoBlockTop = footerLogo.getBoundingClientRect().top + window.scrollY;
+        const windowBottom = window.scrollY + window.innerHeight;
+
+        // Toggle class based on footer visibility
+        if (windowBottom >= logoBlockTop) {
+            footerLogo.classList.add("is-animate");
+        } else {
+            footerLogo.classList.remove("is-animate");
+        }
+    }
+});
+
+// Run on resize (in case viewport changes)
+window.addEventListener("resize", () => {
+    // Sticky Nav in Add Class
+    stickyNavScroll;
+});
 
 // Media Block in Image Caption Animation
-function handleScroll() {
+function imageCaptionAnimation() {
     document.querySelectorAll('.media-block').forEach((block) => {
         const rect = block.getBoundingClientRect();
         const caption = block.querySelector('.image-caption');
@@ -467,58 +462,11 @@ function handleScroll() {
             if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
                 caption.classList.add('is-animate');
             } 
-            // else {
-            //     caption.classList.remove('is-animate');
-            // }
         }
     });
 }
 
-// Check if Element is in Viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
-}
-
-// Trigger Animations Text
-function checkAnimations() {
-    document.querySelectorAll(".animtext").forEach((el) => {
-        if (isInViewport(el)) {
-            el.classList.add("animated");
-        } 
-        // else {
-        //    el.classList.remove("animated");
-        // }
-    });
-}
-
-document.addEventListener("scroll", () => {
-    const readTimeBar = document.querySelector(".readtime-progress-bar-block");
-    const indicator = document.querySelector(".readtime-progress-bar-block .progress-bar");
-    const minutesDisplay = document.querySelector(".time-remaining .minutes");
-    const remainingText = document.querySelector(".time-remaining .remainingText");
-    const content = document.querySelector("#single-content-wrapper");
-
-    if (!readTimeBar || !indicator || !minutesDisplay || !remainingText || !content) return;
-
-    const totalReadTime = parseInt(minutesDisplay.dataset.readValue) || 1;
-    const contentHeight = content.scrollHeight - window.innerHeight / 2;
-    const scrollProgress = Math.max(0, Math.min(((window.scrollY - content.offsetTop) / contentHeight) * 100, 100));
-
-    if (scrollProgress > 0) {
-        readTimeBar.classList.add("is-visible");
-        const remainingMinutes = Math.max(1, Math.ceil((100 - scrollProgress) * (totalReadTime / 100)));
-        minutesDisplay.textContent = remainingMinutes;
-        remainingText.textContent = remainingMinutes === 1 ? "minute" : "minutes";
-        indicator.style.width = `${scrollProgress}%`;
-    } else {
-        readTimeBar.classList.remove("is-visible");
-        indicator.style.width = "0%";
-    }
-});
-
-
-/* imageAnimation */ 
+// Image Animation
 function imageAnimation() {
     let winHeight = window.innerHeight;
     let winPos = window.scrollY + winHeight + 50; 
@@ -542,7 +490,36 @@ function imageAnimation() {
     });
 }
 
-// Trigger on scroll
-window.addEventListener("scroll", imageAnimation);
-window.addEventListener("load", imageAnimation);
+// Trigger Animations Text
+function checkAnimations() {
+    document.querySelectorAll(".animtext").forEach((el) => {
+        if (isInViewport(el)) {
+            el.classList.add("animated");
+        } 
+    });
+}
+
+// Sticky Nav in Add Class
+const sticky_nav = document.querySelector(".sticky-scrollspy-nav");
+function stickyNavScroll() {
+    if (!sticky_nav) return; 
+
+    const navbarTop = sticky_nav.getBoundingClientRect().top; 
+    
+    if (navbarTop <= 90) { 
+        sticky_nav.classList.add("is-sticky");
+    } else {
+        sticky_nav.classList.remove("is-sticky");
+    }
+} 
+
+
+// Check if Element is in Viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+}
+
+
+
 
