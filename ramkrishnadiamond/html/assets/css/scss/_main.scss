@@ -1573,18 +1573,28 @@
         }
     }
     &.contact-scrollspy-nav {
-        padding: 50px 0;
-        @media (max-width: 992px) {
-            padding: 30px 0;
+        padding: 100px 0 0;
+        @media (max-width: 767px) {
+            padding: 50px 0 0;
         }
         &.is-sticky {
             padding: 20px 0 15px;
+            .contact-time-details {
+                padding: 0;
+                .contact-time {
+                    font-size: 55px;
+                    @media (max-width: 767px) {
+                        font-size: 40px;
+                    }
+                }
+            }
         }
         ul {
             background: transparent;
             border-color: transparent;
             gap: 50px;
-            li {
+            @media (max-width: 767px) {
+                gap: 30px;
             }
         }
         .contact-time-details {
@@ -1643,7 +1653,12 @@
         }
     }
 }
-
+@keyframes blink {
+    0% { opacity: 1 }
+    1% { opacity: 0 }
+    50% { opacity: 0 }
+    51% { opacity: 1 }
+}
 .scrollspy-content {
     scroll-margin-top: 200px;
     scroll-margin-bottom: 100px;
@@ -1679,54 +1694,19 @@
 }
 
 // Contact Us Sticky Header
-.main-section.sticky-header-section{
-    padding: 100px 0;
-    @media (max-width: 767px) {
-        padding: 50px 0;
-    }
-    &.sticky-header {
-        z-index: 10 !important;
-    }
-}
-.sticky-header-content {
-    top: 90px;
-    width: 100%;
-    display: block;
-    z-index: 5;
-    @include transition(0.3s, ease-in-out);
-    .row {        
-        @include justify-content(center);
-        --bs-gutter-x: 50px;
-        & > * {
-            width: auto;
+.contact-information-section {
+    .scrollspy-content-details {
+        padding-top: 200px;  
+        @media (min-width: 992px) {      
+            &:first-child {
+                margin-top: -50px;
+            }
         }
-        @media (max-width: 992px) {
-            --bs-gutter-x: 30px;
-            overflow: hidden;
-            overflow-x: auto;
-            padding-bottom: 5px;
-            @include flex-wrap(nowrap);
-            @include justify-content(flex-start);
-            &::-webkit-scrollbar { width:6px; height: 5px; background-color:#fafafa; }
-            &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.2); }
+        @media (max-width: 767px) {
+            padding-top: 150px;
+            margin-top: -80px;   
         }
     }
-    @media (max-width: 767px) {
-        top: 65px;
-    }
-    &.fixed {
-        position: fixed;
-        padding: 30px 0;
-        background: rgba($white, 0.15);
-        backdrop-filter: blur(20px);
-    }
-    
-}
-@keyframes blink {
-    0% { opacity: 1 }
-    1% { opacity: 0 }
-    50% { opacity: 0 }
-    51% { opacity: 1 }
 }
 .address-content-wrapper {
     position: relative;
@@ -1742,6 +1722,7 @@
             max-width: 75%;
             z-index: -1;
             height: 100%;
+            padding: 10px;
             img {
                 height: 100%;
                 width: auto;
