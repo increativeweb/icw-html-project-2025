@@ -176,6 +176,7 @@
             margin-bottom: 0;
         }
         .sort-info {
+            margin-top: 7px;
             p {
                 max-width: 650px;
                 @media (max-width: 992px) { 
@@ -918,9 +919,18 @@
         }
     }
     &.with-bottom-border {
-        hr {
-            margin: 0;
+        hr {            
             border-bottom: 1px solid rgba($black, 0.2);
+            margin-top: 150px;  
+            @media (max-width: 1200px) {   
+                margin-top: 80px; 
+            }   
+            @media (max-width: 992px) {   
+                margin-top: 60px; 
+            } 
+            @media (max-width: 767px) {  
+                margin-top: 50px; 
+            }    
         }
     }
 }
@@ -1035,31 +1045,36 @@
             padding: 0;            
             @include box-shadow(none);
             color: $black;
-            margin-bottom: 150px;  
+            @media (min-width: 992px) {
+                margin-bottom: 0;
+            }
             &::before {
                 content: none;
             }
+            &:last-child {
+                @media (min-width: 992px) {
+                    .card-img {
+                        margin-bottom: 0;
+                    }
+                }
+            }
             @media (max-width: 1200px) {                
                 grid-template-columns: 1fr 150px 1fr;
-                margin-bottom: 80px; 
+                margin-bottom: 0px; 
             }     
             @media (max-width: 992px) {                
                 @include flexbox;
                 @include flex-wrap(wrap);
                 padding-left: 60px;
-                .card-img {
-                    order: 2;
-                    width: 100%;
-                    margin-bottom: 30px;
-                }
+                margin-bottom: 80px; 
                 .card-content {
                     width: 100%;
                     order: 3;
                 }
-            }   
+            }  
             @media (max-width: 767px) {                
                 padding-left: 60px;
-                margin-bottom: 50px; 
+                margin-bottom: 60px; 
             }  
             &.flex-reverse {
                 @media (min-width: 992px) {
@@ -1100,6 +1115,18 @@
                         @include transition(0.3s, ease-in-out);
                     }
                 }
+            }
+            .card-img {                
+                margin-bottom: 150px;  
+                line-height: 0.7;
+                @media (max-width: 1200px) {   
+                    margin-bottom: 80px; 
+                }   
+                @media (max-width: 992px) {  
+                    order: 2;
+                    width: 100%;
+                    margin-bottom: 30px;
+                } 
             }
             .card-title, h3 {
                 font-size: 38px;
