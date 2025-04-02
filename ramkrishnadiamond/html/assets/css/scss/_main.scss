@@ -1574,9 +1574,11 @@
         overflow-x: auto;
         &::-webkit-scrollbar { width:6px; height: 5px; background-color:#fafafa; }
         &::-webkit-scrollbar-thumb { background-color:rgba(0,0,0,0.2); }
-        @media (max-width: 992px) {            
-            @include border-radius(0px);
+        @media (max-width: 992px) {   
             padding: 5px;
+        }
+        @media (max-width: 575px) {            
+            @include border-radius(0px);
         }
         li {
             margin-bottom: 0 !important;
