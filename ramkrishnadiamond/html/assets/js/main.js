@@ -216,12 +216,14 @@ if (navbarToggler) {
         menuSidebar.classList.toggle("show");
         document.body.classList.toggle("overflow-hidden");
         document.querySelector(".bg-overlay").classList.toggle("is-visible");
+        const currentMenuItems = menuSidebar.querySelectorAll(".current-menu-item");
 
         if (!(menuSidebar.classList.contains("show"))) {
             // If menu is shown, add animation class and remove active class from menu item
             menuSidebar.classList.add("is-text-animate");
-            const currentMenuItem = menuSidebar.querySelector(".current-menu-item");
-            if (currentMenuItem) currentMenuItem.classList.remove("active");
+            currentMenuItems.forEach((currentMenuItem) => {
+                if (currentMenuItem) currentMenuItem.classList.remove("active");
+            });
         } else {
             // If menu is hidden, remove animation class after delay
             setTimeout(() => {
@@ -229,12 +231,13 @@ if (navbarToggler) {
             }, 600);
 
             // Add active class to menu item after 1 second
-            const currentMenuItem = menuSidebar.querySelector(".current-menu-item");
-            if (currentMenuItem) {
-                setTimeout(() => {
-                    currentMenuItem.classList.add("active");
-                }, 1000);
-            }
+            currentMenuItems.forEach((currentMenuItem) => {
+                if (currentMenuItem) {
+                    setTimeout(() => {
+                        currentMenuItem.classList.add("active");
+                    }, 1000);
+                }
+            });
         }
     });
 
