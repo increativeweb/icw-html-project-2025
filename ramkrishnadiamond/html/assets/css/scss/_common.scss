@@ -1922,7 +1922,7 @@ h5, .h5 {
                             }
                         }
                         &.active {
-                            a {
+                            & > a {
                                 color: $white;
                                 .animate-text {
                                     transform: translateX(var(--link-translate-x));
