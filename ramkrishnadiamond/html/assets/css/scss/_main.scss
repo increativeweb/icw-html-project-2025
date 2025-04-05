@@ -579,6 +579,41 @@
         }
 		.card-info {
             flex: 1 1 auto;
+            ul {
+                list-style-type: none;
+                li {
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: $black;
+                    list-style-type: none;
+                    position: relative;
+                    padding-left: 32px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    @media (max-width:992px) {
+                        font-size: 16px;
+                        padding-left: 28px;
+                    }
+                    &::before {
+                        content: '';
+                        background: url(../images/icons/icon-check.svg) no-repeat center center;
+                        background-size: contain;
+                        width: 20px;
+                        height: 20px;
+                        flex: none;
+                        display: inline-block;
+                        margin-top: 2px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        @media (max-width:992px) {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+                }
+            }
 		}
         .card-action {
             margin-top: 15px;            
@@ -1202,9 +1237,6 @@
         }
     }
     .media-block {
-        @media (max-width: 992px) {
-            margin-bottom: 30px;
-        }
         img {
             @media (min-width: 1200px) {
                 max-width: 60%;
