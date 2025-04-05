@@ -2050,6 +2050,33 @@
         }   
     }
 }
+.policy-content {
+    h3 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    h4 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        font-family: $bodyfont;
+        font-weight: 600;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 40px;
+        li {
+            list-style-type: disc;
+            padding: 0;
+            &::marker {
+                color: $primary;
+                font-size: 20px;
+            }
+            &::before {
+                content: none;
+            }
+        }
+    }
+}
 
 // Policy Card
 .policy-card {
