@@ -2,6 +2,10 @@
     border-bottom: 0.0625rem solid #E2E5EE; 
     .navbar {
         padding: 0;
+        .container {
+            @include flexbox;
+            @include align-items(center);
+        }
         ul {                
             @include flexbox;
             @include align-items(center);
@@ -12,33 +16,65 @@
                 }
                 a {
                     font-size: 0.875rem;
-                    font-weight: 500;
-                    color: $primary;
+                    font-weight: 600;
+                    color: $black;
                     text-decoration: none;
                     position: relative;
                     @include transition(0.3s, ease-in-out);
-                    &::before {
+                    &:not(.btn)::before {
                         content: '';
                         position: absolute;
-                        bottom: -0.0625rem;
+                        bottom: -0.125rem;
                         right: 0;
                         @include inline-flex;
                         @include justify-content(flex-end);
                         @include align-items(flex-start);
-                        background-color: $secondary;
+                        background-color: $primary;
                         width: 0;
                         height: 0.0625rem;
                         transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
                         will-change: transform;
                     }
+                    &.with-icon {
+                        &:not(.btn)::before {
+                            left: 1.125rem;                            
+                        }
+                        .icon {
+                            margin-right: 0.3125rem;
+                            width: 0.75rem;
+                            height: 0.75rem;
+                            display: inline-block;
+                            line-height: 0.7;
+                            svg {
+                                width: 100%;
+                                height: 100%;
+                                path {
+                                    @include transition(0.3s, ease-in-out);
+                                }
+                            }
+                        }
+                    }
                 }
                 &:hover, &:focus, &.current-menu-item {
                     a {
-                        color: $secondary;
-                        &::before {
+                        color: $primary;
+                        &:not(.btn)::before {
                             width: 100%;
                             left: 0;
                             right: auto;
+                        }
+                        &.with-icon:not(.btn){
+                            &:not(.btn)::before {
+                                width: calc(100% - 1.125rem);
+                                left: 1.125rem;   
+                            }
+                            .icon {
+                                svg {
+                                    path {
+                                        fill: $primary;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -49,7 +85,7 @@
                         @media (min-width: 992px) {
                             &::after {
                                 content: '';
-                                background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(42 57 109)"/></svg>') no-repeat center center;
+                                background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>') no-repeat center center;
                                 width: 0.625rem;
                                 height: 0.625rem;
                                 line-height: 0.7;
@@ -68,7 +104,7 @@
                         & > a {
                             @media (min-width: 992px) {
                                 &::after {
-                                    background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(53 198 244)"/></svg>') no-repeat center center;
+                                    background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(42 57 109)"/></svg>') no-repeat center center;
                                 }
                             }
                         }
@@ -78,124 +114,70 @@
         }
     }
     .header-top {
-        border-bottom: 0.0625rem solid rgba($white, 0.75);
+        border-bottom: 0.0625rem solid #D4D6E5;
         @include flexbox;
         @include align-items(center);
         width: 100%;
         padding: 0.625rem 0;
+        .info-menu {
+            ul {
+                li {
+                    a {
+                        font-size: 0.813rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .top-right-menu {
+            margin-left: auto;
+            ul {
+                li {
+                    a {
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        &.btn {
+                            min-height: 1.75rem;
+                            font-size: 0.75rem;
+                            min-width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-main-menu {
+        width: 100%;
+        padding: 0.5rem 0;       
         .logo-block {
             .navbar-brand {
                 margin-right: 1.875rem;
             }
         }
-        .licence-number {
-            background: rgba($yellow, 0.2);
-            color: #E57300;
-            font-size: 	0.75rem;
-            font-weight: 700;
-            padding: 0.3125rem 0.5rem;
-            @include border-radius(2.25rem);
-        }
-        .top-right-menu {
-            margin-left: auto;
-            
-        }
-    }
-    .header-main-menu {
-        width: 100%;
-        padding: 0.75rem 0;
-        & > .container {
-            @include flexbox;
-            @include align-items(center);
-        }
         .main-menu {
+            margin-left: auto;
             ul {
                 li {
-                    padding: 0 0.9375rem;
+                    padding: 0 0.75rem;
                     @media (max-width: 992px) {
-                        padding: 0 0.625rem;
+                        padding: 0.5rem;
                     }
                     &:first-child {
                         padding-left: 0;
                     }
-                    a {
-                        font-size: 1rem;
-                        @media (max-width: 992px) {
-                            font-size: 0.875rem;
-                        }
-                    } 
                 }
             }
         }
-        .right-menu {
-            margin-left: auto;
-            ul {
-                li {
-                    a {
-                        font-size: 0.875rem;
-                        @include inline-flex;
-                        @include align-items(center);
-                        &::before {
-                            left: 1.375rem;                            
-                        }
-                        .icon {
-                            margin-right: 0.625rem;
-                            width: 0.75rem;
-                            height: 0.75rem;
-                            display: inline-block;
-                            line-height: 0.7;
-                            svg {
-                                width: 100%;
-                                height: 100%;
-                                path {
-                                    @include transition(0.3s, ease-in-out);
-                                }
-                            }
-                        }
-                        &.btn {
-                            .label {
-                                font-size: 0.5rem;
-                                font-weight: 600;
-                                color: $black;
-                                @include border-radius(5.625rem);
-                                background: $yellow;
-                                padding: 0.3125rem 0.625rem 0.1875rem;
-                                line-height: 1;
-                                display: inline-block;
-                                position: absolute;
-                                top: -0.5rem;
-                                right: 0.375rem;
-                            }
-                            &::before {
-                                content: none;
-                            }
-                        }
-                    }
-                    &:hover, &:focus {
-                        a {
-                            &::before {
-                                width: calc(100% - 1.375rem);
-                            }
-                            .icon {
-                                svg {
-                                    path {
-                                        fill: $secondary;
-                                    }
-                                }
-                            }
-                            &.btn {                                
-                                .icon {
-                                    svg {
-                                        path {
-                                            fill: $white;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    }
+    &.fixed-header {
+        .header-main-menu {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            width: 100%;
+            background: $white;
         }
     }
 }
