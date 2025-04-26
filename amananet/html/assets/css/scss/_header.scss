@@ -1,5 +1,6 @@
 .main-header {  
     border-bottom: 0.0625rem solid #E2E5EE; 
+    z-index: 3;
     .navbar {
         padding: 0;
         .container {
@@ -21,24 +22,27 @@
                     text-decoration: none;
                     position: relative;
                     @include transition(0.3s, ease-in-out);
+                    @media (max-width: 1200px) {
+                        font-size: 0.81rem;
+                    }
                     &:not(.btn)::before {
                         content: '';
                         position: absolute;
                         bottom: -0.125rem;
-                        right: 0;
+                        left: 0;
                         @include inline-flex;
                         @include justify-content(flex-end);
                         @include align-items(flex-start);
                         background-color: $primary;
                         width: 0;
                         height: 0.0625rem;
-                        transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                        @include transition(0.3s, ease-in-out);
                         will-change: transform;
                     }
                     &.with-icon {
-                        &:not(.btn)::before {
-                            left: 1.125rem;                            
-                        }
+                        // &:not(.btn)::before {
+                        //     left: 1.125rem;                            
+                        // }
                         .icon {
                             margin-right: 0.3125rem;
                             width: 0.75rem;
@@ -59,15 +63,14 @@
                     a {
                         color: $primary;
                         &:not(.btn)::before {
-                            width: 100%;
-                            left: 0;
-                            right: auto;
+                            width: 50%;
+                            @include transform(translateX(100%));
                         }
                         &.with-icon:not(.btn){
-                            &:not(.btn)::before {
-                                width: calc(100% - 1.125rem);
-                                left: 1.125rem;   
-                            }
+                            // &:not(.btn)::before {
+                            //     width: calc(100% - 1.125rem);
+                            //     left: 1.125rem;   
+                            // }
                             .icon {
                                 svg {
                                     path {
@@ -149,7 +152,10 @@
     }
     .header-main-menu {
         width: 100%;
-        padding: 0.5rem 0;       
+        padding: 0.5rem 0;  
+        position: sticky;
+        top: 0;
+        left: 0;     
         .logo-block {
             .navbar-brand {
                 margin-right: 1.875rem;
@@ -160,7 +166,7 @@
             ul {
                 li {
                     padding: 0 0.75rem;
-                    @media (max-width: 992px) {
+                    @media (max-width: 1200px) {
                         padding: 0.5rem;
                     }
                     &:first-child {
@@ -172,9 +178,6 @@
     }
     &.fixed-header {
         .header-main-menu {
-            position: sticky;
-            top: 0;
-            left: 0;
             z-index: 9;
             width: 100%;
             background: $white;

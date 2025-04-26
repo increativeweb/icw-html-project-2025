@@ -4,20 +4,26 @@
     &::before {
         content: '';
         height: 100%;
-        width: 1px;
+        width: 0.0625rem;
         background: rgba(#D4D6E5, 0.4);
         position: absolute;
         top: 0;
         left: 6vw;
+        @media (max-width: 1440px) {
+            left: 4vw;
+        }
     }
     &::after {
         content: '';
         height: 100%;
-        width: 1px;
+        width: 0.0625rem;
         background: rgba(#D4D6E5, 0.4);
         position: absolute;
         top: 0;
         right: 6vw;
+        @media (max-width: 1440px) {
+            right: 4vw;
+        }
     }
     ul {
         li {
@@ -33,26 +39,28 @@
                 @include align-items(center);
                 font-weight: 500;
                 @include transition(0.3s, ease-in-out);
+                @media (max-width: 1200px) {
+                    font-size: 0.81rem;
+                }
                 &:not(.btn)::before {
                     content: '';
                     position: absolute;
                     bottom: -0.125rem;
-                    right: 0;
+                    left: 0;
                     @include inline-flex;
                     @include justify-content(flex-end);
                     @include align-items(flex-start);
                     background-color: $secondary;
                     width: 0;
                     height: 0.0625rem;
-                    transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                    @include transition(0.3s, ease-in-out);
                     will-change: transform;
                 }
                 &:hover, &:focus, &:active {
                     color: $secondary;
                     &:not(.btn)::before {
-                        width: 100%;
-                        left: 0;
-                        right: auto;
+                        width: 50%;
+                        @include transform(translateX(100%));
                     }
                 }
             }
@@ -60,9 +68,7 @@
                 a {
                     color: $secondary;
                     &:not(.btn)::before {
-                        width: 100%;
-                        left: 0;
-                        right: auto;
+                        width: 50%;
                     }
                 }
             }
@@ -84,6 +90,9 @@
                         display: grid;
                         grid-template-columns: repeat(2, auto);
                         grid-gap: 0 5rem;
+                        @media (max-width: 1200px) {
+                            grid-gap: 0 1.5rem;
+                        }
                     }
                 }
             }
@@ -97,6 +106,10 @@
         display: grid;
         grid-template-columns: 20.625rem auto;
         grid-gap: 6.25rem;
+        @media (max-width: 1200px) {            
+            grid-template-columns: 17.50rem auto;
+            grid-gap: 4.5rem;
+        }
         & > .container {
             width: 100%;
         }
@@ -111,7 +124,10 @@
                 display: block;
                 position: absolute;
                 top: 0;
-                right: -50px;
+                right: -3.125rem;
+                @media (max-width: 1200px) {
+                    right: -2.25rem;
+                }
             }
             .footer-logo {
                 margin-bottom: 1.5rem;
@@ -124,9 +140,6 @@
             .icon-menu-list {
                 li {
                     a {
-                        &:not(.btn)::before {
-                            left: 1.5rem;                            
-                        }
                         .icon {
                             margin-right: 0.625rem;
                             width: 0.875rem;
@@ -144,10 +157,6 @@
                     }
                     &:hover, &:focus, &:active {
                         a {
-                            &:not(.btn)::before {
-                                width: calc(100% - 1.5rem);
-                                left: 1.5rem;   
-                            }
                             .icon {
                                 svg {
                                     path {
@@ -165,15 +174,25 @@
             @include justify-content(space-between);
             gap: 2rem;
             padding: 3rem 0;
+            @media (max-width: 1200px) {
+                gap: 1.5rem;
+            }
         }
     }
     .contact-info-block {
         border-bottom: 0.0625rem solid #D4D6E5;
         padding: 1.75rem 0;
+        & > .container { 
+            @include flexbox;
+            @include align-items(center);
+        }
         .contact-menu-list {
             @include flexbox;
             @include align-items(center);
             gap: 6.25rem;
+            @media (max-width: 1200px) {            
+                gap: 2rem;
+            }
             li {
                 margin-bottom: 0;
                 color: $black;
@@ -181,7 +200,7 @@
                 font-size: 0.875rem;
                 span {
                     display: block;
-                    font-size: 12px;
+                    font-size: 0.75rem;
                     font-weight: 600;
                     margin-bottom: 0.1875rem;
                     text-transform: uppercase;
@@ -192,6 +211,31 @@
                     font-weight: 400;
                     &:hover, &:focus, &:active {
                         color: $secondary;
+                    }
+                }
+            }
+        }
+        .social-menu-block {
+            @include flexbox;
+            @include align-items(center);
+            gap: 15px;
+            margin-left: auto;
+            li {
+                a {
+                    &::before {
+                        content: none;
+                    }
+                    svg {
+                        path {
+                            @include transition(0.3s, ease-in-out);
+                        }
+                    }
+                    &:hover, &:focus, &:active {
+                        svg {
+                            path {
+                                fill: $secondary;
+                            }
+                        }
                     }
                 }
             }

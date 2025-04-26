@@ -116,33 +116,6 @@
             @include border-radius(0 0 1.5rem 1.5rem);
         }
 	}
-
-    
-    &.is-highlight-section {
-        .hightlight-block {
-            height: 100%;
-            padding: 1.875rem;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(0.438rem);
-            @media (max-width: 992px) {
-                height: auto;
-            }
-            @media (max-width: 767px) {
-                padding: 0.938rem;
-            }
-            ul {
-                li {
-                    margin-bottom: 0.938rem;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                    @media (max-width: 767px) {
-                        margin-bottom: 0.625rem;
-                    }
-                }
-            }
-        }
-    }
 }
 
 // Section Title CSS
@@ -187,7 +160,7 @@
     }
     .tag-line {
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
         color: $primary;
         margin-bottom: 0.625rem;
         @media (max-width: 767px) { 
