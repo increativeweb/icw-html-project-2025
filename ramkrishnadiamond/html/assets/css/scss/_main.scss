@@ -935,6 +935,14 @@
             }
         }
     }
+    .process-img-splide {
+        margin-bottom: 30px;
+        .icw-pagination {
+            left: 0;
+            right: 0;
+            bottom: -25px;
+        }
+    }
     &:hover, &:focus, &.active {
         @include box-shadow(0 10px 20px rgba(0,0,0,0.2));
         .card-action { 

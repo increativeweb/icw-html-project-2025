@@ -860,6 +860,7 @@ img {
     }
 }
 
+// Splide slider Pagination Dots & Arrows
 .icw-pagination {
     gap: 5px;
     bottom: 0;
@@ -903,6 +904,70 @@ img {
             top: auto;
             left: 0;
             right: 0;
+        }
+    }
+}
+
+.icw-arrows {
+    .splide__arrow {
+        width: 42px;
+        height: 42px;
+        background-color: rgba(#fff, 0.5);
+        @include border-radius(0);
+        opacity: 1; 
+        overflow: hidden;
+        @media (max-width: 767px) {
+            width: 32px;
+            height: 32px;
+        }
+        &::before {
+            background-color: #fff;
+            @include border-radius(0);
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transform: translate(-101%) scale(.5);
+            transform-origin: center right;
+            @include transition(0.35s, cubic-bezier(.165,.84,.44,1));
+        }
+        svg {
+            position: absolute;
+            @include transition(0.35s, cubic-bezier(.165,.84,.44,1));
+            width: 15px;
+            height: 15px;
+            @media (max-width: 767px) {
+                width: 12px;
+                height: 12px;
+            }
+        }
+        &:hover, &:focus {
+            &::before {
+                transform: translate(0) scale(1);
+            }
+            // svg {
+            //     @include transform(translateX(5px));
+            // }
+        }
+        &.splide__arrow--prev {
+            &::before {
+                transform: translate(101%) scale(.5);
+                transform-origin: center left;
+            }
+            &:hover, &:focus {
+                &::before {
+                    transform: translateX(0) scale(1);
+                }
+                // svg {
+                //     @include transform(scaleX(-1) translateX(5px));
+                // }
+            }
+        }
+        &.disabled, &:disabled {
+            pointer-events: none;
         }
     }
 }
