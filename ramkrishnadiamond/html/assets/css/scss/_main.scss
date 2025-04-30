@@ -297,6 +297,7 @@
     }
     .hero-content-wrapper {
         flex: 1 1 auto;
+        @include flexbox;
     }
     .hero-title {
         position: relative;
