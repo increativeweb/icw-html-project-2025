@@ -533,6 +533,23 @@ function isInViewport(element) {
     return rect.top < window.innerHeight && rect.bottom >= 0;
 }
 
-
-
+/* contact-us time */
+function displayTime() {
+    document.querySelectorAll('.contact-time').forEach(function(el) {
+        const tz = el.getAttribute('data-timezone');
+        if (!tz) return;
+        const now = moment.tz(new Date(), tz);
+        const hour = now.format("HH");
+        const minutes = now.format("mm");
+        const hourEl = el.querySelector('.hours');
+        const minutesEl = el.querySelector('.minutes'); 
+        
+        if (hourEl) hourEl.textContent = hour;
+        if (minutesEl) minutesEl.textContent = minutes;
+    });
+    setTimeout(displayTime, 1000);
+}
+document.addEventListener('DOMContentLoaded', function () {
+    displayTime();
+});
 
