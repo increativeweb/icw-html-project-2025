@@ -1,24 +1,38 @@
 .hero-header {
     position: relative;
-    padding: 6.25rem 0;
-    &::before {
-        content: '';
-        height: 100%;
-        width: 20%;
-        position: absolute;
-        top: 0;
-        right: 6vw;
-        background: $primary;
-        display: block;
-    }
-    .hero-splide {
+    background: $black;
+    .hero-content-splide {
         .icw-pagination {
-            bottom: -50px;
+            bottom: 1.75rem;
+            right: auto;
         }
     }
     .section-title {
-
+        padding: 6.25rem 0;
+        @media (max-width: 992px) { 
+            padding: 4.375rem 0;
+        }
+        @media (max-width: 767px) { 
+            padding: 3.5rem 0;
+        }
+        .tag-line {
+            color: $yellow;
+        }
+        .sort-info {
+            font-size: 1.125rem;
+        }
+        .info-list-card {
+            margin-bottom: 0.5rem;
+            &.icon-left-card .card-icon img {
+                max-width: 0.875rem;
+                min-width: 0.875rem;
+            }
+        }
     }
     .media-block {
+        margin-bottom: 0;
+    }
+    .hero-image-splide {
+        width: calc(50vw - 1.5rem);
     }
 }
