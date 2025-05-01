@@ -9,12 +9,12 @@
             right: auto;
         }
         .splide__slide {
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            will-change: transform;
-            &.is-active {
-                opacity: 1;
-            }
+            // opacity: 0;
+            // transition: all 0.1s ease-in-out;
+            // will-change: transform;
+            // &.is-active {
+            //     opacity: 1;
+            // }
         }
     }
     .section-title {

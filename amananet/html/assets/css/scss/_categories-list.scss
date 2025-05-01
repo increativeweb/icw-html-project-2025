@@ -1,0 +1,39 @@
+.categories-list-block {
+    .category-list {
+        &.grid-col-2 {
+            column-count: 2;
+            column-gap: 24px;
+        }
+    }
+    .category-item {
+        @include flexbox;
+        @include align-items(center);
+        text-decoration: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        .icon {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            @include border-radius(7px);
+            background: #F7F6FD;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            margin-right: 14px;
+            img {
+                max-width: 20px;
+            }
+        }
+        .category-content {
+            .title {
+                font-size: 14px;
+                font-weight: 500;
+                color: $black;
+            }
+        }
+        .action {
+            margin-left: auto;
+        }
+    }
+}   
