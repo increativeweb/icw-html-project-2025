@@ -3,8 +3,18 @@
     background: $black;
     .hero-content-splide {
         .icw-pagination {
+            @include flex-direction(row);
             bottom: 1.75rem;
+            top: auto;
             right: auto;
+        }
+        .splide__slide {
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            will-change: transform;
+            &.is-active {
+                opacity: 1;
+            }
         }
     }
     .section-title {
@@ -31,8 +41,18 @@
     }
     .media-block {
         margin-bottom: 0;
+        height: 100%;
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
     }
     .hero-image-splide {
         width: calc(50vw - 1.5rem);
+        height: 100%;
+        .splide__track {
+            height: inherit;
+        }
     }
 }
