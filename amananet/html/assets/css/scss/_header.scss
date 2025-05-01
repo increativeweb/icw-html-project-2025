@@ -201,10 +201,22 @@
             }
         }
         .sidebar-toggler {
+            @media (min-width: 1200px) {
+                display: none;
+            }
+            border: none;
+            background: $primary;
+            width: 40px;
+            height: 40px;
+            margin-left: auto;
+            padding: 0;
+            @include border-radius(30px);
             span {
                 width: 20px;
-                height: 5px;
-                background: $primary;
+                height: 2px;
+                background: $white;
+                display: block;
+                margin: 4px auto;
             }
         }
     }
