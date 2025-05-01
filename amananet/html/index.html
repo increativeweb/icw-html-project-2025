@@ -83,11 +83,34 @@
                 </div>
             </nav>
         </header>
-        <main class="main-contnet-wrapper">
-            <div class="fixed-lr-border"></div>
+        <main class="main-content-wrapper">
+            <!-- <div class="fixed-lr-border"></div> -->
             <section class="hero-header is-dark">
                 <div class="container">
-                    <div class="row">
+                    <div class="row flex-lg-row-reverse">
+                        <div class="col-lg-6">
+                            <div class="splide hero-image-splide splide-js">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="splide hero-content-splide splide-js">
                                 <div class="splide__track">
@@ -210,42 +233,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="splide hero-image-splide splide-js">
-                                <div class="splide__track">
-                                    <ul class="splide__list">
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <script>
                         document.addEventListener( 'DOMContentLoaded', function () {
                             var main = new Splide( '.hero-content-splide', {
-                                type: 'slide',
+                                type: 'fade',
                                 perPage: 1,
                                 perMove: 1,
                                 pagination: true,
-                                arrows: false,  
-                                direction: 'ttb', 
-                                height: '70vh',                           
+                                arrows: false,                       
                                 classes: {
                                     pagination: 'splide__pagination icw-pagination is-dark'
+                                },
+                                breakpoints: {
+                                    992: {
+                                        direction: 'ltr', 
+                                        height: 'auto',
+                                    },
                                 }
                             } );
 
@@ -412,8 +416,8 @@
                             <ul class="footer-menu">
                                 <li class="menu-title menu-item-has-children"><a href="#">Training Courses</a>
                                     <ul class="sub-menu grid-col-2">
-                                        <li><a href="#">Adobe Training</a></li>
-                                        <li><a href="#">Agile Training</a></li>
+                                        <li><a href="#"><span class="icon"><img src="uploads/icon-adobe-training.svg" alt="Adobe Training"></span>Adobe Training</a></li>
+                                        <li><a href="#"><span class="icon"><img src="uploads/icon-apple-training.svg" alt="Agile Training"></span>Agile Training</a></li>
                                         <li><a href="#">Amazon Web Services Training</a></li>
                                         <li><a href="#">Apple Training</a></li>
                                         <li><a href="#">Articulate Training</a></li>

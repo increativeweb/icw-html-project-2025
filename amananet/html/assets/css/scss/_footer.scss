@@ -52,7 +52,7 @@
                 font-weight: 500;
                 text-transform: unset;
                 @include transition(0.3s, ease-in-out);
-                @include border-radius(2rem);                
+                @include border-radius(2rem);
                 &:hover, &:focus, &:active {
                     color: $secondary;
                 }
@@ -211,6 +211,37 @@
             }
             @media (max-width: 767px) {
                 @include flex-direction(column);
+            }
+            .footer-menu {
+                ul {
+                    li {
+                        a {                            
+                            .icon {
+                                width: 0px;
+                                height: 20px;
+                                flex: none;
+                                @include inline-flex;
+                                @include align-items(center);
+                                @include justify-content(center);
+                                @include transition(0.3s, ease-in-out);
+                                @include transform(translateX(-10px));
+                                transform-origin: left;;     
+                                will-change: width;
+                                img {
+                                    width: 20px;
+                                    height: 20px;
+                                }   
+                            }  
+                            &:hover, &:focus, &:active {
+                                .icon {
+                                    width: 20px;
+                                    @include transform(translateX(0px));
+                                    margin-right: 8px;
+                                }
+                            }         
+                        }
+                    }
+                }
             }
         }
     }
