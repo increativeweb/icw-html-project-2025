@@ -278,7 +278,7 @@ img {
             width: 0.75rem;
             height: 0.75rem;
             background-size: contain;
-            margin-right: 0.75rem;
+            margin-left: 0.75rem;
             @include transition(0.3s, ease-in-out);
         }
         &:hover, &:focus, &:active {
@@ -817,26 +817,27 @@ img {
     gap: 5px;
     bottom: 0;
     left: 0;
-    right: auto;
+    right: 0;
     padding: 0;
     li {
         line-height: 0.7;
     }
     .splide__pagination__page {
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         flex: none;
         @include border-radius(20px);
         @include transform(scale(1));
         @include transition(0.3s, ease-in-out);
-        opacity: 1;
+        opacity: 0.5;
         margin: 0;
         background: $primary;
         border: 1px solid transparent;
         &.is-active {
-            width: 22px;
+            width: 18px;
+            opacity: 1;
             border-color: $primary;
-            background: transparent !important;
+            background: $primary !important;
             @include transform(scale(1));
         }
     }
@@ -877,7 +878,7 @@ h1, .h1 {
 }
 h2, .h2 {
     font-size: 45px;
-    font-weight: 400;
+    font-weight: 600;
     @media (max-width: 1200px) { 
         font-size: 36px;
     }

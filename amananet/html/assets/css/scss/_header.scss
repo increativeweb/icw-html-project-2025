@@ -1,6 +1,6 @@
 .main-header {  
     border-bottom: 0.0625rem solid #E2E5EE; 
-    z-index: 3;
+    z-index: 4;
     .navbar {
         padding: 0;
         .container {
@@ -10,39 +10,20 @@
         ul {                
             @include flexbox;
             @include align-items(center);
-            li {
-                padding: 0 0.5rem;
-                &:last-child {
-                    padding-right: 0;
-                }
+            li {                
                 a {
                     font-size: 0.875rem;
                     font-weight: 600;
                     color: $black;
                     text-decoration: none;
                     position: relative;
+                    padding: 0.5rem 1rem;
                     @include transition(0.3s, ease-in-out);
+                    @include border-radius(1.88rem);
                     @media (max-width: 1200px) {
                         font-size: 0.81rem;
                     }
-                    &:not(.btn)::before {
-                        content: '';
-                        position: absolute;
-                        bottom: -0.125rem;
-                        left: 0;
-                        @include inline-flex;
-                        @include justify-content(flex-end);
-                        @include align-items(flex-start);
-                        background-color: $primary;
-                        width: 0;
-                        height: 0.0625rem;
-                        @include transition(0.3s, ease-in-out);
-                        will-change: transform;
-                    }
                     &.with-icon {
-                        // &:not(.btn)::before {
-                        //     left: 1.125rem;                            
-                        // }
                         .icon {
                             margin-right: 0.3125rem;
                             width: 0.75rem;
@@ -60,17 +41,10 @@
                     }
                 }
                 &:hover, &:focus, &.current-menu-item {
-                    a {
+                    & > a {
                         color: $primary;
-                        &:not(.btn)::before {
-                            width: 50%;
-                            @include transform(translateX(100%));
-                        }
-                        &.with-icon:not(.btn){
-                            // &:not(.btn)::before {
-                            //     width: calc(100% - 1.125rem);
-                            //     left: 1.125rem;   
-                            // }
+                        background: rgba(#2A396D, 0.14); 
+                        &.with-icon:not(.btn) {
                             .icon {
                                 svg {
                                     path {
@@ -78,7 +52,7 @@
                                     }
                                 }
                             }
-                        }
+                        }                       
                     }
                 }
                 &.menu-item-has-children {
@@ -94,6 +68,7 @@
                                 line-height: 0.7;
                                 margin-top: 0.125rem;
                                 margin-left: 0.3125rem;
+                                @include transition(0.3s, ease-in-out);
                             }
                         }
                     }
@@ -103,12 +78,65 @@
                         }
                        
                     }
+                    .sub-menu {
+                        @media (min-width: 992px) {  
+                            position: absolute;
+                            top: 0;
+                            display: block;
+                            min-width: 13.75rem;
+                            padding: 0;
+                            margin-top: 0.94rem;
+                            opacity: 0;
+                            pointer-events: none;
+                            background: $white;
+                            border: 0.0625rem solid #D4D6E5;
+                            border-top-width: 3px;
+                            @include transition(0.3s, ease-in-out);
+                            @include transform(rotateX(-20deg) translate3d(0, 2.25rem, 0));
+                            transform-origin: 50% 0;
+                            will-change: transform;
+                            @include border-radius(0);
+                            z-index: 9;
+                            &::before {
+                                content: '';
+                                width: 100%;
+                                height: 1.5625rem;
+                                background: transparent;
+                                display: block;
+                                position: absolute;
+                                top: -1.5625rem;
+                                left: 0;
+                            }
+                        }
+                        li {
+                            a {
+                                display: block;
+                                font-weight: 500;
+                                padding: 0.5rem 0.9375rem;
+                                @include border-radius(0);
+                            }
+                            &:hover, &:focus {
+                                & > a {
+                                    background: #F7F6FD;
+                                }
+                            }
+                        }
+                    }
                     &:hover, &:focus {
                         & > a {
                             @media (min-width: 992px) {
                                 &::after {
                                     background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(42 57 109)"/></svg>') no-repeat center center;
+                                    @include transform(rotate(180deg));
                                 }
+                            }
+                        }
+                        .sub-menu {
+                            @media (min-width: 992px) {                        
+                                opacity: 1;
+                                pointer-events: auto;
+                                visibility: visible;
+                                @include transform(rotateX(0deg) translate3d(0, 3.4rem, 0.31rem));
                             }
                         }
                     }
@@ -123,6 +151,7 @@
         width: 100%;
         padding: 0.625rem 0;
         .info-menu {
+            margin-left: -1rem;
             ul {
                 li {
                     a {
@@ -137,6 +166,10 @@
             margin-left: auto;
             ul {
                 li {
+                    padding: 0 0.5rem;
+                    &:last-child {
+                        padding-right: 0;
+                    }
                     a {
                         text-transform: uppercase;
                         font-weight: 500;
@@ -163,17 +196,7 @@
         }
         .main-menu {
             margin-left: auto;
-            ul {
-                li {
-                    padding: 0 0.75rem;
-                    @media (max-width: 1200px) {
-                        padding: 0.5rem;
-                    }
-                    &:first-child {
-                        padding-left: 0;
-                    }
-                }
-            }
+            margin-right: -1rem;
         }
     }
     &.fixed-header {
