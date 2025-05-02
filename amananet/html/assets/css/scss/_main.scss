@@ -5,7 +5,7 @@
         content: '';
         height: 100%;
         width: 1px;
-        background: rgba(#D4D6E5, 0.4);
+        background: #D4D6E5;
         position: absolute;
         top: 0;
         left: 6vw;
@@ -24,7 +24,7 @@
         content: '';
         height: 100%;
         width: 1px;
-        background: rgba(#D4D6E5, 0.4);
+        background: #D4D6E5;
         position: absolute;
         top: 0;
         right: 6vw;
@@ -153,18 +153,35 @@
             @include border-radius(0 0 1.5rem 1.5rem);
         }
 	}
+    &.full-width-section {
+        max-width: 100%;
+        margin: 0 6vw;
+        &.with-border {
+            border-top: 1px solid #D4D6E5;
+            border-bottom: 1px solid #D4D6E5;
+        }
+        @media (max-width: 1440px) {
+            margin: 0 4vw;
+        }
+        @media (max-width: 1200px) {
+            margin: 0 2vw;
+        }
+        @media (max-width: 767px) {
+            margin: 0 1vw;
+        }
+    }
 }
 
 // Section Title CSS
 .section-title {
     margin-bottom: 3.125rem;
-    @media (max-width: 767px) { 
-        margin-bottom: 	2.5rem;
+    @media (max-width: 992px) { 
+        margin-bottom: 	2rem;
     }
     &.text-center {
         margin: 0 auto 3.125rem;
-        @media (max-width: 767px) { 
-            margin: 0 auto 	2.5rem;
+        @media (max-width: 992px) { 
+            margin: 0 auto 	2rem;
         }
     }
     &.sticky-title {

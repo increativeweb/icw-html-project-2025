@@ -389,12 +389,12 @@ img {
             }
         }
         &:hover, &:focus, &:active {           
-            color: $white !important;
-            border-color: $primary;
-            background-color: $primary;
+            color: $black !important;
+            border-color: $white;
+            background-color: $white;
             &.with-icon, &.with-arrow {
                 .icon, .icon-arrow {
-                    filter: brightness(0) invert(1);
+                    filter: unset;
                 }
             }
         }
@@ -432,23 +432,19 @@ img {
 	@include flex-wrap(nowrap);
     position: relative;
     text-align: center;
-    padding: 0 20px 3px 0;
+    padding: 0 1.15rem 0 0;
     text-decoration: none;
     border: none;
-    background-color: transparent;
-    background-image: linear-gradient(0deg, $primary 0%, $primary 100%);
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
+    background-color: transparent;   
     transition: all 0.3s, background-size 0.2s linear 0.15s;
 	color: $primary;
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 0.9375rem !important;
+	font-weight: 600;
    	svg {
 		line-height: 1;
-		width: 25px;
-		height: 30px;
-		margin-top: -1px;
+		width: 1.5rem;
+		height: 1.5rem;
+		margin-top: 1px;
 		position: absolute;
 		right: 0;
 		top: 50%;
@@ -457,7 +453,7 @@ img {
 		stroke: $primary;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		stroke-width: 1px;
+		stroke-width: 0.0625rem;
 		stroke-dasharray: 7.95 30;
 		stroke-dashoffset: var(--stroke-dashoffset, 46);
 		transition: stroke-dashoffset var(--stroke-duration, 0.15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
@@ -466,11 +462,11 @@ img {
 		content: '';
 		position: relative;
 		display: inline-block;
-		background: url('data:image/svg+xml,<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.1875 1.6875L11.8125 12.3125M11.8125 12.3125V4.34375M11.8125 12.3125H3.84375" stroke="rgb(22 51 107)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center right;
+		background: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.25863 1.08123L4.24607 1.5007C4.27622 1.74427 4.47864 1.9323 4.72378 1.94445L9.36068 1.69416L0.769123 10.943C0.584853 11.1414 0.616683 11.4481 0.786714 11.606L1.0782 11.8768C1.27252 12.0573 1.55646 12.0439 1.74073 11.8456L10.3323 2.59672L10.4482 7.26203C10.4864 7.51313 10.6807 7.69364 10.934 7.71331L11.3433 7.66239C11.5965 7.68206 11.8192 7.44237 11.804 7.16648L11.6412 0.733062C11.6336 0.448903 11.4312 0.26087 11.1554 0.281782L4.7193 0.585317C4.44304 0.590443 4.22038 0.830136 4.25863 1.08123Z" fill="black"/></svg>') no-repeat center right;
 		@include transition(0.3s, ease-in-out);
-		background-size: 12px !important;
-		width: 25px;
-		height: 12px;
+		background-size: 0.65rem !important;
+		width: 1.1rem;
+		height: 0.65rem;
 		position: absolute;
 		top: 50%;
 		@include transform(translateY(-50%));
@@ -479,16 +475,15 @@ img {
 	}
 	&.text-white {
 		color: $white;
-		background-image: linear-gradient(0deg, $white 0%, $white 100%);
 		svg {			
 			stroke: $white;
 		}
 		&::before {
-			background: url('data:image/svg+xml,<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.1875 1.6875L11.8125 12.3125M11.8125 12.3125V4.34375M11.8125 12.3125H3.84375" stroke="rgb(255 255 255)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center right;
+			background: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.25863 1.08123L4.24607 1.5007C4.27622 1.74427 4.47864 1.9323 4.72378 1.94445L9.36068 1.69416L0.769123 10.943C0.584853 11.1414 0.616683 11.4481 0.786714 11.606L1.0782 11.8768C1.27252 12.0573 1.55646 12.0439 1.74073 11.8456L10.3323 2.59672L10.4482 7.26203C10.4864 7.51313 10.6807 7.69364 10.934 7.71331L11.3433 7.66239C11.5965 7.68206 11.8192 7.44237 11.804 7.16648L11.6412 0.733062C11.6336 0.448903 11.4312 0.26087 11.1554 0.281782L4.7193 0.585317C4.44304 0.590443 4.22038 0.830136 4.25863 1.08123Z" fill="white"/></svg>') no-repeat center right;
 		}
 	}
 	&:hover, &:focus {
-        background-size: 0% 1px;
+        background-size: 0% 0.0625rem;
         transition-delay: 0s;
         --stroke-dashoffset: 26;
         --stroke-duration: .3s;
@@ -869,7 +864,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     font-family: $font-geist;
 }
 h1, .h1 {
-    font-size: 3.125rem;
+    font-size: 3.44rem;
     font-weight: 700;
     @media (max-width: 1400px) { 
         font-size: 2.50rem;

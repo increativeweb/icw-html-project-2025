@@ -151,12 +151,43 @@
         padding: 0.625rem 0;
         .info-menu {
             margin-left: -1rem;
+            @media (max-width: 767px) {
+                margin-left: -0.5rem;
+            }
             ul {
+                @media (max-width: 767px) {
+                    gap: 0.5rem;
+                }
                 li {
                     a {
                         font-size: 0.813rem;
                         font-weight: 500;
                         text-transform: uppercase;
+                        @media (max-width: 767px) {
+                            line-height: 0.7;
+                            padding: 0.5rem 0.5rem;
+                            @include border-radius(50%);
+                            width: 30px;
+                            height: 30px;
+                            flex: none;
+                            @include inline-flex;
+                            @include align-items(center);
+                            @include justify-content(center);
+                            background: rgba($black, 0.07);
+                            span {
+                                &:nth-child(2) {
+                                    display: none;
+                                }
+                                &.icon {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                    &:hover, &:focus, &:active {
+                        a {
+                            background: rgba(#2A396D, 0.14);
+                        }
                     }
                 }
             }

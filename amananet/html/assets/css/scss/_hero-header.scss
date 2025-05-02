@@ -2,41 +2,14 @@
     position: relative;
     background: $black;
     & > .container {
-        @media screen {
-            
-        }
-    }
-    .hero-content-splide {
-        .icw-pagination {
-            @include flex-direction(row);
-            bottom: 1.75rem;
-            top: auto;
-            right: auto;
-        }
-        .splide__slide {
-            .section-title {
-                opacity: 0;
-                @include transform(translateY(-2rem));
-                transition: opacity 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out;
-                will-change: transform;
-            }
-            &.is-active {
-                .section-title {
-                    opacity: 1;
-                    @include transform(translateY(0));
-                }
-            }
+        @media (max-width: 992px) {
+            max-width: 100%;
         }
     }
     .section-title {
         padding: 6.25rem 0;
         @media (max-width: 992px) { 
-            padding: 2.5rem 0 4.375rem;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        @media (max-width: 767px) {           
-            max-width: 540px;
+            padding: 2.5rem 15px 4.375rem;
         }
         .tag-line {
             color: $yellow;
@@ -61,14 +34,48 @@
             object-position: center;
         }
     }
+    .hero-content-splide {        
+        @media (max-width: 992px) { 
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        @media (max-width: 767px) {           
+            max-width: 540px;
+        }
+        .icw-pagination {
+            @include flex-direction(row);
+            bottom: 1.75rem;
+            top: auto;
+            right: auto;
+        }
+        .splide__slide {
+            .section-title {
+                opacity: 0;
+                @include transform(translateY(-2rem));
+                transition: opacity 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out;
+                will-change: transform;
+            }
+            &.is-active {
+                .section-title {
+                    opacity: 1;
+                    @include transform(translateY(0));
+                }
+            }
+        }
+    }
     .hero-image-splide {
         width: calc(50vw - 1.5rem);
         height: 100%;
         @media (max-width: 992px) { 
-            width: 100%;
+            width: fit-content;
+            margin-left: -15px;
+            margin-right: -15px;
         }
         .splide__track {
             height: inherit;
+        }
+        .icw-pagination {
+            bottom: 18px;
         }
     }
 }

@@ -1,0 +1,28 @@
+.service-card {
+    .card-footer {
+        a {
+            display: block;
+            .btn-link-arrow {
+                font-size: 0.9375rem;
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-footer {
+            a {
+                .btn-link-arrow {
+                    background-size: 0% 0.0625rem;
+                    transition-delay: 0s;
+                    --stroke-dashoffset: 26;
+                    --stroke-duration: .3s;
+                    --stroke-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
+                    --stroke-delay: .195s;
+                    &::before {
+                        opacity: 0;
+                        transition-delay: 0s;
+                    }
+                }
+            }
+        }
+    }
+}
