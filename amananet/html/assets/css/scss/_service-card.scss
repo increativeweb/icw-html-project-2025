@@ -1,15 +1,31 @@
 .service-card {
-    .card-footer {
+    border: none;
+    @include border-radius(0);
+    background: #EEEDF4;
+    position: relative;
+    height: 100%;
+    @include flexbox;
+    @include flex-direction(column);
+    .card-body {
+        padding: 1.5rem;
+        flex: 1 1 auto;
+        .card-title {
+            font-size: 1.38rem;
+            font-weight: 600;
+            margin-bottom: 0.625rem;
+        }
+    }
+    .card-action {
+        padding: 0 1.5rem 1.5rem;
+        overflow: hidden;
         a {
             display: block;
+            @include transform(translateY(50px));
+            @include transition(0.3s, ease-in-out);
             .btn-link-arrow {
                 font-size: 0.9375rem;
             }
-        }
-    }
-    &:hover, &:focus {
-        .card-footer {
-            a {
+            &:hover, &:focus {
                 .btn-link-arrow {
                     background-size: 0% 0.0625rem;
                     transition-delay: 0s;
@@ -22,6 +38,13 @@
                         transition-delay: 0s;
                     }
                 }
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-action {
+            a {
+                @include transform(translateY(0px));                
             }
         }
     }

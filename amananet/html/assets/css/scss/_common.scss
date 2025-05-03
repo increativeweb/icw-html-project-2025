@@ -444,7 +444,7 @@ img {
 		line-height: 1;
 		width: 1.5rem;
 		height: 1.5rem;
-		margin-top: 1px;
+		margin-top: 0px;
 		position: absolute;
 		right: 0;
 		top: 50%;
@@ -876,6 +876,7 @@ h1, .h1 {
 h2, .h2 {
     font-size: 2.75rem;
     font-weight: 600;
+    line-height: 1.1;
     @media (max-width: 1200px) { 
         font-size: 2.25rem;
     }
