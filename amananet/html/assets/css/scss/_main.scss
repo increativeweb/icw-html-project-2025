@@ -42,15 +42,15 @@
 
 // Main Section CSS
 .main-section {
-    padding-top: 6.25rem;
-    padding-bottom: 6.25rem;
+    padding-top: 9.38rem;
+    padding-bottom: 9.38rem;
     @media (max-width: 992px) { 
-        padding-top: 4.375rem;
-        padding-bottom: 4.375rem;
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
     }
     @media (max-width: 767px) { 
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
+        padding-top: 3.13rem;
+        padding-bottom: 3.13rem;
     }
 
     &.bg-none:not(.bg-custom) {
@@ -169,6 +169,12 @@
         @media (max-width: 767px) {
             margin: 0 1vw;
         }
+        .full-content-block {
+            &.with-border {
+                border-top: 1px solid #D4D6E5;
+                border-bottom: 1px solid #D4D6E5;
+            }
+        }
     }
 }
 
@@ -249,6 +255,21 @@
             margin-top: 1.25rem;
             .btn {
                 // width: 100%;
+            }
+        }
+    }
+}
+
+.service-card-section, .upcoming-classes-card-section {
+    .row {
+        & > .col {
+            &:last-child {
+                .service-card, .upcoming-classes-card {
+                    border-right: 1px solid #D4D6E5;
+                    @media (max-width: 992px) {
+                        border-bottom: none;
+                    }
+                }
             }
         }
     }

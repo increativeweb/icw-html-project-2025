@@ -239,15 +239,17 @@ img {
 	@include justify-content(center);	
 	@include border-radius(2.25rem);
     border: 1px solid transparent;
-	@include transition(0.3s, ease-in-out);
+    transition: transform .3s cubic-bezier(.5,2.5,.7,.7), box-shadow .3s cubic-bezier(.5,2.5,.7,.7) !important;
 	min-height: 2.75rem;
     min-width: 8.75rem;
 	font-weight: 500;
 	font-size: 0.875rem;
     padding: 0 0.9375rem; 
 	line-height: 1;
+    transform: translateY(0);
     &:hover, &:focus, &:active {        
-        background-position: left !important;
+        box-shadow: -3px 5px rgb(0, 0, 0);
+        transform: translateY(-5px);
     }
     &.btn-sm {        
         min-height: 2.125rem;
@@ -279,11 +281,6 @@ img {
             margin-left: 0.75rem;
             @include transition(0.3s, ease-in-out);
         }
-        &:hover, &:focus, &:active {
-            .icon-arrow {
-                @include transform(rotate(45deg));
-            }
-        }
     }
 	&.btn-primary {
 		color: $white !important;
@@ -293,24 +290,6 @@ img {
             .icon, .icon-arrow {
                 filter: brightness(0) invert(1);
             }
-        }
-        &:hover, &:focus, &:active {
-            color: $primary !important;
-            background-color: transparent !important;
-            &.with-icon, &.with-arrow {
-                .icon, .icon-arrow {
-                    filter: unset;
-                }
-            }
-        }
-	}
-	&.btn-secondary {
-		color: $white !important;
-        border-color: $secondary !important;
-		background-color: $secondary !important;
-        &:hover, &:focus, &:active {
-            color: $secondary !important;
-            background-color: transparent !important;
         }
 	}
     &.btn-yellow {
@@ -322,28 +301,13 @@ img {
                 filter: brightness(0) invert(1);
             }
         }
-        &:hover, &:focus, &:active {
-            color: $yellow !important;
-            background-color: transparent !important;
-            &.with-icon {
-                .icon {
-                    filter: unset;
-                }
-            }
-        }
 	}
 	&.btn-white {
 		color: $primary !important;
         border-color: $white !important;
 		background-color: $white !important;
-        &:hover, &:focus, &:active {
-            color: $white !important;
-            background-color: $primary !important;
-            &.with-icon {
-                .icon {
-                    filter: brightness(0) invert(1);
-                }
-            }
+        &:hover, &:focus, &:active {        
+            box-shadow: -3px 5px rgb(255, 255, 255);
         }
 	}
 	&.btn-dark {
@@ -388,15 +352,8 @@ img {
                 filter: brightness(0) invert(1);
             }
         }
-        &:hover, &:focus, &:active {           
-            color: $black !important;
-            border-color: $white;
-            background-color: $white;
-            &.with-icon, &.with-arrow {
-                .icon, .icon-arrow {
-                    filter: unset;
-                }
-            }
+        &:hover, &:focus, &:active {        
+            box-shadow: -3px 5px rgb(255, 255, 255);
         }
 	}
 	&.btn-outline-dark {
@@ -406,15 +363,6 @@ img {
         &.with-icon, &.with-arrow {
             .icon, .icon-arrow {
                 filter: brightness(0);
-            }
-        }
-        &:hover, &:focus, &:active {
-            color: $white !important;
-            background-color: $black;
-            &.with-icon, &.with-arrow {
-                .icon, .icon-arrow {
-                    filter: brightness(0) invert(1);
-                }
             }
         }
 	}
@@ -437,7 +385,7 @@ img {
     border: none;
     background-color: transparent;   
     transition: all 0.3s, background-size 0.2s linear 0.15s;
-	color: $primary;
+	color: $black;
 	font-size: 0.9375rem !important;
 	font-weight: 600;
    	svg {
@@ -450,7 +398,7 @@ img {
 		top: 50%;
 		@include transform(translateY(-50%));
 		fill: none;
-		stroke: $primary;
+		stroke: $black;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		stroke-width: 0.0625rem;

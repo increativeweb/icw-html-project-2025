@@ -51,6 +51,7 @@
                     font-size: 14px;
                     font-weight: 500;
                     color: $black;
+                    line-height: 1.2;
                 }
             }
             .action {
@@ -67,7 +68,7 @@
                 }
             }
         }
-        &.categories-list-style-2 {
+        .category-list-link {
             .category-item {
                 @include flexbox;
                 @include align-items(center);

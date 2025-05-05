@@ -20,7 +20,9 @@
                     padding: 0.5rem 1rem;
                     @include transition(0.3s, ease-in-out);
                     @include border-radius(1.88rem);
-                    @media (max-width: 1200px) {
+                    @include inline-flex;
+                    @include align-items(center);
+                    @media (max-width: 992px) {
                         font-size: 0.81rem;
                     }
                     &.with-icon {
@@ -43,7 +45,7 @@
                 &:hover, &:focus, &.current-menu-item {
                     & > a {
                         color: $primary;
-                        background: rgba(#2A396D, 0.14); 
+                        background: #F7F6FD; 
                         &.with-icon:not(.btn) {
                             .icon {
                                 svg {
@@ -64,9 +66,10 @@
                                 content: '';
                                 background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>') no-repeat center center;
                                 width: 0.625rem;
-                                height: 0.625rem;
+                                height: 0.425rem;
                                 line-height: 0.7;
                                 margin-left: 0.3125rem;
+                                margin-top: 0.0625rem;
                                 @include transition(0.3s, ease-in-out);
                             }
                         }
@@ -80,16 +83,15 @@
                     .sub-menu {
                         @media (min-width: 992px) {  
                             position: absolute;
-                            top: 0;
+                            top: 0.5rem;
                             display: block;
                             min-width: 13.75rem;
-                            padding: 0;
+                            padding: 0.625rem;
                             margin-top: 0.94rem;
                             opacity: 0;
                             pointer-events: none;
                             background: $white;
                             border: 0.0625rem solid #D4D6E5;
-                            border-top-width: 3px;
                             @include transition(0.3s, ease-in-out);
                             @include transform(rotateX(-20deg) translate3d(0, 2.25rem, 0));
                             transform-origin: 50% 0;
@@ -149,11 +151,10 @@
         @include align-items(center);
         width: 100%;
         padding: 0.625rem 0;
-        .info-menu {
-            margin-left: -1rem;
-            @media (max-width: 767px) {
-                margin-left: -0.5rem;
-            }
+        @media (max-width: 992px) {
+            display: none;
+        }
+        .info-menu {           
             ul {
                 @media (max-width: 767px) {
                     gap: 0.5rem;
@@ -161,32 +162,13 @@
                 li {
                     a {
                         font-size: 0.813rem;
-                        font-weight: 500;
                         text-transform: uppercase;
-                        @media (max-width: 767px) {
-                            line-height: 0.7;
-                            padding: 0.5rem 0.5rem;
-                            @include border-radius(50%);
-                            width: 30px;
-                            height: 30px;
-                            flex: none;
-                            @include inline-flex;
-                            @include align-items(center);
-                            @include justify-content(center);
-                            background: rgba($black, 0.07);
-                            span {
-                                &:nth-child(2) {
-                                    display: none;
-                                }
-                                &.icon {
-                                    margin-right: 0;
-                                }
-                            }
-                        }
-                    }
-                    &:hover, &:focus, &:active {
-                        a {
-                            background: rgba(#2A396D, 0.14);
+                        background: #F7F6FD;
+                        transform: translateY(0);
+                        transition: transform .3s cubic-bezier(.5,2.5,.7,.7), box-shadow .3s cubic-bezier(.5,2.5,.7,.7) !important;
+                        &:hover, &:focus, &:active {
+                            box-shadow: -3px 5px rgba(0, 0, 0, 0.5);
+                            transform: translateY(-5px);
                         }
                     }
                 }
@@ -196,17 +178,18 @@
             margin-left: auto;
             ul {
                 li {
-                    padding: 0 0.5rem;
                     &:last-child {
                         padding-right: 0;
                     }
                     a {
-                        text-transform: uppercase;
                         font-weight: 500;
+                        font-size: 0.81rem;
                         &.btn {
-                            min-height: 2rem;
+                            min-height: 2.25rem;
                             font-size: 0.75rem;
                             min-width: auto;
+                            text-transform: uppercase;
+                            margin-left: 0.9375rem;
                         }
                     }
                 }
@@ -227,7 +210,7 @@
         .main-menu {
             margin-left: auto;
             margin-right: -1rem;
-            @media (max-width: 1200px) {
+            @media (max-width: 992px) {
                 display: none;
             }
         }
@@ -236,18 +219,37 @@
                 display: none;
             }
             border: none;
-            background: $primary;
-            width: 40px;
-            height: 40px;
+            background: #F7F6FD;
+            width: 36px;
+            height: 36px;
             margin-left: auto;
             padding: 0;
-            @include border-radius(30px);
+            @include border-radius(3px);
             span {
-                width: 20px;
+                width: 16px;
                 height: 2px;
-                background: $white;
+                background: $black;
                 display: block;
-                margin: 4px auto;
+                margin: 3px auto;
+            }
+        }
+        .right-menu {
+            @media (min-width: 992px) {
+                display: none;
+            }
+            @include flexbox;
+            @include align-items(center);
+            margin-left: auto;
+            .btn {
+                min-width: unset;
+                width: 36px;
+                height: 36px;
+                flex: none;
+                padding: 0;
+                margin-right: 10px;
+                .icon {
+                    margin-right: 0;
+                }
             }
         }
     }

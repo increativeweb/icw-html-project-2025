@@ -7,7 +7,8 @@
         }
     }
     .section-title {
-        padding: 6.25rem 0;
+        padding-top: 9.38rem;
+        padding-bottom: 9.38rem;
         @media (max-width: 992px) { 
             padding: 2.5rem 15px 4.375rem;
         }
@@ -34,7 +35,7 @@
             object-position: center;
         }
     }
-    .hero-content-splide {        
+    .hero-content-splide {      
         @media (max-width: 992px) { 
             max-width: 720px;
             margin: 0 auto;
@@ -49,6 +50,7 @@
             right: auto;
         }
         .splide__slide {
+            padding-left: 5px;  
             .section-title {
                 opacity: 0;
                 @include transform(translateY(-2rem));
