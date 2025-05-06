@@ -1,6 +1,15 @@
 .main-header {  
     border-bottom: 0.0625rem solid #E2E5EE; 
     z-index: 4;
+    position: relative;  
+    &.fixed-header {
+        position: sticky;
+        top: 0;
+        .header-top {
+            height: 0;
+            display: none;
+        }
+    }
     .navbar {
         padding: 0;
         .container {
@@ -18,7 +27,7 @@
                     text-decoration: none;
                     position: relative;
                     padding: 0.5rem 1rem;
-                    @include transition(0.3s, ease-in-out);
+                    @include transition(0.05s, ease-in-out);
                     @include border-radius(1.88rem);
                     @include inline-flex;
                     @include align-items(center);
@@ -36,7 +45,7 @@
                                 width: 100%;
                                 height: 100%;
                                 path {
-                                    @include transition(0.3s, ease-in-out);
+                                    @include transition(0.05s, ease-in-out);
                                 }
                             }
                         }
@@ -44,17 +53,7 @@
                 }
                 &:hover, &:focus, &.current-menu-item {
                     & > a {
-                        color: $primary;
                         background: #F7F6FD; 
-                        &.with-icon:not(.btn) {
-                            .icon {
-                                svg {
-                                    path {
-                                        fill: $primary;
-                                    }
-                                }
-                            }
-                        }                       
                     }
                 }
                 &.menu-item-has-children {
@@ -70,7 +69,7 @@
                                 line-height: 0.7;
                                 margin-left: 0.3125rem;
                                 margin-top: 0.0625rem;
-                                @include transition(0.3s, ease-in-out);
+                                @include transition(0.05s, ease-in-out);
                             }
                         }
                     }
@@ -92,7 +91,7 @@
                             pointer-events: none;
                             background: $white;
                             border: 0.0625rem solid #D4D6E5;
-                            @include transition(0.3s, ease-in-out);
+                            @include transition(0.05s, ease-in-out);
                             @include transform(rotateX(-20deg) translate3d(0, 2.25rem, 0));
                             transform-origin: 50% 0;
                             will-change: transform;
@@ -164,11 +163,8 @@
                         font-size: 0.813rem;
                         text-transform: uppercase;
                         background: #F7F6FD;
-                        transform: translateY(0);
-                        transition: transform .3s cubic-bezier(.5,2.5,.7,.7), box-shadow .3s cubic-bezier(.5,2.5,.7,.7) !important;
                         &:hover, &:focus, &:active {
-                            box-shadow: -3px 5px rgba(0, 0, 0, 0.5);
-                            transform: translateY(-5px);
+                            background: #EEEDF4;
                         }
                     }
                 }
@@ -220,17 +216,17 @@
             }
             border: none;
             background: #F7F6FD;
-            width: 36px;
-            height: 36px;
+            width: 2.25rem;
+            height: 2.25rem;
             margin-left: auto;
             padding: 0;
-            @include border-radius(3px);
+            @include border-radius(0.1875rem);
             span {
-                width: 16px;
-                height: 2px;
+                width: 1rem;
+                height: 0.125rem;
                 background: $black;
                 display: block;
-                margin: 3px auto;
+                margin: 0.1875rem auto;
             }
         }
         .right-menu {
@@ -242,11 +238,11 @@
             margin-left: auto;
             .btn {
                 min-width: unset;
-                width: 36px;
-                height: 36px;
+                width: 2.25rem;
+                height: 2.25rem;
                 flex: none;
                 padding: 0;
-                margin-right: 10px;
+                margin-right: 0.625rem;
                 .icon {
                     margin-right: 0;
                 }

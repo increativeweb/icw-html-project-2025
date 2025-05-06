@@ -15,35 +15,16 @@
                 font-weight: 500;
                 text-transform: unset;
                 padding: 0.3125rem 0.625rem;
-                @include transition(0.3s, ease-in-out);
+                @include transition(0.05s, ease-in-out);
                 @include border-radius(2rem);
                 line-height: 1.2;
                 &:hover, &:focus, &:active {
-                    background: #3A3A3A;
+                    background: rgba($white, 0.18);
                 }
             }
             &.current-menu-item {
                 a {
-                    background: #3A3A3A;
-                }
-            }
-            &.menu-title {
-                & > span {
-                    color: rgba($white, 0.6);
-                    text-transform: uppercase;
-                    margin-bottom: 0.875rem;
-                    font-weight: 600;
-                    font-size: 0.875rem;
-                    display: block;
-                }
-                & > a {
-                    color: rgba($white, 0.6);
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    margin-bottom: 0.875rem;
-                    &:hover, &:focus, &:active {
-                        color: $white;
-                    }
+                    background: rgba($white, 0.18);
                 }
             }
             &.menu-item-has-children {
@@ -142,7 +123,7 @@
                                 width: 100%;
                                 height: 100%;
                                 path {
-                                    @include transition(0.3s, ease-in-out);
+                                    @include transition(0.05s, ease-in-out);
                                 }
                             }
                         }
@@ -169,32 +150,59 @@
                 @include flex-direction(column);
             }
             .footer-menu {
+                li {
+                    a {                            
+                        @include border-radius(0.25rem);  
+                        padding: 0.25rem 0.45rem 0.20rem;   
+                        margin-left: -0.45rem; 
+                    }
+                    &.menu-title {
+                        & > span {
+                            color: rgba($white, 0.6);
+                            text-transform: uppercase;
+                            margin-bottom: 0.875rem;
+                            font-weight: 600;
+                            font-size: 0.875rem;
+                            display: block;
+                        }
+                        & > a {
+                            color: rgba($white, 0.6);
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            margin-bottom: 0.875rem; 
+                            margin-left: -0.45rem; 
+                            &:hover, &:focus, &:active {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
                 &.with-icon-menu {
                     ul {
                         li {
                             a {     
                                 position: relative;      
-                                overflow: hidden;  
-                                @include border-radius(4px); 
-                                padding: 0.25rem;            
+                                overflow: hidden;   
+                                padding: 0.25rem;  
+                                margin-left: -0.25rem;                 
                                 .icon {
-                                    width: 20px;
-                                    height: 20px;
+                                    width: 1.25rem;
+                                    height: 1.25rem;
                                     flex: none;
                                     @include inline-flex;
                                     @include align-items(center);
                                     @include justify-content(center);
-                                    @include transition(0.3s, ease-in-out);
-                                    margin-left: -28px;
-                                    margin-right: 8px;
+                                    @include transition(0.05s, ease-in-out);
+                                    margin-left: -1.75rem;
+                                    margin-right: 0.5rem;
                                     img {
-                                        width: 20px;
-                                        height: 20px;
+                                        width: 1.25rem;
+                                        height: 1.25rem;
                                     }   
                                 }  
                                 &:hover, &:focus, &:active {
                                     .icon {                                       
-                                        margin-left: 0px;
+                                        margin-left: 0rem;
                                     }
                                 }         
                             }
@@ -248,8 +256,7 @@
                     padding: 0.1875rem 0.75rem;
                     margin-left: -0.75rem;
                     &:hover, &:focus, &:active {
-                        color: $primary;
-                        background: rgba($primary, 0.14)
+                        background: #F7F6FD;
                     }
                 }
             }
@@ -259,10 +266,10 @@
             @include align-items(center);
             gap: 0.5rem;
             margin-left: auto;
-            margin-right: -5px;
+            margin-right: -0.3125rem;
             @media (max-width: 767px) {
                 margin-top: 1.5rem;
-                margin-left: -5px;
+                margin-left: -0.3125rem;
                
             }
             li {
@@ -280,16 +287,11 @@
                     }
                     svg {
                         path {
-                            @include transition(0.3s, ease-in-out);
+                            @include transition(0.05s, ease-in-out);
                         }
                     }
                     &:hover, &:focus, &:active {
-                        background: rgba($primary, 0.14);
-                        svg {
-                            path {
-                                fill: $primary;
-                            }
-                        }
+                        background: #F7F6FD;
                     }
                 }
             }
@@ -333,8 +335,7 @@
                     padding: 0.3125rem 0.75rem;
                     margin-right: -0.75rem;
                     &:hover, &:focus, &:active {
-                        color: $primary;
-                        background: rgba($primary, 0.14);
+                        background: #F7F6FD;
                     }
                 }
             }

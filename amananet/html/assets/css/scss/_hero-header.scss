@@ -10,13 +10,16 @@
         padding-top: 9.38rem;
         padding-bottom: 9.38rem;
         @media (max-width: 992px) { 
-            padding: 2.5rem 15px 4.375rem;
+            padding: 3.13rem 15px 4.375rem;
         }
         .tag-line {
             color: $yellow;
         }
         .sort-info {
             font-size: 1.125rem;
+            @media (max-width: 767px) {
+                font-size: 1rem;
+            }
         }
         .info-list-card {
             margin-bottom: 0.5rem;
@@ -48,6 +51,9 @@
             bottom: 1.75rem;
             top: auto;
             right: auto;
+            @media (max-width: 992px) {
+                left: 15px;
+            }
         }
         .splide__slide {
             padding-left: 5px;  

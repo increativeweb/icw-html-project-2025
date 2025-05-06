@@ -24,7 +24,7 @@
         font-size: 1.125rem;
         font-family: $bodyfont;
 		@media (max-width: 992px) {
-			font-size: 	1rem;
+			font-size: 1rem;
 		}
         .font-lg {
             font-size: 1.75rem;
@@ -129,6 +129,9 @@
             font-weight: 500;
             margin: 0px;
             line-height: normal;
+            @media (max-width: 992px) {
+                font-size: 0.875rem;
+            }
         }
         .card-icon {
             img { 

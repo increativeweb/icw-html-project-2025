@@ -1,102 +1,212 @@
-.upcoming-classes-card {
-    border: none;
-    @include border-radius(0);
-    position: relative;
-    height: 100%;
-    @include flexbox;
-    @include flex-direction(column);
-    border: 1px solid #D4D6E5;
-    border-right: 0;
-    @media (max-width: 992px) {
-        border: 1px solid #D4D6E5;
-        border-top: none;
-    }
-    .card-img {
-        overflow: hidden;
-        line-height: 0.7;
-        position: relative;
-        & > img {
-            aspect-ratio: 21 / 9;
-            object-fit: cover;
-            object-position: center;
-            @include transition(0.3s, ease-in-out);
-        }
-        .class-icon {
-            display: block;            
-            img {               
-                width: 40px;
-                height: 40px;
-                flex: none;
-                position: absolute;
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-    }
-    .card-body {
-        padding: 1.5rem;
-        flex: 1 1 auto;
-        @media (max-width: 992px) {
-            padding: 0.9375rem;
-        }
-        .card-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            @media (max-width: 992px) {
-                font-size: 1rem;
-            }
-            a {
-                text-decoration: none;
-                @include transition(0.3s, ease-in-out);
-                color: $black;
-                background-image: linear-gradient(to right, $primary 0%, $primary 100%);
-                background-position: 0 100%;
-                background-repeat: no-repeat;
-                background-size: 0 1px;
-            }
-        }
-        .card-text {
-            font-size: 0.75rem;
-            strong {
-                color: $primary;
-            }
-        }
-    }
-    .card-action {
-        padding: 0 1.5rem 1.5rem;
-        overflow: hidden;
-        .fees-info {
+.upcoming-classes-card-section {
+    &.is-card-view {
+        .upcoming-classes-card {
+            border: none;
+            @include border-radius(0);
+            position: relative;
+            height: 100%;
             @include flexbox;
-            @include align-items(center);
-            gap: 4px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            span {
-                display: inline-block;
+            @include flex-direction(column);
+            border: 1px solid #D4D6E5;
+            border-right: 0;
+            @include transition(0.3s, ease-in-out);
+            @media (max-width: 992px) {
+                border: 1px solid #D4D6E5;
+                border-top: none;
             }
-            .price {
-                font-size: 0.75rem;
-                font-weight: 600;
-                margin-top: 3px;
-                .icon {
-                    margin-left: 5px;
+            .card-img {
+                overflow: hidden;
+                line-height: 0.7;
+                position: relative;
+                & > img {
+                    aspect-ratio: 21 / 9;
+                    object-fit: cover;
+                    object-position: center;
+                    @include transition(0.3s, ease-in-out);
+                }
+                .class-icon {
+                    display: block;            
+                    img {               
+                        width: 40px;
+                        height: 40px;
+                        flex: none;
+                        position: absolute;
+                        bottom: 1rem;
+                        right: 1rem;
+                    }
+                }
+            }
+            .card-body {
+                padding: 1.5rem;
+                flex: 1 1 auto;
+                @media (max-width: 992px) {
+                    padding: 0.9375rem;
+                }
+                .card-title {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    @media (max-width: 992px) {
+                        font-size: 1rem;
+                    }
+                    a {
+                        text-decoration: none;
+                        @include transition(0.3s, ease-in-out);
+                        color: $black;                       
+                    }
+                }
+                .card-info {
+                    font-size: 0.75rem;
+                    strong {
+                        color: $primary;
+                    }
+                }
+            }
+            .card-action {
+                padding: 0 1.5rem 1.5rem;
+                overflow: hidden;
+                .fees-info {
+                    @include flexbox;
+                    @include align-items(center);
+                    gap: 4px;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    span {
+                        display: inline-block;
+                    }
+                    .price {
+                        font-size: 0.75rem;
+                        font-weight: 600;
+                        margin-top: 3px;
+                        .icon {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                
+            }
+            &:hover, &:focus {
+                background: #F7F6FD;
+                .card-img {
+                    & > img {
+                        @include transform(scale(1.03));
+                    }
+                }
+                .card-body {
+                    .card-title {
+                        a {
+                            color: $primary;
+                        }
+                    }
                 }
             }
         }
-        
     }
-    &:hover, &:focus {
-        .card-img {
-            & > img {
-                @include transform(scale(1.03));
+    &.is-list-view {
+        .upcoming-classes-card {
+            @include flexbox;
+            @include align-items(center);
+            padding: 24px 0;
+            border-bottom: 1px solid #D8DCEA;
+            @include transition(0.3s, ease-in-out);
+            @media (max-width: 1200px) {                
+                padding: 15px 0;
             }
-        }
-        .card-body {
-            .card-title {
-                a {
-                    color: $primary;
-                    background-size: 100% 1px;
+            @media (max-width: 992px) {
+                flex-wrap: wrap;
+            }
+            .card-title-img {
+                @include flexbox;
+                @include align-items(center);
+                .card-img {
+                    width: 50px;
+                    height: 50px;
+                    flex: none;
+                    margin-right: 20px;
+                    @media (max-width: 992px) {
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 16px;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+                .card-body {
+                    margin-right: 20px;
+                    @media (max-width: 1200px) and (min-width: 992px) {  
+                        max-width: 300px;
+                    }
+                    .card-title {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        @include transition(0.3s, ease-in-out);
+                        a {
+                            color: $black;
+                            text-decoration: none;
+                        }
+                    }
+                    .card-info {
+                        font-size: 14px
+                    }
+                }
+            }
+            .card-action {
+                @include flexbox;
+                @include align-items(center);
+                margin-left: auto;
+                gap: 80px;
+                @media (max-width: 1200px) {                
+                    gap: 50px;
+                }
+                @media (max-width: 992px) {
+                    flex: 1 1 100%;
+                    margin-top: 16px;
+                    padding-left: 56px;
+                }
+                @media (max-width: 767px) {                
+                    gap: 20px;
+                }
+                .date {
+                    font-size: 12px;
+                    strong {
+                        color: $primary;
+                    }
+                }
+                .fees-info {
+                    @media (max-width: 767px) {                
+                        margin-left: auto;
+                    }
+                    span {
+                        display: block;
+                        color: #656565;
+                        font-size: 10px;
+                    }
+                    .price {
+                        font-size: 18px;
+                        font-family: $font-geist;
+                        font-weight: 700;
+                        color: $black;
+                        line-height: 1;
+                    }
+                }
+                .btn {
+                    margin-left: auto;
+                    @media (max-width: 767px) {                
+                        display: none;
+                    }
+                }
+            }
+            &:hover {
+                background: #F7F6FD;
+                .card-title-img {
+                    .card-body {
+                        .card-title {
+                            a {
+                                color: $primary;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -95,7 +95,30 @@
             <!-- <div class="fixed-lr-border"></div> -->
             <section class="hero-header is-dark">
                 <div class="container">
-                    <div class="row">
+                    <div class="row flex-lg-row-reverse">
+                        <div class="col-lg-6">
+                            <div class="splide hero-image-splide splide-js">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="splide hero-content-splide splide-js">
                                 <div class="splide__track">
@@ -218,29 +241,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="splide hero-image-splide splide-js">
-                                <div class="splide__track">
-                                    <ul class="splide__list">
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                        <li class="splide__slide">
-                                            <div class="media-block">
-                                                <img src="uploads/img-hero-slide.jpg" alt="Cyber Security">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <script>
                         document.addEventListener( 'DOMContentLoaded', function () {
@@ -253,11 +253,6 @@
                                 classes: {
                                     pagination: 'splide__pagination icw-pagination is-dark'
                                 },
-                                breakpoints: {
-                                    992: {
-                                        pagination: false,
-                                    },
-                                }
                             } );
 
                             var thumbnails = new Splide( '.hero-image-splide', {
@@ -269,12 +264,6 @@
                                 classes: {
                                     pagination: 'splide__pagination icw-pagination is-dark'
                                 },
-                                breakpoints: {
-                                    992: {
-                                        pagination: true,
-                                    },
-                                    
-                                }
                             });
 
                             main.sync( thumbnails );
@@ -541,7 +530,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">IT Training</h3>
-                                        <p class="card-text">Certified professionals in their fields of expertise. Our trainers know how to teach and communicate with learners. They are skillful in making learning effective, enjoyable, and rewarding.</p>
+                                        <p class="card-info">Certified professionals in their fields of expertise. Our trainers know how to teach and communicate with learners. They are skillful in making learning effective, enjoyable, and rewarding.</p>
                                     </div>
                                     <div class="card-action">
                                         <a href="#" class="stretched-link"><span class="btn-link-arrow">View More<svg viewBox="0 0 13 20"><polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5"></polyline></svg></span></a>
@@ -555,7 +544,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">E-Learning</h3>
-                                        <p class="card-text">Rapid eLearning Development with Storyline, Captivate, Camtasia, and Lectora. Hand crafted custom development in HTML5 and JS. LMS and API configuration.</p>
+                                        <p class="card-info">Rapid eLearning Development with Storyline, Captivate, Camtasia, and Lectora. Hand crafted custom development in HTML5 and JS. LMS and API configuration.</p>
                                     </div>
                                     <div class="card-action">
                                         <a href="#" class="stretched-link"><span class="btn-link-arrow">View More<svg viewBox="0 0 13 20"><polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5"></polyline></svg></span></a>
@@ -569,7 +558,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">Web Services</h3>
-                                        <p class="card-text">Modern frameworks expertise. AmanaNet provides one-stop personalized web services, WordPress site health maintenance and hassle-free managed hosting.</p>
+                                        <p class="card-info">Modern frameworks expertise. AmanaNet provides one-stop personalized web services, WordPress site health maintenance and hassle-free managed hosting.</p>
                                     </div>
                                     <div class="card-action">
                                         <a href="#" class="stretched-link"><span class="btn-link-arrow">View More<svg viewBox="0 0 13 20"><polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5"></polyline></svg></span></a>
@@ -581,15 +570,86 @@
                 </div>
             </section>
             
-            <section class="main-section section-title-mw-700 pt-0">
+            <section class="main-section section-title-mw-700 upcoming-classes-card-section is-list-view pt-0">
                 <div class="container">
                     <div class="section-title">
                         <h2>View Upcoming Classes</h2>
                         <div class="sort-info">From Cybersecurity to AI & Machine Learning, our best-in-class training ensures your team stays ahead with comprehensive IT and professional courses.</div>
-                    </div>                    
+                    </div>   
+                    <div class="upcoming-classes-list-block">
+                        <div class="upcoming-classes-card">
+                            <div class="card-title-img">
+                                <div class="card-img"><img src="uploads/icon-a-csm.jpg" alt="Advanced Certified ScrumMaster (A-CSM) Training"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title"><a href="#">Advanced Certified ScrumMaster (A-CSM) Training</a></h3>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <div class="date">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></div>
+                                <div class="fees-info"><span class="price">$790.00</span><span>1 Day</span></div> 
+                                <a href="#" class="btn btn-outline-dark with-arrow btn-sm">View Details<span class="icon-arrow"></span></a>
+                            </div>
+                        </div>
+                        <div class="upcoming-classes-card">                            
+                            <div class="card-title-img">
+                                <div class="card-img"><img src="uploads/icon-apple-training-lg.svg" alt="Project Scope and Schedule Management"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title"><a href="#">Project Scope and Schedule Management</a></h3>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <div class="date">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></div>
+                                <div class="fees-info"><span class="price">$790.00</span><span>1 Day</span></div> 
+                                <a href="#" class="btn btn-outline-dark with-arrow btn-sm">View Details<span class="icon-arrow"></span></a>
+                            </div>
+                        </div>
+                        <div class="upcoming-classes-card">
+                            <div class="card-title-img">
+                                <div class="card-img"><img src="uploads/icon-aws.svg" alt="Project Scope and Schedule Management"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Project Scope and Schedule Management</h3>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <div class="date">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></div>
+                                <div class="fees-info"><span class="price">$790.00</span><span>1 Day</span></div> 
+                                <a href="#" class="btn btn-outline-dark with-arrow btn-sm">View Details<span class="icon-arrow"></span></a>
+                            </div>
+                        </div>
+                        <div class="upcoming-classes-card">
+                            <div class="card-title-img">
+                                <div class="card-img"><img src="uploads/icon-adobe-design.svg" alt="Adobe Acrobat Pro DC - Advanced"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title"><a href="#">Adobe Acrobat Pro DC - Advanced</a></h3>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <div class="date">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></div>
+                                <div class="fees-info"><span class="price">$790.00</span><span>1 Day</span></div> 
+                                <a href="#" class="btn btn-outline-dark with-arrow btn-sm">View Details<span class="icon-arrow"></span></a>
+                            </div>
+                        </div>
+                        <div class="upcoming-classes-card">
+                            <div class="card-title-img">
+                                <div class="card-img"><img src="uploads/icon-project-scope.svg" alt="Project Scope and Schedule Management"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title"><a href="#">Project Scope and Schedule Management</a></h3>
+                                    <div class="card-info">Learn the core features of InDesign: designing pages, placing text & images.</div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <div class="date">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></div>
+                                <div class="fees-info"><span class="price">$790.00</span><span>1 Day</span></div> 
+                                <a href="#" class="btn btn-outline-dark with-arrow btn-sm stretched-link">View Details<span class="icon-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action mt-5 text-center">
+                        <a href="#" class="btn btn-outline-dark with-arrow">Explore All Courses<span class="icon-arrow"></span></a>
+                    </div>                 
                 </div>
             </section>
-            <section class="main-section section-title-mw-700 upcoming-classes-card-section pt-0">
+            <section class="main-section section-title-mw-700 upcoming-classes-card-section is-card-view pt-0">
                 <div class="container">
                     <div class="section-title">
                         <h2>View Upcoming Classes</h2>
@@ -604,7 +664,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title"><a href="#" class="stretched-link">Introduction to Adobe InDesign</a></h3>
-                                    <p class="card-text">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
+                                    <p class="card-info">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
                                 </div>
                                 <div class="card-action">
                                     <div class="fees-info"><span>1 Day</span>•<span class="price">$790.00 <em class="icon"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.8C0 2.03 0.65 1.4 1.44444 1.4H11.5556C11.9386 1.4 12.306 1.5475 12.5769 1.81005C12.8478 2.0726 13 2.4287 13 2.8V12.6C13 12.9713 12.8478 13.3274 12.5769 13.5899C12.306 13.8525 11.9386 14 11.5556 14H1.44444C1.06135 14 0.693954 13.8525 0.423068 13.5899C0.152182 13.3274 0 12.9713 0 12.6V2.8ZM1.44444 4.2V12.6H11.5556V4.2H1.44444ZM2.88889 0H4.33333V1.4H2.88889V0ZM8.66667 0H10.1111V1.4H8.66667V0ZM2.88889 6.3H4.33333V7.7H2.88889V6.3ZM2.88889 9.1H4.33333V10.5H2.88889V9.1ZM5.77778 6.3H7.22222V7.7H5.77778V6.3ZM5.77778 9.1H7.22222V10.5H5.77778V9.1ZM8.66667 6.3H10.1111V7.7H8.66667V6.3ZM8.66667 9.1H10.1111V10.5H8.66667V9.1Z" fill="#2A396D"/></svg></em></span></div> 
@@ -619,7 +679,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title"><a href="#" class="stretched-link">Agile Training</a></h3>
-                                    <p class="card-text">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
+                                    <p class="card-info">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
                                 </div>
                                 <div class="card-action">
                                     <div class="fees-info"><span>1 Day</span>•<span class="price">$790.00 <em class="icon"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.8C0 2.03 0.65 1.4 1.44444 1.4H11.5556C11.9386 1.4 12.306 1.5475 12.5769 1.81005C12.8478 2.0726 13 2.4287 13 2.8V12.6C13 12.9713 12.8478 13.3274 12.5769 13.5899C12.306 13.8525 11.9386 14 11.5556 14H1.44444C1.06135 14 0.693954 13.8525 0.423068 13.5899C0.152182 13.3274 0 12.9713 0 12.6V2.8ZM1.44444 4.2V12.6H11.5556V4.2H1.44444ZM2.88889 0H4.33333V1.4H2.88889V0ZM8.66667 0H10.1111V1.4H8.66667V0ZM2.88889 6.3H4.33333V7.7H2.88889V6.3ZM2.88889 9.1H4.33333V10.5H2.88889V9.1ZM5.77778 6.3H7.22222V7.7H5.77778V6.3ZM5.77778 9.1H7.22222V10.5H5.77778V9.1ZM8.66667 6.3H10.1111V7.7H8.66667V6.3ZM8.66667 9.1H10.1111V10.5H8.66667V9.1Z" fill="#2A396D"/></svg></em></span></div> 
@@ -634,7 +694,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title"><a href="#" class="stretched-link">Apple Training</a></h3>
-                                    <p class="card-text">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
+                                    <p class="card-info">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
                                 </div>
                                 <div class="card-action">
                                     <div class="fees-info"><span>1 Day</span>•<span class="price">$790.00 <em class="icon"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.8C0 2.03 0.65 1.4 1.44444 1.4H11.5556C11.9386 1.4 12.306 1.5475 12.5769 1.81005C12.8478 2.0726 13 2.4287 13 2.8V12.6C13 12.9713 12.8478 13.3274 12.5769 13.5899C12.306 13.8525 11.9386 14 11.5556 14H1.44444C1.06135 14 0.693954 13.8525 0.423068 13.5899C0.152182 13.3274 0 12.9713 0 12.6V2.8ZM1.44444 4.2V12.6H11.5556V4.2H1.44444ZM2.88889 0H4.33333V1.4H2.88889V0ZM8.66667 0H10.1111V1.4H8.66667V0ZM2.88889 6.3H4.33333V7.7H2.88889V6.3ZM2.88889 9.1H4.33333V10.5H2.88889V9.1ZM5.77778 6.3H7.22222V7.7H5.77778V6.3ZM5.77778 9.1H7.22222V10.5H5.77778V9.1ZM8.66667 6.3H10.1111V7.7H8.66667V6.3ZM8.66667 9.1H10.1111V10.5H8.66667V9.1Z" fill="#2A396D"/></svg></em></span></div> 
@@ -649,7 +709,7 @@
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title"><a href="#" class="stretched-link">Agile Training</a></h3>
-                                    <p class="card-text">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
+                                    <p class="card-info">Next class starts in <strong>1 day</strong><br> on <strong>Tuesday, June 7, 202</strong></p>
                                 </div>
                                 <div class="card-action">
                                     <div class="fees-info"><span>1 Day</span>•<span class="price">$790.00 <em class="icon"><svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 2.8C0 2.03 0.65 1.4 1.44444 1.4H11.5556C11.9386 1.4 12.306 1.5475 12.5769 1.81005C12.8478 2.0726 13 2.4287 13 2.8V12.6C13 12.9713 12.8478 13.3274 12.5769 13.5899C12.306 13.8525 11.9386 14 11.5556 14H1.44444C1.06135 14 0.693954 13.8525 0.423068 13.5899C0.152182 13.3274 0 12.9713 0 12.6V2.8ZM1.44444 4.2V12.6H11.5556V4.2H1.44444ZM2.88889 0H4.33333V1.4H2.88889V0ZM8.66667 0H10.1111V1.4H8.66667V0ZM2.88889 6.3H4.33333V7.7H2.88889V6.3ZM2.88889 9.1H4.33333V10.5H2.88889V9.1ZM5.77778 6.3H7.22222V7.7H5.77778V6.3ZM5.77778 9.1H7.22222V10.5H5.77778V9.1ZM8.66667 6.3H10.1111V7.7H8.66667V6.3ZM8.66667 9.1H10.1111V10.5H8.66667V9.1Z" fill="#2A396D"/></svg></em></span></div> 
@@ -659,6 +719,169 @@
                     </div>
                     <div class="action mt-5 text-center">
                         <a href="#" class="btn btn-outline-dark with-arrow">Explore All Courses<span class="icon-arrow"></span></a>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section full-width-section with-border section-title-mw-500 pt-0 pb-lg-0">
+                <div class="full-content-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="section-title mb-lg-0">
+                                    <h2>Trusted Training <br class="d-none d-lg-block">Partner</h2>
+                                    <div class="sort-info">From Cybersecurity and Cloud Computing to AI, Machine Learning, and beyond our best-in-class training programs are designed to equip your team.</div>
+                                </div>    
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="trusted-partner-logo-block">
+                                    <div class="logo-item"><img src="uploads/logo-canadian.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-xtremelabs.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-ctt.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-certified-online-training-professional.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-certnexus.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-comptia.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-mile.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-trainingcamp.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-adobe.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-isaca.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-interactive-advantage.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-nterone.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-tlg-learning.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-logical-operations.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-deep-creek.png" alt="Canadian Training & Consulting"></div>
+                                    <div class="logo-item"><img src="uploads/logo-iconlogic.png" alt="Canadian Training & Consulting"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section testimonial-section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Students Success Says It All</h2>
+                    </div>
+                </div>                    
+                <div class="full-content-block with-border">
+                    <div class="splide testimonial-splide" data-splide='{"type": "loop","perPage": 3,"perMove": 1,"pagination": false,"arrows": true,"pauseOnHover": true,"gap": 0,"breakpoints": {"1200": {"perPage": 3},"992": {"perPage": 2},"767": {"perPage": 1, "autoWidth": true}}}'>
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">I just wanted to reach out and let you know the Marines are really enjoying the classes and thought the instructors were terrific.”</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">Amazing instructor. He is very patient and knowledgeable. The training was well organized and gave a good opportunity to practice the different applications and have a hands-on experience.</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">I just wanted to reach out and let you know the Marines are really enjoying the classes and thought the instructors were terrific.”</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">I just wanted to reach out and let you know the Marines are really enjoying the classes and thought the instructors were terrific.”</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">I just wanted to reach out and let you know the Marines are really enjoying the classes and thought the instructors were terrific.”</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="testimonial-card">
+                                        <div class="card-icon"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6785 18V11.9742C12.6785 8.67811 13.3464 5.97425 14.6823 3.86266C16.0716 1.75107 18.2892 0.46352 21.335 0V3.16738C19.5182 3.37339 18.2357 4.04292 17.4876 5.17596C16.7395 6.30901 16.3655 8.11159 16.3655 10.5837L13.9609 10.2747H21.2548V18H12.6785ZM0.334961 18V11.9742C0.334961 8.67811 1.0029 5.97425 2.33878 3.86266C3.72809 1.75107 5.94565 0.46352 8.99145 0V3.16738C7.17466 3.37339 5.89221 4.04292 5.14412 5.17596C4.39603 6.30901 4.02198 8.11159 4.02198 10.5837L1.6174 10.2747H8.9113V18H0.334961Z" fill="black"/></svg></div>
+                                        <div class="card-info">I just wanted to reach out and let you know the Marines are really enjoying the classes and thought the instructors were terrific.”</div>
+                                        <div class="card-action">
+                                            <div class="user-info">
+                                                <div class="name">Tammie Cassell</div>
+                                                <span>– USMC</span>
+                                            </div>
+                                            <div class="class-info">
+                                                <div class="icon"><img src="uploads/icon-adobe-design.svg" alt="Adobe Designer"></div>
+                                                <div class="class-name">
+                                                    <span>Adobe Designer</span>
+                                                    <span>Level I</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

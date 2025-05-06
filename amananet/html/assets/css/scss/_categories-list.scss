@@ -4,7 +4,7 @@
             &.grid-col-2 {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-gap: 16px 25px;
+                grid-gap: 1rem 1.5625rem;
                 @media (max-width: 767px) {
                     grid-template-columns: repeat(1, 1fr);
                 }
@@ -21,9 +21,9 @@
             }
             &::before  {
                 content: '';
-                width: 40px;
+                width: 2.5rem;
                 height: 100%;
-                @include border-radius(7px);
+                @include border-radius(0.5rem);
                 background: #F7F6FD;
                 position: absolute;
                 top: 0;
@@ -32,23 +32,23 @@
                 z-index: -1;
             }
             .icon {
-                width: 40px;
-                height: 40px;
+                width: 2.5rem;
+                height: 2.5rem;
                 flex: none;
-                @include border-radius(7px);
+                @include border-radius(0.5rem);
                 background: #F7F6FD;
                 @include flexbox;
                 @include align-items(center);
                 @include justify-content(center);
-                margin-right: 14px;
+                margin-right: 0.875rem;
                 img {
-                    max-width: 20px;
+                    max-width: 1.25rem;
                 }
             }
             .category-content {
-                margin-right: 15px;
+                margin-right: 0.9375rem;
                 .title {
-                    font-size: 14px;
+                    font-size: 0.875rem;
                     font-weight: 500;
                     color: $black;
                     line-height: 1.2;
@@ -56,7 +56,7 @@
             }
             .action {
                 margin-left: auto;
-                padding-right: 12px;
+                padding-right: 0.75rem;
                 @include transition(0.3s, ease-in-out);
             }
             &:hover, &:focus {
@@ -64,7 +64,7 @@
                     width: 100%;
                 }
                 .action {
-                    @include transform(translateX(5px));
+                    @include transform(translateX(0.3125rem));
                 }
             }
         }
@@ -75,49 +75,49 @@
                 text-decoration: none;
                 width: 100%;
                 position: relative;
-                padding-bottom: 15px;
-                border-bottom: 1px solid rgba(#D8DCEA, 0.5);
+                padding-bottom: 0.9375rem;
+                border-bottom: 0.0625rem solid rgba(#D8DCEA, 0.5);
                 &:last-child {
                     margin-bottom: 0;
                 }
                 &::before  {
                     content: '';
                     width: 0;
-                    height: 1px;
+                    height: 0.0625rem;
                     @include border-radius(0);
                     background: $primary;
                     position: absolute;
                     top: auto;
                     left: 0;
-                    bottom: -1px;
+                    bottom: -0.0625rem;
                     @include transition(0.3s, ease-in-out);
                     z-index: 1;
                 }
                 .icon {
-                    width: 20px;
-                    height: 20px;
+                    width: 1.25rem;
+                    height: 1.25rem;
                     flex: none;
                     @include border-radius(0);
                     background: transparent;
                     @include flexbox;
                     @include align-items(center);
                     @include justify-content(center);
-                    margin-right: 10px;
+                    margin-right: 0.625rem;
                     img {
-                        max-width: 20px;
+                        max-width: 1.25rem;
                     }
                 }
                 .category-content {
-                    margin-right: 15px;
+                    margin-right: 0.9375rem;
                     .title {
-                        font-size: 14px;
+                        font-size: 0.875rem;
                         font-weight: 500;
                         color: $black;
                     }
                 }
                 .action {
                     margin-left: auto;
-                    padding-right: 12px;
+                    padding-right: 0.75rem;
                     @include transition(0.3s, ease-in-out);
                 }
                 &:hover, &:focus {
@@ -125,7 +125,7 @@
                         width: 100%;
                     }
                     .action {
-                        @include transform(translateX(5px));
+                        @include transform(translateX(0.3125rem));
                     }
                 }
             }
