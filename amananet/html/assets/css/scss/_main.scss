@@ -16,8 +16,8 @@
         @media (max-width: 1200px) {
             left: 2vw;
         }
-        @media (max-width: 767px) {
-            left: 1vw;
+        @media (max-width: 992px) {
+            content: none;
         }
     }    
     &::after {
@@ -35,8 +35,8 @@
         @media (max-width: 1200px) {
             right: 2vw;
         }
-        @media (max-width: 767px) {
-            right: 1vw;
+        @media (max-width: 992px) {
+            content: none;
         }
     }
 }
@@ -167,8 +167,8 @@
         @media (max-width: 1200px) {
             margin: 0 2vw;
         }
-        @media (max-width: 767px) {
-            margin: 0 1vw;
+        @media (max-width: 992px) {
+            margin: 0;
         }
         .full-content-block {
             &.with-border {

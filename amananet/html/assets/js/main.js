@@ -19,6 +19,12 @@ jQuery(document).ready(function($) {
             } else {
                 $(".main-header").removeClass("fixed-header");
             }
+        });  
+        $('.sidebar-toggler').on('click',function(){
+            $(".main-header .mobile-menu").addClass('is-open');
+        });
+        $('.menu-close').on('click',function(){
+            $(".main-header .mobile-menu").removeClass('is-open');
         });
     }
     if ($('li.menu-item-has-children').length) {

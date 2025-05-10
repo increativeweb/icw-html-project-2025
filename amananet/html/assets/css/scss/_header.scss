@@ -1,7 +1,8 @@
 .main-header {  
     border-bottom: 0.0625rem solid #E2E5EE; 
     z-index: 4;
-    position: relative;  
+    position: relative;
+    background: $white;
     &.fixed-header {
         position: sticky;
         top: 0;
@@ -9,12 +10,15 @@
             height: 0;
             display: none;
         }
-    }
+    }   
     .navbar {
         padding: 0;
         .container {
             @include flexbox;
             @include align-items(center);
+            @media (max-width: 992px) {
+                max-width: 100%;
+            }
         }
         ul {                
             @include flexbox;
@@ -26,13 +30,14 @@
                     color: $black;
                     text-decoration: none;
                     position: relative;
-                    padding: 0.5rem 1rem;
+                    padding: 0.5rem 0.75rem;
                     @include transition(0.05s, ease-in-out);
                     @include border-radius(1.88rem);
                     @include inline-flex;
                     @include align-items(center);
                     @media (max-width: 992px) {
-                        font-size: 0.81rem;
+                        font-size: 0.875rem;
+                        padding: 0.4rem 0.55rem;
                     }
                     &.with-icon {
                         .icon {
@@ -57,10 +62,11 @@
                     }
                 }
                 &.menu-item-has-children {
+                    position: relative;
                     & > a {
                         @include flexbox;
                         @include align-items(center);
-                        @media (min-width: 992px) {
+                        @media (min-width: 767px) {
                             &::after {
                                 content: '';
                                 background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>') no-repeat center center;
@@ -77,16 +83,25 @@
                         @media (min-width: 767px) {
                             display: none;
                         }
-                       
+                        background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>') no-repeat center center;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                        display: inline-block;
+                        position: absolute;
+                        right: 15px;
+                        top: 15px;
+                        &.is-active {
+                            @include transform(rotate(180deg));
+                        }
                     }
                     .sub-menu {
-                        @media (min-width: 992px) {  
+                        @media (min-width: 767px) {  
                             position: absolute;
                             top: 0.5rem;
+                            right: 0;
                             display: block;
                             min-width: 13.75rem;
                             padding: 0.625rem;
-                            margin-top: 0.94rem;
                             opacity: 0;
                             pointer-events: none;
                             background: $white;
@@ -108,6 +123,13 @@
                                 left: 0;
                             }
                         }
+                        @media (max-width: 992px) {
+                            top: 0.2rem;
+                        }
+                        @media (max-width: 767px) {
+                            display: none;
+                            margin-left: 0px;  
+                        }
                         li {
                             a {
                                 display: block;
@@ -124,15 +146,14 @@
                     }
                     &:hover, &:focus {
                         & > a {
-                            @media (min-width: 992px) {
+                            @media (min-width: 767px) {
                                 &::after {
-                                    background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(42 57 109)"/></svg>') no-repeat center center;
                                     @include transform(rotate(180deg));
                                 }
                             }
                         }
                         .sub-menu {
-                            @media (min-width: 992px) {                        
+                            @media (min-width: 767px) {                        
                                 opacity: 1;
                                 pointer-events: auto;
                                 visibility: visible;
@@ -150,7 +171,7 @@
         @include align-items(center);
         width: 100%;
         padding: 0.625rem 0;
-        @media (max-width: 992px) {
+        @media (max-width: 767px) {
             display: none;
         }
         .info-menu {           
@@ -163,6 +184,9 @@
                         font-size: 0.813rem;
                         text-transform: uppercase;
                         background: #F7F6FD;
+                        @media (max-width: 992px) {
+                            font-size: 0.75rem;
+                        }
                         &:hover, &:focus, &:active {
                             background: #EEEDF4;
                         }
@@ -180,12 +204,20 @@
                     a {
                         font-weight: 500;
                         font-size: 0.81rem;
+                        @media (max-width: 992px) {
+                            font-size: 0.75rem;
+                        }
                         &.btn {
                             min-height: 2.25rem;
                             font-size: 0.75rem;
                             min-width: auto;
                             text-transform: uppercase;
-                            margin-left: 0.9375rem;
+                            margin: 0 0.5rem;
+                            padding: 0.5rem 1.125rem;
+                            @media (max-width: 992px) {
+                                padding: 0.5rem 1rem;
+                                margin: 0 0.3rem;
+                            }
                         }
                     }
                 }
@@ -197,21 +229,181 @@
         padding: 0.5rem 0;  
         position: sticky;
         top: 0;
-        left: 0;     
+        left: 0;   
+        @media (max-width: 992px) {
+            padding: 0.5rem 0;
+        }  
         .logo-block {
             .navbar-brand {
                 margin-right: 1.875rem;
+                @media (max-width: 992px) {
+                    img {
+                        max-height: 50px;
+                    }
+                }  
             }
         }
         .main-menu {
             margin-left: auto;
-            margin-right: -1rem;
+            margin-right: -0.9375rem;
             @media (max-width: 992px) {
-                display: none;
+                margin-right: -0.7rem;
+            }  
+            ul {
+                li {
+                    a {
+                        padding: 0.5rem 0.9375rem;
+                        @media (max-width: 992px) {
+                            padding: 0.5rem 0.7rem;
+                        }  
+                    }
+                }
+            }
+            &.mobile-menu {
+                @media (min-width: 767px) {
+                    .mobile-top-menu, .mobile-bottom-menu {
+                        display: none;
+                    }
+                }
+                @media (max-width: 767px) {  
+                    position: fixed;
+                    top: 0;
+                    left: 0;  
+                    width: 100%;
+                    height: 100%;   
+                    z-index: 6;          
+                    @include transform(translateX(-110%));  
+                    background: transparent;   
+                    transition: transform 0.3s ease-in-out 0.2s, background 0.3s ease-in-out;
+                    .menu-content {
+                        max-width: 320px;
+                        height: calc(100% - 30px);
+                        background: $white;
+                        margin: 15px;                        
+                        @include border-radius(15px);
+                        @include flexbox;
+                        @include flex-direction(column);   
+                    }
+                    .main-menu-list {
+                        @include flex-direction(column);
+                        @include align-items(flex-start);
+                        flex: 1 1 auto;
+                        overflow: hidden;
+                        overflow-y: auto;
+                        li { 
+                            width: 100%;
+                            border-bottom: 1px solid #EEEDF8;
+                            a {
+                                @include border-radius(0);
+                                display: block;
+                                padding: 1rem;
+                            }
+                            .sub-menu {
+                                padding: 0.5rem;
+                                min-width: 100%;
+                                li {
+                                    border: none;
+                                    padding: 0;
+                                    margin-bottom: 0.125rem;
+                                    a {
+                                        padding: 0.5rem;
+                                        display: block;
+                                        @include border-radius(4px);
+                                        &:hover, &:focus {
+                                            background: #F7F6FD
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.is-open {
+                        background: rgba($black, 0.5);
+                        @include transform(translateX(0));                          
+                        transition: background 0.3s ease-in-out 0.2s, transform 0.3s ease-in-out;
+                    }
+                    .mobile-top-menu {
+                        @include flexbox;
+                        padding: 1rem;
+                        margin-bottom: 0.5rem;
+                        .menu-close {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            @include flexbox;
+                            @include align-items(center);
+                            @include justify-content(center);
+                            @include border-radius(6px);
+                            svg {
+                                width: 6px;
+                            }
+                            &:hover, &:focus {
+                                background: #F7F6FD;
+                            }
+                        }
+                        .contact-link {
+                            margin-left: auto;
+                            font-size: 0.81rem;
+                            font-weight: 700;
+                            font-family: $font-geist;
+                            text-decoration: none;
+                            color: $black;
+                            @include flexbox;
+                            @include align-items(center);
+                            padding: 0.5rem 0.75rem;
+                            @include border-radius(2rem);
+                            @include transition(0.05s, ease-in-out);
+                            .icon {
+                                margin-right: 0.3125rem;
+                                @include inline-flex;
+                                @include align-items(center);
+                                @include justify-content(center);
+                                svg {                                    
+                                    width: 0.875rem;
+                                    height: 0.875rem;
+                                    flex: none;
+                                }
+                            }
+                            &:hover, &:focus {
+                                background: #F7F6FD;
+                            }
+                        }
+                    }
+                    .menu-title {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: $black;
+                        font-family: $font-geist;
+                        margin-bottom: 1rem;
+                        padding: 0 1rem;
+                    }
+                    .mobile-bottom-menu {
+                        border-top: 1px solid #EEEDF8;
+                        ul {
+                            li {
+                                padding: 0.5rem;
+                                &:not(:last-child) {
+                                    border-right: 1px solid #EEEDF8;
+                                }
+                                a {
+                                    @include flexbox;
+                                    font-size: 0.75rem;
+                                    padding: 0.5rem 0.625rem;
+                                    .icon {
+                                        margin-right: 0.3125rem;
+                                    }
+                                    svg {
+                                        width: 13px;
+                                        height: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         .sidebar-toggler {
-            @media (min-width: 1200px) {
+            @media (min-width: 992px) {
                 display: none;
             }
             border: none;
@@ -230,7 +422,7 @@
             }
         }
         .right-menu {
-            @media (min-width: 992px) {
+            @media (min-width: 767px) {
                 display: none;
             }
             @include flexbox;
