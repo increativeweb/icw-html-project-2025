@@ -28,12 +28,13 @@ jQuery(document).ready(function($) {
         });
     }
     if ($('li.menu-item-has-children').length) {
-        $("li.menu-item-has-children > a").after('<i class="arrow"></i>');
+        $("li.menu-item-has-children > a, li.menu-item-has-children > span").after('<i class="arrow"></i>');
     }
     $('li.menu-item-has-children .arrow').on('click',function(event){
         event.preventDefault();
         $(this).toggleClass('is-active');
         $(this).parent().find('.sub-menu').first().toggle(300);
+        
     });
     
     if ($(".icw-progress-goto").length > 0) {

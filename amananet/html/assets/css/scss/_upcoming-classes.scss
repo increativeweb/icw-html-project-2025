@@ -1,4 +1,15 @@
 .upcoming-classes-card-section {
+    .row {
+        & > .col {
+            &:last-child {
+                .upcoming-classes-card {                    
+                    @media (max-width: 992px) {
+                        border-bottom: 1px solid #D4D6E5 !important;
+                    }
+                }
+            }
+        }
+    }
     &.is-card-view {
         .upcoming-classes-card {
             border: none;

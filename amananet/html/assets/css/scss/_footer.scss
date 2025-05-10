@@ -1,5 +1,10 @@
 .main-footer {
-    position: relative;
+    position: relative;    
+    .container {
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
     ul {
         li {
             &:not(:last-child) {
@@ -68,8 +73,8 @@
         @media (max-width: 992px) {            
             grid-template-columns: 1fr;
         }
-        & > .container {
-            width: 100%;
+        @media (max-width: 767px) {            
+            grid-gap: 0;
         }
         .footer-info-block {
             padding: 3rem 0;
@@ -78,6 +83,11 @@
             @include flex-direction(column);
             @media (max-width: 992px) {
                 padding-bottom: 0;
+            }
+            @media (max-width: 767px) {
+                @include align-items(center);
+                max-width: 500px;
+                margin: 0 auto;
             }
             &::before {
                 content: '';
@@ -98,6 +108,9 @@
                     width: 100%;
                     height: 0.0625rem;
                 }
+                @media (max-width: 767px) {
+                    content: none;
+                }
             }
             .footer-logo {
                 margin-bottom: 1.5rem;
@@ -107,9 +120,16 @@
                 font-size: 0.875rem;
                 margin-bottom: 1.5rem;
                 flex: 1 1 auto;
+                @media (max-width: 767px) {
+                    text-align: center;
+                    margin-bottom: 0;
+                }
             }
             .icon-menu-list {
                 margin-left: -0.625rem;
+                @media (max-width: 767px) {
+                    display: none;
+                }
                 li {
                     a {
                         padding: 0.3125rem 0.75rem;
@@ -148,8 +168,17 @@
             }
             @media (max-width: 767px) {
                 @include flex-direction(column);
+                gap: 0 1.2rem;
+                padding-bottom: 0;
             }
             .footer-menu {
+                @media (max-width: 767px) {
+                    border-top: 1px solid rgba(#D4D6E5, 0.4);
+                    margin: 0 -0.9375rem;
+                    padding: 0 0.9375rem;
+                    padding-top: 1.5rem;
+                    margin-top: 1.5rem;
+                }
                 li {
                     a {                            
                         @include border-radius(0.25rem);  
@@ -157,22 +186,55 @@
                         margin-left: -0.45rem; 
                     }
                     &.menu-title {
+                        @media (min-width: 767px) {
+                            margin-bottom: 0.875rem;
+                        }
                         & > span {
                             color: rgba($white, 0.6);
                             text-transform: uppercase;
-                            margin-bottom: 0.875rem;
+                            margin-left: -0.45rem; 
                             font-weight: 600;
                             font-size: 0.875rem;
+                            padding: 0.25rem 0.45rem 0.20rem;  
                             display: block;
                         }
                         & > a {
                             color: rgba($white, 0.6);
                             text-transform: uppercase;
                             font-weight: 600;
-                            margin-bottom: 0.875rem; 
                             margin-left: -0.45rem; 
                             &:hover, &:focus, &:active {
                                 color: $white;
+                            }
+                        }
+                    }
+                    &.menu-item-has-children {
+                        position: relative;
+                        .arrow {
+                            @media (min-width: 767px) {
+                                display: none;
+                            }
+                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 6px);
+                            background-size: 10px;
+                            width: 1.25rem;
+                            height: 1.25rem;
+                            display: inline-block;
+                            position: absolute;
+                            right: 0;
+                            top: 5px;
+                            @include border-radius(4px);
+                            &.is-active {
+                                @include transform(rotate(180deg));
+                            }
+                            &:hover, &:active {
+                                background: #3A3A3A url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 6px); 
+                            }
+                        }
+                        .sub-menu {
+                            @media (max-width: 767px) {
+                                margin-top: 0.875rem;
+                                min-width: 100%;
+                                display: none;
                             }
                         }
                     }
@@ -205,6 +267,47 @@
                                         margin-left: 0rem;
                                     }
                                 }         
+                            }
+                        }
+                    }
+                }
+                &.contact-info-menu {
+                    padding-top: 0;
+                    li {
+                        border-top: 1px solid rgba(#D4D6E5, 0.4);
+                        margin: 0 -0.9375rem;
+                        padding: 0 0.9375rem;
+                        padding-top: 1rem;
+                        margin-top: 1rem;
+                        &:first-child {
+                            border-top: 0;
+                            margin-top: 0;
+                        }
+                        &:last-child {                           
+                            padding-bottom: 1rem;
+                        }
+                        a {
+                            color: #949494;
+                            .icon {
+                                margin-right: 10px;
+                                svg {
+                                    width: 1rem;
+                                    height: 1rem;
+                                    path {
+                                        fill: #949494;
+                                    }
+                                }
+                            }
+                            &:hover, &:focus, &:active {
+                                color: $white;
+                                background: transparent;
+                                .icon {
+                                    svg {
+                                        path {
+                                            fill: $white;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -323,7 +426,7 @@
             @include align-items(center);
             gap: 0.75rem;
             @media (max-width: 767px) {
-                margin-left: 0;
+                margin-left: -0.75rem;
                 order: 1;
             }
             li {
