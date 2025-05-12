@@ -1,6 +1,14 @@
 .hero-header {
     position: relative;
-    background: $black;
+    background: $black url(../images/img-hero-bg.jpg) no-repeat top left;
+    background-size: 55vw 100%;
+    @media (max-width: 992px) { 
+        background-size: 100% 55%;
+        background-position: bottom left;
+    }
+    @media (max-width: 767px) { 
+        background-size: 100% 70%;
+    }
     & > .container {
         @media (max-width: 992px) {
             max-width: 100%;
@@ -35,6 +43,7 @@
         height: 100%;
         img {
             height: 100%;
+            width: 100%;
             object-fit: cover;
             object-position: center;
         }
@@ -73,10 +82,10 @@
         }
     }
     .hero-image-splide {
-        width: calc(50vw - 1.5rem);
+        width: calc(50vw - 30px);
         height: 100%;
         @media (max-width: 992px) { 
-            width: fit-content;
+            width: calc(100% + 30px);
             margin-left: -15px;
             margin-right: -15px;
         }
