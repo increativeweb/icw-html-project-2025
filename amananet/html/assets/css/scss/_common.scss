@@ -961,7 +961,7 @@ h5, .h5 {
 // Vector Animation
 .fixed-top-gradient-bg {
     position: fixed;
-    top: 0;
+    top: 70px;
     width: 100vw;
     height: 100vh;
     background-image: url(../images/top-gradient-bg.svg);
@@ -1072,4 +1072,34 @@ h5, .h5 {
 		-webkit-transition: all 200ms linear;
 		transition: all 200ms linear;
 	}
+}
+
+// Breadcrumb
+.breadcrumb-nav {
+    margin-bottom: 50px;
+    opacity: 1;
+    .breadcrumb {
+        .breadcrumb-item {
+            font-size: 12px;
+            color: #656565;
+            font-weight: 500;
+            a {
+                text-decoration: none;
+                color: $black;
+                @include transition(0.3s, ease-in-out);
+                &:hover, &:focus {
+                    color: $primary;
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .breadcrumb-item + .breadcrumb-item {
+            &::before {
+                content: url('data:image/svg+xml,<svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7.5L4 4.5L1 1.5" stroke="rgb(101 101 101)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
 }
