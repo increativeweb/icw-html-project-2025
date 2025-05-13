@@ -1,17 +1,22 @@
 .hero-header {
     position: relative;
-    background: $black url(../images/img-hero-bg.jpg) no-repeat top left;
-    background-size: 55vw 100%;
-    @media (max-width: 992px) { 
-        background-size: 100% 55%;
-        background-position: bottom left;
-    }
-    @media (max-width: 767px) { 
-        background-size: 100% 70%;
-    }
+    background: $black;
+    z-index: 1;
     & > .container {
         @media (max-width: 992px) {
             max-width: 100%;
+        }
+    }
+    .media-bg-block { 
+        max-width: 55vw;
+        @media (max-width: 992px) { 
+            max-width: 100vw;
+            height: 55%;
+            top: auto;
+            bottom: 0;
+        }
+        @media (max-width: 767px) { 
+            height: 70%;
         }
     }
     .section-title {
@@ -82,7 +87,7 @@
         }
     }
     .hero-image-splide {
-        width: calc(50vw - 30px);
+        width: calc(50vw - 20px);
         height: 100%;
         @media (max-width: 992px) { 
             width: calc(100% + 30px);
