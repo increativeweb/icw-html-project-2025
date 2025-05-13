@@ -240,7 +240,7 @@ img {
 	@include border-radius(2.25rem);
     border: 0.0625rem solid transparent;
     // transition: transform .3s cubic-bezier(.5,2.5,.7,.7), box-shadow .3s cubic-bezier(.5,2.5,.7,.7) !important;
-    transition: all 0.2s ease-in-out;
+    @include transition(0.2s, ease-in-out);
 	min-height: 2.75rem;
     min-width: 8.75rem;
 	font-weight: 500;
@@ -249,7 +249,7 @@ img {
 	line-height: 1;
     transform: translateY(0);
     &:hover, &:focus, &:active {        
-        box-shadow: -0.1875rem 0.1875rem rgb(0, 0, 0) !important;
+        box-shadow: -0.1875rem 0.1875rem #000000 !important;
         transform: translate(0.1875rem, -0.1875rem);
     }
     &:active, &:focus {    
@@ -311,7 +311,7 @@ img {
         border-color: $white !important;
 		background-color: $white !important;
         &:hover, &:focus, &:active {        
-            box-shadow: -0.1875rem 0.1875rem rgb(255, 255, 255);
+            box-shadow: -0.1875rem 0.1875rem rgb(255, 255, 255) !important;
         }
 	}
 	&.btn-dark {
@@ -357,7 +357,7 @@ img {
             }
         }
         &:hover, &:focus, &:active {        
-            box-shadow: -0.1875rem 0.1875rem rgb(255, 255, 255);
+            box-shadow: -0.1875rem 0.1875rem rgb(255, 255, 255) !important;
         }
 	}
 	&.btn-outline-dark {
