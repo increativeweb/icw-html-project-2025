@@ -13,18 +13,14 @@
     &.is-card-view {
         .upcoming-classes-card {
             border: none;
-            @include border-radius(0);
+            @include border-radius(6px);
             position: relative;
             height: 100%;
             @include flexbox;
             @include flex-direction(column);
             border: 1px solid #D4D6E5;
-            border-right: 0;
             @include transition(0.3s, ease-in-out);
-            @media (max-width: 992px) {
-                border: 1px solid #D4D6E5;
-                border-top: none;
-            }
+            overflow: hidden;
             .card-img {
                 overflow: hidden;
                 line-height: 0.7;

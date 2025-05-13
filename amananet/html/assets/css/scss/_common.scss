@@ -818,8 +818,8 @@ img {
         top: auto;
         left: 20%;
         right: auto;
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
         @include transform(unset);
         @media (max-width: 1440px) {
             left: 15%;
@@ -829,9 +829,9 @@ img {
         }
         @media (max-width: 767px) {
             bottom: -2.2rem;
-            left: 30px;
-            width: 20px;
-            height: 20px;
+            left: 1.88rem;
+            width: 1.25rem;
+            height: 1.25rem;
         }
         &.splide__arrow--prev {
             transform: scaleX(-1);
@@ -845,7 +845,7 @@ img {
                 left: 14%;
             }
             @media (max-width: 767px) {
-                left: 60px;
+                left: 3.75rem;
             }
         }
         svg {

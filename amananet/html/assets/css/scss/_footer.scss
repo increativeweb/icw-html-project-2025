@@ -86,7 +86,7 @@
             }
             @media (max-width: 767px) {
                 @include align-items(center);
-                max-width: 500px;
+                max-width: 31.25rem;
                 margin: 0 auto;
             }
             &::before {
@@ -121,7 +121,7 @@
                 margin-bottom: 1.5rem;
                 flex: 1 1 auto;
                 @media (max-width: 992px) {
-                    max-width: 500px;
+                    max-width: 31.25rem;
                 }
                 @media (max-width: 767px) {
                     text-align: center;
@@ -176,7 +176,7 @@
             }
             .footer-menu {
                 @media (max-width: 767px) {
-                    border-top: 1px solid rgba(#D4D6E5, 0.4);
+                    border-top: 0.0625rem solid rgba(#D4D6E5, 0.4);
                     margin: 0 -0.9375rem;
                     padding: 0 0.9375rem;
                     padding-top: 1.5rem;
@@ -217,20 +217,20 @@
                             @media (min-width: 767px) {
                                 display: none;
                             }
-                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 6px);
-                            background-size: 10px;
+                            background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 0.375rem);
+                            background-size: 0.75rem;
                             width: 1.25rem;
                             height: 1.25rem;
                             display: inline-block;
                             position: absolute;
                             right: 0;
-                            top: 5px;
-                            @include border-radius(4px);
+                            top: 0.3125rem;
+                            @include border-radius(0.25rem);
                             &.is-active {
                                 @include transform(rotate(180deg));
                             }
                             &:hover, &:active {
-                                background: #3A3A3A url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 6px); 
+                                background: #3A3A3A url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(255 255 255)"/></svg>') no-repeat center calc(100% - 0.375rem); 
                             }
                         }
                         .sub-menu {
@@ -278,7 +278,7 @@
                 &.contact-info-menu {
                     padding-top: 0;
                     li {
-                        border-top: 1px solid rgba(#D4D6E5, 0.4);
+                        border-top: 0.0625rem solid rgba(#D4D6E5, 0.4);
                         margin: 0 -0.9375rem;
                         padding: 0 0.9375rem;
                         padding-top: 1rem;
@@ -293,7 +293,7 @@
                         a {
                             color: #949494;
                             .icon {
-                                margin-right: 10px;
+                                margin-right: 0.625rem;
                                 svg {
                                     width: 1rem;
                                     height: 1rem;
