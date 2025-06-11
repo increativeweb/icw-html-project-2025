@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dental Note Bot - Interactive Project Plan</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Chosen Palette: Calm Neutral Harmony -->
+        <!-- Application Structure Plan: A dashboard-style, single-page application is designed to transform the static development guide into an engaging and explorable project command center. The structure avoids a simple linear scroll, instead opting for a top-level navigation that links to distinct, interactive sections: 1) An 'Overview' dashboard with key metrics (timeline, effort) and summary charts (Gantt-style timeline, effort distribution). 2) An 'Interactive Milestone Explorer' using a clickable process flow diagram to reveal detailed information for each phase, preventing information overload. 3) A 'Tech & Risks' section using a tabbed interface to neatly separate the technology stack from an interactive risk matrix accordion. 4) A 'Communication' section presenting the plan in a clear, digestible format. This information architecture was chosen to empower the user (e.g., a project stakeholder) to quickly grasp high-level metrics and then dive deep into specific areas of interest in a non-linear, intuitive way, which is far more effective for understanding a complex plan than reading a document. -->
+        <!-- Visualization & Content Choices: 
+            - Project Overview Stats (Total Days, Total Hours): Report Info -> Project Totals -> Goal: Inform -> Viz/Method: Large number stat cards (HTML/CSS) -> Interaction: None -> Justification: Provides at-a-glance key project metrics.
+            - Milestone Timeline (Gantt-style Chart): Report Info -> Milestone Durations -> Goal: Show Change/Progression -> Viz/Method: Chart.js Horizontal Bar Chart -> Interaction: Hover tooltips for details -> Justification: Visually represents the project schedule and phase dependencies.
+            - Effort Distribution (Donut Chart): Report Info -> Milestone Hours -> Goal: Compare -> Viz/Method: Chart.js Donut Chart -> Interaction: Hover tooltips for details -> Justification: Highlights which milestones are the most resource-intensive.
+            - Interactive Milestone Flow: Report Info -> Detailed Milestone Content (Tasks, Deliverables) -> Goal: Organize -> Viz/Method: HTML/CSS Flexbox diagram + JS-powered detail panel -> Interaction: Click milestone to display its content -> Justification: Breaks down dense information, making it digestible and interactive.
+            - Risk Matrix: Report Info -> Risks & Mitigations -> Goal: Organize -> Viz/Method: HTML/CSS Accordion -> Interaction: Click to expand/collapse risk categories -> Justification: Neatly organizes complex risk data without overwhelming the user.
+            - Tech Stack: Report Info -> List of technologies -> Goal: Inform -> Viz/Method: Styled cards (HTML/CSS) -> Interaction: None -> Justification: Clean and clear presentation of the project's technical foundation.
+            - Library/Method: Chart.js for all charts, Vanilla JS for all interactions. -->
+        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+            .chart-container {
+                position: relative;
+                width: 100%;
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 350px;
+                max-height: 400px;
+            }
+            @media (max-width: 768px) {
+                .chart-container {
+                    height: 300px;
+                    max-height: 350px;
+                }
+            }
+            .task-list-item {
+                position: relative;
+                padding-left: 20px;
+            }
+            .task-list-item::before {
+                content: '✓';
+                color: #14b8a6;
+                margin-right: 0.75rem;
+                font-weight: bold;
+                position: absolute;
+                top: 1px;
+                left: 0;
+            }
+            .deliverable-list-item {
+                position: relative;
+                padding-left: 30px;
+            }
+            .deliverable-list-item::before {
+                content: '📦';
+                margin-right: 0.75rem;
+                position: absolute;
+                top: 1px;
+                left: 0;
+            }
+            .rationale-text {
+                position: relative;
+                padding-left: 30px;
+            }
+            .rationale-text::before {
+                content: '💡';
+                margin-right: 0.75rem;
+                font-size: 1.25rem;
+                line-height: 1;
+                vertical-align: middle;
+                position: absolute;
+                top: 2px;
+                left: 0;
+            }
+            .dependencies-text {
+                position: relative;
+                padding-left: 30px;
+            }
+            .dependencies-text::before {
+                content: '🔗';
+                margin-right: 0.75rem;
+                font-size: 1.25rem;
+                line-height: 1;
+                vertical-align: middle;
+                position: absolute;
+                top: 2px;
+                left: 0;
+            }
+        </style>
+    </head>
+
+    <body class="bg-slate-50 text-slate-800">
+
+        <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-30 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-900">Dental Note Bot: Project Plan</h1>
+                    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                        <a href="#overview" class="text-slate-600 hover:text-teal-600 transition-colors">Overview</a>
+                        <a href="#milestones" class="text-slate-600 hover:text-teal-600 transition-colors">Milestones</a>
+                        <a href="#tech-risks" class="text-slate-600 hover:text-teal-600 transition-colors">Tech & Risks</a>
+                        <a href="#communications" class="text-slate-600 hover:text-teal-600 transition-colors">Comms Plan</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <section id="overview" class="pt-8 md:pt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Project Dashboard</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">This dashboard provides a high-level overview of the Dental Note Bot development project, summarizing key metrics and the overall timeline.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-sm font-medium text-slate-500">Total Estimated Timeline</div>
+                        <div id="totalDays" class="text-4xl font-bold text-teal-600 mt-2">--</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-sm font-medium text-slate-500">Total Estimated Effort</div>
+                        <div id="totalHours" class="text-4xl font-bold text-teal-600 mt-2">--</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="text-sm font-medium text-slate-500">Billing Model</div>
+                        <div class="text-4xl font-bold text-teal-600 mt-2">$1.55</div>
+                        <div class="text-xs text-slate-500">per generated note</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                    <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-slate-700">Project Timeline (Gantt)</h3>
+                        <div class="chart-container">
+                            <canvas id="ganttChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-lg font-semibold mb-4 text-slate-700">Effort Distribution by Milestone</h3>
+                        <div class="chart-container">
+                            <canvas id="effortChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="milestones" class="pt-8 md:pt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Interactive Milestone Explorer</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">The project is broken down into six distinct milestones. Click on any milestone below to explore its objectives, key tasks, and deliverables in detail.</p>
+                </div>
+                <div id="milestone-flow" class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-2 mb-8 flex-wrap"></div>
+                <div id="milestone-details" class="bg-white p-6 md:p-8 rounded-xl shadow-md min-h-[300px] transition-all duration-300 ease-in-out">
+                    <p class="text-slate-500 text-center py-20">Select a milestone above to see the details.</p>
+                </div>
+            </section>
+
+            <section id="tech-risks" class="pt-8 md:pt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Technology & Risk Assessment</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">This section outlines the technology stack that will power the application and details the potential risks with their corresponding mitigation strategies.</p>
+                </div>
+                <div>
+                    <div class="mb-4 border-b border-slate-200">
+                        <nav class="-mb-px flex space-x-6" id="tabs-nav">
+                            <button data-tab="tech-stack" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-teal-600 border-teal-500">Technology Stack</button>
+                            <button data-tab="risk-management" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-slate-500 border-transparent hover:text-slate-700 hover:border-slate-300">Risk Management</button>
+                        </nav>
+                    </div>
+                    <div id="tabs-content">
+                        <div id="tech-stack-content" class="tab-content">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                        </div>
+                        <div id="risk-management-content" class="tab-content hidden">
+                            <div class="space-y-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="communications" class="mb-20 pt-8 md:pt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Communication Plan</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Effective and transparent communication is key
+                        to project success. The following plan will be used to keep all stakeholders aligned and informed.
+                    </p>
+                </div>
+                <div id="comms-plan" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-slate-100 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 Dental Note Bot Project Plan. Interactively generated from the Software Development Guide.</p>
+            </div>
+        </footer>
+
+        <script>
+            const projectData = {
+                milestones: [
+                    {
+                        id: 1,
+                        title: "Discovery & Technical Deep Dive",
+                        timelineDays: [5, 7],
+                        timelineHours: [40, 56],
+                        objective: "To establish a clear and detailed understanding of all requirements, define the technical architecture, and set up the foundational development environment.",
+                        tasks: [
+                            "Conduct workshops with Dr. Manoney to refine requirements.",
+                            "Finalize the technology stack (backend, frontend, database, APIs).",
+                            "Draft architectural diagrams and design the data model.",
+                            "Set up local development environments and initialize Git repository.",
+                            "Conduct initial security audit and compliance planning."
+                        ],
+                        deliverables: ["Detailed Requirements Document", "Technical Design Document", "Chosen Tech Stack Justification", "Initialized Git Repository"],
+                        rationale: "This initial phase is crucial for de-risking the project. A thorough understanding of requirements prevents costly reworks later.",
+                        dependencies: "Active collaboration and decision-making from the product owner."
+                    },
+                    {
+                        id: 2,
+                        title: "Core Web Backend & Dashboard (MVP)",
+                        timelineDays: [7, 9],
+                        timelineHours: [56, 72],
+                        objective: "To build the foundational backend services, implement user authentication, workplace management, and the basic dentist dashboard.",
+                        tasks: [
+                            "Implement secure dentist registration, login, and password management.",
+                            "Develop API endpoints for workplace CRUD operations.",
+                            "Build the frontend for the dentist dashboard.",
+                            "Set up initial Stripe integration for metered billing.",
+                            "Configure PostgreSQL database and implement ORM."
+                        ],
+                        deliverables: ["Functional user registration & login", "Workplace management CRUD", "Basic Stripe subscription setup", "Deployed backend services (dev)"],
+                        rationale: "This milestone focuses on establishing the core infrastructure and critical user-facing features before tackling more complex logic.",
+                        dependencies: "Completion of Milestone 1."
+                    },
+                    {
+                        id: 3,
+                        title: "Advanced Note Generation & Voice Input",
+                        timelineDays: [12, 15],
+                        timelineHours: [96, 120],
+                        objective: "To implement the sophisticated voice input processing, template matching, note customization, PDF generation, and secure storage/emailing of notes.",
+                        tasks: [
+                            "Integrate a Speech-to-Text (STT) API.",
+                            "Develop a flexible system for note template management.",
+                            "Implement algorithms for note customization and dynamic prompting.",
+                            "Integrate a PDF generation library.",
+                            "Store generated PDFs securely and implement email delivery.",
+                            "Implement Stripe usage reporting for each generated note."
+                        ],
+                        deliverables: ["Functional voice input options", "Accurate STT conversion", "Working PDF generation", "Secure note storage and email delivery", "Stripe usage reporting integrated"],
+                        rationale: "This is the core intellectual property of the DNB. Breaking down the complex logic ensures robust implementation.",
+                        dependencies: "Completion of Milestone 2, clear requirements from Milestone 1."
+                    },
+                    {
+                        id: 4,
+                        title: "Security & UX Enhancements",
+                        timelineDays: [6, 8],
+                        timelineHours: [48, 64],
+                        objective: "To implement specified security preferences (OTP) and enhance the overall user experience with robust error handling and responsive design.",
+                        tasks: [
+                            "Implement security preferences (OTP via SMS).",
+                            "Refine UI/UX for consistency and responsiveness.",
+                            "Implement comprehensive error handling and logging.",
+                            "Identify and optimize performance bottlenecks."
+                        ],
+                        deliverables: ["Working OTP via SMS for security", "Well-designed, responsive UI", "Comprehensive error messages & logging"],
+                        rationale: "Security is paramount for a healthcare application. A great UX makes the application intuitive and pleasant to use.",
+                        dependencies: "Completion of Milestone 3."
+                    },
+                    {
+                        id: 5,
+                        title: "Deployment & Production Readiness",
+                        timelineDays: [5, 7],
+                        timelineHours: [40, 56],
+                        objective: "To deploy the application to a production environment (Heroku), configure all services, and conduct final end-to-end testing.",
+                        tasks: [
+                            "Set up GitHub repository and deploy to Heroku.",
+                            "Configure all production environment variables and add-ons.",
+                            "Configure Stripe webhooks for billing events.",
+                            "Conduct comprehensive end-to-end testing on the live environment.",
+                            "Update technical documentation for deployment."
+                        ],
+                        deliverables: ["Live application URL", "Configured GitHub repo", "Confirmed Stripe webhook setup", "Live testing report"],
+                        rationale: "This milestone makes the application publicly accessible and ensures it functions correctly in a production environment.",
+                        dependencies: "Completion of Milestone 4."
+                    },
+                    {
+                        id: 6,
+                        title: "Post-Launch Support & Iteration",
+                        timelineDays: [30, 30], // Represented as an ongoing 30-day block
+                        timelineHours: [20, 30], // Per month
+                        objective: "To monitor the live application, address issues, gather user feedback, and plan for future enhancements.",
+                        tasks: [
+                            "Set up application performance monitoring and alerting.",
+                            "Address critical bugs and perform regular maintenance.",
+                            "Establish channels for user feedback collection.",
+                            "Plan for future enhancements (e.g., native mobile app)."
+                        ],
+                        deliverables: ["Stable and monitored live application", "Resolved critical bugs", "Roadmap for future features"],
+                        rationale: "Continuous monitoring, support, and iteration are vital for long-term success and user satisfaction.",
+                        dependencies: "Successful completion of Milestone 5."
+                    }
+                ],
+                techStack: [
+                    { category: "Backend", name: "Python (Flask/Django)", icon: "🐍" },
+                    { category: "Frontend", name: "JavaScript (React/Vue)", icon: "⚛️" },
+                    { category: "Database", name: "PostgreSQL", icon: "🐘" },
+                    { category: "Styling", name: "Tailwind CSS", icon: "💨" },
+                    { category: "Speech-to-Text", name: "Google Cloud / AWS", icon: "🎤" },
+                    { category: "PDF Generation", name: "ReportLab / wkhtmltopdf", icon: "📄" },
+                    { category: "Payments", name: "Stripe", icon: "💳" },
+                    { category: "Hosting", name: "Heroku", icon: "☁️" },
+                    { category: "Email Service", name: "SendGrid / Mailgun", icon: "✉️" },
+                ],
+                risks: [
+                    {
+                        category: "Technical Risks",
+                        items: [
+                            { title: "Speech-to-Text Accuracy", mitigation: "Use a robust STT API, potentially fine-tune with dental vocabulary, and allow easy manual correction in the UI." },
+                            { title: "Complex Template Matching", mitigation: "Thoroughly define template logic, implement extensive unit tests, and require user review before finalizing notes." },
+                            { title: "Stripe Metered Billing Complexity", mitigation: "Implement robust usage tracking, leverage official Stripe libraries, and conduct thorough testing of billing cycles." },
+                            { title: "Security & Compliance (HIPAA)", mitigation: "Adhere to security best practices (encryption, access control), and consult with legal/compliance experts." }
+                        ]
+                    },
+                    {
+                        category: "Project Management Risks",
+                        items: [
+                            { title: "Scope Creep", mitigation: "Clearly define MVP features, use a strict change management process, and prioritize features for future iterations." },
+                            { title: "Resource Availability", mitigation: "Maintain open communication, set realistic timelines, and build in buffer time for unforeseen delays." }
+                        ]
+                    },
+                    {
+                        category: "External Dependencies Risks",
+                        items: [
+                            { title: "Third-Party API Downtime", mitigation: "Implement graceful degradation, retry mechanisms, and monitor the health of external APIs." },
+                            { title: "Heroku-specific Issues", mitigation: "Leverage Heroku's documentation and support, and have contingency plans for scaling or migration if needed." }
+                        ]
+                    }
+                ],
+                commsPlan: [
+                    { title: "Regular Stand-ups", description: "Daily or bi-daily short meetings to discuss progress, roadblocks, and next steps.", icon: "🙌" },
+                    { title: "Weekly Demos/Review", description: "A dedicated session each week to demonstrate completed features and gather feedback.", icon: "🎬" },
+                    { title: "Primary Comms Channel", description: "A dedicated chat application (e.g., Slack) for quick questions and updates.", icon: "💬" },
+                    { title: "Version Control", description: "Using Git with a clear branching strategy for all code management.", icon: "🌿" },
+                    { title: "Issue Tracking", description: "Utilizing a tool like Jira or GitHub Issues to transparently manage tasks and bugs.", icon: "📋" },
+                    { title: "Documentation", description: "Maintaining up-to-date documentation for code, architecture, and deployment.", icon: "📚" }
+                ]
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const totalDays = projectData.milestones.reduce((acc, m) => acc + m.timelineDays[1], 0);
+                const totalHours = projectData.milestones.reduce((acc, m) => acc + m.timelineHours[1], 0);
+
+                document.getElementById('totalDays').textContent = `${totalDays} Days`;
+                document.getElementById('totalHours').textContent = `~${totalHours} Hours`;
+
+                renderGanttChart();
+                renderEffortChart();
+                renderMilestones();
+                renderTechStack();
+                renderRisks();
+                renderCommsPlan();
+                setupTabs();
+            });
+
+            function renderGanttChart() {
+                const ctx = document.getElementById('ganttChart').getContext('2d');
+                const labels = projectData.milestones.map(m => `M${m.id}: ${m.title}`);
+                const data = projectData.milestones.map(m => m.timelineDays);
+
+                let cumulativeStart = 0;
+                const ganttData = data.map(range => {
+                    const start = cumulativeStart;
+                    const end = start + range[1];
+                    cumulativeStart = end;
+                    return [start, end];
+                });
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Estimated Days',
+                            data: ganttData,
+                            backgroundColor: 'rgba(20, 184, 166, 0.7)',
+                            borderColor: 'rgba(13, 148, 136, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            borderSkipped: false,
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        const raw = context.raw;
+                                        const duration = raw[1] - raw[0];
+                                        return `Duration: ${duration} days (Est. ${projectData.milestones[context.dataIndex].timelineDays[0]}-${projectData.milestones[context.dataIndex].timelineDays[1]} days)`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                min: 0,
+                                title: {
+                                    display: true,
+                                    text: 'Project Timeline (Days)'
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    callback: function (value, index, values) {
+                                        const label = this.getLabelForValue(value);
+                                        return label.length > 25 ? label.substring(0, 25) + '...' : label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function renderEffortChart() {
+                const ctx = document.getElementById('effortChart').getContext('2d');
+                const labels = projectData.milestones.map(m => `M${m.id}: ${m.title}`);
+                const data = projectData.milestones.map(m => m.timelineHours[1]);
+
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Estimated Hours',
+                            data: data,
+                            backgroundColor: [
+                                'rgba(13, 148, 136, 0.8)',
+                                'rgba(15, 118, 110, 0.8)',
+                                'rgba(13, 148, 136, 0.6)',
+                                'rgba(15, 118, 110, 0.6)',
+                                'rgba(13, 148, 136, 0.4)',
+                                'rgba(15, 118, 110, 0.4)',
+                            ],
+                            borderColor: '#ffffff',
+                            borderWidth: 2,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    boxWidth: 12,
+                                    generateLabels: function (chart) {
+                                        const data = chart.data;
+                                        if (data.labels.length && data.datasets.length) {
+                                            return data.labels.map(function (label, i) {
+                                                const meta = chart.getDatasetMeta(0);
+                                                const style = meta.controller.getStyle(i);
+                                                return {
+                                                    text: `M${i + 1}`,
+                                                    fillStyle: style.backgroundColor,
+                                                    strokeStyle: style.borderColor,
+                                                    lineWidth: style.borderWidth,
+                                                    hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                                    index: i
+                                                };
+                                            });
+                                        }
+                                        return [];
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed !== null) {
+                                            label += `~${context.parsed} hours`;
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function renderMilestones() {
+                const flowContainer = document.getElementById('milestone-flow');
+                flowContainer.innerHTML = '';
+                projectData.milestones.forEach((milestone, index) => {
+                    const milestoneEl = document.createElement('div');
+                    milestoneEl.className = 'flex items-center';
+                    milestoneEl.innerHTML = `
+                        <button data-id="${milestone.id}" class="milestone-button flex-shrink-0 bg-white border-2 border-slate-300 hover:border-teal-500 hover:bg-teal-50 hover:text-slate-700 text-slate-700 font-semibold py-2 px-4 mb-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            M${milestone.id}: ${milestone.title}
+                        </button>
+                        ${index < projectData.milestones.length - 1 ? '<div class="hidden md:block w-6 h-1 bg-slate-300 mx-2"></div>' : ''}
+                    `;
+                    flowContainer.appendChild(milestoneEl);
+                });
+
+                const detailsContainer = document.getElementById('milestone-details');
+                document.querySelectorAll('.milestone-button').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.currentTarget.dataset.id);
+                        const milestone = projectData.milestones.find(m => m.id === id);
+
+                        document.querySelectorAll('.milestone-button').forEach(btn => {
+                            btn.classList.remove('bg-teal-600', 'text-white', 'border-teal-600');
+                            btn.classList.add('bg-white', 'text-slate-700', 'border-slate-300');
+                        });
+                        e.currentTarget.classList.add('bg-teal-600', 'text-white', 'border-teal-600');
+                        e.currentTarget.classList.remove('bg-white', 'text-slate-700');
+
+                        detailsContainer.innerHTML = `
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">${milestone.title}</h3>
+                            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mb-6 text-sm text-slate-500">
+                                <span><strong>Timeline:</strong> ${milestone.timelineDays[0]}-${milestone.timelineDays[1]} days</span>
+                                <span><strong>Effort:</strong> ~${milestone.timelineHours[0]}-${milestone.timelineHours[1]} hours</span>
+                            </div>
+                            <p class="text-slate-700 mb-6">${milestone.objective}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 mb-3">Key Tasks</h4>
+                                    <ul class="space-y-2 text-slate-600">
+                                        ${milestone.tasks.map(task => `<li class="task-list-item">${task}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-semibold text-slate-800 mb-3">Deliverables</h4>
+                                        <ul class="space-y-2 text-slate-600">
+                                            ${milestone.deliverables.map(d => `<li class="deliverable-list-item">${d}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="text-slate-600">
+                                        <p class="rationale-text"><strong>Rationale:</strong> ${milestone.rationale}</p>
+                                    </div>
+                                    <div class="text-slate-600">
+                                        <p class="dependencies-text"><strong>Dependencies:</strong> ${milestone.dependencies}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                });
+            }
+
+            function renderTechStack() {
+                const container = document.querySelector('#tech-stack-content .grid');
+                container.innerHTML = projectData.techStack.map(tech => `
+                    <div class="bg-white p-4 rounded-lg shadow flex items-center space-x-4">
+                        <div class="text-3xl">${tech.icon}</div>
+                        <div>
+                            <div class="font-semibold text-slate-800">${tech.name}</div>
+                            <div class="text-sm text-slate-500">${tech.category}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function renderRisks() {
+                const container = document.querySelector('#risk-management-content .space-y-4');
+                container.innerHTML = projectData.risks.map(category => `
+                    <details class="bg-white rounded-lg shadow-sm group">
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-semibold text-slate-800">
+                            ${category.category}
+                            <span class="transform transition-transform duration-200 group-open:rotate-180"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" fill="rgba(0,0,0,1)"/></svg></span>
+                        </summary>
+                        <div class="px-4 pb-4 border-t border-slate-200">
+                            <ul class="mt-4 space-y-4">
+                                ${category.items.map(item => `
+                                    <li class="p-3 bg-slate-50 rounded-md">
+                                        <strong class="block text-slate-700">${item.title}</strong>
+                                        <p class="text-sm text-slate-600 mt-1"><strong>Mitigation:</strong> ${item.mitigation}</p>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </details>
+                `).join('');
+            }
+
+            function renderCommsPlan() {
+                const container = document.getElementById('comms-plan');
+                container.innerHTML = projectData.commsPlan.map(item => `
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">${item.icon}</div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">${item.title}</h4>
+                                <p class="text-slate-600 mt-1 text-sm">${item.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function setupTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.dataset.tab;
+
+                        tabButtons.forEach(btn => {
+                            btn.classList.remove('text-teal-600', 'border-teal-500');
+                            btn.classList.add('text-slate-500', 'border-transparent', 'hover:text-slate-700', 'hover:border-slate-300');
+                        });
+                        button.classList.add('text-teal-600', 'border-teal-500');
+                        button.classList.remove('text-slate-500', 'border-transparent', 'hover:text-slate-700', 'hover:border-slate-300');
+
+                        tabContents.forEach(content => {
+                            if (content.id === `${tabId}-content`) {
+                                content.classList.remove('hidden');
+                            } else {
+                                content.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+            }
+
+        </script>
+    </body>
+</html>
