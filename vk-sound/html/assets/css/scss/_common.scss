@@ -193,7 +193,7 @@ img {
     }
 }
 .bg-gray {
-    background-color: $gray !important;
+    background-color: $lightgray !important;
 }
 .bg-custom {
     background: var(--header-bg, none);
@@ -326,6 +326,8 @@ h5, .h5 {
 // Slider Arrows
 .swiper-button-next, .swiper-button-prev {
     @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
     width: 58px;
     height: 58px;
     background: $white;
@@ -342,7 +344,7 @@ h5, .h5 {
         font-family: unset;
         background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
         background-size: contain;
-        width: 24px;
+        width: 14px;
         height: 24px;
         display: inline-block;
         @include transition(0.3s, ease-in-out);
@@ -360,7 +362,6 @@ h5, .h5 {
         @include transform(translateX(-20px));
     }
 }
-
 .slider-block {
     position: relative;
     &:hover {
@@ -380,4 +381,26 @@ h5, .h5 {
             background: $primary;
         }
     }
+}
+
+// Special Text
+.special-text {
+    white-space: nowrap;
+    font-size: 130px;
+    font-weight: 900;
+    position: relative;
+    background: url(../images/img-special-text-bg.jpg);
+    background-size: 105% auto;
+    background-position: 0% 0%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0 transparent;
+    position: relative;
+    display: inline-block;
+    animation: horizontalMove 8s infinite alternate;
+    animation-timing-function: ease;
+}
+@keyframes horizontalMove {
+  from { background-position: 0 100%; }
+  to { background-position: 100% 100%; }
 }

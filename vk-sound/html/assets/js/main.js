@@ -35,6 +35,7 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('is-active');
         $(this).parent().find('.sub-menu').first().toggle(300);
     });
+
 });
 if ($('.hero-slider').length) {
     var swiper = new Swiper('.hero-slider', {
@@ -79,4 +80,41 @@ if ($('.card-slider').length) {
             prevEl: '.swiper-button-prev',
         },
     });
+}
+// Counter
+if ($('.counter').length) {
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+    // Create a new observer
+    let observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let $this = $(entry.target);
+                var countTo = $this.attr("data-countto");
+                var countDuration = parseInt($this.attr("data-duration"));
+                
+                $({ counter: $this.find('span').text() }).animate({
+                    counter: countTo
+                }, {
+                    duration: countDuration,
+                    easing: "linear",
+                    step: function () {
+                        $this.find('span').text(Math.floor(this.counter));
+                    },
+                    complete: function () {
+                        $this.find('span').text(this.counter);
+                    }
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    // Target each element with the class .counter
+    $('.counter').each(function () {
+        observer.observe(this);    
+    });    
 }
