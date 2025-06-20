@@ -385,7 +385,6 @@ h5, .h5 {
 
 // Special Text
 .special-text {
-    white-space: nowrap;
     font-size: 130px;
     font-weight: 900;
     position: relative;
@@ -399,6 +398,15 @@ h5, .h5 {
     display: inline-block;
     animation: horizontalMove 8s infinite alternate;
     animation-timing-function: ease;
+    @media (max-width: 1200px) {
+        font-size: 100px;
+    }
+    @media (max-width: 992px) {
+        font-size: 80px;
+    }
+    @media (max-width: 767px) {
+        font-size: 50px;
+    }
 }
 @keyframes horizontalMove {
   from { background-position: 0 100%; }

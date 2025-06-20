@@ -24,26 +24,6 @@
             margin: 0 auto 50px;
         }
     }
-    &.section-title-special-text {
-        .section-title {
-            h2 {
-                white-space: nowrap;
-                font-size: 130px;
-                font-weight: 900;
-                position: relative;
-                background: url(../images/img-special-text-bg.jpg);
-                background-size: 105% auto;
-                background-position: 0% 0%;
-                -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
-                -webkit-text-stroke: 0 transparent;
-                position: relative;
-                display: inline-block;
-                animation: horizontalMove 5s infinite alternate;
-                animation-timing-function: ease;
-            }
-        }
-    }
 }
 .hero-section {
     overflow: hidden;
