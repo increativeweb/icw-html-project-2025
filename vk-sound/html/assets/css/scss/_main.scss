@@ -268,7 +268,8 @@
     @media (max-width: 767px) {
         border-right: none;
         border-bottom: 1px solid $gray;
-        padding: 25px 10px;
+        padding: 25px 25px;
+        margin: 0 -15px;
     }
     .count-number {
         font-size: 96px;
