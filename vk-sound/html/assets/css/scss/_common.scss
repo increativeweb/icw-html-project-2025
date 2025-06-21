@@ -229,6 +229,9 @@ img {
 	font-size: 15px;
     padding: 0 30px; 
     overflow: hidden;    
+    @media (max-width: 767px) {
+        min-height: 44px;
+    }
     &.btn-sm {        
         min-height: 44px;
     }
@@ -279,7 +282,7 @@ img {
 
 // Heading CSS
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-    line-height: 1.15;
+    line-height: 1.2;
 }
 h1, .h1 {
     font-size: 66px;
@@ -335,6 +338,10 @@ h5, .h5 {
     @include border-radius(50%);
     border: 1px solid #d4d4d8;
     @include transition(0.3s, ease-in-out);
+    @media (max-width: 1300px) {
+        width: 48px;
+        height: 48px;
+    }
     @media (min-width: 992px) {
         @include transform(translateX(20px));
         opacity: 0;
@@ -343,11 +350,15 @@ h5, .h5 {
         font-size: 0;
         font-family: unset;
         background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-        background-size: contain;
+        background-size: contain !important;
         width: 14px;
         height: 24px;
         display: inline-block;
         @include transition(0.3s, ease-in-out);
+        @media (max-width: 1300px) {
+            width: 10px;
+            height: 20px;
+        }
     }
     &:hover, &:focus {        
         background: rgba($white, 0.8);

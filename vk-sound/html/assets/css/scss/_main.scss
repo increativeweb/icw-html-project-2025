@@ -5,23 +5,48 @@
 }
 .section-title {
     margin-bottom: 50px;
+    @media (max-width: 767px) {
+        margin-bottom: 30px;
+    }
     .h2, h2 {
         margin-bottom: 20px;
+        @media (max-width: 767px) {
+            margin-bottom: 10px;
+        }
     }
 }
 .main-section {
     padding: 100px 0;
+    @media (max-width: 992px) {
+        padding: 70px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 50px 0;
+    }
     &.section-title-flex {
         .section-title {
             @include flexbox;
             @include align-items(center);
             gap: 40px;
+            @media (max-width: 767px) {
+                @include flex-direction(column);
+                gap: 0;
+                @include align-items(flex-start);
+            }
+            h2 {
+                @media (min-width: 767px) {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
     &.section-title-center {
         .section-title {
             text-align: center;
             margin: 0 auto 50px;
+            @media (max-width: 767px) {
+                margin: 0 auto 30px;
+            }
         }
     }
 }
@@ -50,6 +75,9 @@
         h1 {
             color: $white;
             margin-bottom: 20px;
+            @media (max-width: 767px) {
+                margin-bottom: 10px; 
+            }
         }
         .sort-info {
             color: $white;
@@ -63,18 +91,33 @@
     }
     .slider-block {
         .swiper-pagination { 
-            bottom: 30px;
+            bottom: 30px; 
+            @media (max-width: 767px) {
+                bottom: 20px; 
+            }
         }
         .swiper-button-next {
             right: 15px;
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
         .swiper-button-prev {
             left: 15px;
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
     }
     .hero-slider {
         min-height: 70vh;
         padding: 150px 0;
+        @media (max-width: 992px) {
+            padding: 100px 0;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 0;
+        }
         .parallax-bg {
             position: absolute;
             left: 0;
@@ -91,6 +134,9 @@
 .logo-slider-section {
     overflow: hidden;
     padding: 50px 0;
+    @media (max-width: 767px) {
+        padding: 30px 0;
+    }
     & > .container {
         max-width: 100%;
     }
@@ -120,14 +166,46 @@
     overflow: hidden;
     .slider-block {      
         .swiper-button-next {
-            right: -80px
+            right: -80px;
+            @media (max-width: 1300px) {
+                right: -60px;
+            }
+            @media (max-width: 1024px) {
+                right: -24px;
+            }
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
         .swiper-button-prev {
-            left: -80px
+            left: -80px;
+            @media (max-width: 1300px) {
+                left: -60px;
+            }
+            @media (max-width: 1024px) {
+                left: -24px;
+            }
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
     }
     .card-slider {        
         @include border-radius(16px);
+        @media (max-width: 767px) {
+            margin: 0 -15px;
+            padding: 0 15px;
+        }
+        .swiper-wrapper {
+            @media (max-width: 767px) {
+                padding-bottom: 40px;
+            }
+        }
+        .swiper-pagination { 
+            @media (min-width: 767px) {
+                display: none;
+            }
+        }
         .swiper-slide {
             height: auto;
         }
@@ -165,6 +243,9 @@
             &:last-child {
                 .counter-box {
                     border-right: none;
+                    @media (max-width: 767px) {
+                        border-bottom: none;
+                    }
                 }
             }
         }
@@ -175,12 +256,23 @@
     text-align: center;
     border-right: 1px solid $gray;
     height: 100%;
+    @media (max-width: 767px) {
+        border-right: none;
+        border-bottom: 1px solid $gray;
+        padding: 25px 10px;
+    }
     .count-number {
         font-size: 96px;
         font-weight: 800;
         color: $gray;
         line-height: 1;
         margin-bottom: 10px;
+        @media (max-width: 992px) {
+            font-size: 75px;
+        }
+        @media (max-width: 767px) {
+            font-size: 66px;
+        }
     }
     h3 {
         margin-bottom: 0;

@@ -53,22 +53,32 @@ if ($('.hero-slider').length) {
 }
 if ($('.logo-slider').length) {
     var swiper = new Swiper('.logo-slider', {
-        slidesPerView: 10,
+        slidesPerView: 4,
         loop: true,
         centeredSlides: true,
-        spaceBetween: 50,
+        spaceBetween: 30,
         speed: 2000,
         autoplay: {
             delay: 0,
             enabled: true,
+        },
+        breakpoints: {
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 30
+            },
+            1200: {
+                slidesPerView: 10,
+                spaceBetween: 50
+            },
         }
     });
 }
 if ($('.card-slider').length) {
     var swiper = new Swiper('.card-slider', {
-        slidesPerView: 4,
+        slidesPerView: 1.25,
         loop: true,
-        spaceBetween: 30,
+        spaceBetween: 20,
         autoplay: true,
         speed: 2000,
         autoplay: {
@@ -79,6 +89,24 @@ if ($('.card-slider').length) {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true,
+        },
+        breakpoints: {
+            767: {
+                slidesPerView: 2.25,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
+        }
     });
 }
 // Counter
