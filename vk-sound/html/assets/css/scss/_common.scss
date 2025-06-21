@@ -444,6 +444,45 @@ h5, .h5 {
     }
 }
 
+// ICW Pagination
+.icw-pagination {
+    padding: 50px 0px;
+    text-align: center;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    .page-numbers {
+        width: 42px;
+        height: 42px;
+        flex: none;
+        @include inline-flex;
+        @include align-items(center);
+        @include justify-content(center);
+        @include border-radius(50%);
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-weight: 600;
+        color: #212539;
+        outline: none !important;
+        margin: 0px 2px 4px;
+        text-decoration: none;
+        &.current {
+            background: $dark;
+            color: $white;
+        }
+        &:hover {
+            color: $primary;
+            border-color: rgba($primary, 0.3);
+            text-decoration: none;
+            svg {
+                path {
+                    stroke: $primary;
+                }
+            }
+        }
+    }
+}
+
 // Special Text
 .special-text {
     font-size: 130px;
