@@ -446,7 +446,7 @@ h5, .h5 {
 
 // ICW Pagination
 .icw-pagination {
-    padding: 50px 0px;
+    padding: 50px 0px 0;
     text-align: center;
     @include flexbox;
     @include align-items(center);
