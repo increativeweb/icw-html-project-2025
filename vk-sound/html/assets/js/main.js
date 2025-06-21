@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
         $(this).parent().find('.sub-menu').first().toggle(300);
     });
 
-     if ($(".icw-progress-goto").length > 0) {
+    if ($(".icw-progress-goto").length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');
         var pathLength = progressPath.getTotalLength();
     
@@ -71,6 +71,21 @@ jQuery(document).ready(function($) {
             event.preventDefault();
             jQuery('html, body').animate({scrollTop: 0}, duration);
             return false;
+        });
+    }
+    if ($('.mobile-navbar').length) {
+        var lastScrollTop = 0;
+        var $navbar = $('.mobile-navbar');
+        $(window).on('scroll', function () {
+            var st = $(this).scrollTop();
+
+            if (st < lastScrollTop) {
+                $navbar.addClass('is-show');
+            } else {
+                $navbar.removeClass('is-show');
+            }
+
+            lastScrollTop = st;
         });
     }
 });

@@ -35,6 +35,11 @@
                     margin-bottom: 0;
                 }
             }
+            .sort-info {
+                @media (max-width: 767px) {
+                    text-align: left;
+                }
+            }
         }
     }
     &.section-title-left {
@@ -142,6 +147,19 @@
             @media (max-width: 767px) {
                 bottom: 20px;
             }
+        }
+    }
+}
+
+.page-header {
+    background: linear-gradient(90deg, #FFFFFF 0%, #EEEEEE 50%, #FFFFFF 100%);
+    padding: 120px 0;
+    .page-title {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        h1 {
+            margin-bottom: 10px;
         }
     }
 }
