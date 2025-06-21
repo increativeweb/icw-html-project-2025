@@ -3,11 +3,13 @@
     min-height: 100vh;
     z-index: 2;
     @include border-radius(0 0 56px 56px);
-    @media (min-width: 992px) {
-        margin-bottom: 300px;
+    margin-bottom: 400px;
+    @media (max-width: 1200px) {
+        margin-bottom: 650px;
     }
     @media (max-width: 992px) {
         @include border-radius(0px 0px 12px 12px);
+        margin-bottom: 0;
     }
 }
 .main-section {
@@ -181,12 +183,20 @@
     .expertise-card-splide {
         @media (max-width: 767px) {
             padding-bottom: 25px;
+            margin: 0 -15px;
             .splide__pagination {
                 bottom: 0px;
+            }
+            .splide__track {
+                padding: 0 15px !important;
             }
         }        
         .splide__track {
             @include border-radius(16px);
+            @media (max-width: 767px) {            
+                padding: 0 15px !important;
+                @include border-radius(16px 0 0 16px);
+            }
         }
         .splide__arrow { 
             &--prev {
@@ -287,12 +297,17 @@
     .clients-splide { 
         @media (max-width: 767px) {
             padding-bottom: 25px;
+            margin: 0 -15px;
             .splide__pagination {
                 bottom: 0px;
             }
         }        
         .splide__track {
             @include border-radius(16px);
+            @media (max-width: 767px) {            
+                padding: 0 15px !important;
+                @include border-radius(16px 0 0 16px);
+            }
         }
         .splide__arrow { 
             &--prev {
