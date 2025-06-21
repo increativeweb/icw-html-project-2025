@@ -43,6 +43,23 @@ body {
     text-rendering: optimizeLegibility;
     @media (max-width: 992px) {
         font-size: 16px;
+    }    
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100px;
+        background: $bodybg;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        @media (max-width: 992px) {
+            height: 64px;
+        }    
+        @media (max-width: 767px) {
+            height: 54px;
+        }    
     }
 }
 
@@ -327,69 +344,96 @@ h5, .h5 {
 }
 
 // Slider Arrows
-.swiper-button-next, .swiper-button-prev {
-    @include flexbox;
-    @include align-items(center);
-    @include justify-content(center);
+.splide__arrow {
     width: 58px;
     height: 58px;
-    background: $white;
-    flex: none;
-    @include border-radius(50%);
+    aspect-ratio: 1 / 1;
+    background-color: $white !important;
+    background-size: 14px !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
     border: 1px solid #d4d4d8;
     @include transition(0.3s, ease-in-out);
+    opacity: 1;
     @media (max-width: 1300px) {
         width: 48px;
         height: 48px;
+        background-size: 12px !important;
     }
-    @media (min-width: 992px) {
-        @include transform(translateX(20px));
-        opacity: 0;
+    svg {
+        display: none;
     }
-    &::after {
-        font-size: 0;
-        font-family: unset;
-        background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-        background-size: contain !important;
-        width: 14px;
-        height: 24px;
-        display: inline-block;
-        @include transition(0.3s, ease-in-out);
-        @media (max-width: 1300px) {
-            width: 10px;
-            height: 20px;
+    &--prev {
+        background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2008 22.3996L1.80078 11.9996L12.2008 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        @media (min-width: 767px) {
+            @include transform(translateX(-20px));
+            opacity: 0;
+            &::before {
+                content: '';
+                width: 20px;
+                height: 100%;
+                background: transparent;
+                display: block;
+                position: absolute;
+                top: 0;
+                right: -20px;
+            }
+        }
+    }
+    &--next {
+        background-image: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');        
+        @media (min-width: 767px) {
+            @include transform(translateX(20px)); 
+            opacity: 0;
+            &::before {
+                content: '';
+                width: 20px;
+                height: 100%;
+                background: transparent;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -20px;
+            }
         }
     }
     &:hover, &:focus {        
-        background: rgba($white, 0.8);
+        background-color: rgba($white, 0.8);
         border-color: #898989;
     }
-}
-.swiper-button-prev {
-    &::after {
-        background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2008 22.3996L1.80078 11.9996L12.2008 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-    }
-    @media (min-width: 992px) {
-        @include transform(translateX(-20px));
+    &:disabled {
+        opacity: 0.7;
     }
 }
-.slider-block {
-    position: relative;
-    &:hover {
-        .swiper-button-next, .swiper-button-prev{
-            @include transform(translateX(0px));
-            opacity: 1;
-        } 
+.splide {
+    &:hover, &:focus {        
+        .splide__arrow {
+            @media (min-width: 767px) {
+                @include transform(translateX(0px)); 
+                opacity: 1;
+            }
+        }
     }
 }
 
-// Swiper Dots
-.swiper-pagination {
-    .swiper-pagination-bullet {
-        background: #d9d9d9;
-        opacity: 1;
-        &-active {
-            background: $primary;
+// Slider Pagination
+.splide__pagination {
+    li {
+        .splide__pagination__page {
+            width: 6px;
+            height: 6px;
+            @include transform (unset);
+            opacity: 1;
+            background: rgba(#D9D9D9, 0.6);
+            border: 1px solid transparent;
+            @include border-radius(8px);
+            margin: 0 3px;
+            @include transition(0.3s, ease-in-out);
+            &.is-active {
+                background: transparent;
+                border-color: $primary;
+                width: 12px;
+            }
         }
     }
 }
@@ -420,6 +464,6 @@ h5, .h5 {
     }
 }
 @keyframes horizontalMove {
-  from { background-position: 0 100%; }
-  to { background-position: 100% 100%; }
+    from { background-position: 0 100%; }
+    to { background-position: 100% 100%; }
 }

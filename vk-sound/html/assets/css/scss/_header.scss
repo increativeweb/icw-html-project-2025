@@ -1,4 +1,5 @@
 .main-header {
+    z-index: 4;
     .header-top {
         text-align: center;
         padding: 15px 0;
@@ -11,6 +12,7 @@
         background: $white;
         @include border-radius(56px 56px 0px 0px);
         padding: 0;
+        z-index: 100;
         @media (min-width: 992px) {
             height: 100px;
         }
@@ -186,7 +188,7 @@
                             @media (min-width: 992px) {  
                                 position: absolute;
                                 top: 100%;
-                                left: -5px;
+                                left: -15px;
                                 display: block;
                                 min-width: 220px;
                                 height: auto;
@@ -227,7 +229,7 @@
                                     color: $black;
                                     font-size: 16px;
                                     font-weight: 500;
-                                    padding: 10px 20px;
+                                    padding: 10px 30px;
                                     display: inline-block;
                                     text-decoration: none;
                                     @media (max-width: 992px) {
@@ -306,7 +308,6 @@
             width: 100%;
             top: 0;
             left: 0;
-            z-index: 2;
             .main-menu ul li.menu-item-has-children::after {
                 top: 100px;
             } 
