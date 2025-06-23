@@ -452,28 +452,42 @@ h5, .h5 {
     @include align-items(center);
     @include justify-content(center);
     .page-numbers {
-        width: 42px;
-        height: 42px;
-        flex: none;
+        width: 32px;
+        height: 32px;
         @include inline-flex;
         @include align-items(center);
         @include justify-content(center);
-        @include border-radius(50%);
-        border: 1px solid transparent;
-        font-size: 14px;
-        font-weight: 600;
-        color: #212539;
+        @include border-radius(20px);
+        background: #E8E8E8;
+        border: 2px solid transparent;
+        font-size: 13px;
+        font-weight: 500;
+        color: $darkText;
         outline: none !important;
-        margin: 0px 2px 4px;
+        margin: 0px 5px ;
         text-decoration: none;
+        @include transition(0.1s, ease-in-out);
+         svg {
+            path {
+                @include transition(0.1s, ease-in-out);
+            }
+        }
         &.current {
-            background: $dark;
-            color: $white;
+            background: transparent;
+            color: $primary;
+            border-color: $primary;
+            width: 60px;
+        }
+        &.next {
+            background: transparent;
         }
         &:hover {
-            color: $primary;
-            border-color: rgba($primary, 0.3);
+            background: transparent;
+            border-color: #E8E8E8;
             text-decoration: none;
+            &.next {
+                border-color: transparent;
+            }
             svg {
                 path {
                     stroke: $primary;
