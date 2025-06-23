@@ -136,7 +136,7 @@
     .hero-splide {
         .splide__slide {
             padding: 150px 0;
-            min-height: 75vh;
+            min-height: calc(100vh - 150px);
             @include flexbox;
             @include align-items(center);
             @media (max-width: 992px) {
