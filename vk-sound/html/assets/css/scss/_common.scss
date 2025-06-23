@@ -123,6 +123,21 @@ body ::selection {
     .m-mb-100 {margin-bottom: 100px !important;}
 }
 
+.g-35 {   
+    @media (min-width: 992px) {
+        --bs-gutter-y: 50px;
+        --bs-gutter-x: 50px;  
+    }
+    @media (min-width: 1400px) {
+        --bs-gutter-y: 70px;
+        --bs-gutter-x: 70px;
+    }
+    @media (max-width: 992px) {
+        --bs-gutter-y: 1.5rem;
+        --bs-gutter-x: 1.5rem;  
+    }
+}
+
 .clear {clear: both;}
 
 .tooltip {
@@ -147,13 +162,14 @@ ul {
 
 a {
     color: $primary;
-    text-decoration: underline;
+    text-decoration: none;
     word-break: break-word;
     text-underline-offset: 4px;
+    @include transition(0.3s, ease-in-out);
     &:focus,
     &:hover {
         color: $dark;
-        text-decoration: none;
+        text-decoration: underline;
     }
     &:focus-visible {
         outline: 3px solid $dark !important;
@@ -180,6 +196,13 @@ img {
     &.aligncenter {
         margin: 0 auto;
         display: table;
+    }
+}
+
+.image-block {
+    img {
+        @include border-radius(16px);
+        width: 100%;
     }
 }
 
@@ -214,9 +237,9 @@ img {
 }
 .bg-custom {
     background: var(--header-bg, none);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: cover !important;
 }
 
 // Text Color CSS
@@ -245,7 +268,8 @@ img {
 	font-weight: 600;
 	font-size: 15px;
     padding: 0 30px; 
-    overflow: hidden;    
+    overflow: hidden;   
+    text-decoration: none !important; 
     @media (max-width: 767px) {
         min-height: 44px;
     }
