@@ -351,7 +351,7 @@
                 .icon {
                     display: block;
                     img {
-                        max-height: 24px;
+                        max-height: 20px;
                         filter: brightness(0) contrast(1);
                         @include transition(0.3s, ease-in-out);
                     }

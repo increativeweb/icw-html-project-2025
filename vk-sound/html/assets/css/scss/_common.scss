@@ -347,7 +347,7 @@ h2, .h2 {
         font-size: 36px;
     }
     @media (max-width: 767px) { 
-        font-size: 26px;
+        font-size: 24px;
     }
     &.font-sm {
         font-size: 30px;
@@ -496,7 +496,7 @@ h5, .h5 {
         margin: 0px 5px ;
         text-decoration: none;
         @include transition(0.1s, ease-in-out);
-         svg {
+        svg {
             path {
                 @include transition(0.1s, ease-in-out);
             }
@@ -514,6 +514,9 @@ h5, .h5 {
             background: transparent;
             border-color: #E8E8E8;
             text-decoration: none;
+            &.current {
+                border-color: $primary;
+            }
             &.next {
                 border-color: transparent;
             }

@@ -143,11 +143,11 @@
             background-position: top center;
             background-size: cover;
             @media (max-width: 992px) {
-                padding: 160px 0 100px;
+                padding: 110px 0 100px;
             }
             @media (max-width: 767px) {
                 min-height: auto;
-                padding: 110px 0 50px;
+                padding: 60px 0 50px;
             }
         }
         .splide__pagination {
@@ -162,15 +162,15 @@
 // Page Header Section 
 .page-header {
     background: var(--header-bg, linear-gradient(90deg, #FFFFFF 0%, #EEEEEE 50%, #FFFFFF 100%));
-    padding: 120px 0;
+    padding: 100px 0;
     &.bg-custom {
         color: $white;
     }
     @media (max-width: 992px) {
-        padding: 140px 0 80px;
+        padding: 80px 0 70px;
     }
     @media (max-width: 767px) {
-        padding: 120px 0 60px;
+        padding: 60px 0 50px;
     }
     .page-title {
         text-align: center;
@@ -184,9 +184,6 @@
  
 .logo-slider-section {
     padding: 50px 0;
-    @media (max-width: 767px) {
-        padding: 30px 0;
-    }
     & > .container {
         max-width: 100%;
     }
