@@ -459,7 +459,7 @@
                 @include border-radius(4px);
             }
         }
-        .title {
+        .title, h3 {
             margin-bottom: 0px;
             font-size: 20px;
         }
@@ -490,9 +490,8 @@
             }
             .sort-info {
                 font-size: 18px;
-                margin-top: 20px;
+                margin-top: 10px;
                 @media (max-width: 1200px) {
-                    margin-top: 15px;
                     font-size: 16px;
                 }
             }
