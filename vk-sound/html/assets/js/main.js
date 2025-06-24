@@ -8,14 +8,14 @@ jQuery(document).ready(function($) {
 
    
     if ($('.main-header').length) {
-        if (jQuery(this).scrollTop() > 50) {
+        if (jQuery(this).scrollTop() > 10) {
             $('.main-header .navbar').addClass('fixed-header');
         } else {
             $('.main-header .navbar').removeClass('fixed-header');
         }
 
         $(window).scroll(function () {
-            if (jQuery(this).scrollTop() > 50) {
+            if (jQuery(this).scrollTop() > 10) {
                 $('.main-header .navbar').addClass('fixed-header');
             } else {
                 $('.main-header .navbar').removeClass('fixed-header');
