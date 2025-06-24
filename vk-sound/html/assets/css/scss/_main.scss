@@ -143,11 +143,11 @@
             background-position: top center;
             background-size: cover;
             @media (max-width: 992px) {
-                padding: 100px 0;
+                padding: 160px 0 100px;
             }
             @media (max-width: 767px) {
                 min-height: auto;
-                padding: 50px 0;
+                padding: 110px 0 50px;
             }
         }
         .splide__pagination {
@@ -167,10 +167,10 @@
         color: $white;
     }
     @media (max-width: 992px) {
-        padding: 80px 0;
+        padding: 140px 0 80px;
     }
     @media (max-width: 767px) {
-        padding: 60px 0;
+        padding: 120px 0 60px;
     }
     .page-title {
         text-align: center;
