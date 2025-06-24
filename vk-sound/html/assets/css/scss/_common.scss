@@ -123,6 +123,11 @@ body ::selection {
     .m-mb-100 {margin-bottom: 100px !important;}
 }
 
+.g-15 {
+    --bs-gutter-y: 1.5rem;
+    --bs-gutter-x: 1.5rem;
+}
+
 .g-35 {   
     @media (min-width: 992px) {
         --bs-gutter-y: 50px;

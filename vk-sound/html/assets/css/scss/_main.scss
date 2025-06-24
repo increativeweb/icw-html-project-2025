@@ -559,6 +559,9 @@
             max-width: 680px;
             margin: 0;
         }
+        @media (max-width: 767px) {
+            margin-bottom: 0px;
+        }
     }
 }
 
@@ -579,10 +582,10 @@
     @include flexbox;
     @include flex-direction(column);
     height: 100%;
-    min-height: 530px;
     @include border-radius(16px);
     position: relative;
     overflow: hidden;
+    aspect-ratio: 3 / 4;
     &::after {
         content: '';
         position: absolute;
@@ -664,6 +667,9 @@
         @include flexbox;
         @include align-items(flex-start);
         gap: 50px;
+        @media (max-width: 992px) {
+            gap: 20px;
+        }
         .icon-block {
             @include flexbox;
             @include align-items(flex-start);
@@ -671,6 +677,11 @@
                 @media (min-width: 767px) {
                     margin-bottom: 0;
                 }
+            }
+        }
+        @media (max-width: 992px) and (min-width: 767px) {
+            .address-info {
+                max-width: 350px
             }
         }
     }
@@ -794,8 +805,17 @@
         padding: 50px 0;
         @include flexbox;
         @include align-items(center);
+        @media (max-width: 767px) {
+            padding: 30px 0;
+            @include flex-direction(column);
+            @include align-items(flex-start);
+            gap: 10px;
+        }
         .location-link {
             margin-left: auto;
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
         }
     }
 }
