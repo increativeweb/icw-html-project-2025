@@ -471,7 +471,7 @@
     &.with-bg {
         background: #F4F4F5;
         max-width: 100%;
-        @media (max-width: 1200px) {
+        @media (max-width: 767px) {
             max-width: 215px;
         }
         .card-img {
