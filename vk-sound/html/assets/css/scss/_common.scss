@@ -401,8 +401,6 @@ h5, .h5 {
     &--prev {
         background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2008 22.3996L1.80078 11.9996L12.2008 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
         @media (min-width: 767px) {
-            @include transform(translateX(-20px));
-            opacity: 0;
             &::before {
                 content: '';
                 width: 20px;
@@ -418,8 +416,6 @@ h5, .h5 {
     &--next {
         background-image: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');        
         @media (min-width: 767px) {
-            @include transform(translateX(20px)); 
-            opacity: 0;
             &::before {
                 content: '';
                 width: 20px;
@@ -440,10 +436,14 @@ h5, .h5 {
         opacity: 0.7;
     }
 }
-.splide {
-    &:hover, &:focus {        
-        .splide__arrow {
-            @media (min-width: 767px) {
+.splide {     
+    @media (min-width: 767px) {   
+        .splide__arrow {         
+            @include transform(translateX(20px)); 
+            opacity: 0;
+        }
+        &:hover, &:focus {
+            .splide__arrow {  
                 @include transform(translateX(0px)); 
                 opacity: 1;
             }
