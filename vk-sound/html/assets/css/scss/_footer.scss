@@ -84,12 +84,8 @@
                         }
                     }
                     &:hover, &:focus {
-                        border-color: $white;
-                        svg {
-                            path {
-                                fill: $primary;
-                            }
-                        }
+                        border-color: rgba(#D4D4D8, 0.1);
+                        background: rgba(#D4D4D8, 0.3);
                     }
                 }
             }
@@ -195,9 +191,11 @@
                         display: block;
                         font-weight: 600;
                     }
-                    p {
+                    p, a {
                         max-width: 260px;
                         font-size: 16px;
+                        white-space: wrap;
+                        display: inline-block;
                         @media (max-width: 767px) {
                             max-width: 100%;
                         }
@@ -338,7 +336,7 @@
     .mobile-menu {
         @include flexbox;
         @include align-items(center);
-        @include justify-content(space-between);
+        @include justify-content(space-around);
         li {
             a {
                 text-align: center;
