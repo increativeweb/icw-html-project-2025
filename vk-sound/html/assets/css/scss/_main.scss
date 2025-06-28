@@ -310,11 +310,11 @@
         color: $gray;
         line-height: 1;
         margin-bottom: 10px;
-        @media (max-width: 992px) {
-            font-size: 75px;
+        @media (max-width: 1200px) {
+            font-size: 72px;
         }
-        @media (max-width: 767px) {
-            font-size: 66px;
+        @media (max-width: 992px) {
+            font-size: 55px;
         }
     }
     h3 {
@@ -463,6 +463,14 @@
         .sort-info {
             font-size: 16px;
             margin-top: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
         }
     }
     &.with-bg {
@@ -483,13 +491,6 @@
             .logo-img {
                 img {
                     max-height: 40px;
-                }
-            }
-            .sort-info {
-                font-size: 18px;
-                margin-top: 10px;
-                @media (max-width: 1200px) {
-                    font-size: 16px;
                 }
             }
         }
@@ -538,6 +539,7 @@
                 background: $white;
                 aspect-ratio: 1 / 1;
                 padding: 25px;
+                overflow: hidden;
                 @media (max-width: 767px) {                    
                     padding: 15px;
                 }
@@ -770,6 +772,8 @@
             gap: 16px;
             li {
                 a {
+                    line-height: 0.7;
+                    display: inline-block;
                     svg {
                         path {
                             @include transition(0.3s, ease-in-out);

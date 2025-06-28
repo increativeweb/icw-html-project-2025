@@ -65,7 +65,7 @@ body {
 
 body ::selection {
     color: #fff;
-    background: $dark;
+    background: rgba($primary, 0.5);
 }
 
 :focus {
@@ -557,6 +557,22 @@ h5, .h5 {
 @keyframes horizontalMove {
     from { background-position: 0 100%; }
     to { background-position: 100% 100%; }
+}
+
+// Glight Box
+.gslide {
+    .gslide-inner-content {
+        .gslide-description {
+            .gslide-title {
+                font-size: 24px;
+                font-weight: 600;
+                font-family: $bodyfont;
+            }
+            .gslide-desc {
+                font-family: $bodyfont;
+            }
+        }
+    }
 }
 
 // Page Scroll Progress CSS
