@@ -1,5 +1,5 @@
 .main-header {  
-    border-bottom: 0.0625rem solid #E2E5EE; 
+    border-bottom: 1px solid #E2E5EE; 
     z-index: 4;
     position: relative;
     background: $white;
@@ -16,6 +16,9 @@
         .container {
             @include flexbox;
             @include align-items(center);
+            @media (min-width: 767px) {
+                height: inherit;
+            }
             @media (max-width: 992px) {
                 max-width: 100%;
             }
@@ -25,25 +28,25 @@
             @include align-items(center);
             li {                
                 a {
-                    font-size: 0.875rem;
+                    font-size: 14px;
                     font-weight: 600;
                     color: $black;
                     text-decoration: none;
                     position: relative;
-                    padding: 0.5rem 0.75rem;
+                    padding: 8px 12px;
                     @include transition(0.05s, ease-in-out);
-                    @include border-radius(1.88rem);
+                    @include border-radius(30.08px);
                     @include inline-flex;
                     @include align-items(center);
                     @media (max-width: 992px) {
-                        font-size: 0.875rem;
-                        padding: 0.4rem 0.55rem;
+                        font-size: 14px;
+                        padding: 6.4px 8.8px;
                     }
                     &.with-icon {
                         .icon {
-                            margin-right: 0.5rem;
-                            width: 0.75rem;
-                            height: 0.75rem;
+                            margin-right: 8px;
+                            width: 12px;
+                            height: 12px;
                             display: inline-block;
                             line-height: 0.7;
                             svg {
@@ -70,11 +73,11 @@
                             &::after {
                                 content: '';
                                 background: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>') no-repeat center center;
-                                width: 0.625rem;
-                                height: 0.425rem;
+                                width: 10px;
+                                height: 6.8px;
                                 line-height: 0.7;
-                                margin-left: 0.3125rem;
-                                margin-top: 0.0625rem;
+                                margin-left: 5px;
+                                margin-top: 1px;
                                 @include transition(0.05s, ease-in-out);
                             }
                         }
@@ -86,13 +89,13 @@
                         background-image: url('data:image/svg+xml,<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.209209 0.708856C0.488155 0.430381 0.940416 0.430381 1.21936 0.708856L5 4.48311L8.78064 0.708856C9.05958 0.430381 9.51184 0.430381 9.79079 0.708856C10.0697 0.987331 10.0697 1.43883 9.79079 1.7173L5 6.5L0.209209 1.7173C-0.0697365 1.43883 -0.0697365 0.987331 0.209209 0.708856Z" fill="rgb(0 0 0)"/></svg>');
                         background-repeat: no-repeat;
                         background-position: center;
-                        width: 1.25rem;
-                        height: 1.25rem;
+                        width: 20px;
+                        height: 20px;
                         display: inline-block;
                         position: absolute;
-                        right: 0.9375rem;
-                        top: 0.9375rem;
-                        @include border-radius(0.25rem);
+                        right: 15px;
+                        top: 15px;
+                        @include border-radius(4px);
                         @include transition(0.1s, ease-in-out);
                         &.is-active {
                             @include transform(rotate(180deg));
@@ -105,44 +108,50 @@
                     .sub-menu {
                         @media (min-width: 767px) {  
                             position: absolute;
-                            top: 0.5rem;
+                            top: 100%;
                             right: 0;
                             display: block;
-                            min-width: 13.75rem;
-                            padding: 0.625rem;
+                            min-width: 220px;
+                            padding: 10px;
                             opacity: 0;
                             pointer-events: none;
                             background: $white;
-                            border: 0.0625rem solid #D4D6E5;
+                            border: 1px solid #D4D6E5;
                             @include transition(0.05s, ease-in-out);
-                            @include transform(rotateX(-20deg) translate3d(0, 2.25rem, 0));
-                            transform-origin: 50% 0;
-                            will-change: transform;
-                            @include border-radius(0);
+                            @include transform(rotateX(-20deg));
+                            @include border-radius(5px);
                             z-index: 9;
-                            &::before {
+                            @include box-shadow(0px 4px 6px rgba(0, 0, 0, 0.04));
+                            &::before, &::after {
+                                border-left: 5px solid transparent;
+                                border-right: 5px solid transparent;
+                                border-bottom: 5px solid $white;
+                                top : -5px;
                                 content: '';
-                                width: 100%;
-                                height: 1.5625rem;
-                                background: transparent;
-                                display: block;
+                                right: 30px;
                                 position: absolute;
-                                top: -1.5625rem;
-                                left: 0;
+                            }
+                            &::before {
+                                border-left: 6px solid transparent;
+                                border-right: 6px solid transparent;
+                                border-bottom: 6px solid #D4D6E5;
+                                top : -6px;
+                                right: 29px;
                             }
                         }
                         @media (max-width: 992px) {
-                            top: 0.2rem;
+                            top: 3.2px;
                         }
                         @media (max-width: 767px) {
                             display: none;
                             margin-left: 0;  
                         }
                         li {
+                            padding: 0;
                             a {
                                 display: block;
                                 font-weight: 500;
-                                padding: 0.5rem 0.9375rem;
+                                padding: 8px 15px;
                                 @include border-radius(0);
                             }
                             &:hover, &:focus {
@@ -165,7 +174,7 @@
                                 opacity: 1;
                                 pointer-events: auto;
                                 visibility: visible;
-                                @include transform(rotateX(0deg) translate3d(0, 3.4rem, 0.31rem));
+                                @include transform(rotateX(0deg) translate3d(0, 0, 0));
                             }
                         }
                     }
@@ -174,26 +183,25 @@
         }
     }
     .header-top {
-        border-bottom: 0.0625rem solid #D4D6E5;
+        border-bottom: 1px solid #D4D6E5;
         @include flexbox;
         @include align-items(center);
         width: 100%;
-        padding: 0.625rem 0;
         @media (max-width: 767px) {
             display: none;
         }
         .info-menu {           
             ul {
                 @media (max-width: 767px) {
-                    gap: 0.5rem;
+                    gap: 8px;
                 }
                 li {
                     a {
-                        font-size: 0.813rem;
+                        font-size: 13.008px;
                         text-transform: uppercase;
                         background: #F7F6FD;
                         @media (max-width: 992px) {
-                            font-size: 0.75rem;
+                            font-size: 12px;
                         }
                         &:hover, &:focus, &:active {
                             background: #EEEDF4;
@@ -205,27 +213,28 @@
         .top-right-menu {
             margin-left: auto;
             ul {
-                li {
+                & > li {                    
+                    padding: 10px 0;
                     &:last-child {
                         padding-right: 0;
                     }
                     a {
                         font-weight: 500;
-                        font-size: 0.81rem;
+                        font-size: 12.96px;
                         @media (max-width: 992px) {
-                            font-size: 0.75rem;
+                            font-size: 12px;
                         }
                         &.btn {
-                            min-height: 2.25rem;
-                            font-size: 0.75rem;
+                            min-height: 36px;
+                            font-size: 12px;
                             min-width: auto;
                             text-transform: uppercase;
-                            margin: 0 0.5rem;
-                            padding: 0.5rem 1.125rem;
+                            margin: 0 8px;
+                            padding: 8px 18px;
                             @include transition(0.2s, ease-in-out);
                             @media (max-width: 992px) {
-                                padding: 0.5rem 1rem;
-                                margin: 0 0.3rem;
+                                padding: 8px 16px;
+                                margin: 0 4.8px;
                             }
                         }
                     }
@@ -235,35 +244,51 @@
     }
     .header-main-menu {
         width: 100%;
-        padding: 0.5rem 0;  
         position: sticky;
         top: 0;
-        left: 0;   
-        @media (max-width: 992px) {
-            padding: 0.5rem 0;
-        }  
+        left: 0; 
+        height: 60px;
+        @media (min-width: 767px) {
+            height: 86px;
+        }
         .logo-block {
             .navbar-brand {
-                margin-right: 1.875rem;
-                @media (max-width: 992px) {
-                    img {
-                        max-height: 3.125rem;
+                margin-right: 30px;
+                img {
+                    max-height: 65px;
+                    @media (max-width: 992px) {
+                        max-height: 50px;
                     }
                 }  
             }
         }
         .main-menu {
             margin-left: auto;
-            margin-right: -0.9375rem;
+            margin-right: -15px;
+            @media (min-width: 767px) {
+                height: inherit;
+                .menu-content {
+                    height: inherit;
+                }
+            }
             @media (max-width: 992px) {
-                margin-right: -0.7rem;
+                margin-right: -11.2px;
             }  
-            ul {
-                li {
+            ul.main-menu-list {
+                @media (min-width: 767px) {
+                    height: inherit;
+                }
+                & > li {
+                    @media (min-width: 767px) {
+                        height: inherit;
+                        display: inline-flex;
+                        align-items: center;
+                    }
                     a {
-                        padding: 0.5rem 0.9375rem;
+                        display: inline-flex;
+                        padding: 8px 15px;
                         @media (max-width: 992px) {
-                            padding: 0.5rem 0.7rem;
+                            padding: 8px 11.2px;
                         }  
                     }
                 }
@@ -285,11 +310,11 @@
                     background: transparent;   
                     transition: transform 0.3s ease-in-out 0.2s, background 0.3s ease-in-out;
                     .menu-content {
-                        max-width: 20rem;
-                        height: calc(100% - 1.88rem);
+                        max-width: 320px;
+                        height: calc(100% - 30.08px);
                         background: $white;
-                        margin: 0.9375rem;                        
-                        @include border-radius(0.9375rem);
+                        margin: 15px;                        
+                        @include border-radius(15px);
                         @include flexbox;
                         @include flex-direction(column);   
                     }
@@ -301,23 +326,23 @@
                         overflow-y: auto;
                         li { 
                             width: 100%;
-                            border-bottom: 0.0625rem solid #EEEDF8;
+                            border-bottom: 1px solid #EEEDF8;
                             a {
                                 @include border-radius(0);
                                 display: block;
-                                padding: 1rem;
+                                padding: 16px;
                             }
                             .sub-menu {
-                                padding: 0.5rem;
+                                padding: 8px;
                                 min-width: 100%;
                                 li {
                                     border: none;
                                     padding: 0;
-                                    margin-bottom: 0.125rem;
+                                    margin-bottom: 2px;
                                     a {
-                                        padding: 0.5rem;
+                                        padding: 8px;
                                         display: block;
-                                        @include border-radius(0.25rem);
+                                        @include border-radius(4px);
                                         &:hover, &:focus {
                                             background: #F7F6FD
                                         }
@@ -338,17 +363,17 @@
                     }
                     .mobile-top-menu {
                         @include flexbox;
-                        padding: 1rem;
-                        margin-bottom: 0.5rem;
+                        padding: 16px;
+                        margin-bottom: 8px;
                         .menu-close {
-                            width: 1.5rem;
-                            height: 1.5rem;
+                            width: 24px;
+                            height: 24px;
                             @include flexbox;
                             @include align-items(center);
                             @include justify-content(center);
-                            @include border-radius(0.375rem);
+                            @include border-radius(6px);
                             svg {
-                                width: 0.375rem;
+                                width: 6px;
                             }
                             &:hover, &:focus {
                                 background: #F7F6FD;
@@ -356,24 +381,24 @@
                         }
                         .contact-link {
                             margin-left: auto;
-                            font-size: 0.81rem;
+                            font-size: 13px;
                             font-weight: 700;
                             font-family: $font-geist;
                             text-decoration: none;
                             color: $black;
                             @include flexbox;
                             @include align-items(center);
-                            padding: 0.5rem 0.75rem;
-                            @include border-radius(2rem);
+                            padding: 8px 12px;
+                            @include border-radius(32px);
                             @include transition(0.05s, ease-in-out);
                             .icon {
-                                margin-right: 0.3125rem;
+                                margin-right: 5px;
                                 @include inline-flex;
                                 @include align-items(center);
                                 @include justify-content(center);
                                 svg {                                    
-                                    width: 0.875rem;
-                                    height: 0.875rem;
+                                    width: 14px;
+                                    height: 14px;
                                     flex: none;
                                 }
                             }
@@ -383,31 +408,31 @@
                         }
                     }
                     .menu-title {
-                        font-size: 1.5rem;
+                        font-size: 24px;
                         font-weight: 700;
                         color: $black;
                         font-family: $font-geist;
-                        margin-bottom: 1rem;
-                        padding: 0 1rem;
+                        margin-bottom: 16px;
+                        padding: 0 16px;
                     }
                     .mobile-bottom-menu {
-                        border-top: 0.0625rem solid #EEEDF8;
+                        border-top: 1px solid #EEEDF8;
                         ul {
                             li {
-                                padding: 0.5rem;
+                                padding: 8px;
                                 &:not(:last-child) {
-                                    border-right: 0.0625rem solid #EEEDF8;
+                                    border-right: 1px solid #EEEDF8;
                                 }
                                 a {
                                     @include flexbox;
-                                    font-size: 0.75rem;
-                                    padding: 0.5rem 0.625rem;
+                                    font-size: 12px;
+                                    padding: 8px 10px;
                                     .icon {
-                                        margin-right: 0.3125rem;
+                                        margin-right: 5px;
                                     }
                                     svg {
-                                        width: 0.81rem;
-                                        height: 0.81rem;
+                                        width: 13px;
+                                        height: 13px;
                                     }
                                 }
                             }
@@ -422,17 +447,17 @@
             }
             border: none;
             background: #F7F6FD;
-            width: 2.25rem;
-            height: 2.25rem;
+            width: 36px;
+            height: 36px;
             margin-left: auto;
             padding: 0;
-            @include border-radius(0.1875rem);
+            @include border-radius(3px);
             span {
-                width: 1rem;
-                height: 0.125rem;
+                width: 16px;
+                height: 2px;
                 background: $black;
                 display: block;
-                margin: 0.1875rem auto;
+                margin: 3px auto;
             }
         }
         .right-menu {
@@ -444,11 +469,11 @@
             margin-left: auto;
             .btn {
                 min-width: unset;
-                width: 2.25rem;
-                height: 2.25rem;
+                width: 36px;
+                height: 36px;
                 flex: none;
                 padding: 0;
-                margin-right: 0.625rem;
+                margin-right: 10px;
                 .icon {
                     margin-right: 0;
                 }

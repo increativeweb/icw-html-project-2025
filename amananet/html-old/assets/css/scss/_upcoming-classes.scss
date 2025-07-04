@@ -1,0 +1,269 @@
+.upcoming-classes-card-section {
+    .row {
+        & > .col {
+            &:last-child {
+                .upcoming-classes-card {                    
+                    @media (max-width: 992px) {
+                        border-bottom: 0.0625rem solid #D4D6E5 !important;
+                    }
+                }
+            }
+        }
+    }
+    &.is-card-view {
+        .upcoming-classes-card {
+            border: none;
+            @include border-radius(0.375rem);
+            position: relative;
+            height: 100%;
+            @include flexbox;
+            @include flex-direction(column);
+            border: 0.0625rem solid #D4D6E5;
+            @include transition(0.3s, ease-in-out);
+            overflow: hidden;
+            .card-img {
+                overflow: hidden;
+                line-height: 0.7;
+                position: relative;
+                max-height: 150px;
+                & > img {
+                    aspect-ratio: 16 / 9;
+                    object-fit: cover;
+                    object-position: center;
+                    @include transition(0.3s, ease-in-out);
+                }
+                .class-icon {
+                    display: block;            
+                    img {               
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        flex: none;
+                        position: absolute;
+                        bottom: 1rem;
+                        right: 1rem;
+                    }
+                }
+            }
+            .card-body {
+                padding: 1.5rem;
+                flex: 1 1 auto;
+                @media (max-width: 992px) {
+                    padding: 0.9375rem;
+                }
+                .card-title {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    @media (max-width: 992px) {
+                        font-size: 1rem;
+                    }
+                    a {
+                        text-decoration: none;
+                        @include transition(0.3s, ease-in-out);
+                        color: $black;                       
+                    }
+                }
+                .card-info {
+                    font-size: 0.75rem;
+                    strong {
+                        color: $primary;
+                    }
+                }
+            }
+            .card-action {
+                padding: 0 1.5rem 1.5rem;
+                overflow: hidden;
+                .fees-info {
+                    @include flexbox;
+                    @include align-items(center);
+                    gap: 0.25rem;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    span {
+                        display: inline-block;
+                    }
+                    .price {
+                        font-family: $font-geist;
+                        font-weight: 700;
+                        margin-top: 0.1875rem;
+                        .icon {
+                            margin-left: 0.3125rem;
+                        }
+                    }
+                }
+                
+            }
+            &:hover, &:focus {
+                background: #F7F6FD;
+                .card-img {
+                    & > img {
+                        @include transform(scale(1.03));
+                    }
+                }
+                .card-body {
+                    .card-title {
+                        a {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.is-list-view {
+        .upcoming-classes-card {
+            @include flexbox;
+            @include align-items(center);
+            padding: 0.9375rem 0;
+            border-bottom: 0.0625rem solid #D8DCEA;
+            @include transition(0.3s, ease-in-out);
+            position: relative;
+            z-index: 1;
+            @media (max-width: 1200px) {                
+                padding: 0.9375rem 0;
+            }
+            @media (max-width: 992px) {
+                flex-wrap: wrap;
+                padding: 1rem;
+                border: 0.0625rem solid #D8DCEA;
+                @include border-radius(0.375rem);
+                margin-bottom: 1rem;
+            }
+            &:first-child {
+                &::before, &::after { 
+                    border-top-color: transparent !important;
+                }
+            }
+            &::before, &::after {
+                content: '';
+                width: 1.5rem;
+                height: calc(100% + 0.125rem);
+                position: absolute;
+                top: -0.0625rem;
+                left: -1.5rem;
+                @include transition(0.3s, ease-in-out);
+                border-bottom: 0.0625rem solid transparent;
+                border-top: 0.0625rem solid transparent;
+                z-index: -1;
+                @media (max-width: 1200px) {
+                    width: 0.9375rem;                
+                    left: -0.9375rem;
+                }
+                @media (max-width: 992px) {
+                    content: none;
+                }
+            }
+            &::after {
+                left: auto;
+                right: -1.5rem;
+                @media (max-width: 1200px) {                
+                    right: -0.9375rem;
+                }
+            }
+            .card-title-img {
+                @include flexbox;
+                @include align-items(center);
+                @media (max-width: 767px) {  
+                    @include align-items(flex-start);
+                }
+                .card-img {
+                    width: 3.125rem;
+                    height: 3.125rem;
+                    flex: none;
+                    margin-right: 1.25rem;
+                    @media (max-width: 992px) {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        margin-right: 1rem;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+                .card-body {
+                    margin-right: 1.25rem;
+                    @media (max-width: 1200px) and (min-width: 992px) {  
+                        max-width: 18.75rem;
+                    }
+                    @media (max-width: 767px) {  
+                        max-width: 18.75rem;
+                    }
+                    .card-title {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        @include transition(0.3s, ease-in-out);
+                        a {
+                            color: $black;
+                            text-decoration: none;
+                        }
+                    }
+                    .card-info {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+            .card-action {
+                @include flexbox;
+                @include align-items(center);
+                margin-left: auto;
+                gap: 5rem;
+                @media (max-width: 1200px) {                
+                    gap: 3.125rem;
+                }
+                @media (max-width: 992px) {
+                    flex: 1 1 100%;
+                    margin-top: 1rem;
+                    padding-left: 3.5rem;
+                }
+                @media (max-width: 767px) {                
+                    gap: 1.25rem;
+                }
+                .date {
+                    font-size: 0.75rem;
+                    strong {
+                        color: $primary;
+                    }
+                }
+                .fees-info {
+                    @media (max-width: 767px) {                
+                        margin-left: auto;
+                    }
+                    span {
+                        display: block;
+                        color: #656565;
+                        font-size: 0.625rem;
+                    }
+                    .price {
+                        font-size: 1.125rem;
+                        font-family: $font-geist;
+                        font-weight: 700;
+                        color: $black;
+                        line-height: 1;
+                    }
+                }
+                .btn {
+                    margin-left: auto;
+                    @media (max-width: 767px) {                
+                        display: none;
+                    }
+                }
+            }
+            &:hover {
+                background: #F7F6FD;
+                &::before, &::after {
+                    background: #F7F6FD;
+                    border-color: #D8DCEA;
+                }
+                .card-title-img {
+                    .card-body {
+                        .card-title {
+                            a {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

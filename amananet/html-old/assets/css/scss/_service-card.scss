@@ -1,0 +1,85 @@
+.service-card {
+    border: none;
+    @include border-radius(0);
+    background: #EEEDF4;
+    position: relative;
+    height: 100%;
+    @include flexbox;
+    @include flex-direction(column);
+    border-left: 1px solid #D4D6E5;
+    @media (max-width: 992px) {
+        border: 1px solid #D4D6E5;
+        border-top: none;
+    }
+    .card-img {
+        overflow: hidden;
+        line-height: 0.7;
+        img {
+            aspect-ratio: 21 / 9;
+            object-fit: cover;
+            object-position: center;
+            @include transition(0.3s, ease-in-out);
+        }
+    }
+    .card-body {
+        padding: 1.5rem;
+        flex: 1 1 auto;
+        @media (max-width: 992px) {
+            padding: 0.9375rem;
+        }
+        .card-title {
+            font-size: 1.38rem;
+            font-weight: 600;
+            margin-bottom: 0.625rem;
+            @media (max-width: 992px) {
+                font-size: 1.125rem;
+            }
+        }
+        .card-info {
+            font-size: 0.875rem;
+        }
+    }
+    .card-action {
+        padding: 0 1.5rem 1.5rem;
+        overflow: hidden;
+        @media (max-width: 992px) {
+            padding: 0 0.9375rem 0.9375rem;
+        }
+        a {
+            display: block;
+            @include transition(0.3s, ease-in-out);
+            @media (min-width: 992px) {
+                @include transform(translateY(50px));
+            }
+            .btn-link-arrow {
+                font-size: 0.9375rem;
+                @media (max-width: 767px) {
+                    font-size: 0.75rem;
+                }
+            }
+            &:hover, &:focus {
+                .btn-link-arrow {
+                    background-size: 0% 0.0625rem;
+                    transition-delay: 0s;
+                    --stroke-dashoffset: 26;
+                    --stroke-duration: .3s;
+                    --stroke-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
+                    --stroke-delay: .195s;
+                    &::before {
+                        opacity: 0;
+                        transition-delay: 0s;
+                    }
+                }
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-action {
+            a {
+                @media (min-width: 992px) {
+                    @include transform(translateY(0px));     
+                }           
+            }
+        }
+    }
+}

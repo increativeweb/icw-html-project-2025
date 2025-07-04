@@ -1,0 +1,288 @@
+.main-content-wrapper {
+    background-color: $white;
+    z-index: 1;
+    &::before {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: #D4D6E5;
+        position: absolute;
+        top: 0;
+        left: 6vw;
+        z-index: 5;
+        @media (max-width: 1440px) {
+            left: 4vw;
+        }
+        @media (max-width: 1200px) {
+            left: 2vw;
+        }
+        @media (max-width: 992px) {
+            content: none;
+        }
+    }    
+    &::after {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: #D4D6E5;
+        position: absolute;
+        top: 0;
+        right: 6vw;
+        z-index: 5;
+        @media (max-width: 1440px) {
+            right: 4vw;
+        }
+        @media (max-width: 1200px) {
+            right: 2vw;
+        }
+        @media (max-width: 992px) {
+            content: none;
+        }
+    }
+}
+
+// Main Section CSS
+.main-section {
+    padding-top: 9.38rem;
+    padding-bottom: 9.38rem;
+    @media (max-width: 992px) { 
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
+    }
+    @media (max-width: 767px) { 
+        padding-top: 3.13rem;
+        padding-bottom: 3.13rem;
+    }
+
+    &.bg-none:not(.bg-custom) {
+        background-image:none !important;
+    }
+
+    &.is-light {
+        *:not(a, a > *) {
+            color: #fff;
+        }
+		.section-title {
+			*:not(a, a > *) {
+				color: #fff;
+			}
+			a:not(.btn) {
+				color: $primary;
+				&:hover, &:focus {
+					color: $black;
+				}
+			}
+			.sort-info {
+				color: $white !important;
+			}
+		}
+		.text-color {
+			color: $white !important;
+		}
+    }
+
+    &.bg-custom {
+		background-color:var(--gs-bg, #fff) !important;
+	}
+	
+	&.is-custom {
+        *:not(a) {
+            color: var(--gs-text, #fff);
+        }
+		.section-title {
+			*:not(a) {
+				color: var(--gs-text, #fff);
+			}
+		}
+    }
+
+    &.section-title-mw-400 {
+        .section-title {
+            max-width: 25rem;
+        }
+    }
+    &.section-title-mw-500 {
+        .section-title {
+            max-width: 32.5rem;
+        }
+    }
+    &.section-title-mw-560 {
+        .section-title {
+            max-width: 35rem;
+        }
+    }
+    &.section-title-mw-600 {
+        .section-title {
+            max-width: 37.5rem;
+        }
+    }
+    &.section-title-mw-700 {
+        .section-title {
+            max-width: 43.75rem;
+        }
+    }
+    &.section-title-mw-800 {
+        .section-title {
+            max-width: 50rem;
+        }
+    }
+    &.section-title-mw-90 {
+        .section-title {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width:767px) {
+		&.m-container-full {
+			.container {max-width: 100%;}
+		}
+		&.m-text-center .section-title {
+			text-align: center !important;
+		}
+
+		&.m-row-column-reverse {
+			& > .container > .row {
+				@include flex-direction(column-reverse);
+			}
+		}
+
+        &.bg-none-m {
+            background-image:none !important;
+        }
+
+        &.b-radius-dark, &.b-radius-light {
+            @include border-radius(0 0 1.5rem 1.5rem);
+        }
+	}
+    &.full-width-section {
+        max-width: 100%;
+        margin: 0 6vw;
+        &.with-border {
+            border-top: 1px solid #D4D6E5;
+            border-bottom: 1px solid #D4D6E5;
+        }
+        @media (max-width: 1440px) {
+            margin: 0 4vw;
+        }
+        @media (max-width: 1200px) {
+            margin: 0 2vw;
+        }
+        @media (max-width: 992px) {
+            margin: 0;
+        }
+        .full-content-block {
+            &.with-border {
+                border-top: 1px solid #D4D6E5;
+                border-bottom: 1px solid #D4D6E5;
+            }
+            .section-title {
+                padding-top: 6.25rem;
+                padding-bottom: 6.25rem;
+                @media (max-width: 992px) { 
+                    padding-top: 4.5rem;
+                    padding-bottom: 0;
+                }
+                @media (max-width: 767px) { 
+                    padding-top: 3.13rem;
+                }
+            }
+        }
+    }
+}
+
+// Section Title CSS
+.section-title {
+    margin-bottom: 3.125rem;
+    @media (max-width: 992px) { 
+        margin-bottom: 	2rem;
+    }
+    &.text-center {
+        margin: 0 auto 3.125rem;
+        @media (max-width: 992px) { 
+            margin: 0 auto 	2rem;
+        }
+    }
+    &.sticky-title {
+        position: sticky;
+        top: 9.375rem;
+    }
+    &.d-flex {
+        @include align-items(flex-start);
+        gap: 4.375rem;
+        @media (max-width: 992px) { 
+            @include flex-direction(column);
+            gap: 1.25rem;
+        }
+        & > * {
+            flex: 1;
+            margin-bottom: 0 !important;
+        }
+        h2 {
+            margin-bottom: 0;
+        }
+        .sort-info {
+            margin-top: 0.375rem;
+            p {
+                max-width: 40.625rem;
+                @media (max-width: 992px) { 
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    .tag-line {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $primary;
+        margin-bottom: 0.5rem;
+    }
+
+    h1, h2, h3 {
+        margin-bottom: 1rem;
+        @media (max-width: 767px) { 
+            margin-bottom: 0.938rem;
+        }
+    }
+    .sort-info {
+        // margin-bottom: 1.875rem;  
+        h3 {
+            font-family: $bodyfont;
+            font-weight: 400;
+        }
+        h4 {
+            margin-bottom: 0.938rem;
+            font-family: $bodyfont;
+        }
+        img {
+            margin-top: 1.875rem;
+        }
+        a {
+            margin-bottom: 0.3125rem;
+            display: inline-block;
+        }
+    }
+    .action {
+        margin-top: 2rem;
+        @media (max-width: 767px) { 
+            margin-top: 1.5rem;
+            .btn {
+                // width: 100%;
+            }
+        }
+    }
+}
+
+.service-card-section, .upcoming-classes-card-section {
+    .row {
+        & > .col {
+            &:last-child {
+                .service-card, .upcoming-classes-card {
+                    border-right: 1px solid #D4D6E5;
+                    @media (max-width: 992px) {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}

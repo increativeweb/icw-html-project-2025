@@ -1,0 +1,14 @@
+.hero-header{position:relative;background:#eeedf4;z-index:1}
+.hero-header .hero-content-block{background:#2a396d;border-radius:100px}
+.hero-header .section-title{padding-top:150.08px;padding-bottom:150.08px;max-width:600px}
+.hero-header .section-title .tag-line{color:#f8993a}
+.hero-header .section-title .sort-info{font-size:18px}
+.hero-header .section-title .info-list-card{margin-bottom:8px}
+.hero-header .section-title .card-icon img{max-width:14px;min-width:14px}
+@media (max-width:992px){
+.hero-header>.container{max-width:100%}
+.hero-header .section-title{padding:50px 15px 70px}
+}
+@media (max-width:767px){
+.hero-header .section-title .sort-info{font-size:16px}
+}
