@@ -1,0 +1,182 @@
+.main-footer {
+    .footer-content-block {
+        border-top: 1px solid $gray;
+        padding: 50px 50px 30px;
+        @media (max-width: 1200px) {
+            padding: 50px 20px 30px;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 0px 20px;
+        }
+    }
+    ul {
+        @include flexbox;
+        @include align-items(center);
+        gap: 5px;
+        @media (max-width: 992px) {
+            @include flex-wrap(wrap);
+        }
+        @media (max-width: 767px) {
+            gap: 0
+        }
+        li {
+            @include flexbox;
+            @include align-items(center);
+            gap: 5px;
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
+            &:not(:last-child) {
+                &::after {
+                    content: '|';
+                    margin-top: -2px;
+                }
+            }
+            a {
+                color: $gray;
+                font-size: 16px;
+                text-decoration: none;
+                text-underline-offset: 4px;
+                @include transition(0.1s, ease-in-out);
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                }
+                &:hover, &:focus {
+                    color: $primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .content-info-list {
+        li {
+            font-size: 24px;
+            font-weight: 600;
+            @media (max-width: 767px) {
+                font-size: 18px;
+            }
+            a {
+                font-size: 24px;
+                @media (max-width: 767px) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .address-info-list {
+        margin-top: 5px;
+    }
+    .footer-menu-inline {
+        li {
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+    .copyright-text-block {
+        @include flexbox;
+        @include align-items(center);
+        font-size: 14px;
+        gap: 5px;
+        margin-top: 40px;
+        @media (max-width: 767px) {
+            @include flex-direction(column-reverse);
+            @include align-items(flex-start);
+            margin-top: 30px;
+            font-size: 12px;
+        }
+        .copyright-text {
+            &::after {
+                content: '|';
+                margin-top: -2px;
+                margin-left: 5px;
+            }
+            @media (max-width: 767px) {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+    .border-left {        
+        border-left: 1px solid $gray;
+        @media (max-width: 992px) {
+            border: none;
+        }
+    }
+    .footer-menu-block {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        height: 100%;
+    }
+    .social-list-block {
+        margin-top: 20px;
+        @media (min-width: 992px) {
+            margin-top: 0;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            color: $gray;
+            margin-bottom: 10px;
+            @media (max-width: 767px) {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+        }
+        .social-list {
+            @media (min-width: 992px) {
+                @include justify-content(flex-end);
+            }
+            li {
+                &::after {
+                    content: none !important;
+                }
+                a {
+                    line-height: 0.7;
+                    svg {
+                        width: 45px;
+                        height: 45px;
+                        @media (max-width: 767px) {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        path {
+                            fill: rgba($gray, 0.5);
+                            @include transition(0.1s, ease-in-out);
+                        }
+                    }
+                    &:hover, &:focus {
+                        svg {
+                            path {
+                                fill: $primary
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-menu-list {
+        @include align-items(flex-start);
+        gap: 8px;
+        @media (min-width: 992px) {
+            @include flex-direction(column);
+        } 
+        @media (max-width: 767px) {
+            gap: 5px
+        }
+        li {
+            @media (min-width: 992px) {
+                &::after {
+                    content: none !important;
+                }
+            }
+            a {
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
