@@ -1,21 +1,19 @@
 .main-footer {
     .footer-content-block {
         border-top: 1px solid $gray;
-        padding: 50px 50px 30px;
+        padding: 45px 50px;
         @media (max-width: 1200px) {
-            padding: 50px 20px 30px;
+            padding: 40px 20px 30px;
         }
         @media (max-width: 767px) {
-            padding: 50px 0px 20px;
+            padding: 30px 0px;
         }
     }
     ul {
         @include flexbox;
         @include align-items(center);
+        @include flex-wrap(wrap);
         gap: 5px;
-        @media (max-width: 992px) {
-            @include flex-wrap(wrap);
-        }
         @media (max-width: 767px) {
             gap: 0
         }
@@ -52,11 +50,17 @@
         li {
             font-size: 24px;
             font-weight: 600;
+            @media (max-width: 1200px) {
+                font-size: 20px;
+            }
             @media (max-width: 767px) {
                 font-size: 18px;
             }
             a {
                 font-size: 24px;
+                @media (max-width: 1200px) {
+                    font-size: 20px;
+                }
                 @media (max-width: 767px) {
                     font-size: 18px;
                 }
@@ -65,20 +69,32 @@
     }
     .address-info-list {
         margin-top: 5px;
+        li {
+            @media (max-width: 1200px) {
+                font-size: 16px;
+            }
+        }
     }
     .footer-menu-inline {
         li {
             a {
                 font-size: 14px;
+                @media (max-width: 1200px) {
+                    font-size: 13px;
+                }
             }
         }
     }
     .copyright-text-block {
         @include flexbox;
         @include align-items(center);
+        @include flex-wrap(wrap);
         font-size: 14px;
         gap: 5px;
-        margin-top: 40px;
+        margin-top: 30px;
+        @media (max-width: 1200px) {
+            font-size: 13px;
+        }
         @media (max-width: 767px) {
             @include flex-direction(column-reverse);
             @include align-items(flex-start);
@@ -98,17 +114,27 @@
             }
         }
     }
-    .border-left {        
-        border-left: 1px solid $gray;
-        @media (max-width: 992px) {
-            border: none;
-        }
-    }
     .footer-menu-block {
         @include flexbox;
         @include align-items(center);
         @include justify-content(space-between);
         height: 100%;
+        position: relative;
+        @media (min-width: 992px) {
+            &::before {
+                content: '';
+                width: 1px;
+                height: 90%;
+                background: rgba($gray, 0.2);
+                position: absolute;
+                left: -30px;
+                top: 5%;
+                @media (max-width: 1200px) {
+                    height: 96%;
+                    top: 3%;
+                }
+            }
+        }
     }
     .social-list-block {
         margin-top: 20px;
@@ -136,8 +162,8 @@
                 a {
                     line-height: 0.7;
                     svg {
-                        width: 45px;
-                        height: 45px;
+                        width: 35px;
+                        height: 35px;
                         @media (max-width: 767px) {
                             width: 40px;
                             height: 40px;
@@ -175,6 +201,7 @@
             }
             a {
                 font-weight: 500;
+                font-size: 15px;
                 text-transform: uppercase;
             }
         }
