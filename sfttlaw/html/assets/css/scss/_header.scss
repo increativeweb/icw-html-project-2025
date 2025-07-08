@@ -240,6 +240,12 @@
                                         background: rgba($green, 0.1);
                                     }
                                 }
+                                &.current_page_parent {
+                                    a {
+                                        color: $green;
+                                        background: rgba($green, 0.1);
+                                    }
+                                }
                             }
                         }
                     }
