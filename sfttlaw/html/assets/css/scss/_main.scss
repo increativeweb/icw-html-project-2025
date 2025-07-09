@@ -304,15 +304,12 @@
 .sidebar {
     max-width: 350px;
     margin-left: auto;
-    @media (max-width: 767px) {
+    @media (max-width: 992px) {
         max-width: 100%;
-        margin: 30px 0 0;
+        margin: 40px 0 0;
     }
-    .sidebar-content-block { 
-        background: $white;
-        @include box-shadow(0px 0px 15px 5px rgba(0, 0, 0, 0.05));
-        padding: 25px;
-        .sidebar-title {
+    .sidebar-inner {         
+        .widget-title {
             text-transform: uppercase;
             font-weight: 300;
             color: $primary;
@@ -321,7 +318,16 @@
             margin-bottom: 15px;
             border-bottom: 1px solid rgba($gray, 0.3);
         }
-        .nav-list {
+        .practices-widget, .attorneys-widget {
+            background: $white;
+            @include box-shadow(0px 0px 15px 5px rgba(0, 0, 0, 0.05));
+            padding: 25px;
+        }
+        .widget-list {
+            @media (max-width: 992px) and (min-width: 767px) {
+                column-count: 2;
+                gap: 10px 40px;
+            }
             li {
                 &:not(:last-child) {
                     margin-bottom: 15px;
@@ -347,7 +353,11 @@
                     @include flexbox;
                     @include align-items(center);
                     padding-bottom: 10px;
+                    margin-bottom: 10px;
                     border-bottom: 1px solid rgba($gray, 0.1);
+                    a {
+                        text-decoration: none;
+                    }
                     .icon-group {
                         line-height: 0.7;
                         margin-left: auto;
@@ -374,13 +384,16 @@
         }
     }
 }
-.single-content-block {
+.single-content-block, .contect-block {
     h2, h3 {
         text-transform: uppercase;
         font-weight: 300;
         color: $primary;
         margin-top: 25px;
         margin-bottom: 15px;
+    }
+    & > h2:first-child, & > h3:first-child {
+        margin-top: 0;
     }
     ul {
         li {
@@ -405,6 +418,9 @@
 }
 
 .tab-block {
+    @media (max-width: 1200px) {
+        margin-top: 40px;
+    }
     .nav-tabs {
         border-bottom: 1px solid rgba($gray, 0.3);
         margin-bottom: 30px;
@@ -425,7 +441,15 @@
             }
         }
     }
+    .tab-content {
+        h2, h3 {
+            text-transform: uppercase;
+            color: $primary;
+            font-weight: 300;
+        }
+    }
 }
+
 .attorney-card {
     @include flexbox;
     @include flex-direction(column);
@@ -460,25 +484,32 @@
         .user-info-list {
             @include flexbox;
             @include flex-direction(column);
-            gap: 8px;
             z-index: 9;
+            background: $white;
+            padding: 3px 0;
             position: absolute;
             bottom: 10px;
             right: -100px;
             @include transition(0.3s, ease-in-out);
             li {
                 a {
-                    width: 35px;
-                    aspect-ratio: 1 / 1;
+                    width: 30px;
                     @include flexbox;
                     @include align-items(center);
                     @include justify-content(center);
-                    background: $white;
                     border: 1px solid transparent;
+                    margin: 3px 0;
+                    line-height: 0.7;
+                    .icon {
+                        width: 15px;
+                        height: 15px;
+                        &.icon-phone {
+                            height: 13px;
+                        }
+                    }
                     &:hover, &:focus {
-                        background: $primary;
                         .icon {
-                            filter: brightness(0) invert(1);
+                            opacity: 0.7;
                         }
                     }
                 }
@@ -516,27 +547,29 @@
             img {
                 @include transform(scale(1.05))
             }
-            .user-info-list {
-                right: 10px;
+            @media (min-width: 767px) {
+                .user-info-list {
+                    right: 10px;
+                }
             }
         }
     }
 }
 .attorney-details-section {
-    .attorney {
-        position: sticky;
-        top: 120px;
-        @media (max-width: 767px) {
-            margin-bottom: 30px;
-        }
-    }
     .attorney-info {
         background: rgba($gray, 0.1);
         padding: 15px;
+        @media (max-width: 1200px) {
+            @include flexbox;
+            gap: 30px;
+        }
         .card-img {
             position: relative;
             overflow: hidden;
             aspect-ratio: 3 / 4;
+            @media (max-width: 1200px) {
+                max-width: 200px;
+            }
             img {
                 width: 100%;
                 height: 100%;
@@ -549,9 +582,9 @@
             margin-top: 20px;
             h2 {
                 text-transform: uppercase;
-                font-size: 22px;
+                font-size: 20px;
                 color: $primary;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
             }
             .designation {
                 font-size: 15px;
@@ -560,77 +593,83 @@
                 }
             }
             .contact-info {
-                @include flexbox;
-                gap: 10px;
-                margin-top: 10px;
-                a {
-                    @include flexbox;
-                    @include align-items(center);
-                    @include justify-content(center);
-                    background: $white;
-                    width: 35px;
-                    aspect-ratio: 1 / 1;
-                    @include transition(0.2s, ease-in-out);
-                    .icon {
-                        width: 20px;
-                        @include transition(0.2s, ease-in-out);
-                    }
-                    &:hover, &:focus {
-                        background: $primary;
+                margin-top: 20px;
+                .info-item {
+                    display: block;
+                    margin-top: 12px;
+                    a {
+                        @include flexbox;
+                        @include align-items(center);
+                        gap: 8px;
+                        line-height: 1;
+                        color: $bodyfontcolor;
+                        font-size: 14px;
                         .icon {
-                            filter: brightness(0) invert(1);
+                            width: 14px;
+                            height: 14px;
+                        }
+                        &:hover, &:focus {
+                            color: $primary;
+                        }
+                    }
+                    &.d-flex {
+                        gap: 15px;
+                        margin-top: 20px;
+                        a {
+                            .icon {
+                                width: 18px;
+                                height: 18px;
+                            }
+                            &:hover, &:focus {
+                                color: $primary;
+                                .icon {
+                                    opacity: 0.7;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-    .attorney-contact-info {
-        margin-top: 30px;
-        h3 {
-            font-size: 20px;
-            font-weight: 300;
-            color: $green;
-            text-transform: uppercase;
-            margin-bottom: 15px
-        }
-        .contact-info-list {
-            .info-item {
-                @include flexbox;
-                @include align-items(center);
-                gap: 10px;
-                margin-bottom: 12px;
-                a {
-                    @include flexbox;
-                    @include align-items(center);
-                    gap: 8px;
-                    line-height: 1;
-                    color: $bodyfontcolor;
-                    .icon {
-                        width: 14px;
-                        height: 14px;
-                    }
-                    &:hover, &:focus {
-                        color: $primary;
-                    }
-                }
+}
+
+.attorney-widget {
+    margin-top: 30px;
+    h3 {
+        font-size: 20px;
+        font-weight: 300;
+        color: $green;
+        text-transform: uppercase;
+        margin-bottom: 10px
+    }
+    ul {
+        li{
+            &:not(:last-child) {
+                margin-bottom: 5px;
             }
         }
     }
-    .attorney-personal-info {
-        margin-top: 20px;
-        h3 {
-            font-size: 20px;
-            font-weight: 300;
-            color: $green;
-            text-transform: uppercase;
-            margin-bottom: 10px
-        }
-        .info-block {
-            margin-top: 30px;
-            p {
-                margin-bottom: 5px;
+}
+
+.resources-list {
+    margin-top: 20px;
+    .list-item {
+        @include flexbox;
+        @include align-items(flex-start);
+        position: relative;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba($gray, 0.1);
+        .title {
+            margin-right: 15px;
+            a {
+                text-decoration: none;
             }
+        }
+        .date {
+            font-size: 14px;
+            margin-left: auto;
+            white-space: nowrap;
         }
     }
 }
