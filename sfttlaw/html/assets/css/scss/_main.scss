@@ -153,8 +153,9 @@
 }
 .page-header {
     & > .container {
-        @media (min-width: 576px) {
-            .row {
+        .row {
+            width: -webkit-fill-available;
+            @media (min-width: 576px) {
                 width: 100%;
             }
         }
@@ -237,6 +238,9 @@
                 right: 40px;
                 @include transition(0.1s, ease-in-out);
                 opacity: 0;
+                @media (max-width: 767px) {
+                    top: 23px;
+                }
             }
         }
     }
@@ -254,6 +258,9 @@
                 &::before {
                     right: 25px;
                     opacity: 1;
+                    @media (max-width: 767px) {
+                        right: 20px;
+                    }
                 }
             }
         }
