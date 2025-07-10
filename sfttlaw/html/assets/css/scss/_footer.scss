@@ -42,6 +42,12 @@
                     text-decoration: underline;
                 }
             }
+            &.current-menu-item {
+                a {
+                    color: $primary;
+                    text-decoration: underline;
+                }
+            }
         }
     }
     .content-info-list {
@@ -150,6 +156,7 @@
             }
         }
         .social-list {
+            gap: 8px;
             @media (min-width: 992px) {
                 @include justify-content(flex-end);
             }
@@ -160,12 +167,8 @@
                 a {
                     line-height: 0.7;
                     svg {
-                        width: 35px;
-                        height: 35px;
-                        @media (max-width: 767px) {
-                            width: 40px;
-                            height: 40px;
-                        }
+                        width: 30px;
+                        height: 30px;
                         path {
                             fill: rgba($gray, 0.5);
                             @include transition(0.1s, ease-in-out);
