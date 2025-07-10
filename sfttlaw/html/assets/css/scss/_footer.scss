@@ -128,15 +128,11 @@
             &::before {
                 content: '';
                 width: 1px;
-                height: 90%;
+                height: 98%;
                 background: rgba($gray, 0.2);
                 position: absolute;
                 left: -30px;
-                top: 5%;
-                @media (max-width: 1200px) {
-                    height: 96%;
-                    top: 3%;
-                }
+                top: 2%;
             }
         }
     }
