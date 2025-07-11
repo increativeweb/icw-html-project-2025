@@ -544,6 +544,12 @@
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
+            a {
+                text-decoration: none;
+                &:hover, &:focus {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     iframe {
