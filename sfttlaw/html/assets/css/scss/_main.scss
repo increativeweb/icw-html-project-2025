@@ -706,12 +706,19 @@
             @include flexbox;
             gap: 30px;
         }
+        @media (max-width: 767px) {
+           @include flex-direction(column);
+           gap: 0;
+        }
         .card-img {
             position: relative;
             overflow: hidden;
             aspect-ratio: 3 / 4;
             @media (max-width: 1200px) {
                 max-width: 200px;
+            }
+            @media (max-width: 767px) {
+                max-width: 100%;
             }
             img {
                 width: 100%;
