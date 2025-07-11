@@ -864,7 +864,8 @@
         padding: 25px;
         border: 1px solid rgba($gray, 0.1);
         @media (max-width: 575px) {
-            max-width: 300px;
+            width: 100%;
+            max-width: 450px;
             margin: 0 auto;
         }
     }
@@ -875,7 +876,7 @@
             font-weight: 600;
             color: $green;
             margin-bottom: 10px;
-            text-align: left;
+            text-align: right;
         }
         .deal-logo {            
             @include flexbox;
