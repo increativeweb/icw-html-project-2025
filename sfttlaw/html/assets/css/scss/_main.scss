@@ -872,7 +872,7 @@
         border: 1px solid rgba($gray, 0.1);
         @media (max-width: 575px) {
             width: 100%;
-            max-width: 450px;
+            max-width: 350px;
             margin: 0 auto;
         }
     }
@@ -894,6 +894,7 @@
             img {
                 max-height: 70px;
                 width: auto;
+                max-width: 200px;
             }
         }
         .deal-lacation {
