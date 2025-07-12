@@ -537,6 +537,7 @@ h5, .h5 {
     }
     &:hover, &:focus {
         color: rgba($white, 0.8);
+        text-decoration: none;
         .icw-icon {
             @include transform(translateX(-5px));
         }
