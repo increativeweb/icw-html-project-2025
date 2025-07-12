@@ -527,9 +527,9 @@ h5, .h5 {
     margin-bottom: 20px;
     text-decoration: none;
     .icw-icon {
-        margin-right: 8px;
-        width: 15px;
-        height: 15px;
+        margin-right: 5px;
+        width: 14px;
+        height: 14px;
         @include transition(0.2s, ease-in-out);
         &.icon-back-arrow {
             filter: brightness(0) invert(1);
