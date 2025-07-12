@@ -488,3 +488,32 @@ h5, .h5 {
         }
     }
 }
+
+// Breadcrumb
+.icw-breadcrumb {
+    margin-bottom: 30px;
+    @include flexbox;
+    @include align-items(center);
+    flex: 1 1 auto;
+    li {
+        font-size: 14px;
+        a {
+            color: rgba($white, 0.9);
+            @include transition(0.2s, ease-in-out);
+            &:hover, &:focus {
+                text-decoration: underline;
+                color: $white;
+            }
+        }
+        &.raquo {
+            color: $white;
+            padding: 0 5px;
+            line-height: 1;
+            margin-top: 1px;
+            font-size: 12px;
+        }
+        &.active {
+            color: $white;
+        }
+    }
+}
