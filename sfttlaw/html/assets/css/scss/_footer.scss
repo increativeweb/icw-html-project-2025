@@ -107,17 +107,20 @@
             font-size: 12px;
         }
         .copyright-text {
-            // &::after {
-            //     content: '|';
-            //     margin-top: -2px;
-            //     margin-left: 5px;
-            // }
-            @media (max-width: 767px) {
-                &::after {
-                    content: none;
-                }
-            }
+            margin-right: 10px;
         }
+        // .copyright-text {
+        //     &::after {
+        //         content: '|';
+        //         margin-top: -2px;
+        //         margin-left: 5px;
+        //     }
+        //     @media (max-width: 767px) {
+        //         &::after {
+        //             content: none;
+        //         }
+        //     }
+        // }
     }
     .footer-menu-block {
         @include flexbox;
