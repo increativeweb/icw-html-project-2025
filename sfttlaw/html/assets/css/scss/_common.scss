@@ -44,6 +44,10 @@ body {
     @media (max-width: 992px) {
         font-size: 15px;
     }   
+
+    background: $white url(../images/img-home-page-bg.jpg) center 10% no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% auto !important; 
 }
 
 body ::selection {
@@ -308,7 +312,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     line-height: 1.2;
 }
 h1, .h1 {
-    font-size: 45px;
+    font-size: 42px;
     font-weight: 500;
     @media (max-width: 992px) { 
         font-size: 32px;
@@ -411,31 +415,31 @@ h5, .h5 {
     background-size: contain !important;
     display: inline-block;
     line-height: 0.7;
-    &.icon-card {
+    &.icw-icon-card {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 96l576 0c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96zm0 32L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-288L0 128zM64 405.3c0-29.5 23.9-53.3 53.3-53.3l117.3 0c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7L74.7 416c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-email {
+    &.icw-icon-email {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-phone {
+    &.icw-icon-phone {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-linkedin {
+    &.icw-icon-linkedin {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-fax {
+    &.icw-icon-fax {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M128 64l0 96 64 0 0-96 194.7 0L416 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L432 18.7C420 6.7 403.7 0 386.7 0L192 0c-35.3 0-64 28.7-64 64zM0 160L0 480c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32zm480 32l-352 0 0 288c0 17.7 14.3 32 32 32l320 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32zM256 256a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32 96a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM224 416a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-location {
+    &.icw-icon-location {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-pdf {
+    &.icw-icon-pdf {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 144-208 0c-35.3 0-64 28.7-64 64l0 144-48 0c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-ppt {
+    &.icw-icon-ppt {
         background: url('data:image/svg+xml,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.2405 7.33317C10.2405 6.83502 9.89526 6.53784 9.2833 6.53784C9.03615 6.53784 8.86759 6.56248 8.7793 6.586V8.18444C8.88327 8.20796 9.01077 8.2158 9.18723 8.2158C9.83845 8.2158 10.2405 7.88733 10.2405 7.33317Z" fill="rgb(63 115 141)"/><path d="M4.61732 6.53784C4.36818 6.53784 4.1995 6.56248 4.11133 6.586V8.18444C4.21524 8.20796 4.34367 8.2158 4.52125 8.2158C5.17036 8.2158 5.57244 7.88733 5.57244 7.33317C5.57244 6.83508 5.22729 6.53784 4.61732 6.53784Z" fill="rgb(63 115 141)"/><path d="M22.2241 0H10.1748C8.41461 0 6.98187 1.43367 6.98187 3.19296V3.78432H1.47951C0.768431 3.78432 0.192871 4.35995 0.192871 5.0709V11.6226C0.192871 12.3336 0.768431 12.9093 1.47951 12.9093H6.98187V26.807C6.98187 28.5683 8.41461 30 10.1748 30H26.6155C28.3748 30 29.8075 28.5683 29.8075 26.807V7.55689L22.2241 0ZM6.28659 8.58549C5.86883 8.97874 5.25102 9.15533 4.5293 9.15533C4.36839 9.15533 4.22329 9.14742 4.11153 9.13181V11.0666H2.89944V5.72692C3.27594 5.6632 3.80558 5.61516 4.55282 5.61516C5.30795 5.61516 5.84525 5.75933 6.20614 6.04861C6.55129 6.32121 6.78481 6.77139 6.78481 7.3009C6.78481 7.83054 6.60822 8.2806 6.28659 8.58549ZM8.77942 11.0666H7.56533V5.72692C7.94396 5.6632 8.47347 5.61516 9.22064 5.61516C9.97584 5.61516 10.5132 5.75933 10.874 6.04861C11.2193 6.32121 11.4526 6.77139 11.4526 7.3009C11.4526 7.83054 11.2761 8.2806 10.9545 8.58549C10.5367 8.97874 9.91897 9.15533 9.19525 9.15533C9.03628 9.15533 8.89117 9.14742 8.77942 9.13181V11.0666ZM26.6154 28.0446H10.1748C9.4933 28.0446 8.93834 27.4896 8.93834 26.807V12.9093H17.6327C18.3437 12.9093 18.9193 12.3336 18.9193 11.6226V5.0709C18.9193 4.35995 18.3437 3.78432 17.6327 3.78432H8.93834V3.19296C8.93834 2.51237 9.4933 1.95734 10.1748 1.95734L21.4926 1.94558V6.12906C21.4926 7.35093 22.484 8.34332 23.7069 8.34332L27.8051 8.33156L27.8511 26.807C27.8511 27.4896 27.297 28.0446 26.6154 28.0446ZM11.8253 6.68309V5.65536H15.9832V6.68309H14.5064V11.0666H13.2786V6.68309H11.8253Z" fill="rgb(63 115 141)"/><path d="M23.4567 18.9306C23.341 18.8639 23.2028 18.8502 23.0772 18.8913L18.6328 20.3104C18.4641 20.3633 18.2818 20.3192 18.1553 20.1956C18.0297 20.073 17.9817 19.8895 18.0326 19.7219L19.3643 15.2521C19.4026 15.1246 19.3849 14.9864 19.3163 14.8725C19.2496 14.7589 19.136 14.6785 19.0065 14.6509C18.6093 14.5676 18.1974 14.5225 17.7766 14.5225C14.4288 14.5225 11.7153 17.2369 11.7153 20.5829C11.7153 23.9309 14.4288 26.6424 17.7766 26.6424C21.1217 26.6424 23.8352 23.9309 23.8352 20.5829C23.8352 20.1209 23.7832 19.6699 23.6842 19.2374C23.6549 19.107 23.5724 18.9963 23.4567 18.9306Z" fill="rgb(63 115 141)"/><path d="M21.217 12.7602C20.9768 12.6887 20.7227 12.825 20.6512 13.0663L18.9213 18.8718C18.8732 19.0335 18.9183 19.2091 19.0389 19.3257C19.1242 19.4101 19.24 19.4562 19.3567 19.4562C19.4037 19.4562 19.4498 19.4502 19.495 19.4346L25.268 17.592C25.5074 17.5145 25.6397 17.2595 25.5623 17.0202C24.9082 14.9667 23.2842 13.3742 21.217 12.7602ZM20.0383 18.3069L21.3886 13.7792C22.8184 14.3332 23.9579 15.4502 24.5415 16.8692L20.0383 18.3069Z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
-    &.icon-back-arrow {
+    &.icw-icon-back-arrow {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
     }
 }
@@ -449,8 +453,9 @@ h5, .h5 {
         background-color: $primary;
         color: $white;
         text-align: left;
-        height: 45px;
+        height: 42px;
         padding: 0 15px;
+        border-radius: 8px;
         @include flexbox;
         @include align-items(center);
         &::after {
@@ -461,6 +466,13 @@ h5, .h5 {
             height: 7px;
             background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 1L5 4.5L1.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
             background-size: contain;
+        }
+
+        .nowrap-txt {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 80%;
         }
     }
     .dropdown-menu {
@@ -491,6 +503,31 @@ h5, .h5 {
         }
     }
 }
+
+// badge-filter
+.badge-filter {
+    border: none;
+    background: #dfdfdf;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    padding: 8px 10px;
+    border-radius: 50px;
+
+    svg {
+        margin-left: 10px;
+        width: 10px;
+        height: 10px;
+    }
+
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+}
+
 
 // Breadcrumb
 .icw-breadcrumb {
@@ -524,20 +561,17 @@ h5, .h5 {
     @include align-items(center);
     font-size: 14px;
     color: $white;
-    margin-bottom: 20px;
     text-decoration: none;
     .icw-icon {
         margin-right: 5px;
         width: 14px;
         height: 14px;
         @include transition(0.2s, ease-in-out);
-        &.icon-back-arrow {
-            filter: brightness(0) invert(1);
-        }
+        filter: brightness(0) invert(1);
     }
     &:hover, &:focus {
         color: rgba($white, 0.8);
-        text-decoration: none;
+        text-decoration: underline;
         .icw-icon {
             @include transform(translateX(-5px));
         }

@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanded Admin Dashboard - DentalNote.AI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 0.5rem;
+            color: #475569;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: #e0f2f1;
+            color: #0f766e;
+        }
+        .sidebar-link svg {
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+
+        /* Template Management Styles */
+        .template-tab-button {
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            color: #475569;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .template-tab-button.active {
+            color: #0f766e;
+            border-bottom-color: #0f766e;
+        }
+        .template-tab-content { display: none; }
+        .template-tab-content.active { display: block; }
+
+        .sortable-list { list-style: none; padding: 0; }
+        .sortable-item {
+            padding: 1rem 1.5rem; margin-bottom: 0.75rem; background: #ffffff;
+            border: 1px solid #e2e8f0; border-radius: 0.75rem; font-size: 1rem;
+            color: #1e293b; cursor: grab; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .dragging { opacity: 0.6; }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0;
+            background: rgba(0,0,0,0.5); 
+            z-index: 1000; 
+            opacity: 0;
+            visibility: hidden; 
+            transition: opacity 0.3s ease;
+            overflow-y: auto; /* Allow the overlay itself to scroll */
+            padding: 3rem 1rem; /* Add vertical padding for spacing */
+        }
+        .modal-overlay.active { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        .modal-content {
+            background: white; 
+            padding: 2rem; 
+            border-radius: 0.75rem;
+            width: 100%; /* Take up full width of the padded container */
+            margin: 0 auto; /* Center horizontally */
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .modal-overlay.active .modal-content { 
+            transform: scale(1); 
+        }
+        
+        /* Drag and Drop File Upload Styling */
+        .drop-zone {
+            border: 2px dashed #e2e8f0;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        .drop-zone.dragover {
+             background-color: #e0f2f1;
+             border-color: #0f766e;
+        }
+
+        /* Custom styles for the dropdown simulation */
+        .dropdown-container {
+            position: relative;
+        }
+        .dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem; /* rounded-md */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            z-index: 20;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none; /* Hidden by default */
+        }
+        .dropdown-options.show {
+            display: block;
+        }
+        .dropdown-options div {
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+        }
+        .dropdown-options div:hover {
+            background-color: #f1f5f9;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen">
+
+<div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md flex-shrink-0">
+        <div class="p-4">
+            <h1 class="text-2xl font-bold text-teal-700">DentalNote.AI</h1>
+        </div>
+        <nav class="p-4">
+            <a href="#" class="sidebar-link active" data-page="analytics">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/></svg> Analytics
+            </a>
+            <a href="#" class="sidebar-link" data-page="users">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> User Management
+            </a>
+            <a href="#" class="sidebar-link" data-page="admin-management">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.88a4 4 0 1 1-7.76 0A4 4 0 0 1 18 8.88z"/><path d="M15 14.3a4 4 0 0 1-5.4 0"/><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/></svg> Admin Management
+            </a>
+            <a href="#" class="sidebar-link" data-page="templates-main">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg> Templates
+            </a>
+            <a href="#" class="sidebar-link" data-page="products">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Add Products
+            </a>
+            <a href="#" class="sidebar-link" data-page="api-limiter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/><path d="m15 5 3 3"/></svg> API Rate Limiter
+            </a>
+            <a href="#" class="sidebar-link" data-page="vocabulary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-9 9 9-9 9Z"/><path d="M13.5 2.5 21.5 10.5"/><path d="m12 12 9 3-9 3-9-3 9-3z"/><path d="M3 11v4"/><path d="M21 11v4"/></svg> Custom Vocabulary
+            </a>
+            <a href="#" class="sidebar-link" data-page="uptime">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Uptime
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-10 overflow-y-auto">
+        
+        <!-- Analytics Page -->
+        <div id="analytics" class="page-content active">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Analytics Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-gray-500 text-sm font-medium">Total Users</h3><p class="text-3xl font-bold text-gray-800">1,257</p></div>
+                <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-gray-500 text-sm font-medium">API Calls (24h)</h3><p class="text-3xl font-bold text-gray-800">83,492</p></div>
+                <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-gray-500 text-sm font-medium">Revenue (Month)</h3><p class="text-3xl font-bold text-gray-800">$12,483</p></div>
+                <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-gray-500 text-sm font-medium">New Signups</h3><p class="text-3xl font-bold text-gray-800">42</p></div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-lg font-semibold mb-4">User Growth</h3><canvas id="userGrowthChart"></canvas></div>
+        </div>
+
+        <!-- User Management Page -->
+        <div id="users" class="page-content">
+                <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Subscriber Management</h2>
+                <div class="relative w-full max-w-sm">
+                        <input type="text" id="user-search-input" placeholder="Search by name or email..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                </div>
+            </div>
+            <div id="regular-user-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Regular user cards will be injected here -->
+            </div>
+        </div>
+        
+        <!-- Admin Management Page -->
+        <div id="admin-management" class="page-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">Admin User Management</h2>
+                <button id="add-admin-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Add New Admin
+                </button>
+            </div>
+            <div id="admin-user-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Admin user cards will be injected here -->
+            </div>
+        </div>
+
+
+        <!-- Templates Main Page -->
+        <div id="templates-main" class="page-content">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Template Management</h2>
+                <div class="bg-white p-6 rounded-lg shadow">
+                <!-- Tabs Navigation -->
+                <nav class="flex border-b border-gray-200 mb-8">
+                    <button class="template-tab-button active" data-tab="note-templates">Note Templates</button>
+                    <button class="template-tab-button" data-tab="care-call">Care-Call Instructions</button>
+                    <button class="template-tab-button" data-tab="post-op">Post-Op Instructions</button>
+                </nav>
+
+                <!-- Note Templates Tab -->
+                <div id="note-templates" class="template-tab-content active">
+                    <div class="flex justify-between items-center mb-6"><div class="relative w-full max-w-md"><input type="text" placeholder="Search templates..." class="search-input w-full pl-10 pr-4 py-2 border rounded-lg" data-list="template-list"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div></div><button id="add-note-template-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>Add Template</button></div>
+                    <ul class="sortable-list" id="template-list"></ul>
+                </div>
+                
+                <!-- Care-Call Tab -->
+                <div id="care-call" class="template-tab-content">
+                    <div class="flex justify-between items-center mb-6"><div class="relative w-full max-w-md"><input type="text" placeholder="Search care-calls..." class="search-input w-full pl-10 pr-4 py-2 border rounded-lg" data-list="care-call-list"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div></div><button id="add-care-call-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>Add Care-Call</button></div>
+                    <ul class="sortable-list" id="care-call-list"></ul>
+                </div>
+
+                <!-- Post-Op Tab -->
+                <div id="post-op" class="template-tab-content">
+                    <div class="flex justify-between items-center mb-6"><div class="relative w-full max-w-md"><input type="text" placeholder="Search instructions..." class="search-input w-full pl-10 pr-4 py-2 border rounded-lg" data-list="post-op-list"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div></div><button id="add-post-op-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>Add Instruction</button></div>
+                    <ul class="sortable-list" id="post-op-list"></ul>
+                </div>
+                </div>
+        </div>
+
+        <!-- Add Products Page -->
+        <div id="products" class="page-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Add Products to Master List</h2>
+            <div class="bg-white p-8 rounded-lg shadow">
+                <div class="border-b border-slate-200 pb-5 mb-8">
+                    <h3 class="text-2xl font-bold leading-6 text-slate-900">Add New Product</h3>
+                    <p class="mt-2 max-w-4xl text-sm text-slate-500">Add a new product to the global database. This product will then be available for workplaces to map to generic terms.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    <!-- Left Side: Manual Entry -->
+                    <div class="lg:col-span-2">
+                        <h4 class="text-lg font-semibold text-slate-800 mb-4">Add a Single Product</h4>
+                        <form class="space-y-6">
+                            <div><label class="block text-sm font-medium text-slate-700" for="product-name">Product Name</label><input id="product-name" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm" name="product-name" type="text" placeholder="e.g., 3M Filtek Supreme XTE"></div>
+                            <div><label class="block text-sm font-medium text-slate-700" for="product-category">Category</label><input id="product-category" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm" name="product-category" type="text" placeholder="e.g., Composite Resin"></div>
+                            <div><label class="block text-sm font-medium text-slate-700" for="product-manufacturer">Manufacturer</label><input id="product-manufacturer" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm" name="product-manufacturer" type="text" placeholder="e.g., 3M"></div>
+                        </form>
+                    </div>
+                    <!-- Right Side: Bulk Upload -->
+                    <div class="lg:col-span-1">
+                        <h4 class="font-semibold text-slate-800">Or Upload a List</h4>
+                        <p class="text-xs text-slate-500 mt-1 mb-4">Upload a `.txt` or `.csv` file. Each line should be: `ProductName,Category,Manufacturer`</p>
+                        <div id="file-drop-zone" class="drop-zone mt-2 flex justify-center rounded-lg px-6 py-10">
+                            <div class="text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12A2.25 2.25 0 0120.25 20.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" /></svg>
+                                <div class="mt-4 flex text-sm leading-6 text-gray-600"><label class="relative cursor-pointer rounded-md bg-white font-semibold text-teal-600" for="file-upload"><span>Upload a file</span><input id="file-upload" class="sr-only" name="file-upload" type="file"></label><p class="pl-1">or drag and drop</p></div>
+                                <p class="text-xs leading-5 text-gray-600">.txt, .csv up to 2MB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-200 flex justify-end gap-3"><button class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50" type="button">Cancel</button><button class="inline-flex items-center rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-700" type="submit">Add Product(s)</button></div>
+            </div>
+        </div>
+
+
+        <!-- API Rate Limiter Page -->
+        <div id="api-limiter" class="page-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">API Rate Limiter</h2>
+            <div class="bg-white p-6 rounded-lg shadow max-w-xl"><div class="mb-6"><label class="block text-gray-700 font-medium mb-2">Requests per Minute</label><input type="range" min="10" max="1000" value="100" class="w-full"><span class="text-gray-600">100 req/min</span></div><div class="mb-6"><label class="block text-gray-700 font-medium mb-2">Burst Capacity</label><input type="range" min="10" max="500" value="50" class="w-full"><span class="text-gray-600">50 requests</span></div><button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">Save Settings</button></div>
+        </div>
+
+        <!-- Custom Vocabulary Page -->
+        <div id="vocabulary" class="page-content">
+            <!-- Vocabulary Dashboard View -->
+            <div id="vocab-dashboard-view">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Custom Vocabularies</h2>
+                <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="overflow-x-auto rounded-lg border border-slate-200">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">Vocabulary Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">Term Count</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">Status</th>
+                                    <th class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-slate-500">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-slate-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">Default Dental Dictionary</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">1,245 terms</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+                                        <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                                            <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
+                                            Active & Synchronized
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"><a href="#" class="text-teal-600 hover:text-teal-900 manage-vocab-btn">Manage</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-900">Orthodontic Terms</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">312 terms</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
+                                        <span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
+                                            <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-yellow-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
+                                            Processing Update
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"><a href="#" class="text-teal-600 hover:text-teal-900 manage-vocab-btn">Manage</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Vocabulary Editor View (Initially Hidden) -->
+            <div id="vocab-editor-view" style="display: none;">
+                <button id="back-to-vocab-list" class="mb-4 inline-flex items-center text-sm font-medium text-teal-600 hover:text-teal-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Vocabulary List
+                </button>
+                <div class="bg-white p-8 rounded-lg shadow">
+                        <div class="border-b border-slate-200 pb-5 mb-8">
+                        <h3 class="text-2xl font-bold leading-6 text-slate-900">Manage: Default Dental Dictionary</h3>
+                        <p class="mt-2 max-w-4xl text-sm text-slate-500">Add or remove terms to improve speech recognition accuracy.</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <h4 class="text-lg font-semibold text-slate-800 mb-2">Current Terms (1,245)</h4>
+                            <div class="h-96 overflow-y-auto rounded-md border border-slate-300 p-4">
+                                <ul class="text-sm text-slate-700 font-mono space-y-1">
+                                    <li>abscess</li><li>abutment</li><li>amalgam</li><li>anaesthesia</li><li>apex</li><li>bicuspid</li><li>bonding</li><li>bruxism</li><li>calculus</li><li>canine</li>
+                                    <li class="font-semibold text-slate-400">... and 1,235 more</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1 space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Add New Terms</h4>
+                                <label for="add-terms" class="block text-xs text-slate-500 mt-1 mb-2">Enter terms below, one per line.</label>
+                                <textarea id="add-terms" rows="5" class="font-mono text-sm block w-full rounded-md border-slate-300 shadow-sm"></textarea>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Or Upload a File</h4>
+                                <div class="vocab-drop-zone mt-2 flex justify-center rounded-lg border border-dashed border-slate-900/25 px-6 py-10">
+                                    <div class="text-center">
+                                        <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12A2.25 2.25 0 0120.25 20.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path></svg>
+                                        <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                                            <label for="vocab-file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-teal-600"><span>Upload a file</span><input id="vocab-file-upload" name="vocab-file-upload" type="file" class="sr-only"></label>
+                                            <p class="pl-1">or drag and drop</p>
+                                        </div>
+                                        <p class="text-xs leading-5 text-gray-600">.txt or .csv up to 1MB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-200 flex justify-end gap-3">
+                            <button type="button" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">Cancel</button>
+                            <button type="submit" class="inline-flex items-center rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 -ml-1"><path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.452l-1.34-1.339a.75.75 0 011.06-1.06l1.34 1.339a4 4 0 006.182-3.32l.006-.005a4 4 0 00-3.32-6.182l-1.339 1.34a.75.75 0 01-1.06-1.06l1.339-1.34a5.5 5.5 0 017.778 7.778z" clip-rule="evenodd"></path></svg>
+                            Save and Synchronize
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Uptime Page -->
+        <div id="uptime" class="page-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">System Uptime</h2>
+            <div class="bg-white p-6 rounded-lg shadow space-y-4"><div class="flex justify-between items-center"><span class="font-medium">Main API</span><span class="text-green-600 font-semibold bg-green-100 px-3 py-1 rounded-full">Operational</span></div><div class="flex justify-between items-center"><span class="font-medium">Transcription Service</span><span class="text-green-600 font-semibold bg-green-100 px-3 py-1 rounded-full">Operational</span></div><div class="flex justify-between items-center"><span class="font-medium">Database</span><span class="text-red-600 font-semibold bg-red-100 px-3 py-1 rounded-full">Outage</span></div><div class="flex justify-between items-center"><span class="font-medium">Website</span><span class="text-yellow-600 font-semibold bg-yellow-100 px-3 py-1 rounded-full">Degraded Performance</span></div></div>
+        </div>
+    </main>
+</div>
+
+<!-- Main Action Modal (for template actions) -->
+<div id="action-modal" class="modal-overlay"><div class="modal-content" style="max-width: 500px;"><h3 id="modal-title" class="text-2xl font-bold mb-4">Action Title</h3><div id="modal-body"><p>Details about the item will be shown here.</p></div><div class="mt-6 flex justify-end space-x-4"><button id="modal-close-btn" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">Close</button><button id="modal-confirm-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Confirm</button></div></div></div>
+
+<!-- Add/Edit Admin Modal -->
+<div id="admin-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px;">
+        <h3 id="admin-modal-title" class="text-2xl font-bold mb-6">Add New Admin</h3>
+        <form id="admin-modal-form" class="space-y-4">
+            <input type="hidden" id="admin-id-input">
+            <div><label for="admin-name-input" class="block text-sm font-medium text-slate-700">Full Name</label><input type="text" id="admin-name-input" required class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+            <div><label for="admin-email-input" class="block text-sm font-medium text-slate-700">Email Address</label><input type="email" id="admin-email-input" required class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+            <div><label for="admin-role-select" class="block text-sm font-medium text-slate-700">Role</label><select id="admin-role-select" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"><option>Super Admin</option><option>Content Manager</option><option>Support Staff</option><option>Billing Manager</option></select></div>
+            <div class="pt-4 flex justify-end space-x-4"><button type="button" id="admin-modal-cancel-btn" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">Cancel</button><button type="submit" id="admin-modal-save-btn" class="inline-flex items-center rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-700">Save</button></div>
+        </form>
+    </div>
+</div>
+
+<!-- Add/Edit User Modal -->
+<div id="user-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+        <h3 id="user-modal-title" class="text-2xl font-bold mb-6">Edit Subscriber Profile</h3>
+        <form id="user-modal-form" class="space-y-4">
+            <input type="hidden" id="user-id-input">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                <div class="md:col-span-2"><label for="user-name-input" class="block text-sm font-medium text-slate-700">Full Name</label><input type="text" id="user-name-input" required class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+                <div><label for="user-salutation-input" class="block text-sm font-medium text-slate-700">Preferred Salutation</label><input type="text" id="user-salutation-input" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+                <div><label for="user-category-input" class="block text-sm font-medium text-slate-700">Dentist Category</label><input type="text" id="user-category-input" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+                <div class="md:col-span-2"><label for="user-address-input" class="block text-sm font-medium text-slate-700">Home Address</label><textarea id="user-address-input" rows="2" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></textarea></div>
+                <div><label for="user-phone-input" class="block text-sm font-medium text-slate-700">Mobile Phone</label><input type="tel" id="user-phone-input" class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+                <div><label for="user-email-input" class="block text-sm font-medium text-slate-700">Personal Email</label><input type="email" id="user-email-input" required class="mt-1 block w-full p-2 border rounded-md border-slate-300 shadow-sm"></div>
+            </div>
+            <div class="pt-4 flex justify-end space-x-4"><button type="button" id="user-modal-cancel-btn" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">Cancel</button><button type="submit" id="user-modal-save-btn" class="inline-flex items-center rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-700">Save Changes</button></div>
+        </form>
+    </div>
+</div>
+
+<!-- Add Template Modal -->
+<div id="add-template-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 1024px;">
+        <!-- Content for the Add Notes Template modal will be injected here by JS -->
+    </div>
+</div>
+
+<!-- Add Care Call Modal -->
+<div id="add-care-call-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 800px;">
+        <!-- Content for the Add Care Call modal will be injected here by JS -->
+    </div>
+</div>
+
+<!-- Add Post-Op Modal -->
+<div id="add-post-op-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 800px;">
+        <!-- Content for the Add Post-Op modal will be injected here by JS -->
+    </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- SIDEBAR NAVIGATION ---
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const pages = document.querySelectorAll('.page-content');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = link.dataset.page;
+            sidebarLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            pages.forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        });
+    });
+
+    // --- ANALYTICS CHART ---
+    const ctx = document.getElementById('userGrowthChart')?.getContext('2d');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'line',
+            data: { labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul'], datasets: [{ label: 'New Users', data: [65,59,80,81,56,55,90], borderColor: '#0f766e', backgroundColor: 'rgba(13,148,136,0.1)', fill: true, tension: 0.4 }] },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+    }
+    
+    // --- DATA STORE ---
+    let AppData = {
+        adminUsers: [
+            { id: 1, name: 'Alex Johnson', email: 'alex.j@dentalnote.ai', role: 'Super Admin', status: 'Active' },
+            { id: 2, name: 'Maria Garcia', email: 'maria.g@dentalnote.ai', role: 'Content Manager', status: 'Active' },
+            { id: 3, name: 'Sam Wilson', email: 'sam.w@dentalnote.ai', role: 'Support Staff', status: 'Blocked' },
+        ],
+        regularUsers: [
+            { id: 1, name: 'Dr. Casey Miller', salutation: 'Dr.', category: 'General Dentist', address: '123 Molar St, Toothville', phone: '0411222333', email: 'casey.m@example.com', plan: 'Pro', joined: '2023-05-12', status: 'Active' },
+            { id: 2, name: 'Jordan Smith', salutation: '', category: 'Hygienist', address: '456 Floss Ave, Gumsburg', phone: '0422333444', email: 'jordan.s@example.com', plan: 'Basic', joined: '2023-06-20', status: 'Active' },
+            { id: 3, name: 'Dr. Taylor Green', salutation: 'Dr.', category: 'Orthodontist', address: '789 Brace Rd, Metalmouth', phone: '0433444555', email: 'taylor.g@example.com', plan: 'Enterprise', joined: '2023-02-11', status: 'Blocked' },
+            { id: 4, name: 'Jamie Brown', salutation: 'Mx.', category: 'Dental Assistant', address: '101 Polish Pl, Enamelton', phone: '0444555666', email: 'jamie.b@example.com', plan: 'Pro', joined: '2023-07-01', status: 'Active' },
+        ]
+    };
+
+    // --- ADMIN MANAGEMENT LOGIC ---
+    const adminUserListContainer = document.getElementById('admin-user-list');
+    const adminModal = document.getElementById('admin-modal');
+    const adminModalTitle = document.getElementById('admin-modal-title');
+    const adminModalForm = document.getElementById('admin-modal-form');
+    const adminIdInput = document.getElementById('admin-id-input');
+    const adminNameInput = document.getElementById('admin-name-input');
+    const adminEmailInput = document.getElementById('admin-email-input');
+    const adminRoleSelect = document.getElementById('admin-role-select');
+
+    const renderAdminUsers = () => {
+        if (!adminUserListContainer) return;
+        adminUserListContainer.innerHTML = '';
+        AppData.adminUsers.forEach(user => {
+            const statusColor = user.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
+            const blockButtonText = user.status === 'Active' ? 'Block' : 'Unblock';
+            const blockButtonColor = user.status === 'Active' ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600';
+            const card = `<div class="bg-white p-5 rounded-lg shadow"> <div class="flex justify-between items-start"> <div><p class="font-bold text-lg text-gray-800">${user.name}</p><p class="text-sm text-gray-500">${user.email}</p></div> <span class="text-xs font-semibold px-2 py-1 rounded-full ${statusColor}">${user.status}</span> </div> <p class="text-sm text-gray-600 mt-3">Role: <span class="font-semibold">${user.role}</span></p> <div class="mt-4 pt-4 border-t border-gray-200 flex justify-end space-x-2"> <button data-id="${user.id}" class="admin-edit-btn text-sm font-medium text-blue-600 hover:text-blue-800">Edit</button> <button data-id="${user.id}" class="admin-block-btn text-sm font-medium text-white px-3 py-1 rounded ${blockButtonColor}">${blockButtonText}</button> <button data-id="${user.id}" class="admin-delete-btn text-sm font-medium text-red-600 hover:text-red-800">Delete</button> </div> </div>`;
+            adminUserListContainer.innerHTML += card;
+        });
+    };
+    
+    const openAdminModal = (user = null) => {
+        adminModalForm.reset();
+        if (user) {
+            adminModalTitle.textContent = 'Edit Admin User';
+            adminIdInput.value = user.id;
+            adminNameInput.value = user.name;
+            adminEmailInput.value = user.email;
+            adminRoleSelect.value = user.role;
+        } else {
+            adminModalTitle.textContent = 'Add New Admin';
+            adminIdInput.value = '';
+        }
+        adminModal.classList.add('active');
+    };
+    const closeAdminModal = () => adminModal.classList.remove('active');
+
+    document.getElementById('add-admin-btn')?.addEventListener('click', () => openAdminModal());
+    document.getElementById('admin-modal-cancel-btn')?.addEventListener('click', closeAdminModal);
+    
+    adminUserListContainer?.addEventListener('click', e => {
+        const target = e.target;
+        const id = parseInt(target.dataset.id);
+        if(target.classList.contains('admin-edit-btn')) { openAdminModal(AppData.adminUsers.find(u => u.id === id)); }
+        if(target.classList.contains('admin-delete-btn')) { if(confirm('Are you sure?')) { AppData.adminUsers = AppData.adminUsers.filter(u => u.id !== id); renderAdminUsers(); } }
+        if(target.classList.contains('admin-block-btn')) { const user = AppData.adminUsers.find(u => u.id === id); user.status = user.status === 'Active' ? 'Blocked' : 'Active'; renderAdminUsers(); }
+    });
+
+    adminModalForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const id = parseInt(adminIdInput.value);
+        const userData = { name: adminNameInput.value, email: adminEmailInput.value, role: adminRoleSelect.value, status: 'Active' };
+        if (id) { const index = AppData.adminUsers.findIndex(u => u.id === id); AppData.adminUsers[index] = { ...AppData.adminUsers[index], ...userData }; } 
+        else { userData.id = AppData.adminUsers.length ? Math.max(...AppData.adminUsers.map(u => u.id)) + 1 : 1; AppData.adminUsers.push(userData); }
+        renderAdminUsers();
+        closeAdminModal();
+    });
+    
+    // --- REGULAR USER MANAGEMENT LOGIC ---
+    const regularUserListContainer = document.getElementById('regular-user-list');
+    const userSearchInput = document.getElementById('user-search-input');
+    const userModal = document.getElementById('user-modal');
+    const userModalTitle = document.getElementById('user-modal-title');
+    const userModalForm = document.getElementById('user-modal-form');
+    const userIdInput = document.getElementById('user-id-input');
+    const userNameInput = document.getElementById('user-name-input');
+    const userEmailInput = document.getElementById('user-email-input');
+    const userSalutationInput = document.getElementById('user-salutation-input');
+    const userCategoryInput = document.getElementById('user-category-input');
+    const userAddressInput = document.getElementById('user-address-input');
+    const userPhoneInput = document.getElementById('user-phone-input');
+
+
+    const renderRegularUsers = (filteredUsers) => {
+        if (!regularUserListContainer) return;
+        const usersToRender = filteredUsers || AppData.regularUsers;
+        regularUserListContainer.innerHTML = '';
+        usersToRender.forEach(user => {
+            const statusColor = user.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
+            const blockButtonText = user.status === 'Active' ? 'Block' : 'Unblock';
+            const blockButtonColor = user.status === 'Active' ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600';
+            const card = `
+                <div class="bg-white p-5 rounded-lg shadow">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-bold text-lg text-gray-800">${user.name}</p>
+                            <p class="text-sm text-gray-500">${user.email}</p>
+                        </div>
+                        <span class="text-xs font-semibold px-2 py-1 rounded-full ${statusColor}">${user.status}</span>
+                    </div>
+                    <div class="mt-3 text-sm text-gray-600">
+                        <p>Category: <span class="font-semibold">${user.category}</span></p>
+                        <p>Plan: <span class="font-semibold">${user.plan}</span></p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-200 flex justify-end space-x-2">
+                        <button data-id="${user.id}" class="user-edit-btn text-sm font-medium text-blue-600 hover:text-blue-800">Edit</button>
+                        <button data-id="${user.id}" class="user-block-btn text-sm font-medium text-white px-3 py-1 rounded ${blockButtonColor}">${blockButtonText}</button>
+                        <button data-id="${user.id}" class="user-delete-btn text-sm font-medium text-red-600 hover:text-red-800">Delete</button>
+                    </div>
+                </div>`;
+            regularUserListContainer.innerHTML += card;
+        });
+    };
+
+    const openUserModal = (user) => {
+        userModalForm.reset();
+        userModalTitle.textContent = 'Edit Subscriber Profile';
+        userIdInput.value = user.id;
+        userNameInput.value = user.name;
+        userEmailInput.value = user.email;
+        userSalutationInput.value = user.salutation;
+        userCategoryInput.value = user.category;
+        userAddressInput.value = user.address;
+        userPhoneInput.value = user.phone;
+        userModal.classList.add('active');
+    };
+    const closeUserModal = () => userModal.classList.remove('active');
+    
+    document.getElementById('user-modal-cancel-btn')?.addEventListener('click', closeUserModal);
+
+    regularUserListContainer?.addEventListener('click', e => {
+        const target = e.target;
+        const id = parseInt(target.dataset.id);
+        if(target.classList.contains('user-edit-btn')) { openUserModal(AppData.regularUsers.find(u => u.id === id)); }
+        if(target.classList.contains('user-delete-btn')) { if(confirm('Are you sure?')) { AppData.regularUsers = AppData.regularUsers.filter(u => u.id !== id); renderRegularUsers(); } }
+        if(target.classList.contains('user-block-btn')) { const user = AppData.regularUsers.find(u => u.id === id); user.status = user.status === 'Active' ? 'Blocked' : 'Active'; renderRegularUsers(); }
+    });
+
+    userModalForm?.addEventListener('submit', e => {
+        e.preventDefault();
+        const id = parseInt(userIdInput.value);
+        const userData = { 
+            name: userNameInput.value, 
+            email: userEmailInput.value, 
+            salutation: userSalutationInput.value,
+            category: userCategoryInput.value,
+            address: userAddressInput.value,
+            phone: userPhoneInput.value
+        };
+        const index = AppData.regularUsers.findIndex(u => u.id === id);
+        AppData.regularUsers[index] = { ...AppData.regularUsers[index], ...userData };
+        renderRegularUsers();
+        closeUserModal();
+    });
+
+    userSearchInput?.addEventListener('keyup', e => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredUsers = AppData.regularUsers.filter(user => 
+            user.name.toLowerCase().includes(searchTerm) || 
+            user.email.toLowerCase().includes(searchTerm)
+        );
+        renderRegularUsers(filteredUsers);
+    });
+
+    // Initial Renders
+    renderAdminUsers();
+    renderRegularUsers();
+
+
+    // --- TEMPLATE MANAGEMENT LOGIC ---
+    const templateData = {
+        templates: [{ id: 1, name: 'Standard Restoration', added: '2023-01-15', edited: '2023-06-20' },{ id: 2, name: 'IPC Restoration (SSC)', added: '2023-02-10', edited: '2023-05-11' },{ id: 3, name: 'My Extraction Note', added: '2023-03-05', edited: '2023-07-01' }],
+        careCall: [{ id: 1, name: 'Post-Extraction Follow-up', added: '2023-01-20', edited: '2023-06-25' },{ id: 2, name: 'Root Canal Check-in', added: '2023-02-15', edited: '2023-05-18' }],
+        postOp: [{ id: 1, name: 'Avoid Hot Foods', added: '2023-01-25', edited: '2023-06-30' },{ id: 2, name: 'Take Prescribed Medication', added: '2023-02-20', edited: '2023-05-22' }]
+    };
+    const icons = {
+        show: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 hover:text-blue-600"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`,
+        edit: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 hover:text-green-600"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`,
+        delete: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 hover:text-red-600"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`
+    };
+    const renderList = (listId, items) => {
+        const listElement = document.getElementById(listId);
+        if(!listElement) return;
+        listElement.innerHTML = '';
+        items.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'sortable-item';
+            li.setAttribute('draggable', 'true');
+            li.dataset.id = item.id;
+            li.innerHTML = `
+                <div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-gray-400 mr-4 cursor-move"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg><div><p class="font-semibold text-gray-800">${item.name}</p><p class="text-sm text-gray-500">Added: ${item.added} | Edited: ${item.edited}</p></div></div>
+                <div class="flex items-center space-x-3"><button class="action-btn" data-action="show" data-name="${item.name}">${icons.show}</button><button class="action-btn" data-action="edit" data-name="${item.name}">${icons.edit}</button><button class="action-btn" data-action="delete" data-name="${item.name}">${icons.delete}</button></div>`;
+            listElement.appendChild(li);
+        });
+    };
+    renderList('template-list', templateData.templates);
+    renderList('care-call-list', templateData.careCall);
+    renderList('post-op-list', templateData.postOp);
+
+    // Template Tab Switching
+    const templateTabButtons = document.querySelectorAll('.template-tab-button');
+    const templateTabContents = document.querySelectorAll('.template-tab-content');
+    templateTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            templateTabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            templateTabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(button.dataset.tab).classList.add('active');
+        });
+    });
+
+    // Search/Filter Logic
+    document.querySelectorAll('.search-input').forEach(input => {
+        input.addEventListener('keyup', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const listId = e.target.dataset.list;
+            let items;
+            if (listId === 'template-list') items = templateData.templates;
+            else if (listId === 'care-call-list') items = templateData.careCall;
+            else items = templateData.postOp;
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchTerm));
+            renderList(listId, filteredItems);
+        });
+    });
+
+    // Main Action Modal Logic
+    const mainActionModal = document.getElementById('action-modal');
+    const mainActionModalTitle = document.getElementById('modal-title');
+    const mainActionModalCloseBtn = document.getElementById('modal-close-btn');
+    document.addEventListener('click', e => {
+        const actionBtn = e.target.closest('.action-btn');
+        if (actionBtn) {
+            mainActionModal.classList.add('active');
+            mainActionModalTitle.textContent = `${actionBtn.dataset.action.charAt(0).toUpperCase() + actionBtn.dataset.action.slice(1)}: ${actionBtn.dataset.name}`;
+        }
+    });
+    mainActionModalCloseBtn?.addEventListener('click', () => mainActionModal.classList.remove('active'));
+    mainActionModal?.addEventListener('click', e => { if(e.target === mainActionModal) mainActionModal.classList.remove('active'); });
+
+    // Drag and Drop Logic
+    function initializeSortableList(listId) {
+        const list = document.getElementById(listId);
+        if(!list) return;
+        let draggingItem = null;
+        list.addEventListener('dragstart', e => { if (e.target.classList.contains('sortable-item')) { draggingItem = e.target; setTimeout(() => e.target.classList.add('dragging'), 0); } });
+        list.addEventListener('dragend', () => { if (draggingItem) { draggingItem.classList.remove('dragging'); draggingItem = null; } });
+        list.addEventListener('dragover', e => {
+            e.preventDefault();
+            const afterElement = [...list.querySelectorAll('.sortable-item:not(.dragging)')].reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = e.clientY - box.top - box.height / 2;
+                return (offset < 0 && offset > closest.offset) ? { offset: offset, element: child } : closest;
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+            if (draggingItem) { afterElement ? list.insertBefore(draggingItem, afterElement) : list.appendChild(draggingItem); }
+        });
+    }
+    initializeSortableList('template-list');
+    initializeSortableList('care-call-list');
+    initializeSortableList('post-op-list');
+
+    // File Drop Zone Logic
+    ['file-drop-zone', 'vocab-drop-zone'].forEach(zoneId => {
+        const dropZone = document.getElementById(zoneId);
+        if (dropZone) {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => dropZone.addEventListener(eventName, (e) => { e.preventDefault(); e.stopPropagation(); }, false));
+            ['dragenter', 'dragover'].forEach(eventName => dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false));
+            ['dragleave', 'drop'].forEach(eventName => dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false));
+        }
+    });
+    
+    // --- CUSTOM VOCABULARY PAGE LOGIC ---
+    const vocabDashboardView = document.getElementById('vocab-dashboard-view');
+    const vocabEditorView = document.getElementById('vocab-editor-view');
+    const backToVocabListBtn = document.getElementById('back-to-vocab-list');
+
+    document.getElementById('vocabulary')?.addEventListener('click', e => {
+        if (e.target.classList.contains('manage-vocab-btn')) {
+            e.preventDefault();
+            vocabDashboardView.style.display = 'none';
+            vocabEditorView.style.display = 'block';
+        }
+    });
+
+    backToVocabListBtn?.addEventListener('click', e => {
+        e.preventDefault();
+        vocabDashboardView.style.display = 'block';
+        vocabEditorView.style.display = 'none';
+    });
+    
+    // --- ADD TEMPLATE MODAL LOGIC (REVISED) ---
+    const addTemplateModal = document.getElementById('add-template-modal');
+    const addTemplateBtn = document.getElementById('add-note-template-btn');
+    
+    const openAddTemplateModal = () => {
+        const modalContent = addTemplateModal.querySelector('.modal-content');
+        // if (!modalContent.innerHTML) {
+            modalContent.innerHTML = `<form id="add-template-form">
+                    <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 border-b pb-4">Create New Template</h1>
+                    <p class="text-gray-600 mb-8">Define the template's properties, keywords, and content.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Left Column -->
+                        <div class="lg:col-span-2 space-y-6">
+                            <div><label for="template-name" class="block text-sm font-medium text-gray-700 mb-1">Template Name</label><input type="text" id="template-name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="e.g., Standard Restoration" required></div>
+                            <div><label for="icon" class="block text-sm font-medium text-gray-700 mb-1">Icon (e.g., 🦷)</label><input type="text" id="icon" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 🦷 🩹 ✨"></div>
+                            <div><label for="procedure-trigger" class="block text-sm font-medium text-gray-700 mb-1">Procedure Type Trigger</label><input type="text" id="procedure-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Composite Restoration"></div>
+                            <div><label for="tooth-trigger" class="block text-sm font-medium text-gray-700 mb-1">Tooth Identifier Trigger</label><input type="text" id="tooth-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 14, 2-3, URD"></div>
+                            <div><label for="surface-trigger" class="block text-sm font-medium text-gray-700 mb-1">Surface Trigger</label><input type="text" id="surface-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., MO, Distal, Facial"></div>
+                            <div><label for="finding-trigger" class="block text-sm font-medium text-gray-700 mb-1">Finding Trigger</label><input type="text" id="finding-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Caries, Fracture, Infection"></div>
+                            <div><label for="complication-trigger" class="block text-sm font-medium text-gray-700 mb-1">Complication Trigger</label><input type="text" id="complication-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Post-op pain, Swelling, Allergy"></div>
+                            <div><label for="patient-age-trigger" class="block text-sm font-medium text-gray-700 mb-1">Patient Age Trigger</label><input type="text" id="patient-age-trigger" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., 0-12, 13-18, 65+"><p class="mt-1 text-xs text-gray-500">Specify an age range or a single age.</p></div>
+                            <div><label for="generic-terms" class="block text-sm font-medium text-gray-700 mb-1">Generic Terms</label><input type="text" id="generic-terms" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., patient comfortable, good prognosis"><p class="mt-1 text-xs text-gray-500">Enter generic terms and phrases.</p></div>
+                            <div><label for="on-screen-prompt" class="block text-sm font-medium text-gray-700 mb-1">On-Screen Prompt</label><textarea id="on-screen-prompt" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Please detail the composite restoration..."></textarea><p class="mt-1 text-xs text-gray-500">Prompt displayed to the user.</p></div>
+                            <div><label for="linked-templates-search" class="block text-sm font-medium text-gray-700 mb-1">Linked Templates</label><div class="dropdown-container"><input type="text" id="linked-templates-search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Type to search..."><div id="linked-templates-options" class="dropdown-options"><div data-value="template-a">Standard Cleaning</div><div data-value="template-b">Crown Prep Notes</div></div></div><textarea id="selected-linked-templates" rows="2" class="mt-3 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Selected linked templates appear here." readonly></textarea></div>
+                            <div><label for="linked-post-op-instructions-search" class="block text-sm font-medium text-gray-700 mb-1">Linked Post-Op Instructions</label><div class="dropdown-container"><input type="text" id="linked-post-op-instructions-search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Type to search..."><div id="linked-post-op-instructions-options" class="dropdown-options"><div data-value="post-op-extraction">Post-Extraction Care</div></div></div><textarea id="selected-linked-post-op-instructions" rows="2" class="mt-3 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Selected instructions appear here." readonly></textarea></div>
+                            <div><label for="linked-care-call-instructions-search" class="block text-sm font-medium text-gray-700 mb-1">Linked Care-Call Instructions</label><div class="dropdown-container"><input type="text" id="linked-care-call-instructions-search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Type to search..."><div id="linked-care-call-instructions-options" class="dropdown-options"><div data-value="care-call-24hr">24-Hour Follow-up</div></div></div><textarea id="selected-linked-care-call-instructions" rows="2" class="mt-3 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Selected instructions appear here." readonly></textarea></div>
+                            <div><label for="template-content" class="block text-sm font-medium text-gray-700 mb-1">Template Content</label><textarea id="template-content" rows="8" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm font-mono" placeholder="Instrument: Direct composite restoration on tooth {tooth_number}."></textarea></div>
+                        </div>
+                        <!-- Right Column -->
+                        <div class="lg:col-span-1 space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Template Scope</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center"><input type="radio" id="scope-global" name="template-scope" value="global" class="h-4 w-4 text-teal-600 border-gray-300" checked><label for="scope-global" class="ml-2 block text-sm text-gray-900">Global</label></div>
+                                    <div class="flex items-center"><input type="radio" id="scope-workplace" name="template-scope" value="workplace" class="h-4 w-4 text-teal-600 border-gray-300"><label for="scope-workplace" class="ml-2 block text-sm text-gray-900">Workplace</label></div>
+                                    <div class="flex items-center"><input type="radio" id="scope-user" name="template-scope" value="user" class="h-4 w-4 text-teal-600 border-gray-300"><label for="scope-user" class="ml-2 block text-sm text-gray-900">User</label></div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="available-placeholders-search" class="block text-sm font-medium text-gray-700 mb-2">Available Placeholders</label>
+                                <div class="dropdown-container"><input type="text" id="available-placeholders-search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Type to search..."><div id="available-placeholders-options" class="dropdown-options"><div data-value="[tooth_number]">[tooth_number]</div><div data-value="[patient_presentation]">[patient_presentation]</div></div></div><textarea id="selected-placeholders" rows="6" class="mt-3 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Selected placeholders appear here." readonly></textarea>
+                                <p class="text-xs text-gray-500 mt-1">Select placeholders to use in the template.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-end space-x-4 mt-8 pt-6 border-t border-gray-200">
+                        <button type="button" id="add-template-cancel-btn" class="px-6 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Cancel</button>
+                        <button type="submit" class="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">Save Template</button>
+                    </div>
+                </form>`;
+            
+            // Set up interactivity for the new modal content
+            setupAddTemplateModalInteractivity();
+            
+            // Add event listener for the cancel button
+            document.getElementById('add-template-cancel-btn').addEventListener('click', closeAddTemplateModal);
+            
+            // Add event listener for the form submission
+            document.getElementById('add-template-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newTemplateName = document.getElementById('template-name').value;
+                if (newTemplateName) {
+                    const newTemplate = { id: Date.now(), name: newTemplateName, added: new Date().toISOString().split('T')[0], edited: new Date().toISOString().split('T')[0] };
+                    templateData.templates.push(newTemplate);
+                    renderList('template-list', templateData.templates);
+                    closeAddTemplateModal();
+                } else { alert("Please enter a template name."); }
+            });
+        // }
+        addTemplateModal.classList.add('active');
+    };
+
+    const closeAddTemplateModal = () => addTemplateModal.classList.remove('active');
+    addTemplateBtn?.addEventListener('click', openAddTemplateModal);
+    addTemplateModal?.addEventListener('click', e => { if (e.target === addTemplateModal) closeAddTemplateModal(); });
+
+    function setupAddTemplateModalInteractivity() {
+        function setupDropdown(searchInput, optionsContainer, selectedTextarea) {
+            if (!searchInput || !optionsContainer || !selectedTextarea) return;
+            let selectedItems = new Set();
+            
+            // Parse existing values from textarea if any
+            const existingItems = selectedTextarea.value.split('\n').filter(Boolean);
+            existingItems.forEach(itemText => {
+                const optionDiv = Array.from(optionsContainer.querySelectorAll('div[data-value]')).find(div => div.textContent === itemText);
+                if (optionDiv) {
+                    selectedItems.add(optionDiv.getAttribute('data-value'));
+                }
+            });
+
+            searchInput.addEventListener('focus', () => optionsContainer.classList.add('show'));
+            searchInput.addEventListener('blur', () => setTimeout(() => optionsContainer.classList.remove('show'), 150));
+            
+            searchInput.addEventListener('keyup', () => {
+                const filter = searchInput.value.toLowerCase();
+                Array.from(optionsContainer.children).forEach(option => {
+                    const text = option.textContent.toLowerCase();
+                    option.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
+            
+            optionsContainer.addEventListener('mousedown', e => {
+                const target = e.target.closest('div[data-value]');
+                if (target) {
+                    e.preventDefault();
+                    const value = target.getAttribute('data-value');
+                    
+                    if (selectedItems.has(value)) {
+                        selectedItems.delete(value);
+                    } else {
+                        selectedItems.add(value);
+                    }
+                    
+                    updateTextarea();
+                    searchInput.focus(); // Keep focus to allow more selections
+                }
+            });
+
+            function updateTextarea() {
+                const displayNames = Array.from(selectedItems).map(val => {
+                    const optionDiv = optionsContainer.querySelector(`div[data-value="${val}"]`);
+                    return optionDiv ? optionDiv.textContent : '';
+                });
+                selectedTextarea.value = displayNames.filter(Boolean).join('\n');
+            }
+        }
+
+        setupDropdown(document.getElementById('linked-templates-search'), document.getElementById('linked-templates-options'), document.getElementById('selected-linked-templates'));
+        setupDropdown(document.getElementById('linked-post-op-instructions-search'), document.getElementById('linked-post-op-instructions-options'), document.getElementById('selected-linked-post-op-instructions'));
+        setupDropdown(document.getElementById('linked-care-call-instructions-search'), document.getElementById('linked-care-call-instructions-options'), document.getElementById('selected-linked-care-call-instructions'));
+        setupDropdown(document.getElementById('available-placeholders-search'), document.getElementById('available-placeholders-options'), document.getElementById('selected-placeholders'));
+    }
+
+
+    // --- ADD CARE CALL MODAL LOGIC ---
+    const addCareCallModal = document.getElementById('add-care-call-modal');
+    const addCareCallBtn = document.getElementById('add-care-call-btn');
+
+    const openAddCareCallModal = () => {
+        const modalContent = addCareCallModal.querySelector('.modal-content');
+        // if (!modalContent.innerHTML) {
+            modalContent.innerHTML = `
+                <form id="add-care-call-form">
+                    <h3 class="text-2xl font-bold mb-6 border-b pb-4">Add New Care-Call Instruction</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="care-call-title" class="block text-sm font-medium text-gray-700">Script Title</label>
+                            <input type="text" id="care-call-title" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Post-Extraction Care Call" required>
+                            <p class="mt-1 text-xs text-gray-500">A descriptive title for the care call script.</p>
+                        </div>
+                        <div>
+                            <label for="care-call-procedure-type" class="block text-sm font-medium text-gray-700">Procedure Type</label>
+                            <select id="care-call-procedure-type" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                                <option value="">Select Procedure Type</option>
+                                <option value="Extraction - No Stitches">Extraction - No Stitches</option>
+                                <option value="Extraction - With Stitches">Extraction - With Stitches</option>
+                                <option value="Root Canal">Root Canal</option>
+                                <option value="Filling">Filling</option>
+                                <option value="Crown">Crown</option>
+                                <option value="Implant Placement">Implant Placement</option>
+                                <option value="Periodontal Surgery">Periodontal Surgery</option>
+                                <option value="Other">Other (Specify in Description)</option>
+                            </select>
+                            <p class="mt-1 text-xs text-gray-500">The dental procedure this care call script is designed for.</p>
+                        </div>
+                        <div>
+                            <label for="care-call-script-content" class="block text-sm font-medium text-gray-700">Build Script</label>
+                            <textarea id="care-call-script-content" rows="10" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm font-mono" placeholder="Enter your care call script here. Use placeholders like: {{patientName}}, {{toothNumber}}, etc."></textarea>
+                            <p class="mt-1 text-xs text-gray-500">Compose your care call script using dynamic placeholders for automated note generation.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end space-x-4 mt-8 pt-6 border-t border-gray-200">
+                        <button type="button" id="add-care-call-cancel-btn" class="px-6 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Cancel</button>
+                        <button type="submit" class="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">Save Script</button>
+                    </div>
+                </form>
+            `;
+
+            document.getElementById('add-care-call-cancel-btn').addEventListener('click', closeAddCareCallModal);
+            document.getElementById('add-care-call-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newCareCallName = document.getElementById('care-call-title').value;
+                if (newCareCallName) {
+                    const newCareCall = { id: Date.now(), name: newCareCallName, added: new Date().toISOString().split('T')[0], edited: new Date().toISOString().split('T')[0] };
+                    templateData.careCall.push(newCareCall);
+                    renderList('care-call-list', templateData.careCall);
+                    closeAddCareCallModal();
+                } else {
+                    alert("Please enter a script title.");
+                }
+            });
+        // }
+        addCareCallModal.classList.add('active');
+    };
+
+    const closeAddCareCallModal = () => addCareCallModal.classList.remove('active');
+    addCareCallBtn?.addEventListener('click', openAddCareCallModal);
+    addCareCallModal?.addEventListener('click', e => { if (e.target === addCareCallModal) closeAddCareCallModal(); });
+
+    // --- ADD POST-OP MODAL LOGIC ---
+    const addPostOpModal = document.getElementById('add-post-op-modal');
+    const addPostOpBtn = document.getElementById('add-post-op-btn');
+
+    const openAddPostOpModal = () => {
+        const modalContent = addPostOpModal.querySelector('.modal-content');
+        // if (!modalContent.innerHTML) {
+            modalContent.innerHTML = `
+                <form id="add-post-op-form">
+                    <h3 class="text-2xl font-bold mb-6 border-b pb-4">Add New Post-Op Instruction</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="post-op-title" class="block text-sm font-medium text-gray-700">Instruction Title</label>
+                            <input type="text" id="post-op-title" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="e.g., Post-Extraction Instructions" required>
+                            <p class="mt-1 text-xs text-gray-500">A descriptive title for these post-operative instructions.</p>
+                        </div>
+                        <div>
+                            <label for="post-op-procedure-type" class="block text-sm font-medium text-gray-700">Procedure Type</label>
+                            <select id="post-op-procedure-type" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                                <option value="">Select Procedure Type</option>
+                                <option value="Extraction">Extraction</option>
+                                <option value="Root Canal">Root Canal</option>
+                                <option value="Filling">Filling</option>
+                                <option value="Crown">Crown</option>
+                                <option value="Implant Placement">Implant Placement</option>
+                                <option value="Periodontal Surgery">Periodontal Surgery</option>
+                                <option value="Orthodontic Adjustment">Orthodontic Adjustment</option>
+                                <option value="Other">Other (Specify in Description)</option>
+                            </select>
+                            <p class="mt-1 text-xs text-gray-500">The dental procedure these instructions are relevant for.</p>
+                        </div>
+                        <div>
+                            <label for="post-op-script-content" class="block text-sm font-medium text-gray-700">Create Post-operative Instruction Script</label>
+                            <textarea id="post-op-script-content" rows="10" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm font-mono" placeholder="Enter your post-operative instructions here. Use placeholders..."></textarea>
+                            <p class="mt-1 text-xs text-gray-500">Compose your post-operative instructions using dynamic placeholders.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end space-x-4 mt-8 pt-6 border-t border-gray-200">
+                        <button type="button" id="add-post-op-cancel-btn" class="px-6 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Cancel</button>
+                        <button type="submit" class="px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">Save Instructions</button>
+                    </div>
+                </form>
+            `;
+
+            document.getElementById('add-post-op-cancel-btn').addEventListener('click', closeAddPostOpModal);
+            document.getElementById('add-post-op-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newPostOpName = document.getElementById('post-op-title').value;
+                if (newPostOpName) {
+                    const newPostOp = { id: Date.now(), name: newPostOpName, added: new Date().toISOString().split('T')[0], edited: new Date().toISOString().split('T')[0] };
+                    templateData.postOp.push(newPostOp);
+                    renderList('post-op-list', templateData.postOp);
+                    closeAddPostOpModal();
+                } else {
+                    alert("Please enter an instruction title.");
+                }
+            });
+        // }
+        addPostOpModal.classList.add('active');
+    };
+
+    const closeAddPostOpModal = () => addPostOpModal.classList.remove('active');
+    addPostOpBtn?.addEventListener('click', openAddPostOpModal);
+    addPostOpModal?.addEventListener('click', e => { if (e.target === addPostOpModal) closeAddPostOpModal(); });
+
+});
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Technical Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .docs-section {
+            padding-top: 4rem;
+            margin-top: -4rem;
+        }
+        .sidebar-link.active {
+            background-color: #e0f2f1;
+            color: #0f766e;
+            font-weight: 600;
+        }
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        pre[class*="language-"] {
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="grid grid-cols-1 md:grid-cols-[16rem_1fr] min-h-screen">
+        <!-- Sticky Sidebar -->
+        <aside class="w-72 hidden md:block sticky top-0 bg-white border-r border-slate-200 p-6 flex-shrink-0 overflow-y-auto">
+            <h1 class="text-xl font-bold text-teal-700 mb-2">DentalNote.AI</h1>
+            <p class="text-sm text-slate-500 mb-8">Admin Dashboard Docs</p>
+            <nav id="docs-nav" class="flex flex-col space-y-2">
+                <a href="#introduction" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">Introduction</a>
+                <a href="#tech-stack" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">Tech Stack</a>
+                <div class="pt-4">
+                    <h3 class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Frontend</h3>
+                    <div class="mt-2 flex flex-col space-y-2">
+                        <a href="#frontend-overview" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">Overview &amp; Structure</a>
+                        <a href="#frontend-sidebar" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm ml-2">Sidebar Navigation</a>
+                        <a href="#frontend-templates" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm ml-2">Template Management</a>
+                        <a href="#frontend-modals" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm ml-2">Dynamic Modals</a>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <h3 class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Backend API</h3>
+                     <div class="mt-2 flex flex-col space-y-2">
+                        <a href="#backend-overview" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">Overview</a>
+                        <a href="#backend-models" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">Data Models</a>
+                        <a href="#backend-endpoints" class="sidebar-link text-slate-600 font-medium py-2 px-3 rounded-md text-sm">API Endpoints</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="overflow-x-hidden overflow-y-auto p-6 md:p-10 lg:p-12 bg-gray-100">
+            <div class="max-w-4xl mx-auto">
+                <!-- Introduction -->
+                <section id="introduction" class="docs-section">
+                    <h2 class="text-3xl font-bold text-slate-900 border-b pb-4">Introduction</h2>
+                    <div class="mt-6 text-slate-700 space-y-4">
+                        <p>This document provides comprehensive technical specifications for the DentalNote.AI Admin Dashboard. It is intended for the development team to ensure a clear understanding of the project's architecture, components, and the required backend API.</p>
+                        <p>The Admin Dashboard is a single-page application (SPA) designed for administrators to manage the core data of the DentalNote.AI platform. Key functionalities include:</p>
+                        <ul class="list-disc list-inside space-y-2 pl-4">
+                            <li><strong class="font-semibold text-slate-800">Analytics:</strong> Viewing key metrics like user growth and API usage.</li>
+                            <li><strong class="font-semibold text-slate-800">User Management:</strong> Managing both regular subscribers and admin users.</li>
+                            <li><strong class="font-semibold text-slate-800">Template Management:</strong> A comprehensive system for creating and organizing Note Templates, Care-Call Instructions, and Post-Op Instructions.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Tech Stack -->
+                <section id="tech-stack" class="docs-section">
+                    <h2 class="text-3xl font-bold text-slate-900 border-b pb-4">Tech Stack</h2>
+                    <div class="mt-6 text-slate-700">
+                        <p class="mb-4">The frontend is built with standard web technologies, focusing on simplicity and performance. The backend requirements are defined in this document and can be implemented with any preferred stack (e.g., Node.js/Express, Python/Django, etc.).</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div class="bg-white p-4 rounded-lg border border-slate-200"><strong class="font-semibold">HTML5</strong><p class="text-sm text-slate-500">Semantic Markup</p></div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200"><strong class="font-semibold">Tailwind CSS</strong><p class="text-sm text-slate-500">Utility-First CSS</p></div>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200"><strong class="font-semibold">JavaScript (ES6+)</strong><p class="text-sm text-slate-500">DOM Manipulation</p></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Frontend -->
+                <section id="frontend-overview" class="docs-section">
+                    <h2 class="text-3xl font-bold text-slate-900 border-b pb-4">Frontend Overview & Structure</h2>
+                    <div class="mt-6 text-slate-700 space-y-4">
+                        <p>The frontend is a single HTML file (`index.html`) containing all necessary HTML, CSS, and JavaScript. This monolithic structure is for prototyping purposes. In a production environment, these should be separated into distinct files.</p>
+                        <h4 class="text-lg font-semibold text-slate-800 pt-4">Recommended File Structure:</h4>
+                        <div class="relative">
+                            <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                            <pre><code class="language-bash" data-code-source>
+/
+|-- index.html
+|-- css/
+|   |-- style.css
+|-- js/
+|   |-- main.js
+|   |-- ui.js
+|   |-- api.js
+|-- assets/
+    |-- images/
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="frontend-sidebar" class="docs-section">
+                    <h3 class="text-2xl font-semibold text-slate-900 border-b pb-3">Sidebar Navigation</h3>
+                    <div class="mt-6 text-slate-700 space-y-4">
+                        <p>The primary navigation is a fixed sidebar. It allows users to switch between the different management pages of the dashboard.</p>
+                        <h4 class="text-lg font-semibold text-slate-800 pt-4">JavaScript Logic:</h4>
+                        <p>Page switching is handled by adding/removing an `.active` class on both the sidebar links and the corresponding page content divs. The `data-page` attribute on the link must match the `id` of the content div.</p>
+                         <div class="relative">
+                            <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                            <pre><code class="language-javascript" data-code-source>
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+const pages = document.querySelectorAll('.page-content');
+
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageId = link.dataset.page;
+
+        // Update active link
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // Show active page content
+        pages.forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+    });
+});
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="frontend-templates" class="docs-section">
+                    <h3 class="text-2xl font-semibold text-slate-900 border-b pb-3">Template Management</h3>
+                     <div class="mt-6 text-slate-700 space-y-4">
+                        <p>This is the most complex component, featuring a tabbed interface to manage three types of templates. Each tab has a searchable, sortable list and a button to launch an "Add" modal.</p>
+                        <h4 class="text-lg font-semibold text-slate-800 pt-4">Tab Switching Logic:</h4>
+                        <p>Similar to the main page navigation, tab switching is handled by toggling an `.active` class on the tab buttons and their corresponding content panels.</p>
+                         <div class="relative">
+                            <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                            <pre><code class="language-javascript" data-code-source>
+const templateTabButtons = document.querySelectorAll('.template-tab-button');
+const templateTabContents = document.querySelectorAll('.template-tab-content');
+
+templateTabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active tab button
+        templateTabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Show active tab content
+        templateTabContents.forEach(content => content.classList.remove('active'));
+        document.getElementById(button.dataset.tab).classList.add('active');
+    });
+});
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="frontend-modals" class="docs-section">
+                    <h3 class="text-2xl font-semibold text-slate-900 border-b pb-3">Dynamic Modals</h3>
+                     <div class="mt-6 text-slate-700 space-y-4">
+                        <p>Modals are used for creating and editing items. The content for each modal is injected dynamically via JavaScript upon the first click. This keeps the initial DOM clean and improves performance.</p>
+                        <h4 class="text-lg font-semibold text-slate-800 pt-4">Modal Invocation Pattern:</h4>
+                        <p>The example below shows the pattern for the "Add Post-Op Instruction" modal. This pattern is repeated for all modals in the application.</p>
+                         <div class="relative">
+                            <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                            <pre><code class="language-javascript" data-code-source>
+const addPostOpModal = document.getElementById('add-post-op-modal');
+const addPostOpBtn = document.getElementById('add-post-op-btn');
+
+const openAddPostOpModal = () => {
+    const modalContent = addPostOpModal.querySelector('.modal-content');
+    // Inject HTML only if it's the first time opening the modal
+    if (!modalContent.innerHTML) {
+        modalContent.innerHTML = \`
+            &lt;form id="add-post-op-form"&gt;
+                &lt;h3 class="text-2xl font-bold mb-6 border-b pb-4"&gt;Add New Post-Op Instruction&lt;/h3&gt;
+                &lt;!-- ... form fields ... --&gt;
+                &lt;div class="flex justify-end space-x-4 mt-8 pt-6 border-t"&gt;
+                    &lt;button type="button" id="add-post-op-cancel-btn"&gt;Cancel&lt;/button&gt;
+                    &lt;button type="submit"&gt;Save Instructions&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        \`;
+
+        // Attach event listeners after injecting content
+        document.getElementById('add-post-op-cancel-btn').addEventListener('click', closeAddPostOpModal);
+        document.getElementById('add-post-op-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Handle form submission logic
+            const newPostOpName = document.getElementById('post-op-title').value;
+            if (newPostOpName) {
+                // In a real app, this would be an API call
+                const newPostOp = { id: Date.now(), name: newPostOpName, added: '2025-07-16', edited: '2025-07-16' };
+                templateData.postOp.push(newPostOp);
+                renderList('post-op-list', templateData.postOp);
+                closeAddPostOpModal();
+            }
+        });
+    }
+    addPostOpModal.classList.add('active');
+};
+
+const closeAddPostOpModal = () => addPostOpModal.classList.remove('active');
+
+addPostOpBtn?.addEventListener('click', openAddPostOpModal);
+addPostOpModal?.addEventListener('click', e => { 
+    if (e.target === addPostOpModal) closeAddPostOpModal(); 
+});
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Backend -->
+                <section id="backend-overview" class="docs-section">
+                    <h2 class="text-3xl font-bold text-slate-900 border-b pb-4">Backend API Overview</h2>
+                    <div class="mt-6 text-slate-700 space-y-4">
+                        <p>The backend must provide a RESTful API to handle all data operations. All endpoints should expect and return JSON. Authentication should be implemented for all endpoints, likely via a token in the Authorization header.</p>
+                    </div>
+                </section>
+
+                <section id="backend-models" class="docs-section">
+                    <h3 class="text-2xl font-semibold text-slate-900 border-b pb-3">Data Models</h3>
+                     <div class="mt-6 text-slate-700 space-y-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-slate-800">NoteTemplate</h4>
+                            <p class="text-sm mb-2">The core model for generating dental notes.</p>
+                             <div class="relative">
+                                <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                                <pre><code class="language-json" data-code-source>
+{
+  "id": "string",
+  "name": "string",
+  "icon": "string",
+  "scope": "string (enum: 'global', 'workplace', 'user')",
+  "triggers": {
+    "procedureType": "string",
+    "toothIdentifier": "string",
+    "surface": "string",
+    "finding": "string",
+    "complication": "string",
+    "patientAge": "string"
+  },
+  "genericTerms": "string[]",
+  "onScreenPrompt": "string",
+  "linkedTemplateIds": "string[]",
+  "linkedPostOpIds": "string[]",
+  "linkedCareCallIds": "string[]",
+  "content": "string",
+  "createdAt": "date-time",
+  "updatedAt": "date-time"
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-slate-800">CareCallInstruction</h4>
+                            <p class="text-sm mb-2">Model for care-call scripts.</p>
+                             <div class="relative">
+                                <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                                <pre><code class="language-json" data-code-source>
+{
+  "id": "string",
+  "title": "string",
+  "procedureType": "string",
+  "version": "string",
+  "scriptContent": "string",
+  "createdAt": "date-time",
+  "updatedAt": "date-time"
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                         <div>
+                            <h4 class="text-lg font-semibold text-slate-800">PostOpInstruction</h4>
+                            <p class="text-sm mb-2">Model for post-operative instructions.</p>
+                             <div class="relative">
+                                <button class="copy-btn absolute top-2 right-2 bg-slate-600 hover:bg-slate-700 text-white text-xs font-bold py-1 px-2 rounded">Copy</button>
+                                <pre><code class="language-json" data-code-source>
+{
+  "id": "string",
+  "title": "string",
+  "procedureType": "string",
+  "version": "string",
+  "instructionContent": "string",
+  "createdAt": "date-time",
+  "updatedAt": "date-time"
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="backend-endpoints" class="docs-section">
+                    <h3 class="text-2xl font-semibold text-slate-900 border-b pb-3">API Endpoints</h3>
+                    <div class="mt-6 text-slate-700 space-y-8">
+                        <p>The following endpoints are required to support the frontend functionality. All `POST` and `PUT` requests should include the corresponding data model in the request body.</p>
+                        
+                        <div class="bg-white border border-slate-200 rounded-lg p-4">
+                            <h4 class="font-mono font-semibold text-teal-700">/api/templates/notes</h4>
+                            <p class="text-sm text-slate-500 mt-1 mb-3">Endpoints for managing Note Templates.</p>
+                            <div class="space-y-2 text-sm">
+                                <p><span class="font-bold text-sky-600 bg-sky-100 px-2 py-1 rounded-md">GET</span> - Fetches all note templates.</p>
+                                <p><span class="font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">POST</span> - Creates a new note template.</p>
+                                <p><span class="font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded-md">PUT</span> /:id - Updates an existing note template.</p>
+                                <p><span class="font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md">DELETE</span> /:id - Deletes a note template.</p>
+                            </div>
+                        </div>
+
+                         <div class="bg-white border border-slate-200 rounded-lg p-4">
+                            <h4 class="font-mono font-semibold text-teal-700">/api/templates/care-calls</h4>
+                            <p class="text-sm text-slate-500 mt-1 mb-3">Endpoints for managing Care-Call Instructions.</p>
+                            <div class="space-y-2 text-sm">
+                                <p><span class="font-bold text-sky-600 bg-sky-100 px-2 py-1 rounded-md">GET</span> - Fetches all care-call instructions.</p>
+                                <p><span class="font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">POST</span> - Creates a new care-call instruction.</p>
+                                <p><span class="font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded-md">PUT</span> /:id - Updates an existing care-call instruction.</p>
+                                <p><span class="font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md">DELETE</span> /:id - Deletes a care-call instruction.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-slate-200 rounded-lg p-4">
+                            <h4 class="font-mono font-semibold text-teal-700">/api/templates/post-op</h4>
+                            <p class="text-sm text-slate-500 mt-1 mb-3">Endpoints for managing Post-Op Instructions.</p>
+                            <div class="space-y-2 text-sm">
+                                <p><span class="font-bold text-sky-600 bg-sky-100 px-2 py-1 rounded-md">GET</span> - Fetches all post-op instructions.</p>
+                                <p><span class="font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">POST</span> - Creates a new post-op instruction.</p>
+                                <p><span class="font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded-md">PUT</span> /:id - Updates an existing post-op instruction.</p>
+                                <p><span class="font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md">DELETE</span> /:id - Deletes a post-op instruction.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Copy to Clipboard Logic ---
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const codeElement = btn.nextElementSibling.querySelector('code');
+                const codeToCopy = codeElement.dataset.codeSource || codeElement.innerText;
+
+                navigator.clipboard.writeText(codeToCopy).then(() => {
+                    btn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        btn.textContent = 'Copy';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+        });
+
+        // --- Sidebar Active Link Highlighting on Scroll ---
+        const sections = document.querySelectorAll('.docs-section');
+        const navLinks = document.querySelectorAll('#docs-nav a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: "-50% 0px -50% 0px" }); // Trigger when section is in the middle of the viewport
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+    </script>
+</body>
+</html>

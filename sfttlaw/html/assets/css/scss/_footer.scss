@@ -1,5 +1,6 @@
 .main-footer {
     .footer-content-block {
+        background-color: #fff;
         border-top: 1px solid $gray;
         padding: 45px 50px;
         @media (max-width: 1200px) {
@@ -106,11 +107,11 @@
             font-size: 12px;
         }
         .copyright-text {
-            &::after {
-                content: '|';
-                margin-top: -2px;
-                margin-left: 5px;
-            }
+            // &::after {
+            //     content: '|';
+            //     margin-top: -2px;
+            //     margin-left: 5px;
+            // }
             @media (max-width: 767px) {
                 &::after {
                     content: none;

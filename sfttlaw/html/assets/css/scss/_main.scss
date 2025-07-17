@@ -1,7 +1,8 @@
 .main-content-wrapper {
     position: relative;   
-    background: $white url(../images/img-home-page-bg.jpg) center center no-repeat !important;
-    background-size: 100% auto !important; 
+    // background: $white url(../images/img-home-page-bg.jpg) center -20% no-repeat !important;
+    // background-attachment: fixed !important;
+    // background-size: 100% auto !important; 
 }
 .main-section {
     padding: 50px 0;
@@ -124,9 +125,9 @@
     }
     .hero-content-block {
         background-image: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(114, 148, 95, 1) 50%);
-        padding: 200px 50px 50px;
+        padding: 200px 30px 30px;
         color: $white;          
-        max-width: 480px;
+        max-width: 400px;
         width: 100%;
         @media (max-width: 1200px) {
             padding: 150px 30px 30px;
@@ -161,7 +162,7 @@
         }
     }
     .inner-section {
-        background: var(--page-header-bg, $white);
+        background: var(--header-bg, $white);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -194,6 +195,12 @@
         }
     }
     .page-title {
+        .tag-line {
+            color: $white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
         h1 {
             color: $white;
         }
@@ -210,22 +217,33 @@
     height: 100%;
     @include flexbox;
     @include flex-direction(column);
-    background: $white;
-    @include box-shadow(0px 5px 5px 0px rgba(0, 0, 0, 0.2));
+    background: #fcfcfc;
+    @include box-shadow(0px 3px 4px 0px rgba(0, 0, 0, 0.1));
     padding: 25px;
     position: relative;
     @include transition(0.1s, ease-in-out);
     @media (max-width: 767px) {
         padding: 20px;
     }
-    h3 {
+    h3  {
         font-size: 20px;
-        font-weight: 700;
+        font-weight: 700 !important;
         margin-bottom: 10px;
         text-transform: uppercase;
         padding-right: 40px;
         @media (max-width: 767px) {
             font-size: 18px;
+        }
+
+        .entry-content &, .single-content-block & {
+           font-size: 18px;
+            font-weight: 700 !important;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            padding-right: 40px;
+            @media (max-width: 767px) {
+                font-size: 16px;
+            } 
         }
         a {
             text-decoration: none;
@@ -255,10 +273,10 @@
     }
     &:hover, &:focus {
         background: $primary;
-        @include transform(translateY(-5px));
+        // @include transform(translateY(-5px));
         h3 {
             a {
-                color: $white;
+                color: $white !important;
                 &::before {
                     right: 25px;
                     opacity: 1;
@@ -296,6 +314,8 @@
                 max-height: 75px;
                 max-width: 250px;
                 width: 100%;
+                object-fit: contain;
+                object-position: center;
             }
         }
         a.logo-item {
@@ -308,6 +328,14 @@
 .sidebar {
     max-width: 400px;
     margin-left: auto;
+
+    @media (min-width: 992px) {
+        &.icw-lg-sticky{
+            position: sticky;
+            top: 90px;
+        }
+    }
+
     @media (max-width: 992px) {
         max-width: 100%;
         margin: 40px 0 0;
@@ -355,7 +383,8 @@
                 &:not(:last-child) {
                     margin-bottom: 15px;
                 }
-                &.current_page_parent {
+                &.current_page_parent,
+                &.current {
                     a {
                         color: $green;
                         text-decoration: underline;
@@ -378,10 +407,10 @@
                     padding-bottom: 10px;
                     margin-bottom: 10px;
                     border-bottom: 1px solid rgba($gray, 0.1);
-                    a {
-                        text-decoration: none;
-                    }
-                    .icon-group {
+                    // a {
+                    //     text-decoration: none;
+                    // }
+                    .action {
                         line-height: 0.7;
                         margin-left: auto;
                         white-space: nowrap;
@@ -458,7 +487,7 @@
         }
     }
 }
-.single-content-block {
+.entry-content, .single-content-block {
     h2, h3 {
         text-transform: uppercase;
         font-weight: 300;
@@ -505,7 +534,7 @@
             color: $green;
             text-decoration: none;
         }
-        &.link-file {
+        &.btn-link-file {
             color: $white;
             background: $primary;
             @include inline-flex;
@@ -529,8 +558,30 @@
             }
         }
     }
+
+    ol {
+        & + * {
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            list-style: decimal;
+            @media (max-width: 992px) {
+                margin-bottom: 8px;
+            }
+            &::marker {
+                font-weight: 600;
+                color: $green;
+            }
+        }
+    }
+
     ul {
         margin-bottom: 20px;
+
+        & + * {
+            margin-top: 20px;
+        }
         li {
             padding-left: 20px;
             position: relative;
@@ -564,7 +615,51 @@
     .dropdown {
         max-width: 500px;
     }
+
+    blockquote {
+        background: $lightgray;
+        padding: 30px;
+        font-size: 18px;
+        @include border-radius(6px);
+        line-height: 1.5;
+        @media (max-width: 767px) { 
+            font-size: 16px;
+        }
+    }
+
+    .wp-caption {
+        width: 100% !important;
+        padding-top: 10px;
+        margin-bottom: 30px;
+        &.aligncenter {
+            text-align: center;
+        }
+        img {
+            margin-bottom: 10px;
+            width: auto;
+            @include border-radius(8px);
+            -o-object-fit: cover;
+            object-fit: cover;
+            &.size-full {
+                width: 100%;
+                max-width: 920px;
+            }
+        }
+        .wp-caption-text {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.8);
+            padding-top: 0px;
+            margin-bottom: 20px; 
+            margin-top: 0px !important;
+            a {
+                font-weight: 500;
+                color: $primary;
+            }
+        }
+    }
 }
+
 .alignright {
     float: right;
     margin: 7px 0 20px 20px;
@@ -812,13 +907,18 @@
     }
 }
 
+.title-resources-list {
+    font-weight: 600;
+}
+
 .resources-lists {
-    margin-top: 20px;
+   
     .resources-list {
         @include flexbox;
         @include align-items(flex-start);
         position: relative;
-        padding: 12px 0;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
         border-bottom: 1px solid rgba($gray, 0.1);
         .link {
             margin-right: 15px;
@@ -836,6 +936,7 @@
             min-width: 105px;
             text-align: right;
             order: 2;
+            flex: none;
         }
         .link-file {
             z-index: 5;
@@ -846,6 +947,7 @@
             width: 22px;
             height: 22px;
             background-size: contain !important;
+            flex: none;
             &.pdf {
                 background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 144-208 0c-35.3 0-64 28.7-64 64l0 144-48 0c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z" fill="rgb(63 115 141)"/></svg>') no-repeat center center;
             }
@@ -859,6 +961,7 @@
         &:hover, &:focus {
             .link {
                 color: $green;
+                text-decoration: underline;
             }
         }
     }
