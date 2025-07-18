@@ -2226,9 +2226,35 @@
             padding: 20px;
         }
         img {
+            width: 100%;
             max-width: 160px;
             max-height: 54px;
             object-fit: contain;
         }
+    }
+}
+.partner-card {
+    background: url(../images/img-partner-card-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 50px;
+    height: 100%;
+    min-height: 300px;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    color: $white;
+    font-size: 16px;
+    @media (max-width: 7672px) {
+        min-height: auto;
+        padding: 50px 30px;
+    }
+    .logo-img {
+        margin-bottom: 20px;
+    }
+    .name {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 3px;
     }
 }
