@@ -2245,7 +2245,7 @@
     @include justify-content(center);
     color: $white;
     font-size: 16px;
-    @media (max-width: 7672px) {
+    @media (max-width: 767px) {
         min-height: auto;
         padding: 50px 30px;
     }
