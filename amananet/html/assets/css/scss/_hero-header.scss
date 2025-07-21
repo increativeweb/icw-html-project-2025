@@ -1,0 +1,41 @@
+.hero-header {
+    position: relative;
+    background: #eeedf4;
+    z-index: 1;
+    padding: 60px 0;
+    .hero-content-block {
+        .section-title {
+            margin: 0;
+            background: #2a396d;
+            @include border-radius(100px);
+            padding: 40px 70px;
+            .tag-line {
+                color: #f8993a;
+                font-size: 18px;
+            }
+            .sort-info {
+                font-size: 18px
+            }
+            .info-list-card {
+                margin-bottom: 15px;
+                    .card-icon {
+                        img {
+                            max-height: 30px;
+                        }
+                    }
+                .card-content {
+                    .card-title {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .action {
+                @include flexbox;
+                @include align-items(center);
+                @include flex-wrap(wrap);
+                gap: 15px 30px;
+            }
+        }
+    }
+}
