@@ -72,6 +72,9 @@
 					color: $black;
 				}
 			}
+            h1, h2, h3 {
+                color: $white;
+            }
 			.sort-info {
 				color: $white !important;
 			}
@@ -239,6 +242,7 @@
 
     h1, h2, h3 {
         margin-bottom: 15px;
+        color: $primary;
     }
     .sort-info {
         // margin-bottom: 30px;  
