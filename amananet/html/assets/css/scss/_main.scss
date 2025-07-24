@@ -43,15 +43,15 @@
 
 // Main Section CSS
 .main-section {
-    padding-top: 150.08px;
-    padding-bottom: 150.08px;
-    @media (max-width: 992px) { 
-        padding-top: 100px;
-        padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @media (max-width: 1200px) { 
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
     @media (max-width: 767px) { 
-        padding-top: 50.08px;
-        padding-bottom: 50.08px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     &.bg-none:not(.bg-custom) {

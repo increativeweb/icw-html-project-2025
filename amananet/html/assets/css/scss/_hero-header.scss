@@ -14,7 +14,9 @@
             padding: 40px 70px;
             margin: 50px 0;
             max-width: 820px;
-            margin-left: -70px;
+            @media (min-width: 1600px) {
+                margin-left: -70px;
+            }
             .tag-line {
                 color: #f8993a;
                 font-size: 18px;
