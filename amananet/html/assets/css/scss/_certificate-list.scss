@@ -1,0 +1,57 @@
+.certificate-list-section {
+    .certificate-list-block {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 10px;
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }  
+    .certificate-card {
+        @include flexbox;
+        @include align-items(flex-start);
+        gap: 20px;
+        text-decoration: none;
+        border-bottom: 1px solid #D8DCEA;
+        padding: 20px;
+        position: relative;
+        @include transition(0.2s, ease-in-out);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background: url('data:image/svg+xml,<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.09567 0.134701L8.81048 0.384146C8.66788 0.553769 8.66788 0.803215 8.81048 0.972838L11.8254 3.88636H0.427792C0.183339 3.88636 0 4.0959 0 4.30543V4.66463C0 4.9041 0.183339 5.0837 0.427792 5.0837H11.8254L8.81048 8.02716C8.66788 8.20676 8.66788 8.44623 8.81048 8.62583L9.09567 8.8653C9.23827 9.0449 9.53365 9.0449 9.7068 8.8653L13.8625 4.80432C14.0458 4.62472 14.0458 4.37528 13.8625 4.20565L9.7068 0.134701C9.53365 -0.0449002 9.23827 -0.0449002 9.09567 0.134701Z" fill="rgb(42, 57, 109)"/></svg>') no-repeat center center;
+            background-size: contain;
+            opacity: 0;
+            @include transition(0.2s, ease-in-out);
+        }
+        .card-img {
+            max-width: 100px;
+            img {
+                width: 100px;
+                aspect-ratio: 1 / 1;
+            }
+        }
+        .card-body {
+            color: $black;
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .sort-info {
+                font-size: 16px;
+            }
+        }
+        &:hover, &:focus {
+            background: #EEEDF4;
+            &::before {
+                opacity: 1;
+                right: 20px;
+            }
+        }
+    }
+} 
