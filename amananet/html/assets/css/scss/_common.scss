@@ -54,6 +54,11 @@ body ::selection {
 :focus {
     box-shadow: none !important;
 }
+.container {
+    @media (max-width: 992px) {
+        max-width: 100%;
+    }
+}
 
 // Padding-Margin CSS
 .pt-0 {padding-top: 0px !important;}
@@ -736,7 +741,7 @@ img {
     .splide__arrow {
         background: url('data:image/svg+xml,<svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.96599 9.09928L22 8.90099L1.96599 9.09928ZM22 8.90099L14.9253 1.46958L22 8.90099ZM22 8.90099L14.4199 16.1172L22 8.90099Z" fill="black"/><path d="M1.96599 9.09928L22 8.90099M22 8.90099L14.9253 1.46958M22 8.90099L14.4199 16.1172" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
         background-size: contain;
-        bottom: -48px;
+        bottom: 0px;
         top: auto;
         left: 20%;
         right: auto;
@@ -750,7 +755,6 @@ img {
             left: 10%;
         }
         @media (max-width: 767px) {
-            bottom: -35.2px;
             left: 30.08px;
         }
         &.splide__arrow--prev {

@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0 10px;
-        @media (max-width: 767px) {
+        @media (max-width: 992px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }  
@@ -16,6 +16,11 @@
         padding: 20px;
         position: relative;
         @include transition(0.2s, ease-in-out);
+        @media (max-width: 767px) {
+            padding: 15px;
+            margin: 0 -15px;
+            gap: 15px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -31,9 +36,15 @@
         }
         .card-img {
             max-width: 100px;
+            @media (max-width: 992px) {
+                max-width: 50px;
+            }
             img {
                 width: 100px;
                 aspect-ratio: 1 / 1;
+                @media (max-width: 992px) {
+                    width: 50px;
+                }
             }
         }
         .card-body {
