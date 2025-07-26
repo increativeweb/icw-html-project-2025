@@ -351,6 +351,9 @@
         @media (min-width: 767px) {
             height: 86px;
         }
+        .container {
+            height: inherit;
+        }
         .logo-block {
             .navbar-brand {
                 margin-right: 30px;
