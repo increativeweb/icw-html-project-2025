@@ -10,6 +10,9 @@
             height: 0;
             display: none;
         }
+        .navbar ul li.menu-item-has-children::after {
+            top: 87px;
+        }
     }   
     .navbar {
         padding: 0;
@@ -73,6 +76,23 @@
                 }
                 &.menu-item-has-children {
                     position: relative;
+                    @media (min-width: 1200px) {
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: fixed;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 145px;
+                            background-color: rgba(0, 0, 0, 0.3);
+                            z-index: -1;
+                            opacity: 0;
+                            pointer-events: none;
+                            -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+                            transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+                        }
+                    }
                     & > a {
                         @include flexbox;
                         @include align-items(center);
@@ -147,6 +167,9 @@
                             }
                             & > .menu-item-has-children {
                                 @media (min-width: 1200px) {
+                                    &::after {
+                                        content: none
+                                    }
                                     & > a {
                                         @include flexbox;
                                         @include align-items(center);
@@ -201,7 +224,7 @@
                         }
                         li {
                             padding: 0;
-                            a {
+                            a:not(.btn) {
                                 display: block;
                                 font-weight: 500;
                                 padding: 8px 15px;
@@ -216,6 +239,11 @@
                         }
                     }
                     &:hover, &:focus {
+                        @media (min-width: 1200px) {
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
                         & > a {
                             @media (min-width: 1200px) {
                                 &::after {
@@ -237,6 +265,9 @@
                         .sub-menu {
                             min-width: 100%;
                             padding: 0;
+                            max-height: 70vh;
+                            overflow: hidden;
+                            overflow-y: auto;
                             .sub-menu-inner {
                                 margin: 0 auto;
                                 max-width: 100%;
@@ -325,6 +356,9 @@
                                                 column-gap: 30px;
                                                 display: block;
                                                 flex: 1;
+                                                &.grid-col-3 {
+                                                    column-count: 3;
+                                                }
                                                 .title {
                                                     column-span: all;
                                                 }
@@ -338,6 +372,20 @@
                                                 }
                                             }
                                         }
+                                    }
+                                }
+                                .menu-action {
+                                    @include flexbox;
+                                    padding: 24px 0;
+                                    position: relative;
+                                    &::before {
+                                        content: '';
+                                        width: 150vw;
+                                        height: 1px;
+                                        background: #D4D6E5;
+                                        display: block;
+                                        position: absolute;
+                                        top: 0;left: -50vw;
                                     }
                                 }
                             }
