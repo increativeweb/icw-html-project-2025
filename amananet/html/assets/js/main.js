@@ -30,13 +30,16 @@ jQuery(document).ready(function($) {
     if ($('li.menu-item-has-children').length) {
         $("li.menu-item-has-children > a, li.menu-item-has-children > span").after('<i class="arrow"></i>');
     }
-    $('li.menu-item-has-children .arrow').on('click',function(event){
-        event.preventDefault();
-        $(this).toggleClass('is-active');
-        $(this).parent().find('.sub-menu').first().toggle(300);
-        
-    });
     
+    const megaSelector = 'li.menu-item-has-children.mega-menu';
+    $(megaSelector + ' > a').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const $parent = $(this).parent();
+        
+        $parent.toggleClass('is-open');  
+        $('.bg-overlay').toggleClass('is-visible');
+    });
     if ($(".icw-progress-goto").length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');
         var pathLength = progressPath.getTotalLength();

@@ -4,6 +4,12 @@
     &.is-dark {
         color: $white;
     }
+    &.with-top-bg {
+        background-image: url(../images/top-gradient-bg.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+    }
     .page-title {
         h1 {
             color: $black;
@@ -11,6 +17,9 @@
         .sort-info {
             max-width: 520px;
             color: $black;
+        }
+        .action {
+            margin-top: 30px;
         }
     }
 }

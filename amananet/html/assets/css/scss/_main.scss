@@ -1,6 +1,7 @@
 .main-content-wrapper {
     background-color: $white;
     z-index: 1;
+    overflow: hidden;
     &::before {
         content: '';
         height: 100%;

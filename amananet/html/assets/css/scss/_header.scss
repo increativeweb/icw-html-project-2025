@@ -76,23 +76,6 @@
                 }
                 &.menu-item-has-children {
                     position: relative;
-                    @media (min-width: 1200px) {
-                        &::after {
-                            content: "";
-                            display: block;
-                            position: fixed;
-                            width: 100%;
-                            height: 100%;
-                            left: 0;
-                            top: 145px;
-                            background-color: rgba(0, 0, 0, 0.3);
-                            z-index: -1;
-                            opacity: 0;
-                            pointer-events: none;
-                            -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-                            transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-                        }
-                    }
                     & > a {
                         @include flexbox;
                         @include align-items(center);
@@ -121,7 +104,7 @@
                         display: inline-block;
                         position: absolute;
                         right: 15px;
-                        top: 15px;
+                        top: 20px;
                         @include border-radius(4px);
                         @include transition(0.1s, ease-in-out);
                         &.is-active {
@@ -171,7 +154,7 @@
                                         content: none
                                     }
                                     & > a {
-                                        @include flexbox;
+                                        display: flex !important;
                                         @include align-items(center);
                                         @include justify-content(space-between);
                                         &::after {
@@ -239,15 +222,17 @@
                         }
                     }
                     &:hover, &:focus {
-                        @media (min-width: 1200px) {
-                            &::after {
-                                opacity: 1;
-                            }
-                        }
-                        & > a {
+                        &:not(.mega-menu) {
                             @media (min-width: 1200px) {
                                 &::after {
-                                    @include transform(rotate(180deg));
+                                    opacity: 1;
+                                }
+                            }
+                            & > a {
+                                @media (min-width: 1200px) {
+                                    &::after {
+                                        @include transform(rotate(180deg));
+                                    }
                                 }
                             }
                         }
@@ -261,96 +246,138 @@
                         }
                     }
                     &.mega-menu {
-                        position: unset;
+                        @media (min-width: 1200px) {
+                            position: unset;
+                        }
                         .sub-menu {
                             min-width: 100%;
                             padding: 0;
-                            max-height: 70vh;
+                            max-height: 80vh;
                             overflow: hidden;
                             overflow-y: auto;
+                            @media (min-width: 1200px) {
+                                opacity: 0;
+                                pointer-events: none;
+                                visibility: hidden;
+                            }
                             .sub-menu-inner {
                                 margin: 0 auto;
                                 max-width: 100%;
-                                padding: 0 15px;
                                 @media (min-width: 1200px) {
                                     max-width: 1140px;
+                                    padding: 0 15px;
                                 }
                                 @media (min-width: 1440px) {
                                     max-width: 1320px;
                                 }
                                 .menu-tab-block {
-                                    display: grid;
-                                    grid-template-columns: 280px auto;
+                                    @media (min-width: 1200px) {
+                                        display: grid;
+                                        grid-template-columns: 280px auto;
+                                    }
                                     .title {
                                         font-size: 14px;
                                         font-weight: 700;
                                         text-transform: uppercase;
                                         margin-bottom: 10px;
+                                    }                                    
+                                    .nav-link {
+                                        @include flexbox;
+                                        @include align-items(center);
+                                        font-size: 14px;
+                                        font-weight: 500;
+                                        @include border-radius(6px);
+                                        @include transition(0.1s, ease-in-out);
+                                        text-transform: uppercase;
+                                        color: $black;
+                                        position: relative;
+                                        padding: 0;
+                                        z-index: 1;
+                                        @media (max-width: 1200px) {
+                                            margin-bottom: 15px;
+                                            width: 100%;
+                                        }
+                                        &::before  {
+                                            content: '';
+                                            width: 0;
+                                            height: 100%;
+                                            @include border-radius(0.5rem);
+                                            background: #F7F6FD;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            @include transition(0.1s, ease-in-out);
+                                            z-index: -1;
+                                        }
+                                        &::after {
+                                            content: '';
+                                            width: 14px;
+                                            height: 9px;
+                                            display: inline-block;
+                                            background: url('data:image/svg+xml,<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.09567 0.134701L8.81048 0.384146C8.66788 0.553769 8.66788 0.803215 8.81048 0.972838L11.8254 3.88636H0.427792C0.183339 3.88636 0 4.0959 0 4.30543V4.66463C0 4.9041 0.183339 5.0837 0.427792 5.0837H11.8254L8.81048 8.02716C8.66788 8.20676 8.66788 8.44623 8.81048 8.62583L9.09567 8.8653C9.23827 9.0449 9.53365 9.0449 9.7068 8.8653L13.8625 4.80432C14.0458 4.62472 14.0458 4.37528 13.8625 4.20565L9.7068 0.134701C9.53365 -0.0449002 9.23827 -0.0449002 9.09567 0.134701Z" fill="rgb(42 57 109)"></path></svg>') no-repeat center;
+                                            background-size: contain !important;
+                                            opacity: 0;
+                                            margin-left: auto;
+                                            margin-right: 20px;
+                                            z-index: 1;
+                                            @include transition(0.1s, ease-in-out);
+                                            @media (max-width: 1200px) {
+                                                background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16797 10H15.8346" stroke="rgba(0 0 0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4.16666V15.8333" stroke="rgba(0 0 0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
+                                                width: 16px;
+                                                height: 16px;
+                                            }
+                                        }
+                                        .icon {
+                                            margin-right: 10px;
+                                            padding: 10px;
+                                            background-color: #F7F6FD;
+                                            @include border-radius(6px);
+                                            @media (max-width: 1200px) {
+                                                padding: 8px 10px;
+                                                img {
+                                                    width: 18px;
+                                                }
+                                            }
+                                        }
+                                        &:hover, &:focus, &.active {
+                                            &::before {
+                                                width: 100%;
+                                            }
+                                            &::after {
+                                                opacity: 1;
+                                                margin-right: 10px;
+                                                @media (max-width: 1200px) {
+                                                    margin-right: 5px;
+                                                }
+                                            }
+                                        }
+                                        &.active {
+                                            @media (max-width: 1200px) {
+                                                &::after {
+                                                    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16797 10H15.8346" stroke="rgb(0 0 0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
+                                                }
+                                            }
+                                        }
                                     }
                                     .tab-menu {
                                         @include flex-direction(column);
                                         gap: 10px;
                                         padding: 24px 20px 24px 0;
                                         border-right: 1px solid #D4D6E5;
-                                        .nav-link {
-                                            @include flexbox;
-                                            @include align-items(center);
-                                            font-size: 14px;
-                                            font-weight: 500;
-                                            @include border-radius(6px);
-                                            @include transition(0.1s, ease-in-out);
-                                            text-transform: uppercase;
-                                            color: $black;
-                                            position: relative;
-                                            padding: 0;
-                                            &::before  {
-                                                content: '';
-                                                width: 0;
-                                                height: 100%;
-                                                @include border-radius(0.5rem);
-                                                background: #F7F6FD;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 0;
-                                                @include transition(0.1s, ease-in-out);
-                                                z-index: -1;
-                                            }
-                                            &::after {
-                                                content: '';
-                                                width: 14px;
-                                                height: 9px;
-                                                display: inline-block;
-                                                background: url('data:image/svg+xml,<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.09567 0.134701L8.81048 0.384146C8.66788 0.553769 8.66788 0.803215 8.81048 0.972838L11.8254 3.88636H0.427792C0.183339 3.88636 0 4.0959 0 4.30543V4.66463C0 4.9041 0.183339 5.0837 0.427792 5.0837H11.8254L8.81048 8.02716C8.66788 8.20676 8.66788 8.44623 8.81048 8.62583L9.09567 8.8653C9.23827 9.0449 9.53365 9.0449 9.7068 8.8653L13.8625 4.80432C14.0458 4.62472 14.0458 4.37528 13.8625 4.20565L9.7068 0.134701C9.53365 -0.0449002 9.23827 -0.0449002 9.09567 0.134701Z" fill="rgb(42 57 109)"></path></svg>') no-repeat center;
-                                                background-size: contain;
-                                                opacity: 0;
-                                                margin-left: auto;
-                                                margin-right: 20px;
-                                                z-index: 1;
-                                                @include transition(0.1s, ease-in-out);
-                                            }
-                                            .icon {
-                                                margin-right: 10px;
-                                                padding: 10px;
-                                                background-color: #F7F6FD;
-                                                @include border-radius(6px);
-                                            }
-                                            &:hover, &:focus, &.active {
-                                                &::before {
-                                                    width: 100%;
-                                                }
-                                                &::after {
-                                                    opacity: 1;
-                                                    margin-right: 10px;
-                                                }
-                                            }
-                                        }
                                     }
                                     .tab-content {
                                         padding: 24px 0px 24px 40px;
+                                        @media (max-width: 1200px) {
+                                            padding: 0 8px;
+                                        }
                                         .menu-block {
                                             @include flexbox;
                                             @include align-items(flex-start);
                                             gap: 30px;
+                                            @media (max-width: 1200px) {
+                                                @include flex-direction(column);
+                                                gap: 20px;
+                                            }
                                             .menu-list {
                                                 column-count: 2;
                                                 column-gap: 30px;
@@ -387,6 +414,19 @@
                                         position: absolute;
                                         top: 0;left: -50vw;
                                     }
+                                }
+                            }
+                        }
+                        &.is-open {
+                            @media (min-width: 1200px) {     
+                                &::after {
+                                    opacity: 1;
+                                }                   
+                                .sub-menu {
+                                    opacity: 1;
+                                    pointer-events: auto;
+                                    visibility: visible;
+                                    @include transform(rotateX(0deg) translate3d(0, 0, 0));
                                 }
                             }
                         }
@@ -782,5 +822,21 @@
             width: 100%;
             background: $white;
         }
+    }
+}
+.bg-overlay {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 145px;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &.is-visible {
+        opacity: 1;
     }
 }

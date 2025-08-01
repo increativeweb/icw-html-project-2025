@@ -387,7 +387,7 @@ img {
 }
 
 .btn-link {
-	color: $primary;
+	color: $yellow;
 	font-weight: 500;
 	position: relative;
 	z-index: 3;
@@ -398,38 +398,13 @@ img {
 	@include transition(0.3s, ease-in-out);
     text-underline-offset: 4px;
     overflow: hidden;
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        @include inline-flex;
-        @include justify-content(flex-end);
-        @include align-items(flex-start);
-        background-color: $primary;
-        width: 100%;
-        height: 1.44px;
-        margin-left: -110%;
-        @include transition(0.3s, ease-in-out);
-        @include transform(translate3d(0%, 0px, 0px));
-        transform-style: preserve-3d;
-        will-change: transform;
-    }
 	&:hover, &:focus, &:active, &:focus-visible {
 		color: $primary;
 		box-shadow: none !important;
 		text-decoration: none;
-        &::before {            
-            @include transform(translate3d(150%, 0px, 0px));
-            transform-style: preserve-3d
-        }
 	}
 	&:hover,&:focus{
 		color: $primary;
-        &::before {            
-            @include transform(translate3d(150%, 0px, 0px));
-            transform-style: preserve-3d;
-        }
 	}
 	&.text-white {
 		color: $white !important;
@@ -1005,21 +980,19 @@ h5, .h5 {
 
 // Breadcrumb
 .breadcrumb-nav {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     opacity: 1;
     .breadcrumb {
         .breadcrumb-item {
             font-size: 12px;
-            color: #656565;
             font-weight: 500;
+            color: $black;
             a {
                 text-decoration: none;
-                color: $black;
+                color: #656565;
                 @include transition(0.3s, ease-in-out);
                 &:hover, &:focus {
                     color: $primary;
-                    font-weight: 700;
-                    text-decoration: underline;
                 }
             }
         }
@@ -1028,6 +1001,7 @@ h5, .h5 {
                 content: url('data:image/svg+xml,<svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7.5L4 4.5L1 1.5" stroke="rgb(101 101 101)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
                 background-size: contain;
                 background-repeat: no-repeat;
+                margin-top: 1px;
             }
         }
     }
