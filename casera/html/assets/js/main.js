@@ -27,6 +27,11 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('is-active');
         $(this).parent().find('.sub-menu').first().toggle(300);
     });
+    $('.menu-sidebar').on('click',function(){
+        $(".main-header").toggleClass('is-visible');
+        $(".bg-overlay").toggleClass('is-visible');
+        $(this).toggleClass('is-visible');
+    });
     if ($('.tab-block').length) {
         $('.nav-tabs .tab-link').on('click', function(){
             var tab_id = $(this).attr('data-tab');
