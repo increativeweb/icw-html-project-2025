@@ -1,0 +1,79 @@
+.post-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+    @media (max-width: 992px) {
+        gap: 20px;
+    }
+    .card-img {
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 240px;
+        img {
+            aspect-ratio: 4 / 3;
+            max-height: 150px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .card-body {
+        .post-category {
+            font-size: 14px;
+            color: #656565;
+            margin-bottom: 10px;
+            @media (max-width: 992px) {
+                margin-bottom: 5px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+            color: #001530;
+            @media (max-width: 992px) {
+                font-size: 18px;
+            }
+            a {
+                color: #001530;
+                text-decoration: none;
+                transition: all 0.3s, background-size 0.8s;
+                background-image: linear-gradient(to right, #000000 0%, #000000 100%);
+                background-position: 1px 100%;
+                background-repeat: no-repeat;
+                background-size: 0 1px;
+            }
+        }
+        .post-meta {
+            font-size: 14px;
+            color: #656565;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            .dot {
+                width: 6px;
+                aspect-ratio: 1 / 1;
+                display: inline-block;
+                background-color: #D9D9D9;
+                border-radius: 50%;
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-img {
+            img {
+                transform: scale(1.05);
+            }
+        }
+        .card-body {
+            h3 {
+                a {
+                    color: #000000;
+                    text-decoration-color: #16336B !important;
+                    background-size: 100% 1px;
+                }
+            }
+        }
+    }
+}

@@ -32,15 +32,6 @@ jQuery(document).ready(function($) {
         $(".bg-overlay").toggleClass('is-visible');
         $(this).toggleClass('is-visible');
     });
-    if ($('.tab-block').length) {
-        $('.nav-tabs .tab-link').on('click', function(){
-            var tab_id = $(this).attr('data-tab');
-            $('.nav-tabs .tab-link').removeClass('active');
-            $('.tab-pane').hide();
-            $(this).addClass('active');
-            $('#'+tab_id).fadeIn();
-        });
-    }
 
     if ($(".icw-progress-goto").length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');
@@ -87,5 +78,16 @@ if ($('.splide:not(.splide-js)').length) {
     $('.splide:not(.splide-js)').each(function() {
         new Splide(this).mount();
         $(this).addClass('icw_splide-with-data'); // Mark as initialized
+    });
+}
+
+ const $logoBlock = $('.site-logo-block');
+if ($logoBlock.length) {
+    $(window).on('scroll', function() {
+        const logoBlockTop = $logoBlock.offset().top;
+        const windowBottom = $(window).scrollTop() + $(window).height();
+
+        // Toggle class based on footer visibility
+        $logoBlock.toggleClass('is-animate', windowBottom >= logoBlockTop);
     });
 }

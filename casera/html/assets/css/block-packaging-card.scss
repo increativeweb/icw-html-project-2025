@@ -1,0 +1,67 @@
+.packaging-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .card-img {
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+            aspect-ratio: 4 / 3;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease-in-out;      
+            max-height: 200px;
+        }
+    }
+    .card-body {
+         h3 {
+            font-size: 22px;
+            color: #001530;
+            margin-bottom: 15px;
+            @media (max-width: 992px) {
+                font-size: 20px;
+            }
+        }
+        .card-info {
+            ul {
+                li {
+                    font-size: 16px;
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 5px;
+                    color: rgba(#000000, 0.9);
+                    &::before {
+                        content: '';
+                        background: url('data:image/svg+xml; utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.25L6.25 11.5L12.75 5" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                        background-size: contain !important;
+                        width: 16px;
+                        height: 16px;
+                        flex: none;
+                        display: inline-block;
+                        margin-top: 4px;
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-img {
+            img {
+                transform: scale(1.05);
+            }
+        }
+        .card-body {
+            h3 {
+                a {
+                    color: #000000;
+                    text-decoration-color: #16336B !important;
+                    background-size: 100% 1px;
+                }
+            }
+        }
+    }
+}

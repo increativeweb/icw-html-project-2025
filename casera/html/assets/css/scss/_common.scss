@@ -110,6 +110,10 @@ body ::selection {
     --bs-gutter-y: 1.5rem;
     --bs-gutter-x: 1.5rem;
 }
+.g-30 {
+    --bs-gutter-y: 30px;
+    --bs-gutter-x: 30px;
+}
 
 .g-35 {   
     @media (min-width: 992px) {
@@ -224,7 +228,7 @@ img {
     background-color: $gray !important;
 }
 .bg-custom {
-    background: var(--header-bg, none);
+    background: var(--section-bg, none);
     background-repeat: no-repeat !important;
     background-position: top center !important;
     background-size: cover !important;
@@ -252,37 +256,33 @@ img {
 	@include align-items(center);
 	@include justify-content(center);	
 	@include border-radius(30px);
-    text-decoration: none;
+    text-decoration: none !important;
     gap: 8px;
 	@media (max-width:767px) {
 		font-size: 14px;
 		padding: 5px 15px;
 		min-height: 40px;
 	}
-	span.icons {
-        margin-bottom: 0 !important;        
-        .icon  {
-            display: inline-block; 
-            background-size: contain !important;
-            width: 12px; 
-            height: 12px; 
-            flex: none;
-            &.icon-up {
-                background: url(../images/icons/icon-up.svg) no-repeat center center;
-            }
-        }
-	}
     &.btn-icon-animation {
-        span.icons { 
+        .icons { 
             display: flex !important;
             @include flex-direction(column);
             line-height: 1; 
             overflow: hidden;   
             height: 12px;
+             margin-bottom: 0 !important; 
             .icon {
+                display: inline-block; 
+                background-size: contain !important;
+                width: 12px; 
+                height: 12px; 
+                flex: none;
                 @include transition(0.3s, ease-in-out);
                 &:last-child {
                     margin-left: -12px;
+                }
+                &.icon-up {
+                    background: url(../images/icons/icon-up.svg) no-repeat center center;
                 }
             }        
         }
@@ -301,6 +301,22 @@ img {
         &:hover, &:focus, &:active {
             background: $black;
             border-color: $black;
+        }
+    }
+    &.btn-white {
+        background: $white;
+        border-color: $white;
+        color: $primary;
+        .icons {
+            .icon {
+                &.icon-up {
+                    background: url(../images/icons/icon-up-blue.svg) no-repeat center center;
+                }
+            }
+        }
+        &:hover, &:focus, &:active {
+            background: rgba($white, 0.9);
+            border-color: rgba($white, 0.7);
         }
     }
     &.btn-sm {
@@ -418,6 +434,7 @@ img {
 // Heading CSS
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     line-height: 1.2;
+    font-family: $font-frank;
 }
 h1, .h1 {
     font-size: 66px;
@@ -430,13 +447,13 @@ h1, .h1 {
     }
 }
 h2, .h2 {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 44px;
+    font-weight: 400;
     @media (max-width: 992px) { 
         font-size: 36px;
     }
     @media (max-width: 767px) { 
-        font-size: 24px;
+        font-size: 28px;
     }
     &.font-sm {
         font-size: 30px;
@@ -446,8 +463,8 @@ h2, .h2 {
     }
 }
 h3, .h3 {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
     @media (max-width: 992px) { 
         font-size: 22px;
     }
@@ -720,4 +737,22 @@ h5, .h5 {
 		-webkit-transition: all 200ms linear;
 		transition: all 200ms linear;
 	}
+}
+
+// Icon
+.icw-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex: none;
+    background-size: contain !important;
+    &.icw-icon-phone {
+        background: url('data:image/svg+xml; utf8,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.23 9.62889C12.2733 9.62889 11.3478 9.47333 10.4844 9.19333C10.2122 9.1 9.90889 9.17 9.69889 9.38L8.47778 10.9122C6.27667 9.86222 4.21556 7.87889 3.11889 5.6L4.63556 4.30889C4.84556 4.09111 4.90778 3.78778 4.82222 3.51556C4.53444 2.65222 4.38667 1.72667 4.38667 0.77C4.38667 0.35 4.03667 0 3.61667 0H0.925556C0.505556 0 0 0.186667 0 0.77C0 7.99556 6.01222 14 13.23 14C13.7822 14 14 13.51 14 13.0822V10.3989C14 9.97889 13.65 9.62889 13.23 9.62889Z" fill="white"/></svg>') no-repeat center center;
+    }
+    &.icw-icon-email {
+        background: url('data:image/svg+xml; utf8,<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.7 0H13.3C13.6866 0 14 0.273607 14 0.611111V10.3889C14 10.7264 13.6866 11 13.3 11H0.7C0.313404 11 0 10.7264 0 10.3889V0.611111C0 0.273607 0.313404 0 0.7 0ZM7.04242 5.30622L3.00556 2.314C2.74645 2.12194 2.38522 2.15117 2.16035 2.38239C1.8886 2.66181 1.92541 3.11669 2.23855 3.3488L7.05117 6.91601L11.7696 3.35118C12.081 3.11586 12.1136 2.65994 11.8388 2.3827C11.6115 2.15343 11.2497 2.12756 10.9921 2.32217L7.04242 5.30622Z" fill="white"/></svg>') no-repeat center center;
+    }
+    &.icw-icon-location {
+        background: url('data:image/svg+xml; utf8,<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.3327 6.66659C11.3327 9.99525 7.64002 13.4619 6.40002 14.5326C6.2845 14.6194 6.14388 14.6664 5.99935 14.6664C5.85482 14.6664 5.7142 14.6194 5.59868 14.5326C4.35868 13.4619 0.666016 9.99525 0.666016 6.66659C0.666016 5.2521 1.22792 3.89554 2.22811 2.89535C3.22831 1.89516 4.58486 1.33325 5.99935 1.33325C7.41384 1.33325 8.77039 1.89516 9.77059 2.89535C10.7708 3.89554 11.3327 5.2521 11.3327 6.66659Z" fill="white" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 8.66699C7.10457 8.66699 8 7.77156 8 6.66699C8 5.56242 7.10457 4.66699 6 4.66699C4.89543 4.66699 4 5.56242 4 6.66699C4 7.77156 4.89543 8.66699 6 8.66699Z" stroke="rgb(0, 21, 48)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+    }
 }
