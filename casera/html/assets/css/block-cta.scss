@@ -39,4 +39,25 @@
             color: #ffffff;
         }
     }
+    &.only-bg {
+        background: #001530;
+        padding: 50px;
+        &::after {
+            top: 6px;
+            left: auto;
+            right: 200px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            h2 {
+                margin: 0;
+            }
+            .action {
+                margin: 0;
+                margin-left: auto;
+            }
+        }
+    }
 }

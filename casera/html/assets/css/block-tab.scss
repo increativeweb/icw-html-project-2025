@@ -1,0 +1,56 @@
+.tab-block {
+    .nav-tabs {
+        max-width: max-content;
+        border: 1px solid #001530;
+        padding: 10px;
+        border-radius: 55px;
+        margin: 0 auto 80px;
+        gap: 5px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: auto;
+        @media (max-width: 992px) {
+            margin: 0 auto 50px;
+            padding: 5px;
+        }
+        @media (max-width: 767px) {
+            margin: 0 auto 30px;
+        }
+        .nav-link {
+            border-radius: 55px;
+            border: 1px solid transparent;
+            padding: 0 30px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: #001530;
+            line-height: 1;
+            white-space: nowrap;
+            @media (max-width: 992px) {
+                height: 42px;
+                padding: 0 20px;
+            }
+            .icon {
+                width: 16px;
+                aspect-ratio: 1 / 1;
+                margin-right: 8px;
+                line-height: 0.7;
+            }
+            &:hover, &:focus {
+                background-color: #F6F6F6;
+            }
+            &.active {
+                background-color: #001530;
+                color: #ffffff;
+                .icon {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+    .tab-content {
+        .splide__track {
+            border-radius: 10px;
+        }
+    }
+}

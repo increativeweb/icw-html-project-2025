@@ -12,10 +12,14 @@ jQuery(document).ready(function($) {
 
         $(window).on('scroll', function () {
             let scrollWindow = $(this).scrollTop();
-            if (Math.abs(scrollWindow - last) > delta) {
-                $header.toggleClass('scroll-up', scrollWindow > last && scrollWindow > $headerHeight);
-                $header.toggleClass('scroll-down', scrollWindow <= last || scrollWindow <= $headerHeight);
-                last = scrollWindow;
+            if(scrollWindow > 50) {
+                if (Math.abs(scrollWindow - last) > delta) {
+                    $header.toggleClass('scroll-up', scrollWindow > last && scrollWindow > $headerHeight);
+                    $header.toggleClass('scroll-down', scrollWindow <= last || scrollWindow <= $headerHeight);
+                    last = scrollWindow;
+                }
+            } else {
+                $header.removeClass('scroll-down');
             }
         });
     }
@@ -71,8 +75,24 @@ jQuery(document).ready(function($) {
         });
     }
 
+   
 });
 
+// Sticky Nav in Add Class
+document.addEventListener("DOMContentLoaded", function () {
+    stickyNavScroll();
+});
+
+// Run on resize (in case viewport changes)
+window.addEventListener("resize", () => {
+    // Sticky Nav in Add Class
+    stickyNavScroll;
+});
+
+window.addEventListener("scroll", function () {
+    // Sticky Nav in Add Class
+    stickyNavScroll();
+});
 // Splide Slider
 if ($('.splide:not(.splide-js)').length) {
     $('.splide:not(.splide-js)').each(function() {
@@ -81,7 +101,8 @@ if ($('.splide:not(.splide-js)').length) {
     });
 }
 
- const $logoBlock = $('.site-logo-block');
+// Footer Site Logo Animation
+const $logoBlock = $('.site-logo-block');
 if ($logoBlock.length) {
     $(window).on('scroll', function() {
         const logoBlockTop = $logoBlock.offset().top;
@@ -91,3 +112,17 @@ if ($logoBlock.length) {
         $logoBlock.toggleClass('is-animate', windowBottom >= logoBlockTop);
     });
 }
+
+// Sticky Nav in Add Class
+const sticky_nav = document.querySelector(".sticky-scrollspy-nav");
+function stickyNavScroll() {
+    if (!sticky_nav) return; 
+
+    const navbarTop = sticky_nav.getBoundingClientRect().top; 
+    
+    if (navbarTop <= 90) { 
+        sticky_nav.classList.add("is-sticky");
+    } else {
+        sticky_nav.classList.remove("is-sticky");
+    }
+} 

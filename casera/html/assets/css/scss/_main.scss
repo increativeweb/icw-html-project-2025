@@ -1,5 +1,12 @@
 .main-content-wrapper {
     min-height: 100vh;
+    padding-top: 85px;
+    @media (max-width: 992px) {
+        padding-top: 75px;
+    }
+    @media (max-width: 767px) {
+        padding-top: 65px;
+    }
 }
 // Main Section CSS
 .main-section {
@@ -102,6 +109,9 @@
         @media (max-width: 992px) { 
             margin: 0 auto 	32px;
         }
+        .action {
+            @include justify-content(center);
+        }
     }
     &.sticky-title {
         position: sticky;
@@ -132,8 +142,10 @@
         }
     }
     .tag-line {
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
         color: $primary;
         margin-bottom: 8px;
     }
@@ -158,14 +170,34 @@
             margin-bottom: 5px;
             display: inline-block;
         }
+        ul {
+            li {
+                font-size: 16px;
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 5px;
+                color: rgba(#000000, 0.9);
+                &::before {
+                    content: '';
+                    background: url('data:image/svg+xml; utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.25L6.25 11.5L12.75 5" stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                    background-size: contain !important;
+                    width: 16px;
+                    height: 16px;
+                    flex: none;
+                    display: inline-block;
+                    margin-top: 4px;
+                    margin-right: 3px;
+                }
+            }
+        }
     }
     .action {
         margin-top: 30px;
+        @include flexbox;
+        @include flex-wrap(wrap);
+        gap: 15px;
         @media (max-width: 767px) { 
-            margin-top: 24px;
-            .btn {
-                // width: 100%;
-            }
+            margin-top: 20px;
         }
     }
 }
@@ -179,7 +211,8 @@
     position: relative;
     padding-bottom: 2px;
     white-space: nowrap;
-     &::before {
+    text-decoration: none !important;
+    &::before {
         content: '';
         position: absolute;
         bottom: 1px;
@@ -217,6 +250,42 @@
         &::before {
             left: 40px;
             width: calc(100% - 40px);
+        }
+    }
+    &.is-dark {
+        color: $black;
+        &::before {
+            background-color: rgba($primary, 0.9);
+        }
+        .icw-icon-contact {
+            border: 1px solid rgba($black, 0.7);
+            background: url(../images/icons/icon-phone-black.svg) no-repeat center center;
+        }
+        small, span {
+            color: $black;
+        }
+    }
+}
+.image-content-block {
+    .splide__track {
+        border-radius: 10px;
+    }
+    .image-block {
+        @media (max-width: 767px) {
+            margin-bottom: 10px;
+        }
+    }
+}
+.image-content-zigzag-section {
+    .image-content-block {
+        &:not(:first-child) {
+            padding-top: 150px;
+            @media (max-width: 992px) {
+                padding-top: 80px;
+            }
+            @media (max-width: 767px) {
+                padding-top: 60px;
+            }
         }
     }
 }

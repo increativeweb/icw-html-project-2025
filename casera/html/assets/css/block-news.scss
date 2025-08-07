@@ -51,12 +51,19 @@
             display: flex;
             align-items: center;
             gap: 7px;
+            @media (max-width: 767px) {
+                font-size: 13px;
+                gap: 5px;
+            }
             .dot {
                 width: 6px;
                 aspect-ratio: 1 / 1;
                 display: inline-block;
                 background-color: #D9D9D9;
                 border-radius: 50%;
+                @media (max-width: 767px) {
+                    width: 5px;
+                }
             }
         }
     }
