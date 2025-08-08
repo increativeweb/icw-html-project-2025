@@ -100,6 +100,40 @@ if ($('.splide:not(.splide-js)').length) {
         $(this).addClass('icw_splide-with-data'); // Mark as initialized
     });
 }
+if ($('.product-slider-block').length) {
+    var main = new Splide( '#main-slider', {
+        type: 'fade',
+        rewind: true,
+        pagination: false,
+        arrows: false,
+    });
+
+    var thumbnails = new Splide( '#thumbnail-slider', { 
+        fixedWidth: 110,
+        fixedHeight: 110,
+        gap: 15,
+        rewind: true,
+        pagination: false,
+        cover: true,
+        isNavigation: true,
+        direction: "ttb",
+        height: "100%",
+        breakpoints: {
+            1200: {
+                gap: 10,
+            },
+            767: {
+                direction: "ltr",
+                gap: 15,
+            }
+        }
+    });
+
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
+}
+
 
 // Footer Site Logo Animation
 const $logoBlock = $('.site-logo-block');
@@ -114,15 +148,15 @@ if ($logoBlock.length) {
 }
 
 // Sticky Nav in Add Class
-const sticky_nav = document.querySelector(".sticky-scrollspy-nav");
+const sticky_nav = document.querySelector('.sticky-scrollspy-nav');
 function stickyNavScroll() {
     if (!sticky_nav) return; 
 
     const navbarTop = sticky_nav.getBoundingClientRect().top; 
     
     if (navbarTop <= 90) { 
-        sticky_nav.classList.add("is-sticky");
+        sticky_nav.classList.add('is-sticky');
     } else {
-        sticky_nav.classList.remove("is-sticky");
+        sticky_nav.classList.remove('is-sticky');
     }
 } 

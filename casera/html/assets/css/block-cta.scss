@@ -42,21 +42,38 @@
     &.only-bg {
         background: #001530;
         padding: 50px;
+        @media (max-width: 992px) {
+            padding: 30px;
+        }
         &::after {
             top: 6px;
             left: auto;
             right: 200px;
+            @media (max-width: 767px) {
+                right: 20px;
+                content: '' !important;
+            }
         }
         .section-title {
             display: flex;
             align-items: center;
             gap: 20px;
+            @media (max-width: 767px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             h2 {
                 margin: 0;
             }
             .action {
                 margin: 0;
                 margin-left: auto;
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                }
+                .btn {
+                    white-space: nowrap;
+                }
             }
         }
     }
