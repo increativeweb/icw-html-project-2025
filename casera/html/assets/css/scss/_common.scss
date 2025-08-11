@@ -917,3 +917,37 @@ h5, .h5 {
         }
     }
 }
+
+.icw-loading {
+    text-align: center;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    &::after {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background-color: #fff;
+        border: 2px solid #96c3f7;
+        border-color: #000 transparent #000 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+        -webkit-animation: lds-dual-ring 1.2s linear infinite
+    }
+}
+@keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}

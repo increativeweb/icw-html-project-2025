@@ -287,6 +287,9 @@
 				margin: 0 15px;
 				padding: 30px;
 				background: $primary;
+				opacity: 0;
+				transition: opacity 0.2s linear, visibility 0.2s linear;
+				visibility: hidden;
 				@media (max-width: 992px) {
 					margin: 0;
 					margin-bottom: 10px;
