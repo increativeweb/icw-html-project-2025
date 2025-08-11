@@ -191,6 +191,26 @@ img {
     }
 }
 
+// Video & Image Background CSS
+.media-bg-block {    
+    pointer-events: none;   
+    position: absolute;
+    top: 0;
+    left: 0;   
+    height: 100%;
+    width: 100%;  
+    background: $black;
+    z-index: -1;
+    img, video {    
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        &::-webkit-media-controls {
+            display: none;
+        }
+    }
+}
+
 .image-block {
     img {
         @include border-radius(10px);
@@ -278,7 +298,7 @@ img {
     color: $darkblack !important;
 }
 
-// Button CSS
+// Button
 .btn {
 	min-height: 48px;
 	padding: 5px 20px;
@@ -741,7 +761,7 @@ h5, .h5 {
         background: url('data:image/svg+xml; utf8,<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.7 0H13.3C13.6866 0 14 0.273607 14 0.611111V10.3889C14 10.7264 13.6866 11 13.3 11H0.7C0.313404 11 0 10.7264 0 10.3889V0.611111C0 0.273607 0.313404 0 0.7 0ZM7.04242 5.30622L3.00556 2.314C2.74645 2.12194 2.38522 2.15117 2.16035 2.38239C1.8886 2.66181 1.92541 3.11669 2.23855 3.3488L7.05117 6.91601L11.7696 3.35118C12.081 3.11586 12.1136 2.65994 11.8388 2.3827C11.6115 2.15343 11.2497 2.12756 10.9921 2.32217L7.04242 5.30622Z" fill="white"/></svg>') no-repeat center center;
     }
     &.icw-icon-location {
-        background: url('data:image/svg+xml; utf8,<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.3327 6.66659C11.3327 9.99525 7.64002 13.4619 6.40002 14.5326C6.2845 14.6194 6.14388 14.6664 5.99935 14.6664C5.85482 14.6664 5.7142 14.6194 5.59868 14.5326C4.35868 13.4619 0.666016 9.99525 0.666016 6.66659C0.666016 5.2521 1.22792 3.89554 2.22811 2.89535C3.22831 1.89516 4.58486 1.33325 5.99935 1.33325C7.41384 1.33325 8.77039 1.89516 9.77059 2.89535C10.7708 3.89554 11.3327 5.2521 11.3327 6.66659Z" fill="white" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 8.66699C7.10457 8.66699 8 7.77156 8 6.66699C8 5.56242 7.10457 4.66699 6 4.66699C4.89543 4.66699 4 5.56242 4 6.66699C4 7.77156 4.89543 8.66699 6 8.66699Z" stroke="rgb(0, 21, 48)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+        background: url('data:image/svg+xml; utf8,<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.3327 6.66659C11.3327 9.99525 7.64002 13.4619 6.40002 14.5326C6.2845 14.6194 6.14388 14.6664 5.99935 14.6664C5.85482 14.6664 5.7142 14.6194 5.59868 14.5326C4.35868 13.4619 0.666016 9.99525 0.666016 6.66659C0.666016 5.2521 1.22792 3.89554 2.22811 2.89535C3.22831 1.89516 4.58486 1.33325 5.99935 1.33325C7.41384 1.33325 8.77039 1.89516 9.77059 2.89535C10.7708 3.89554 11.3327 5.2521 11.3327 6.66659Z" fill="white" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 8.66699C7.10457 8.66699 8 7.77156 8 6.66699C8 5.56242 7.10457 4.66699 6 4.66699C4.89543 4.66699 4 5.56242 4 6.66699C4 7.77156 4.89543 8.66699 6 8.66699Z" stroke="rgb(0, 0, 0)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
     }
 }
 
@@ -824,6 +844,76 @@ h5, .h5 {
         }
         &.icw-icon-twitter {
             background: url('data:image/svg+xml; utf8,<svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.81532 4.85028L9.45296 0H8.59095L5.4324 4.21143L2.90967 0H0L3.81486 6.36843L0 11.4547H0.862051L4.19757 7.00728L6.86175 11.4547H9.77142L5.81511 4.85028H5.81532ZM4.63463 6.42454L4.2481 5.79039L1.17266 0.744368H2.49672L4.97864 4.81667L5.36516 5.45082L8.59136 10.7442H7.2673L4.63463 6.42478V6.42454Z" fill="black"/></svg>') no-repeat center center;
+        }
+    }
+}
+
+// Contact Info
+.contact-info {
+    margin: 25px 0;
+    li {
+        margin-bottom: 5px;
+        a {
+            color: $black;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+            @include inline-flex;
+            @include align-items(flex-start); 
+            word-break: auto-phrase;
+            strong {
+                color: $black;
+                margin-bottom: 3px;
+                display: block;
+                font-size: 20px;
+                @media (max-width: 992px) {
+                    font-size: 18px;
+                }
+            }
+            .icw-icon {
+                margin-right: 10px;
+                margin-top: 4px;
+                filter: invert(1);
+            }
+            &.with-icon {
+                margin-bottom: 5px;
+                .icw-icon {
+                    width: 16px;
+                    height: 16px;
+                    margin-top: 5px;
+                }
+                @media (max-width: 992px) {
+                    .icw-icon {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 1px;
+                right: 0;
+                display: inline-block;
+                background-color: $black;
+                width: 0;
+                height: 1px;
+                transition: width 0.1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                will-change: transform;
+            }
+            &:hover, &:focus {
+                &::before {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+                &.with-icon {
+                    &::before {
+                        left: 24px;
+                        width: calc(100% - 24px);
+                    }
+                }
+            }
         }
     }
 }

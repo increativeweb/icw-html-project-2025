@@ -12,6 +12,7 @@
 .main-section {
     padding-top: 150px;
     padding-bottom: 150px;
+    position: relative;
     @media (max-width: 1200px) { 
         padding-top: 100px;
         padding-bottom: 100px;
@@ -60,6 +61,45 @@
 		.section-title {
 			*:not(a) {
 				color: var(--gs-text, #fff);
+			}
+		}
+    }
+    &.bg-video-section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        @media (max-width: 767px) { 
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba($primary, 0.7);
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .container > * {
+            z-index: 2;
+            position: relative;
+        }
+        .section-title {
+			*:not(a, a > *) {
+				color: #fff;
+			}
+			a:not(.btn) {
+				color: $primary;
+				&:hover, &:focus {
+					color: $black;
+				}
+			}
+            h1, h2, h3 {
+                color: $white;
+            }
+			.sort-info {
+				color: $white !important;
 			}
 		}
     }
@@ -244,6 +284,7 @@
         margin-bottom: 2px;
     }
     &:hover, &:focus, &:active {
+        color: rgba($white, 1);
         .icw-icon-contact {
             background: url(../images/icons/icon-flag.svg) no-repeat center center;
         }

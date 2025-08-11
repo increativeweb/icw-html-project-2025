@@ -112,7 +112,7 @@
                     padding-bottom: 2px;
                     @include inline-flex;
                     @include align-items(flex-start); 
-                    min-width: 120px;
+                    word-break: auto-phrase;
                     @media (max-width: 992px) {
                         font-size: 14px;
                     }
