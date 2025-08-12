@@ -323,7 +323,7 @@ img {
             line-height: 1; 
             overflow: hidden;   
             height: 12px;
-             margin-bottom: 0 !important; 
+            margin-bottom: 0 !important; 
             .icon {
                 display: inline-block; 
                 background-size: contain !important;
@@ -552,9 +552,17 @@ h5, .h5 {
     }
     &--prev {
         background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.9551 9H1.04518M1.04518 9L7.01139 14.9662M1.04518 9L7.01139 3.03379" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        left: -20px;
+        @media (min-width: 1200px) {
+            left: -50px;
+        }
     }
     &--next {
         background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.04492 9H16.9548M16.9548 9L10.9886 3.03379M16.9548 9L10.9886 14.9662" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'); 
+        right: -20px;
+        @media (min-width: 1200px) {
+            right: -50px;
+        }
     }
     &:hover, &:focus {        
         background-color: $primary !important;
@@ -770,10 +778,8 @@ h5, .h5 {
     margin-top: 30px;
     margin-bottom: 0px;
     opacity: 1;
-    @media (max-width: 992px) {
-        margin-bottom: 40px;
-    }
     .breadcrumb {
+        margin-bottom: 0;
         .breadcrumb-item {
             font-size: 12px;
             font-weight: 500;
@@ -949,5 +955,25 @@ h5, .h5 {
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg)
+    }
+}
+
+.modal {
+    .modal-dialog {
+        max-width: 600px;
+    }
+    .modal-header {
+        border: none;
+        padding: 20px;
+        .modal-title{
+            font-size: 32px;
+            color: $black;
+        }
+    }
+    .modal-body {
+        padding: 0 20px 20px;
+        .form-content-block {
+            padding: 0px;
+        }
     }
 }

@@ -35,6 +35,7 @@ jQuery(document).ready(function($) {
         $(".main-header").toggleClass('is-visible');
         $(".bg-overlay").toggleClass('is-visible');
         $(this).toggleClass('is-visible');
+        $(body).toggleClass('overflow-hidden')
     });
 
     if ($(".icw-progress-goto").length > 0) {

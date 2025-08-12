@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name='robots' content='noindex, nofollow' />
         <link rel="preconnect" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
         <link href="//fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         <link rel='stylesheet' href='assets/css/glightbox.css' type='text/css' media='all' />
         <link rel='stylesheet' href='assets/css/splide.css' type='text/css' media='all' />
         <link rel='stylesheet' href='assets/css/main.css' type='text/css' media='all' />
+        <link rel="stylesheet" id="fluent-form-styles-css" href="//eleanoraluminium.com/wp-content/cache/wpfc-minified/5jhe09l/hww3l.css" type="text/css" media="all">
 
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/splide.min.js"></script>
@@ -204,7 +206,7 @@
                         <div class="action-btn d-block d-lg-none"><a href="#" class="btn btn-primary btn-sm btn-icon-animation">Enquire Now<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a></div>
                     </div>
                     <div class="action-btn d-none d-sm-block">
-                        <a href="#" class="btn btn-primary btn-sm btn-icon-animation">Enquire Now<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
+                        <a href="#" class="btn btn-primary btn-sm btn-icon-animation" data-bs-toggle="modal" data-bs-target="#enquireModal">Enquire Now<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
                     </div>
                     <button type="button" class="menu-sidebar"><span></span><span></span><span></span></button>
                 </div>
@@ -265,7 +267,17 @@
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-pet-sheets" role="tabpanel" aria-labelledby="nav-pet-sheets-tab" tabindex="0">
                                 <div class="image-content-block">
-                                    <div class="row g-35 flex-md-row-reverse">
+                                    <div class="row g-35 align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="section-title mb-0">
+                                                <div class="tag-line">PET Sheets</div>
+                                                <h2>Complete Packaging Partner for Rigid Films & Thermoforming</h2>
+                                                <div class="sort-info">Donec nunc nunc vitae vestibulum. Pulvinar turpis sed praesent diam semper nisi ligula. Et imperdiet varius parturient at. Pretium facilisis integer faucibus euismod. Arcu rhoncus vestibulum fermentum lacus.</div>
+                                                <div class="action">
+                                                    <a href="#" class="btn btn-primary btn-icon-animation">View More<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="splide product-splide" data-splide='{"type": "slide","perPage": 1,"perMove": 1,"pagination": true,"arrows": false,"pauseOnHover": true,"gap": 0}'>
                                                 <div class="splide__track">
@@ -279,22 +291,29 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="section-title mb-0">
-                                                <div class="tag-line">PET Sheets</div>
-                                                <h2>Complete Packaging Partner for Rigid Films & Thermoforming</h2>
-                                                <div class="sort-info">Donec nunc nunc vitae vestibulum. Pulvinar turpis sed praesent diam semper nisi ligula. Et imperdiet varius parturient at. Pretium facilisis integer faucibus euismod. Arcu rhoncus vestibulum fermentum lacus.</div>
-                                                <div class="action">
-                                                    <a href="#" class="btn btn-primary btn-icon-animation">View More<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-pvc-films" role="tabpanel" aria-labelledby="nav-pvc-films-tab" tabindex="0">
                                 <div class="image-content-block">
-                                    <div class="row g-35 flex-md-row-reverse">
+                                    <div class="row g-35 align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="section-title mb-0">
+                                                <div class="tag-line">PVC Films</div>
+                                                <h2>High-Performance PVC Films for Every Application</h2>
+                                                <div class="sort-info">
+                                                    <ul>
+                                                        <li>PET & PVC Rigid Films</li>
+                                                        <li>Custom Thermoforming Packaging</li>
+                                                        <li>High Clarity & Impact Resistance</li>
+                                                        <li>Food-Grade & Safe Materials</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="action">
+                                                    <a href="#" class="btn btn-primary btn-icon-animation">View More<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="splide products-splide" data-splide='{"type": "slide","perPage": 1,"perMove": 1,"pagination": true,"arrows": false,"pauseOnHover": true,"gap": 0}'>
                                                 <div class="splide__track">
@@ -318,34 +337,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="section-title mb-0">
-                                                <div class="tag-line">PVC Films</div>
-                                                <h2>High-Performance PVC Films for Every Application</h2>
-                                                <div class="sort-info">
-                                                    <ul>
-                                                        <li>PET & PVC Rigid Films</li>
-                                                        <li>Custom Thermoforming Packaging</li>
-                                                        <li>High Clarity & Impact Resistance</li>
-                                                        <li>Food-Grade & Safe Materials</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="action">
-                                                    <a href="#" class="btn btn-primary btn-icon-animation">View More<span class="icons"><em class="icon icon-up"></em><em class="icon icon-up"></em></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-thermoforming" role="tabpanel" aria-labelledby="nav-thermoforming-tab" tabindex="0">
                                 <div class="image-content-block">
-                                    <div class="row g-35 flex-md-row-reverse">
-                                        <div class="col-md-6">
-                                            <div class="image-block">
-                                                <img src="uploads/img-thermoforming.jpg" alt="Custom Thermoforming for Precision Packaging">
-                                            </div>
-                                        </div>
+                                    <div class="row g-35 align-items-center">
                                         <div class="col-md-6">
                                             <div class="section-title mb-0">
                                                 <div class="tag-line">Thermoforming</div>
@@ -356,6 +353,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <div class="image-block">
+                                                <img src="uploads/img-thermoforming.jpg" alt="Custom Thermoforming for Precision Packaging">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +366,7 @@
                 </div>
             </section>
             <link rel='stylesheet' href='assets/css/block-hover-animate-card.css' type='text/css' media='all' />
-            <section class="main-section pt-md-0 with-bg-vector">
+            <section class="main-section pt-0 with-bg-vector">
                 <div class="container">
                     <div class="row g-30">
                         <div class="col-lg-6">
@@ -443,7 +445,7 @@
                 </div>
             </section>
             <link rel='stylesheet' href='assets/css/block-image-grid.css' type='text/css' media='all' />
-            <section class="main-section image-grid-section pt-md-0">
+            <section class="main-section image-grid-section pt-0">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-4">
@@ -474,92 +476,129 @@
                     </div>
                 </div>
             </section>
-            <link rel='stylesheet' href='assets/css/block-packaging-card.css' type='text/css' media='all' />
-            <section class="main-section section-title-mw-700 pt-md-0">
+            <link rel='stylesheet' href='assets/css/block-info-card.css' type='text/css' media='all' />
+            <section class="main-section section-title-mw-700 pt-0">
                 <div class="container">
                     <div class="section-title text-center">
                         <h2>Industry-Wide Packaging Expertise</h2>
                         <div class="sort-info">Donec nunc nunc vitae vestibulum. Pulvinar turpis sed praesent diam <br>semper nisi ligula. Et imperdiet varius parturient at. </div>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-30">
-                        <div class="col">
-                            <div class="packaging-card">
-                                <div class="card-img">
-                                    <img src="uploads/img-packaging-1.jpg" alt="Fresh Produce Packaging">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Fresh Produce Packaging</h3>
-                                    <div class="card-info">
-                                        <ul>
-                                            <li>Maintains Freshness & Shelf Life</li>
-                                            <li>Food-Safe & Hygienic Materials</li>
-                                            <li>Custom Ventilation Options</li>
-                                        </ul>
+                    <div class="splide product-splide" data-splide='{"type": "loop","perPage": 4,"perMove": 1,"pagination": true,"arrows": false,"gap": 30,"breakpoints": {"1200": {"perPage": 3},"992": {"perPage": 2},"767": {"perPage": 1, "autoWidth": true}}}'>
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-1.jpg" alt="Fresh Produce Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Fresh Produce Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                    <li>Custom Ventilation Options</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="packaging-card">
-                                <div class="card-img">
-                                    <img src="uploads/img-packaging-2.jpg" alt="Food Packaging">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Food Packaging</h3>
-                                    <div class="card-info">
-                                        <ul>
-                                            <li>Maintains Freshness & Shelf Life</li>
-                                            <li>Food-Safe & Hygienic Materials</li>
-                                            <li>Custom Ventilation Options</li>
-                                        </ul>
+                                </li>
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-2.jpg" alt="Food Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Food Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                    <li>Custom Ventilation Options</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="packaging-card">
-                                <div class="card-img">
-                                    <img src="uploads/img-packaging-3.jpg" alt="Consumer Packaging">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Consumer Packaging</h3>
-                                    <div class="card-info">
-                                        <ul>
-                                            <li>Maintains Freshness & Shelf Life</li>
-                                            <li>Food-Safe & Hygienic Materials</li>
-                                        </ul>
+                                </li>
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-3.jpg" alt="Consumer Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Consumer Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="packaging-card">
-                                <div class="card-img">
-                                    <img src="uploads/img-packaging-4.jpg" alt="Pharma & Medical Devices Packaging">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Pharma & Medical Devices Packaging</h3>
-                                    <div class="card-info">
-                                        <ul>
-                                            <li>Maintains Freshness & Shelf Life</li>
-                                            <li>Food-Safe & Hygienic Materials</li>
-                                            <li>Custom Ventilation Options</li>
-                                        </ul>
+                                </li>
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-4.jpg" alt="Pharma & Medical Devices Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Pharma & Medical Devices Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                    <li>Custom Ventilation Options</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-2.jpg" alt="Print & Graphics Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Print & Graphics Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                    <li>Custom Ventilation Options</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">  
+                                    <div class="info-card">
+                                        <div class="card-img">
+                                            <img src="uploads/img-packaging-3.jpg" alt="Electronics Packaging">
+                                        </div>
+                                        <div class="card-body">
+                                            <h3 class="card-title"><a href="#" class="stretched-link">Electronics Packaging</a></h3>
+                                            <div class="card-info">
+                                                <ul>
+                                                    <li>Maintains Freshness & Shelf Life</li>
+                                                    <li>Food-Safe & Hygienic Materials</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>  
                         </div>
                     </div>
                 </div>
             </section>
             <link rel='stylesheet' href='assets/css/block-news.css' type='text/css' media='all' />
-            <section class="main-section section-title-mw-560 pt-md-0">
+            <section class="main-section section-title-mw-560 pt-0">
                 <div class="container">
                     <div class="section-title">
                         <h2>Our Recent News</h2>
                         <div class="sort-info">Donec nunc nunc vitae vestibulum. Pulvinar turpis sed praesent diam semper nisi ligula. Et imperdiet varius parturient at.</div>
                     </div>
-                    <div class="row row-cols-1 row-cols-lg-2 g-30">
+                    <div class="row row-cols-1 row-cols-md-2 g-30">
                         <div class="col">
                             <div class="post-card">
                                 <div class="card-img">
@@ -620,7 +659,7 @@
                 </div>
             </section>
             <link rel='stylesheet' href='assets/css/block-cta.css' type='text/css' media='all' />
-            <section class="main-section section-title-mw-500 pt-md-0">
+            <section class="main-section section-title-mw-500 pt-0">
                 <div class="container">
                     <div class="cta-block">
                         <div class="section-title">
@@ -703,6 +742,136 @@
                 <img src="assets/images/footer-logo-icon.svg" alt="Casera Plast">  
             </div>
         </footer>
+        <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="enquireModalLabel">Enquire Now</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-content-block">
+                            <p>We’re here to help and answer your questions.</p>
+                            <div class="icw-form-block">
+                                <div class="fluentform ff-default fluentform_wrapper_1 ffs_default_wrap">
+                                    <form class="frm-fluent-form">
+                                        <fieldset style="border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;">
+                                            <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">Enquire Now</legend>
+                                            <div style="display: none!important; position: absolute!important; transform: translateX(1000%)!important;" class="ff-el-group ff-hpsf-container">
+                                                <div class="ff-el-input--label asterisk-right">
+                                                    <label for="ff_1_item_sf" aria-label="Updates"> Updates </label>
+                                                </div>
+                                                <div class="ff-el-input--content">
+                                                    <input type="text" name="item_1__fluent_sf" class="ff-el-form-control" id="ff_1_item_sf">
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="__fluent_form_embded_post_id" value="20"><input type="hidden" id="_fluentform_1_fluentformnonce" name="_fluentform_1_fluentformnonce" value="6f7794b8e3"><input type="hidden" name="_wp_http_referer" value="/contact-us/">
+                                            <div data-type="name-element" data-name="names" class=" ff-field_container ff-name-field-wrapper">
+                                                <div class="ff-t-container">
+                                                    <div class="ff-t-cell ">
+                                                        <div class="ff-el-group">
+                                                            <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                                <label for="ff_1_names_first_name_">First Name</label>
+                                                            </div>
+                                                            <div class="ff-el-input--content"><input type="text" name="names[first_name]" id="ff_1_names_first_name_" class="ff-el-form-control" placeholder="First Name" aria-invalid="false" aria-required="true">
+                                                                <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ff-t-cell ">
+                                                        <div class="ff-el-group">
+                                                            <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                                <label for="ff_1_names_last_name_">Last Name</label>
+                                                            </div>
+                                                            <div class="ff-el-input--content"><input type="text" name="names[last_name]" id="ff_1_names_last_name_" class="ff-el-form-control" placeholder="Last Name" aria-invalid="false" aria-required="true"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="ff_cn_id_1" class="ff-t-container ff-column-container ff_columns_total_2  ">
+                                                <div class="ff-t-cell ff-t-column-1" style="flex-basis: 50%;">
+                                                    <div class="ff-el-group">
+                                                        <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                            <label for="ff_1_designation" aria-label="Designation">Designation</label>
+                                                        </div>
+                                                        <div class="ff-el-input--content"><input type="text" name="designation" class="ff-el-form-control" data-name="designation" id="ff_1_designation" aria-invalid="false" aria-required="true"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="ff-t-cell ff-t-column-2" style="flex-basis: 50%;">
+                                                    <div class="ff-el-group">
+                                                        <div class="ff-el-input--label asterisk-right">
+                                                            <label for="ff_1_company_name">Company’s Name</label>
+                                                        </div>
+                                                        <div class="ff-el-input--content"><input type="text" name="company_name" class="ff-el-form-control" data-name="company_name" id="ff_1_company_name" aria-invalid="false" aria-required="false"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="ff_cn_id_2" class="ff-t-container ff-column-container ff_columns_total_2  ">
+                                                <div class="ff-t-cell ff-t-column-1" style="flex-basis: 50%;">
+                                                    <div class="ff-el-group">
+                                                        <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                            <label for="ff_1_email" aria-label="Email">Email</label>
+                                                        </div>
+                                                        <div class="ff-el-input--content"><input type="email" name="email" id="ff_1_email" class="ff-el-form-control" placeholder="Email Address" data-name="email" aria-invalid="false" aria-required="true"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="ff-t-cell ff-t-column-2" style="flex-basis: 50%;">
+                                                    <div class="ff-el-group">
+                                                        <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                            <label for="ff_1_phone_no" aria-label="Phone">Phone</label>
+                                                        </div>
+                                                        <div class="ff-el-input--content"><input type="text" name="phone_no" data-mask="(000) 000-0000" class="ff-el-form-control" data-name="phone_no" id="ff_1_phone_no" aria-invalid="false" aria-required="true" autocomplete="off" maxlength="14"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ff-name-address-wrapper fluent-address" data-type="address-element" data-name="address_1">
+                                                <div class="ff-el-input--label"><label aria-label="Address">Address</label></div>
+                                                <div class="ff-el-input--content">
+                                                    <div class="ff-t-container">
+                                                        <div class="ff-t-cell">
+                                                            <div class="ff-el-group">
+                                                                <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                                    <label for="ff_1_address_1_city_" aria-label="City">City</label>
+                                                                </div>
+                                                                <div class="ff-el-input--content"><input type="text" name="address_1[city]" id="ff_1_address_1_city_" class="ff-el-form-control" placeholder="City" data-key_name="city" aria-invalid="false" aria-required="true"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ff-t-cell">
+                                                            <div class="ff-el-group">
+                                                                <div class="ff-el-input--label ff-el-is-required asterisk-right">
+                                                                    <label for="ff_1_address_1_country_" aria-label="Country">Country</label>
+                                                                </div>
+                                                                <div class="ff-el-input--content">
+                                                                    <select name="address_1[country]" id="ff_1_address_1_country_" class="ff-el-form-control" placeholder="Select Country" data-key_name="country" aria-invalid="false" aria-required="true">
+                                                                        <option value="">Select Country</option>
+                                                                        <option value="AF">Afghanistan</option>
+                                                                        <option value="AX">Aland Islands</option>
+                                                                        <option value="BE">Belgium</option>
+                                                                        <option value="BZ">Belize</option>
+                                                                        <option value="BJ">Benin</option>
+                                                                        <option value="KH">Cambodia</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ff-el-group">
+                                                <div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_1_message" aria-label="Your Requirement">Your Requirement</label></div>
+                                                <div class="ff-el-input--content"><textarea aria-invalid="false" aria-required="true" name="message" id="ff_1_message" class="ff-el-form-control" placeholder="Your Requirement" rows="2" cols="2" data-name="message"></textarea></div>
+                                            </div>
+                                            <div class="ff-el-group ff-text-left ff_submit_btn_wrapper"><button type="submit" class="ff-btn ff-btn-submit ff-btn-lg ff_btn_no_style">Submit</button></div>
+                                        </fieldset>
+                                    </form>
+                                    <div id="fluentform_1_errors" class="ff-errors-in-stack ff_form_instance_1_1 ff-form-loading_errors ff_form_instance_1_1_errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/glightbox.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>

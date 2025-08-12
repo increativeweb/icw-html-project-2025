@@ -18,8 +18,8 @@
         padding-bottom: 100px;
     }
     @media (max-width: 767px) { 
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     &.bg-none:not(.bg-custom) {
         background-image:none !important;
@@ -313,7 +313,7 @@
     }
     .image-block {
         @media (max-width: 767px) {
-            margin-bottom: 10px;
+            margin-top: 10px;
         }
     }
 }

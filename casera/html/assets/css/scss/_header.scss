@@ -5,6 +5,11 @@
 	z-index: 10; 
 	@include transition(0.3s, ease-in-out); 
 	background-color: transparent; 
+	@media (max-width:992px) {
+		background: rgba($white, .95);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+	}
 	&.scroll-up {
 		transform: translateY(-100%);
 		transition: transform 0.3s ease;
