@@ -286,7 +286,7 @@
     &:hover, &:focus, &:active {
         color: rgba($white, 1);
         .icw-icon-contact {
-            background: url(../images/icons/icon-flag.svg) no-repeat center center;
+            background: url(../images/icons/icon-flag.svg) no-repeat center center !important;
         }
         &::before {
             left: 40px;
