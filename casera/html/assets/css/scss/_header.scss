@@ -229,6 +229,7 @@
 				@include border-radius(10px);
 				padding: 0 !important;
 				background: $white;
+				opacity: 1;
 			}			
 			li {	
 				border: none;
@@ -300,6 +301,8 @@
 					margin-bottom: 10px;
 					padding: 0 !important;
 					background: $white;
+					opacity: 1;
+					visibility: visible;
 				}
 				.sub-menu-inner {
 					display: grid;

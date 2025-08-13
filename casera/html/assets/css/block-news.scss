@@ -6,6 +6,9 @@
     @media (max-width: 992px) {
         gap: 20px;
     }
+    @media (max-width: 575px) {
+        gap: 15px;
+    }
     .card-img {
         border-radius: 10px;
         overflow: hidden;
@@ -14,6 +17,12 @@
         max-height: 150px;
         @media (max-width: 1200px) {
             max-width: 180px;
+        }
+        @media (max-width: 992px) {
+            max-width: 150px;
+        }
+        @media (max-width: 575px) {
+            max-width: 120px;
         }
         img {
             width: 100%;
