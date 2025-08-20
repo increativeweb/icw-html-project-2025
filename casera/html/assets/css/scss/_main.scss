@@ -264,18 +264,41 @@
         transition: width 0.1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
         will-change: transform;
     }
-    .icw-icon-contact {
+    .icw-icon {
         width: 30px;
         height: 30px;
         flex: none;
         border: 1px solid rgba(#D4D4D8, 0.7);
         @include border-radius(50%);
-        background: url(../images/icons/icon-phone.svg) no-repeat center center;
-        background-size: 12px;
         @include inline-flex;
         @include align-items(center);
         @include justify-content(center);
-        @include transition(0.1s, ease-in-out);
+        position: relative;
+        overflow: hidden;
+        .icw-icon-contact {    
+            width: 14px;
+            height: 14px;   
+            background: url(../images/icons/icon-phone.svg) no-repeat center center;
+            background-size: contain !important;
+            @include transition(0.1s, ease-in-out);
+            position: absolute;
+            transform-origin: center;
+            transition-duration: 0.3s;
+            transition-delay: 0.1s;
+        }
+        .icw-icon-flag {   
+            width: 14px;
+            height: 14px;   
+            background: url(../images/icons/icon-flag.svg) no-repeat center center !important;
+            background-size: contain !important;
+            @include transition(0.1s, ease-in-out);
+            position: absolute;
+            opacity: 0;
+            @include transform(translate(0, 20px));
+            transform-origin: center;
+            transition-duration: 0.3s;
+            transition-delay: 0.1s;
+        }
     }
     small {
         font-weight: 600;
@@ -285,12 +308,19 @@
     }
     &:hover, &:focus, &:active {
         color: rgba($white, 1);
-        .icw-icon-contact {
-            background: url(../images/icons/icon-flag.svg) no-repeat center center !important;
-        }
         &::before {
             left: 40px;
             width: calc(100% - 40px);
+        }
+        .icw-icon {
+            .icw-icon-contact { 
+                opacity: 0;
+                @include transform(translate(0, -20px));
+            }
+            .icw-icon-flag {  
+                opacity: 1;
+                @include transform(translate(0, 0px));
+            }
         }
     }
     &.is-dark {
@@ -298,9 +328,11 @@
         &::before {
             background-color: rgba($primary, 0.9);
         }
-        .icw-icon-contact {
+        .icw-icon {
             border: 1px solid rgba($black, 0.7);
-            background: url(../images/icons/icon-phone-black.svg) no-repeat center center;
+            .icw-icon-contact {    
+                background: url(../images/icons/icon-phone-black.svg) no-repeat center center;
+            }
         }
         small, span {
             color: $black;
