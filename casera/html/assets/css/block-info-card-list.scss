@@ -1,0 +1,91 @@
+// Info List Card
+.info-list-cards {
+    margin: 20px 0 0;
+}
+.info-list-card {	
+	.card-icon {
+		margin-bottom: 15px;
+        img { 
+            vertical-align: baseline; 
+            margin-top: 2px;
+        }
+	}
+	.card-title {
+        font-weight: 600;
+		margin-bottom: 5px;
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+        color: #000000;
+		@media (max-width: 992px) {
+			font-size: 14px;
+		}
+		a {
+			color: #000000;
+            font-weight: 600;
+			position: relative;
+			z-index: 3;
+			text-decoration: none;
+			display: inline-flex;
+            align-items: center;
+			transition: all 0.3s ease-in-out;
+            overflow: hidden;
+			&::before {
+                content: '';
+                position: absolute;
+                bottom: 1px;
+                right: 0;
+                display: inline-block;
+                background-color: #001530;
+                width: 0;
+                height: 1px;
+                transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                will-change: transform;
+            }
+			&:hover, &:focus, &:active {
+				color: #001530;
+			}
+			&:hover,&:focus{
+				color: #001530;
+                &::before {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+			}
+		}
+	}
+    .card-content {
+        .card-info {
+            font-size: 16px;
+            color: rgba(#000000, 0.7);
+        }
+    }
+	&.icon-left-card {
+		display: flex;
+        align-items: flex-start;
+        line-height: 1;
+		.card-icon{
+			margin-right: 5px;
+			margin-bottom: 0;
+			flex: none;
+		}
+	}
+    &.only-card-title {
+        margin-bottom: 3px;
+        .card-content {
+            align-self: center;
+        }
+        .card-title {
+            font-weight: 400;
+            margin: 0px;
+            line-height: normal;
+        }
+        .card-icon {
+            img { 
+                vertical-align:middle;
+                margin-top: -2px;
+                position: relative;
+            }
+        }
+    }
+}

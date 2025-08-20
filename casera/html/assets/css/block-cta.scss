@@ -1,0 +1,87 @@
+.cta-block {    
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &::after {
+        content: '';
+        background-image: url(../images/cta-logo-icon.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        top: 15px;
+        left: 25%;
+        z-index: 2;
+    }
+    @media (max-width: 575px) {        
+        &::after {
+            content: none;
+        }
+    }
+    .media-bg-block {
+        img {
+           object-position: calc(100% + 70px) center
+        }
+    }
+    .cta-inner-content {
+        background-color: #001530;
+        background: linear-gradient(89.99deg, #001530 25.18%, rgba(0, 21, 48, 0) 66.92%);
+        background-repeat: no-repeat;
+        background-position: left, calc(100% + 70px) center;
+        background-size: cover;
+        padding: 70px;
+        @media (max-width: 992px) {
+            padding: 50px;
+        }
+        @media (max-width: 767px) {
+            padding: 30px;
+        }
+    }
+    .section-title {
+        margin-bottom: 0;
+        h2 {
+            color: #ffffff;
+        }
+    }
+    &.only-bg {
+        background: #001530;
+        padding: 50px;
+        @media (max-width: 992px) {
+            padding: 30px;
+        }
+        &::after {
+            top: 6px;
+            left: auto;
+            right: 200px;
+            @media (max-width: 767px) {
+                right: 20px;
+                content: '' !important;
+            }
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @media (max-width: 767px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            h2 {
+                margin: 0;
+            }
+            .action {
+                margin: 0;
+                margin-left: auto;
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                }
+                .btn {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

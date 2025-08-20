@@ -1,0 +1,29 @@
+.image-grid-section {
+    .image-grid-block {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        @media (max-width: 992px) {
+            grid-gap: 15px;
+        }
+        @media (max-width: 767px) {
+            grid-gap: 20px;
+        }
+        .image-item {
+            border-radius: 10px;
+            overflow: hidden;
+            img {
+                aspect-ratio: 1/1;
+                border-radius: 10px;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .section-title {
+        @media (max-width: 767px) {
+            margin: 40px 0 !important;
+        }
+    }
+}
