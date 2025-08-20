@@ -56,6 +56,19 @@
             font-size: 16px;
         }
     }
+    &.is-blue-card {
+        background: #001530;
+        .card-body {
+            h3 {
+                a {
+                    color: #ffffff;
+                }
+            }
+            .card-info {
+                color: #ffffff;
+            }
+        }
+    }
     &.is-hover {
         &:hover, &:focus {
             &::before {
