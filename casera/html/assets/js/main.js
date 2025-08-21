@@ -126,6 +126,7 @@ if ($('.product-slider-block').length) {
             767: {
                 direction: "ltr",
                 gap: 15,
+                parPage: 4
             }
         }
     });
