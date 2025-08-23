@@ -114,6 +114,9 @@ body ::selection {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
 }
+.gx-30 {
+    --bs-gutter-x: 30px;
+}
 
 .g-35 {   
     @media (min-width: 992px) {
