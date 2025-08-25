@@ -436,6 +436,9 @@
         }
         .splide__arrow { 
             top: 158px;
+            @media (max-width: 992px) {
+                top: 132px;
+            }
             &--prev {
                 left: -75px;
                 @media (max-width: 1300px) {
@@ -458,13 +461,16 @@
     @include border-radius(16px);
     overflow: hidden;
     background: #F4F4F5;
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         max-width: 340px;
     }
     @media (max-width: 992px) {
         max-width: 280px;
     }
     .card-img {
+        @media (min-width: 992px) {
+            max-height: 185px;
+        }
         &.ratio {
             overflow: hidden;
         }
