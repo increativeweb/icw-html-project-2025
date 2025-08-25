@@ -1,12 +1,12 @@
 .main-header {
     z-index: 4;
-    .header-top {
+    .header-note {
         text-align: center;
         padding: 15px 0;
         @media (max-width: 992px) {
             padding: 10px 0 60px;
         }
-        .nav-text {
+        .note-text {
             color: $white;
             font-size: 13px;
         }

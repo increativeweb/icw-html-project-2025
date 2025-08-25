@@ -46,11 +46,10 @@
             .sort-info {
                 color: rgba($white, 0.75);
                 font-size: 16px;
-                span {
+                strong {
                     font-size: 20px;
                     font-weight: 500;
                     color: $white;
-                    display: block;
                 }
             }
         }

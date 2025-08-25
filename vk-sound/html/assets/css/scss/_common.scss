@@ -44,7 +44,7 @@ body {
     @media (max-width: 992px) {
         font-size: 16px;
     }    
-    &::before {
+    &:not(.wp-admin):before {
         content: '';
         width: 100%;
         height: 100px;
@@ -204,7 +204,7 @@ img {
     }
 }
 
-.image-block {
+.media-block {
     img {
         @include border-radius(16px);
         width: 100%;
@@ -223,6 +223,9 @@ img {
 }
 
 // Background Color CSS
+.bg-primary {
+    background-color: $primary !important;
+}
 .bg-white {
 	background-color: $white !important;
 }
@@ -232,14 +235,14 @@ img {
         color: $white;
     }
 }
-.is-dark {
-    & > * {
-        color: $white;
-    }
-}
+
 .bg-gray {
+    background-color: $gray !important;
+}
+.bg-lightgray {
     background-color: $lightgray !important;
 }
+
 .bg-custom {
     background: var(--header-bg, none);
     background-repeat: no-repeat !important;
@@ -267,7 +270,7 @@ img {
 	@include justify-content(center);	
 	@include border-radius(35px);
     border: 1px solid transparent;
-	@include transition(0.3s, ease-in-out);
+	@include transition(0.2s, ease-in-out);
 	min-height: 54px;
     min-width: 150px;
 	font-weight: 600;
@@ -278,27 +281,34 @@ img {
     @media (max-width: 767px) {
         min-height: 44px;
     }
+
+    &.btn-md {        
+        min-height: 50px;
+    }
     &.btn-sm {        
         min-height: 44px;
     }
+
 	&.btn-dark {
 		color: $white !important;
         border-color: $dark !important;
 		background-color: $dark !important;
+
         &:hover, &:focus, &:active {
             color: $white !important;
             border-color: rgba($dark, 0.1) !important;
-            background-color: rgba($dark, 0.8) !important;
+            background-color: rgba($dark, 0.7) !important;
         }
 	}
 	&.btn-white {
 		color: $darkText !important;
         border-color: $white !important;
 		background-color: $white !important;
+
         &:hover, &:focus, &:active {
             color: $darkText !important;
             border-color: rgba($white, 0.1) !important;
-            background-color: rgba($white, 0.8) !important;
+            background-color: rgba($white, 0.7) !important;
         }
 	}
 }
@@ -310,9 +320,11 @@ img {
 	z-index: 3;
 	text-decoration: none;
 	padding: 0;
+    border: none;
+    background: transparent;
 	@include inline-flex;
 	@include align-items(center);
-	@include transition(0.3s, ease-in-out);
+	@include transition(0.2s, ease-in-out);
     text-underline-offset: 4px;
     overflow: hidden;
 	&:hover, &:focus{
@@ -357,8 +369,8 @@ h2, .h2 {
     }
 }
 h3, .h3 {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 700;
     @media (max-width: 992px) { 
         font-size: 22px;
     }
@@ -378,6 +390,20 @@ h5, .h5 {
     font-weight: 500;
 }
 
+// .is-show {display: none;}
+
+.is-show-all {
+    .loader-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+.action-show-more {
+    padding-top: 30px;
+}
+
+
 // Slider Arrows
 .splide__arrow {
     width: 58px;
@@ -386,7 +412,6 @@ h5, .h5 {
     background-color: $white !important;
     background-size: 14px !important;
     background-repeat: no-repeat !important;
-    background-position: center center !important;
     border: 1px solid #d4d4d8;
     @include transition(0.3s, ease-in-out);
     opacity: 1;
@@ -399,6 +424,7 @@ h5, .h5 {
         display: none;
     }
     &--prev {
+        background-position: calc(50% - 2px) center !important;
         background: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2008 22.3996L1.80078 11.9996L12.2008 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
         @media (min-width: 767px) {
             &::before {
@@ -414,6 +440,7 @@ h5, .h5 {
         }
     }
     &--next {
+        background-position: calc(50% + 1px) center !important;
         background-image: url('data:image/svg+xml,<svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79922 22.3996L12.1992 11.9996L1.79922 1.59961" stroke="rgb(33, 37, 41)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');        
         @media (min-width: 767px) {
             &::before {
@@ -431,9 +458,14 @@ h5, .h5 {
     &:hover, &:focus {        
         background-color: rgba($white, 0.8);
         border-color: #898989;
+
+        &:disabled {
+            opacity: 0.3 !important;
+        }
     }
+    
     &:disabled {
-        opacity: 0.7;
+        opacity: 0.3;
     }
 }
 .splide {     
@@ -446,6 +478,10 @@ h5, .h5 {
             .splide__arrow {  
                 @include transform(translateX(0px)); 
                 opacity: 1;
+
+                &:disabled {
+                    opacity: 0.3 !important;
+                }
             }
         }
     }
@@ -564,12 +600,25 @@ h5, .h5 {
     .gslide-inner-content {
         .gslide-description {
             .gslide-title {
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 600;
                 font-family: $bodyfont;
             }
             .gslide-desc {
                 font-family: $bodyfont;
+
+                h2 {
+                   font-size: 18px;
+                   font-weight: 500; 
+                   margin-bottom: 20px;
+                }
+
+                em {
+                    font-size: 11px;
+                    line-height: normal;
+                    color: #838383;
+                    letter-spacing: 0.5px;
+                }
             }
         }
     }
