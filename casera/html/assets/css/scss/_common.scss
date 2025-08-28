@@ -48,7 +48,7 @@ body {
 
 body ::selection {
     color: #fff;
-    background: rgba($primary, 0.5);
+    background: $black;
 }
 
 :focus {
@@ -707,7 +707,7 @@ h5, .h5 {
 	cursor: pointer;
 	display: block;
 	border-radius: 40px;
-	box-shadow: inset 0 0 0 2px rgba($primary, 0.23);
+	box-shadow: inset 0 0 0 2px rgba(#CDCDCD, 0.23);
 	z-index: 999;
 	opacity: 0;
 	visibility: hidden;
@@ -726,7 +726,7 @@ h5, .h5 {
 		text-align: center;
 		line-height: 40px;
 		font-size: 26px;
-		color: #fbb12c;
+		color: #CDCDCD;
 		left: 0px;
 		top: -5px;
 		height: 40px;
@@ -747,7 +747,7 @@ h5, .h5 {
 	svg path {fill: none;}
 
 	svg.progress-circle path {
-		stroke: $primary;
+		stroke: #CDCDCD;
 		stroke-width: 4;
 		box-sizing: border-box;
 		-webkit-transition: all 200ms linear;

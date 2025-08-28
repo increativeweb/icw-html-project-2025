@@ -1,13 +1,8 @@
 .cta-block {
-    background-color: #001530;
-    background-image: linear-gradient(89.99deg, #001530 25.18%, rgba(0, 21, 48, 0) 66.92%), url(../images/img-cta-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: left, calc(100% + 70px) center;
-    background-size: cover;
-    padding: 70px;
     border-radius: 10px;
     position: relative;
     z-index: 1;
+    overflow: hidden;
     &::after {
         content: '';
         background-image: url(../images/cta-logo-icon.svg);
@@ -21,16 +16,28 @@
         left: 25%;
         z-index: 2;
     }
-    @media (max-width: 992px) {
-        padding: 50px;
-    }
-    @media (max-width: 767px) {
-        padding: 30px;
-        background-image: linear-gradient(89.99deg, #001530 45.18%, rgba(0, 21, 48, 0) 86.92%), url(../images/img-cta-bg.jpg);
-    }
     @media (max-width: 575px) {        
         &::after {
             content: none;
+        }
+    }
+    .media-bg-block {
+        img {
+           object-position: calc(100% + 70px) center
+        }
+    }
+    .cta-inner-content {
+        background-color: #001530;
+        background: linear-gradient(89.99deg, #001530 25.18%, rgba(0, 21, 48, 0) 66.92%);
+        background-repeat: no-repeat;
+        background-position: left, calc(100% + 70px) center;
+        background-size: cover;
+        padding: 70px;
+        @media (max-width: 992px) {
+            padding: 50px;
+        }
+        @media (max-width: 767px) {
+            padding: 30px;
         }
     }
     .section-title {

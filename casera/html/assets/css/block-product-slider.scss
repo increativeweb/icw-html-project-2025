@@ -1,88 +1,94 @@
-.product-slider-block {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    gap: 30px;
+.image-slider {
+    display: grid;
+    grid-template-columns: 110px auto;
+    grid-gap: 10px;
     @media (max-width: 1200px) {
-        gap: 15px;
+        grid-template-columns: 80px auto;
     }
-    @media (max-width: 767px) {  
-        gap: 20px;
-        flex-direction: column-reverse;
+    @media (max-width: 992px) {
+        grid-template-columns: 100%;
     }
-}
-
-.main-product-splide {
-    height: -webkit-fill-available;
-    .splide__track {
-        height: 100%;
-    }
-    .img-item {
-        width: 100%;
-        height: 100%;
-        @media (max-width: 1200px) {
-            max-height: 390px;
-        }
-        img {
-            border-radius: 10px;
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-
-.thumbnail-slider {
-    min-width: 110px;
-    @media (max-width: 1200px) {
-        min-width: 90px;
-        max-width: 90px;
-    }
-    @media (max-width: 767px) {
-        min-width: 100%;
-        max-width: 100%;
-        padding: 0 3px;
-    }
-    .splide__slide { 
-        border-radius: 10px;  
-        overflow: hidden;
-        border: 1px solid transparent !important; 
-        &.is-active {
-            border-color: #000000 !important;
-        }
-        @media (max-width: 767px) {
-            max-width: 110px;
-        }
-    }
-    .splide__track {        
-        height: 485px;
-        @media (max-width: 1200px) {
-            height: 390px;
-        }
-        @media (max-width: 767px) {
+    .thumbnail-slider-block {
+        .thumbnail-slider {
             height: auto;
-        }
-    }
-    .splide__arrows {
-        .splide__arrow {
-            @media (max-width: 767px) {
-                &--prev {
-                    left: -15px;
-                }
-                &--next {
-                    left: auto;
-                    right: -15px;
+            .splide__list {        
+                max-height: 470px;
+                @media (max-width: 1200px) {
+                    max-height: 350px;
                 }
             }
-            @media (min-width: 767px) {
-                transform: translate(-50%) rotate(90deg);
-                &--prev {
-                    top: -20px;
+            .splide__slide {
+                border-radius: 10px;  
+                overflow: hidden;
+                border: 1px solid transparent !important; 
+                &.is-active {
+                    border-color: #000000 !important;
                 }
-                &--next {
-                    top: auto;
-                    bottom: -20px;
+            }   
+            .thumb-item {
+                height: 100%;
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }             
+            .splide__arrows {
+                .splide__arrow {
+                    @media (max-width: 767px) {
+                        &--prev {
+                            left: -15px;
+                        }
+                        &--next {
+                            left: auto;
+                            right: -15px;
+                        }
+                    }
+                    @media (min-width: 992px) {
+                        transform: translate(-50%) rotate(90deg);
+                        &--prev {
+                            top: -20px;
+                        }
+                        &--next {
+                            top: auto;
+                            bottom: -20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .primary-slider {
+        height: -webkit-fill-available;
+        .splide__track {
+            height: 100%;
+        }
+        .img-item {
+            width: 100%;
+            height: 100%;
+            background: rgba(#e5e5e5, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            @media (max-width: 992px) {
+                padding: 20px;
+            }
+            @media (max-width: 767px) {
+                padding: 0;
+            }
+            img {
+                border-radius: 10px;
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+                @media (max-width: 992px) {
+                    max-width: 60%;
+                }
+                @media (max-width: 767px) {
+                    max-width: 100%;
                 }
             }
         }

@@ -102,37 +102,60 @@ if ($('.splide:not(.splide-js)').length) {
     });
 }
 if ($('.product-slider-block').length) {
-    var main = new Splide( '#main-slider', {
+    // Primary slider.
+    var primarySlider = new Splide('.primary-slider', {
         type: 'fade',
-        rewind: true,
+        height: "100%",
+        pagination: false,
+        arrows: false,
+        cover: true,
+    });
+    // Product Details slider
+    var productDetailSlider = new Splide('.product-details-slider', {
+        type: 'loop',
+        height: "100%",
         pagination: false,
         arrows: false,
     });
 
-    var thumbnails = new Splide( '#thumbnail-slider', { 
+    // Thumbnails slider.
+    var thumbnailSlider = new Splide('.thumbnail-slider', {
+        type: 'loop',
         fixedWidth: 110,
         fixedHeight: 110,
-        gap: 15,
-        rewind: true,
+        isNavigation: true,
+        gap: 10,
+        // focus: 'center',
         pagination: false,
         cover: true,
-        isNavigation: true,
-        direction: "ttb",
         height: "100%",
+        direction: "ttb",
+        perPage: 3,
+        wheel: true,
+        dragMinThreshold: {
+            mouse: 4,
+            touch: 10
+        },
         breakpoints: {
-            1200: {
-                gap: 10,
+            '1200': {
+                fixedWidth: 80,
+                fixedHeight: 80,
             },
-            767: {
-                direction: "ltr",
-                gap: 15,
+            '992': {
+               direction: "ltr",
+               fixedWidth: 110,
+                fixedHeight: 110,
+            },
+            '767': {
+                fixedWidth: 80,
+                fixedHeight: 80,
             }
         }
-    });
+    }).mount();
+    // sync the thumbnails slider as a target of primary slider.
+    primarySlider.sync(thumbnailSlider).mount();
+    productDetailSlider.sync(thumbnailSlider).mount();
 
-    main.sync( thumbnails );
-    main.mount();
-    thumbnails.mount();
 }
 
 

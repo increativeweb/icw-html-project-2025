@@ -153,6 +153,7 @@
                         will-change: transform;
                     }
                     &:hover, &:focus {
+                        color: $white;
                         &::before {
                             width: 100%;
                             left: 0;
@@ -193,8 +194,8 @@
             @include align-items(center);
             margin-bottom: 10px;
             li {
-                &:not(:first-child) {
-                    &::before {
+                &:not(:last-child) {
+                    &::after {
                         content: '';
                         width: 1px;
                         height: 10px;
@@ -205,6 +206,28 @@
                 }
                 a {
                     color: rgba($white, 0.75);
+                    position: relative;
+                    text-decoration: none;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 1px;
+                        right: 0;
+                        display: inline-block;
+                        background-color: $white;
+                        width: 0;
+                        height: 1px;
+                        transition: width 0.1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                        will-change: transform;
+                    }
+                    &:hover, &:focus {
+                        color: $white;
+                        &::before {
+                            width: 100%;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
                 }
             }
         }
