@@ -594,6 +594,13 @@ h5, .h5 {
         }
     }
 }
+.splide__slide,
+.splide__slide * {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
 
 // ICW Pagination
 .icw-pagination {
