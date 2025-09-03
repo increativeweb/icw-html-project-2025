@@ -21,10 +21,10 @@
         }
         @keyframes wave {
             0% {
-                transform: translate(-120px);
+                transform: translate(-90px);
             }
             100% {
-                transform: translate(90px);
+                transform: translate(85px);
             }
         }
     </style>
@@ -33,7 +33,7 @@
             <mask id="mask0_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-47" y="9456" width="1143" height="1032">
                 <path d="M580.458 9859.78C631.875 10002.9 147.763 10243.5 -46.9731 10240.1L712.415 10487.4L1095.9 9642.17C832.734 9512.95 455.422 9441.22 471.97 9459.82C492.656 9483.06 529.042 9716.7 580.458 9859.78Z" fill="#C4C4C4"/>
             </mask>
-            <g mask="url(#mask0_9_2)" class="wave front">
+            <g mask="url(#mask0_9_2)" class="wave front1">
                 <mask id="mask1_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-175" y="9205" width="980" height="1278">
                     <path d="M251.272 9205.7L-174.781 10012.2L-16.105 10482.7L804.304 10099.3L803.63 9616.01L251.272 9205.7Z" fill="black"/>
                 </mask>
@@ -81,7 +81,7 @@
             <mask id="mask4_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="371" y="8997" width="964" height="1269">
                 <path d="M975.971 10265.3L1334.95 9446.45L1146.28 8997.88L371.62 9431.12L406.746 9903.54L975.971 10265.3Z" fill="black"/>
             </mask>
-            <g mask="url(#mask4_9_2)" class="wave front">
+            <g mask="url(#mask4_9_2)" class="wave front1">
                 <mask id="mask5_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="327" y="8881" width="1192" height="1448">
                     <path d="M361.126 8881.67L1518.51 9276.55L1096.31 10329C841.225 10280.2 330.461 10180.7 328.114 10173.3C325.768 10165.9 349.145 9309.13 361.126 8881.67Z" fill="url(#paint2_linear_9_2)"/>
                 </mask>
@@ -263,7 +263,7 @@
         <mask id="mask18_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-388" y="6419" width="1145" height="1032">
             <path d="M240.874 7047.24C291.979 6904.05 -192.656 6664.51 -387.385 6668.27L371.462 6419.3L756.79 7263.72C493.905 7393.52 116.751 7466.07 133.258 7447.44C153.893 7424.15 189.77 7190.43 240.874 7047.24Z" fill="#C4C4C4"/>
         </mask>
-        <g mask="url(#mask18_9_2)" class="wave front1">
+        <g mask="url(#mask18_9_2)" class="wave front">
             <mask id="mask19_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-515" y="6425" width="980" height="1278">
                 <path d="M-86.8855 7702.04L-514.696 6896.45L-357.046 6425.67L464.197 6807.21L464.577 7290.52L-86.8855 7702.04Z" fill="black"/>
             </mask>
@@ -311,7 +311,7 @@
         <mask id="mask22_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="32" y="6640" width="965" height="1268">
             <path d="M635.502 6640.91L996.263 7458.93L808.577 7907.91L32.9716 7476.36L67.0674 7003.86L635.502 6640.91Z" fill="black"/>
         </mask>
-        <g mask="url(#mask22_9_2)" class="wave front1">
+        <g mask="url(#mask22_9_2)" class="wave front">
             <mask id="mask23_9_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-13" y="6576" width="1194" height="1450">
                 <path d="M23.6755 8025.83L1180.19 7628.42L755.705 6576.92C500.724 6626.27 -9.82227 6726.83 -12.1525 6734.24C-14.4826 6741.66 10.762 7598.39 23.6755 8025.83Z" fill="url(#paint14_linear_9_2)"/>
             </mask>
