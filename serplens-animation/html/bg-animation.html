@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+    <head>    
+        <meta name="theme-color" content="#0f8ed6">
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name='robots' content='noindex, nofollow' />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <title>SerpLens Payload</title>
+        <style>
+            body{background: #051610;margin: 0;}
+            .main-content-wrapper{min-height: 10300px;}
+            .bg-animation-block{position: relative;}
+            .bg-animation-block::before{content: ''; background: url(img-background-animation.png) no-repeat center top; background-size: cover; display: block; width: 100%; height: 100%;position: absolute;top: 0;left: 0;-webkit-animation: pulse 30s infinite alternate;animation: pulse 30s infinite alternate;}
+            @keyframes pulse {
+                0% {
+                    background-size: 100% 100%;
+                    background-position: 0% 0%;
+                }
+
+                50% {
+                    background-size: 115% 115%;
+                    background-position: calc(100% + 100px) 0%;
+                }
+
+                100% {
+                    background-size: 100% 100%;
+                    background-position: 0% 0%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="bg-animation-block">
+            <header></header>
+            <main class="main-content-wrapper"></main>
+            <footer></footer>
+        </div>
+    </body>
+</html>
