@@ -12,22 +12,25 @@
         <style>
             body{background: #051610;margin: 0;}
             .main-content-wrapper{min-height: 10300px;}
-            .bg-animation-block{position: relative;}
-            .bg-animation-block::before{content: ''; background: url(img-background-animation.png) no-repeat center top; background-size: cover; display: block; width: 100%; height: 100%;position: absolute;top: 0;left: 0;-webkit-animation: pulse 30s infinite alternate;animation: pulse 30s infinite alternate;}
+            .bg-animation-block{position: relative; overflow: hidden;}
+            .bg-animation-block::before{content: ''; background: url(img-background-animation.png) no-repeat center top; background-size: cover; display: block; width: 100%; height: 100%;position: absolute;top: 0;left: 0;-webkit-animation: pulse 20s infinite alternate;animation: pulse 20s infinite alternate;transform-origin: center;}
             @keyframes pulse {
                 0% {
-                    background-size: 100% 100%;
-                    background-position: 0% 0%;
+                    transform: scale(1);
+                    /* background-size: 100% 100%;
+                    background-position: 0% 0%; */
                 }
 
                 50% {
-                    background-size: 115% 115%;
-                    background-position: calc(100% + 100px) 0%;
+                    transform: scale(1.1);
+                    /* background-size: 115% 115%;
+                    background-position: calc(100% + 100px) 0%; */
                 }
 
                 100% {
-                    background-size: 100% 100%;
-                    background-position: 0% 0%;
+                    transform: scale(1);
+                    /* background-size: 100% 100%;
+                    background-position: 0% 0%; */
                 }
             }
         </style>
