@@ -1,12 +1,39 @@
-body {    
-    background-image: url(../images/img-top-bg-vector.svg);
-    background-color: $white;
-    background-repeat: no-repeat;
-    background-position: top center;
-}
 .main-content-wrapper {
+    background-color: $white;
     z-index: 1;
     overflow: hidden;
+    &::before {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: #D4D6E5;
+        position: absolute;
+        top: 0;
+        left: 6vw;
+        z-index: 5;
+        @media (max-width: 1400px) {
+            left: 2vw;
+        }
+        @media (max-width: 992px) {
+            content: none;
+        }
+    }    
+    &::after {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: #D4D6E5;
+        position: absolute;
+        top: 0;
+        right: 6vw;
+        z-index: 5;
+        @media (max-width: 1400px) {
+            right: 2vw;
+        }
+        @media (max-width: 992px) {
+            content: none;
+        }
+    }
 }
 
 // Main Section CSS

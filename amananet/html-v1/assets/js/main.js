@@ -31,13 +31,12 @@ jQuery(document).ready(function($) {
         $("li.menu-item-has-children > a, li.menu-item-has-children > span").after('<i class="arrow"></i>');
     }
     
-    const megaSelector = 'li.menu-item-has-children';
+    const megaSelector = 'li.menu-item-has-children.mega-menu';
     $(megaSelector + ' > a').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         const $parent = $(this).parent();
         
-         $(megaSelector).removeClass('is-open');
         $parent.toggleClass('is-open');  
         $('.bg-overlay').toggleClass('is-visible');
     });

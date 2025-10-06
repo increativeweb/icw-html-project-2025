@@ -33,7 +33,6 @@ body {
     color: $bodyfontcolor;
     font-size: $bodyfontsize;
     background-color: $bodybg;
-    font-weight: 400;
     position: relative;
     min-height: 100vh;
     line-height: 1.5;
@@ -245,18 +244,14 @@ img {
 	@include justify-content(center);	
 	@include border-radius(36px);
     border: 1px solid transparent;
-    @include transition(0.1s, ease-in-out);
+    @include transition(0.2s, ease-in-out);
 	min-height: 45px;
     min-width: 140px;
 	font-weight: 600;
 	font-size: 16px;
-    padding: 0 20px; 
+    padding: 0 30px; 
 	line-height: 1;
     transform: translateY(0);
-    .icw-icon {
-        margin-right: 10px;
-        @include transition(0.1s, ease-in-out);
-    }
     &.btn-sm {        
         min-height: 36px;
         min-width: 100px;
@@ -292,19 +287,6 @@ img {
             background-color: transparent !important;
         }
     }
-    &.btn-outline-primary {
-		color: $primary !important;
-        border-color: $primary !important;
-		background-color: rgba($primary, 0.1) !important;
-        &:hover, &:focus {
-            color: $white !important;
-            border-color: $primary !important;
-            background-color: $primary !important;
-            .icw-icon {
-                filter: brightness(0) invert(1);
-            }
-        }
-	}
     &.btn-outline-yellow {
 		color: $yellow !important;
         border-color: $yellow !important;
@@ -886,39 +868,57 @@ h5, .h5 {
     background-size: cover;
 }
 
-// Badge
-.badge {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 600;
-    padding: 3px 10px 2px;
-    @include border-radius(90px);
-    line-height: 1;
-    vertical-align: middle;
-    &.badge-warning {
-        background: $yellow;
-        color: $black;
-    }
-}
-
-// Icon
-.icw-icon {
-    display: inline-block;
-    background-size: contain !important;
-    background-position: center;
+// Vector Animation
+.fixed-top-gradient-bg {
+    position: fixed;
+    top: 70px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/top-gradient-bg.svg);
     background-repeat: no-repeat;
-    width: 15px;
-    height: 15px;
-    &.icon-cart {
-        background-image: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7653 3.82709C13.7014 3.73478 13.6161 3.65932 13.5167 3.6072C13.4173 3.55507 13.3067 3.52782 13.1944 3.52778H3.70347L2.90208 1.60417C2.79701 1.35085 2.61908 1.13444 2.39085 0.982372C2.16263 0.830304 1.89439 0.74943 1.62014 0.750003H0V2.13889H1.62014L4.91458 10.0451C4.96735 10.1716 5.05637 10.2797 5.17043 10.3557C5.28449 10.4317 5.41849 10.4722 5.55556 10.4722H11.1111C11.4007 10.4722 11.6597 10.2924 11.7618 10.0222L13.8451 4.46667C13.8845 4.36155 13.8978 4.24844 13.8839 4.13705C13.87 4.02566 13.8293 3.9193 13.7653 3.82709Z" fill="rgb(42 57 109)"/><path d="M5.90299 13.2503C6.47829 13.2503 6.94466 12.784 6.94466 12.2087C6.94466 11.6334 6.47829 11.167 5.90299 11.167C5.3277 11.167 4.86133 11.6334 4.86133 12.2087C4.86133 12.784 5.3277 13.2503 5.90299 13.2503Z" fill="rgb(42 57 109)"/><path d="M10.7643 13.2503C11.3396 13.2503 11.806 12.784 11.806 12.2087C11.806 11.6334 11.3396 11.167 10.7643 11.167C10.189 11.167 9.72266 11.6334 9.72266 12.2087C9.72266 12.784 10.189 13.2503 10.7643 13.2503Z" fill="rgb(42 57 109)"/></svg>');
+    background-position: center 40%;        
+    background-size: auto;
+    z-index: -1;
+}
+.fixed-lr-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    &::before {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: rgba(#D4D6E5, 0.4);
+        position: absolute;
+        top: 0;
+        left: 6vw;
+        z-index: 1;
+        @media (max-width: 1400px) {
+            left: 2vw;
+        }
+        @media (max-width: 767px) {
+            left: 1vw;
+        }
     }
-    &.icon-user {
-        background-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6C6.90931 6 7.78138 5.68393 8.42437 5.12132C9.06735 4.55871 9.42857 3.79565 9.42857 3C9.42857 2.20435 9.06735 1.44129 8.42437 0.87868C7.78138 0.316071 6.90931 0 6 0C5.09069 0 4.21862 0.316071 3.57563 0.87868C2.93265 1.44129 2.57143 2.20435 2.57143 3C2.57143 3.79565 2.93265 4.55871 3.57563 5.12132C4.21862 5.68393 5.09069 6 6 6ZM4.77589 7.125C2.1375 7.125 0 8.99531 0 11.3039C0 11.6883 0.35625 12 0.795536 12H11.2045C11.6437 12 12 11.6883 12 11.3039C12 8.99531 9.8625 7.125 7.22411 7.125H4.77589Z" fill="rgb(42 57 109)"/></svg>');
+    &::after {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: rgba(#D4D6E5, 0.4);
+        position: absolute;
+        top: 0;
+        right: 6vw;
+        @media (max-width: 1400px) {
+            right: 2vw;
+        }
+        @media (max-width: 767px) {
+            right: 1vw;
+        }
     }
 }
-
-// Vector
-
 
 // Page Scroll Progress CSS
 .icw-progress-goto {
@@ -1004,5 +1004,16 @@ h5, .h5 {
                 margin-top: 1px;
             }
         }
+    }
+}
+
+// Icon
+.icw-icon {
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    background-size: contain !important;
+    &.icw-icon-search {
+        background-image: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.0027 14L11.1094 11.1067" stroke="rgb(101, 101, 101)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="rgb(101, 101, 101)" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
     }
 }
