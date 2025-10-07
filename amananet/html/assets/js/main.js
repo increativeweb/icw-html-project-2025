@@ -32,14 +32,57 @@ jQuery(document).ready(function($) {
     }
     
     const megaSelector = 'li.menu-item-has-children';
-    $(megaSelector + ' > a').on('click', function (e) {
-        e.preventDefault();
+    if ($(window).width() >= 992) {
+        $(megaSelector + ' > a').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const $parent = $(this).parent();
+            
+            $(megaSelector).removeClass('is-open');
+            $parent.toggleClass('is-open');  
+            $('.bg-overlay').addClass('is-visible');
+        });
+        $('.tab-nav-menu .nav-link[data-target]').on('mouseenter', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var id = $(this).attr('data-target'); // e.g. "#tab1"
+            $('.tab-nav-menu .nav-link').removeClass('active');
+            $('.tab-content .tab-pane').removeClass('active');
+            // Show the matching tab pane            
+            $('.tab-content .tab-pane' + id).addClass('active');
+            $(this).addClass('active');
+            
+        });
+    }
+    if ($(window).width() <= 992) {
+        $(megaSelector + ' .arrow').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const $parent = $(this).parent();
+            
+            $(megaSelector).removeClass('is-open');
+            $parent.toggleClass('is-open');  
+        });
+        $('.tab-content .nav-link').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var id = $(this).attr('data-target'); // e.g. "#tab1"
+            $('.tab-content .nav-link').removeClass('active');
+            $('.tab-content .tab-pane').slideUp().css('opacity', '0');
+            // Show the matching tab pane            
+            $('.tab-content .tab-pane' + id).slideDown().css('opacity', '1');
+            $(this).addClass('active');
+            
+        });
+    }
+    $(document).on('click', function() {
+        $('.menu-item-has-children').removeClass('is-open');
+        $('.bg-overlay').removeClass('is-visible');
+    });
+    $(megaSelector).find('.sub-menu').on('click', function(e) {
         e.stopPropagation();
-        const $parent = $(this).parent();
-        
-         $(megaSelector).removeClass('is-open');
-        $parent.toggleClass('is-open');  
-        $('.bg-overlay').toggleClass('is-visible');
     });
     if ($(".icw-progress-goto").length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');

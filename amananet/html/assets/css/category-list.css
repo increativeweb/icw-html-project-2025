@@ -1,0 +1,1 @@
+.categories-list-block .categories-list{display:grid;grid-template-columns:repeat(4, 1fr)}.categories-list-block .categories-list.grid-col-2{grid-template-columns:repeat(2, 1fr)}.categories-list-block .categories-list.grid-col-3{grid-template-columns:repeat(3, 1fr)}.categories-list-block .categories-list.grid-col-6{grid-template-columns:repeat(6, 1fr)}
