@@ -132,3 +132,37 @@ if ($('.splide:not(.splide-js)').length) {
         $(this).addClass('icw_splide-with-data'); // Mark as initialized
     });
 }
+
+if (document.querySelector('.classes-splide')) {
+    const classes_splide = new Splide('.classes-splide', {
+      type: 'loop',
+      perPage: 3,
+      perMove: 1,
+      grid: {
+        rows: 2,
+        cols: 1,
+        gap: {
+          row: '30px',
+          col: '30px',
+        },
+      },
+      pagination: true,
+      arrows: false,
+      gap: 0,
+      classes: {
+        pagination: 'splide__pagination icw-pagination',
+      },
+      breakpoints: {
+        992: {
+          perPage: 2,
+        },
+        767: {
+          perPage: 1,
+          autoWidth: true,
+        },
+      },
+    });
+
+    // ✅ Mount with Grid only
+    classes_splide.mount(window.splide.Extensions);
+}
