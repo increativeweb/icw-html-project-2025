@@ -14,7 +14,7 @@
             top: 87px;
         }
         .header-main-menu {
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0; 
         }
@@ -67,12 +67,14 @@
                     @include transition(0.1s, ease-in-out);
                     @include inline-flex;
                     @include align-items(center);
+                    line-height: 1;
+                    padding-bottom: 2px;
                     @media (min-width: 992px) {
                         &::before {
                             content: '';
                             width: 100%;
                             background-color: $black;
-                            height: 2px;
+                            height: 1px;
                             position: absolute;
                             top: 100%;
                             left: 0;
@@ -350,27 +352,41 @@
                                             @media (max-width: 992px) {
                                                 margin-top: 3px;
                                             }
-                                            span {                                                
+                                            span.dot {
+                                                width: 4px;
+                                                height: 4px;
+                                                background: $black;
+                                                @include border-radius(50%);
+                                                margin: 0 10px;
+                                            }
+                                            a {                                                
                                                 font-weight: 400;
                                                 font-size: 14px;
                                                 color: $black;
-                                                margin: 0 10px;
+                                                padding: 0 0 3px;
                                                 display: inline-block;
-                                                &:first-child {
-                                                    margin-left: 0;
-                                                }
-                                                &:last-child {
-                                                    margin-right: 0;
-                                                }
-                                                &.dot {
-                                                    width: 4px;
-                                                    height: 4px;
-                                                    background: $black;
-                                                    @include border-radius(50%);
-                                                }
                                                 @media (max-width: 992px) {
                                                     font-size: 12px;
-                                                    margin: 0 5px;
+                                                }
+                                                &::before {
+                                                    content: '';
+                                                    width: 100%;
+                                                    background-color: $primary;
+                                                    height: 1px;
+                                                    position: absolute;
+                                                    top: 100%;
+                                                    left: 0;
+                                                    opacity: 0;
+                                                    will-change: opacity, transform;
+                                                    transform: translateZ(0) scaleX(0);
+                                                    @include transition(0.1s, cubic-bezier(0.48, -0.01, 0.27, 1.21));
+                                                }
+                                                &:hover, &:focus {
+                                                    color: $primary;
+                                                    &::before {
+                                                        transform: translateZ(0) scaleX(1);
+                                                        opacity: 1;
+                                                    }
                                                 }
                                             }
                                         }
@@ -482,14 +498,19 @@
                                                         padding: 0;
                                                         color: $primary;
                                                         line-height: 1;
+                                                        padding-bottom: 3px;
                                                         &::before {
                                                             content: '';
-                                                            width: 0;
+                                                            width: 100%;
                                                             background-color: $black;
                                                             height: 1px;
                                                             position: absolute;
                                                             top: 100%;
                                                             left: 0;
+                                                            opacity: 0;
+                                                            will-change: opacity, transform;
+                                                            transform: translateZ(0) scaleX(0);
+                                                            @include transition(0.1s, cubic-bezier(0.48, -0.01, 0.27, 1.21));
                                                         }
                                                         .icon {
                                                             line-height: 0.7;
@@ -499,9 +520,8 @@
                                                         }
                                                         &:hover, &:focus {
                                                             &::before {
-                                                                width: 50%;
-                                                                transform: translatex(100%);
-                                                                @include transition(0.1s, ease-in-out);
+                                                                transform: translateZ(0) scaleX(1);
+                                                                opacity: 1;
                                                             }
                                                         }
                                                     }

@@ -62,6 +62,21 @@
             padding: 0;
             border: none;
             background: transparent;
+            position: relative;
+            padding-bottom: 5px;
+            &::before {
+                content: '';
+                width: 0;
+                height: 1px;
+                border-radius: 0;
+                background: #2A396D;
+                position: absolute;
+                top: auto;
+                left: 0;
+                bottom: 1px;
+                transition: all .3s ease-in-out;
+                z-index: 1;
+            }
             &::after {
                 content: '';
                 background: url('data:image/svg+xml,<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.09567 0.134701L8.81048 0.384146C8.66788 0.553769 8.66788 0.803215 8.81048 0.972838L11.8254 3.88636H0.427792C0.183339 3.88636 0 4.0959 0 4.30543V4.66463C0 4.9041 0.183339 5.0837 0.427792 5.0837H11.8254L8.81048 8.02716C8.66788 8.20676 8.66788 8.44623 8.81048 8.62583L9.09567 8.8653C9.23827 9.0449 9.53365 9.0449 9.7068 8.8653L13.8625 4.80432C14.0458 4.62472 14.0458 4.37528 13.8625 4.20565L9.7068 0.134701C9.53365 -0.0449002 9.23827 -0.0449002 9.09567 0.134701Z" fill="rgb(42 57 109)"></path></svg>') no-repeat center center;
@@ -92,6 +107,9 @@
             }
             &:hover, &:focus {
                 background: transparent;
+                &::before {
+                    width: 100%;
+                }
                 &::after {
                     opacity: 1;
                     visibility: visible;
