@@ -1,17 +1,19 @@
-.categories-list-block {
-    .categories-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 30px;
-        &.grid-col-2 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        &.grid-col-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        &.grid-col-6 {
-            grid-template-columns: repeat(6, 1fr);
-        }
+
+.categories-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    &.grid-col-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &.grid-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &.grid-col-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    &.categories-link-list {
+        grid-gap: 20px 30px;
     }
     .category-item {
         padding: 15px 20px;
@@ -23,9 +25,10 @@
         border: 1px solid transparent;
         transition: all 0.2s ease-in-out;
         .icon {
-            margin-right: 10px;
+            margin-right: 15px;
             img {
-                max-height: 35px;
+                width: 25px;
+                height: 25px;
             }
         }
         .category-content {
@@ -39,6 +42,53 @@
         &:hover, &:focus {
             background: #FBFCFF;
             border-color: #E2E6EE;
+        }
+    }
+    &.categories-link-list {
+        .category-item {
+            padding: 0;
+            border: none;
+            &::after {
+                content: '';
+                background: url('data:image/svg+xml,<svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.09567 0.134701L8.81048 0.384146C8.66788 0.553769 8.66788 0.803215 8.81048 0.972838L11.8254 3.88636H0.427792C0.183339 3.88636 0 4.0959 0 4.30543V4.66463C0 4.9041 0.183339 5.0837 0.427792 5.0837H11.8254L8.81048 8.02716C8.66788 8.20676 8.66788 8.44623 8.81048 8.62583L9.09567 8.8653C9.23827 9.0449 9.53365 9.0449 9.7068 8.8653L13.8625 4.80432C14.0458 4.62472 14.0458 4.37528 13.8625 4.20565L9.7068 0.134701C9.53365 -0.0449002 9.23827 -0.0449002 9.09567 0.134701Z" fill="rgb(42 57 109)"></path></svg>') no-repeat center center;
+                background-size: contain;
+                width: 14px;
+                height: 9px;
+                display: inline-block;
+                opacity: 0;
+                visibility: hidden;
+                margin-left: auto;
+                margin-right: 15px;
+                transition: all 0.3s ease-in-out;
+            }
+            .icon {
+                margin-right: 10px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .category-content {
+                .title { 
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000000;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            &:hover, &:focus {
+                background: transparent;
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                    margin-right: 0;
+                }
+                .category-content {
+                    .title {                        
+                        color: #2A396D;
+                    }
+                }
+            }
         }
     }
 }

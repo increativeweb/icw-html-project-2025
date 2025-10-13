@@ -184,35 +184,18 @@ img {
 }
 
 // Row Gutter CSS
-.g-15 {
-    --bs-gutter-y: 24px;
-    --bs-gutter-x: 24px;
-    @media (max-width: 767px) {
-        --bs-gutter-y: 16px;
-        --bs-gutter-x: 16px;    
-    }
-}
-
-.g-20 {
-    --bs-gutter-y: 32px;
-    --bs-gutter-x: 32px;
-    @media (max-width: 767px) {
-        --bs-gutter-y: 24px;
-        --bs-gutter-x: 24px;  
-    }
-}
 .g-40 {   
     @media (min-width: 992px) {
-        --bs-gutter-y: 48px;
-        --bs-gutter-x: 48px;  
+        --bs-gutter-y: 50px;
+        --bs-gutter-x: 50px;  
     }
     @media (min-width: 1400px) {
         --bs-gutter-y: 80px;
         --bs-gutter-x: 80px;
     }
     @media (max-width: 992px) {
-        --bs-gutter-y: 24px;
-        --bs-gutter-x: 24px;  
+        --bs-gutter-y: 30px;
+        --bs-gutter-x: 30px;  
     }
 }
 
@@ -296,16 +279,6 @@ img {
             background-color: transparent !important;
         }
 	}
-    &.btn-secondary {
-        color: $white !important;
-        border-color: $secondary !important;
-		background-color: $secondary !important;
-        &:hover, &:focus {
-            color: $secondary !important;
-            border-color: $secondary !important;
-            background-color: transparent !important;
-        }
-    }
     &.btn-outline-primary {
 		color: $primary !important;
         border-color: $primary !important;
@@ -319,14 +292,17 @@ img {
             }
         }
 	}
-    &.btn-outline-yellow {
-		color: $yellow !important;
-        border-color: $yellow !important;
+    &.btn-outline-white {
+		color: $white !important;
+        border-color: $white !important;
 		background-color: transparent !important;
         &:hover, &:focus {
-            color: $white !important;
-            border-color: $yellow !important;
-            background-color: $yellow !important;
+            color: $primary !important;
+            border-color: $white !important;
+            background-color: $white !important;
+            .icon-arrow {
+                background: url('data:image/svg+xml,<svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5.36364 5L1 9" stroke="rgb(42, 57, 109)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            }
         }
 	}
     &.btn-outline-dark {
@@ -594,7 +570,7 @@ img {
 // Video Player CSS
 .media-block {	
 	max-width: 100%;
-	@include border-radius(0);
+	@include border-radius(10px);
 	position: relative;
 	overflow: hidden; 
     line-height: 0.7;  
@@ -605,6 +581,8 @@ img {
         margin-bottom: 10px;
     } 
     img {
+        max-width: 100%;
+        width: 100%;
         &.mw-50 {
             @media (max-width: 992px) {
                 max-width: 50%;
@@ -693,12 +671,6 @@ img {
         .imgSlideInUp {
             text-align: center;
         }
-    }
-}
-
-.image-block {
-    img {
-        @include border-radius(0px);
     }
 }
 
@@ -813,8 +785,8 @@ h1, .h1 {
     }
 }
 h2, .h2 {
-    font-size: 44px;
-    font-weight: 600;
+    font-size: 45px;
+    font-weight: 700;
     line-height: 1.1;
     @media (max-width: 1200px) { 
         font-size: 36px;
@@ -945,7 +917,11 @@ h5, .h5 {
 }
 
 // Vector
-
+.top-left-vector {
+    background-image: url(../images/img-top-left-vector.svg);
+    background-position: center left;
+    background-repeat: no-repeat;
+}
 
 // Page Scroll Progress CSS
 .icw-progress-goto {
