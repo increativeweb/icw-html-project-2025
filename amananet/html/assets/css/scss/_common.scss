@@ -198,6 +198,10 @@ img {
         --bs-gutter-x: 30px;  
     }
 }
+.g-15 {  
+    --bs-gutter-y: 30px;
+    --bs-gutter-x: 30px;  
+}
 
 // Border Radius CSS
 .b-radius {
@@ -573,13 +577,7 @@ img {
 	@include border-radius(10px);
 	position: relative;
 	overflow: hidden; 
-    line-height: 0.7;  
-    @media (max-width: 992px) {
-        margin-bottom: 20px;
-    } 
-    @media (max-width: 767px) {
-        margin-bottom: 10px;
-    } 
+    line-height: 0.7;
     img {
         max-width: 100%;
         width: 100%;
