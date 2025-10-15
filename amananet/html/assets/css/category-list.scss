@@ -23,7 +23,7 @@
         grid-template-columns: repeat(6, 1fr);
     }
     &.categories-link-list {
-        grid-gap: 20px 30px;
+        grid-gap: 10px 30px;
     }
     .category-item {
         padding: 15px 20px;
@@ -34,6 +34,7 @@
         text-decoration: none;
         border: 1px solid transparent;
         transition: all 0.2s ease-in-out;
+        min-height: 70px;
         @media (max-width: 1200px) {
             padding: 10px 15px;
         }
@@ -63,7 +64,8 @@
             border: none;
             background: transparent;
             position: relative;
-            padding-bottom: 5px;
+            padding-bottom: 10px;
+            min-height: auto;
             &::before {
                 content: '';
                 width: 0;

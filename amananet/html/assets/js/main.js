@@ -161,5 +161,5 @@ if (document.querySelector('.classes-splide')) {
     });
 
     // ✅ Mount with Grid only
-    classes_splide.mount(window.splide.Extensions);
+    classes_splide.mount({ Grid: window.splide.Extensions.Grid });
 }
