@@ -1,0 +1,83 @@
+.post-autoslider-block {
+    @media (max-width: 992px) {
+        .row {
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            overflow-x: auto;
+            -webkit-scroll-snap-type: x mandatory;
+            -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 10px;
+            padding-bottom: 15px;
+            @media (max-width: 992px) and (max-width: 580px) {
+                scroll-padding: 0px;
+            }
+            & > .col {
+                max-width: 300px;
+                scroll-snap-align: start;
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                min-width: 300px;
+            }
+        }
+    }
+}
+.expertise-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .card-img {
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 16 / 9;
+            min-height: 200px;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+    }
+    .card-body {
+        h3 {
+            font-size: 24px;
+            font-family: "Inter", sans-serif;
+            margin-bottom: 10px;
+            color: #000000;
+            @media (max-width: 767px) { 
+                font-size: 20px;
+            }
+            a {
+                text-decoration: none;
+                color: #000000;
+                transition: all 0.3s ease-in-out;
+                background-image: linear-gradient(to right, #000000 0%, #000000 100%);
+                background-position: 0 100%;
+                background-repeat: no-repeat;
+                background-size: 0 1px;
+                padding-bottom: 2px;
+            }
+        }
+    }
+    &:hover, &:focus {
+        .card-img {
+            img {
+                transform: scale(1.05);
+            }
+        }
+        .card-body {
+            h3 {
+                a {
+                    -webkit-text-decoration-color: #000 !important;
+                    text-decoration-color: #000 !important;
+                    background-size: 100% 1px;
+                }
+            }
+        }
+    }
+}

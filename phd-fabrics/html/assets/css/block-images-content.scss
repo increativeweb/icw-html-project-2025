@@ -1,0 +1,24 @@
+.images-content-block {
+    .splide__track {
+        border-radius: 15px;
+    }
+    .media-block {
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+}
+.image-content-zigzag-section {
+    .image-content-block {
+        &:not(:first-child) {
+            padding-top: 120px;
+            @media (max-width: 992px) {
+                padding-top: 70px;
+            }
+            @media (max-width: 767px) {
+                padding-top: 50px;
+            }
+        }
+    }
+}

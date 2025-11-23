@@ -1,0 +1,27 @@
+.only-image-splide-section {
+    z-index: 1;
+    .image-splide {
+        .splide__pagination {
+            bottom: 15px;
+        }
+        .splide__track {            
+            border-radius: 15px;
+        }
+        .media-block {
+            border-radius: 15px; 
+            img,video {
+                height: 100%;
+                max-height: 400px;
+                min-height: 400px;
+                @media (max-width: 992px) {
+                    max-height: 300px;
+                    min-height: 300px;
+                }
+                @media (max-width: 767px) {
+                    max-height: 250px;
+                    min-height: 250px;
+                }
+            }
+        }
+    }
+}

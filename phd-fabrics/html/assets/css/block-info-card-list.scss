@@ -1,0 +1,152 @@
+// Info List Card
+.info-list-cards {
+    margin-top: 30px;
+}
+.info-list-card {	
+    @media (max-width: 992px) {
+        display: flex;
+        align-items: flex-start;
+		.card-icon{
+			margin-right: 30px;
+			margin-bottom: 0;
+			flex: none;
+		}
+    }
+	.card-icon {
+		margin-bottom: 15px;
+        position: relative;
+        line-height: 0.7;
+        display: inline-block;
+        z-index: 1;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -14px;
+            width: 32px;
+            height: 32px;
+            flex: none;
+            background: #FFC0CB;
+            opacity: 0.5;
+            border-radius: 50%;
+            display: inline-block;
+            z-index: -1;
+        }
+        img { 
+            vertical-align: baseline; 
+            width: 30px;
+            aspect-ratio: 1 / 1;
+        }
+	}
+	.card-title {
+        font-weight: 600;
+        font-size: 20px;
+        font-family: "Inter", sans-serif;
+        color: #000000;
+		margin-bottom: 10px;
+		@media (max-width: 992px) {
+			font-size: 18px;
+		}
+		a {
+			color: #000000;
+            font-weight: 600;
+			position: relative;
+			z-index: 3;
+			text-decoration: none;
+			display: inline-flex;
+            align-items: center;
+			transition: all 0.3s ease-in-out;
+            overflow: hidden;
+			&::before {
+                content: '';
+                position: absolute;
+                bottom: 1px;
+                right: 0;
+                display: inline-block;
+                background-color: #1C2125;
+                width: 0;
+                height: 1px;
+                transition: width 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+                will-change: transform;
+            }
+			&:hover, &:focus, &:active {
+				color: #1C2125;
+			}
+			&:hover,&:focus{
+				color: #1C2125;
+                &::before {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+			}
+		}
+	}
+    .card-content {
+        .card-info {
+            font-size: 18px;
+            color: #696969;
+            line-height: 1.3;
+            @media (max-width: 992px) {
+                font-size: 16px;
+            }
+        }
+    }
+	&.icon-left-card {
+		display: flex;
+        align-items: flex-start;
+		.card-icon{
+			margin-right: 35px;
+			margin-bottom: 0;
+			flex: none;
+		}
+	}
+    &.only-card-title {
+        margin-bottom: 3px;
+        .card-content {
+            align-self: center;
+        }
+        .card-title {
+            font-weight: 400;
+            margin: 0px;
+            line-height: normal;
+        }
+        .card-icon {
+            img { 
+                vertical-align:middle;
+                margin-top: -2px;
+                position: relative;
+            }
+        }
+    }
+}
+.bg-gradient {
+    .info-list-card {
+        .card-icon {
+            &::after {
+                background: #fff;
+                opacity: 0.3;
+            }
+        }
+        .card-title {
+            color: #fff;
+            a {
+                color: #fff;
+                &::before {
+                    background-color: rgba(#fff, 0.8);
+                }
+                &:hover, &:focus, &:active {
+                    opacity: 0.8;
+                }
+                &:hover,&:focus{
+                    color: #fff;
+                }
+            }
+        }
+        .card-content {
+            .card-info {
+                color: #fff;
+            }
+        }
+    }
+}
