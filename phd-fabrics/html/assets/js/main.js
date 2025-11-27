@@ -76,7 +76,26 @@ jQuery(document).ready(function($) {
         });
     }
 
-   
+    
+   // Page Load: activate first item
+    var firstItem = $(".image-collapse-link ul li a").first();
+    var firstId = firstItem.attr("id");
+
+    $(".image-collapse-link ul li").first().addClass("active");
+    $('.media-block .image-view[data-id="' + firstId + '"]').addClass("active");
+
+    // On hover (mouseenter only)
+    $(".image-collapse-link ul li a").on("mouseenter", function () {
+        var targetId = $(this).attr("id");
+
+        // Activate menu item
+        $(".image-collapse-link ul li").removeClass("active");
+        $(this).parent().addClass("active");
+
+        // Switch images
+        $(".media-block .image-view").removeClass("active");
+        $('.media-block .image-view[data-id="' + targetId + '"]').addClass("active");
+    });
 });
 
 // Sticky Nav in Add Class

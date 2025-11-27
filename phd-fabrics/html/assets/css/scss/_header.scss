@@ -200,6 +200,9 @@
 						a {
 							display: inline-block;
 							padding: 10px 0;
+							font-family: $font-playfair;
+							font-size: 20px;
+							font-weight: 600;
 							&::before {
 								content: none !important;
 							}
@@ -251,6 +254,8 @@
 					@media (max-width: 992px) {
 						color: $darkblack;
 						font-weight: 500;
+						font-size: 16px;
+						font-family: $bodyfont;
 						padding: 8px 10px !important;
 					}
 					&:hover, &:focus {
@@ -318,6 +323,7 @@
 							text-transform: uppercase;
 							font-size: 12px;
 							font-weight: 600;
+							font-family: $bodyfont;
 							color: $primary;
 							margin: 0 12px 10px;
 							padding: 0 0 10px;
@@ -329,6 +335,11 @@
 								border: none;
 								padding: 0 10px !important;
 							}
+						}
+						a {
+							font-size: 16px;
+							font-weight: 500;
+							font-family: $bodyfont;
 						}
 					}
 					.img-content-menu-block {

@@ -2,13 +2,18 @@
     z-index: 1;
     .image-splide {
         .splide__pagination {
-            bottom: 15px;
+            &.is-light { 
+                bottom: 15px;
+            }
         }
         .splide__track {            
             border-radius: 15px;
         }
         .media-block {
             border-radius: 15px; 
+            @media (max-width: 992px) {
+                margin-bottom: 0;
+            }
             img,video {
                 height: 100%;
                 max-height: 400px;

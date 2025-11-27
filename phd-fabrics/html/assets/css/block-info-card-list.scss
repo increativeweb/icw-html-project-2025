@@ -1,6 +1,48 @@
 // Info List Card
 .info-list-cards {
-    margin-top: 30px;
+    &.with-border {
+        border-top: 1px solid rgba(#fff, 0.2);
+        margin-top: 20px !important;   
+        @media (max-width: 767px) {
+            padding-top: 20px;
+            margin-top: 10px !important;   
+        }     
+        & > [class^="col-"] {
+            border-right: 1px solid rgba(#fff, 0.2);
+            @media (min-width: 992px) {
+                &:first-child {
+                    padding-left: 0;
+                    .info-list-card { 
+                        padding-left: 0;
+                    }
+                }
+                &:last-child {
+                    padding-right: 0;
+                    border-right: none;
+                    .info-list-card { 
+                        padding-right: 0;
+                    }
+                }
+            }
+            @media (max-width: 992px) {
+                &:nth-child(even) {
+                    border-right: none;
+                }
+            }
+            @media (max-width: 767px) {
+                border-right: none;
+            }
+        }
+        .info-list-card { 
+            padding: 55px 40px;
+            @media (max-width: 1200px) {
+                padding: 40px 20px;
+            }
+            @media (max-width: 767px) {
+                padding: 15px 0px;
+            }
+        }
+    }
 }
 .info-list-card {	
     @media (max-width: 992px) {
@@ -13,7 +55,7 @@
 		}
     }
 	.card-icon {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
         position: relative;
         line-height: 0.7;
         display: inline-block;
@@ -40,7 +82,7 @@
 	}
 	.card-title {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 22px;
         font-family: "Inter", sans-serif;
         color: #000000;
 		margin-bottom: 10px;
@@ -94,11 +136,18 @@
     }
 	&.icon-left-card {
 		display: flex;
-        align-items: flex-start;
+        align-items: flex-start;        
+        @media (max-width: 575px) {
+            flex-direction: column;
+        }
 		.card-icon{
 			margin-right: 35px;
 			margin-bottom: 0;
 			flex: none;
+            @media (max-width: 575px) {
+                margin-right: 0;
+			    margin-bottom: 20px;
+            }
 		}
 	}
     &.only-card-title {
@@ -123,9 +172,12 @@
 .bg-gradient {
     .info-list-card {
         .card-icon {
+            img {                
+                filter: invert(1);
+            }
             &::after {
-                background: #fff;
-                opacity: 0.3;
+                background: rgba(#fff, 0.3);
+                opacity: 0.5;
             }
         }
         .card-title {
