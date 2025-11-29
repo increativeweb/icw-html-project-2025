@@ -43,7 +43,7 @@
     }
     .footer-logo {
         margin-bottom: 20px;
-        display: block;
+        display: inline-block;
         img {
             max-height: 55px;
             @media (max-width: 767px) {
@@ -163,6 +163,16 @@
                         font-weight: 600;
                     }
                 }
+                &.current-menu-item {
+                    a {
+                        color: $white;
+                        &::before {
+                            width: 100%;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
             }
         }
     }
@@ -250,6 +260,16 @@
                         will-change: transform;
                     }
                     &:hover, &:focus {
+                        color: $white;
+                        &::before {
+                            width: 100%;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+                &.current-menu-item {
+                    a {
                         color: $white;
                         &::before {
                             width: 100%;
