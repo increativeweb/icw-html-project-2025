@@ -9,8 +9,9 @@
             line-height: 1;             
             margin-bottom: 8px; 
             label {
-                font-size: 13px;
+                font-size: 14px;
                 font-weight: 500;
+                color: $black;
             }          
             &.ff-el-is-required {
                 label::after {
@@ -20,15 +21,18 @@
         }
         .ff-el-input--content {
             input, textarea, select {
-                @include border-radius(5px);
-                border: 1px solid rgba($black, 0.2);
+                @include border-radius(6px);
+                border: 1px solid #D4D4D8;
                 background: $white;
                 color: $black;
                 font-size: 14px;
-                font-weight: 500;
+                font-weight: 400;
                 height: 40px !important;
                 line-height: 40px;
                 padding: 0 15px;
+                &::placeholder {
+                    color: #D4D4D8;
+                }
             }
             textarea {
                 height: auto !important;
@@ -88,44 +92,28 @@
     }
     .ff-btn-submit[type=submit]  {
         min-height: 48px;
-        padding: 5px 20px;
-        font-weight: 600;
+        padding: 5px 30px;
+        font-weight: 500;
         font-size: 16px;
         @include transition(0.2s, ease-in-out);
         @include inline-flex;
         @include align-items(center);
         @include justify-content(center);	
         @include border-radius(30px);
-        text-decoration: none !important;
-        gap: 8px;
-        background: $primary;
-        border: 1px solid $primary;
+        background: $darkblack;
+        border: 1px solid $darkblack;
         color: $white;
-        position: relative;
-        &::before {
-            content: '';
-            display: inline-block; 
-            background: url(../images/icons/icon-up.svg) no-repeat center center;
-            background-size: contain !important;
-            width: 12px; 
-            height: 12px; 
-            flex: none;
-            @include transition(0.3s, ease-in-out);
-            position: absolute;
-            right: 32px;
-            bottom: 0;
-            opacity: 0;
-        }  
+        text-decoration: none !important;
+        gap: 10px;
         &::after {
             content: '';
-            display: inline-block; 
-            background: url(../images/icons/icon-up.svg) no-repeat center center;
+            background: url('data:image/svg+xml,<svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.75 6.75H0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.7501 12.75C14.7501 12.75 20.75 8.33112 20.75 6.75C20.75 5.16888 14.75 0.75 14.75 0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
             background-size: contain !important;
-            width: 12px; 
-            height: 12px; 
-            flex: none;
-            @include transition(0.3s, ease-in-out);
-        }
+            width: 20px;
+            height: 12px;
+            display: inline-block;
+            @include transition(0.2s, ease-in-out);
+        } 
         &.ff-btn-submit-md {
             height: 40px;
             min-height: 40px;
@@ -133,17 +121,12 @@
             width: 100%; 
             font-size: 13px;
         }
-
         &:hover, &:focus, &:active {
             text-decoration: none;
-            &::before {
-                @include transform(translate(12px, -12px));
-                opacity: 1;
-                bottom: 5px;
-            }
+            background: #34383b;
+            border-color: #34383b;
             &::after {
-                @include transform(translate(12px, -12px));
-                opacity: 0;
+                @include transform(translateX(5px));
             }
         } 
     }
@@ -156,13 +139,13 @@
     text-align: center;
 }
 .form-content-block {
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 10px;
-    @media (max-width: 1200px) {
-        padding: 30px;
+    h3 {
+        font-weight: 500;
+        font-size: 32px;
+        color: $black;
+        margin-bottom: 10px;
     }
-    @media (max-width: 992px) {
-        padding: 20px;
+    .sort-info {
+        margin-bottom: 30px;
     }
 }

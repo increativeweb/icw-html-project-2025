@@ -25,6 +25,9 @@
     }
     .post-splide {
         padding-bottom: 20px;
+        .expertise-card {
+            max-width: 280px;
+        }
     }
 }
 .expertise-card {
@@ -40,7 +43,6 @@
             width: 100%;
             object-fit: cover;
             object-position: center;
-            aspect-ratio: 16 / 9;
             min-height: 200px;
             transition: all 0.3s ease-in-out;
             transform-origin: center;

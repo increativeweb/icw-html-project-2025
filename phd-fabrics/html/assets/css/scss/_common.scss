@@ -583,6 +583,7 @@ h5, .h5 {
     border: 1px solid rgba(182, 182, 182, 1);
     @include transition(0.3s, ease-in-out);
     opacity: 1 !important;
+    outline: none !important;
     @media (max-width: 767px) {
         width: 32px;
         height: 32px;
@@ -593,7 +594,10 @@ h5, .h5 {
     }
     &--prev {
         background-image: url('data:image/svg+xml,<svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.05364 0.75L1.0787 5.72494C0.639358 6.16428 0.639358 6.87659 1.0787 7.31593L6.05364 12.2909" stroke="rgb(182 182 182)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-        left: -20px;
+        left: 15px;
+        @media (min-width: 992px) {
+            left: -45px;
+        }
         @media (min-width: 1200px) {
             left: -50px;
         }
@@ -603,7 +607,10 @@ h5, .h5 {
     }
     &--next {
         background-image: url('data:image/svg+xml,<svg width="7" height="14" viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 0.75L5.72494 5.72494C6.16428 6.16428 6.16428 6.87659 5.72494 7.31593L0.75 12.2909" stroke="rgb(182 182 182)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'); 
-        right: -20px;
+        right: 15px;
+        @media (min-width: 992px) {
+            right: -45px;
+        }
         @media (min-width: 1200px) {
             right: -50px;
         }
@@ -679,7 +686,7 @@ h5, .h5 {
         @include align-items(center);
         @include justify-content(center);
         @include border-radius(20px);
-        background: #E8E8E8;
+        background: #FAFAFA;
         border: 2px solid transparent;
         font-size: 13px;
         font-weight: 500;
@@ -694,17 +701,16 @@ h5, .h5 {
             }
         }
         &.current {
-            background: transparent;
-            color: $primary;
-            border-color: $primary;
-            width: 60px;
+            background: $black;
+            color: $white;
+            border-color: $white;
         }
         &.next {
             background: transparent;
         }
         &:hover {
             background: transparent;
-            border-color: #E8E8E8;
+            border-color: #eaeaea;
             text-decoration: none;
             &.current {
                 border-color: $primary;
@@ -714,7 +720,7 @@ h5, .h5 {
             }
             svg {
                 path {
-                    stroke: $primary;
+                    stroke: $gray;
                 }
             }
         }

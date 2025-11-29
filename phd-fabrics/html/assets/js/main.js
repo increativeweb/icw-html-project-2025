@@ -74,28 +74,16 @@ jQuery(document).ready(function($) {
             jQuery('html, body').animate({scrollTop: 0}, duration);
             return false;
         });
-    }
-
-    
-   // Page Load: activate first item
-    var firstItem = $(".image-collapse-link ul li a").first();
-    var firstId = firstItem.attr("id");
-
-    $(".image-collapse-link ul li").first().addClass("active");
-    $('.media-block .image-view[data-id="' + firstId + '"]').addClass("active");
-
-    // On hover (mouseenter only)
-    $(".image-collapse-link ul li a").on("mouseenter", function () {
-        var targetId = $(this).attr("id");
-
-        // Activate menu item
-        $(".image-collapse-link ul li").removeClass("active");
-        $(this).parent().addClass("active");
-
-        // Switch images
-        $(".media-block .image-view").removeClass("active");
-        $('.media-block .image-view[data-id="' + targetId + '"]').addClass("active");
-    });
+    }   
+    $('.clients-card').hover(
+        function () {
+            let contentHeight = $(this).find('.sort-info').prop('scrollHeight');
+            $(this).find('.sort-info').css({height: contentHeight + 'px',opacity: 1});
+        },
+        function () {
+            $(this).find('.sort-info').css({height: 0, opacity: 0});
+        }
+    );
 });
 
 // Sticky Nav in Add Class
@@ -119,6 +107,30 @@ if ($('.splide:not(.splide-js)').length) {
         new Splide(this).mount();
         $(this).addClass('icw_splide-with-data'); // Mark as initialized
     });
+}
+if ($('.image-collapse-slider').length) {
+    var main = new Splide('.image-collapse-slider', {
+        type: 'loop',
+        rewind: true,
+        pagination: false,
+        arrows: true,
+        speed: 600,
+        autoplay: true,
+        gap: 20
+    });
+    var nav = new Splide('.image-link-slider', {
+        height: 'auto',
+        direction: 'ttb', /* vertical */
+        wheel: false,
+        pagination: false,
+        arrows: false,
+        gap: 10,
+        isNavigation: true,
+    });
+
+    main.sync(nav);
+    main.mount();
+    nav.mount();
 }
 if ($('.logo-slider').length) {
     var splideOptions = {
