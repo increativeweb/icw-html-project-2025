@@ -193,6 +193,7 @@
 				@include transform(translateX(-100%));
 				& > .mainMenu {
 					display: block;
+					height: calc(100% - 76px);
 					& > li {
 						margin: 0; 
 						padding: 0; 
