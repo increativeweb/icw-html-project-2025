@@ -1,50 +1,18 @@
 // Info List Card
 .info-list-cards {
     &.with-border {
-        border-top: 1px solid rgba(#fff, 0.2);
-        margin-top: 20px !important;   
-        @media (max-width: 767px) {
-            padding-top: 20px;
-            margin-top: 10px !important;   
-        }     
-        & > [class^="col-"] {
-            border-right: 1px solid rgba(#fff, 0.2);
-            @media (min-width: 992px) {
-                &:first-child {
-                    padding-left: 0;
-                    .info-list-card { 
-                        padding-left: 0;
-                    }
-                }
-                &:last-child {
-                    padding-right: 0;
-                    border-right: none;
-                    .info-list-card { 
-                        padding-right: 0;
-                    }
-                }
-            }
-            @media (max-width: 992px) {
-                &:nth-child(even) {
-                    border-right: none;
-                }
-            }
-            @media (max-width: 767px) {
-                border-right: none;
-            }
-        }
+        // margin-top: 15px;
         .info-list-card { 
-            padding: 55px 40px;
+            padding: 30px;
+            border: 1px solid rgba(#fff, 0.2);
             @media (max-width: 1200px) {
-                padding: 40px 20px;
-            }
-            @media (max-width: 767px) {
-                padding: 15px 0px;
+                padding: 20px;
             }
         }
     }
 }
 .info-list-card {	
+    height: 100%;
     @media (max-width: 992px) {
         display: flex;
         align-items: flex-start;
@@ -128,7 +96,7 @@
         .card-info {
             font-size: 18px;
             color: #696969;
-            line-height: 1.3;
+            line-height: 1.4;
             @media (max-width: 992px) {
                 font-size: 16px;
             }
@@ -151,21 +119,27 @@
 		}
 	}
     &.only-card-title {
-        margin-bottom: 3px;
-        .card-content {
-            align-self: center;
-        }
+        margin-top: 15px;
+        display: flex;
+        align-items: flex-start; 
+        height: auto;
+        .card-icon {
+            margin-bottom: 0; 
+            margin-right: 10px;
+            &::after {
+                content: none;
+            }
+            img { 
+                vertical-align:middle;
+                position: relative;
+                width: 22px;
+            }
+        } 
         .card-title {
             font-weight: 400;
             margin: 0px;
             line-height: normal;
-        }
-        .card-icon {
-            img { 
-                vertical-align:middle;
-                margin-top: -2px;
-                position: relative;
-            }
+            font-size: 18px;
         }
     }
 }

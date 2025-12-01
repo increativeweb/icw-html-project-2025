@@ -117,16 +117,23 @@ body ::selection {
 
 .g-50 {   
     @media (min-width: 992px) {
-        --bs-gutter-y: 50px;
         --bs-gutter-x: 50px;  
     }
     @media (min-width: 1400px) {
-        --bs-gutter-y: 100px;
         --bs-gutter-x: 100px;
     }
     @media (max-width: 992px) {
-        --bs-gutter-y: 30px;
         --bs-gutter-x: 30px;  
+    }
+}
+
+.ratio-31x9 {
+    --bs-aspect-ratio: 31%;
+    @media (max-width: 1200px) {
+        --bs-aspect-ratio: 40%;
+    }
+    @media (max-width: 767px) {
+        --bs-aspect-ratio: 50%;
     }
 }
 
@@ -269,20 +276,16 @@ img {
                 height: 100%;
             }
         }
-        .inner-video-player {
-            position: relative;
+        video {
+            vertical-align:bottom;
+            max-width: 100%;
+            object-fit: cover;
+            width: 100%;
             height: 100%;
-            video {
-                vertical-align:bottom;
-                max-width: 100%;
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-            }
-            &.ratio-4x3 {
-                --bs-aspect-ratio: 67%;
-            }
-        }        
+        }
+        &.ratio-4x3 {
+            --bs-aspect-ratio: 67%;
+        }  
         &:hover {
             .play-icon {
                 svg {
@@ -411,8 +414,8 @@ img {
         border-color: $darkblack;
         color: $white;
         &:hover, &:focus, &:active {
-            background: #34383b;
-            border-color: #34383b;
+            background: #332929;
+            border-color: #332929;
         }
     }
     &.btn-white {
@@ -479,6 +482,7 @@ img {
 .btn-link-arrow {
 	font-weight: 600;
 	font-size: 16px;
+    line-height: 1;
 	@include transition(0.2s, ease-in-out);
 	@include inline-flex;
 	@include align-items(center);
@@ -488,33 +492,19 @@ img {
 	@media (max-width:767px) {
 		font-size: 14px;
 	}
-	span.icons {
-        display: flex;
-        @include flex-direction(column);
-        line-height: 1; 
-        overflow: hidden;   
+	.icon-arrow {
+        background: url('data:image/svg+xml,<svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.75 6.75H0.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.7501 12.75C14.7501 12.75 20.75 8.33112 20.75 6.75C20.75 5.16888 14.75 0.75 14.75 0.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+        background-size: contain !important;
+        width: 20px;
         height: 12px;
-        margin-bottom: 0;        
-        .icon  {
-            display: inline-block; 
-            background-size: contain !important;
-            width: 12px; 
-            height: 12px; 
-            flex: none;
-            @include transition(0.3s, ease-in-out);
-            &:last-child {
-                margin-left: -12px;
-            }
-            &.icon-up {
-                background: url(../images/icons/icon-up.svg) no-repeat center center;
-            }
-        }
-	}
-    &:hover, &:focus {
-        span.icons {  
-            .icon {
-                @include transform(translate(12px, -12px));
-            }
+        margin-bottom: -1px;
+        display: inline-block;
+	    @include transition(0.2s, ease-in-out);
+    }
+    &:hover, &:focus {	
+        text-decoration: none;
+        .icon-arrow {            
+	        @include transform(translateX(5px));
         }
     }
 }
@@ -686,7 +676,7 @@ h5, .h5 {
         @include align-items(center);
         @include justify-content(center);
         @include border-radius(20px);
-        background: #FAFAFA;
+        background: #eaeaea;
         border: 2px solid transparent;
         font-size: 13px;
         font-weight: 500;
@@ -713,7 +703,9 @@ h5, .h5 {
             border-color: #eaeaea;
             text-decoration: none;
             &.current {
-                border-color: $primary;
+                background: $black;
+                color: $white;
+                border-color: $white;
             }
             &.next {
                 border-color: transparent;

@@ -2,8 +2,38 @@
     .splide__track {
         border-radius: 15px;
     }
-    .media-block {
+    img, video {
+        object-fit: cover;
         height: 100%;
+    }
+    .section-title {
+        margin-left: 15px;
+        @media (max-width: 1200px) {
+            margin-left: 0px;
+        }
+    }
+    .media-block {
+        margin-right: 30px;
+        @media (max-width: 1200px) {
+            margin-right: 0px;
+        }
+    }
+    .row {
+        &.flex-md-row-reverse {
+            .section-title {
+                margin-right: 50px;
+                margin-left: 0;
+                @media (max-width: 1200px) {
+                    margin-right: 0px;
+                }
+                @media (max-width: 767px) {
+                    margin-top: 20px;
+                }
+            }
+            .media-block {
+                margin-right: 0;
+            }
+        }
     }
 }
 .image-content-zigzag-section {

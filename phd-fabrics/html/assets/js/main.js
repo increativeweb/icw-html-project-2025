@@ -112,11 +112,14 @@ if ($('.image-collapse-slider').length) {
     var main = new Splide('.image-collapse-slider', {
         type: 'loop',
         rewind: true,
-        pagination: false,
-        arrows: true,
+        pagination: true,
+        lazyLoad: 'nearby',
+        arrows: false,
         speed: 600,
         autoplay: true,
-        gap: 20
+        interval: 3000,
+        gap: 20,
+        pauseOnHover: false,
     });
     var nav = new Splide('.image-link-slider', {
         height: 'auto',
@@ -131,6 +134,10 @@ if ($('.image-collapse-slider').length) {
     main.sync(nav);
     main.mount();
     nav.mount();
+    main.on( 'autoplay:playing', function ( rate ) {
+        
+    } );
+
 }
 if ($('.logo-slider').length) {
     var splideOptions = {

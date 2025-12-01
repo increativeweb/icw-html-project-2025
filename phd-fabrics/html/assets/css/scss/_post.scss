@@ -23,7 +23,7 @@
                 font-size: 14px;
                 font-weight: 600;
                 color: $black;
-                background: #FAFAFA;
+                background: rgba($white, 0.2);
                 border: 1px solid rgba($black, 0.2);
                 @include border-radius(30px);
                 display: block;
@@ -35,7 +35,7 @@
                 @include align-items(center);
                 &:hover,
                 &:focus {   
-                    background: #eaeaea;                
+                    border-color: $black;                
                     color: $black;
                 }
             }

@@ -1,32 +1,13 @@
-.post-autoslider-block {
-    @media (max-width: 992px) {
-        .row {
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            overflow: hidden;
-            overflow-x: auto;
-            -webkit-scroll-snap-type: x mandatory;
-            -ms-scroll-snap-type: x mandatory;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 10px;
-            padding-bottom: 15px;
-            @media (max-width: 992px) and (max-width: 580px) {
-                scroll-padding: 0px;
-            }
-            & > .col {
-                max-width: 300px;
-                scroll-snap-align: start;
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 auto;
-                flex: 0 0 auto;
-                min-width: 300px;
-            }
-        }
+.post-slider-block {
+    @media (max-width: 767px) { 
+        margin: 0 -15px;
     }
     .post-splide {
         padding-bottom: 20px;
         .expertise-card {
-            max-width: 280px;
+            @media (max-width: 767px) { 
+                max-width: 280px;
+            }
         }
     }
 }

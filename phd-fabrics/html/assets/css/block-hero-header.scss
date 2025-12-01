@@ -153,6 +153,7 @@
                 border: 4px solid #ffffff;
                 border-radius: 15px;
                 max-width: 150px;
+                aspect-ratio: 1 / 1;
                 @media (max-width: 1200px) {
                     max-width: 100px;
                 }
@@ -170,6 +171,7 @@
                 border: 4px solid #ffffff;
                 border-radius: 15px;
                 max-width: 190px;
+                aspect-ratio: 1 / 1;
                 @media (max-width: 1200px) {
                     max-width: 140px;
                 }
