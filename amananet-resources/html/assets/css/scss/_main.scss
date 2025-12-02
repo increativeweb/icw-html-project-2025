@@ -3,7 +3,7 @@ body {
     background-color: $white;
     background-repeat: no-repeat;
     background-position: top center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .main-content-wrapper {
     min-height: 100vh;
