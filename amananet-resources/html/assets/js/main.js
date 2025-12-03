@@ -78,6 +78,44 @@ jQuery(document).ready(function($) {
 
 });
 
+if($('#searchInput').length) {
+    var $input = $('#searchInput');
+    var $resetInput = $('#resetInput');
+
+    $input.on('input', function () {
+        if ($(this).val().length) {
+            $resetInput.show();
+        } else {
+            $resetInput.hide();
+        }
+    });
+
+    $resetInput.on('click', function () {
+        $input.val('');
+        $resetInput.hide();
+        $input.focus();
+    });
+}
+if($('.select-brand').length) {
+    $('.select-brand').select2({
+        theme: 'bootstrap-5',
+        closeOnSelect : false,
+        placeholder : 'Filter By Brand',
+        allowHtml: true,
+        allowClear: true,
+        tags: true
+    });
+}
+if($('.select-topic').length) {
+    $('.select-topic').select2({
+        theme: 'bootstrap-5',
+        closeOnSelect : false,
+        placeholder : 'Filter By Topic / Job Role',
+        allowHtml: true,
+        allowClear: true,
+        tags: true
+    });
+}
 
 // Splide Slider
 if ($('.splide:not(.splide-js)').length) {
