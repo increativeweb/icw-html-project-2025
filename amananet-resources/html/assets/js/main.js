@@ -126,55 +126,16 @@ if ($('.splide:not(.splide-js)').length) {
 }
 
 // Video Player
-const playIcons = document.querySelectorAll(".is-play-icon");
-if (playIcons.length) {
-    document.querySelectorAll(".media-block").forEach((videoBlock) => {
-        const video = videoBlock.querySelector("video");
-        const playIcon = videoBlock.querySelector(".is-play-icon");
-
-        if (!video || !playIcon) return;
-
-        // Play/Pause when clicking the play icon
-        playIcon.addEventListener("click", function () {
-            if (video.paused) {
-                video.play();
-                playIcon.style.display = "none";
-            } else {
-                video.pause();
-                playIcon.style.display = "flex";
-            }
-        });
-
-        // Pause when clicking on the video itself
-        video.addEventListener("click", function () {
-            if (!video.paused) {
-                video.pause();
-                playIcon.style.display = "flex";
-            }
-        });
-
-        // Show play icon when video ends
-        video.addEventListener("ended", function () {
-            playIcon.style.display = "flex";
-        });
+if ($('.play-iframe').length){
+    $('.play-iframe').click(function(ev){	
+        videourl = $(this).data('videosrc')+"?api=1&autoplay=1&muted=1&rel=0&enablejsapi=1";
+        if($(this).data('ext') == 'mp4'){
+            video = '<div class="video-wrap"><video class="embed-responsive-item w-100" controls autoplay playsinline controlsList="nodownload" oncontextmenu="return false;"><source src="'+videourl+'" type="video/mp4"></video></div>';
+        } else {
+            video = '<div class="video-wrap"><iframe class="embed-responsive-item play-in_iframe" allow="autoplay" src="'+videourl+'" controls="0" scrolling="no" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe></div>';
+        }
+        
+        $(this).parents('.media-block').html(video);
+        ev.preventDefault();
     });
 }
-
-// Play Video on Observer
-const videos = document.querySelectorAll(".media-block.is-video video");
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        const video = entry.target;
-        const playIcon = video.closest(".media-block").querySelector(".play-icon.is-play-icon");
-
-        if (entry.intersectionRatio >= 0.5) {
-            video.play();
-            if (playIcon) playIcon.style.display = "none"; // Hide play icon
-        } else {
-            video.pause();
-            if (playIcon) playIcon.style.display = "flex"; // Show play icon
-        }
-    });
-}, { threshold: [0.5] });
-
-videos.forEach((video) => observer.observe(video));

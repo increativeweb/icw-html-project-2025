@@ -17,12 +17,9 @@
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
-        <link rel='stylesheet' href='assets/css/glightbox.css' type='text/css' media='all' />
         <link rel='stylesheet' href='assets/css/main.css' type='text/css' media='all' />
         
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/js/splide.min.js"></script>
-        <script type="text/javascript" src="assets/js/splide-extension-grid.min.js"></script>
 
         <link rel="icon" href="upload/favicon-150x150.png" sizes="32x32" />
         <link rel="icon" href="upload/favicon-300x300.png" sizes="192x192" />
@@ -171,14 +168,11 @@
                             <div class="media-block ratio ratio-16x9">
                                 <picture><img src="upload/img-resource.jpg" alt="Adobe Acrobat Pro DC - Advanced"></picture>
                             </div>
-                            <div class="media-block ratio ratio-16x9 is-video mt-4">
-                                <video muted="" loop="" playsinline="" controlslist="nodownload" oncontextmenu="return false;">
-                                    <source src="upload/simple-video.mp4" type="video/mp4">Your browser does not support the video tag.
-                                </video>
-                                <span class="play-icon is-play-icon"><svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.9865 87.973C68.2796 87.973 87.973 68.2796 87.973 43.9865C87.973 19.6934 68.2796 0 43.9865 0C19.6934 0 0 19.6934 0 43.9865C0 68.2796 19.6934 87.973 43.9865 87.973Z" fill="white" /><path d="M65.3894 42.8016C66.0838 43.1833 66.0796 44.1826 65.3819 44.5584L34.4742 61.206C33.808 61.5648 33 61.0823 33 60.3255V26.6907C33 25.9302 33.8152 25.4481 34.4817 25.8143L65.3894 42.8016Z" fill="rgba(0,0,0,0.2)"/></svg></span> 
+                            <div class="media-block is-video mt-4">
+                                <div class="play-iframe ratio ratio-16x9" data-ext="youtube" data-videosrc="https://www.youtube.com/embed/AFPZanrJo8o"><img width="1024" height="576" src="upload/img-resource.jpg" alt="Adobe Acrobat Pro DC - Advanced"><span class="play-icon"><svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.9865 87.973C68.2796 87.973 87.973 68.2796 87.973 43.9865C87.973 19.6934 68.2796 0 43.9865 0C19.6934 0 0 19.6934 0 43.9865C0 68.2796 19.6934 87.973 43.9865 87.973Z" fill="white" /><path d="M65.3894 42.8016C66.0838 43.1833 66.0796 44.1826 65.3819 44.5584L34.4742 61.206C33.808 61.5648 33 61.0823 33 60.3255V26.6907C33 25.9302 33.8152 25.4481 34.4817 25.8143L65.3894 42.8016Z" fill="rgba(0,0,0,0.2)"/></svg></span></div>
                             </div>
                             <div class="action">
-                                <a href="#" class="btn btn-outline-dark btn-sm"><span class="icw-icon icon-download"></span> Download Document</a>
+                                <a href="upload/img-resource.jpg" class="btn btn-outline-dark btn-sm" download><span class="icw-icon icon-download"></span> Download Document</a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -331,16 +325,19 @@
                         <div class="copyright-text d-none d-md-block">Copyright &copy; <script>var CurrentYear = new Date().getFullYear(); document.write(CurrentYear); </script> <span> by AmanaNet Inc.</span></div>
                     </div>                                       
                     <div class="footer-info-block">   
-                        <ul class="social-menu-block">
-                            <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Linkedin"><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.30342 20.6617H0.317259V6.86744H4.30342V20.6617ZM2.30854 4.98464C1.0347 4.98464 0 3.85083 0 2.4807C0 1.82278 0.24322 1.1918 0.676155 0.72658C1.10909 0.261359 1.69627 0 2.30854 0C2.9208 0 3.50798 0.261359 3.94092 0.72658C4.37385 1.1918 4.61707 1.82278 4.61707 2.4807C4.61707 3.84954 3.58358 4.98593 2.30974 4.98593L2.30854 4.98464ZM19.223 20.6617H15.2452V13.9467C15.2452 12.3454 15.2152 10.2934 13.1734 10.2934C11.1004 10.2934 10.782 12.0329 10.782 13.8317V20.6617H6.80183V6.86744H10.6258V8.74895H10.681C11.2134 7.66421 12.5137 6.52136 14.4533 6.52136C18.4863 6.52136 19.2278 9.37526 19.2278 13.084V20.6617H19.223Z" fill="white"/></svg></a></li>
-                        </ul>     
+                        <div class="footer-desc">
+                            <p>GSA Schedule: MAS <br> Contract #: 47QTCA19D008F</p>
+                        </div>
                         <ul class="contact-menu-list">
                             <li><span>Call us</span><a href="tel:+1 866 592 7840" class="info">1-866-592-7840</a></li>
                             <li><span>Email Us</span><a href="mailto:info@amananet.com" class="info">info@amananet.com</a></li>
                             <li><span>Mailing Address</span><div class="info">8459 Brook Rd. McLean, VA 22102</div></li>
-                        </ul>                        
+                        </ul>   
+                        <ul class="social-menu-block">
+                            <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Linkedin"><svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.30342 20.6617H0.317259V6.86744H4.30342V20.6617ZM2.30854 4.98464C1.0347 4.98464 0 3.85083 0 2.4807C0 1.82278 0.24322 1.1918 0.676155 0.72658C1.10909 0.261359 1.69627 0 2.30854 0C2.9208 0 3.50798 0.261359 3.94092 0.72658C4.37385 1.1918 4.61707 1.82278 4.61707 2.4807C4.61707 3.84954 3.58358 4.98593 2.30974 4.98593L2.30854 4.98464ZM19.223 20.6617H15.2452V13.9467C15.2452 12.3454 15.2152 10.2934 13.1734 10.2934C11.1004 10.2934 10.782 12.0329 10.782 13.8317V20.6617H6.80183V6.86744H10.6258V8.74895H10.681C11.2134 7.66421 12.5137 6.52136 14.4533 6.52136C18.4863 6.52136 19.2278 9.37526 19.2278 13.084V20.6617H19.223Z" fill="white"/></svg></a></li>
+                        </ul>                          
                         <ul class="footer-menu-inline">
-                            <li><a rel="privacy-policy" href="#">Privacy Policy</a></li>
+                            <li><a rel="privacy-policy" href="https://amananet.com/privacy-policy">Privacy Policy</a></li>
                         </ul>
                     </div>                     
                     <div class="copyright-text d-flex d-md-none">Copyright &copy; <script>var CurrentYear = new Date().getFullYear(); document.write(CurrentYear); </script> <span> by AmanaNet Inc.</span></div>
