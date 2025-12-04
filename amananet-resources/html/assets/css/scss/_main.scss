@@ -331,10 +331,43 @@ body {
     }
 }
 .post-footer-block {
+    margin-top: 50px;
+    .user-info {
+        @include flexbox;
+        @include align-items(center);
+        gap: 12px;
+        .user-image {
+            img {
+                aspect-ratio: 1 / 1;
+                width: 60px;
+                border-radius: 50%;
+                @media (max-width: 992px) {
+                    width: 50px;
+                }
+            }
+        }
+        .user-name {
+            font-size: 18px;
+            color: $primary;
+            line-height: 1;
+            font-weight: 600; 
+            @media (max-width: 992px) {
+                font-size: 16px;
+            }
+            span {
+                font-size: 14px;
+                color: $black;
+                font-weight: 400;
+                margin-top: 5px;
+                display: inline-block;
+            }
+        }
+    }
     .tag-links-block {
         background: $lightpurple;
         border-radius: 6px;
         padding: 15px;
+        margin-top: 30px;
         a {
             text-decoration: none;
             &:hover {
@@ -387,7 +420,8 @@ body {
     ol:not(.splide__list) {
         list-style-type: decimal;
         padding-left: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
         li {
             list-style-type: decimal;
             margin-bottom: 8px;
@@ -396,24 +430,27 @@ body {
             }
             &::marker {
                 font-weight: 600;
+                color: $primary;
             }
         }
     }
     ul:not(.splide__list, .arrow-list) {
         list-style-type: none;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         margin-top: 20px;
         li {
             list-style-type: none;
-            margin-bottom: 8px;
-            padding-left: 25px;
+            padding-left: 30px;
             position: relative;
+            &:not(:last-child) {                
+                margin-bottom: 8px; 
+            }
             &::before {
                 content: '';
                 background: url('../images/icons/icon-circle-check.svg') no-repeat center center;
                 background-size: contain;
-                width: 16px;
-                height: 16px;
+                width: 20px;
+                height: 20px;
                 display: inline-block;
                 position: absolute;
                 left: 0;

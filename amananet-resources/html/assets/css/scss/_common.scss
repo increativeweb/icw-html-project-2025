@@ -590,8 +590,8 @@ img {
             @include justify-content(center);
             @include transition(0.3s, ease-in-out);
             svg {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 flex: none;
                 @include border-radius(50%);
                 @include transition(0.3s, ease-in-out);
@@ -613,18 +613,12 @@ img {
                 height: 100%;
             }
         }
-        .inner-video-player {
-            position: relative;
-            video {
-                vertical-align:bottom;
-                max-width: 100%;
-                object-fit: cover;
-                width: 100%;
-            }
-            &.ratio-4x3 {
-                --bs-aspect-ratio: 67%;
-            }
-        }        
+        video {
+            vertical-align:bottom;
+            max-width: 100%;
+            object-fit: cover;
+            width: 100%;
+        }    
         &:hover {
             .play-icon {
                 svg {
