@@ -300,6 +300,15 @@ body {
         border: 1px solid #EEEDF4;
         padding: 3px 8px;
         border-radius: 20px;
+        text-decoration: none;
+        color: $primary;
+        @include transition(0.3s, ease-in-out);
+    }
+    a.category {        
+        &:hover, &:focus {
+            background: #e8e8e8;
+            color: #000;
+        }
     }
     span {
         display: inline-block;
