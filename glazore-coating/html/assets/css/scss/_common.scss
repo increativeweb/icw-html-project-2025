@@ -782,15 +782,17 @@ h1,
 
 h2,
 .h2 {
-    font-size: 3rem;
+    font-size: clamp(1.875rem, 3vw, 3rem);
 
-    @media (max-width: 992px) {
-        font-size: 2.25rem;
-    }
+    // font-size: 3rem;
 
-    @media (max-width: 992px) {
-        font-size: 2rem;
-    }
+    // @media (max-width: 992px) {
+    //     font-size: 2.25rem;
+    // }
+
+    // @media (max-width: 992px) {
+    //     font-size: 1.875rem;
+    // }
 }
 
 h3,
@@ -889,7 +891,7 @@ h5,
 }
 
 .bg-custom {
-    background: var(--header-bg, none);
+    background: var(--bg-img, none);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
