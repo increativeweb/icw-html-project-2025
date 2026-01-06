@@ -47,7 +47,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    
+
 }
 
 body ::selection {
@@ -109,6 +109,7 @@ a {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -122,6 +123,7 @@ img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     -ms-interpolation-mode: nearest-neighbor;
+
     &.aligncenter {
         margin: 0 auto;
         display: table;
@@ -137,76 +139,192 @@ img {
 }
 
 // Padding-Margin CSS
-.pt-0 {padding-top: 0 !important;}
-.pt-25 {padding-top: 1.563rem !important;}
-.pt-40 {padding-top: 2.5rem !important;}
-.pt-50 {padding-top: 3.125rem !important;}
-.pt-80 {padding-top: 5rem !important;}
-.pt-100 {padding-top: 6.25rem !important;}
-.pt-120 {padding-top: 7.5rem !important;}
-.pt-150 {padding-top: 13.125rem !important;}
+.pt-0 {
+    padding-top: 0 !important;
+}
 
-.pb-0 {padding-bottom: 0 !important;}
-.pb-25 {padding-bottom: 1.563rem !important;}
-.pb-40 {padding-bottom: 2.5rem !important;}
-.pb-50 {padding-bottom: 3.125rem !important;}
-.pb-80 {padding-bottom: 5rem !important;}
-.pb-100 {padding-bottom: 6.25rem !important;}
-.pb-120 {padding-bottom: 7.5rem !important;}
-.pb-150 {padding-bottom: 13.125rem !important;}
+.pt-25 {
+    padding-top: 1.563rem !important;
+}
 
-.mt-0 {margin-top: 0 !important;}
-.mt-50 {margin-top: 3.125rem !important;}
-.mt-100 {margin-top: 6.25rem !important;}
+.pt-40 {
+    padding-top: 2.5rem !important;
+}
 
-.mb-0 {margin-bottom: 0 !important;}
-.mb-50 {margin-bottom: 3.125rem !important;}
-.mb-100 {margin-bottom: 6.25rem !important;}
+.pt-50 {
+    padding-top: 3.125rem !important;
+}
+
+.pt-80 {
+    padding-top: 5rem !important;
+}
+
+.pt-100 {
+    padding-top: 6.25rem !important;
+}
+
+.pt-120 {
+    padding-top: 7.5rem !important;
+}
+
+.pt-150 {
+    padding-top: 13.125rem !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pb-25 {
+    padding-bottom: 1.563rem !important;
+}
+
+.pb-40 {
+    padding-bottom: 2.5rem !important;
+}
+
+.pb-50 {
+    padding-bottom: 3.125rem !important;
+}
+
+.pb-80 {
+    padding-bottom: 5rem !important;
+}
+
+.pb-100 {
+    padding-bottom: 6.25rem !important;
+}
+
+.pb-120 {
+    padding-bottom: 7.5rem !important;
+}
+
+.pb-150 {
+    padding-bottom: 13.125rem !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mt-50 {
+    margin-top: 3.125rem !important;
+}
+
+.mt-100 {
+    margin-top: 6.25rem !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-50 {
+    margin-bottom: 3.125rem !important;
+}
+
+.mb-100 {
+    margin-bottom: 6.25rem !important;
+}
 
 @media (max-width: 767px) {
-	.m-pt-0 {padding-top: 0 !important;}
-	.m-pt-25 {padding-top: 1.563rem !important;}
-	.m-pt-40 {padding-top: 2.5rem !important;}
-	.m-pt-50 {padding-top: 3.125rem !important;}
-	.m-pt-80 {padding-top: 5rem !important;}
-	.m-pt-100 {padding-top: 6.25rem !important;}
+    .m-pt-0 {
+        padding-top: 0 !important;
+    }
 
-	.m-pb-0 {padding-bottom: 0 !important;}
-	.m-pb-25 {padding-bottom: 1.563rem !important;}
-	.m-pb-40 {padding-bottom: 2.5rem !important;}
-	.m-pb-50 {padding-bottom: 3.125rem !important;}
-	.m-pb-80 {padding-bottom: 5rem !important;}
-	.m-pb-100 {padding-bottom: 6.25rem !important;}
+    .m-pt-25 {
+        padding-top: 1.563rem !important;
+    }
 
-    .m-mt-0 {margin-top: 0 !important;}
-    .m-mt-50 {margin-top: 3.125rem !important;}
-    .m-mt-100 {margin-top: 6.25rem !important;}
+    .m-pt-40 {
+        padding-top: 2.5rem !important;
+    }
 
-    .m-mb-0 {margin-bottom: 0 !important;}
-    .m-mb-50 {margin-bottom: 3.125rem !important;}
-    .m-mb-100 {margin-bottom: 6.25rem !important;}
+    .m-pt-50 {
+        padding-top: 3.125rem !important;
+    }
+
+    .m-pt-80 {
+        padding-top: 5rem !important;
+    }
+
+    .m-pt-100 {
+        padding-top: 6.25rem !important;
+    }
+
+    .m-pb-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .m-pb-25 {
+        padding-bottom: 1.563rem !important;
+    }
+
+    .m-pb-40 {
+        padding-bottom: 2.5rem !important;
+    }
+
+    .m-pb-50 {
+        padding-bottom: 3.125rem !important;
+    }
+
+    .m-pb-80 {
+        padding-bottom: 5rem !important;
+    }
+
+    .m-pb-100 {
+        padding-bottom: 6.25rem !important;
+    }
+
+    .m-mt-0 {
+        margin-top: 0 !important;
+    }
+
+    .m-mt-50 {
+        margin-top: 3.125rem !important;
+    }
+
+    .m-mt-100 {
+        margin-top: 6.25rem !important;
+    }
+
+    .m-mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .m-mb-50 {
+        margin-bottom: 3.125rem !important;
+    }
+
+    .m-mb-100 {
+        margin-bottom: 6.25rem !important;
+    }
 }
 
 .g-15 {
     --bs-gutter-y: 1.875rem;
     --bs-gutter-x: 1.875rem;
 }
+
 .g-30 {
     --bs-gutter-x: 3.75rem;
+
     @media (max-width: 992px) {
-        --bs-gutter-x: 1.875rem;  
+        --bs-gutter-x: 1.875rem;
     }
 }
 
-.g-50 {   
+.g-50 {
     @media (min-width: 992px) {
-        --bs-gutter-x: 3.125rem;  
+        --bs-gutter-x: 3.125rem;
     }
+
     @media (min-width: 1400px) {
         --bs-gutter-x: 6.25rem;
     }
+
     @media (max-width: 992px) {
-        --bs-gutter-x: 1.875rem;  
+        --bs-gutter-x: 1.875rem;
     }
 }
 
@@ -227,6 +345,11 @@ img {
     padding: 0.75rem 1.5rem;
     line-height: 1;
     gap: 0.5rem;
+
+    @media (max-width: 767px) {
+        min-height: 2.75rem;
+        min-width: 5rem;
+    }
 
     &.btn-sm {
         min-height: 2.75rem;
@@ -262,6 +385,7 @@ img {
         color: var(--blue) !important;
         border-color: var(--white) !important;
         background-color: var(--white) !important;
+
         &:hover,
         &:focus {
             border-color: var(--blue) !important;
@@ -277,6 +401,7 @@ img {
         min-width: auto;
         min-height: auto;
         @include transition(0.2s, ease-in-out);
+
         .icon-arrow {
             background: url('../images/icons/icon-arrow.svg') no-repeat center center;
             background-size: contain !important;
@@ -289,6 +414,7 @@ img {
         &:hover,
         &:focus {
             color: var(--text-black);
+
             .icon-arrow {
                 @include transform(translateX(0.3rem));
                 filter: brightness(0);
@@ -306,6 +432,7 @@ img {
         text-underline-offset: 0.3rem;
         text-decoration: underline;
         @include transition(0.2s, ease-in-out);
+
         &:hover,
         &:focus {
             color: var(--text-black);
@@ -324,7 +451,8 @@ img {
     text-decoration: none;
     @include transition(0.2s, ease-in-out);
     text-underline-offset: 0.3rem;
-    margin-bottom: 1rem;    
+    margin-bottom: 1rem;
+
     .icon-back {
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z" fill="rgb(66 68 150)"/></svg>') no-repeat center center;
         background-size: contain;
@@ -337,6 +465,7 @@ img {
     &:focus {
         color: var(--text-black);
         text-decoration: underline;
+
         .icon-back {
             @include transform(translateX(-0.3rem));
             filter: brightness(0);
@@ -404,7 +533,9 @@ img {
     &.bottom-video-content {
         @media (max-width: 575px) {
             padding-bottom: 18.75rem;
+
             .media-bg-block {
+
                 img,
                 video {
                     object-position: bottom center;
@@ -568,6 +699,7 @@ img {
         li {
             .splide__pagination__page {
                 background: rgba(255, 255, 255, 0.4);
+
                 &.is-active {
                     background: var(--blue);
                     border-color: var(--blue);
@@ -596,15 +728,19 @@ img {
         &:focus {
             opacity: 0.7;
         }
+
         &.splide__arrow--prev {
             transform: scaleX(-1);
         }
+
         &.splide__arrow--next {
             left: calc(50% + 1.25rem);
         }
+
         svg {
             display: none;
         }
+
         &:disabled {
             opacity: .3
         }
@@ -622,28 +758,37 @@ h4,
 .h4,
 h5,
 .h5 {
-    line-height: 1.1;
+    line-height: 1.2;
     font-weight: 600;
+
+    @media (max-width: 767px) {
+        line-height: 1.1;
+    }
 }
 
 h1,
 .h1 {
-    font-size: 3.75rem;
-    line-height: 1;
-    @media (max-width: 992px) {
-        font-size: 3.25rem;
-    }
-    @media (max-width: 767px) {
-        font-size: 2.8rem;
-    }
+    font-size: clamp(2.5rem, 3vw, 3.75rem);
+    font-weight: 700;
+    // font-size: 3.75rem;
+
+    // @media (max-width: 992px) {
+    //     font-size: 3.25rem;
+    // }
+
+    // @media (max-width: 767px) {
+    //     font-size: 2.8rem;
+    // }
 }
 
 h2,
 .h2 {
     font-size: 3rem;
+
     @media (max-width: 992px) {
         font-size: 2.25rem;
     }
+
     @media (max-width: 992px) {
         font-size: 2rem;
     }
@@ -651,10 +796,12 @@ h2,
 
 h3,
 .h3 {
-    font-size: 2rem; 
+    font-size: 2rem;
+
     @media (max-width: 992px) {
         font-size: 1.75rem;
     }
+
     @media (max-width: 767px) {
         font-size: 1.5rem;
     }
@@ -663,9 +810,11 @@ h3,
 h4,
 .h4 {
     font-size: 1.5rem;
+
     @media (max-width: 992px) {
         font-size: 1.25rem;
     }
+
     @media (max-width: 767px) {
         font-size: 1.125rem;
     }
@@ -674,6 +823,7 @@ h4,
 h5,
 .h5 {
     font-size: 1.25rem;
+
     @media (max-width: 992px) {
         font-size: 1rem;
     }
@@ -708,6 +858,7 @@ h5,
 
 .bg-black {
     background-color: var(--black) !important;
+
     &>* {
         color: var(--text-white) !important;
     }
@@ -723,7 +874,8 @@ h5,
 
 .bg-primary {
     background-color: var(--blue) !important;
-    & > * {
+
+    &>* {
         color: var(--text-white) !important;
     }
 }
@@ -738,6 +890,42 @@ h5,
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+}
+
+// Background Vector CSS
+.bg-br-vector {
+    position: relative;
+
+    &::before {
+        content: '';
+        background-image: url('../images/img-bg-logo.svg');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: contain;
+        width: 30.25rem;
+        height: 30rem;
+        display: inline-block;
+        position: absolute;
+        bottom: 4rem;
+        right: 0;
+        opacity: 0.2;
+
+        @media (max-width: 1500px) {
+            width: 25rem;
+            height: 25rem;
+        }
+
+        @media (max-width: 992px) {
+            width: 20rem;
+            height: 20rem;
+        }
+
+        @media (max-width: 767px) {
+            bottom: 0;
+            width: 15rem;
+            height: 15rem;
+        }
+    }
 }
 
 

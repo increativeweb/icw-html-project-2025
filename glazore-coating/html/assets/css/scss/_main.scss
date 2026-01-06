@@ -1,0 +1,44 @@
+body {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 58.75rem;
+        height: 58.75rem;
+        left: -6.125rem;
+        top: -6.125rem;
+        background: rgba(184, 175, 252, 0.45);
+        filter: blur(9.375rem);
+
+        @media (max-width: 1200px) {
+            width: 48.75rem;
+            height: 48.75rem;
+        }
+
+        @media (max-width: 767px) {
+            width: 36rem;
+            height: 36rem;
+        }
+
+        @media (max-width: 575px) {
+            width: 20rem;
+            height: 20rem;
+            top: -1rem;
+            left: -1rem;
+        }
+    }
+
+}
+
+.theme-section {
+    padding: 7.5rem 0;
+
+    @media (max-width: 1200px) {
+        padding: 4.5rem 0;
+    }
+
+    @media (max-width: 767px) {
+        padding: 3.125rem 0;
+    }
+}
