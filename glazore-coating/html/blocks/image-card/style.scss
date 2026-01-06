@@ -1,20 +1,20 @@
 @import "../../assets/css/scss/mixins";
 
-.info-card {
+.image-card {
     @include flexbox;
     @include flex-direction(column);
     height: 100%;
     gap: 1.25rem;
     position: relative;
     @include transition(0.2s, ease-in-out);
-    border: 1px solid transparent;
 
     .card-img {
-        max-width: 2.875rem;
+        overflow: hidden;
 
         img {
             width: 100%;
             aspect-ratio: 1 / 1;
+            @include transition(0.2s, ease-in-out);
         }
     }
 
@@ -22,7 +22,6 @@
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 0.625rem;
 
             a {
                 color: var(--text-black);
@@ -38,39 +37,17 @@
 
     &:has(.stretched-link:hover),
     &:has(.stretched-link:focus) {
-        @include transform(translateY(-5px));
-        border-color: rgba(66, 68, 150, 0.04);
+        .card-img {
+            img {
+                @include transform(scale(1.05));
+            }
+        }
 
         .card-title {
             a {
                 color: var(--blue);
+                text-decoration: underline;
             }
         }
-    }
-
-    &.with-bg {
-        padding: 1.875rem;
-        background-color: var(--lightblue);
-
-        @media (max-width: 992px) {
-            padding: 1.25rem;
-        }
-    }
-
-    &.is-left-icon {
-        @include flex-direction(row);
-
-        @media (max-width: 767px) {
-            gap: 0.75rem;
-
-            .card-img {
-                max-width: 2.5rem;
-            }
-        }
-    }
-
-    &.is-center {
-        text-align: center;
-        @include align-items(center);
     }
 }
