@@ -6,6 +6,8 @@
         @include align-items(center);
         justify-content: stretch;
         border: 1px solid #000000;
+        overflow: hidden;
+        overflow-x: auto;
 
         .logo-item {
             flex: 1;
@@ -14,6 +16,7 @@
             @include justify-content(center);
             padding: 1.5rem 1rem;
             height: 5.625rem;
+            min-width: 12.5rem;
 
             &:not(:last-child) {
                 border-right: 1px solid #000000;
