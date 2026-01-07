@@ -352,7 +352,7 @@ img {
     }
 
     &.btn-sm {
-        min-height: 2.75rem;
+        min-height: 2.5rem;
         min-width: 5rem;
     }
 
@@ -363,8 +363,8 @@ img {
 
         &:hover,
         &:focus {
-            border-color: #363884 !important;
-            background-color: #363884 !important;
+            border-color: #04497c !important;
+            background-color: #04497c !important;
         }
     }
 
@@ -550,7 +550,7 @@ img {
     max-width: 100%;
     @include border-radius(0);
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     line-height: 0.7;
 
     img {
@@ -583,6 +583,84 @@ img {
 
         &.is-animate {
             @include transform(translateY(0%));
+        }
+    }
+
+    &.ratio-4x3 {
+        --bs-aspect-ratio: 85%;
+    }
+
+    &.is-right-corner-mask {
+        position: relative;
+        z-index: 1;
+
+        @media (min-width: 1200px) {
+            min-height: 37.5rem;
+        }
+
+        img {
+            transition: clip-path 1s cubic-bezier(0.4, 0, 0.2, 1);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0 100%);
+        }
+
+
+        &.is-active {
+            img {
+                clip-path: polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1.875rem;
+            left: -1.875rem;
+            width: 13.438rem;
+            height: 10rem;
+            background: var(--blue);
+            z-index: -1;
+
+            @media (max-width: 992px) {
+                bottom: -0.8rem;
+                right: -0.8rem;
+            }
+        }
+    }
+
+    &.is-left-corner-mask {
+        position: relative;
+        z-index: 1;
+
+        @media (min-width: 1200px) {
+            min-height: 37.5rem;
+        }
+
+        img {
+            display: block;
+            transition: clip-path 1s cubic-bezier(0.4, 0, 0.2, 1);
+            clip-path: polygon(0 0%, 0% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        &.is-active {
+            img {
+                clip-path: polygon(0 22%, 13% 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1.875rem;
+            right: -1.875rem;
+            width: 13.438rem;
+            height: 10rem;
+            background: var(--blue);
+            z-index: -1;
+
+            @media (max-width: 992px) {
+                bottom: -0.8rem;
+                right: -0.8rem;
+            }
         }
     }
 
@@ -681,10 +759,10 @@ img {
             height: 0.625rem;
             @include transform (unset);
             opacity: 1;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.2);
             border: 0.063rem solid transparent;
             @include border-radius(0.5rem);
-            margin: 0 0.25rem;
+            margin: 0 0.15rem;
             @include transition(0.3s, ease-in-out);
 
             &.is-active {

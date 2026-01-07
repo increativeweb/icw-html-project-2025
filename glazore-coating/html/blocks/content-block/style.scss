@@ -16,24 +16,7 @@
             padding-top: 3.125rem;
         }
 
-        &.right-img {
-            .media-block {
-                right: -1.875rem;
-                left: auto;
-
-                @media (max-width: 992px) {
-                    right: 0;
-                }
-            }
-        }
-
         .media-block {
-            left: -1.875rem;
-
-            @media (max-width: 992px) {
-                left: 0;
-            }
-
             @media (max-width: 767px) {
                 margin-bottom: 2rem;
             }

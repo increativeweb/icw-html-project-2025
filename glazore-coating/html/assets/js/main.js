@@ -34,11 +34,15 @@ jQuery(document).ready(function ($) {
         });
         $("li.menu-item-has-children > span").append('<i class="arrow"></i>');
     }
-    $('li.menu-item-has-children .arrow').on('click', function (event) {
-        event.preventDefault();
-        $(this).toggleClass('is-active');
-        $(this).parents().find('.sub-menu').first().slideToggle(300);
+    $('.menu-item-has-children .arrow').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
+        const $li = $(this).closest('.menu-item-has-children');
+        const $submenu = $li.children('.sub-menu');
+
+        $(this).toggleClass('is-active');
+        $submenu.stop(true, true).slideToggle(300);
     });
 
 
