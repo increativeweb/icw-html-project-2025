@@ -6,8 +6,9 @@
     height: 100%;
     gap: 1.25rem;
     position: relative;
-    @include transition(0.2s, ease-in-out);
-    border: 1px solid transparent;
+    @include transition(0.3s, ease-in-out);
+    // clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0 100%);
+    // transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1), all 0.3s;
 
     .card-img {
         max-width: 2.875rem;
@@ -38,8 +39,8 @@
 
     &:has(.stretched-link:hover),
     &:has(.stretched-link:focus) {
-        @include transform(translateY(-5px));
-        border-color: rgba(66, 68, 150, 0.04);
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+        // clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
 
         .card-title {
             a {

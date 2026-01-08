@@ -270,13 +270,9 @@
                     &.mega-menu {
                         .sub-menu {
                             @media (min-width: 991px) {
-                                left: -6.25rem;
+                                left: 0;
                                 padding: 1rem;
                                 min-width: 31.25rem;
-
-                                &::before {
-                                    left: 7.5rem;
-                                }
                             }
 
                             .sub-menu-inner {

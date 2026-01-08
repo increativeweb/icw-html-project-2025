@@ -65,13 +65,33 @@
             z-index: -1;
 
             @media (max-width: 992px) {
-                bottom: -0.8rem;
-                right: -0.8rem;
+                bottom: -0.15rem;
+                right: -1rem;
             }
         }
 
         .splide__pagination {
             bottom: -1rem;
+        }
+
+        .splide__slide {
+            .media-block {
+                &::after {
+                    content: none;
+                }
+
+                &.is-left-corner-mask {
+                    img {
+                        clip-path: polygon(0 15%, 15% 0, 100% 0, 100% 100%, 0 100%);
+                    }
+                }
+
+                &.is-right-corner-mask {
+                    img {
+                        clip-path: polygon(0 0, 85% 0, 100% 25%, 100% 100%, 0 100%);
+                    }
+                }
+            }
         }
     }
 }

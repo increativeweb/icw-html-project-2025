@@ -1,0 +1,56 @@
+.main-footer {
+    background: #171828;
+    padding: 6.25rem 0 3.125rem;
+
+    ul {
+        li {
+            a {
+                font-size: 1rem;
+                color: var(--text-white);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .footer-content {
+        text-align: center;
+
+        .logo {
+            img {
+                max-height: 2.25rem;
+            }
+        }
+
+        .footer-info {
+            max-width: 30.625rem;
+            margin: 0 auto;
+            margin-top: 3.125rem;
+
+            p {
+                color: var(--text-white);
+                font-size: 2.375rem;
+                font-weight: 600;
+                line-height: 1.3;
+            }
+        }
+    }
+
+    .footer-contact-block {
+        margin-top: 3.125rem;
+
+        ul {
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            gap: 4.375rem;
+
+            li {
+                a {
+                    @include inline-flex;
+                    @include align-items(center);
+                    gap: 0.625rem;
+                }
+            }
+        }
+    }
+}

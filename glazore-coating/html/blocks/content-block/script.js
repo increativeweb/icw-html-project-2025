@@ -20,3 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     blocks.forEach(block => observer.observe(block));
 });
+if (jQuery('.image-splide').length) {
+    document.querySelectorAll('.image-splide').forEach(slider => {
+        const splide = new Splide(slider, {
+            type: 'loop',
+            perPage: 1,
+            perMove: 1,
+            pagination: true,
+            arrows: false,
+            updateOnMove: true,
+            classes: {
+                pagination: 'splide__pagination is-dark',
+            },
+        });
+
+        splide.mount();
+
+        jQuery(window).on('resize', () => {
+            splide.refresh();
+        });
+    });
+}

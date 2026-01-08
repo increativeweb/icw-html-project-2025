@@ -14,11 +14,23 @@
         img {
             width: 100%;
             aspect-ratio: 1 / 1;
-            @include transition(0.2s, ease-in-out);
+            clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0 100%);
+            transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
     .card-body {
+        position: absolute;
+        bottom: -30%;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        @include flexbox;
+        @include flex-direction(column);
+        gap: 0.5rem;
+        background: rgba(0, 0, 0, 0.7);
+        transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(0.75rem);
+
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
@@ -35,13 +47,22 @@
         }
     }
 
-    &:has(.stretched-link:hover),
-    &:has(.stretched-link:focus) {
+    &:hover,
+    &:focus {
         .card-img {
             img {
-                @include transform(scale(1.05));
+                clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
             }
         }
+
+        .card-body {
+            bottom: 0;
+        }
+    }
+
+    &:has(.stretched-link:hover),
+    &:has(.stretched-link:focus) {
+
 
         .card-title {
             a {
