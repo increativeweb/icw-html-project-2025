@@ -1,5 +1,5 @@
 .main-footer {
-    background: #171828;
+    background-color: #171828;
     padding: 6.25rem 0 3.125rem;
     position: relative;
     overflow: hidden;
@@ -7,6 +7,35 @@
 
     @media (max-width: 992px) {
         padding: 4.5rem 0 2rem;
+    }
+
+    &::before {
+        content: '';
+        background-image: url('../images/img-footer-vector.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom left;
+        width: 16.875rem;
+        height: 30rem;
+        position: absolute;
+        bottom: 5rem;
+        left: 0;
+
+        @media (max-width: 1440px) {
+            width: 15rem;
+            height: 22rem;
+            bottom: 8rem;
+        }
+
+        @media (max-width: 992px) {
+            width: 10rem;
+            height: 14rem;
+            bottom: 5rem;
+        }
+
+        @media (max-width: 767px) {
+            content: none;
+        }
     }
 
     &::after {
