@@ -7,6 +7,12 @@
     gap: 1.25rem;
     position: relative;
     @include transition(0.2s, ease-in-out);
+    overflow: hidden;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        max-width: 300px;
+    }
 
     .card-img {
         overflow: hidden;
@@ -69,6 +75,20 @@
                 color: var(--blue);
                 text-decoration: underline;
             }
+        }
+    }
+}
+
+.industries-splide {
+    @media (max-width: 1200px) {
+        padding-bottom: 0.5rem;
+    }
+
+    @media (max-width: 992px) {
+        margin: 0 -1rem;
+
+        .splide__track {
+            overflow: visible;
         }
     }
 }

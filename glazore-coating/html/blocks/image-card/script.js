@@ -7,12 +7,23 @@ if (jQuery('.industries-splide').length) {
         pagination: true,
         arrows: false,
         gap: '2rem',
+
+        classes: {
+            pagination: 'splide__pagination is-light',
+        },
         breakpoints: {
-            1200: { perPage: 3 },
-            992: { perPage: 2 },
+            1200: {
+                type: 'loop',
+                perPage: 3,
+                autoWidth: true,
+            },
+            992: {
+                perPage: 2,
+                gap: '1rem',
+                padding: { left: '1rem', right: '1rem' }
+            },
             767: {
                 perPage: 1,
-                gap: '1rem',
             },
         }
     });

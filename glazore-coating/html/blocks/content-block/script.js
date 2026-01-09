@@ -29,9 +29,7 @@ if (jQuery('.image-splide').length) {
             pagination: true,
             arrows: false,
             updateOnMove: true,
-            classes: {
-                pagination: 'splide__pagination is-dark',
-            },
+
         });
 
         splide.mount();

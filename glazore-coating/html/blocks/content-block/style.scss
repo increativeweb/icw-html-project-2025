@@ -16,6 +16,12 @@
             padding-top: 3.125rem;
         }
 
+        .media-block {
+            @media (max-width: 767px) {
+                margin-bottom: 2rem;
+            }
+        }
+
         .image-splide {
             padding-bottom: 1rem;
 
@@ -46,6 +52,8 @@
             .splide__slide {
 
                 .media-block {
+                    margin-bottom: 0;
+
                     &::after {
                         content: none;
                     }

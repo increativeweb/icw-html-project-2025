@@ -244,10 +244,16 @@
                     &:active,
                     &:focus {
                         &>span {
+                            a {
+                                color: var(--blue);
+                            }
+
                             @media (min-width: 991px) {
-                                &>a::after {
-                                    filter: brightness(1);
-                                    @include transform(rotate(180deg));
+                                &>a {
+                                    &::after {
+                                        filter: brightness(1);
+                                        @include transform(rotate(180deg));
+                                    }
                                 }
                             }
                         }
@@ -269,10 +275,14 @@
 
                     &.mega-menu {
                         .sub-menu {
+                            @media (min-width: 1200px) {
+                                min-width: 31.25rem;
+                            }
+
                             @media (min-width: 991px) {
                                 left: 0;
                                 padding: 1rem;
-                                min-width: 31.25rem;
+                                min-width: 28rem;
                             }
 
                             .sub-menu-inner {
@@ -280,6 +290,11 @@
                                 grid-template-columns: 1fr 15.625rem;
                                 width: 100%;
                                 grid-gap: 2rem;
+
+                                @media (max-width: 1200px) {
+                                    grid-gap: 1rem;
+                                    grid-template-columns: 1fr 14rem;
+                                }
 
                                 @media (max-width: 992px) {
                                     grid-template-columns: 1fr;
