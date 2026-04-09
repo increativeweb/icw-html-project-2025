@@ -1,0 +1,92 @@
+//header
+#header-wrapper
+  color: white
+  padding: u(20 0)
+  position: absolute
+  width: 100%
+  z-index: 999
+  a
+    color: inherit
+    &:hover
+      color: darken(white, 12%)
+  svg
+    fill: white
+    height: u(53)
+  &.hidden
+    transform: translateY(-100%)
+    transition: transform $timing
+  &.fixed
+    background: white
+    box-shadow: 0 1px 15px rgba(0,0,0,0.2)
+    color: $darkPrimary
+    position: fixed
+    .ico
+      color: $primary
+    a:hover
+      color: lighten($darkPrimary, 12%)
+      .ico
+        color: darken($primary, 12%)
+    svg
+      fill: $darkPrimary
+    &.hidden
+      transform: translateY(0)
+  &:not(.fixed)
+    .header-top.row
+      @media screen and (max-width: 1530px)
+        max-width: u(890)
+      @media screen and (max-width: 1200px)
+        max-width: u(700)
+    .header-logo
+      svg
+        @media #{$large-up}
+          max-width: u(220)
+          height: u(72)
+
+  .ico
+    font-size: u(30)
+  .icon-label
+    display: none
+    margin-left: u(5)
+    margin-top: u(6)
+    text-transform: uppercase
+    vertical-align: top
+    @media #{$medium-up}
+      display: inline-block
+
+
+.header-logo
+  @media #{$medium-up}
+    text-align: center
+  svg
+    max-width: u(160)
+
+
+.ico-nav-ul, .hamburger-menu
+  margin-top: u(10)
+
+.hamburger-menu a
+  text-decoration: none
+
+.ico-nav-ul
+  margin-bottom: 0
+  padding: 0
+  text-align: right
+  li
+    display: inline-block
+    padding: u(0 10)
+    &:last-child
+      padding-right: 0
+    a
+      text-decoration: none
+
+.header-cta
+  background: $darkPrimary
+  color: $secondary
+  text-align: center
+  text-transform: uppercase
+  h4
+    color: inherit
+    font-weight: normal
+    letter-spacing: 2px
+    strong
+      font-weight: bold

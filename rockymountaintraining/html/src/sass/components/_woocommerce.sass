@@ -1,0 +1,51 @@
+/**
+ * Woocommerce
+ */
+
+.woocommerce, .woocommerce-page
+	form .form-row
+		.description
+			display: block
+			opacity: 0.7
+			font-size: u(14)
+			line-height: 1.2
+			margin-top: u(5)
+		select
+			line-height: u(22)
+			padding: u(3 12)
+
+	// Multiple shipping plugin
+	.address-container
+		.shipping_email, .shipping_phone
+			display: none
+
+		.address-block
+			width: 33.3333%
+			margin: 0;
+			padding-right: 20px
+			padding-bottom: 40px
+
+			address
+				font-size: 15px
+				margin-bottom: 10px
+				min-height: 110px
+
+			.buttons
+				position: relative
+				bottom: 0
+
+			&:nth-child(3n+1)
+				clear: both
+
+			@media (max-width: 660px)
+				width: 100%
+				padding-right: 0
+
+	#address_form
+		.h2-link
+			display: inline-block
+			margin-bottom: 16px
+			font-size: 16px
+
+		.update-shipping-addresses, small
+			display: none

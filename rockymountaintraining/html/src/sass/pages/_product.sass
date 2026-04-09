@@ -1,0 +1,272 @@
+//product
+.product-upper
+  background: $darkPrimary
+  color: white
+  overflow: hidden
+  padding: u(50 0)
+  @media #{$small-only}
+    text-align: center
+  a
+    color: $primary
+  h1, h3
+    margin-top: 0
+  h1
+    color: white
+    font-size: u(30)
+  h3
+    color: $secondary
+    margin-bottom: 0
+  > .row
+    position: relative
+
+.product-upper__back-link
+  p
+    margin-bottom: 0
+  a
+    color: white
+    &:hover
+      color: darken( white, 15% )
+
+.pricing-holder
+  background: white
+  padding: u(15)
+  a
+    color: $darkPrimary
+  .single-price
+    background: $primary
+    margin: u(-15 -15 0 -15)
+    padding: u(1 15 1 15)
+  .low-price, .low-price-message
+    @media #{$medium-up}
+      display: inline-block
+  .low-price-message
+    @media #{$medium-up}
+      max-width: 65%
+    @media #{$small-only}
+      p
+        margin-top: 0
+  .low-price
+    @media #{$medium-up}
+      margin-right: 5%
+    .amount
+      font-size: u(40)
+      font-weight: bold
+  .high-price
+    border-top: 1px solid white
+  .info-label, .class-time__label
+    color: $darkPrimary
+    font-weight: bold
+    margin-bottom: 0
+  .class-time__time
+    color: darken($mediumGray, 35%)
+    margin-top: 0
+  .variations
+    width: 100%
+    select
+      border: 2px solid $mediumGray
+      border-radius: 5px
+      padding-bottom: u(5)
+      padding-top: u(5)
+    .label
+      display: none
+    .reset_variations
+      display: none!important //needs important to override inline style
+  .single_add_to_cart_button
+    margin-bottom: u(10)
+    width: 100%
+  .single_variation .in-stock
+    color: $primary
+  .qty
+    margin-bottom: u(15)
+  .qty-label
+    color: $darkPrimary
+    font-weight: bold
+
+.onsite-only-class
+  color: $txtColor
+
+.woocommerce div.product form.cart, .woocommerce div.product p.cart
+  margin-bottom: 0
+
+div.row.inner.no-margin > form.variations_form.cart > .variations
+    width: 50%
+    @media #{$medium-down}
+      width: 100%
+
+.woocommerce div.product form.cart div.quantity
+  display: inline-block
+  float: none
+  margin-left: u(10)
+  input
+    padding: 0
+
+.show-video
+  color: white
+  display: block
+  margin: u(30 0 15)
+  text-align: center
+  text-decoration: none
+  .ico-video
+    color: $primary
+    display: block
+    font-size: u(60)
+    line-height: 0.5
+  &:hover
+    color: darken(white, 10%)
+    .ico-video
+      color: darken($primary, 10%)
+
+.instructor-cert
+  border: 2px solid white
+  margin-top: u(15)
+  padding-bottom: u(15)
+  padding-top: u(15)
+  @media #{$medium-down}
+    margin-bottom: u(20)
+  p
+    margin: 0
+
+.product-lower
+  background: white
+  padding: u(55 0)
+  h2
+    color: $primary
+    margin-top: 0
+  h3, h4
+    color: $darkPrimary
+
+
+.product-topics
+  border-left: 2px solid $lightGray
+  padding-left: u(40)
+  h3
+    margin-top: 0
+  h4
+    color: $primary
+    margin-bottom: 0
+  p
+    margin-top: 0
+
+.product-video
+  display: none
+  position: absolute
+  top: u(-50)
+  width: 100%
+  .flex-video
+    margin: 0
+    iframe, object, embed
+      top: 0
+  .ico-close
+    font-size: u(40)
+    left: u(10)
+    position: absolute
+    top: u(30)
+    z-index: 10
+    &:hover
+      color: darken(white, 12%)
+      cursor: pointer
+    @media screen and (min-width: 1300px)
+      left: u(-50)
+      top: u(10)
+
+@media #{$medium-up}
+  .content-gutter
+    padding-right: u(38)
+
+.woocommerce .wc-message__holder
+  .woocommerce-message:before, .woocommerce-error:before, .woocommerce-info:before
+    position: relative
+    color: white
+    top: 0
+    left: 0
+    margin-right: u(10)
+    @media #{$small-only}
+      display: none
+  > *
+    background-color: $primary
+    margin-bottom: 0
+    border: none
+    clear: both
+    color: white
+    padding: u(10 20)!important //override woocommerce styles
+    margin-bottom: 0!important //override woocommerce styles
+  ul
+    list-style:  none
+    margin: 0
+  .woocommerce-error
+    background: #e03324
+    li
+      display: inline
+  p
+    margin: 0
+  .button
+    margin-right: u(10)
+    @media #{$small-only}
+      display: block
+      float: none
+      text-align: center
+
+.lower-register__holder
+  .inner
+    background: $lightGray
+    padding: u(20)
+  .dropdown-label
+    float: left
+    font-weight: bold
+    width: 30%
+    @media #{$small-only}
+      width: auto
+
+  select
+    margin-top: u(7)
+  .variations .label
+    display: none
+  .variations_form
+    float: left
+    width: 69%
+    @media #{$small-only}
+      width: 100%
+    .variations
+      float: left
+      margin-bottom: 0!important //override woocommerce default styles
+      padding: u(5 15)
+      width: 50%
+    .single_variation_wrap
+      float: left
+      padding: u(0 15)
+      width: 50%
+      @media #{$medium-down}
+        width: 100%
+        padding: u(20 0)
+      .stock, .quantity
+        display: none
+      .button.alt
+        background: $darkPrimary
+        color: white
+        width: 100%
+        @media #{$small-only}
+          padding: u(15 40 15 20)
+        @media #{$medium-only}
+          padding: u(15 40 15 15)
+        &:after
+          border-left-color: white
+        &:hover
+          background: lighten($darkPrimary, 15%)
+  .qty-label, .quantity, .reset_variations
+    display: none!important //override woocommerce default styles
+
+.product-upsells
+  padding-top: u(40)
+.upsell__holder .inner
+  background: $lightGray
+  padding: u(20 0)
+  h3
+    display: none
+  h4
+    margin-bottom: 0
+  @media #{$medium-up}
+    .columns
+      padding: u(0 30)
+      border-left: 1px solid $mediumGray
+      &:first-child
+        border-left: none

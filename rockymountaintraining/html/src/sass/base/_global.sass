@@ -1,0 +1,44 @@
+//global
+.main-wrap
+  min-height: 100%
+  position: relative
+  &:before
+    background-color: transparent
+    content: ''
+    transition: background-color $timing
+  &.menu-active:before
+    background-color: rgba(0,0,0,0.5)
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 1000
+
+.screen-reader-text
+  display: none
+
+.page-wrap
+  padding: u(40 0)
+  @media #{$medium-up}
+    padding: u(60 0)
+  h1
+    margin-top: 0
+    @media #{$small-only}
+      text-align: center
+
++selection-color($primary)
+
+/* Print Style Sheet */
+@media print
+  body
+   background: white
+   color: black
+   margin: 0
+  #header
+    .simple-nav
+      display: none
+    .hamburger-menu
+      display: none
+  #footer
+    display: none

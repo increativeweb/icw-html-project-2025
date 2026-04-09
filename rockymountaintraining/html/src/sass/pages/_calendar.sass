@@ -1,0 +1,78 @@
+//calendar
+.month-bar.row
+  background: $primary
+  color: white
+  margin-top: u(30)
+  text-transform: uppercase
+  @media #{$large-up}
+    margin-top: u(50)
+
+.single-product__holder
+  border-bottom: 1px solid $mediumGray
+  padding: u(15 0)
+  &:nth-child(odd)
+    background: $lightGray
+  .button
+    display: block
+    white-space: nowrap
+    width: 100%
+  h2
+    font-size: u(18)
+    margin: 0
+    padding-left: u(10)
+  img
+    float: left
+    margin-right: u(20)
+  .columns
+    border-left: 1px solid $mediumGray
+    padding-bottom: u(8)
+    padding-top: u(8)
+    &:first-child, &.calendar-button-holder
+      border-left: none
+      padding-bottom: 0
+      padding-top: 0
+  .icon-title-wrapper
+    display: table
+    h2
+      @media #{$small-only}
+        padding-left: 0
+        max-width: 65%
+        float: left
+      @media #{$large-up}
+        display: table-cell
+        vertical-align: middle
+        width: 80%
+  p
+    @media #{$medium-down}
+      margin: 0
+  .single-product__date
+    @media #{$medium-down}
+      border-left: none
+
+.month-header-toggle
+  font-size: u(40)
+  font-weight: bold
+  float: right
+  line-height: 0.5
+  padding: u(0 10)
+  &:hover
+    cursor: pointer
+  @media #{$large-up}
+    display: none
+
+.month-holder
+  @media #{$medium-down}
+    height: u(90)
+    position: relative
+    overflow: hidden
+    &.active
+      height: auto
+
+.single-product__small-link
+  position: absolute
+  right: u(5)
+  top: u(35)
+  a
+    color: $darkPrimary
+  i
+    font-size: u(40)

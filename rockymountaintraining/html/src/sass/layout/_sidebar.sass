@@ -1,0 +1,23 @@
+//sidebar
+
+aside.sidebar
+  border-left: 2px solid $mediumGray
+  @media #{$medium-up}
+    padding-left: u(40)
+  @media #{$small-only}
+    padding-top: u(40)
+  ul
+    list-style: none
+    margin: 0
+    padding-left: 0
+  a
+    color: $primary
+    text-decoration: none
+    &:hover
+      color: darken($primary, 15%)
+  .widget_recent_entries
+    li
+      margin-top: u(15)
+  .widget:first-child
+    .widgettitle
+      margin-top: 0

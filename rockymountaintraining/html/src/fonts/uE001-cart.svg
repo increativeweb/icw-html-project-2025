@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The icon can be used freely in both personal and commercial projects with no attribution required, but always appreciated. 
+You may NOT sub-license, resell, rent, redistribute or otherwise transfer the icon without express written permission from iconmonstr.com -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path id="shopping-cart-icon" d="M461.832,105.109l-12.746,40h-29.98l-59.178,188.166H132.856L50.168,143.609h296.746
+	l-46.021,148.724h30.119l58.848-187.224H461.832z M289.926,353.109c-14.852,0-26.891,12.039-26.891,26.891
+	s12.039,26.891,26.891,26.891s26.891-12.039,26.891-26.891S304.777,353.109,289.926,353.109z M201.04,353.109
+	c-14.852,0-26.891,12.039-26.891,26.891s12.039,26.891,26.891,26.891c14.853,0,26.893-12.039,26.893-26.891
+	S215.893,353.109,201.04,353.109z"/>
+</svg>

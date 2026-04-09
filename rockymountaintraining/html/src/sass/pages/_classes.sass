@@ -1,0 +1,130 @@
+//classes
+
+.class-buckets
+  overflow: hidden
+  position: relative
+  .bucket
+    color: white
+    padding-top: u(20)
+    position: relative
+    h1 ,h2, h3, h4
+      color: inherit
+      margin-top: 0
+
+  .bucket-1
+    background: $darkPrimary
+    @media #{$small-only}
+      padding-bottom: u(20)
+    @media #{$medium-up}
+      padding-right: u(50)
+      &:before
+        content: ''
+        background: $darkPrimary
+        position: absolute
+        height: 100%
+        width: 100%
+        right: 100%
+        top: 0
+
+    a
+      color: $primary
+
+  .bucket-2
+    background: $primary
+    @media #{$small-only}
+      padding-top: u(20)
+    &:before
+      background: $primary
+      border-radius: 100%
+      content: 'OR'
+      font-size: u(20)
+      font-weight: bold
+      height: u(60)
+      left: u(-30)
+      padding-top: u(15)
+      position: absolute
+      text-align: center
+      top: 50%
+      transform: translateY(-50%)
+      width: u(60)
+      @media #{$small-only}
+        top: u(-30)
+        left: 50%
+        transform: translateX(-50%)
+    @media #{$medium-up}
+      padding-left: u(50)
+      &:after
+        content: ''
+        background: $primary
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 100%
+        top: 0
+    a
+      color: $darkPrimary
+      &:hover
+        color: darken( $darkPrimary, 10% )
+
+.single-class
+  border-bottom: 1px solid $mediumGray
+  padding-bottom: u(15)
+  padding-top: u(15)
+  position: relative
+  @media #{$small-only}
+    border-bottom: 1px solid $mediumGray
+    padding-right: u(10)
+  p
+    margin: 0
+  .next-class
+    @media #{$medium-up}
+      font-size: u(18)
+    @media #{$small-only}
+      margin-right: u(5)
+    .date-diff
+      color: $primary
+      font-weight: bold
+  .short-date
+    display: inline-block
+  .full-date
+    display: none
+  @media #{$medium-up}
+    .full-date
+      display: inline-block
+    .short-date
+      display: none
+  .arrow-button-holder
+    position: absolute
+    right: u(-10)
+    top: u(20)
+    i
+      color: $darkPrimary
+      font-size: u(60)
+
+.single-class__title
+  margin-bottom: 0
+  margin-top: 0
+
+.single-class__time-info
+  padding: u(10 0)
+  @media #{$large-up}
+    border-left: 1px solid $mediumGray
+  @media #{$small-only}
+    padding-bottom: 0
+    p
+      display: inline-block
+
+.single-class__content-holder
+  float: left
+  max-width: 80%
+  padding-left: u(15)
+  p
+    font-size: u(14)
+    line-height: 1.3
+
+.single-class__img-holder
+  float: left
+  max-width: 20%
+
+.onsite-classes
+  margin-bottom: u(60)

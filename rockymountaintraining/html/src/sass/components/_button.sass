@@ -1,0 +1,59 @@
+//button
+.button
+  background: $secondary
+  border: none
+  border-radius: 100px
+  color: $txtColor
+  display: inline-block
+  font-weight: bold
+  padding: u(10 30)
+  text-decoration: none
+  transition: background $timing
+  &:hover
+    background: darken($secondary, 10%)
+    color: $txtColor
+  &:after
+    border-color: transparent
+    border-left-color: $txtColor
+    border-style: solid
+    border-width: 5px
+    content: ''
+    display: inline-block
+    height: 0
+    margin-left: u(10)
+    width: 0
+  &.alt
+    font-size: u(20)
+    padding: u(15 40)
+    &:after
+      border-width: 7px
+  &.secondary
+    background: $darkPrimary
+    color: white
+    &:hover
+      background: lighten( $darkPrimary, 10% )
+      color: white
+    &:after
+      border-left-color: white
+
+.button__holder
+  padding-top: u(50)
+  text-align: center
+
+.address-block
+  .buttons
+    a.button
+      padding: u(10 20)
+      &:after
+        display: none
+
+a.button.ms_delete_address
+  background: #ea2127
+  color: #fff
+  &:after
+    display: none
+  &:hover
+    background: lighten( #ea2127, 10% )
+
+.woocommerce-page .woocommerce input.button, .woocommerce.woocommerce-page button.button, .woocommerce a.button, .woocommerce a.button.alt, .woocommerce input.button.alt
+  @extend .button

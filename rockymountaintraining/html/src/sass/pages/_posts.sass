@@ -1,0 +1,84 @@
+.single-post-list.row
+  border-bottom: 2px solid $mediumGray
+  margin-bottom: u(40)
+  padding-bottom: u(40)
+  @media #{$medium-up}
+    margin-bottom: u(65)
+  h2
+    margin-top: 0
+    a
+      color: $primary
+      text-decoration: none
+      &:hover
+        color: darken($primary, 15%)
+  @media #{$small-only}
+    img
+      display: block
+      margin: u(0 auto 20)
+
+.post-meta span
+  font-size: u(14)
+  margin-right: u(12)
+  &:last-child
+    margin-right: 0
+
+.pagination-links
+  .page-numbers
+    background: $lightGray
+    border-radius: 100%
+    color: black
+    display: inline-block
+    height: u(50)
+    margin-right: u(8)
+    min-width: u(50)
+    padding-top: u(12)
+    text-align: center
+    text-decoration: none
+    transition: background $timing
+    @media #{$small-only}
+      height: u(40)
+      min-width: u(40)
+      padding-top: u(8)
+    &:last-child
+      margin-right: 0
+    &:hover
+      background: darken($lightGray, 15%)
+      color: #000
+
+    &.current
+      background: $primary
+      color: white
+      &:hover
+        background: darken($primary, 15%)
+    &.dots:hover
+      background: $lightGray
+    &.next, &.prev
+      background: $secondary
+      border-radius: 100px
+      font-weight: bold
+      padding-left: u(20)
+      padding-right: u(20)
+      @media #{$small-only}
+        display: block
+        width: 100%
+      &:hover
+        background: darken($secondary, 15%)
+    @media #{$small-only}
+      &.prev
+        margin-bottom: u(10)
+      &.next
+        margin-top: u(10)
+
+.nav-links
+  div
+    display: inline-block
+    float: right
+    &.nav-previous
+      float: left
+  a
+    @extend .button
+    background: $mediumGray
+    color: black
+    &:hover
+      background: darken($mediumGray, 15%)
+

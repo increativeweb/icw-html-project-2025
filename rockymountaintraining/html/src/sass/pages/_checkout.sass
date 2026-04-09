@@ -1,0 +1,35 @@
+//checkout page
+.cart_item .variation p
+  margin-top: 0
+
+.addresses
+  .title .edit
+    position: relative
+    top: u(30)
+
+.address-block address
+  margin-bottom: u(60)
+
+.woocommerce-checkout-review-order-table
+  .variation
+    dd
+      margin-left: u(2)
+      margin-bottom: 0!important //overriding woocommerce styles
+    dt
+      line-height: 1.8
+
+// Make sure shipping address can never be hidden
+div.shipping_address
+  display: block !important
+  height: auto !important
+
+// Update margin under title and main checkbox
+.woocommerce-shipping-fields h3
+  margin-bottom: 0
+#match-billing
+  margin: 0 0 u(20)
+  font-weight: 700
+
+// Hide stored addresses field added by a plugin
+#ms_shipping_addresses_field
+  display: none

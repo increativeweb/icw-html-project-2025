@@ -1,0 +1,70 @@
+//navigation
+.offcanvas-menu
+  background: $darkPrimary
+  height: 100%
+  min-width: 20%
+  position: fixed
+  transform: translateX(-100%)
+  transition: transform $timing
+  z-index: 9999
+  .no-csstransforms3d &
+    left: -100%
+  &.active
+    transform: translateX(0)
+    .no-csstransforms3d &
+      left: 0
+  &.scrollable
+    overflow: scroll
+  .offcanvas-top
+    padding: u(20 20 50 30)
+    span
+      color: $secondary
+      margin-top: u(15)
+      text-transform: uppercase
+    .ico-close
+      color: white
+      font-size: u(40)
+      &:hover
+        cursor: pointer
+
+.main-nav
+  ul
+    padding: 0
+    &.sub-menu
+      display: none
+      margin: u(10 0)
+      li
+        padding: u(10 10 10 0)
+        &:last-child
+          padding-bottom: 0
+  li
+    list-style: none
+  a
+    color: white
+    font-size: u(18)
+    text-decoration: none
+    &:hover
+      color: darken(white, 12%)
+  > ul
+    margin-left: u(30)
+    > li
+      border-bottom: 1px solid white
+      padding: u(20 30 20 0)
+      position: relative
+      > a
+        font-size: u(16)
+        text-transform: uppercase
+      &.menu-item-has-children
+        padding-right:0 !important /*u(80)*/
+        &:after
+          border: 10px solid transparent
+          border-top-color: white
+          content: ''
+          height: 0
+          position: absolute
+          right: u(30)
+          top: u(30)
+          transition: transform $timing
+          width: 0
+        &.active:after
+          transform: rotate(180deg)

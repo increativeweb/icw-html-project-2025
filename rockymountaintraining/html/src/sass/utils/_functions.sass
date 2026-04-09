@@ -1,0 +1,29 @@
+//functions
+@function parseInt($n)
+  @return $n / ($n * 0 + 1)
+
+@function add-unit($value, $base-value: $rem-base)
+  //first check if it's not an integer
+  @if $value == auto
+    $value: auto
+  @else
+    @if $px-only
+      $value: parseInt($value) * 1px
+      @if $value == 0px
+        $value: 0
+      // turn 0px into 0
+    @else
+      $value: parseInt($value) / parseInt($base-value) * 1rem
+      @if $value == 0rem
+        $value: 0
+      // Turn 0rem into 0
+  @return $value
+
+@function u($values, $base-value: $pixelBase)
+  $max: length($values)
+  @if $max == 1
+    @return add-unit(nth($values, 1), $base-value)
+  $remValues: ()
+  @for $i from 1 through $max
+    $remValues: append($remValues, add-unit(nth($values, $i), $base-value))
+  @return $remValues

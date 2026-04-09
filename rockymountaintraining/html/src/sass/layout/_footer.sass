@@ -1,0 +1,125 @@
+//footer
+footer.main
+  background: $darkPrimary
+  color: white
+  padding: u(50 0)
+  @media #{$small-only}
+    text-align: center
+  a
+    color: white
+    text-decoration: none
+    &:hover
+      color: darken(white, 15%)
+  ul
+    @media #{$small-only}
+      text-align: center
+  .highlight
+    color: $secondary
+    font-size: u(18)
+    font-weight: bold
+    @media #{$small-only}
+      font-size: u(22)
+      line-height: u(.5)
+  .widgettitle
+    color: inherit
+    font-weight: normal
+    letter-spacing: 2px
+    margin-top: 0
+    text-transform: uppercase
+    @media #{$small-only}
+      padding-top: u(20)
+      font-weight: bold
+  .widget_nav_menu
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+      li
+        padding: u(5 0)
+        @media #{$small-only}
+          padding: u(10 0)
+  .last
+    @media #{$medium-only}
+      padding-left: 0
+      margin-top: u(20)
+
+.lower-footer
+  padding-top: u(15)
+
+.footer-menu-ul
+  padding: 0
+  text-align: right
+  li
+    display: inline-block
+    list-style: none
+    padding: u(0 10)
+    a
+      text-decoration: underline
+
+.footer-cta
+  background: $primary
+  color: white
+  padding: u(10 0)
+  text-align: center
+  a
+    color: white
+    &:hover
+      color: darken(white, 12%)
+  strong
+    font-size: u(28)
+
+.support-post
+  background: white
+  padding: u(20)
+  h4
+    margin: 0
+    @media #{$small-only}
+      font-size: u(20)
+  a:not(.button)
+    color: $primary
+    &:hover
+      color: darken($primary, 20%)
+  p
+    color: $txtColor
+  a.button
+    color: $txtColor
+    margin-top: u(20)
+    &:hover
+      color: $txtColor
+  .support-post-author
+    margin-bottom: u(25)
+    margin-top: 0
+  img
+    @media #{$small-only}
+      display: none
+
+.fru-social-links
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    display: inline-block
+    font-size: u(50)
+    padding: u(0 5)
+    @media #{$small-only}
+      font-size: u(65)
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+
+div.menu-footer-menu-1-container
+  @media #{$medium-down}
+    width: 50%
+    float: left
+
+#fru-social-widget-2
+  .widgettitle
+    margin-bottom: 0
+    margin-top: u(20)
+
+#text-3
+  padding-top: u(30)
+
+.fru-social-widget
+  padding-top: u(10)

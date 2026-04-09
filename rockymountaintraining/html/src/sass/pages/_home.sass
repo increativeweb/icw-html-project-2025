@@ -1,0 +1,202 @@
+//home
+body.home .header-offset-container
+  padding-top: 0!important //using important to override inline padding top added by javascript
+
+.home-hero
+  background-position: top center
+  background-repeat: no-repeat
+  background-size: cover
+  max-height: u(1080)
+  min-height: u(500)
+  position: relative
+
+.home-hero__content
+  color: white
+  left: 0
+  position: absolute
+  text-align: center
+  top: 50%
+  transform: translateY(-50%)
+  width: 100%
+  z-index: 2
+  h1
+    color: inherit
+  .button
+    @media #{$medium-up}
+      font-size: u(28)
+
+.home-section
+  padding: u(50 0)
+  text-align: center
+
+.home-section-title
+  margin-top: 0
+
+.home-main-content
+  @media #{$medium-up}
+    p
+      font-size: u(20)
+
+.home-testimonials
+  background: $primary
+  color: white
+  h2
+    color: inherit
+  .flexslider
+    overflow: hidden
+    padding: u(0 0 30 0)
+    @media #{$medium-up}
+      padding: u(0 65)
+    &:hover
+      .flex-prev
+        left: 0
+      .flex-next
+        right: 0
+  @media #{$medium-up}
+    .flex-direction-nav a
+      background: rgba(0,0,0,0.3)
+      border-radius: 100%
+      color: white
+      height: u(50)
+      text-align: center
+      width: u(50)
+      i
+        left: u(12)
+        position: absolute
+        top: u(-18)
+  @media #{$small-only}
+    .flex-direction-nav a
+      top: auto
+      bottom: 0
+
+.home-supporters
+  background: $lightGray
+
+.flexslider
+  background: transparent
+  border: 0
+  border-radius: 0
+  margin-bottom: 0
+
+.js-testimonial-slider
+  text-align: left
+  @media #{$large-up}
+    p
+      font-size: u(21)
+      line-height: 2
+  p a
+    color: $secondary
+    text-decoration: underline
+    &:hover
+      color: darken( $secondary, 15% )
+  .testimonial-credit
+    font-size: u(16)
+    text-align: right
+  
+.js-supporter-slider
+  overflow: hidden
+  position: relative
+  padding: 0 u(40)
+  .slides li
+    height: u(150)
+    padding: u(0 15)
+    text-align: center
+    white-space: nowrap
+    .helper
+      display: inline-block
+      width: 0
+      height: 100%
+      vertical-align: middle
+    img
+      display: inline-block
+      max-height: 100%
+      vertical-align: middle
+      width: auto
+  @media #{$medium-down}
+    .slides
+      text-align: center
+      li
+        display: inline-block
+        margin-bottom: u(10)
+
+.home-buckets
+  text-align: left
+  h2
+    margin-top: 0
+  @media #{$medium-up}
+    .single-bucket
+      &:first-child
+        border-right: 2px solid $mediumGray
+        padding-right: u(30)
+      &:last-child
+        padding-left: u(30)
+
+.class-cat-list
+  margin: u(40 0)
+
+.class-cat
+  @media #{$medium-up}
+    padding: u(20 30)
+  .img-wrap
+    position: relative
+  .product-list-container
+    opacity: 0
+    padding-bottom: u(20)
+    position: absolute
+    top: 0
+    transform: translateY(0)
+    transition: opacity $timing, transform $timing
+    width: 100%
+    @media #{$small-only}
+      display: none
+    .inner
+      background: white
+      border: 2px solid $mediumGray
+      box-shadow: 10px 10px 20px 0 $mediumGray
+      padding: u(20)
+    &:after
+      border-color: transparent
+      border-style: solid
+      border-top-color: white
+      border-width: 15px
+      bottom: u(-7)
+      content: ''
+      height: 0
+      left: 50%
+      position: absolute
+      transform: translateX(-50%)
+      width: 0
+      z-index: 10
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+      li
+        border-bottom: 1px solid $mediumGray
+        margin-bottom: u(8)
+        padding-bottom: u(8)
+        text-align: left
+        &:last-child
+          border-bottom: none
+          margin-bottom: 0
+          padding-bottom: 0
+      a
+        display: block
+        font-size: u(14)
+        text-decoration: none
+  &:hover .product-list-container
+    opacity: 1
+    transform: translateY(-99%)
+
+
+.no-csstransforms3d
+  .class-cat:hover
+    .product-list-container
+      top: auto
+      bottom: 99%
+
+.flex-direction-nav a
+  color: $mediumGray
+  font-size: u(50)
+  height: auto
+  width: auto

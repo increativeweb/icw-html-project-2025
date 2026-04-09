@@ -1,0 +1,54 @@
+//typography
+a:hover
+  text-decoration: none
+
+.inline-list
+  +inline-list()
+
+body
+  color: $txtColor
+  font-family: Helvetica, Arial, sans-serif
+
+p
+  line-height: 1.8
+  &.small
+    font-size: u(14)
+
+a:not(.button)
+  color: $primary
+  transition: color $timing
+  &:hover
+    color: darken($primary, 10%)
+
+h1, h2, h3, h4, h5, h6
+  color: $darkPrimary
+  a
+    text-decoration: none
+
+h1, .h1
+  font-size: u(38)
+  @media #{$small-only}
+    font-size: u(28)
+
+h2, .h2
+  font-size: u(31)
+  @media #{$small-only}
+    font-size: u(25)
+
+h3, .h3
+  font-size: u(25)
+  @media #{$small-only}
+    font-size: u(22)
+
+h4, .h4
+  font-size: u(20)
+  @media #{$small-only}
+    font-size: u(18)
+
+h5, .h5
+  font-size: u(16)
+  @media #{$small-only}
+    font-size: u(15)
+
+h6, .h6
+  font-size: u(14)

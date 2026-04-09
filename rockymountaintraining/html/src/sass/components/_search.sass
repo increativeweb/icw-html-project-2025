@@ -1,0 +1,21 @@
+//search
+.sidebar .search-form
+  clear: both
+  +clearfix
+  #s
+    border-radius: 5px 0 0 5px
+    width: 65%
+    float: left
+    @media #{$medium-only}
+      border-radius: 5px
+      width: 100%
+      float: none
+  #searchsubmit
+    border-radius: 0 100px 100px 0
+    padding: u(14 15)
+    @media #{$medium-only}
+      border-radius: 100px
+      padding: u(14 25)
+      display: block
+      width: 100%
+      margin-top: u(10)

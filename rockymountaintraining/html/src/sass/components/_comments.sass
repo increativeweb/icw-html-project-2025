@@ -1,0 +1,31 @@
+// comments
+.comment-list
+  border-bottom: 2px solid $mediumGray
+  margin-bottom: u(20)
+  padding-bottom: u(10)
+  padding-left: 0
+  li
+    list-style: none
+    padding: u(20 0)
+  .says
+    display: none
+  .comment-metadata, .comment-author
+    display: inline-block
+  .comment-author img
+    margin-right: u(10)
+  .comment-metadata
+    padding-left: u(4)
+    &:before
+      content: '·'
+      font-size: u(25)
+      margin-right: u(4)
+  a
+    color: $primary
+    text-decoration: none
+    &:hover
+      color: darken($primary, 15%)
+  .children
+    border-left: 1px solid $mediumGray
+    margin-left: u(30)
+    margin-top: u(20)
+    padding-left: u(20)

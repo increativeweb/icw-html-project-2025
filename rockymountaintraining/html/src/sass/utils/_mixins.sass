@@ -1,0 +1,115 @@
+
+=clearfix()
+  *zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+//Font Smoothing
+=antialiased()
+  -webkit-font-smoothing: antialiased
+
+
+//Background Opacity
+=background-opacity($color, $opacity: 0.3)
+  background-color: $color // The Fallback
+  background-color: rgba($color, $opacity)
+
+
+// Placeholder Color Override
+=placeholder-color($color)
+  &::-webkit-input-placeholder
+    color: $color
+  &:-moz-placeholder
+    color: $color
+  &::-moz-placeholder
+    color: $color
+  &:-ms-input-placeholder
+    color: $color
+
+=selection-color($color)
+  ::selection
+    background-color: $color
+    color: white
+  ::-moz-selection
+    background-color: $color
+    color: white
+
+
+//visibility
+=backface-visibility()
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility:    hidden
+  -ms-backface-visibility:     hidden
+
+
+//Inline List
+=inline-list()
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    display: inline-block
+    float: left
+    a
+      display: block
+
+//table list
+=table-list($height, $gap)
+  $height: remCalc($height)
+  $gap: remCalc($gap)
+  width: calc(100% + (#{$gap} * 2))
+  display: table
+  table-layout: fixed
+  list-style: none
+  margin: 0 -$gap
+  padding: 0
+  height: $height
+  border-spacing: $gap 0
+  li
+    padding: 0
+    height: $height
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    position: relative
+    a
+      display: block
+
+
+// center vertically
+=align-middle-parent()
+  transform-style: preserve-3d
+  height: remCalc(150px)
+=align-middle-element()
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+
+///// Font Setup /////
+// **** Use something like this...
+// $sans-serif-fallback:  "arial", "verdana", "sans-serif"
+// $serif-fallback:       "helvetica", "tahoma", "serif"
+
+// Gotham
+// =gotham($weight: "")
+//   font-style: normal
+//   @if $weight == "medium"
+//     font-family: "Gotham 5r", "Gotham A", "Gotham B", $sans-serif-fallback
+//     font-weight: 500
+//   @else
+//     font-family: "Gotham 4r", "Gotham A", "Gotham B", $sans-serif-fallback
+//     font-weight: 400
+
+// Freight
+// =freight($style: "")
+//   font-family: "freight-text-pro", $serif-fallback
+//   font-weight: 500
+//   @if $style == "italic"
+//     font-style: italic
+//   @else
+//     font-style: normal
