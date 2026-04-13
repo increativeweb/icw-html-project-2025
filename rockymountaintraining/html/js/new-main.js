@@ -25,8 +25,16 @@ jQuery(document).ready(function ($) {
     
     $('li.menu-item-has-children .arrow').on('click',function(event){
         event.preventDefault();
+        $('li.menu-item-has-children .arrow').removeClass('is-active');
+        $('.sub-menu').slideUp();
         $(this).toggleClass('is-active');        
         $(this).parent().find('.sub-menu').first().slideToggle(300);       
+    });
+
+    $('.toggle-button').on('click', function () {
+        $(".main-header").toggleClass('is-visible');
+        $('body').toggleClass('overflow-hidden');
+        $(this).toggleClass('is-visible');
     });
 });
 
