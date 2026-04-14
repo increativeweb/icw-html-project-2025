@@ -35,6 +35,7 @@ jQuery(document).ready(function ($) {
         $(".main-header").toggleClass('is-visible');
         $('body').toggleClass('overflow-hidden');
         $(this).toggleClass('is-visible');
+        $('.bg-overlay').toggleClass('is-visible');
     });
 });
 
