@@ -719,6 +719,7 @@
                         align-items: center;
                         line-height: 1;
                         gap: 0.5rem;
+                        text-underline-offset: 4px;
                         .icon {
                             display: inline-block;
                             line-height: 0.7;
@@ -730,6 +731,7 @@
                         }
                         &:hover, &:focus {
                             color: #00afe7;
+                            text-decoration: underline;
                             .icon {
                                 svg {
                                     fill: #00afe7;
