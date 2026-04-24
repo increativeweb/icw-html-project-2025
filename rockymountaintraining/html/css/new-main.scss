@@ -1127,6 +1127,9 @@ h2 {
         }
         .splide__pagination {
             bottom: -10px;
+            @media (max-width: 992px) {
+                bottom: -30px;
+            }
             .splide__pagination__page {
                 width: 10px;
                 height: 10px;
@@ -1145,13 +1148,13 @@ h2 {
             background: #ffffff;
             color: #464646;
             border-radius: 1.25rem;
-            @media (max-width: 767px) {
-                padding: 1.25rem;
-            }
             li {
-                padding: 2.5rem !important;
+                padding: 2.5rem;
                 display: flex;
                 flex-direction: column;
+                @media (max-width: 767px) {
+                    padding: 1.25rem !important;
+                }
                 p { 
                     font-size: 1.25rem;
                     line-height: 1.8;
