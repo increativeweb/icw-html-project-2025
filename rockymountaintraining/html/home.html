@@ -28,7 +28,9 @@
 		<script type="text/javascript" src="https://www.rockymountaintraining.com/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
 		
 		<script type="text/javascript" src="https://www.rockymountaintraining.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js" id="wc-jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
-		
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 		<link rel="icon" href="https://www.rockymountaintraining.com/wp-content/uploads/2023/08/cropped-favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" href="https://www.rockymountaintraining.com/wp-content/uploads/2023/08/cropped-favicon-192x192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://www.rockymountaintraining.com/wp-content/uploads/2023/08/cropped-favicon-180x180.png" />
@@ -39,7 +41,7 @@
 
 	<body class="home wp-singular page-template-default page page-id-73 wp-theme-rmt theme-rmt woocommerce-no-js">
 		<div class="main-wrap">
-			<header id="header-wrapper" class="main-header is-light">
+			<header id="header-wrapper" class="main-header">
 				<div class="container">
 					<nav class="navbar">
 						<a href="https://www.rockymountaintraining.com/" rel="home" class="header-logo">
@@ -222,199 +224,221 @@
 					<div class="row">
 						<div class="large-12 columns">
 							<h2 class="home-section-title">What students are saying about us</h2>
-							<div class="flexslider js-testimonial-slider testimonial-slider">
-								<ul class="slides">
-									<li>
-										<p>Just wanted to take minute to thank you for an outstanding FrameMaker course. It is quite obvious that you are a true instructor, not presenter. The course was more than I expected it to be and your patience with us was greatly appreciated. I did not think that I, as a FrameMaker user for over 6 years, would learn anything. I could not have been more mistaken! The course has already shown its benefits in how I do my job…I hope that we will be able to take the advance course with you as the instructor in the near future.<br /> “People really don’t care how much you know until they know that you care.” Thank you for caring to provide us with an outstanding training session!!!</p>
-										<p class="testimonial-credit"><strong>- Bruce M. Minor</strong> Training Manager, Global Technology Services, Herndon, VA</p>
-									</li>
-									<li>
-										<p>I signed up for my first class with Rocky Mountain Training with Barbara wondering if I was really going to like the online classroom interface. I decided to move ahead because of the focus on the Adobe CC platform and the convenient schedule of classes. I couldn’t have been more impressed with the result. The training materials from Adobe and Peachpit were excellent and class sizes were small enough to get very specialized attention. But more importantly, Barbara’s training style was excellent. I actually received more one on one attention in the virtual classroom through screen sharing mode than I did in the live classroom. Barbara never left an issue or a training subject without making sure everyone felt comfortable with the concept – and if they didn’t, she worked with them until they did. Definitely give RMT a try for your CC training classes!</p>
-										<p class="testimonial-credit"><strong>- LaDonna Baertlein</strong> Director, A Wild Green Yonder, Littleton, CO</p>
-									</li>
-									<li>
-										<p>I was urgently looking for FrameMaker training and found the best offering at Rocky Mountain Training. The outstanding presentation, detail, and thorough explanation and support followed all the way through to the last minute of the last day and beyond. A master of FrameMaker content and the live online classroom, Barb Binder understands learners and takes each one through each step of what they need to know. The experience? A complete success for me. I’m sure I’ll be using FrameMaker extensively. </p>
-										<p class="testimonial-credit"><strong>- Dheyanna Rheye-Hounou</strong> Senior Technical Writer, IHS, Englewood, CO</p>
-									</li>
-									<li>
-										<p>I am a photographer and designer. My job is making pictures and designing the photos on a folder or flyer for the company I work for. Earlier I worked with Adobe Photoshop CS3 and CS5. When I heard about the CS6 I was more interested in it. That was the first time I attend an online training from an other country. I experience this training as a challenge and now I am certified to work in Adobe Photoshop CS6. I have not quite mastered, but work to ensure that it will be better. Things that I did not know that this program could improve more and update. I find this program very amazing and interesting and you can learn a lot from here.<br /> I don’t know if we were the first ones to attend this training online from our country Suriname, but it was very impressive and challenging. I want to thank the company and the training school for the occasion in this training along with Rocky Mountain Training.</p>
-										<p class="testimonial-credit"><strong>- Jimmy Ngadino</strong> Telecommunications Company Suriname (Telesur), Suriname</p>
-									</li>
-								</ul>
+							<div class="splide testimonial-splide">
+  								<div class="splide__track">
+									<ul class="splide__list">
+										<li class="splide__slide">
+											<p>Just wanted to take minute to thank you for an outstanding FrameMaker course. It is quite obvious that you are a true instructor, not presenter. The course was more than I expected it to be and your patience with us was greatly appreciated. I did not think that I, as a FrameMaker user for over 6 years, would learn anything. I could not have been more mistaken! The course has already shown its benefits in how I do my job…I hope that we will be able to take the advance course with you as the instructor in the near future.<br /> “People really don’t care how much you know until they know that you care.” Thank you for caring to provide us with an outstanding training session!!!</p>
+											<p class="testimonial-credit"><strong>- Bruce M. Minor</strong> Training Manager, Global Technology Services, Herndon, VA</p>
+										</li>
+										<li class="splide__slide">
+											<p>I signed up for my first class with Rocky Mountain Training with Barbara wondering if I was really going to like the online classroom interface. I decided to move ahead because of the focus on the Adobe CC platform and the convenient schedule of classes. I couldn’t have been more impressed with the result. The training materials from Adobe and Peachpit were excellent and class sizes were small enough to get very specialized attention. But more importantly, Barbara’s training style was excellent. I actually received more one on one attention in the virtual classroom through screen sharing mode than I did in the live classroom. Barbara never left an issue or a training subject without making sure everyone felt comfortable with the concept – and if they didn’t, she worked with them until they did. Definitely give RMT a try for your CC training classes!</p>
+											<p class="testimonial-credit"><strong>- LaDonna Baertlein</strong> Director, A Wild Green Yonder, Littleton, CO</p>
+										</li>
+										<li class="splide__slide">
+											<p>I was urgently looking for FrameMaker training and found the best offering at Rocky Mountain Training. The outstanding presentation, detail, and thorough explanation and support followed all the way through to the last minute of the last day and beyond. A master of FrameMaker content and the live online classroom, Barb Binder understands learners and takes each one through each step of what they need to know. The experience? A complete success for me. I’m sure I’ll be using FrameMaker extensively. </p>
+											<p class="testimonial-credit"><strong>- Dheyanna Rheye-Hounou</strong> Senior Technical Writer, IHS, Englewood, CO</p>
+										</li>
+										<li class="splide__slide">
+											<p>I am a photographer and designer. My job is making pictures and designing the photos on a folder or flyer for the company I work for. Earlier I worked with Adobe Photoshop CS3 and CS5. When I heard about the CS6 I was more interested in it. That was the first time I attend an online training from an other country. I experience this training as a challenge and now I am certified to work in Adobe Photoshop CS6. I have not quite mastered, but work to ensure that it will be better. Things that I did not know that this program could improve more and update. I find this program very amazing and interesting and you can learn a lot from here.<br /> I don’t know if we were the first ones to attend this training online from our country Suriname, but it was very impressive and challenging. I want to thank the company and the training school for the occasion in this training along with Rocky Mountain Training.</p>
+											<p class="testimonial-credit"><strong>- Jimmy Ngadino</strong> Telecommunications Company Suriname (Telesur), Suriname</p>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
+					<script>
+						document.addEventListener("DOMContentLoaded", function () {
+							var testimonialSplide = new Splide( '.testimonial-splide', {
+								type    : 'loop',
+								perPage : 1,
+								perMove : 1,
+								autoplay: true,
+								arrows  : false,
+							});
+
+							testimonialSplide.mount();
+						});
+					</script>
 				</section>
 				<section class="home-section home-supporters">
 					<div class="row">
 						<div class="large-12 columns">
 							<h2 class="home-section-title">Rocky Mountain Training is trusted by</h2>
-							<div class="flexslider js-supporter-slider">
-								<ul class="slides">
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Adobe_logo-150x62.png" alt="Adobe_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/adpay_logo-150x61.png" alt="adpay_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/anythink-94x90.png" alt="anythink logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2015/11/ArapahoeCounty-Logo-118x90.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Boeing_logo.svg_-150x69.png" alt="Boeing_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/03/bvsd-150x38.png" alt="Boulder Valley School District" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Broomfield_Colorado-90x90.png" alt="Broomfield_Colorado" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/clear-creek-logo-1-90x90.png" alt="clear creek logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/04/cdor-3-150x27.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/colsprings-150x59.png" alt="Colorado Springs" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Coors-Logo-150x64.png" alt="Coors-Logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Crocs-Logo-150x28.png" alt="Crocs-Logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/dcc-logo-150x41.png" alt="dcc-logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/EMPOWER_logo-150x76.png" alt="empower_retirement_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/ERCO_logo.svg_-150x48.png" alt="ERCO_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Evergreen_Airlines_logo.svg_-150x60.png" alt="Evergreen_Airlines_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/FDIC-Logo-150x59.png" alt="FDIC-Logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/gh-phipps-logo-150x39.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Goodwill-Logo-66x90.png" alt="Goodwill-Logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/human-movement-150x83.png" alt="human movement" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/idirect_logo-150x28.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/jefferson-county-136x90.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/laramie-school-district1-97x90.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/LM-logo-150x35.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/McWhinneyLogo-2-150x81.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Nissan-Logo-104x90.png" alt="Nissan-Logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/open-vape-logo-1-150x66.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/rancho-mission-viejo-150x42.png" alt="rancho mission viejo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/ReMax-Logo-150x43.png" alt="ReMax logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sp_logo-150x33.png" alt="s&amp;p_logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/saunders-logo-150x34.png" alt="saunders logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sierra-nevada-corp-logo-150x33.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sports-authority-logo-150x47.png" alt="sports-authority-logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/04/sipa-90x90.png" alt="Statewide Internet Portal Authority" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/03/gazette-1-150x40.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/logo-town-of-breckenridge-150x90.png" alt="" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2015/11/CastleRock-Logo-139x90.png" alt="castle rock colorado logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/frisco-logo-150x65.png" alt="Town of Frisco" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Town-of-Vail-600px-logo-150x69.png" alt="Town-of-Vail-logo" />
-									</li>
-									<li>
-										<span class="helper"></span>
-										<img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/USHMM_logo-150x72.png"alt="USHMM_logo" />
-									</li>
-								</ul>
+							<div class="splide logo-splide logo-top-splide">
+  								<div class="splide__track">
+									<ul class="icons-grid splide__list">
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Adobe_logo-150x62.png" alt="Adobe_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/adpay_logo-150x61.png" alt="adpay_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/anythink-94x90.png" alt="anythink logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2015/11/ArapahoeCounty-Logo-118x90.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Boeing_logo.svg_-150x69.png" alt="Boeing_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/03/bvsd-150x38.png" alt="Boulder Valley School District" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Broomfield_Colorado-90x90.png" alt="Broomfield_Colorado" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/clear-creek-logo-1-90x90.png" alt="clear creek logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/04/cdor-3-150x27.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/colsprings-150x59.png" alt="Colorado Springs" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Coors-Logo-150x64.png" alt="Coors-Logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Crocs-Logo-150x28.png" alt="Crocs-Logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/dcc-logo-150x41.png" alt="dcc-logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/EMPOWER_logo-150x76.png" alt="empower_retirement_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/ERCO_logo.svg_-150x48.png" alt="ERCO_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Evergreen_Airlines_logo.svg_-150x60.png" alt="Evergreen_Airlines_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/FDIC-Logo-150x59.png" alt="FDIC-Logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/gh-phipps-logo-150x39.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Goodwill-Logo-66x90.png" alt="Goodwill-Logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/human-movement-150x83.png" alt="human movement" /></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="splide logo-splide logo-bottom-splide">
+  								<div class="splide__track">
+									<ul class="icons-grid splide__list">
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/idirect_logo-150x28.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/jefferson-county-136x90.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/laramie-school-district1-97x90.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/LM-logo-150x35.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/McWhinneyLogo-2-150x81.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Nissan-Logo-104x90.png" alt="Nissan-Logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/open-vape-logo-1-150x66.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/rancho-mission-viejo-150x42.png" alt="rancho mission viejo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/ReMax-Logo-150x43.png" alt="ReMax logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sp_logo-150x33.png" alt="s&amp;p_logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/saunders-logo-150x34.png" alt="saunders logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sierra-nevada-corp-logo-150x33.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/sports-authority-logo-150x47.png" alt="sports-authority-logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/04/sipa-90x90.png" alt="Statewide Internet Portal Authority" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/03/gazette-1-150x40.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/logo-town-of-breckenridge-150x90.png" alt="" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2015/11/CastleRock-Logo-139x90.png" alt="castle rock colorado logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/frisco-logo-150x65.png" alt="Town of Frisco" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/Town-of-Vail-600px-logo-150x69.png" alt="Town-of-Vail-logo" /></div>
+										</li>
+										<li class="splide__slide">
+											<div class="icon-inner"><img src="https://www.rockymountaintraining.com/wp-content/uploads/2016/02/USHMM_logo-150x72.png"alt="USHMM_logo" /></div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
+					<script>
+						document.addEventListener("DOMContentLoaded", function () {
+							const baseOptions = {
+								type: 'loop',
+								autoWidth: true,
+								pagination: false,
+								arrows: false,
+								gap: 20,
+								focus: 'center',
+								drag: 'free',
+								autoScroll: {
+									pauseOnHover: false,
+									pauseOnFocus: false,
+								},
+								breakpoints: {
+									767: {
+										perPage: 2,
+										gap: 15,
+									}
+								}
+							};
+							// ✅ INIT FUNCTION (reusable)
+							function initLogoSlider(selector, speed) {
+								const el = document.querySelector(selector);
+								if (!el) return;
+								const slider = new Splide(el, {
+								...baseOptions,
+								autoScroll: {
+									...baseOptions.autoScroll,
+									speed: speed, // 👉 direction control
+								}
+								});
+								slider.mount(window.splide.Extensions);
+							}
+							// ✅ INIT BOTH
+							initLogoSlider('.logo-top-splide', 1);   // LTR
+							initLogoSlider('.logo-bottom-splide', -1); // RTL
+						});
+					</script>
 				</section>
 
 				<section class="home-section home-buckets">
@@ -502,7 +526,7 @@
 			</footer>
 			
 			<script type="text/javascript" src="https://www.rockymountaintraining.com/wp-content/plugins/wp-foundation-shortcodes/js/app.js" id="wp-foundation-shortcodes-js"></script>			
-			<script type="text/javascript" src="https://www.rockymountaintraining.com/wp-content/themes/rmt/public/js/app-no-cache.min.js" id="fru-scripts-js"></script>
+			<!-- <script type="text/javascript" src="https://www.rockymountaintraining.com/wp-content/themes/rmt/public/js/app-no-cache.min.js" id="fru-scripts-js"></script> -->
 			<script src="js/new-main.js"></script>
 		</div>
 	</body>

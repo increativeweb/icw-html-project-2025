@@ -1115,81 +1115,53 @@ h2 {
         }
     }
 }
-.home-supporters {
-    .js-supporter-slider {
-        @media (max-width: 992px) {  
-            padding: 0;
-        }
-        .slides {
-            @media (max-width: 992px) {   
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                grid-gap: 1.25rem;
-            }
-            @media (max-width: 767px) {   
-                grid-template-columns: repeat(4, 1fr);
-            }
-            @media (max-width: 575px) {   
-                grid-template-columns: repeat(3, 1fr);
-            }
-            li {
-                background: #fff;
-                border-radius: 0.5rem;
-                height: auto;
-                max-width: 12.5rem;
-                padding: 0.938rem;
-                @media (max-width: 992px) {                    
-                    aspect-ratio: 1 / 1;
-                    display: flex !important;
-                    align-items: center;
-                    justify-content: center;
-                    max-width: 9.375rem;
-                    margin-bottom: 0;
-                }
-                .helper {
-                    display: none;
-                }
-                img {
-                    transition: all 0.2s ease-in-out;
-                    max-width: 7.5rem;
-                    width: 100%;
-                }
-                &:hover, &:focus {
-                    img {
-                        transform: scale(1.1);
-                    }
-                }
-            }
-        }
-    }
-}
 .home-testimonials {
     padding-bottom: 3.125rem;
     .home-section-title {
         margin-bottom: 1.25rem;
     }
-    .testimonial-slider {
+    .testimonial-splide {
         padding: 1.25rem 10%;
         @media (max-width: 992px) {
             padding: 0;
         }
-        .slides {
+        .splide__pagination {
+            bottom: -10px;
+            .splide__pagination__page {
+                width: 10px;
+                height: 10px;
+                background: rgba(#ffffff, 0.5);
+                border-radius: 10px;
+                opacity: 1;
+                transition: all 0.3s ease-in-out;
+                &.is-active {
+                    transform: unset;
+                    width: 20px;
+                    background: rgba(#ffffff, 1);
+                }
+            }
+        }
+        .splide__track {
             background: #ffffff;
-            padding: 2.5rem;
             color: #464646;
             border-radius: 1.25rem;
             @media (max-width: 767px) {
                 padding: 1.25rem;
             }
             li {
+                padding: 2.5rem !important;
+                display: flex;
+                flex-direction: column;
                 p { 
                     font-size: 1.25rem;
                     line-height: 1.8;
+                    text-align: left;
                     @media (max-width: 767px) {
                         font-size: 1rem;
                     }
                     &:first-child {
                         margin-top: 0;
+                        flex: 1 1 auto;
                     }
                     &.testimonial-credit {
                         margin-top: 1.875rem;
@@ -1197,6 +1169,7 @@ h2 {
                         font-size: 0.875rem;
                         line-height: 1.5;
                         color: rgba(0, 0, 0, 0.5);
+                        text-align: right;
                         strong {
                             font-size: 1.125rem;
                             display: block;
@@ -1258,4 +1231,45 @@ h2 {
             word-wrap: break-word;
         }
     }
+}
+.home-supporters {
+    // background: #f5f5f5;
+    .logo-splide {
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0)90%, rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0)90%, rgba(0, 0, 0, 0) 100%);        
+        .splide__track {
+            padding: 10px 0 !important;
+        }
+    }
+    .icons-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            width: 100px;
+            height: 80px;
+            perspective: 1000px;
+
+            .icon-inner {
+                width: 100px;
+                height: 80px;
+                backface-visibility: hidden;
+                border-radius: 12px;
+                background: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 5px 10px #BFAC9F2E;
+                border: 1px solid rgba(36, 36, 225, 0.1);
+
+                img {
+                    max-width: 65px;
+                    max-height: 40px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
 }
