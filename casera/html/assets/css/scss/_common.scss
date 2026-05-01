@@ -658,36 +658,6 @@ h5, .h5 {
     }
 }
 
-// Special Text
-.special-text {
-    font-size: 130px;
-    font-weight: 900;
-    position: relative;
-    background: url(../images/img-special-text-bg.jpg);
-    background-size: 105% auto;
-    background-position: 0% 0%;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 0 transparent;
-    position: relative;
-    display: inline-block;
-    animation: horizontalMove 8s infinite alternate;
-    animation-timing-function: ease;
-    @media (max-width: 1200px) {
-        font-size: 100px;
-    }
-    @media (max-width: 992px) {
-        font-size: 80px;
-    }
-    @media (max-width: 767px) {
-        font-size: 50px;
-    }
-}
-@keyframes horizontalMove {
-    from { background-position: 0 100%; }
-    to { background-position: 100% 100%; }
-}
-
 // Glight Box
 .gslide {
     .gslide-inner-content {
