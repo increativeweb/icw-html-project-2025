@@ -39,7 +39,7 @@ body {
     margin: 0;
     background-color: var(--white);
     color: var(--dark-gray);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
@@ -163,11 +163,6 @@ img {
         max-width: 100%;
         padding-right: 20px;
         padding-left: 20px;
-    }
-
-    &.container-md {
-        max-width: 1120px;
-        margin: 0 auto;
     }
 }
 
@@ -467,78 +462,6 @@ img {
         --bs-aspect-ratio: 85%;
     }
 
-    &.is-video {
-        .play-icon {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            cursor: pointer;
-            @include flexbox();
-            @include align-items(center);
-            @include justify-content(center);
-            @include transition(0.3s, ease-in-out);
-            @include box-shadow(0 3px 12px rgba(0, 0, 0, 0.25));
-
-            svg {
-                width: 60px;
-                height: 60px;
-                flex: none;
-                @include border-radius(50%);
-                @include transition(0.3s, ease-in-out);
-                @include transform(scale(1));
-                z-index: 2;
-            }
-
-            &.d-hide {
-                opacity: 0;
-            }
-
-            &::after {
-                content: '';
-                top: 0;
-                left: 0;
-                @include border-radius(32px);
-                opacity: 0.025;
-                background: #002B31;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        video {
-            vertical-align: bottom;
-            max-width: 100%;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .video-wrap {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-
-            iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        &:hover {
-            .play-icon {
-                svg {
-                    @include box-shadow(0px 0px 15px 0px rgba(255, 255, 255, 0.5));
-                    @include transform(scale(1.1));
-                }
-            }
-        }
-    }
-
     &.text-end {
         @media (max-width: 992px) {
             text-align: center !important;
@@ -561,12 +484,8 @@ h4,
 .h4,
 h5,
 .h5 {
-    line-height: 1.2;
-    font-weight: 700;
-
-    @media (max-width: 767px) {
-        line-height: 1.1;
-    }
+    line-height: 1.3;
+    font-weight: 600;
 }
 
 h1,
@@ -576,7 +495,7 @@ h1,
 
 h2,
 .h2 {
-    font-size: clamp(30px, 3vw, 48px);
+    font-size: clamp(28px, 3vw, 38px);
 }
 
 h3,
@@ -639,6 +558,112 @@ h5,
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+}
+
+// Button CSS
+.btn {
+    position: relative;
+    white-space: nowrap;
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include border-radius(2px);
+    @include transition(0.2s, ease-in-out);
+    border: 1px solid transparent;
+    background-size: 300%;
+    min-height: 36px;
+    min-width: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 25px;
+    line-height: 1;
+    gap: 8px;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+        background-position: 100%;
+    }
+
+    &.btn-primary {
+        color: var(--text-white) !important;
+        border-color: var(--primary) !important;
+        background-color: var(--primary) !important;
+        background-image: linear-gradient(20deg, var(--primary) 50%, var(--black) 50%);
+        &:hover,
+        &:focus {
+            background-position: 100%;
+        }
+    }
+
+    &.btn-outline-primary {
+        color: var(--primary) !important;
+        border-color: var(--primary) !important;
+        background-color: transparent;
+        background-image: linear-gradient(20deg, transparent 50%, var(--primary) 50%);
+
+        &:hover,
+        &:focus {
+            color: var(--text-white) !important;
+        }
+    }
+
+    &.btn-white {
+        color: var(--blue) !important;
+        border-color: var(--white) !important;
+        background-color: var(--white) !important;
+
+        &:hover,
+        &:focus {
+            border-color: var(--blue) !important;
+            background-color: var(--blue) !important;
+        }
+    }
+
+    &.btn-link-arrow {
+        background-color: transparent;
+        border-color: transparent;
+        color: var(--blue);
+        padding: 0;
+        min-width: auto;
+        min-height: auto;
+        @include justify-content(flex-start);
+        .icon-arrow {
+            background: url('../images/icons/icon-arrow.svg') no-repeat center center;
+            background-size: contain !important;
+            width: 12px;
+            height: 12px;
+            @include transition(0.2s, ease-in-out);
+            display: inline-block;
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--text-black);
+
+            .icon-arrow {
+                @include transform(translateX(5px));
+                filter: brightness(0);
+            }
+        }
+    }
+
+    &.btn-link {
+        background-color: transparent;
+        border-color: transparent;
+        color: var(--blue);
+        padding: 0;
+        min-width: auto;
+        min-height: auto;
+        text-underline-offset: 4px;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            color: var(--text-black);
+            text-decoration: none;
+        }
+    }
 }
 
 // Page Scroll Progress CSS
