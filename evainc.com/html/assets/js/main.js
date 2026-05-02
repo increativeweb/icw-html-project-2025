@@ -128,11 +128,3 @@ jQuery(document).ready(function ($) {
     }
 
 });
-
-// Splide Slider
-if (jQuery('.splide:not(.splide-js)').length) {
-    jQuery('.splide:not(.splide-js)').each(function () {
-        new Splide(this).mount();
-        jQuery(this).addClass('icw_splide-with-data'); // Mark as initialized
-    });
-}

@@ -1,0 +1,74 @@
+@import "../../assets/css/scss/mixins";
+
+.hero-section {
+    padding: 100px 0;
+    min-height: 80vh;
+    position: relative;
+    .hero-slider-block {
+        .hero-info-splide {
+            z-index: 3;
+            width: 55%;
+            .splide__slide {
+                border: none !important;
+            }
+            .section-title {
+                .tag-line {
+                    color: var(--secondary);
+                    text-transform: unset;
+                    letter-spacing: unset;
+                }
+                .sort-info {
+                    max-width: 480px;
+                }
+            }
+            .custom-pgination {
+                z-index: 12;
+                margin-top: 50px;
+                .nav-title {
+                    font-weight: 500;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    color: var(--dark-gray);
+                    margin-bottom: 20px;
+                }
+                ul {
+                    @include flexbox;
+                    @include align-items(center);
+                    gap: 10px;
+                    li {
+                        a {
+                            padding: 7px 20px;
+                            background: var(--bg-color);
+                            border: 1px solid var(--color);
+                            font-weight: 500;
+                            font-size: 14px;
+                            color: var(--color);
+                            @include border-radius(18px);
+                            text-decoration: none;
+                            @include transition(0.3s, ease-in-out);
+                            line-height: 1;
+                            display: inline-block;
+                            &:hover, &:focus {
+                                background: var(--color);
+                                color: var(--white);
+                            }
+                        }
+                        &.is-active {
+                            a {
+                                background: var(--color);
+                                color: var(--white);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .hero-media-splide {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+            max-width: 1250px;
+        }
+    }
+}
