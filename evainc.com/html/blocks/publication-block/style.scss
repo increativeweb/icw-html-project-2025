@@ -8,15 +8,75 @@
     overflow: hidden;
     position: relative;
     padding: 200px 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 200px;
+        left: 0;
+        height: 300px;
+        width: 200px;
+        background-image: linear-gradient(90deg,rgba(#020202, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        z-index: 1;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 200px;
+        right: 0;
+        height: 300px;
+        width: 200px;
+        background-image: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(#020202, 1) 100%);
+        z-index: 1;
+    }
+    @media (max-width: 1200px) {
+        padding: 150px 0;
+    }
+    @media (max-width: 992px) {
+        padding: 150px 0 200px;
+    }
     .publication-splide {        
         .splide__track {
             overflow: visible;
+            .splide__slide {
+                &.is-active {
+                    .publication-card .card-body .card-action {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .splide__arrows {
+            .splide__arrow {
+                @media (min-width: 992px) {                    
+                    top: 50%;
+                    transform: translateY(-50%) scale(-1);
+                    bottom: auto;
+                    left: 150px;
+                    &.splide__arrow--next {
+                        left: auto;
+                        right: 150px;
+                        transform: translateY(-50%);
+                    }
+                }
+                
+            }
         }
     }
     .publication-card {
         text-align: center;
         max-width: 900px;
         padding: 0 100px;
+        @media (max-width: 1200px) {
+            max-width: 600px;
+            padding: 0 50px;
+        }
+        @media (max-width: 992px) {
+            padding: 0 30px;
+        }
+        @media (max-width: 767px) {
+            max-width: 320px;
+            padding: 0 15px;
+        }
         .card-body {
             color: #FFFFFF;
             @include flexbox;
@@ -45,6 +105,7 @@
             }
             .card-action {
                 margin-top: 40px;
+                opacity: 0;
             }
         }
     }

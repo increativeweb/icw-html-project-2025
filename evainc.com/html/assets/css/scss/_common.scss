@@ -43,15 +43,17 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    @media (max-width: 992px) {
+        font-size: 16px;
+    }
 }
 
 body ::selection {
     color: #fff;
-    background: #b65aff;
+    background: var(--primary);
 }
 
 :focus {
@@ -61,10 +63,6 @@ body ::selection {
 body ::selection {
     color: var(--text-white);
     background: var(--black);
-}
-
-:focus {
-    box-shadow: none !important;
 }
 
 .clear {
@@ -109,8 +107,8 @@ a {
     }
 
     &:focus-visible {
-        outline: 2px solid var(--blue) !important;
-        @include border-radius(6px);
+        outline: 2px solid var(--primary) !important;
+        @include border-radius(2px);
     }
 }
 
@@ -491,7 +489,7 @@ h5,
 
 h1,
 .h1 {
-    font-size: clamp(40px, 3vw, 60px);
+    font-size: clamp(36px, 3vw, 60px);
 }
 
 h2,
@@ -590,7 +588,7 @@ h5,
     }
     &:hover,
     &:focus {
-        background-position: 100%;
+        background-position: 99.9%;
         .icon-arrow {
             @include transform(translateX(5px));
         }
@@ -604,10 +602,6 @@ h5,
         border-color: var(--primary) !important;
         background-color: var(--primary) !important;
         background-image: linear-gradient(20deg, var(--primary) 50%, var(--black) 50%);
-        &:hover,
-        &:focus {
-            background-position: 100%;
-        }
     }
 
     &.btn-outline-primary {
@@ -799,28 +793,36 @@ h5,
 
 .splide__arrows {
     .splide__arrow {
-        background: url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+        background: #000000 url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
         background-size: 22px;
         width: 56px;
         height: 56px;
         border: 1px solid var(--dark-gray);
         opacity: 1;
         @include transition(0.3s, ease-in-out);
-        left: 150px;
+        top: auto;
+        bottom: -80px;
+        transform: scaleX(-1);
+        left: calc(50% - 68px);
+        &.splide__arrow--next {
+            transform: unset;
+            left: auto;
+            right: calc(50% - 68px)
+        }
+        @media (max-width: 992px) {
+            width: 40px;
+            height: 40px;
+            background-size: 16px;
+            left: calc(50% - 48px);
+            bottom: -65px;
+            &.splide__arrow--next {
+                right: calc(50% - 48px)
+            }
+        }
         &:hover,
         &:focus {
             opacity: 0.7;
         }
-
-        &.splide__arrow--prev {
-            transform: translateY(-50%) scaleX(-1);
-        }
-
-        &.splide__arrow--next {
-            left: auto;
-            right: 150px;
-        }
-
         svg {
             display: none;
         }

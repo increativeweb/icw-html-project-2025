@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
     infoSplide.sync(mediaSplide);
     infoSplide.mount();
     mediaSplide.mount();
-    const $paginationItems = $('.custom-pgination ul li');
+    const $paginationItems = $('.custom-pagination ul li');
     function updatePagination() {
         let index = infoSplide.index;
 
