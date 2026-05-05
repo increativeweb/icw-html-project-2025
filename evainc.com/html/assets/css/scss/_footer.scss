@@ -1,11 +1,46 @@
 .main-footer {
     background: #171717;
+    position: relative;
+    .footer-vector {
+        background: url('../images/img-footer-vector.png') no-repeat center center;
+        background-size: contain;
+        width: 290px;
+        height: 270px;
+        display: block;
+        position: absolute;
+        top: -85px;
+        left: 11%; 
+        z-index: 1;
+        @media (max-width: 1500px) {
+            left: 8%; 
+            width: 230px;
+            height: 210px;
+        }
+        @media (max-width: 1200px) {
+            left: 5%; 
+            width: 200px;
+            height: 180px;
+        }
+        @media (max-width: 992px) {
+            top: -35px;
+            left: 3%; 
+            width: 150px;
+            height: 120px;
+        }
+        @media (max-width: 767px) {
+            top: -25px;
+            width: 100px;
+            height: 70px;
+        }
+    }
     .footer-cta-block {
         padding: 150px 0;
         border-bottom: 1px solid rgba(115, 115, 115, 0.2);
         overflow: hidden;
         background: url('../images/img-footer-bg-vector.svg') no-repeat top right;
         background-size: 900px;
+        z-index: 3;
+        position: relative;
         @media (max-width: 1200px) {
             padding: 90px 0;
         }
