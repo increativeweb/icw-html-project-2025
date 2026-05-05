@@ -1,0 +1,62 @@
+@import "../../assets/css/scss/mixins";
+@import "../../assets/css/scss/config";
+
+.card-gallery-section {
+    .card-group-block { 
+        .info-card {
+            border: 1px solid #EAEAEA;
+            margin: -1px;
+            @include flexbox;
+            @include flex-direction(column);
+            height: 100%;
+            margin: -1px;
+            .card-img {
+                min-height: 180px;
+                border-bottom: 1px solid #EAEAEA;
+                border-top: 1px solid #EAEAEA;
+                margin: -1px 0;
+                img {
+                    width: 100%;
+                }
+                @media (max-width: 767px) {
+                    order: 2;
+                    min-height: 120px;
+                    border-bottom: 0;
+                }
+            }
+            .card-body {
+                padding: 40px 50px;
+                @include flexbox;
+                @include flex-direction(column);
+                max-height: 350px;
+                @media (max-width: 1200px) {
+                    padding: 20px;
+                    max-height: 300px;
+                }
+                @media (max-width: 767px) {
+                    order: 1;
+                }
+                .card-title {
+                    color: var(--text-color, #000000);
+                    margin-bottom: 15px;
+                }
+                .card-info {
+                    color: var(--black);
+                    flex: 1 1 auto;
+                }
+                .card-action {
+                    margin-top: 100px;
+                    @media (max-width: 1200px) {
+                        margin-top: 40px;
+                    }
+                    a {
+                        color: var(--text-color, #000000);
+                        &:hover, &:focus {
+                            color: var(--dark-gray);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

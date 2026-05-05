@@ -13,20 +13,34 @@
         position: absolute;
         top: 200px;
         left: 0;
-        height: 300px;
+        height: 60%;
         width: 200px;
         background-image: linear-gradient(90deg,rgba(#020202, 1) 0%, rgba(255, 255, 255, 0) 100%);
         z-index: 1;
+        @media (max-width: 1200px) {
+            top: 150px;
+        }
+        @media (max-width: 992px) {
+            top: 100px;
+            width: 70px;
+        }
     }
     &::after {
         content: '';
         position: absolute;
         top: 200px;
         right: 0;
-        height: 300px;
+        height: 60%;
         width: 200px;
         background-image: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(#020202, 1) 100%);
         z-index: 1;
+        @media (max-width: 1200px) {
+            top: 150px;
+        }
+        @media (max-width: 992px) {
+            top: 100px;
+            width: 70px;
+        }
     }
     @media (max-width: 1200px) {
         padding: 150px 0;
@@ -58,7 +72,14 @@
                         transform: translateY(-50%);
                     }
                 }
-                
+                @media (min-width: 1300px) { 
+                    left: 200px; 
+                    &.splide__arrow--next { right: 200px; }
+                }
+                @media (min-width: 1400px) { 
+                    left: 230px; 
+                    &.splide__arrow--next { right: 230px; }
+                }
             }
         }
     }
@@ -71,11 +92,10 @@
             padding: 0 50px;
         }
         @media (max-width: 992px) {
-            padding: 0 30px;
+            padding: 0 15px;
         }
         @media (max-width: 767px) {
             max-width: 320px;
-            padding: 0 15px;
         }
         .card-body {
             color: #FFFFFF;

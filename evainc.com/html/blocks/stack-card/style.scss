@@ -1,0 +1,56 @@
+@import "../../assets/css/scss/mixins";
+
+.stack-card-section {
+
+    /* LEFT CONTENT (Sticky Title) */
+    .section-title {
+        position: sticky;
+        top: 120px;
+        z-index: 2;
+    }
+
+    /* RIGHT STACK CARDS */
+    .stack-card-block {
+        position: relative;
+        padding-bottom: 250px; // ✅ important for last cards scroll
+
+        .stack-card {
+            position: sticky;
+            top: 120px; // ✅ keep SAME for all cards
+            background: #ffffff;
+            z-index: 1;
+            margin-bottom: 120px; // ✅ controls spacing (not top)
+
+            transition: transform 0.3s ease;
+
+            /* Layer effect using transform (safe) */
+            &:nth-child(1) { z-index: 1; transform: translateY(0px); }
+            &:nth-child(2) { z-index: 2; transform: translateY(30px); }
+            &:nth-child(3) { z-index: 3; transform: translateY(60px); }
+            &:nth-child(4) { z-index: 4; transform: translateY(90px); }
+            &:nth-child(5) { z-index: 5; transform: translateY(120px); }
+
+            .card-body {
+                .card-title {
+                    color: var(--text-color, #000);
+                    margin-bottom: 15px;
+                }
+
+                .card-info {
+                    color: #000000;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .card-img {
+                @include border-radius(10px);
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+}

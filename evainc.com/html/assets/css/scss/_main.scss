@@ -59,9 +59,25 @@
         }
     }
 
-    &.section-title-mw-600 {
+    &.section-title-flex {
         .section-title {
-            max-width: 600px;
+            @include flexbox;
+            @include align-items(flex-end);
+            @include justify-content(space-between);
+            @include flex-wrap(wrap);
+            gap: 10px;
+            @media (max-width: 767px) {
+                gap: 0;
+            }
+            .left-block {
+                max-width: 500px;
+            }
+        }
+    }
+
+    &.section-title-mw-500 {
+        .section-title {
+            max-width: 500px;
         }
     }
 
@@ -154,5 +170,12 @@
 
     & *:last-child {
         margin-bottom: 0px !important;
+    }
+}
+.content-section {
+    .section-title {
+        .title {
+            letter-spacing: -0.02em;
+        }
     }
 }

@@ -1,0 +1,28 @@
+@import "../../assets/css/scss/mixins";
+@import "../../assets/css/scss/config";
+
+.cta-section {
+    .cta-block {
+        padding: 100px;
+        background: var(--dark-black) url('../../assets/images/img-cta-bg.svg') no-repeat center right;
+        @include border-radius(10px);
+        @media (max-width: 1200px) {
+            padding: 70px;
+        }
+        @media (max-width: 992px) {
+            padding: 50px;
+        }
+        @media (max-width: 767px) {
+            padding: 30px;
+            background-size: 300px;
+        }
+        .section-title {
+            .title {
+                color: var(--white);
+            }
+            .sort-info {
+                color: var(--white);
+            }
+        }
+    }
+}
