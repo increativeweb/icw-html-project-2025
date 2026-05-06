@@ -38,8 +38,8 @@ section {
 body {
     margin: 0;
     background-color: var(--white);
-    color: var(--black);
-    font-family: 'Poppins', sans-serif;
+    color: var(--dark-gray);
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
@@ -114,7 +114,7 @@ a {
 
 p {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
     &:last-child {
         margin-bottom: 0;
@@ -136,17 +136,6 @@ img {
     }
 }
 
-.container {
-    @media (min-width: 1500px) {
-        max-width: 1464px;
-    }
-    @media (max-width: 992px) {
-        max-width: 100%;
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-}
-
 .font-light {
     font-weight: 300;
 }
@@ -165,6 +154,17 @@ img {
 
 .font-bold {
     font-weight: 700;
+}
+
+.container {
+    @media (min-width: 1500px) {
+        max-width: 1440px;
+    }
+    @media (max-width: 992px) {
+        max-width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }
 
 // Padding-Margin CSS
@@ -576,83 +576,44 @@ h5,
 
 // Button CSS
 .btn {
-    min-height: 48px;
-    font-weight: 600;
-    font-size: 16px;
     position: relative;
-    border: none;
-    @include transition(0.2s, ease-in-out);
+    white-space: nowrap;
     @include inline-flex;
     @include align-items(center);
     @include justify-content(center);
-    @include border-radius(33px);
+    @include border-radius(4px);
+    @include transition(0.2s, ease-in-out);
+    border: 1px solid transparent;
+    background-size: 300%;
+    min-height: 48px;
+    min-width: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 25px;
     line-height: 1;
-    padding: 5px;
-    white-space: nowrap;
-    .arrow-icon {
-        @include flexbox;
-        @include align-items(center);
-        @include justify-content(center);
-        width: 30px;
-        height: 30px;
-        background-color: var(--white);
-        border-radius: 45px;
-        position: absolute;
-        transition: all .3s cubic-bezier(0.65, 0, 0.076, 1);
-        right: 9px;
-        top: 9px;
-        &::after {
-            content: '';
-            width: 14px;
-            height: 14px;
-            background-image: url('data:image/svg+xml,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39176 7.10872L8.4501 0.750391L2.09176 0.808724M8.4501 0.750391L0.750098 8.45039" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-            background-size: 12px !important;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 8px;
-            right: 7px;
-            transition: all .3s cubic-bezier(0.65, 0, 0.076, 1);
-            transform-origin: center;
-        }
-    }
-    .btn-text {
-        padding: 0 60px 0 25px;
-        z-index: 2;
+    gap: 10px;
+    z-index: 1;
+    &::after {
+        content: "";
+        width: 20px;
+        height: 10px;
+        background-color: currentColor;
+        -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 10"><path d="M16.17 6L13.59 8.59L15 10L20 5L15 0L13.59 1.41L16.17 4H0V6H16.17Z"/></svg>') no-repeat center / contain;
+        mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 10"><path d="M16.17 6L13.59 8.59L15 10L20 5L15 0L13.59 1.41L16.17 4H0V6H16.17Z"/></svg>') no-repeat center / contain;
+        @include transition(0.2s, ease-in-out);
     }
     &:hover,
     &:focus {
-        .arrow-icon {
-            width: calc(100% - 18px) !important;
-            &::after {
-                top: 9px;
-                transform: rotate(45deg);
-                background-position: calc(100% - 2px) center;
-            }
+        background-position: 99.9%;
+        &::after {
+            @include transform(translateX(5px));
         }
     }
     &.btn-sm {
-        min-height: 44px;
-        .arrow-icon {
-            width: 26px;
-            height: 26px;
-            &::after {
-                background-size: 10px !important;
-                top: 6px;
-                right: 6px;
-            }
-        }
-        .btn-text {
-            padding: 0 55px 0 25px;
-        }
-        &:hover,
-        &:focus {
-            .arrow-icon {
-                &::after {
-                    top: 6px;
-                    background-position: calc(100% - 2px) center;
-                }
-            }
+        min-height: 40px;
+        &::after {
+            width: 16px;
+            height: 8px;
         }
     }
 
@@ -660,11 +621,7 @@ h5,
         color: var(--text-white) !important;
         border-color: var(--primary) !important;
         background-color: var(--primary) !important;
-        &:hover,
-        &:focus {
-            color: var(--primary) !important;
-        }
-        
+        background-image: linear-gradient(20deg, var(--primary) 50%, var(--black) 50%);
     }
 
     &.btn-outline-primary {
