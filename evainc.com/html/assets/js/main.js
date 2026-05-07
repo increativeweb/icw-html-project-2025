@@ -8,26 +8,26 @@ jQuery(document).ready(function ($) {
     if ($('.main-header').length) {
 
         if (jQuery(this).scrollTop() > 50) {
-            $(".main-header").addClass("fixed-header");
+            $('.main-header').addClass('fixed-header');
         } else {
-            $(".main-header").removeClass("fixed-header");
+            $('.main-header').removeClass('fixed-header');
         }
 
         $(window).scroll(function () {
             if (jQuery(this).scrollTop() > 50) {
-                $(".main-header").addClass("fixed-header");
+                $('.main-header').addClass('fixed-header');
             } else {
-                $(".main-header").removeClass("fixed-header");
+                $('.main-header').removeClass('fixed-header');
             }
         });
-
         $('.navbar-toggler').on('click', function () {
-            $(".main-header").toggleClass('is-visible');
+            $('.main-header').toggleClass('is-visible');
             $('body').toggleClass('overflow-hidden');
             $(this).toggleClass('is-visible');
+            $('.bg-overlay').toggleClass('is-active');
         });
         if ($('li.menu-item-has-children').length) {
-            $("li.menu-item-has-children > a").append('<i class="arrow"></i>');
+            $('li.menu-item-has-children > a').append('<i class="arrow"></i>');
         }
         $('.menu-item-has-children .arrow').on('click', function (e) {
             e.preventDefault();
@@ -37,12 +37,13 @@ jQuery(document).ready(function ($) {
             const $submenu = $li.children('.sub-menu');
 
             $(this).toggleClass('is-active');
+            $(this).parent().toggleClass('is-active');
             $submenu.stop(true, true).slideToggle(300);
         });
     }
 
 
-    if ($(".icw-progress-goto").length > 0) {
+    if ($('.icw-progress-goto').length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');
         var pathLength = progressPath.getTotalLength();
 

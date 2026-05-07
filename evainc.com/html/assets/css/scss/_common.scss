@@ -587,7 +587,7 @@ h5,
     @include justify-content(center);
     @include border-radius(33px);
     line-height: 1;
-    padding: 5px;
+    padding: 2px;
     white-space: nowrap;
     .arrow-icon {
         @include flexbox;
@@ -623,9 +623,13 @@ h5,
     &:hover,
     &:focus {
         .arrow-icon {
-            width: calc(100% - 18px) !important;
+            top: 2px;
+            right: 2px;
+            width: calc(100% - 4px) !important;
+            height: 44px;
             &::after {
-                top: 9px;
+                top: 16px;
+                right: 9px;
                 transform: rotate(45deg);
                 background-position: calc(100% - 2px) center;
             }
@@ -648,8 +652,14 @@ h5,
         &:hover,
         &:focus {
             .arrow-icon {
+                top: 2px;
+                right: 2px;
+                width: calc(100% - 4px) !important;
+                height: 40px;
                 &::after {
-                    top: 6px;
+                    top: 13px;
+                    right: 9px;
+                    transform: rotate(45deg);
                     background-position: calc(100% - 2px) center;
                 }
             }
@@ -706,15 +716,31 @@ h5,
     &.btn-link-arrow {
         background-color: transparent;
         border-color: transparent;
-        color: var(--blue);
         padding: 0;
         min-width: auto;
         min-height: auto;
+        color: var(--primary);
+        @include inline-flex;
+        @include align-items(center);
         @include justify-content(flex-start);
+        gap: 10px;
+        &::after {
+            content: '';
+            background: url('data:image/svg+xml,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39128 7.10872L8.44961 0.750391L2.09128 0.808724M8.44961 0.750391L0.749609 8.45039" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            background-size: contain;
+            width: 11px;
+            height: 9px;
+            display: inline-block;
+            @include transition(0.2s, ease-in-out);
+        }
 
         &:hover,
         &:focus {
-            color: var(--text-black);
+            color: var(--dark-gray);
+            &::after {
+                @include transform(rotate(45deg));
+                filter: contrast(0.2);
+            }
         }
     }
 
