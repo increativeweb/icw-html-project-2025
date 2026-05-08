@@ -55,7 +55,7 @@
                                             <div class="card-body">
                                                 <div class="card-title">Who we are</div>
                                                 <div class="card-info">A world renowned consulting firm and publisher of diverse energy data products.</div>
-                                                <div class="card-action"><a class="btn btn-link-arrow" href="#">Read more </a></div>
+                                                <div class="card-action"><a class="btn btn-link-arrow" href="#">Read more <span class="arrow-icon"></span></a></div>
                                             </div>
                                         </div>
                                     </li>
@@ -65,7 +65,7 @@
                                             <div class="card-body">
                                                 <div class="card-title">Meet The Team</div>
                                                 <div class="card-info">Meet our dedicated team of data analysts and consultants.</div>
-                                                <div class="card-action"><a class="btn btn-link-arrow" href="#">Read more </a></div>
+                                                <div class="card-action"><a class="btn btn-link-arrow" href="#">Read more <span class="arrow-icon"></span></a></div>
                                             </div>
                                         </div>
                                     </li>
@@ -187,10 +187,11 @@
                                     <li class="splide__slide">
                                         <div class="hero-slide">
                                             <div class="slide-img">
-                                                <img src="uploads/img-hero-slide-power.png" alt="Power">
+                                                <img src="uploads/img-hero-slide-power.png" class="d-none d-md-block" alt="Power">
+                                                <img src="uploads/img-hero-slide-m-power.png" class="mobile-img d-block d-md-none" alt="Power">
                                             </div>
                                             <div class="section-title">
-                                                <h1 class="title">Excellence in <span>Natural Gas & Petroleum</span> Insights</h1>
+                                                <h1 class="title">At the Forefront of <span>Power Modeling</span></h1>
                                                 <div class="sort-info">Considerable expertise in Natural Gas & Petroleum market and financial analyses.</div>
                                                 <div class="action"><a href="#" class="btn btn-primary"><span class="btn-text">Learn More</span><span class="arrow-icon"></span></a></div>
                                             </div>
@@ -214,7 +215,7 @@
                                                 <img src="uploads/img-hero-slide-power.png" alt="Power">
                                             </div>
                                             <div class="section-title">
-                                                <h1 class="title">Driving <span>Coal Solutions</span> with Unmatched Expertise</h1>
+                                                <h1 class="title">At the Forefront of <span>Power Modeling</span></h1>
                                                 <div class="sort-info">Leading the way in navigating the tricky landscape of the coal industry with 40 plus years of expertise.</div>
                                                 <div class="action"><a href="#" class="btn btn-primary"><span class="btn-text">Learn More</span><span class="arrow-icon"></span></a></div>
                                             </div>
@@ -226,7 +227,7 @@
                                                 <img src="uploads/img-hero-slide-natural-oil.png" alt="Power">
                                             </div>
                                             <div class="section-title">
-                                                <h1 class="title">Delivering Exceptional <span>Environmental Services</span></h1>
+                                                <h1 class="title">At the Forefront of <span>Power Modeling</span></h1>
                                                 <div class="sort-info">35 years of unparalleled environmental consulting and compliance modeling.</div>
                                                 <div class="action"><a href="#" class="btn btn-primary"><span class="btn-text">Learn More</span><span class="arrow-icon"></span></a></div>
                                             </div>
@@ -238,7 +239,7 @@
                                                 <img src="uploads/img-hero-slide-power.png" alt="Power">
                                             </div>
                                             <div class="section-title">
-                                                <h1 class="title">Empowering <span>Renewable Energy</span> Futures with Expert Insight</h1>
+                                                <h1 class="title">At the Forefront of <span>Power Modeling</span></h1>
                                                 <div class="sort-info">Pioneering smart solutions towards a cleaner and more sustainable future.</div>
                                                 <div class="action"><a href="#" class="btn btn-primary"><span class="btn-text">Learn More</span><span class="arrow-icon"></span></a></div>
                                             </div>
@@ -246,38 +247,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>                        
-                        <!-- <div class="splide hero-media-splide">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide">
-                                        <div class="media-block">
-                                            <img src="uploads/img-hero-slide-power.png" alt="Power">
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="media-block">
-                                            <img src="uploads/img-hero-slide-power.png" alt="Natural Gas & Oil">
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="media-block">
-                                            <img src="uploads/img-hero-slide-power.png" alt="Power">
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="media-block">
-                                            <img src="uploads/img-hero-slide-power.png" alt="Natural Gas & Oil">
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="media-block">
-                                            <img src="uploads/img-hero-slide-power.png" alt="Power">
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
+                        </div>  
                     </div>
                 </div>
             </section>
@@ -295,10 +265,123 @@
                     </div>
                 </div>
             </section>
+            <link rel='stylesheet' href="blocks/info-card/style.css">
             <section class="theme-section info-card-section pt-0">
                 <div class="container">
                     <div class="section-title text-center">
                         <h2 class="title">Our Featured <span>Publications</span></h2>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-15">
+                        <div class="col">
+                            <div class="info-card">
+                                <div class="card-body">
+                                    <div class="label label-renewable-energy">Renewable Energy</div>
+                                    <h3 class="card-title">Renewable Energy Outlook</h3>
+                                    <div class="card-info">Highlights of this report include recent policy updates, recently completed renewable energy projects, the current status of all Interconnection Queues and EVA’s regional short-term renewable energy capacity outlook.</div>
+                                    <div class="card-action">
+                                        <a href="#" class="btn btn-link-arrow stretched-link">Learn More <span class="arrow-icon"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-card">
+                                <div class="card-body">
+                                    <div class="label label-natural-gas">Natural Gas & Oil</div>
+                                    <h3 class="card-title">Monthly Short Term Natural Gas Outlook</h3>
+                                    <div class="card-info">This publication provides the outlook for gas supply and demand fundamentals and prices, for the current year plus the next two years. Consists of four detailed Quarterly Gas Reports and eight Monthly Gas Reports with updates.</div>
+                                    <div class="card-action">
+                                        <a href="#" class="btn btn-link-arrow stretched-link">Learn More <span class="arrow-icon"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-card">
+                                <div class="card-body">
+                                    <div class="label label-coal">Coal</div>
+                                    <h3 class="card-title">Quarterly U.S. Coal Report</h3>
+                                    <div class="card-info">Each report incorporates the latest EVA integrated model coal price, supply and demand forecasts, MHSA production data, EIA power generation reports, utility stockpile date, long-range weather forecasts, regulations and market news.</div>
+                                    <div class="card-action">
+                                        <a href="#" class="btn btn-link-arrow stretched-link">Learn More <span class="arrow-icon"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <link rel='stylesheet' href="blocks/testimonial/style.css">
+            <script src="blocks/testimonial/script.js"></script>
+            <section class="theme-section testimonials-section pt-0">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h2 class="title">Testimonials <span>Success Stories</span></h2>
+                    </div>
+                    <div class="testimonials-slider-block">
+                        <div class="splide testimonial-splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <div class="testimonials-card">
+                                            <div class="card-img">
+                                                <img src="uploads/img-user-bill-hoback.jpg" alt="Bill Hoback">
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="card-info">“I worked with Energy Ventures Analysis for over 5 years when I ran the Illinois Office of Coal Development. They were a wonderful partner supporting our various activities which included identifying initiatives to expand Illinois coal exports, energy education initiatives, and the initial analytical support on the evaluation of the impact of the proposed Clean Power Plan on Illinois coal production.”</div>
+                                                <div class="card-action">
+                                                    <div class="testimonials-user">
+                                                        <div class="user-img"><img src="uploads/img-southern-illinois-university.png" alt="Southern Illinois University"></div>
+                                                        <div class="user-info">
+                                                            <div class="name">Bill Hoback</div>
+                                                            <div class="position">Former Deputy Director of the Illinois Office of Coal Development</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="testimonials-card">
+                                            <div class="card-img">
+                                                <img src="uploads/img-user-bill-hoback.jpg" alt="Bill Hoback">
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="card-info">“I worked with Energy Ventures Analysis for over 5 years when I ran the Illinois Office of Coal Development. They were a wonderful partner supporting our various activities which included identifying initiatives to expand Illinois coal exports, energy education initiatives, and the initial analytical support on the evaluation of the impact of the proposed Clean Power Plan on Illinois coal production.”</div>
+                                                <div class="card-action">
+                                                    <div class="testimonials-user">
+                                                        <div class="user-img"><img src="uploads/img-southern-illinois-university.png" alt="Southern Illinois University"></div>
+                                                        <div class="user-info">
+                                                            <div class="name">Bill Hoback</div>
+                                                            <div class="position">Former Deputy Director of the Illinois Office of Coal Development</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="testimonials-card">
+                                            <div class="card-img">
+                                                <img src="uploads/img-user-bill-hoback.jpg" alt="Bill Hoback">
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="card-info">“I worked with Energy Ventures Analysis for over 5 years when I ran the Illinois Office of Coal Development. They were a wonderful partner supporting our various activities which included identifying initiatives to expand Illinois coal exports, energy education initiatives, and the initial analytical support on the evaluation of the impact of the proposed Clean Power Plan on Illinois coal production.”</div>
+                                                <div class="card-action">
+                                                    <div class="testimonials-user">
+                                                        <div class="user-img"><img src="uploads/img-southern-illinois-university.png" alt="Southern Illinois University"></div>
+                                                        <div class="user-info">
+                                                            <div class="name">Bill Hoback</div>
+                                                            <div class="position">Former Deputy Director of the Illinois Office of Coal Development</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

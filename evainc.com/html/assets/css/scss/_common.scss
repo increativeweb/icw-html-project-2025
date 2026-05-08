@@ -142,8 +142,8 @@ img {
     }
     @media (max-width: 992px) {
         max-width: 100%;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }
 
@@ -502,7 +502,7 @@ h2,
 
 h3,
 .h3 {
-    font-size: clamp(20px, 3vw, 24px);
+    font-size: clamp(18px, 3vw, 24px);
 }
 
 h4,
@@ -722,22 +722,32 @@ h5,
         @include inline-flex;
         @include align-items(center);
         @include justify-content(flex-start);
-        gap: 10px;
-        &::after {
-            content: '';
-            background: url('data:image/svg+xml,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39128 7.10872L8.44961 0.750391L2.09128 0.808724M8.44961 0.750391L0.749609 8.45039" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+        gap: 8px;
+        width: max-content;
+        position: unset;
+        text-underline-offset: 4px;
+        .arrow-icon {
+            background: url('data:image/svg+xml,<svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.17 6L13.59 8.59L15 10L20 5L15 0L13.59 1.41L16.17 4H0V6H16.17Z" fill="rgb(35 63 97)"/></svg>') no-repeat center center;
             background-size: contain;
-            width: 11px;
-            height: 9px;
+            width: 20px;
+            height: 10px;
             display: inline-block;
             @include transition(0.2s, ease-in-out);
+            position: relative;
+            top: unset;
+            right: unset;
+            &::after {
+                content: none;
+            }
         }
 
         &:hover,
         &:focus {
             color: var(--dark-gray);
-            &::after {
-                @include transform(rotate(45deg));
+            text-decoration: underline;
+            .arrow-icon {
+                width: 20px !important;
+                @include transform(translateX(5px));
                 filter: contrast(0.2);
             }
         }
@@ -766,13 +776,21 @@ h5,
     @include align-items(center);
     min-height: 50px;
     padding: 8px 25px;
-    font-family: var(--font-heading2);
+    font-family: var(--font-heading1);
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
     text-decoration: none;
     @include border-radius(50px);
     @include transition(0.2s, ease-in-out);
+    @media (max-width: 1200px) {
+        font-size: 20px;
+    }
+    @media (max-width: 767px) {
+        min-height: 44px;
+        font-size: 18px;
+        padding: 8px 20px;
+    }
     &.btn-power {
         color: var(--red);
         background-color: rgba(#FF1515, 0.2);
@@ -880,6 +898,42 @@ h5,
     }
 }
 
+// Label 
+.label {
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    padding: 5px 15px;
+    gap: 12px;
+    height: 30px;
+    @include border-radius(50px);
+    font-family: var(--font-heading1);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px; 
+    width: max-content;  
+    &.label-power {
+        color: var(--red);
+        background-color: rgba(#FF1515, 0.2);
+    }
+    &.label-natural-gas {
+        color: var(--skyblue);
+        background-color: rgba(#47BEF4, 0.2);
+    }
+    &.label-coal {
+        color: var(--orange);
+        background-color: rgba(#FA8D3C, 0.2);
+    }
+    &.label-renewable-energy {
+        color: var(--green);
+        background-color: rgba(#00B050, 0.2);
+    }
+    &.label-environmental {
+        color: var(--yellow);
+        background-color: rgba(#C5B358, 0.2);
+    }
+}
+
 // Badge
 .badge {
     display: inline-block;
@@ -932,31 +986,21 @@ h5,
 
 .splide__arrows {
     .splide__arrow {
-        background: #000000 url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-        background-size: 22px !important;
-        width: 56px;
-        height: 56px;
-        border: 1px solid var(--dark-gray);
+        background: var(--white) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+        background-size: 16px !important;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #e5e5e5;
         opacity: 1;
         @include transition(0.3s, ease-in-out);
         top: auto;
-        bottom: -80px;
+        left: calc(50% - 48px);
+        bottom: -65px;
         transform: scaleX(-1);
-        left: calc(50% - 68px);
         &.splide__arrow--next {
             transform: unset;
             left: auto;
-            right: calc(50% - 68px)
-        }
-        @media (max-width: 992px) {
-            width: 40px;
-            height: 40px;
-            background-size: 16px !important;
-            left: calc(50% - 48px);
-            bottom: -65px;
-            &.splide__arrow--next {
-                right: calc(50% - 48px)
-            }
+            right: calc(50% - 48px)
         }
         &:hover,
         &:focus {

@@ -1,0 +1,45 @@
+@import "../../assets/css/scss/config";
+@import "../../assets/css/scss/mixins";
+
+.info-card-section {
+    .info-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        position: relative;
+        padding: 30px;
+        border: 1px solid #E5E5E5;
+        @include border-radius(16px);
+        @include transition(0.2s, ease-in-out);
+        @media (max-width: 992px) {
+            padding: 20px;
+        }
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .label {
+                margin-bottom: 40px;
+                @media (max-width: 992px) {
+                    margin-bottom: 30px;
+                }
+            }
+            .card-title {
+                margin-bottom: 10px;
+                font-family: var(--font-heading2);
+            }
+            .card-info {
+                font-size: 16px;
+                flex: 1 1 auto;
+            }
+            .card-action {
+                margin-top: 40px;
+                @media (max-width: 992px) {
+                    margin-top: 30px;
+                }
+            }
+        }
+        &:hover, &:focus {
+            background: rgba(35,63,97,0.05);
+        }
+    }
+}

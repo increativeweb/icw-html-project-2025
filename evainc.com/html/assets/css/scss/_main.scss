@@ -177,7 +177,10 @@
         @include align-items(center);
         @include justify-content(center);
         @include flex-wrap(wrap);
-        gap: 12px;
+        gap: 10px 12px;
+        @media (max-width: 992px) {
+            gap: 10px;            
+        }
     }
 
     & *:last-child {
@@ -193,6 +196,9 @@
         }
         .action {
             margin-top: 50px;
+            @media (max-width: 767px) {
+                margin-top: 30px;
+            }
         }
     }
 }
