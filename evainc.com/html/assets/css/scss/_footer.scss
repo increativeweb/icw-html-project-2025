@@ -9,7 +9,14 @@
         overflow: hidden;
         z-index: 3;
         position: relative;
+        overflow: hidden;
         @include border-radius(24px);
+        @media (max-width: 1200px) {
+            padding: 70px 50px 150px;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 40px 180px;
+        }
         &::before {
             content: '';
             background: rgba(224, 30, 38, 0.3);
@@ -20,6 +27,18 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            @media (max-width: 992px) {
+                width: 200px;
+                height: 200px;
+                filter: blur(70px);
+            }
+            @media (max-width: 767px) {
+                width: 100px;
+                height: 100px;
+                bottom: -9px;
+                left: -15px;
+                filter: blur(50px);
+            }
         }
         &::after {
             content: '';
@@ -31,17 +50,38 @@
             position: absolute;
             top: 0;
             right: 0;
-        }
-        @media (max-width: 992px) {
-            padding: 70px 50px;
-        }
-        @media (max-width: 767px) {
-            padding: 50px 20px;
+            @media (max-width: 992px) {
+                width: 200px;
+                height: 200px;
+                filter: blur(70px);
+            }
+            @media (max-width: 767px) {
+                width: 100px;
+                height: 100px;
+                top: -9px;
+                right: -15px;
+                filter: blur(50px);
+            }
         }
         .cta-img {
             position: absolute;
             bottom: 0;
             left: 30px;
+            @media (max-width: 767px) {
+                left: 6px;
+            }
+            img {
+                max-height: 360px;
+                @media (max-width: 1400px) {
+                    max-height: 250px;
+                }
+                @media (max-width: 1200px) {
+                    max-height: 200px;
+                }
+                @media (max-width: 767px) {
+                    max-height: 160px;
+                }
+            }
         }
         .cta-info {
             text-align: center;
@@ -66,11 +106,23 @@
     }
     .footer-main-menu-block {
         padding: 150px 0 30px;
+        @media (max-width: 1200px) {
+            padding: 100px 0 30px;
+        }
+        @media (max-width: 992px) {
+            padding: 70px 0 30px;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 0 20px;
+        }
         .social-list {
             @include flexbox;
             @include align-items(center);
             gap: 15px;
             margin-top: 30px;
+            @media (max-width: 992px) {
+                @include justify-content(center);
+            }
             li {
                 line-height: 0.7;
                 a {
@@ -88,11 +140,21 @@
         }
         .footer-info-block {
             max-width: 405px;
+            @media (max-width: 992px) {
+                text-align: center;
+                margin: 0 auto;
+            }
             .footer-logo {
                 margin-bottom: 30px;
                 display: inline-block;
+                @media (max-width: 992px) {
+                    margin-bottom: 20px;
+                }
                 img {
-                    height: 88px;
+                    height: 88px; 
+                    @media (max-width: 992px) {
+                        height: 66px; 
+                    }
                 }
             }
             .info {
@@ -106,11 +168,8 @@
             @include justify-content(space-between);
             gap: 50px;
             @media (max-width: 992px) {
-                margin-top: 30px;
+                margin-top: 50px;
                 @include flex-wrap(wrap);
-            }
-            @media (max-width: 767px) {
-                gap: 30px;
             }
             & > li {
                 font-family: var(--font-heading2);
@@ -130,9 +189,8 @@
                 }
                 & > ul {
                     li {
-                        line-height: 1.1;
                         &:not(:last-child) {
-                            margin-bottom: 12px;
+                            margin-bottom: 8px;
                         }
                         a {
                             font-weight: 500;
@@ -165,7 +223,11 @@
             @include justify-content(space-between);
             gap: 15px;
             @media (max-width: 992px) {
-                margin-top: 30px;
+                margin-top: 20px;
+                padding-top: 20px;
+                @include align-items(flex-start);
+                @include flex-direction(column-reverse);
+                gap: 10px;
             }
             .copyright-text {
                 font-weight: 400;

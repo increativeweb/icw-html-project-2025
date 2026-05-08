@@ -581,6 +581,7 @@ h5,
     font-size: 16px;
     position: relative;
     border: none;
+    font-family: var(--font-heading2);
     @include transition(0.2s, ease-in-out);
     @include inline-flex;
     @include align-items(center);
