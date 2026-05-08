@@ -497,7 +497,7 @@ h1,
 
 h2,
 .h2 {
-    font-size: clamp(28px, 3vw, 38px);
+    font-size: clamp(32px, 3vw, 46px);
 }
 
 h3,
@@ -629,7 +629,6 @@ h5,
             height: 44px;
             &::after {
                 top: 16px;
-                right: 9px;
                 transform: rotate(45deg);
                 background-position: calc(100% - 2px) center;
             }
@@ -658,7 +657,6 @@ h5,
                 height: 40px;
                 &::after {
                     top: 13px;
-                    right: 9px;
                     transform: rotate(45deg);
                     background-position: calc(100% - 2px) center;
                 }

@@ -21,24 +21,40 @@
                 .navbar-collapse {
                     @include transform(translateX(0%));
                 }
+                @media (max-width: 1200px) and (min-width: 992px) {
+                    .navbar-toggler {
+                        position: absolute;
+                        right: 20px;
+                        top: 18px;
+                    }
+                }
             }
         }
     }
     .navbar {
         padding: 10px 0;
         .container {
-            position: relative;
+            @media (min-width: 1200px) {position: relative;}
         }
         .navbar-brand {
             padding: 0;
             margin-bottom: -32px;
+            @media (max-width: 992px) {
+                margin-bottom: -25px;
+            }
             img {
                 height: 88px;
+                @media (max-width: 992px) {
+                    height: 66px;
+                }
             }
         }
         .navbar-collapse {
             @media (min-width: 1200px) {
                 @include justify-content(center);
+                .mobile-top-menu {
+                    display: none;
+                }
             }
             @media (max-width: 1200px) {
                 position: fixed;
@@ -50,7 +66,7 @@
                 width: 100%;
                 max-width: 320px;
                 margin: 5px;
-                padding: 20px;
+                padding: 10px;
                 background: #F4F5F7;
                 @include flexbox;
                 @include flex-direction(column);
@@ -65,12 +81,27 @@
                     width: 100%;
                     margin-top: 30px;
                 }
+                .mobile-top-menu {
+                    padding: 5px;
+                    margin-bottom: 10px;
+                    .home-menu {
+                        line-height: 0.7;  
+                        a {     
+                            display: inline-block;
+                            color: var(--primary);                     
+                            @include transition(0.2s, ease-in-out);
+                            &:hover, &:focus {
+                               color: var(--dark-gray);
+                            }
+                        }
+                    }
+                }
             }
         }
         .mainMenu {
             display: flex;
             align-items: flex-start;
-            padding: 4px 10px;
+            padding: 4px;
             @media (min-width: 1200px) {
                 gap: 6px;
                 background: rgba(35, 63, 97, 0.05);
@@ -222,13 +253,10 @@
                             width: 100%;
                             background: var(--white);
                             @include border-radius(16px);
-                            padding: 15px 8px;
+                            padding: 15px 0;
                         }
                         & > li {
                             padding: 0 30px;
-                            @media (max-width: 1200px) {
-                                padding: 0 15px;
-                            }
                             &:not(:last-child) {
                                 margin-bottom: 5px;
                             }
@@ -267,6 +295,12 @@
                                     }
                                 }
                             }
+                            @media (max-width: 1200px) {
+                                padding: 0 15px;
+                                &:nth-last-child(2) {
+                                    margin-bottom: 0;
+                                }
+                            }
                             a {
                                 color: var(--dark-gray);
                                 font-family: var(--font-heading2);
@@ -301,7 +335,7 @@
                                 @include flex-wrap(wrap);
                                 top: 74px;
                                 &::after, &::before {
-                                    left: var(--left);
+                                    left: var(--arrow-left);
                                 }
                             }
                             @media (max-width: 1200px) {
@@ -329,7 +363,7 @@
                                     }
                                 }
                                 @media (max-width: 1200px) {
-                                    padding: 15px;
+                                    padding: 9px 15px;
                                     &:not(:first-child) {
                                         border-top: 1px solid #E5E5E5;
                                     }
@@ -344,14 +378,41 @@
                                         }
                                         &.menu-title {
                                             margin-bottom: 10px;
+                                            display: block !important;
+                                            @media (max-width: 1200px) {
+                                                margin-bottom: 0;
+                                                & ~ li {
+                                                    margin-top: 10px;
+                                                }
+                                            }
                                             a {
                                                 font-size: 24px;
                                                 font-family: var(--font-heading1);
                                                 pointer-events: none;
                                                 color: var(--black);
                                                 font-style: italic;
-                                                &::after {
-                                                    content: '';
+                                                @media (max-width: 1200px) {
+                                                    width: 100%;
+                                                    gap: 10px;
+                                                    &::after {
+                                                        content: '+';
+                                                        width: 12px;
+                                                        height: 12px;
+                                                        display: inline-block;
+                                                        font-style: normal;
+                                                        line-height: 0.7;
+                                                        color: var(--dark-gray);
+                                                        margin-left: auto;
+                                                        margin-top: -2px;
+                                                    }
+                                                }
+                                            }                                            
+                                            &.menu-title.active {
+                                                a {
+                                                    &::after {
+                                                        content: '—';
+                                                        font-size: 17px;
+                                                    }
                                                 }
                                             }
                                             &.text-red {
@@ -526,18 +587,16 @@
                 @media (min-width: 1200px) {
                     display: none;
                 }
-
                 display: inline-block;
                 cursor: pointer;
                 border: none;
                 padding: 0;
                 background-color: transparent;
-                z-index: 10;
-
+                z-index: 15;
                 span {
-                    width: 24px;
+                    width: 20px;
                     height: 2px;
-                    margin: 6px 0;
+                    margin: 5px 0;
                     background-color: var(--black);
                     @include border-radius(4px);
                     display: block;
@@ -548,13 +607,13 @@
                 &:active,
                 &:focus, &.is-visible {
                     span {
-                        background-color: var(--primary);
+                        background-color: var(--dark-gray);
                     }
                 }
 
                 &.is-visible {
                     span:nth-child(1) {
-                        @include transform(rotate(-45deg) translate(-5px, 5px));
+                        @include transform(rotate(-45deg) translate(-4px, 5px));
                     }
 
                     span:nth-child(2) {
@@ -563,7 +622,7 @@
                     }
 
                     span:nth-child(3) {
-                        @include transform(rotate(45deg) translate(-6px, -6.5px));
+                        @include transform(rotate(45deg) translate(-4.5px, -6px));
                     }
                 }
             }
