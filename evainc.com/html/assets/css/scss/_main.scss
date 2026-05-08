@@ -173,6 +173,11 @@
 
     .action {
         margin-top: 30px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+        gap: 12px;
     }
 
     & *:last-child {
