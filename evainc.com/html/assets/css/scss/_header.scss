@@ -83,11 +83,7 @@
                 box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.05);
                 overflow: hidden;
                 overflow-y: auto;
-                visibility: hidden;
-                .btn {
-                    width: 100%;
-                    margin-top: 30px;
-                }
+                visibility: hidden;                
                 .mobile-top-menu {
                     padding: 15px 15px 5px;
                     margin-bottom: 10px;
@@ -101,6 +97,17 @@
                                color: var(--dark-gray);
                             }
                         }
+                    }
+                }
+
+                .mobile-bottom-menu {
+                    border-top: 1px solid #E5E5E5;
+                    margin-top: 30px;
+                    padding: 20px 15px;
+                    width: 100%;
+                    .btn {
+                        width: max-content;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -117,6 +124,7 @@
             @media (max-width: 1200px) { 
                 width: 100%;
                 padding: 10px;
+                flex: 1 1 auto;
             }
             & > li {
                 line-height: 1;
@@ -370,7 +378,7 @@
                                     }
                                 }
                                 @media (max-width: 1200px) {
-                                    padding: 9px 15px;
+                                    padding: 10px 15px;
                                     &:not(:first-child) {
                                         border-top: 1px solid #E5E5E5;
                                     }
@@ -401,6 +409,7 @@
                                                 @media (max-width: 1200px) {
                                                     width: 100%;
                                                     gap: 10px;
+                                                    font-size: 22px;
                                                     &::after {
                                                         content: '+';
                                                         width: 12px;
@@ -589,7 +598,36 @@
         .nav-right {
             @include flexbox;
             @include align-items(center);
-            gap: 10px;
+            gap: 15px;
+            .btn {
+                @media (max-width: 992px) {
+                    min-height: 36px;
+                    .btn-text {
+                        padding: 0 45px 0 20px;
+                    }
+                    .arrow-icon {
+                        width: 18px;
+                        height: 18px;
+                        &:after {
+                            top: 2px;
+                            right: 2px;
+                            background-size: 8px !important;
+                        }
+                    }
+                    &:hover, &:focus {
+                        .arrow-icon {
+                            top: 2px;
+                            right: 2px;
+                            width: calc(100% - 4px) !important;
+                            height: 32px;
+                            &::after {
+                                top: 8px;
+                                background-position: calc(100% - 2px) center;
+                            }
+                        }
+                    }
+                }
+            }
             .navbar-toggler {
                 @media (min-width: 1200px) {
                     display: none;
