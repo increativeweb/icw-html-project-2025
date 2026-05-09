@@ -1,0 +1,47 @@
+@import "../../assets/css/scss/config";
+@import "../../assets/css/scss/mixins";
+
+.icon-card-section {
+    .icon-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        position: relative;
+        padding: 30px;
+        border: 1px solid transparent;
+        @include border-radius(16px);
+        @include transition(0.2s, ease-in-out);
+        @media (max-width: 992px) {
+            padding: 20px;
+        }
+        .card-icon {
+            margin-bottom: 32px;
+            img {
+                width: 40px;
+                height: 40px;
+                flex: none;
+            }
+        }
+        &.only-icon {
+            min-height: 220px;
+            background-color: var(--bg-color, #d3d9df);
+            .card-icon {
+                flex: 1 1 auto;
+            }
+            .card-body {
+                flex: none;
+                .card-title {
+                    margin-bottom: 0;
+                    font-size: 18px;
+                    a {
+                        color: var(--black);
+                        text-decoration: none;
+                    }
+                }
+            }
+            &:hover, &:focus {
+                border-color: var(--color);
+            }
+        }
+    }
+}

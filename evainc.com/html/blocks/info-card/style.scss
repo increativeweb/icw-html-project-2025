@@ -9,6 +9,7 @@
         position: relative;
         padding: 30px;
         border: 1px solid #E5E5E5;
+        background: var(--white);
         @include border-radius(16px);
         @include transition(0.2s, ease-in-out);
         @media (max-width: 992px) {

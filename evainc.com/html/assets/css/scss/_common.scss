@@ -333,6 +333,10 @@ img {
 .g-15 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
+    @media (max-width: 992px) {
+        --bs-gutter-y: 20px;
+        --bs-gutter-x: 20px;
+    }
 }
 
 .g-30 {
@@ -487,7 +491,7 @@ h5,
 .h5 {
     line-height: 1.2;
     font-weight: 600;
-    font-family: $font-inria;
+    font-family: var(--font-heading2);
 }
 
 h1,
@@ -502,7 +506,7 @@ h2,
 
 h3,
 .h3 {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(20px, 3vw, 24px);
 }
 
 h4,
@@ -606,6 +610,7 @@ h5,
             content: '';
             width: 14px;
             height: 14px;
+            display: inline-block;
             background-image: url('data:image/svg+xml,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39176 7.10872L8.4501 0.750391L2.09176 0.808724M8.4501 0.750391L0.750098 8.45039" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
             background-size: 12px !important;
             background-position: center;
@@ -618,7 +623,7 @@ h5,
         }
     }
     .btn-text {
-        padding: 0 60px 0 25px;
+        padding: 0 58px 0 23px;
         z-index: 2;
     }
     &:hover,
@@ -635,6 +640,35 @@ h5,
             }
         }
     }
+    @media (max-width: 767px) {
+        min-height: 40px;
+        .arrow-icon {
+            width: 22px;
+            height: 22px;
+            right: 9px;
+            top: 9px;
+            &::after {
+                top: 4px;
+                right: 4px;
+                background-size: 10px !important;
+            }
+        }
+        .btn-text {
+            padding: 0 48px 0 20px;
+        }
+        &:hover,
+        &:focus {
+            .arrow-icon {
+                top: 2px;
+                right: 2px;
+                width: calc(100% - 4px) !important;
+                height: 36px;
+                &::after {
+                    top: 11px;
+                }
+            }
+        }
+    }
     &.btn-sm {
         min-height: 44px;
         .arrow-icon {
@@ -647,7 +681,7 @@ h5,
             }
         }
         .btn-text {
-            padding: 0 55px 0 25px;
+            padding: 0 53px 0 23px;
         }
         &:hover,
         &:focus {
@@ -667,7 +701,6 @@ h5,
 
     &.btn-primary {
         color: var(--text-white) !important;
-        border-color: var(--primary) !important;
         background-color: var(--primary) !important;
         &:hover,
         &:focus {
@@ -676,39 +709,32 @@ h5,
         
     }
 
-    &.btn-outline-primary {
-        color: var(--primary) !important;
-        border-color: var(--primary) !important;
-        background-color: transparent;
-        background-image: linear-gradient(20deg, transparent 50%, var(--primary) 50%);
-
-        &:hover,
-        &:focus {
-            color: var(--text-white) !important;
-        }
-    }
-
     &.btn-white {
-        color: var(--blue) !important;
-        border-color: var(--white) !important;
+        color: var(--primary) !important;
         background-color: var(--white) !important;
-
+        .arrow-icon {
+            background-color: var(--primary);
+            &::after {
+                filter: brightness(0) invert(1);
+            }
+        }
         &:hover,
         &:focus {
-            border-color: var(--blue) !important;
-            background-color: var(--blue) !important;
+            color: var(--white) !important;
         }
     }
-
-    &.btn-secondary {
+    &.btn-light {
         color: var(--white) !important;
-        border-color: var(--secondary) !important;
-        background-color: var(--secondary) !important;
-        background-image: linear-gradient(20deg, var(--secondary) 50%, var(--white) 50%);
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        .arrow-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            &::after {
+                filter: brightness(0) invert(1);
+            }
+        }
         &:hover,
         &:focus {
-            border-color: var(--white) !important;
-            color: var(--black) !important;
+            color: var(--white) !important;
         }
     }
 
@@ -1004,7 +1030,7 @@ h5,
         }
         &:hover,
         &:focus {
-            opacity: 0.7;
+            border-color: var(--black);
         }
         svg {
             display: none;
