@@ -592,7 +592,7 @@ h5,
     @include justify-content(center);
     @include border-radius(33px);
     line-height: 1;
-    padding: 2px;
+    padding: 4px;
     white-space: nowrap;
     .arrow-icon {
         @include flexbox;
@@ -721,6 +721,10 @@ h5,
         &:hover,
         &:focus {
             color: var(--white) !important;
+            .arrow-icon {
+                height: 45px;
+                top: 1px;
+            }
         }
     }
     &.btn-light {
