@@ -7,8 +7,13 @@
         @media (max-width: 992px) {
             margin: 0 -15px;
         }
-        .splide__pagination {
-            bottom: -40px;
+        .post-splide {
+            .splide__list {
+                padding: 10px 0 !important;
+            }            
+            .splide__pagination {
+                bottom: -40px;
+            }
         }
     }
 }
@@ -69,11 +74,7 @@
         }
     }
     &:hover, &:focus {
-        .card-img { 
-            img {
-                @include transform(scale(1.05));
-            }
-        }
+        @include transform(translateY(-5px));
         .card-body {
             .card-title {
                 a {

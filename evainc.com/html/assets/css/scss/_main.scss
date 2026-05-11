@@ -133,7 +133,7 @@
         margin-bottom: 20px;
         color: var(--black);
         font-family: var(--font-heading2);
-        span {
+        em {
             font-family: var(--font-heading1);
             font-style: italic;
             color: var(--secondary);
@@ -268,5 +268,40 @@
                 top: 220px;
             }
         }
+    }
+}
+.card-power {
+    background-color: #ffd0d0 !important;
+    color: var(--red);
+    &:hover, &:focus {
+        border-color: var(--red) !important;
+    }
+}
+.card-natural-gas {
+    background-color: #daf2fd !important;
+    color: var(--skyblue);
+    &:hover, &:focus {
+        border-color: var(--skyblue) !important;
+    }
+}
+.card-coal {
+    background-color: #fee8d8 !important;
+    color: var(--orange);
+    &:hover, &:focus {
+        border-color: var(--orange) !important;
+    }
+}
+.card-renewable-energy {
+    background-color: #ccefdc !important;
+    color: var(--green);
+    &:hover, &:focus {
+        border-color: var(--green) !important;
+    }
+}
+.card-environmental {
+    background-color: #f3f0de !important;
+    color: var(--yellow);
+    &:hover, &:focus {
+        border-color: var(--yellow) !important;
     }
 }

@@ -6,7 +6,6 @@
         max-width: 950px;
         margin: 0 auto;
         .collapse-item {
-            padding: 20px;
             border: 1px solid #E5E5E5;
             @include border-radius(16px);
             @include transition(0.2s, ease-in-out);
@@ -20,7 +19,7 @@
                 border: none;
                 background: transparent;
                 font-family: var(--font-heading2);
-                padding: 0;
+                padding: 20px;
                 @include flexbox;
                 @include align-items(flex-start);
                 @include justify-content(space-between);
@@ -44,7 +43,7 @@
             }
             .collapse-body {
                 max-width: 800px;
-                margin-top: 10px;
+                padding: 0 20px 20px;
                 .card-content {
                     font-size: 16px;
                 }

@@ -40,48 +40,46 @@ jQuery(document).ready(function ($) {
             $(this).parent().toggleClass('is-active');
             $submenu.stop(true, true).slideToggle(300);
         });
-        function mobileMenuAccordion() {
+        if ($(window).width() > 1200) {
+            $(".menu-item-has-children").on("mouseenter", function () {
+                $('.bg-overlay').addClass('is-active');
+            });
 
-            if ($(window).width() < 1200) {
-
-                // Hide items initially
-                $('.menu-title').each(function () {
-                    $(this)
-                        .closest('ul')
-                        .find('li:not(.menu-title)')
-                        .hide();
-                });
-
-                // Click event
-                $('.menu-title').off('click').on('click', function (e) {
-                    e.preventDefault();
-
-                    const $parentUl = $(this).closest('ul');
-                    const $items = $parentUl.find('li:not(.menu-title)');
-
-                    if ($items.is(':visible')) {
-                        $items.slideUp(200);
-                        $(this).removeClass('active');
-                    } else {
-                        $items.slideDown(200);
-                        $(this).addClass('active');
-                    }
-                });
-
-            } else {
-
-                // Desktop reset
-                $('.menu-title')
-                    .removeClass('active')
-                    .closest('ul')
-                    .find('li:not(.menu-title)')
-                    .show();
-            }
+            $(".menu-item-has-children").on("mouseleave", function () {
+                $('.bg-overlay').removeClass('is-active');
+            });
         }
-        mobileMenuAccordion();
-        $(window).on('resize', function () {
-            mobileMenuAccordion();
-        });
+        // function mobileMenuAccordion() {
+        //     if ($(window).width() < 1200) {
+        //         // Hide items initially
+        //         $('.menu-title').each(function () {
+        //             $(this)
+        //                 .closest('ul')
+        //                 .find('li:not(.menu-title)')
+        //                 .hide();
+        //         });
+        //         // Click event
+        //         $('.menu-title').off('click').on('click', function (e) {
+        //             e.preventDefault();
+        //             const $parentUl = $(this).closest('ul');
+        //             const $items = $parentUl.find('li:not(.menu-title)');
+        //             if ($items.is(':visible')) {
+        //                 $items.slideUp(200);
+        //                 $(this).removeClass('active');
+        //             } else {
+        //                 $items.slideDown(200);
+        //                 $(this).addClass('active');
+        //             }
+        //         });
+        //     } else {
+        //         // Desktop reset
+        //         $('.menu-title').removeClass('active').closest('ul').find('li:not(.menu-title)').show();
+        //     }
+        // }
+        // mobileMenuAccordion();
+        // $(window).on('resize', function () {
+        //     mobileMenuAccordion();
+        // });
     }
 
 

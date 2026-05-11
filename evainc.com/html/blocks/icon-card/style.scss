@@ -24,7 +24,7 @@
         }
         &.only-icon {
             min-height: 220px;
-            background-color: var(--bg-color, #d3d9df);
+            background-color: #d3d9df;
             .card-icon {
                 flex: 1 1 auto;
             }
@@ -40,7 +40,7 @@
                 }
             }
             &:hover, &:focus {
-                border-color: var(--color);
+                border-color: var(--primary);
             }
         }
     }
