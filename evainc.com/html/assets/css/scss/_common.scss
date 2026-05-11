@@ -1100,3 +1100,28 @@ a.label {
         }
     }
 }
+
+// Check List
+.check-list {
+    list-style-type: none;
+    padding: 0 !important;
+    li {
+        list-style-type: none;
+        @include flexbox;
+        @include align-items(flex-start);
+        gap: 12px;
+        margin-bottom: 10px;
+        &::before {
+            content: '';
+            background-image: url('../images/icons/icon-circle-check.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            width: 20px;
+            height: 20px;
+            flex: none;
+            display: inline-block;
+            margin-top: 1px;
+        }
+    }
+}
