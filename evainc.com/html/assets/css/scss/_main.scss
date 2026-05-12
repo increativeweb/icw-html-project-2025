@@ -204,6 +204,7 @@
     }
     @media (max-width: 992px) {
         padding: 60px 0;
+        min-height: auto;
     }
     &::before {
         content: '';
