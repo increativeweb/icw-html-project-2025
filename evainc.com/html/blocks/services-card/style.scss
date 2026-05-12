@@ -119,10 +119,11 @@
                     text-decoration: none;
                     color: var(--black);
                     @include transition(0.2s, ease-in-out);
+                    text-underline-offset: 5px;
                 }
             }
             .card-info {
-                font-size: 17px;
+                font-size: 16px;
                 color: var(--black) !important;
             }
         }

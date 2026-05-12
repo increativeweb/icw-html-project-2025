@@ -1,0 +1,32 @@
+@import "../../assets/css/scss/config";
+@import "../../assets/css/scss/mixins";
+
+.image-slider-section {
+    overflow: hidden;
+    .gallery-slider-block {
+        .img-gallery-splide {
+            .splide__track {
+                overflow: visible;
+            }
+            .media-block {
+                width: 100%;
+                height: 100%;
+                @include border-radius(16px);
+                overflow: hidden;
+                @include transition(0.2s, ease-in-out);
+                @media (max-width: 992px) {
+                    max-width: 280px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                &:hover, &:focus {
+                    @include transform(translateY(-5px));
+                }
+            }
+        }
+    }
+}

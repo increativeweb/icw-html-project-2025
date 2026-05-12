@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
             arrows: false,  
             pagination: true,
             autoplay: true,
-            interval: 10000,
+            interval: 5000,
             pauseOnHover: false,
             pauseOnFocus: false,
         });
