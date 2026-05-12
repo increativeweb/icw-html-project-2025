@@ -502,6 +502,9 @@ h1,
 h2,
 .h2 {
     font-size: clamp(32px, 3vw, 46px);
+    &.font-sm {
+        font-size: clamp(24px, 3vw, 32px);
+    }
 }
 
 h3,
@@ -546,6 +549,9 @@ h5,
 }
 .text-yellow {
     color: var(--yellow) !important;
+}
+.text-primary {
+    color: var(--primary) !important;
 }
 
 
@@ -632,7 +638,7 @@ h5,
             top: 2px;
             right: 2px;
             width: calc(100% - 4px) !important;
-            height: 44px;
+            height: 44.5px;
             &::after {
                 top: 16px;
                 transform: rotate(45deg);

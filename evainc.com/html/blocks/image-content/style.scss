@@ -11,20 +11,43 @@
                 --bs-gutter-x: 50px;
             }
             @media (min-width: 1400px) {
-                --bs-gutter-x: 110px;
+                --bs-gutter-x: 70px;
             }
             @media (max-width: 992px) {
                 --bs-gutter-x: 30px;
+            }
+            &.flex-lg-row-reverse {
+                .media-block {
+                    margin-left: 0;
+                }
+            }
+        }
+        &.is-sticky-image {
+            .media-block {
+                position: sticky;
+                top: 120px;
             }
         }
         .media-block {
             overflow: hidden;
             @include border-radius(16px);
+            max-width: 600px;
+            margin-left: auto;
             img {
                 object-fit: cover;
                 object-position: center;
                 width: 100%;
                 height: 100%;
+            }
+        }
+        .section-title {
+            margin-bottom: 0;
+            @media (max-width: 992px) {
+                margin-bottom: 30px;
+            }
+            .action {
+                margin-top: 40px;
+                @include justify-content(flex-start);
             }
         }
     }

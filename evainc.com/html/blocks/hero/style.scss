@@ -88,6 +88,15 @@
                     max-width: 550px;
                     margin: 0 auto;
                 }
+                .action {
+                    .btn {
+                        &:hover, &:focus {
+                            .arrow-icon {
+                                top: 1.5px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
