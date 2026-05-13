@@ -10,8 +10,9 @@ jQuery(document).ready(function ($) {
             pagination: false,
             autoWidth: true,
             focus: 'center',
-            autoplay: true,
-            interval: 5000,
+            autoScroll: {
+                speed: 1
+            },
             grid: {
                 dimensions: [ [ 2, 1 ], [ 1, 1 ], [ 2, 2 ], [ 1, 1 ],[ 2, 1 ], [ 1, 1 ], [ 1, 1 ] ], 
                 gap: { 
@@ -37,6 +38,6 @@ jQuery(document).ready(function ($) {
                     },
                 }
             }
-        }).mount( { Grid: window.splide.Extensions.Grid } )
+        }).mount(window.splide.Extensions)
     }
 });

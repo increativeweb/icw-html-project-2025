@@ -16,6 +16,7 @@
         <link rel='stylesheet' href='assets/css/splide.css' type='text/css' media='all' />
         <link rel='stylesheet' href='assets/css/glightbox.css' type='text/css' media='all' />
         <link rel='stylesheet' href="assets/css/main.css">
+        <link rel='stylesheet' href="assets/css/blog.css">
 
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/splide.min.js"></script>
@@ -200,7 +201,8 @@
                                     <li class="splide__slide">
                                         <div class="hero-slide">
                                             <div class="slide-img">
-                                                <img src="uploads/img-hero-slide-natural-gas.png" alt="Natural Gas & Petroleum">
+                                                <img src="uploads/img-hero-slide-natural-gas.png" class="d-none d-md-block" alt="Natural Gas & Petroleum">
+                                                <img src="uploads/img-hero-slide-m-natural-gas.png" class="mobile-img d-block d-md-none" alt="Natural Gas & Petroleum">
                                             </div>
                                             <div class="section-title">
                                                 <h1 class="title">Driving Innovation in <em>Natural Gas & Petroleum</em></h1>
@@ -212,7 +214,8 @@
                                     <li class="splide__slide">
                                         <div class="hero-slide">
                                             <div class="slide-img">
-                                                <img src="uploads/img-hero-slide-environmental.png" alt="Environmental Services">
+                                                <img src="uploads/img-hero-slide-environmental.png" class="d-none d-md-block" alt="Environmental">
+                                                <img src="uploads/img-hero-slide-m-environmental.png" class="mobile-img d-block d-md-none" alt="Environmental">
                                             </div>
                                             <div class="section-title">
                                                 <h1 class="title">Delivering Exceptional <em>Environmental Services</em></h1>
@@ -224,7 +227,8 @@
                                     <li class="splide__slide">
                                         <div class="hero-slide">
                                             <div class="slide-img">
-                                                <img src="uploads/img-hero-slide-renewable-energy.png" alt="Renewable Energy">
+                                                <img src="uploads/img-hero-slide-renewable-energy.png" class="d-none d-md-block" alt="Renewable Energy">
+                                                <img src="uploads/img-hero-slide-m-renewable-energy.png" class="mobile-img d-block d-md-none" alt="Renewable Energy">
                                             </div>
                                             <div class="section-title">
                                                 <h1 class="title">Powering Future with <em>Renewable Energy</em></h1>
@@ -236,7 +240,8 @@
                                     <li class="splide__slide">
                                         <div class="hero-slide">
                                             <div class="slide-img">
-                                                <img src="uploads/img-hero-slide-coal.png" alt="Coal Solutions">
+                                                <img src="uploads/img-hero-slide-coal.png" class="d-none d-md-block" alt="Coal">
+                                                <img src="uploads/img-hero-slide-m-coal.png" class="mobile-img d-block d-md-none" alt="Coal">
                                             </div>
                                             <div class="section-title">
                                                 <h1 class="title">Driving Innovation in <em>Coal Solutions</em></h1>
@@ -390,7 +395,11 @@
                         <div class="col-md-12 col-lg-8">
                             <div class="service-card">
                                 <div class="card-img">
-                                    <img src="uploads/img-power.jpg" alt="Power">
+                                    <div class="animated-img">
+                                        <div class="imgSlideInUp">
+						                    <img src="uploads/img-power.jpg" alt="Power" />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="label label-power">Power</a>
@@ -402,7 +411,11 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="service-card card-natural-gas">
                                 <div class="card-img">
-                                    <img src="uploads/img-natural-gas.jpg" alt="Natural Gas & Oil">
+                                    <div class="animated-img">
+                                        <div class="imgSlideInUp">
+                                            <img src="uploads/img-natural-gas.jpg" alt="Natural Gas & Oil">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="label label-natural-gas">Natural Gas & Oil</a>
@@ -414,7 +427,11 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="service-card card-coal">
                                 <div class="card-img">
-                                    <img src="uploads/img-coal.jpg" alt="Coal">
+                                    <div class="animated-img">
+                                        <div class="imgSlideInUp">
+                                            <img src="uploads/img-coal.jpg" alt="Coal">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="label label-coal">Coal</a>
@@ -426,7 +443,11 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="service-card card-renewable-energy">
                                 <div class="card-img">
-                                    <img src="uploads/img-renewable-energy.jpg" alt="Renewable Energy">
+                                     <div class="animated-img">
+                                        <div class="imgSlideInUp">
+                                            <img src="uploads/img-renewable-energy.jpg" alt="Renewable Energy">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="label label-renewable-energy">Renewable Energy</a>
@@ -438,7 +459,11 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="service-card card-environmental">
                                 <div class="card-img">
-                                    <img src="uploads/img-environmental.jpg" alt="Environmental">
+                                     <div class="animated-img">
+                                        <div class="imgSlideInUp">
+                                            <img src="uploads/img-environmental.jpg" alt="Environmental">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="label label-environmental">Environmental</a>
@@ -524,8 +549,6 @@
                     </div>
                 </div>
             </section>
-            <link rel='stylesheet' href="blocks/related-post/style.css">
-            <script src="blocks/related-post/script.js"></script>
             <section class="theme-section related-posts-section pt-0">
                 <div class="container">
                     <div class="section-title text-center">
@@ -537,7 +560,7 @@
                                 <ul class="splide__list">
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img">            
                                                 <img src="uploads/img-post1.jpg" alt="ERCOT Grid on High Alert: Looming Winter Storm Threatens Texas Power Grid">
                                             </div>
                                             <div class="card-body">
@@ -552,7 +575,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img"> 
                                                 <img src="uploads/img-post2.jpg" alt="EVA and NGSA Release 2025/26 Winter Natural Gas Market Outlook">
                                             </div>
                                             <div class="card-body">
@@ -568,7 +591,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img">  
                                                 <img src="uploads/img-post4.jpg" alt="Revitalizing U.S. Nuclear: Key Takeaways from May 2025 Executive Orders">
                                             </div>
                                             <div class="card-body">
@@ -582,7 +605,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img">  
                                                 <img src="uploads/img-post3.jpg" alt="One Big Beautiful Bill Signed: What Changed and What’s Next">
                                             </div>
                                             <div class="card-body">
@@ -600,7 +623,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img"> 
                                                 <img src="uploads/img-post1.jpg" alt="ERCOT Grid on High Alert: Looming Winter Storm Threatens Texas Power Grid">
                                             </div>
                                             <div class="card-body">
@@ -615,7 +638,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img"> 
                                                 <img src="uploads/img-post2.jpg" alt="EVA and NGSA Release 2025/26 Winter Natural Gas Market Outlook">
                                             </div>
                                             <div class="card-body">
@@ -645,7 +668,7 @@
                                     </li>
                                     <li class="splide__slide">
                                         <div class="post-card">
-                                            <div class="card-img">
+                                            <div class="card-img"> 
                                                 <img src="uploads/img-post3.jpg" alt="One Big Beautiful Bill Signed: What Changed and What’s Next">
                                             </div>
                                             <div class="card-body">
@@ -816,6 +839,8 @@
         </footer>
         <span class="icw-progress-goto"><svg class="progress-circle svg-content" width="40" height="40" viewBox="-1 -1 102 102"><path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.119, 307.919; stroke-dashoffset: 307.919;"></path></svg></span>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/glightbox.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/filter-post.js"></script>
     </body>
 </html>

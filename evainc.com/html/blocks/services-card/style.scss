@@ -76,7 +76,7 @@
         position: relative;
         padding: 30px;
         background-color: #d3d9df;
-        border: 1px solid transparent;
+        border: none;
         min-height: 480px;
         overflow: hidden;
         @include transition(0.2s, ease-in-out);
@@ -127,8 +127,8 @@
                 color: var(--black) !important;
             }
         }
-        &:hover, &:focus {
-            border-color: var(--primary);
+        &:hover, &:focus {            
+            @include box-shadow(0px 0px 15px 0px rgba(0,0,0,0.15));
             .card-body {
                 .card-title {
                     a {
