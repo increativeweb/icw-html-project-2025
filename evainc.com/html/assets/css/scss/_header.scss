@@ -393,7 +393,7 @@
                                         }
                                         &.menu-title {
                                             margin-bottom: 10px;
-                                            display: block !important;
+                                            display: block;
                                             @media (max-width: 1200px) {
                                                 margin-bottom: 0;
                                                 & ~ li {
@@ -494,6 +494,7 @@
                                     }
                                 }
                                 .menu-card {
+                                    position: relative;
                                     @media (max-width: 1200px) {
                                         margin-bottom: 20px;
                                     }
