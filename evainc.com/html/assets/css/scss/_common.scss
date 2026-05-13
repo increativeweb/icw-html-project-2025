@@ -1118,9 +1118,12 @@ a.label {
         @include align-items(flex-start);
         gap: 12px;
         margin-bottom: 10px;
+        @media (max-width: 992px) {
+            gap: 8px;
+        }
         &::before {
             content: '';
-            background-image: url('../images/icons/icon-circle-check');
+            background-image: url('../images/icons/icon-circle-check.svg');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center center;
@@ -1128,7 +1131,12 @@ a.label {
             height: 20px;
             flex: none;
             display: inline-block;
-            margin-top: 1px;
+            margin-top: 3px;
+            @media (max-width: 992px) {
+                width: 16px;
+                height: 16px;
+                margin-top: 3px;
+            }
         }
     }
     &.is-power {
