@@ -31,8 +31,12 @@
                 }
             }
         }
-        &.is-sticky-image {
+        &.is-sticky {
             .media-block {
+                position: sticky;
+                top: 120px;
+            }
+            .section-title { 
                 position: sticky;
                 top: 120px;
             }
