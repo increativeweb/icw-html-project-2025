@@ -2,18 +2,32 @@
 
 .hero-section {
     position: relative;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    @media (max-width: 1440px) {
-        background-size: 100%;
+    overflow: hidden;
+    .hero-bg-layer {
+        position: absolute;
+        inset: 0;
+        background-image: var(--hero-bg);
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.1);
+        transition: transform 8s linear;
+        z-index: -1;
+        @media (max-width: 1440px) {
+            background-size: 100%;
+        }
+        @media (max-width: 767px) {
+            background-size: contain;
+        }
+        @media (max-width: 575px) {
+            max-height: 200px;
+            background-size: 100% 200px;
+            background-position: top center;
+        }
     }
-    @media (max-width: 767px) {
-        background-size: contain;
-    }
-    @media (max-width: 575px) {
-        background-size: 100% 200px;
-        background-position: top center;
+    &.bg-animate {
+        .hero-bg-layer {
+            transform: scale(1);
+        }
     }
     &::before {
         content: '';
@@ -87,6 +101,31 @@
                 max-width: 1000px;
                 margin: 0 auto;
                 text-align: center;
+                > * {
+                    opacity: 0;
+                    transform: translateY(40px);
+                    transition: none;
+                }
+                &.is-animate {
+
+                    .title,
+                    .sort-info,
+                    .action {
+                        animation: fadeUp .8s ease forwards;
+                    }
+
+                    .title {
+                        animation-delay: .1s;
+                    }
+
+                    .sort-info {
+                        animation-delay: .35s;
+                    }
+
+                    .action {
+                        animation-delay: .55s;
+                    }
+                }
                 .sort-info {
                     max-width: 550px;
                     margin: 0 auto;
@@ -102,5 +141,15 @@
                 }
             }
         }
+    }
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

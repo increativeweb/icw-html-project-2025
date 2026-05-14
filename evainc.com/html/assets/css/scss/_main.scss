@@ -4,6 +4,7 @@
 // Main Section CSS
 .theme-section {
     padding: 150px 0;
+    clear: both;
     @media (max-width: 1200px) {
         padding: 90px 0;
     }
@@ -574,10 +575,10 @@
 
         li {
             list-style-type: decimal;
-            font-size: 1rem;
+            font-size: 16px;
 
             &:not(:last-child) {
-                margin-bottom: 0.5rem;
+                margin-bottom: 8px;
             }
 
             p {
@@ -597,10 +598,10 @@
 
         li {
             list-style-type: disc;
-            font-size: 1rem;
+            font-size: 16px;
 
             &:not(:last-child) {
-                margin-bottom: 0.5rem;
+                margin-bottom: 8px;
             }
 
             p {
@@ -653,7 +654,7 @@
 
     blockquote {
 
-        font-size: 1.25rem;
+        font-size: 20px;
         line-height: 1.5;
 
 
@@ -664,31 +665,31 @@
         }
 
         @media (max-width: 767px) {
-            font-size: 1.1rem;
+            font-size: 18px;
         }
 
         strong {
             display: inline-block;
             color: #818282;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         p {
-            font-size: 1.25rem;
+            font-size: 20px;
             font-weight: 500;
 
             @media (max-width: 767px) {
-                font-size: 1.1rem;
+                font-size: 18px;
             }
         }
 
         &:not(:first-child) {
             background: rgba(91, 91, 91, 0.05);
-            padding: 2rem;
+            padding: 32px;
             @include border-radius(10px);
-            margin: 2rem 0;
+            margin: 32px 0;
 
             @media (max-width: 767px) {
                 padding: 1.5rem;
@@ -699,50 +700,7 @@
         &:first-child {
             padding: 0;
             background: transparent;
-            margin: 0 0 1rem;
-        }
-
-        &.bg-gradient {
-            background-image: linear-gradient(85.55deg, #E0BFF2 6.46%, #F8E1E9 95.32%) !important;
-            color: var(--text-black);
-
-            strong {
-                color: var(--text-black);
-                font-weight: 600;
-                margin-bottom: 0;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            ul {
-                li {
-                    strong {
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-
-        &.bg-white {
-            background-image: none !important;
-            background: var(--white) !important;
-
-            strong {
-                color: var(--text-black);
-                font-weight: 500;
-                font-size: 0.938rem;
-                margin-bottom: 0;
-            }
-
-            p {
-                font-size: 1rem;
-
-                &:not(:last-child) {
-                    margin-bottom: 2rem;
-                }
-            }
+            margin: 0 0 16px;
         }
 
         & *:last-child {
@@ -750,14 +708,8 @@
         }
     }
 
-    img {
-        margin-bottom: 0.625rem;
-        border-radius: 10px;
-    }
-
     .wp-caption {
-        width: 100% !important;
-        padding-top: 1rem;
+        padding-top: 16px;
         text-align: center;
 
         &.aligncenter {
@@ -765,32 +717,47 @@
         }
 
         &.alignleft {
-            text-align: left;
-
+            text-align: center;
+            @media (min-width: 992px) {
+                text-align: left;
+                float: left;
+                margin-right: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: auto;
+            }
             .wp-caption-text {
                 text-align: left;
             }
         }
 
         &.alignright {
-            text-align: right;
+            text-align: center;
+            @media (min-width: 992px) {
+                text-align: right;
+                float: right;
+                margin-left: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: auto;
+            }
 
             .wp-caption-text {
-                text-align: right;
+                text-align: left;
             }
         }
 
         img {
-            margin-bottom: 0.625rem;
-            border-radius: 10px;
+            margin-bottom: 10px;
+            border-radius: 16px;
         }
 
         .wp-caption-text {
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 12px;
             color: var(--dark-gray);
             padding-top: 0px;
-            margin-bottom: 1.875rem;
+            margin-bottom: 28px;
 
             a {
                 font-weight: 500;
@@ -798,13 +765,43 @@
         }
     }
 
+    img {
+        margin-bottom: 30px;
+        border-radius: 16px;
+        text-align: center;
+        width: 100%;
+        &.alignleft {
+            text-align: center;
+            @media (min-width: 992px) {
+                text-align: left;
+                float: left;
+                margin-right: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: auto;
+            }
+        }
+
+        &.alignright {
+            text-align: center;
+            @media (min-width: 992px) {
+                text-align: right;
+                float: right;
+                margin-left: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: auto;
+            }
+        }
+    }
+
     table {
         border: 1px solid var(--black);
         padding: 0px;
-        font-size: 1rem;
+        font-size: 16px;
         border-collapse: collapse;
         text-align: left;
-        margin-bottom: 1.375rem;
+        margin-bottom: 20px;
         width: 100%;
 
         tr {
