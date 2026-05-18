@@ -790,7 +790,8 @@ h5,
         }
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
             color: var(--primary);
             .arrow-icon {
                 background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(255 255 255)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
