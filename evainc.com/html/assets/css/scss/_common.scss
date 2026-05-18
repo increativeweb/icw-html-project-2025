@@ -326,10 +326,6 @@ img {
 .g-15 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
-    @media (max-width: 767px) {
-        --bs-gutter-y: 20px;
-        --bs-gutter-x: 20px;
-    }
 }
 
 .g-30 {
@@ -494,7 +490,7 @@ h1,
 
 h2,
 .h2 {
-    font-size: clamp(24px, 3vw, 46px);
+    font-size: clamp(28px, 3vw, 46px);
     &.font-sm {
         font-size: clamp(22px, 3vw, 40px);
     }
@@ -579,8 +575,8 @@ h5,
 
 // Button CSS
 .btn {
-    min-height: 48px;
-    font-weight: 600;
+    height: 48px;
+    font-weight: 500;
     font-size: 16px;
     position: relative;
     border: none;
@@ -590,8 +586,7 @@ h5,
     @include align-items(center);
     @include justify-content(center);
     @include border-radius(33px);
-    line-height: 1;
-    padding: 2px;
+    padding: 0;
     white-space: nowrap;
     .arrow-icon {
         @include flexbox;
@@ -622,8 +617,9 @@ h5,
         }
     }
     .btn-text {
-        padding: 0 58px 0 23px;
+        padding: 0 60px 0 25px;
         z-index: 2;
+        display: inline-block;
     }
     &:hover,
     &:focus {
@@ -640,7 +636,7 @@ h5,
         }
     }
     @media (max-width: 767px) {
-        min-height: 40px;
+        height: 40px;
         .arrow-icon {
             width: 22px;
             height: 22px;
@@ -653,7 +649,7 @@ h5,
             }
         }
         .btn-text {
-            padding: 0 48px 0 20px;
+            padding: 0 50px 0 20px;
         }
         &:hover,
         &:focus {
@@ -669,7 +665,7 @@ h5,
         }
     }
     &.btn-sm {
-        min-height: 44px;
+        height: 44px;
         .arrow-icon {
             width: 26px;
             height: 26px;
@@ -735,8 +731,7 @@ h5,
         &:focus {
             color: var(--white) !important;
             .arrow-icon {
-                height: 45px;
-                top: 1px;
+                top: 2px;
             }
         }
     }
@@ -752,51 +747,8 @@ h5,
         &:hover,
         &:focus {
             color: var(--white) !important;
-        }
-    }
-
-    &.btn-link-arrow {
-        background-color: transparent;
-        border-color: transparent;
-        padding: 0;
-        min-width: auto;
-        min-height: auto;
-        color: var(--dark-gray);
-        @include inline-flex;
-        @include align-items(center);
-        @include justify-content(flex-start);
-        gap: 8px;
-        width: max-content;
-        position: unset;
-        text-underline-offset: 4px;
-        font-weight: 500;
-        .arrow-icon {
-            background-color: transparent;
-            background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 12px;
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-            @include border-radius(50%);
-            @include transition(0.2s, ease-in-out);
-            position: relative;
-            top: unset;
-            right: unset;
-            &::after {
-                content: none;
-            }
-        }
-
-        &:hover,
-        &:focus,
-        &.active {
-            color: var(--primary);
             .arrow-icon {
-                background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(255 255 255)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-                width: 24px !important;
-                background-color: var(--primary);
+                top: 2px;
             }
         }
     }
@@ -815,6 +767,44 @@ h5,
         &:focus {
             color: var(--text-black);
             text-decoration: none;
+        }
+    }
+}
+
+
+.btn-link-arrow {
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    color: var(--dark-gray);
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    .arrow-icon {
+        background-color: transparent;
+        background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(35 63 97)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 13px;
+        width: 25px;
+        height: 25px;
+        flex: none;
+        display: inline-block;
+        @include border-radius(50%);
+        @include transition(0.2s, ease-in-out);
+        &::after {
+            content: none;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+        color: var(--primary);
+        .arrow-icon {
+            background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(255 255 255)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-color: var(--primary);
         }
     }
 }
@@ -947,61 +937,65 @@ h5,
 }
 
 // Label 
+.dot {
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    @include border-radius(50%);
+    background-color: var(--primary);
+}
 .label {
     @include inline-flex;
     @include align-items(center);
     @include justify-content(center);
-    padding: 5px 15px;
-    gap: 12px;
-    height: 30px;
-    @include border-radius(50px);
-    font-family: var(--font-heading1);
-    font-style: italic;
+    gap: 6px;
+    // font-family: var(--font-heading1);
     font-weight: 400;
-    font-size: 14px; 
+    font-size: 12px; 
     width: max-content;
     z-index: 5;  
     line-height: 1.3;
     &.label-power {
         color: var(--red);
-        background-color: #ffd0d0;
+        .dot {
+           background-color: var(--red);
+        }
     }
     &.label-natural-gas {
         color: var(--skyblue);
-        background-color: #daf2fd;
+        .dot {
+           background-color: var(--skyblue);
+        }
     }
     &.label-coal {
         color: var(--orange);
-        background-color: #fee8d8;
+        .dot {
+           background-color: var(--orange);
+        }
     }
     &.label-renewable-energy {
         color: var(--green);
-        background-color: #ccefdc;
+        .dot {
+           background-color: var(--green);
+        }
     }
     &.label-environmental {
         color: var(--yellow);
-        background-color: #f3f0de;
+        .dot {
+           background-color: var(--yellow);
+        }
+    }
+    &.label-primary {
+        color: var(--primary);
+        .dot {
+           background-color: var(--primary);
+        }
     }
 }
 a.label {
     text-decoration: none;
     &:hover, &:focus {
-        color: var(--white) !important;
-         &.label-power {
-            background-color: var(--red);
-        }
-        &.label-natural-gas {
-            background-color: var(--skyblue);
-        }
-        &.label-coal {
-            background-color: var(--orange);
-        }
-        &.label-renewable-energy {
-            background-color: var(--green);
-        }
-        &.label-environmental {
-            background-color: var(--yellow);
-        }
+        text-decoration: underline;
     }
 }
 

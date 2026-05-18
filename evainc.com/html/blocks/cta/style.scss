@@ -64,12 +64,12 @@
         .cta-img {
             position: absolute;
             bottom: 0;
-            left: 30px;
+            left: 0px;
             @media (max-width: 767px) {
                 left: 6px;
             }
             img {
-                max-height: 360px;
+                max-height: 325px;
                 @media (max-width: 1400px) {
                     max-height: 250px;
                 }

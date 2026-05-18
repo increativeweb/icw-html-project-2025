@@ -32,7 +32,7 @@
                     flex-direction: row !important;
                     gap: 0 30px;
                 }
-                .btn {
+                .btn-link-arrow {
                     text-align: left;
                     padding: 10px 0;
                     font-weight: 400;
@@ -40,6 +40,8 @@
                     color: rgba(0, 0, 0, 0.6);
                     @include border-radius(0);
                     width: 100%;
+                    border: none;
+                    background: transparent;
                     &:not(:last-child) {
                         border-bottom: 1px solid #e5e5e5;
                     }
