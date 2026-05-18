@@ -49,37 +49,39 @@ jQuery(document).ready(function ($) {
                 $('.bg-overlay').removeClass('is-active');
             });
         }
-        // function mobileMenuAccordion() {
-        //     if ($(window).width() < 1200) {
-        //         // Hide items initially
-        //         $('.menu-title').each(function () {
-        //             $(this)
-        //                 .closest('ul')
-        //                 .find('li:not(.menu-title)')
-        //                 .hide();
-        //         });
-        //         // Click event
-        //         $('.menu-title').off('click').on('click', function (e) {
-        //             e.preventDefault();
-        //             const $parentUl = $(this).closest('ul');
-        //             const $items = $parentUl.find('li:not(.menu-title)');
-        //             if ($items.is(':visible')) {
-        //                 $items.slideUp(200);
-        //                 $(this).removeClass('active');
-        //             } else {
-        //                 $items.slideDown(200);
-        //                 $(this).addClass('active');
-        //             }
-        //         });
-        //     } else {
-        //         // Desktop reset
-        //         $('.menu-title').removeClass('active').closest('ul').find('li:not(.menu-title)').show();
-        //     }
-        // }
-        // mobileMenuAccordion();
-        // $(window).on('resize', function () {
-        //     mobileMenuAccordion();
-        // });
+        $(document).on('click', '.search-menu:not(.search-menu-popup)', function (e) {
+            e.preventDefault();
+
+            const $popup = $('.search-menu-popup');
+            const $searchBtn = $(this);
+
+            $popup.toggleClass('is-open');
+            $('.bg-overlay').toggleClass('is-active');
+            if ($popup.hasClass('is-open')) {
+                $searchBtn.find('.icon-close').removeClass('d-none');
+                $searchBtn.find('.icon-search').addClass('d-none');
+            } else {
+                $searchBtn.find('.icon-close').addClass('d-none');
+                $searchBtn.find('.icon-search').removeClass('d-none');
+            }
+        });
+
+        // Prevent closing when clicking inside popup content
+        $(document).on('click', '.search-menu-block', function (e) {
+            e.stopPropagation();
+        });
+
+        // Close only when clicking overlay/background
+        $(document).on('click', '.search-menu-popup.is-open', function (e) {
+
+            if ($(e.target).hasClass('search-menu-popup')) {
+
+                $(this).removeClass('is-open');
+                $('.bg-overlay').removeClass('is-active');
+                $('.search-menu .icon-close').addClass('d-none');
+                $('.search-menu .icon-search').removeClass('d-none');
+            }
+        });
     }
 
 
