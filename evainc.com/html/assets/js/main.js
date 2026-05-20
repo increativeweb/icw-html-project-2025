@@ -123,6 +123,15 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    const $logoBlock=$('.site-logo-block');
+    if($logoBlock.length){
+        $(window).on('scroll',function(){
+            const logoBlockTop = $logoBlock.offset().top;
+            const windowBottom = $(window).scrollTop()+$(window).height();
+            $logoBlock.toggleClass('is-animate',windowBottom>=logoBlockTop)
+        })
+    }
+
 });
 
 // Image Animation

@@ -3,55 +3,55 @@
 .related-posts-section {
     .related-posts-block {
         padding-bottom: 70px;
-        .post-card {
-            @include flex-direction(row);
-            gap: 30px;
-            .card-img {                 
-                margin-bottom: 0;
-                max-width: 240px;
-                max-height: 240px;
-                flex: none;
-                aspect-ratio: 1 / 1;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            .card-body {
-                padding: 20px 0;
-            }
+        @media (max-width: 767px) {
+            padding-bottom: 40px;
         }
     }
 }
 .post-card {
     @include flexbox;
-    @include flex-direction(column);
+    @include flex-direction(row);
     height: 100%;
     position: relative;
+    gap: 30px;
     @include transition(0.2s, ease-in-out);
-    @media (max-width: 992px) {
-        max-width: 300px;
+    @media (max-width: 767px) {
+        gap: 15px;
     }
     .card-img {
-        @include border-radius(16px);
+        margin-bottom: 0;
+        max-width: 240px;
+        max-height: 240px;
+        flex: none;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
-        margin-bottom: 30px;        
-        max-height: 225px;
-        @media (max-width: 992px) {
-            max-height: 186px;
+        @include border-radius(16px);
+        @media (max-width: 1200px) {
+            max-width: 180px;
+            max-height: 180px;
+        }
+        @media (max-width: 767px) {
+            max-width: 120px;
+            max-height: 120px;
         }
         img {
             object-fit: cover;
             object-position: center;
             width: 100%;
+            height: 100%;
             transform-origin: center center;
             @include transition(0.2s, ease-in-out);
             @include border-radius(16px);
+            filter: grayscale(1);
         }
     }
     .card-body {
         @include flexbox;
         @include flex-direction(column);
+        padding: 20px 0;
+        @media (max-width: 767px) {
+            padding: 0px 0;
+        }
         .post-category {
             @include flexbox;
             @include align-items(center);
@@ -99,7 +99,8 @@
     &:hover, &:focus {
         .card-img {
             img {                
-                @include transform(scale(1.05));
+                @include transform(scale(1.05));                
+                filter: grayscale(0);
             }
         }
         .card-body {

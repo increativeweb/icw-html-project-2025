@@ -56,7 +56,7 @@
         &:hover, &:focus {            
             .team-user-img {
                 img {
-                    @include transform(scale(1.05));
+                    filter: grayscale(1);
                 }
             }
             .card-body {
