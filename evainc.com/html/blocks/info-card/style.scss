@@ -1,6 +1,7 @@
 @import "../../assets/css/scss/mixins";
 
 .info-card-section {
+    overflow: hidden;
     .info-card {
         @include flexbox;
         @include flex-direction(column);
@@ -17,8 +18,20 @@
         .card-body {
             @include flexbox;
             @include flex-direction(column);
-            .label {
-                margin-bottom: 10px;
+            .card-category {
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content (space-between);
+                gap: 15px;
+                margin-bottom: 10px;                
+                .time-period {
+                    padding: 4px 10px;
+                    background: rgba(35, 63, 97, 0.1);
+                    border-radius: 60px;
+                    font-weight: 500;
+                    font-size: 11px;
+                    color: #233F61;
+                }
             }
             .card-title {
                 margin-bottom: 20px;
@@ -45,6 +58,70 @@
             .card-body {
                 .card-title {
                     color: var(--primary);
+                }
+            }
+        }
+    }
+
+    .info-card-block {
+        .info-card-splide {
+            .splide__track {
+                overflow: visible;
+            }
+            .splide__arrows {
+                .splide__arrow {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &--prev {
+                        left: -60px;
+                        transform: translateY(-50%) scaleX(-1);
+                        @media (max-width: 1200px) {
+                            left: -40px;
+                        }
+                    }
+                    &--next {
+                        left: auto;
+                        right: -60px;
+                        @media (max-width: 1200px) {
+                            right: -40px;
+                        }
+                    }
+                }
+            }
+            .splide__slide {
+                opacity: 0.4;
+                &.is-visible {
+                    opacity: 1;
+                }
+            }
+        }
+        &.is-slider {
+            .info-card {
+                background: #EEF0F3;
+                border-color: transparent;
+                @media (max-width: 1200px) {
+                    max-width: 420px;
+                }
+                @media (max-width: 992px) {
+                    max-width: 350px;
+                }
+                @media (max-width: 767px) {
+                    max-width: 300px;
+                }
+                &.is-power {
+                    background: #ffeded;
+                }
+                &.is-natural-gas {
+                    background: #F1FAFF;
+                }
+                &.is-coal {
+                    background: #FFF6F0;
+                }
+                &.is-renewable-energy {
+                    background: #ebf9f1;
+                }
+                &.is-environmental {
+                    background: #faf9f2;
                 }
             }
         }

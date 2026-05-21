@@ -1,0 +1,72 @@
+@import "../../assets/css/scss/mixins";
+
+.team-section {
+    .team-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        position: relative;
+        @include transition(0.2s, ease-in-out);
+        text-align: center;
+        .team-user-img {
+            overflow: hidden;
+            margin-bottom: 30px;
+            @include border-radius(50%);
+            @media (max-width: 992px) {
+                margin-bottom: 20px;
+            }
+            img {                
+                width: 100%;
+                max-width: 250px;
+                aspect-ratio: 1 / 1;
+                transform-origin: center;
+                @include border-radius(50%);
+                @include transition(0.2s, ease-in-out);
+                @media (max-width: 992px) {
+                    max-width: 200px;
+                }
+            }
+        }
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .card-title {
+                margin-bottom: 3px;
+                font-weight: 500;
+                font-size: 18px;
+                // font-family: var(--font-heading2);
+                a {
+                    text-decoration: none;
+                    color: var(--black);
+                }
+            }
+            .designation {
+                font-weight: 400;
+                font-size: 14px;
+                color: #737373;
+            }
+            .department {
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content(center);
+                margin-top: 10px;
+                gap: 5px;
+            }
+        }
+        &:hover, &:focus {            
+            .team-user-img {
+                img {
+                    filter: grayscale(1);
+                }
+            }
+            .card-body {
+                .card-title {
+                    a {
+                        color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

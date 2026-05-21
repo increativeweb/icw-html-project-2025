@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     if ($('.hero-section').length) {
         var heroSplide = new Splide('.hero-splide', {
-            type: 'loop',
+            type: 'fade',
             gap: '20px',
             rewind: true,
             arrows: false,

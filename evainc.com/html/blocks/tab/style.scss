@@ -8,7 +8,7 @@
     }
     .tab-block {
         display: grid;
-        grid-template-columns: 430px auto;
+        grid-template-columns: 420px auto;
         @media (max-width: 1200px) {
             grid-template-columns: 350px auto;
         }
@@ -17,7 +17,7 @@
         }
         .tab-nav-block {
             background: #F4F5F7;
-            padding: 80px 70px 80px 0;
+            padding: 80px 80px 80px 0;
             @media (max-width: 1200px) {
                 padding: 80px 40px 80px 0px;
             }
@@ -26,7 +26,7 @@
                 margin: 0 -15px;
             }
             .tab-nav {
-                max-width: 286px;
+                max-width: 100%;
                 @media (max-width: 992px) {
                     max-width: 100%;
                     flex-direction: row !important;
@@ -71,7 +71,7 @@
         }
         .tab-content-block {
             background: #EAECEF;
-            padding: 80px 0px 80px 70px;
+            padding: 80px 0px 80px 80px;
             @media (max-width: 1200px) {
                 padding: 80px 0px 80px 40px;
             }
@@ -81,7 +81,6 @@
             }
             .tab-info {
                 .title {
-                    font-weight: 400;
                     margin-bottom: 20px;
                 }
                 ul {

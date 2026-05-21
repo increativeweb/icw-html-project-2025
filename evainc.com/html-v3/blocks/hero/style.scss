@@ -1,0 +1,125 @@
+@import "../../assets/css/scss/mixins";
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background-image: var(--bg-img);
+    background-repeat: no-repeat;
+    background-position: right calc(0% - 76px);
+    background-size: auto 100%;
+    @media (max-width: 1200px) {
+        background-size: auto 80%;
+    }
+    @media (max-width: 992px) {
+        padding: 70px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 50px 0;
+        background-size: auto 50%;
+    }
+    &::before {
+        content: '';
+        width: 556px;
+        height: 297px;
+        background: rgba(224, 30, 38, 0.3);
+        filter: blur(200px);
+        display: inline-block;
+        position: absolute;
+        top: 100px;
+        left: 10%;
+        z-index: -1;
+        @media (max-width: 1200px) {
+            width: 300px;
+            height: 200px;
+            left: 5%;
+        }
+        @media (max-width: 767px) {
+            width: 220px;
+            height: 330px;
+            left: -38px;
+            top: 100px;
+        }
+    }
+    &::after {
+        content: '';
+        width: 610px;
+        height: 297px;
+        background: rgba(35, 63, 97, 0.4);
+        filter: blur(200px);
+        display: inline-block;
+        position: absolute;
+        top: 150px;
+        right: 8%;
+        z-index: -1;
+        @media (max-width: 1200px) {
+            width: 400px;
+            height: 200px;
+            right: 3%;
+        }
+        @media (max-width: 767px) {
+            width: 220px;
+            height: 330px;
+            right: 100px;
+            top: 300px;
+        }
+    }
+    .hero-title {
+        .tag-line {
+            font-weight: 500;
+            font-size: 16px;
+            color: #E01E26;
+            margin-bottom: 5px;
+        }
+        .title {            
+            font-weight: 300;
+            margin-bottom: 20px;
+            strong {
+                font-weight: 400;
+                display: block;
+            }
+        }
+        .sort-info {
+            max-width: 545px;
+        }
+        .action {
+            margin-top: 40px;
+        }
+    }
+    .hero-splide {
+        max-width: 520px;
+        margin-left: auto;
+        height: 100%;
+        @media (max-width: 767px) {            
+            margin: 0 auto 40px;
+            height: auto;
+            max-width: 100%;
+        }
+        .splide__track {
+            @include border-radius(16px);
+            height: 100%;
+            max-height: 400px;
+        }
+        .media-block {
+            @include border-radius(16px);
+            overflow: hidden;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -123,7 +123,7 @@
             padding: 4px;
             @media (min-width: 1200px) {
                 gap: 6px;
-                background: rgba(35, 63, 97, 0.05);
+                background: #F6F8F9;
                 @include border-radius(56px);
             }
             @media (max-width: 1200px) { 
@@ -140,8 +140,8 @@
                 & > a {                    
                     font-family: var(--font-heading2);
                     font-weight: 500;
-                    font-size: 14px;
-                    color: var(--dark-gray);
+                    font-size: 16px;
+                    color: var(--blackk);
                     text-decoration: none;
                     padding: 10px 11px;
                     @include inline-flex;
@@ -149,10 +149,14 @@
                     @include border-radius(56px);
                     line-height: 1.2;
                     @include transition(0.2s, ease-in-out);
+                    letter-spacing: -0.02em;
+                    height: 36px;
                     @media (max-width: 1200px) {
-                        padding: 11px 11px;
+                        padding: 12px 12px;
+                        font-size: 15px;
                         width: 100%;
                         line-height: 1;
+                        height: auto;
                     }
                 }
                 &:hover, &:focus, &.current-menu-item {

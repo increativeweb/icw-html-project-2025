@@ -1,0 +1,146 @@
+@import "../../assets/css/scss/mixins";
+
+.faqs-section {
+    .collapse-block {
+        max-width: 950px;
+        margin: 0 auto;
+        .collapse-item {
+            border: 1px solid #E5E5E5;
+            @include border-radius(16px);
+            @include transition(0.2s, ease-in-out);
+            &:not(:last-child) {
+                margin-bottom: 30px;
+                @media (max-width: 992px) {
+                    margin-bottom: 20px;
+                }
+            }
+            .collapse-title {
+                border: none;
+                background: transparent;
+                font-family: var(--font-heading2);
+                padding: 20px;
+                @include flexbox;
+                @include align-items(flex-start);
+                @include justify-content(space-between);
+                gap: 15px;
+                width: 100%;
+                h3 {
+                    text-align: left;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                    @include transition(0.2s, ease-in-out);
+                }
+                .collapse-btn {
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    background: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5L7 10L12 5" stroke="rgb(35 63 97)" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center center;
+                    background-size: 10px;
+                    margin-top: 4px;
+                    filter: brightness(0);
+                }
+            }
+            .collapse-body {
+                max-width: 800px;
+                padding: 0 20px 20px;
+                .card-content {
+                    font-size: 16px;
+                }
+            }
+            &:hover, &:focus {
+                background: rgba(#233F61, 0.03);
+                .collapse-title {
+                    h3 {
+                        color: var(--primary);
+                    }
+                }
+            }
+            &.is-open {
+                .collapse-title {
+                    h3 {
+                        color: var(--primary);
+                    }
+                    .collapse-btn {
+                        filter: unset;
+                        @include transform(rotate(180deg));
+                    }
+                }
+            }
+        }
+        &.is-services-collapse {
+            .collapse-item {
+                .collapse-title { 
+                    h3 {
+                        font-size: 24px;
+                        @media (max-width: 992px) {
+                            font-size: 20px;
+                        }
+                    }
+                    .collapse-btn {
+                        margin-top: 7px;
+                    }
+                }
+                .card-content {
+                    .action {
+                        margin-top: 40px;
+                        .btn {
+                            &:hover, &:focus {
+                                .arrow-icon {
+                                    top: 1.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.is-primary {
+                    border-color: #d3d9df;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--primary);
+                        }
+                    }
+                }          
+                &.is-power {
+                    border-color: #ffd0d0;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--red);
+                        }
+                    }
+                }          
+                &.is-natural-gas {
+                    border-color: #daf2fd;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--skyblue);
+                        }
+                    }
+                }          
+                &.is-renewable-energy {
+                    border-color: #ccefdc;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--green);
+                        }
+                    }
+                }          
+                &.is-coal {
+                    border-color: #fee8d8;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--orange);
+                        }
+                    }
+                }          
+                &.is-environmental {
+                    border-color: #f3f0de;
+                    .collapse-title { 
+                        h3 {
+                            color: var(--yellow);
+                        }
+                    }
+                }          
+            }
+        }
+    }
+}
