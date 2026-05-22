@@ -1,8 +1,14 @@
 @import "../../assets/css/scss/mixins";
 
 .counter-section {
-    .label-group {
+    .energy-sector-labels {
         margin-bottom: 50px;
+        @include justify-content(center);
+        gap: 30px;
+        .label {
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
     .counter-card {
         @include flexbox;

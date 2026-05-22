@@ -83,25 +83,27 @@
         }
         .cta-info {
             text-align: center;
-            max-width: 550px;
+            max-width: 575px;
             margin: 0 auto;
             .title {
-                font-family: var(--font-heading2);
                 margin-bottom: 20px;
+                letter-spacing: -0.02em;
                 em {
-                    font-family: var(--font-heading1);
+                    font-family: var(--font-heading);
                     color: var(--secondary);
-                    font-style: italic;
-                    font-weight: 400;
-                    font-size: 46px;
                     display: block;
+                    font-weight: 400;
+                    letter-spacing: unset;
                 }
             }
             .action {
                 margin-top: 40px;
             }
         }
-        &.is-cta-bar {
+    }
+    &.is-cta-bar-section {
+        margin-top: 50px;
+        .cta-block {
             @include flexbox;
             @include align-items(center);
             gap: 20px;
@@ -109,7 +111,6 @@
             background: var(--primary);
             border-radius: 24px;
             color: var(--white);
-            margin-top: 50px;
             &::before,&::after {
                 content: none;
             }

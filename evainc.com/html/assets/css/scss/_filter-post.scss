@@ -1,14 +1,20 @@
 // Filter Content
+.filter-post-section {
+    overflow: hidden;
+}
 .posts-archive-categories {    
     margin: 0px auto 50px;
-    height: 60px;
     position: relative;
     &::before {
         content: '';
-        width: 100%;
+        width: calc(100vw + 13vw);
         height: 100%;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+        background: #F4F5F7;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -13vw;
+        z-index: -1;
     }
     @media (max-width: 991px) {
         @include flexbox();
@@ -20,7 +26,7 @@
     ul.nav-filter {
         @include flexbox();
         @include flex-wrap(wrap);
-        gap: 12px;
+        gap: 3px;
         margin: 0;
         padding: 0px;
         max-width: calc(100% - 250px);
@@ -29,18 +35,16 @@
         }
         li {
             a {
-                font-family: var(--font-heading1);
-                font-style: italic;
+                
                 font-weight: 400;
-                font-size: 24px;
+                font-size: 14px;
                 border: 1px solid transparent;
-                padding: 10px 30px;
+                padding: 15px 20px;
                 white-space: nowrap;
                 text-decoration: none;
-                height: 52px;
                 @include flexbox;
                 @include align-items(center);
-                @include border-radius(50px);
+                @include border-radius(0px);
                 @include transition(0.2s, ease-in-out);
                 line-height: 1;
                 @media (max-width: 992px) {
@@ -66,46 +70,48 @@
                 &[data-term="environmental"] {
                     color: var(--yellow);
                 }
-                &:hover, &:focus {
+                &:hover, &:focus, &.active {
                     &[data-term="all"] {
-                        border-color: var(--primary);
+                        background-color: #dfe2e8;
                     }
                     &[data-term="power"] {
-                        border-color: var(--red);
+                        background-color: #f5dee0;
                     }
                     &[data-term="natural-gas-oil"] {
-                        border-color: var(--skyblue);
+                        background-color: #e2eff7;
                     }
                     &[data-term="coal"] {
-                        border-color: var(--orange);
+                        background-color: #f4eae4;
                     }
                     &[data-term="renewable-energy"] {
-                        border-color: var(--green);
+                        background-color: #dbeee6;
                     }
                     &[data-term="environmental"] {
-                        border-color: var(--yellow);
+                        background-color: #efeee7;
                     }
                 }
             }
-            &.active > a {
-                color: var(--white) !important;
-                &[data-term="all"] {
-                    background: var(--primary);
-                }
-                &[data-term="power"] {
-                    background: var(--red);
-                }
-                &[data-term="natural-gas-oil"] {
-                    background: var(--skyblue);
-                }
-                &[data-term="coal"] {
-                    background: var(--orange);
-                }
-                &[data-term="renewable-energy"] {
-                    background: var(--green);
-                }
-                &[data-term="environmental"] {
-                    background: var(--yellow);
+            &.active {
+                a {
+                    font-weight: 600;
+                    &[data-term="all"] {
+                        background-color: #dfe2e8;
+                    }
+                    &[data-term="power"] {
+                        background-color: #f5dee0;
+                    }
+                    &[data-term="natural-gas-oil"] {
+                        background-color: #e2eff7;
+                    }
+                    &[data-term="coal"] {
+                        background-color: #f4eae4;
+                    }
+                    &[data-term="renewable-energy"] {
+                        background-color: #dbeee6;
+                    }
+                    &[data-term="environmental"] {
+                        background-color: #efeee7;
+                    }
                 }
             }
         }
@@ -134,7 +140,7 @@
         @media (min-width: 992px) {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 2px;
         }
         // @media (max-width: 992px) {
         //     display: none;
@@ -181,9 +187,10 @@
 
 .post-search {
     position: relative;
-    width: 52px;
-    height: 52px;
+    width: 42px;
+    height: 42px;
     font-size: 0;
+    padding: 2px 0;
     cursor: pointer;
     background-color: rgba(233, 235, 239, 1);
     @include flexbox();
@@ -197,8 +204,8 @@
     }
     input[type='search'] {        
         border: 1px solid #e5e5e5;
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
         cursor: pointer;
         color: var(--primary);
         font-size: 16px;
@@ -227,8 +234,8 @@
         position: absolute;
         right: 0px;
         top: 0px;
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
         display: none;
         z-index: -1;
         border: 1px solid transparent;
@@ -247,8 +254,8 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: 52px;
-        height: 52px;
+        width: 42px;
+        height: 42px;
         background: var(--primary);
         cursor: pointer;
         @include border-radius(50px);

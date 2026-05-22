@@ -1,6 +1,12 @@
 @import "../../assets/css/scss/mixins";
 
 .team-section {
+    .row {
+        --bs-gutter-y: 50px; 
+        @media (max-width: 767px) {
+            --bs-gutter-y: 30px; 
+        }
+    }
     .team-card {
         @include flexbox;
         @include flex-direction(column);
@@ -61,6 +67,153 @@
                     a {
                         color: var(--primary);
                         text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+.offcanvas.team-popup-model {
+    margin: 15px;
+    width: calc(100% - 30px);
+    max-width: 950px;
+    @include border-radius(16px);
+    padding: 60px;
+    @media (max-width: 1200px) {        
+        max-width: 750px;
+        padding: 40px;
+    }
+    @media (max-width: 767px) { 
+        padding: 24px;
+    }
+    .btn-close {
+        position: absolute;
+        padding: 0;
+        right: 32px;
+        top: 32px;
+    }
+    .offcanvas-header {
+        padding: 0;
+        margin-bottom: 50px;
+        @media (max-width: 1200px) {        
+            margin-bottom: 30px;
+        }
+        .offcanvas-title {
+            color: var(--black);
+            letter-spacing: -0.02em;
+            font-size: 36px;
+            line-height: 1;
+            @media (max-width: 1200px) {        
+                font-size: 30px;
+            }
+            em {
+                font-family: var(--font-heading);
+                font-style: italic;
+                color: var(--secondary);
+                font-weight: 400;
+                letter-spacing: unset;
+            }
+        }
+    }
+    .offcanvas-body {
+        padding: 0;
+        .team-member-info {
+            @include flexbox;
+            gap: 40px;
+            @media (max-width: 1200px) {        
+                gap: 24px;
+            }
+            @media (max-width: 575px) {        
+                @include flex-direction(column);    
+                gap: 15px;
+            }
+            .user-img {
+                @include border-radius(16px);
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    max-width: 250px;
+                    aspect-ratio: 1 / 1;
+                    @include border-radius(16px);
+                    @media (max-width: 1200px) {        
+                        max-width: 200px;
+                    }
+                }
+            }
+            .user-details {
+                padding: 15px 0;
+                line-height: 1.2;
+                @media (max-width: 1200px) {        
+                    padding: 5px 0;
+                }
+                .name {
+                    font-weight: 600;
+                    font-size: 32px;
+                    color: #000000;
+                    @media (max-width: 1200px) {        
+                        font-size: 24px;
+                    }
+                }
+                .designation {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #737373;
+                }
+                .energy-sector-labels {
+                    margin: 24px 0;
+                    @media (max-width: 767px) { 
+                        margin: 15px 0;
+                    }
+                }
+                .email, .phone {
+                    margin-bottom: 10px;
+                    display: block;
+                    color: #000000;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 16px;
+                    &:hover, &:focus {
+                        color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+                .social-list {
+                    @include flexbox;
+                    @include align-items(center);
+                    gap: 15px;
+                    li {
+                        a {
+                            color: var(--primary);
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                            }
+                            &:hover, &:focus {
+                                color: var(--dark-gray);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .team-member-about {
+            font-size: 16px;
+            h4 {
+                font-size: 24px;
+                font-weight: 600;
+                margin: 50px 0 15px; 
+                @media (max-width: 1200px) {        
+                    margin: 30px 0 15px; 
+                    font-size: 20px;
+                }
+            }
+            ul {
+                li {
+                    font-size: 16px;
+                    gap: 10px;
+                    &:before {
+                        width: 16px;
+                        height: 16px;
                     }
                 }
             }

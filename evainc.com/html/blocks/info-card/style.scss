@@ -18,7 +18,7 @@
         .card-body {
             @include flexbox;
             @include flex-direction(column);
-            .card-category {
+            .energy-sector-labels {
                 @include flexbox;
                 @include align-items(center);
                 @include justify-content (space-between);

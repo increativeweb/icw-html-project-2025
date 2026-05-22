@@ -288,6 +288,28 @@
     }
 }
 
+// User Info
+.user-info {
+    @include flexbox;
+    @include align-items(center);
+    gap: 10px;
+    .user-img {
+        @include border-radius(50%);
+        overflow: hidden;
+        img {
+            width: 52px;
+            height: 52px;
+        }
+    }
+    .info {
+        font-size: 14px;
+        font-weight: 500;
+        .designation {
+            color: #737373;
+        }
+    }
+}
+
 // Label Group
 .label-group {
     @include flexbox;
@@ -475,14 +497,37 @@
     }
 
     ul:not(.splide__list, .arrow-list) {
-        list-style-type: disc;
-        padding-left: 20px;
+        list-style-type: none;
         margin-bottom: 30px;
 
         li {
-            list-style-type: disc;
-            font-size: 16px;
-
+            list-style-type: none;
+            @include flexbox;
+            @include align-items(flex-start);
+            gap: 12px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            @media (max-width: 992px) {
+                gap: 8px;
+            }
+            &::before {
+                content: '';
+                background-image: url('../images/icons/icon-circle-check-red.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                width: 20px;
+                height: 20px;
+                flex: none;
+                display: inline-block;
+                margin-top: 3px;
+                @media (max-width: 992px) {
+                    width: 16px;
+                    height: 16px;
+                    margin-top: 3px;
+                }
+            }
             &:not(:last-child) {
                 margin-bottom: 8px;
             }
