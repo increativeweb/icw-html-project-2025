@@ -124,7 +124,7 @@
         margin-bottom: 15px;
         @include inline-flex;
         @include align-items(center);
-        gap: 5px;
+        gap: 10px;
         .back-link {
             @include inline-flex;
             @include justify-content(center);
@@ -146,6 +146,14 @@
             &:hover, &:focus {
                 .icon-back-arrow {
                     @include transform(translateX(-5px));
+                }
+            }
+        }
+        .energy-sector-labels {
+            .label {
+                span[class^="icon-"] {
+                    width: 16px;
+                    height: 16px;
                 }
             }
         }

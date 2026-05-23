@@ -30,6 +30,26 @@
         margin: 0;
         padding: 5px 0px;
         max-width: 100%;
+        @media (max-width: 992px) {
+            @include flex-wrap(nowrap);
+            @include align-items (flex-start);            
+            @include justify-content(flex-start);
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-left: -15px;
+            margin-right: -15px;
+            max-width: calc(100% + 30px);
+            li {
+                &:first-child {
+                    padding-left: 15px;
+                }
+                &:last-child {
+                    padding-right: 15px;
+                }
+            }
+        }
         li {
             a {                
                 font-weight: 500;
@@ -125,25 +145,6 @@
                     &[data-term="environmental"] {
                         background-color: #efeee7;
                     }
-                }
-            }
-        }
-        @media (max-width: 992px) {
-            @include flex-wrap(nowrap);
-            @include align-items (flex-start);
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            overflow-x: auto;
-            overflow-y: hidden;
-            margin-left: -15px;
-            margin-right: -15px;
-            max-width: calc(100% + 30px);
-            li {
-                &:first-child {
-                    padding-left: 15px;
-                }
-                &:last-child {
-                    padding-right: 15px;
                 }
             }
         }
