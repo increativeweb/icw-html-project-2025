@@ -1,5 +1,13 @@
 @import "../../assets/css/scss/mixins";
+/* Hide left-side clone only initially */
+.info-card-splide.hide-prev-clone .splide__track {
+    overflow: hidden;
+}
 
+/* Push list slightly left to hide clone */
+.info-card-splide.hide-prev-clone .splide__list {
+    transform: translateX(0) !important;
+}
 .info-card-section {
     overflow: hidden;
     .info-card {
@@ -49,7 +57,16 @@
                     margin-top: 30px;
                 }
                 .btn-link-arrow {
-                    color: var(--primary);
+                    color: var(--black);
+                    .arrow-icon {
+                        filter: brightness(0);
+                    }
+                    &:hover, &:focus {
+                        color: var(--primary);
+                        .arrow-icon {
+                            filter: unset;
+                        }
+                    }
                 }
             }
         }
@@ -58,6 +75,14 @@
             .card-body {
                 .card-title {
                     color: var(--primary);
+                }
+                .card-action {
+                    .btn-link-arrow {
+                        color: var(--primary);
+                        .arrow-icon {
+                            filter: unset;
+                        }
+                    }
                 }
             }
         }
@@ -89,9 +114,13 @@
                 }
             }
             .splide__slide {
-                opacity: 0.4;
+                .info-card {                    
+                    opacity: 0.4;
+                }
                 &.is-visible {
-                    opacity: 1;
+                    .info-card {
+                        opacity: 1;
+                    }
                 }
             }
         }

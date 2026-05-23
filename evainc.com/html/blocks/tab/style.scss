@@ -61,9 +61,20 @@
                     }
                     .arrow-icon {
                         margin-left: auto;
+                        &::before {
+                            background-size: 12px;
+                            filter: contrast(0.3);
+                        }
+                    }
+                    &.active, &:hover, &:focus {
+                        color: var(--primary);
+                        .arrow-icon {
+                                &::before {
+                                filter: unset;
+                            }
+                        }
                     }
                     &.active {
-                        color: var(--primary);
                         font-weight: 500;
                     }
                 }

@@ -71,9 +71,17 @@
         }
         .card-action {
             margin-top: 40px;
-            a {
+            .btn-link-arrow {
                 color: var(--black);
-                filter: brightness(0);
+                .arrow-icon {
+                    filter: brightness(0);
+                }
+                &:hover, &:focus {
+                    color: var(--primary);
+                    .arrow-icon {
+                        filter: unset;
+                    }
+                }
             }
         }
     }
@@ -89,12 +97,10 @@
                 text-decoration: underline;
             }
             .card-action {
-                a {
+                .btn-link-arrow {
                     color: var(--primary);
-                    filter: unset;
                     .arrow-icon {
-                        background-image: url('data:image/svg+xml,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.80357 0.75L10.75 3.75L7.80357 6.75M10.75 3.75L0.75 3.75" stroke="rgb(255 255 255)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-                        background-color: var(--primary);
+                        filter: unset;
                     }
                 }
             }

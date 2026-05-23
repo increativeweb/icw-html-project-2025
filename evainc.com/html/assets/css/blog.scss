@@ -101,7 +101,13 @@
             @include flexbox;
             @include align-items(center);
             margin-bottom: 10px;
-            gap: 5px;
+            gap: 10px;
+            .label {
+                span[class^="icon-"] {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
         }
         .post-date {
             font-weight: 400;

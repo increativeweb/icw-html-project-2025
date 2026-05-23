@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
     if ($('.info-card-splide').length) {
+
         var infoCardSplide = new Splide('.info-card-splide', {
             type: 'loop',
             gap: '30px',
@@ -11,12 +12,14 @@ jQuery(document).ready(function ($) {
             perPage: 3,
             perMove: 1,
             start: 0,
+            focus: 0,
             trimSpace: false,
+
             breakpoints: {
                 1200: {
                     perPage: 2,
                     autoWidth: true,
-                    focus: 'center',
+                    focus: 0,
                 },
                 767: {
                     perPage: 1,
@@ -24,6 +27,10 @@ jQuery(document).ready(function ($) {
                 },
             }
         });
+        infoCardSplide.on('move', function () {
+            $('.info-card-splide').removeClass('hide-prev-clone');
+        });
         infoCardSplide.mount();
     }
+
 });
