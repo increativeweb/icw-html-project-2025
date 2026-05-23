@@ -1,0 +1,15 @@
+@import "../../assets/css/scss/mixins";
+
+.content-section {
+    .section-title {
+        h3 {
+            color: #737373;
+            font-weight: 400;
+            line-height: 1.4;
+            strong {
+                font-weight: 500;
+                color: #000000;
+            }
+        }
+    }
+}

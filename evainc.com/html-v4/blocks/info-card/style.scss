@@ -1,0 +1,129 @@
+@import "../../assets/css/scss/mixins";
+
+.info-card-section {
+    overflow: hidden;
+    .info-card {
+        @include flexbox;
+        @include flex-direction(column);
+        height: 100%;
+        position: relative;
+        padding: 30px;
+        border: 1px solid #E5E5E5;
+        background: var(--white);
+        @include border-radius(16px);
+        @include transition(0.2s, ease-in-out);
+        @media (max-width: 992px) {
+            padding: 20px;
+        }
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .energy-sector-labels {
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content (space-between);
+                gap: 15px;
+                margin-bottom: 10px;                
+                .time-period {
+                    padding: 4px 10px;
+                    background: rgba(35, 63, 97, 0.1);
+                    border-radius: 60px;
+                    font-weight: 500;
+                    font-size: 11px;
+                    color: #233F61;
+                }
+            }
+            .card-title {
+                margin-bottom: 20px;
+                font-weight: 500;
+                // font-family: var(--font-heading2);
+            }
+            .card-info {
+                font-size: 16px;
+                flex: 1 1 auto;
+                color: rgba(#000000, 0.8);
+            }
+            .card-action {
+                margin-top: 40px;
+                @media (max-width: 992px) {
+                    margin-top: 30px;
+                }
+                .btn-link-arrow {
+                    color: var(--primary);
+                }
+            }
+        }
+        &:hover, &:focus {
+            background: rgba(#233F61, 0.02);
+            .card-body {
+                .card-title {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+
+    .info-card-block {
+        .info-card-splide {
+            .splide__track {
+                overflow: visible;
+            }
+            .splide__arrows {
+                .splide__arrow {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &--prev {
+                        left: -60px;
+                        transform: translateY(-50%) scaleX(-1);
+                        @media (max-width: 1200px) {
+                            left: -40px;
+                        }
+                    }
+                    &--next {
+                        left: auto;
+                        right: -60px;
+                        @media (max-width: 1200px) {
+                            right: -40px;
+                        }
+                    }
+                }
+            }
+            .splide__slide {
+                opacity: 0.4;
+                &.is-visible {
+                    opacity: 1;
+                }
+            }
+        }
+        &.is-slider {
+            .info-card {
+                background: #EEF0F3;
+                border-color: transparent;
+                @media (max-width: 1200px) {
+                    max-width: 420px;
+                }
+                @media (max-width: 992px) {
+                    max-width: 350px;
+                }
+                @media (max-width: 767px) {
+                    max-width: 300px;
+                }
+                &.is-power {
+                    background: #ffeded;
+                }
+                &.is-natural-gas {
+                    background: #F1FAFF;
+                }
+                &.is-coal {
+                    background: #FFF6F0;
+                }
+                &.is-renewable-energy {
+                    background: #ebf9f1;
+                }
+                &.is-environmental {
+                    background: #faf9f2;
+                }
+            }
+        }
+    }
+}

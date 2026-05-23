@@ -3,40 +3,20 @@
 .hero-section {
     position: relative;
     overflow: hidden;
-    padding: 150px 0;
-    @media (max-width: 1400px) {
-        padding: 90px 0;
+    padding: 100px 0;
+    background-image: var(--bg-img);
+    background-repeat: no-repeat;
+    background-position: right calc(0% - 76px);
+    background-size: auto 100%;
+    @media (max-width: 1200px) {
+        background-size: auto 80%;
     }
     @media (max-width: 992px) {
         padding: 70px 0;
     }
     @media (max-width: 767px) {
-        padding: 210px 0 50px;
-    }
-    .hero-bg-layer {
-        position: absolute;
-        inset: 0;
-        background-image: var(--hero-bg);
-        background-size: 70%;
-        background-repeat: no-repeat;
-        background-position: bottom right;
-        transform: scale(1);
-        transition: transform 8s linear;
-        z-index: -1;
-        @media (max-width: 1200px) {
-            background-size: 60%;
-        }
-        @media (max-width: 767px) {
-            background-size: 100% 200px;
-            background-position: top center;
-        }
-        @media (max-width: 575px) {
-        }
-    }
-    &.bg-animate {
-        .hero-bg-layer {
-            transform: scale(1.1);
-        }
+        padding: 50px 0;
+        background-size: auto 50%;
     }
     &::before {
         content: '';
@@ -94,13 +74,11 @@
         .title {            
             margin-bottom: 20px;            
             letter-spacing: -0.02em;
-            font-weight: 500;
             em {
                 display: block;
                 font-family: var(--font-heading);
                 color: var(--secondary);      
                 letter-spacing: unset;
-                font-weight: 400;
             }
         }
         .sort-info {
@@ -111,20 +89,28 @@
         }
     }
     .hero-splide {
-        max-width: 650px;
-        text-align: left;
-        @media (max-width: 1200px) {
-            max-width: 550px;
-        }
-        @media (max-width: 992px) {
-            max-width: 450px;
-        }
-        @media (max-width: 767px) {
+        max-width: 520px;
+        margin-left: auto;
+        height: 100%;
+        @media (max-width: 767px) {            
+            margin: 0 auto 40px;
+            height: auto;
             max-width: 100%;
         }
-        .hero-slide {
-            .slide-img {
-                display: none;
+        .splide__track {
+            @include border-radius(16px);
+            height: 100%;
+            max-height: 400px;
+        }
+        .media-block {
+            @include border-radius(16px);
+            overflow: hidden;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
         }
     }

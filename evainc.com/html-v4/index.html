@@ -60,27 +60,52 @@
         </header>
         <div class="bg-overlay"></div>
         <main class="main-conten-wrapper">
-             <link rel='stylesheet' href="blocks/hero/style.css">
+            <link rel='stylesheet' href="blocks/hero/style.css">
             <script src="blocks/hero/script.js"></script>
-            <section class="hero-section">
+            <section class="hero-section" style="--bg-img: url(../../uploads/img-home-hero-bg.png)">
                 <div class="container">
-                    <div class="splide hero-splide">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="hero-slide">
-                                        <div class="slide-img">
-                                            <img src="../../uploads/img-home-hero-bg.png" alt="Power">
-                                        </div>
-                                        <div class="hero-title">
-                                            <h1 class="title">Integrated energy market analytics.<em>No spin. No agenda.</em></h1>
-                                            <div class="sort-info">Spearheading assessments which flawlessly capture the volatility and granularity of regional power markets.</div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                    <div class="row flex-md-row-reverse">
+                        <div class="col-md-6">
+                            <div class="splide hero-splide">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-power.jpg" alt="Power">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-natural-gas.jpg" alt="Natural Gas & Oil">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-coal.jpg" alt="Coal">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-renewable-energy.jpg" alt="Renewable Energy">
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="media-block">
+                                                <img src="uploads/img-environmental.jpg" alt="Environmental">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>  
                         </div>
-                    </div> 
+                        <div class="col-md-6">
+                            <div class="hero-title">
+                                <h1 class="title">Integrated energy market analytics.<em>No spin. No agenda.</em></h1>
+                                <div class="sort-info">EVA provides supply, demand, and price forecasting across North American and global energy markets - helping clients cut through data noise and focus on what matters.</div>
+                                <div class="action"><a href="#" class="btn btn-primary"><span class="btn-text">Learn More</span><span class="arrow-icon"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <link rel='stylesheet' href="blocks/counter/style.css">

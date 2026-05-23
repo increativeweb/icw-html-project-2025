@@ -1,0 +1,177 @@
+@import 'scss/mixins';
+
+.related-posts-section {
+    overflow: hidden;
+    .related-posts-block {
+        padding-bottom: 70px;
+        @media (max-width: 767px) {
+            padding-bottom: 40px;
+        }
+        &.is-slider {
+            .post-splide {
+                &.slider-disabled {
+                    .splide__list {
+                        @media (min-width: 1200px) {
+                            @include justify-content(center);
+                            margin: 0 -15px !important;
+                            .splide__slide {
+                                padding: 0 15px;
+                            }
+                        }
+                    }
+                }
+                .splide__track {
+                    @media (max-width: 1200px) {
+                        overflow: visible;
+                    }
+                }          
+                .splide__pagination {
+                    bottom: -50px;
+                }
+            }
+        }
+        &.is-grid {
+            .post-card {
+                @include flex-direction(row);
+                gap: 30px;
+                @media (max-width: 1200px) {
+                    max-width: 100%;
+                }
+                @media (max-width: 767px) {
+                    gap: 15px;
+                }
+                .card-img { 
+                    margin-bottom: 0;
+                    max-width: 240px;
+                    max-height: 240px;
+                    flex: none;
+                    aspect-ratio: 1 / 1;
+                    @media (max-width: 1200px) {
+                        max-width: 180px;
+                        max-height: 180px;
+                    }
+                    @media (max-width: 767px) {
+                        max-width: 120px;
+                        max-height: 120px;
+                    }
+                }
+                .card-body {
+                    padding: 20px 0;
+                    @media (max-width: 767px) {
+                        padding: 0px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.post-card {
+    @include flexbox;
+    @include flex-direction(column);
+    height: 100%;
+    position: relative;
+    @include transition(0.2s, ease-in-out);
+    @media (max-width: 1200px) {
+        max-width: 350px;
+    }
+    @media (max-width: 767px) {
+        max-width: 300px;
+    }
+    .card-img {
+        margin-bottom: 30px;
+        overflow: hidden;
+        @include border-radius(16px);
+        max-height: 205px;
+        aspect-ratio: 4 / 3;
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+            transform-origin: center center;
+            @include transition(0.2s, ease-in-out);
+            @include border-radius(16px);
+            filter: grayscale(1);
+        }
+    }
+    .card-body {
+        @include flexbox;
+        @include flex-direction(column);
+        .energy-sector-labels {
+            @include flexbox;
+            @include align-items(center);
+            margin-bottom: 10px;
+            gap: 5px;
+        }
+        .post-date {
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--dark-gray);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            flex: 1 1 auto;
+            line-height: 1.5;
+            a {
+                color: var(--black);
+                text-decoration: none;
+                @include transition(0.2s, ease-in-out);
+                text-underline-offset: 5px;
+            }
+        }
+        .card-action {
+            @include flexbox;
+            @include align-items(center);
+            gap: 10px;
+            .post-category {
+                padding: 4px 10px;
+                background: rgba(35, 63, 97, 0.1);
+                border-radius: 60px;
+                font-weight: 500;
+                font-size: 11px;
+                color: #233F61;
+            }
+            .date {
+                font-weight: 400;
+                font-size: 12px;
+                color: #737373;
+            }
+            .user-info {
+                @include flexbox;
+                @include align-items(center);
+                gap: 10px;
+                .user-img {
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+                .info {
+                    .name {
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            
+        }
+    }
+    &:hover, &:focus {
+        .card-img {
+            img {                
+                @include transform(scale(1.05));                
+                filter: grayscale(0);
+            }
+        }
+        .card-body {
+            .card-title {
+                a {
+                    color: var(--primary);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

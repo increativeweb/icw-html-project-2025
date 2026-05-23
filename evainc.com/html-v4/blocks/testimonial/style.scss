@@ -1,0 +1,111 @@
+@import "../../assets/css/scss/mixins";
+
+.testimonials-section {
+    .testimonials-slider-block {
+        .testimonial-splide {
+            border: 1px solid rgba(115, 115, 115, 0.15);
+            @include border-radius(10px);
+            .splide__track {
+                @include border-radius(10px);
+            }
+            .splide__arrows {
+                .splide__arrow {
+                    bottom: 50px;
+                    left: auto;
+                    right: 105px;
+                    @media (max-width: 1200px) {
+                        bottom: 30px;   
+                        right: 75px;          
+                    }
+                    @media (max-width: 767px) {
+                        bottom: 20px;    
+                        left: 20px;  
+                        right: auto;       
+                    }
+                    &.splide__arrow--next {
+                        right: 50px;
+                        @media (max-width: 1200px) {
+                            right: 20px;        
+                        }
+                        @media (max-width: 767px) {
+                            left: 75px;      
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .testimonials-card {
+        @include flexbox;
+        @media (max-width: 992px) {
+            @include flex-direction(column);            
+        }
+        .card-img {
+            @include border-radius(10px 0 0 10px);
+            overflow: hidden;
+            min-width: 500px;
+            @media (max-width: 1200px) {
+                min-width: 350px;                
+            }
+            @media (max-width: 992px) {
+                min-width: 300px;                
+            }
+            @media (max-width: 767px) {
+                @include border-radius(10px 10px 0 0);          
+            }
+            img {
+                object-fit: cover;
+                object-position: top center;
+                width: 100%;
+                height: 100%;
+                @media (min-width: 992px) {
+                    max-width: 500px;
+                }
+            }
+        }
+        .card-body {
+            padding: 50px;
+            @media (max-width: 1200px) {
+                padding: 30px;             
+            }
+            @media (max-width: 767px) {
+                padding: 20px 20px 90px;             
+            }
+            .card-info {
+                font-weight: 500;
+                font-size: 16px;
+                color: var(--black);
+                font-family: var(--font-heading2);
+            }
+            .card-action {
+                margin-top: 100px;
+                max-width: calc(100% - 120px);
+                @media (max-width: 992px) {
+                    margin-top: 50px;        
+                }
+                @media (max-width: 767px) {
+                    max-width: 100%;     
+                }
+                .testimonials-user {
+                    @include flexbox;
+                    .user-img {
+                        padding-right: 15px;
+                        margin-right: 15px;
+                        border-right: 1px solid rgba(#737373, 0.15);
+                        img {
+                            max-height: 40px;
+                            min-width: 30px;
+                        }
+                    }
+                    .user-info {
+                        font-size: 14px;
+                        .name {
+                            font-weight: 500;
+                            color: var(--black);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
