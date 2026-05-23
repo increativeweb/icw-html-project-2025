@@ -25,13 +25,13 @@
             }
         }
         .contact-details-block {
-            background: rgba(253, 249, 249, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             border: 1px solid #E5E5E5;
             backdrop-filter: blur(5px);
             border-radius: 16px;
-            max-width: 315px;
-            margin: 50px 0;
-            padding: 30px 40px;
+            max-width: 325px;
+            margin: 55px 0;
+            padding: 30px 38px;
             z-index: 3;
             font-size: 16px;
             color: var(--black);
@@ -40,6 +40,7 @@
             }
             a {
                 color: rgba(0, 0, 0, 1);
+                font-weight: 500;
                 text-decoration: none;
                 @include transition(0.2s, ease-in-out);
                 display: block;
@@ -54,23 +55,20 @@
                     color: var(--primary);
                 }
             }
-            .country-name {
-                font-weight: 400;
-                font-size: 18px;
-                color: #E01E26;
+             .title {                
                 margin-bottom: 15px;
-            }
-            .country-flag {
-                margin-bottom: 15px;
-                img {
-                    max-height: 24px;
+                em {
+                    font-family: var(--font-heading);
+                    font-weight: 400;
+                    color: var(--secondary);
                 }
             }
             .address {
-                margin-bottom: 20px;
+                margin-bottom: 30px;
+                font-weight: 500;
             }
             .phone {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
         }
     }

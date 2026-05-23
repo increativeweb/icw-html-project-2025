@@ -1,0 +1,77 @@
+@import "../../assets/css/scss/mixins";
+
+.our-history-section {
+    .history-content-block {
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
+        .content-info {
+            strong {
+                font-weight: 600;
+            }
+            .history-list {
+                padding-left: 24px;
+                position: relative;
+                margin: 30px 0;
+                @media (max-width: 992px) {
+                    margin: 20px 0;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 7px;
+                    left: 7px;
+                    width: 1px;
+                    height: 100%;
+                    background-color: var(--secondary);
+                    z-index: -1;
+                }
+                li {
+                    position: relative;
+                    @include flexbox;
+                    @include align-items(flex-start);
+                    gap: 28px;
+                    @media (max-width: 992px) {
+                        gap: 15px;
+                    }
+                    &::before {
+                        content: '';
+                        background: var(--white) url('data:image/svg+xml, <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="6.5" stroke="rgb(35 63 97)"/><circle cx="7.00098" cy="6.99219" r="5" fill="rgb(35 63 97)"/></svg>') no-repeat center center;
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: -24px;
+                        @include border-radius(50%);
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                    &:last-child {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 7px;
+                            left: -17px;
+                            width: 1px;
+                            height: 100%;
+                            background-color: var(--white);
+                            z-index: -1;
+                        }
+                    }
+                    .year {
+                        font-weight: 700;
+                        font-size: 18px;
+                        color: #233F61;
+                    }
+                }
+            }
+        }
+    }
+    .media-block {
+        @media (min-width: 768px) {
+            max-width: 560px
+        }
+    }
+}

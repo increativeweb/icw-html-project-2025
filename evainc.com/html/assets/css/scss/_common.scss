@@ -433,9 +433,9 @@ img {
 // Video Player CSS
 .media-block {
     max-width: 100%;
-    @include border-radius(0);
+    @include border-radius(16px);
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
     line-height: 0.7;
 
     img {
