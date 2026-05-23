@@ -469,13 +469,14 @@
         font-size: 14px;
         color: var(--primary);
         @include transition(0.2s,ease-in-out);
+        line-height: 1;
         &:hover,
         &:focus {
             opacity: 0.5;
         }
-    }
-    .current {
-        border-color: var(--primary)
+        &.current {
+            border-color: var(--primary)
+        }
     }
 }
 

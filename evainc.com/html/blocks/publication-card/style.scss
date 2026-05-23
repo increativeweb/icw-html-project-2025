@@ -26,12 +26,14 @@
     .card-img {
         @include border-radius(16px 16px 0 0);
         overflow: hidden;
+        max-height: 175px;
+        min-height: 175px;
         img {
             object-fit: cover;
             object-position: center;
             width: 100%;
-            max-height: 175px;
-            min-height: 175px;
+            height: 100%;
+            transform-origin: center;
             @include transition(0.2s, ease-in-out);
         }
     }
