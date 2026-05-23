@@ -125,7 +125,7 @@
                 text-underline-offset: 5px;
                 &:hover {
                     text-decoration: underline;
-                    color: var(--dark-gray);
+                    color: var(--primary);
                 }
             }
             & > ul {
@@ -144,10 +144,10 @@
                             color: var(--dark-gray);
                         }
                         &:hover {
-                            color: var(--dark-gray);
+                            color: var(--primary);
                             text-decoration: underline;
                             span {
-                                color: var(--primary);
+                                color: var(--dark-gray);
                             }
                         }
                     }
@@ -189,7 +189,7 @@
                     text-underline-offset: 4px;
                     display: inline-block;
                     &:hover, &:focus {
-                        color: var(--dark-gray);
+                        color: var(--primary);
                         text-decoration: underline;
                     }
                 }

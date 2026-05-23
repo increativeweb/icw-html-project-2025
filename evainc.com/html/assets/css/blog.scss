@@ -82,7 +82,6 @@
         overflow: hidden;
         @include border-radius(16px);
         max-height: 205px;
-        aspect-ratio: 4 / 3;
         img {
             object-fit: cover;
             object-position: center;
@@ -91,7 +90,6 @@
             transform-origin: center center;
             @include transition(0.2s, ease-in-out);
             @include border-radius(16px);
-            filter: grayscale(1);
         }
     }
     .card-body {
@@ -167,8 +165,8 @@
     &:hover, &:focus {
         .card-img {
             img {                
-                @include transform(scale(1.05));                
-                filter: grayscale(0);
+                @include transform(scale(1.05));  
+                filter: grayscale(1);
             }
         }
         .card-body {
