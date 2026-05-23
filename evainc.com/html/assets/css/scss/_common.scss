@@ -998,6 +998,7 @@ h5,
             height: 22px;
             background-size: contain !important;
             display: inline-block;
+            line-height: 0.7;
         }
         &.label-power {
             color: var(--red);
@@ -1031,9 +1032,6 @@ h5,
         }
         &.label-primary {
             color: var(--primary);
-            .icon-power {
-                background: url('data:image/svg+xml,<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 8.8H14L3 22L6 12.1H0L8 0L7 8.8Z" fill="rgb(255 21 21)"/></svg>');
-            }
         }
     }
     a.label {

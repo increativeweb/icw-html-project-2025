@@ -60,22 +60,12 @@
         </header>
         <div class="bg-overlay"></div>
         <main class="main-conten-wrapper">
-            <section class="page-header">
+            <section class="page-header" style="--hero-bg: url(../../uploads/img-hero-what-we-do.png)">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-7">
                             <div class="section-title">
-                                <h1 class="title">What <em>We Do</em></h1>
-                                <div class="sort-info">EVA’s expertise can be tapped via project specific consulting engagements and other customized subscription services.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="media-block">
-                                <div class="animated-img">
-                                    <div class="imgSlideInUp">
-                                        <img src="uploads/img-hero-what-we-do.jpg" alt="What We Do">
-                                    </div>
-                                </div>
+                                <h1 class="title">What We <em>Do</em></h1>
                             </div>
                         </div>
                     </div>
@@ -95,8 +85,8 @@
                     <div class="tab-block">
                         <div class="tab-nav-block">
                             <div class="section-title">
-                                <h2 class="title">Who We <em>Help</em></h2>
-                                <div class="sort-info">Strong data-driven, unbiased and logical analytics and market insights. A tight ship that ensures cohesion and fact-based modelling approach across all markets.</div>
+                                <h2 class="title">Explore EVA’s Consulting Services by Client Type</h2>
+                                <div class="sort-info">EVA’s expertise can be tapped via project specific consulting.</div>
                             </div>
                             <div class="nav tab-nav flex-column" id="serve-tab" role="tablist" aria-orientation="vertical">
                                 <button class="btn-link-arrow active" id="energy-traders-marketers-tab" data-bs-toggle="tab" data-bs-target="#energy-traders-marketers" type="button" role="tab" aria-selected="true">Energy traders & marketers<span class="arrow-icon"></span></button>
@@ -267,23 +257,23 @@
             <link rel='stylesheet' href="blocks/publication-card/style.css">
             <section class="theme-section filter-post-section">
                 <div class="container">
+                    <div class="section-title">
+                        <h2>EVA’s <em>Publications</em></h2>
+                    </div>
                     <div class="posts-archive">
                         <div id="container-async" class="container-async">
                             <div class="posts-archive-categories">
                                 <ul class="nav-filter">
                                     <li class="active"><a href="#all" data-filter="category" data-term="all">All</a></li>
-                                    <li><a href="#data" data-filter="category" data-term="power">Power</a></li>
-                                    <li><a href="#technology" data-filter="category" data-term="natural-gas-oil">Natural Gas & Oil</a></li>
-                                    <li><a href="#artificial-intelligence" data-filter="category" data-term="coal">Coal</a></li>
-                                    <li><a href="#tips-trick" data-filter="category" data-term="renewable-energy">Renewable Energy</a></li>
-                                    <li><a href="#tips-trick" data-filter="category" data-term="environmental">Environmental</a></li>
+                                    <li><a href="#data" data-filter="category" data-term="power"><span class="icon-power"></span>Electric Power</a></li>
+                                    <li><a href="#technology" data-filter="category" data-term="natural-gas-oil"><span class="icon-natural-gas"></span>Natural Gas & Oil</a></li>
+                                    <li><a href="#artificial-intelligence" data-filter="category" data-term="coal"><span class="icon-coal"></span>Coal</a></li>
+                                    <li><a href="#tips-trick" data-filter="category" data-term="renewable-energy"><span class="icon-enewable-energy"></span>Renewable Energy</a></li>
+                                    <li><a href="#tips-trick" data-filter="category" data-term="environmental"><span class="icon-environmental"></span>Environmental</a></li>
                                  </ul>
                             </div>
-                            <div class="seperator container">
-                                <div class="status d-none"></div>
-                            </div>
                             <div class="posts-archive-list">
-                                <div class="content row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4 gy-5 flex-wrap">
+                                <div class="content row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-4 gy-5 flex-wrap">
                                     <div class="col">
                                         <div class="publication-card is-primary">
                                             <div class="card-img">
@@ -291,7 +281,12 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-power">Power</label><span class="dot"></span><label class="label label-natural-gas">Natural Gas & Oil</label><span class="dot"></span><label class="label label-coal">Coal</label><span class="dot"></span><label class="label label-renewable-energy">Renewable Energy</label><span class="dot"></span><label class="label label-environmental">Environmental</label></div>
+                                                    <div class="energy-sector-labels">
+                                                        <div class="label label-power" data-bs-toggle="tooltip" data-bs-title="Power"><span class="icon-power"></span></div>
+                                                        <div class="label label-natural-gas" data-bs-toggle="tooltip" data-bs-title="Natural Gas & Oil"><span class="icon-natural-gas"></span></div>
+                                                        <div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div>
+                                                        <div class="label label-renewable-energy" data-bs-toggle="tooltip" data-bs-title="Renewable Energy"><span class="icon-renewable-energy"></span></div>
+                                                        <div class="label label-environmental" data-bs-toggle="tooltip" data-bs-title="Environmental"><span class="icon-environmental"></span></div></div>
                                                     <sapn class="time-period">Annual</sapn>
                                                 </div>
                                                 <h3 class="title">Fuelcast</h3>
@@ -305,11 +300,11 @@
                                     <div class="col">
                                         <div class="publication-card is-power">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="Quarterly Power Report">
+                                                <img src="uploads/img-quarterly-power-report.jpg" alt="Quarterly Power Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-power">Power</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-power" data-bs-toggle="tooltip" data-bs-title="Power"><span class="icon-power"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">Quarterly Power Report</h3>
@@ -323,11 +318,11 @@
                                     <div class="col">
                                         <div class="publication-card is-power">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="ETD: Term Power Outlook">
+                                                <img src="uploads/img-etd-term-power-outlook.jpg" alt="ETD: Term Power Outlook">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-power">Power</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-power" data-bs-toggle="tooltip" data-bs-title="Power"><span class="icon-power"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">ETD: Term Power Outlook</h3>
@@ -341,11 +336,11 @@
                                     <div class="col">
                                         <div class="publication-card is-power">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="Gas & Coal Price Sensitivity Outlook">
+                                                <img src="uploads/img-gas-coal-price-sensitivity-outlook.jpg" alt="Gas & Coal Price Sensitivity Outlook">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-power">Power</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-power" data-bs-toggle="tooltip" data-bs-title="Power"><span class="icon-power"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">Gas & Coal Price Sensitivity Outlook</h3>
@@ -359,11 +354,11 @@
                                     <div class="col">
                                         <div class="publication-card is-natural-gas">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="Monthly Global LNG Outlook">
+                                                <img src="uploads/img-monthly-global-lng-outlook.jpg" alt="Monthly Global LNG Outlook">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-natural-gas">Natural Gas & Oil</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-natural-gas" data-bs-toggle="tooltip" data-bs-title="Natural Gas & Oil"><span class="icon-natural-gas"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">Monthly Global LNG Outlook</h3>
@@ -377,11 +372,11 @@
                                     <div class="col">
                                         <div class="publication-card is-natural-gas">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="Monthly Short-term Natural Gas Outlook">
+                                                <img src="uploads/img-monthly-short-term-natural-gas-outlook.jpg" alt="Monthly Short-term Natural Gas Outlook">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-natural-gas">Natural Gas & Oil</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-natural-gas" data-bs-toggle="tooltip" data-bs-title="Natural Gas & Oil"><span class="icon-natural-gas"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">Monthly Short-term Natural Gas Outlook</h3>
@@ -395,11 +390,11 @@
                                     <div class="col">
                                         <div class="publication-card is-natural-gas">
                                             <div class="card-img">
-                                                <img src="uploads/img-fuelcast.jpg" alt="Daily Natural-Gas Market Advisory Report">
+                                                <img src="uploads/img-daily-natural-gas-market-advisory.jpg" alt="Daily Natural-Gas Market Advisory Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-natural-gas">Natural Gas & Oil</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-natural-gas" data-bs-toggle="tooltip" data-bs-title="Natural Gas & Oil"><span class="icon-natural-gas"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">Daily Natural-Gas Market Advisory Report</h3>
@@ -413,11 +408,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="Coalcast">
+                                                <img src="uploads/img-coalcast.jpg" alt="Coalcast">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Annual</sapn>
                                                 </div>
                                                 <h3 class="title">Coalcast</h3>
@@ -431,11 +426,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="Quarterly U.S. Coal Report">
+                                                <img src="uploads/img-quarterly-us-coal-report.jpg" alt="Quarterly U.S. Coal Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">Quarterly U.S. Coal Report</h3>
@@ -449,11 +444,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="Quarterly North American Met Coal Report">
+                                                <img src="uploads/img-quarterly-north-american-met-coal-report.jpg" alt="Quarterly North American Met Coal Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                   <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                   <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">Quarterly North American Met Coal Report</h3>
@@ -467,11 +462,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="Weekly Global Thermal Coal Report">
+                                                <img src="uploads/img-weekly-global-thermal-coal-report.jpg" alt="Weekly Global Thermal Coal Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Weekly</sapn>
                                                 </div>
                                                 <h3 class="title">Weekly Global Thermal Coal Report</h3>
@@ -485,11 +480,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="U.S. Coal Financial Report">
+                                                <img src="uploads/img-us-coal-financial-report.jpg" alt="U.S. Coal Financial Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Coal Financial Report</h3>
@@ -503,11 +498,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="U.S. Coal Production Report">
+                                                <img src="uploads/img-us-coal-production-report.jpg" alt="U.S. Coal Production Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Coal Production Report</h3>
@@ -521,11 +516,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="U.S. Coal Stockpile Outlook">
+                                                <img src="uploads/img-us-coal-stockpile-outlook.jpg" alt="U.S. Coal Stockpile Outlook">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Coal Stockpile Outlook</h3>
@@ -539,11 +534,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="U.S. Coal Trade Report">
+                                                <img src="uploads/img-us-coal-trade-report.jpg" alt="U.S. Coal Trade Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Coal Trade Report</h3>
@@ -557,11 +552,11 @@
                                     <div class="col">
                                         <div class="publication-card is-coal">
                                             <div class="card-img">
-                                                <img src="uploads/img-us-coal-transportation-report.jpg" alt="U.S. Railroad Coal Report">
+                                                <img src="uploads/img-us-railroad-coal-report.jpg" alt="U.S. Railroad Coal Report">
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Railroad Coal Report</h3>
@@ -579,7 +574,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-coal">Coal</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-coal" data-bs-toggle="tooltip" data-bs-title="Coal"><span class="icon-coal"></span></div></div>
                                                     <sapn class="time-period">Weekly</sapn>
                                                 </div>
                                                 <h3 class="title">U.S. Coal Transportation Report</h3>
@@ -597,7 +592,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-renewable-energy">Renewable Energy</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-renewable-energy" data-bs-toggle="tooltip" data-bs-title="Renewable Energy"><span class="icon-renewable-energy"></span></div></div>
                                                     <sapn class="time-period">Monthly</sapn>
                                                 </div>
                                                 <h3 class="title">Monthly Renewable Energy Outlook</h3>
@@ -615,7 +610,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-environmental">Environmental</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-environmental" data-bs-toggle="tooltip" data-bs-title="Environmental"><span class="icon-environmental"></span></div></div>
                                                     <sapn class="time-period">Quarterly</sapn>
                                                 </div>
                                                 <h3 class="title">Quarterly Environmental Report</h3>
@@ -633,7 +628,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-category">
-                                                    <div class="energy-sector-labels"><label class="label label-environmental">Environmental</label></div>
+                                                    <div class="energy-sector-labels"><div class="label label-environmental" data-bs-toggle="tooltip" data-bs-title="Environmental"><span class="icon-environmental"></span></div></div>
                                                     <sapn class="time-period">Annual</sapn>
                                                 </div>
                                                 <h3 class="title">Emission Allowance Forecast</h3>
@@ -651,18 +646,12 @@
                 </div>
             </section>
             <link rel='stylesheet' href="blocks/cta/style.css">
-            <section class="cta-section">
+            <section class="theme-section cta-section pt-0">
                 <div class="container">
                     <div class="cta-block">
-                        <div class="cta-img">
-                            <img src="uploads/img-cta.svg" alt="CTA">
-                        </div>
-                        <div class="cta-info">
-                            <h2 class="title">Ready to work with EVA?<em>We'd like to hear from you.</em></h2>
-                            <div class="sort-info">Join EVA to build your career, collaborate with experts, and drive meaningful impact in the evolving energy industry.</div>
-                            <div class="action">
-                                <a href="#" class="btn btn-primary"><span class="btn-text">Contact Us</span><span class="arrow-icon"></span></a>
-                            </div>
+                        <h2 class="title">Ready to work with EVA?<em>We'd like to hear from you.</em></h2>
+                        <div class="action">
+                            <a href="#" class="btn btn-light"><span class="btn-text">Contact Us</span><span class="arrow-icon"></span></a>
                         </div>
                     </div>
                 </div>
