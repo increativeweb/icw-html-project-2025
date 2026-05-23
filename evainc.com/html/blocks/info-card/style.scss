@@ -3,13 +3,11 @@
 .info-card-splide.hide-prev-clone .splide__track {
     overflow: hidden;
 }
-
 /* Push list slightly left to hide clone */
 .info-card-splide.hide-prev-clone .splide__list {
     transform: translateX(0) !important;
 }
 .info-card-section {
-    overflow: hidden;
     .info-card {
         @include flexbox;
         @include flex-direction(column);
@@ -22,6 +20,14 @@
         @include transition(0.2s, ease-in-out);
         @media (max-width: 992px) {
             padding: 20px;
+        }
+        .card-icon {
+            max-width: 40px;
+            margin-bottom: 20px;
+            img {
+                width: 40px;
+                height: 40px
+            }
         }
         .card-body {
             @include flexbox;
