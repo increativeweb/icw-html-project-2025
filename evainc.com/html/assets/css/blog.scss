@@ -222,6 +222,21 @@
         display: grid;
         grid-template-columns: 340px auto;
         gap: 110px;
+        @media (max-width: 1400px) {
+            grid-template-columns: 300px auto;
+            gap: 50px;
+        }
+        @media (max-width: 992) {
+            grid-template-columns: 250px auto;
+            gap: 50px;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 200px auto;
+            gap: 30px;
+        }
+        @media (max-width: 575px) {
+            grid-template-columns: 100%;
+        }
         .col-content {
             .row {
                 --bs-gutter-x: 30px; 
@@ -235,6 +250,7 @@
     .post-card {
         background: rgba(35, 63, 97, 0.08);
         @include border-radius(16px);
+        max-width: 100%;
         .card-img {
             @include border-radius(16px 16px 0 0);
             max-height: 280px;
@@ -254,6 +270,94 @@
         }
         .card-action {
             padding: 20px;
+        }
+    }
+}
+.filter-sidebar {
+    position: sticky;
+    top: 120px;
+    .title {
+        margin-bottom: 20px;
+    }
+    .filter-category-block {
+        .filter-by-category {
+            margin-top: 20px;
+            &:not(:last-child) {
+                border-bottom: 1px solid #e5e5e5;
+            }
+            &.is-open {
+                .category-title {
+                    .collapse-icon { 
+                        transform: unset; 
+                    }
+                }
+            }
+            .category-title {
+                font-weight: 600;
+                font-size: 16px;
+                color: #000000;
+                @include flexbox;
+                @include align-items(center);
+                margin-bottom: 15px;
+                cursor: pointer;
+                .collapse-icon {
+                    background-image: url('data:image/svg+xml,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 4.70703L4.5 0.707031L8.5 4.70703" stroke="black" stroke-linecap="round"/></svg>');
+                    background-size: 10px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 20px;
+                    height: 20px;
+                    flex: none;
+                    display: inline-block;
+                    margin-left: auto;  
+                    @include border-radius(4px);
+                    transform: rotate(180deg);
+                    @include transition(0.2s, ease-in-out);
+                }                
+                &:hover, &:focus {
+                    .collapse-icon {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .category-list {
+                margin-bottom: 20px;
+                .category-checkbox {
+                    @include flexbox;
+                    @include align-items(flex-start);
+                    gap: 10px;
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                    .checkbox-input {
+                        width: 20px;
+                        height: 20px;
+                        flex: none;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        @include border-radius(4px);
+                        vertical-align: top;
+                        appearance: none;
+                        background-repeat: no-repeat;
+                        background-position: center calc(100% - 3px);
+                        background-size: 14px;
+                        print-color-adjust: exact;
+                        cursor: pointer;
+                        line-height: 0.7;
+                        &:checked { 
+                            background-color: var(--primary);
+                            border-color: var(--primary);
+                            background-image:  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z" fill="rgb(255 255 255)" /></svg>');
+                        }
+                    }
+                    .checkbox-label {
+                        cursor: pointer;
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #737373;
+                    }
+
+                }
+            }
         }
     }
 }
