@@ -79,17 +79,19 @@
             }
         }
         &:hover, &:focus {
-            background: rgba(#233F61, 0.02);
-            .card-body {
-                .card-title {
-                    color: var(--primary);
-                    text-decoration: underline;
-                }
-                .card-action {
-                    .btn-link-arrow {
+            &:has(.stretched-link) {
+                background: rgba(#233F61, 0.02);
+                .card-body {
+                    .card-title {
                         color: var(--primary);
-                        .arrow-icon {
-                            filter: unset;
+                        text-decoration: underline;
+                    }
+                    .card-action {
+                        .btn-link-arrow {
+                            color: var(--primary);
+                            .arrow-icon {
+                                filter: unset;
+                            }
                         }
                     }
                 }

@@ -25,6 +25,9 @@
             @media (max-width: 992px) {
                 padding: 50px 15px;
                 margin: 0 -15px;
+                .section-title {
+                    margin-bottom: 0;
+                }
             }
             .tab-nav {
                 max-width: 100%;
@@ -45,20 +48,6 @@
                     background: transparent;
                     &:not(:last-child) {
                         border-bottom: 1px solid #e5e5e5;
-                    }
-                    @media (max-width: 992px) and (min-width: 767px) {
-                        width: calc(50% - 15px);
-                        &:last-child {
-                            border-bottom: 1px solid #e5e5e5;
-                        }
-                    }
-                    @media (max-width: 767px) {
-                        &:first-child {
-                            padding-top: 0;
-                        }
-                        &:last-child {
-                            padding-bottom: 0;
-                        }
                     }
                     .arrow-icon {
                         margin-left: auto;
@@ -88,8 +77,65 @@
                 padding: 80px 0px 80px 40px;
             }
             @media (max-width: 992px) {
-                padding: 50px 15px;
+                padding: 0 15px;
                 margin: 0 -15px;
+            }
+            .tab-pane {
+                @media (max-width: 992px) {
+                    display: block;
+                    opacity: 1;                    
+                    border-bottom: 1px solid #dfdbdb;
+                }
+            }
+            .tab-content-collapse-title {
+                display: none;
+                @media (max-width: 992px) {
+                    display: block;
+                    margin: 0 -15px;
+                    .btn-link-arrow {
+                        width: 100%;
+                        border: none;
+                        padding: 15px;
+                        background: #e5e6e7;
+                        .arrow-icon {
+                            margin-left: auto;
+                            &::before {
+                                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z" fill="rgb(35 63 97)" /></svg>') no-repeat center center;
+                                background-size: 15px !important;
+                            }
+                        }
+                        &:hover, &:focus {
+                            .arrow-icon {
+                                &::before {
+                                    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z" fill="rgb(255 255 255)" /></svg>') no-repeat center center;
+                                }
+                            }
+                        }
+                        &.is-open {
+                            .arrow-icon {
+                                margin-left: auto;
+                                &::before {
+                                    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320z" fill="rgb(35 63 97)"/></svg>') no-repeat center center;
+                                    background-size: 15px !important;
+                                }
+                            }                            
+                           
+                            &:hover, &:focus {
+                                .arrow-icon {
+                                    &::before {
+                                        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320z" fill="rgb(255 255 255)"/></svg>') no-repeat center center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .tab-content-collapse-body {
+                @media (max-width: 992px) {
+                    display: none;
+                    padding: 20px 0;
+                }
             }
             .tab-info {
                 .title {
@@ -106,11 +152,11 @@
                 @include border-radius(16px);
                 overflow: hidden;
                 @media (max-width: 1200px) {
-                    margin-top: 40px;
+                    margin-bottom: 40px;
                     max-height: 400px;
                 }
-                @media (max-width: 767px) {
-                    margin-top: 40px;
+                @media (max-width: 992px) {
+                    margin-top: 0;
                     max-height: 300px;
                 }
                 img {
@@ -134,6 +180,7 @@
                 padding: 0;
                 @media (max-width: 992px) {
                     margin: 0 -15px;
+                    display: flex;
                 }
                 &::before {
                     content: '';

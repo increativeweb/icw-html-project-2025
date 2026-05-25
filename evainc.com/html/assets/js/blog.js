@@ -53,4 +53,18 @@ jQuery(document).ready(function ($) {
             return false;
         });
     }
+    
 });
+function toggleCategoryFilter() {
+
+    const isMobile = $(window).width() < 768;
+
+    $('.filter-by-category')
+        .toggleClass('is-open', !isMobile);
+
+    $('.category-list')
+        .stop(true, true)
+        [isMobile ? 'slideUp' : 'slideDown'](300);
+}
+
+$(window).on('load resize', toggleCategoryFilter);

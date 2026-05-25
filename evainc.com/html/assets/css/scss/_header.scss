@@ -583,33 +583,6 @@
             @include align-items(center);
             gap: 20px;
             .btn {
-                @media (max-width: 992px) {
-                    height: 36px;
-                    .btn-text {
-                        padding: 0 45px 0 20px;
-                    }
-                    .arrow-icon {
-                        width: 18px;
-                        height: 18px;
-                        &:after {
-                            top: 2px;
-                            right: 2px;
-                            background-size: 8px !important;
-                        }
-                    }
-                    &:hover, &:focus {
-                        .arrow-icon {
-                            top: 2px;
-                            right: 2px;
-                            width: calc(100% - 4px) !important;
-                            height: 33px;
-                            &::after {
-                                top: 8px;
-                                background-position: calc(100% - 2px) center;
-                            }
-                        }
-                    }
-                }
             }
             .navbar-toggler {
                 @media (min-width: 1200px) {
