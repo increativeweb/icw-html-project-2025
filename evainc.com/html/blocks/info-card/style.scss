@@ -99,16 +99,19 @@
 
     .info-card-block {
         position: relative;
-        .info-card-splide {   
-            .splide__track {
-                overflow: visible;
-            }
-            .splide__slide {
-                opacity: 0.4;
-
-                &.is-visible {
-                    opacity: 1;
+        .info-card-splide {  
+            @media (max-width: 1200px) {
+                padding-bottom: 30px;
+                .splide__pagination {
+                    bottom: -20px;
                 }
+            } 
+            @media (max-width: 992px) {
+                margin: 0 -15px;
+            }
+            .splide__track {
+                // overflow: visible;
+                @include border-radius(16px);
             }
             .splide__arrows {
                 .splide__arrow {

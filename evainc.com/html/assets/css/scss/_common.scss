@@ -591,14 +591,29 @@ h5,
     font-size: 16px;
     position: relative;
     border: none;
+    overflow: hidden;
     // font-family: var(--font-heading2);
     @include transition(0.2s, ease-in-out);
     @include inline-flex;
     @include align-items(center);
     @include justify-content(center);
     @include border-radius(33px);
-    padding: 0;
+    padding: 9px;
+    gap: 20px;
     white-space: nowrap;
+    line-height: 1.1;
+    &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        @include border-radius(45px);
+        background-color: transparent;
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        @include transition(0.2s, ease-in-out);
+        background-color: transparent;
+    }
     .arrow-icon {
         @include flexbox;
         @include align-items(center);
@@ -606,11 +621,9 @@ h5,
         width: 30px;
         height: 30px;
         background-color: var(--white);
-        border-radius: 45px;
-        position: absolute;
+        @include border-radius(45px);
         @include transition(0.2s, ease-in-out);
-        right: 9px;
-        top: 9px;
+        z-index: 1;
         &::after {
             content: '';
             width: 14px;
@@ -620,29 +633,33 @@ h5,
             background-size: 12px !important;
             background-position: center;
             background-repeat: no-repeat;
-            position: absolute;
-            top: 8px;
-            right: 7px;
             @include transition(0.2s, ease-in-out);
             transform-origin: center;
         }
     }
     .btn-text {
-        padding: 0 60px 0 25px;
         z-index: 2;
         display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    &:has(.arrow-icon) {
+        .btn-text {
+            padding-right: 0;
+        }
     }
     &:hover,
     &:focus {
-        .arrow-icon {
-            top: 2px;
-            right: 2px;
+        &::before {            
             width: calc(100% - 4px) !important;
-            height: calc(100% - 4px);
+            height: calc(100% - 4px) !important;
+            top: 2px !important;
+            right: 2px !important;
+        }
+        .arrow-icon {
             &::after {
-                top: 16px;
                 transform: rotate(45deg);
-                background-position: calc(100% - 2px) center;
             }
         }
     }
@@ -659,49 +676,27 @@ h5,
                 background-size: 10px !important;
             }
         }
-        .btn-text {
-            padding: 0 50px 0 20px;
-        }
         &:hover,
         &:focus {
-            .arrow-icon {
-                top: 2px;
-                right: 2px;
-                width: calc(100% - 4px) !important;
-                height: calc(100% - 4px);
-                &::after {
-                    top: 11px;
-                }
-            }
+            
         }
     }
     &.btn-sm {
-        height: 44px;
-        .arrow-icon {
+        height: 38px;
+        padding: 7px;
+        gap: 15px;
+        &::before {
             width: 26px;
             height: 26px;
-            &::after {
-                background-size: 10px !important;
-                top: 6px;
-                right: 6px;
-            }
+            top: 6px;
+            right: 6px;
+        }
+        .arrow-icon {
+            width: 26px;
+            height: 26px
         }
         .btn-text {
-            padding: 0 53px 0 23px;
-        }
-        &:hover,
-        &:focus {
-            .arrow-icon {
-                top: 2px;
-                right: 2px;
-                width: calc(100% - 4px) !important;
-                height: calc(100% - 4px);
-                &::after {
-                    top: 13px;
-                    transform: rotate(45deg);
-                    background-position: calc(100% - 2px) center;
-                }
-            }
+            padding-left: 15px;
         }
     }
 
@@ -711,6 +706,9 @@ h5,
         &:hover,
         &:focus {
             color: var(--primary) !important;
+            &::before {
+                background: var(--white);
+            }
         }
         
     }
@@ -718,13 +716,12 @@ h5,
         color: var(--primary) !important;
         background-color: transparent !important;
         border: 1px solid var(--primary) !important;
-        .btn-text {
-            padding: 0 20px !important;
-        }
         &:hover,
         &:focus {
             color: var(--white) !important;
-            background-color: var(--primary) !important;
+            &::before {
+                background-color: var(--primary) !important;
+            }
         }
         
     }
@@ -741,16 +738,19 @@ h5,
         &:hover,
         &:focus {
             color: var(--white) !important;
-            .arrow-icon {
-                top: 2px;
+            &::before {
+                background: var(--primary);
             }
         }
     }
     &.btn-light {
         color: var(--white) !important;
         background-color: rgba(255, 255, 255, 0.2) !important;
+        &::before {
+            background: #72849A;
+        }
         .arrow-icon {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: #72849A;
             &::after {
                 filter: brightness(0) invert(1);
             }
@@ -1132,7 +1132,7 @@ h5,
             height: 40px;
             display: inline-block;
             background: rgba(#e5e5e5, 0.5) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-            background-size: 16px !important;
+            background-size: 18px !important;
             position: absolute;
             top: 0;
             left: 0;
