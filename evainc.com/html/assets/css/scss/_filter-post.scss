@@ -7,13 +7,13 @@
     position: relative;
     &::before {
         content: '';
-        width: calc(100vw + 13vw);
+        width: calc(100vw + 50vw);
         height: 100%;
         background: #F4F5F7;
         display: block;
         position: absolute;
         top: 0;
-        left: -13vw;
+        left: -50vw;
         z-index: -1;
     }
     @media (max-width: 991px) {

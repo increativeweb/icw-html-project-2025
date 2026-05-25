@@ -23,6 +23,12 @@
         transform: scale(1);
         transition: transform 8s linear;
         z-index: -1;
+        @media (min-width: 1920px) {
+            background-size: contain;
+        }
+        @media (min-width: 2600px) {
+            background-position: 70% bottom;
+        }
         @media (max-width: 1200px) {
             background-size: 60%;
         }

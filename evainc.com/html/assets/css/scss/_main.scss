@@ -209,6 +209,12 @@
     min-height: 315px;
     @include flexbox;
     @include align-items(center);
+    @media (min-width: 2200px) {
+        background-position: 68% bottom;
+    }
+    @media (min-width: 2600px) {
+        background-position: 60% bottom;
+    }
     @media (max-width: 1200px) {
         background-size: 500px;
     }

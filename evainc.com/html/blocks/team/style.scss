@@ -21,11 +21,7 @@
             @media (max-width: 992px) {
                 margin-bottom: 20px;
             }
-            img {                
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                transform-origin: center;
-                @include border-radius(50%);
+            img {        
                 @include transition(0.2s, ease-in-out);
             }
         }
@@ -78,7 +74,6 @@
     width: calc(100% - 30px);
     max-width: 950px;
     @include border-radius(16px);
-    padding: 60px;
     @media (max-width: 1200px) {        
         max-width: 750px;
         padding: 40px;
@@ -93,7 +88,6 @@
         top: 32px;
     }
     .offcanvas-header {
-        padding: 0;
         margin-bottom: 50px;
         @media (max-width: 1200px) {        
             margin-bottom: 30px;
@@ -116,9 +110,10 @@
         }
     }
     .offcanvas-body {
-        padding: 0;
+        padding: 60px;
         .team-member-info {
             @include flexbox;
+            @include align-items(center);
             gap: 40px;
             @media (max-width: 1200px) {        
                 gap: 24px;
@@ -158,6 +153,7 @@
                     font-weight: 400;
                     font-size: 16px;
                     color: #737373;
+                    margin-bottom: 30px;
                 }
                 .energy-sector-labels {
                     margin: 24px 0;

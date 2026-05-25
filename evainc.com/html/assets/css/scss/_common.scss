@@ -350,6 +350,16 @@ img {
     }
 }
 
+// Custom Ration
+.ratio {
+    &.ratio-3x4 {
+        --bs-aspect-ratio: calc(4 / 3 * 100%);
+    }
+    &.ratio-6x4 {
+        --bs-aspect-ratio: 65.25%;
+    }
+}
+
 // Video & Image Background CSS
 .media-bg-block {
     pointer-events: none;
@@ -999,6 +1009,7 @@ h5,
             background-size: contain !important;
             display: inline-block;
             line-height: 0.7;
+            @include transition(0.2s, ease-in-out);
         }
         &.label-power {
             color: var(--red);
@@ -1032,6 +1043,11 @@ h5,
         }
         &.label-primary {
             color: var(--primary);
+        }
+        &:hover, &:focus {
+            span[class^="icon-"] {
+                transform: scale(1.5);
+            }
         }
     }
     a.label {
