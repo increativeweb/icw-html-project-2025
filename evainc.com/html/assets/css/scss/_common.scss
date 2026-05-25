@@ -1046,7 +1046,7 @@ h5,
         }
         &:hover, &:focus {
             span[class^="icon-"] {
-                transform: scale(1.5);
+                transform: scale(1.4);
             }
         }
     }
@@ -1113,8 +1113,7 @@ h5,
 
 .splide__arrows {
     .splide__arrow {
-        background: rgba(#e5e5e5, 0.5) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-        background-size: 16px !important;
+        background: transparent;
         width: 40px;
         height: 40px;
         border: 1px solid #e5e5e5;
@@ -1124,6 +1123,38 @@ h5,
         left: calc(50% - 48px);
         bottom: -65px;
         transform: scaleX(-1);
+        z-index: 1;
+        opacity: 1;
+        overflow: hidden;
+        &::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background: rgba(#e5e5e5, 0.5) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            background-size: 16px !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &::after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-color: var(--primary);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            will-change: transform;
+            transform-origin: center;
+            border-radius: 50%;
+            transition: all .2s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
         &.splide__arrow--next {
             transform: unset;
             left: auto;
@@ -1131,7 +1162,14 @@ h5,
         }
         &:hover,
         &:focus {
-            border-color: var(--black);
+            opacity: 1;
+            border-color: transparent;
+            &::before {                
+                background: rgba(#e5e5e5, 0) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            }
+            &::after {
+                transform: scale(1);
+            }
         }
         svg {
             display: none;
