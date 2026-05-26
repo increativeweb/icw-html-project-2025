@@ -72,12 +72,16 @@
 }
 .offcanvas.team-popup-model {
     margin: 15px;
-    width: calc(100% - 30px);
+    width: calc(100% - 10px);
     max-width: 950px;
     @include border-radius(16px);
+    overflow: hidden;
     @media (max-width: 1200px) {        
         max-width: 750px;
-    }    
+    }   
+    @media (max-width: 1200px) {        
+        margin: 5px;
+    }
     .btn-close {
         position: absolute;
         padding: 0;
@@ -107,12 +111,25 @@
         }
     }
     .offcanvas-body {
-        padding: 60px;
+        padding: 60px;    
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 5px;
+            height: 5px;
+            border-radius: 16px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(#233F61, 0.1);
+            border-radius: 16px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #eeeeee;
+        }
         @media (max-width: 1200px) {  
             padding: 40px;
         }
         @media (max-width: 767px) { 
-            padding: 24px;
+            padding: 15px;
         }
         .team-member-info {
             @include flexbox;
@@ -121,9 +138,9 @@
             @media (max-width: 1200px) {        
                 gap: 24px;
             }
-            @media (max-width: 575px) {        
-                @include flex-direction(column);    
-                gap: 15px;
+            @media (max-width: 767px) {  
+                gap: 15px;                
+                @include align-items(flex-start);
             }
             .user-img {
                 @include border-radius(16px);
@@ -135,6 +152,9 @@
                     @include border-radius(16px);
                     @media (max-width: 1200px) {        
                         max-width: 200px;
+                    }
+                    @media (max-width: 767px) {        
+                        max-width: 120px;
                     }
                 }
             }
@@ -151,12 +171,19 @@
                     @media (max-width: 1200px) {        
                         font-size: 24px;
                     }
+                    @media (max-width: 767px) { 
+                        font-size: 20px;
+                    }
                 }
                 .designation {
                     font-weight: 400;
                     font-size: 16px;
                     color: #737373;
-                    margin-bottom: 30px;
+                    margin-bottom: 30px;                    
+                    @media (max-width: 767px) { 
+                        margin-bottom: 20px;
+                        font-size: 14px;
+                    }
                 }
                 .energy-sector-labels {
                     margin: 24px 0;
@@ -171,6 +198,9 @@
                     text-decoration: none;
                     font-weight: 600;
                     font-size: 16px;
+                    @media (max-width: 767px) { 
+                        font-size: 13px;
+                    }
                     &:hover, &:focus {
                         color: var(--primary);
                         text-decoration: underline;
@@ -204,6 +234,10 @@
                 @media (max-width: 1200px) {        
                     margin: 30px 0 15px; 
                     font-size: 20px;
+                }
+                @media (max-width: 767px) {        
+                    margin: 20px 0 15px; 
+                    font-size: 18px;
                 }
             }
             ul {

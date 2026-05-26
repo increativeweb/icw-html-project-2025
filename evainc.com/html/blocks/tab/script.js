@@ -12,11 +12,11 @@ if (jQuery(window).width() < 992) {
                 $(this).addClass("is-open");
                 $(this).parents('.tab-pane').find(".tab-content-collapse-body").stop(true, true).slideDown(300); 
                 
-                var collapsetop = $(this).parents('.tab-pane');
-                console.log(collapsetop);
-                $('html, body').animate({
-                    scrollTop: Math.max(collapsetop.offset().top - 120, 0)
-                }, 300);
+                // var collapsetop = $(this).parents('.tab-pane');
+                // console.log(collapsetop);
+                // $('html, body').animate({
+                //     scrollTop: Math.max(collapsetop.offset().top - 120, 0)
+                // }, 300);
             }
             return false;
         });
