@@ -446,6 +446,8 @@
         margin-bottom: 15px;
         @include inline-flex;
         @include align-items(center);
+        @include flex-wrap(wrap);
+        white-space: nowrap;
         gap: 10px;
         .back-link {
             @include inline-flex;
@@ -479,6 +481,10 @@
                 span[class^="icon-"] {
                     width: 16px;
                     height: 16px;
+                    @media (max-width: 767px) {
+                        width: 14px;
+                        height: 14px;
+                    }
                 }
             }
         }
