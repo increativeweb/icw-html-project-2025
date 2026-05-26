@@ -3,7 +3,6 @@
 .tab-section {
     padding: 0;
     background: linear-gradient(90deg,#F4F5F7 50%, #EAECEF 50%);
-    overflow: hidden;
     @media (max-width: 992px) {
         background: none;
     }
@@ -179,38 +178,29 @@
             }
         }
         &.classic-tab {
-            grid-template-columns: 100%;
+            display: block;
             .tab-nav-block {
                 background: #F4F5F7;
-                position: relative;
                 padding: 0;
+                margin: 0 -12px;
+                // position: sticky;
+                // top: 100px;
                 @media (max-width: 992px) {
-                    margin: 0 -15px;
                     display: flex;
-                }
-                &::before {
-                    content: '';
-                    width: calc(100vw + 50vw);
-                    height: 100%;
-                    background: #F4F5F7;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: -50vw;
-                    z-index: -1;
                 }
             }
             .nav-tabs {
                 @include flexbox;
                 @include align-items(center);
+                @include justify-content(center);
                 @include flex-wrap(nowrap);
                 gap: 10px;
                 border: none;
-                padding: 5px 0;
+                padding: 5px 15px;
                 overflow: hidden;
                 overflow-x: auto;
-                @media (max-width: 992px) {
-                    padding: 5px 15px;
+                @media (max-width: 1500px) {
+                    @include justify-content(flex-start);
                 }
                 &::-webkit-scrollbar {
                     background-color: transparent;
@@ -228,12 +218,13 @@
                 .nav-link {
                     white-space: nowrap;
                     border: none;
-                    padding: 13px 20px;
+                    padding: 12px 20px;
                     border-radius: 50px;
                     font-weight: 500;
                     font-size: 14px;
                     color: var(--primary);
                     @include transition(0.2s, ease-in-out);
+                    margin: 0;
                     &:hover, &:focus, &.active {
                         background: rgba(35, 63, 97, 0.1);
                     }

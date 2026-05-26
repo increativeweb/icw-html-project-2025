@@ -50,12 +50,12 @@ function toggleCategoryFilter() {
 
     $(document)
         .off('click.categoryFilter')
-        .on('click.categoryFilter', '.filter-by-category .category-title', function (e) {
+        .on('click.categoryFilter', '.filter-by-category .category-title .collapse-icon', function (e) {
 
             e.preventDefault();
 
-            const $parent = $(this).parent();
-            const $list = $(this).siblings('.category-list');
+            const $parent = $(this).parents('.filter-by-category');
+            const $list = $(this).parents('.filter-by-category').find('.category-list');
             const isDesktop = $(window).width() > 992;
 
             // Desktop (>992px)

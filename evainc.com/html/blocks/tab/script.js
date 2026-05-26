@@ -30,5 +30,16 @@ if (jQuery('.classic-tab').length) {
         $('.info-card-section .info-card').parent().removeClass('d-none');
         $('.info-card-section').find('[data-id="' + id + '"]').parent().addClass('d-none');
     });
+    $(document).on('click', '.nav-tabs .nav-link', function () {
+        const $this = $(this);
+        // Small delay for Bootstrap tab update
+        setTimeout(function () {
+            $this[0].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center' // show on left side
+            });
+        }, 100);
+    });
 
 }

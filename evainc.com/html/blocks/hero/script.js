@@ -1,8 +1,8 @@
 jQuery(document).ready(function ($) {
 
-    if ($('.hero-section').length) {
+    if ($('.hero-slider-section').length) {
 
-        const $heroSection = $('.hero-section');
+        const $heroSection = $('.hero-slider-section');
         const $bgLayer = $('<div class="hero-bg-layer"></div>');
 
         $heroSection.prepend($bgLayer);
@@ -70,7 +70,7 @@ jQuery(document).ready(function ($) {
         heroSplide.on('active', function (slide) {
             if (slideCount > 1) {
                 // Remove old animation class
-                $('.hero-section .section-title').removeClass('is-animate');
+                $('.hero-slider-section .section-title').removeClass('is-animate');
                 // Add animation to active slide
                 $(slide.slide).find('.section-title').addClass('is-animate');
             }

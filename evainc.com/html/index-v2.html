@@ -62,16 +62,25 @@
         <main class="main-conten-wrapper">
              <link rel='stylesheet' href="blocks/hero/style.css">
             <script src="blocks/hero/script.js"></script>
-            <section class="hero-section" style="--hero-bg: url('../../uploads/img-home-hero-bg.png')">
+            <section class="hero-section hero-slider-section">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="hero-title">
-                                <h1 class="title">Integrated energy market analytics.<em>No spin. No agenda.</em></h1>
-                                <div class="sort-info">Spearheading assessments which flawlessly capture the volatility and granularity of regional power markets.</div>
-                            </div>
+                    <div class="splide hero-splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="hero-slide">
+                                        <div class="slide-img">
+                                            <img src="../../uploads/img-home-hero-bg.png" alt="Power">
+                                        </div>
+                                        <div class="hero-title">
+                                            <h1 class="title">Integrated energy market analytics.<em>No spin. No agenda.</em></h1>
+                                            <div class="sort-info">Spearheading assessments which flawlessly capture the volatility and granularity of regional power markets.</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </section>
             <link rel='stylesheet' href="blocks/counter/style.css">
@@ -125,7 +134,7 @@
             </section>
             <script src="blocks/counter/script.js"></script>
             <link rel='stylesheet' href="blocks/tab/style.css">
-            <section class="theme-section tab-section overflow-hidden">
+            <section class="theme-section tab-section">
                 <div class="container">
                     <div class="tab-block">
                         <div class="tab-nav-block">
