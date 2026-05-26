@@ -532,7 +532,7 @@
     h5 {
         color: var(--black);
         margin-bottom: 30px;
-        font-weight: 500;
+        font-weight: 600;
 
         body.single &:not(:first-child) {
             margin-top: 100px;
@@ -596,9 +596,10 @@
             list-style-type: none;
             @include flexbox;
             @include align-items(flex-start);
-            gap: 12px;
+            gap: 10px;
+            font-size: 16px;
             &:not(:last-child) {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             @media (max-width: 992px) {
                 gap: 8px;
@@ -609,16 +610,11 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center center;
-                width: 20px;
-                height: 20px;
+                width: 16px;
+                height: 16px;
                 flex: none;
                 display: inline-block;
-                margin-top: 3px;
-                @media (max-width: 992px) {
-                    width: 16px;
-                    height: 16px;
-                    margin-top: 3px;
-                }
+                margin-top: 1px;
             }
             &:not(:last-child) {
                 margin-bottom: 8px;
@@ -661,7 +657,7 @@
 
     body.single & img {
         width: auto;
-
+        margin-top: 30px;
         &.size-full {
             width: 100%;
         }
@@ -673,56 +669,24 @@
     }
 
     blockquote {
-
-        font-size: 20px;
+        border: 1px solid #e5e5e5;
+        background-color: #F4F5F7;
         line-height: 1.5;
-
-
-        h2[id],
-        h3[id] {
-            padding-top: 0 !important;
-            margin-top: 0 !important;
-        }
-
+        @include border-radius(12px);
+        padding: 15px 20px 15px 60px;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: justify;
+        color: #000000;
+        margin: 30px 0;
+        background-image: url('data:image/svg+xml,<svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.42657 19C3.86014 19 2.55478 18.5157 1.51049 17.5471C0.503496 16.5412 0 15.2373 0 13.6353C0 13.151 0.037296 12.6853 0.111888 12.2382C0.18648 11.7539 0.335664 11.1951 0.559441 10.5618C0.783217 9.92843 1.10023 9.09019 1.51049 8.04706L4.75524 0H10.2937L6.6014 13.4118L5.37063 8.38235C6.97436 8.38235 8.27972 8.84804 9.28671 9.77941C10.2937 10.7108 10.7972 11.9961 10.7972 13.6353C10.7972 15.2373 10.2751 16.5412 9.23077 17.5471C8.22378 18.5157 6.95571 19 5.42657 19ZM18.6294 19C17.0629 19 15.7576 18.5157 14.7133 17.5471C13.7063 16.5412 13.2028 15.2373 13.2028 13.6353C13.2028 13.151 13.2401 12.6853 13.3147 12.2382C13.3893 11.7539 13.5385 11.1951 13.7622 10.5618C13.986 9.92843 14.303 9.09019 14.7133 8.04706L17.958 0H23.4965L19.8042 13.4118L18.5734 8.38235C20.1772 8.38235 21.4825 8.84804 22.4895 9.77941C23.4965 10.7108 24 11.9961 24 13.6353C24 15.2373 23.4779 16.5412 22.4336 17.5471C21.4266 18.5157 20.1585 19 18.6294 19Z" fill="rgb(35 63 97)"/></svg>');
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: 15px 20px;
         @media (max-width: 767px) {
-            font-size: 18px;
-        }
-
-        strong {
-            display: inline-block;
-            color: #818282;
             font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 16px;
         }
-
-        p {
-            font-size: 20px;
-            font-weight: 500;
-
-            @media (max-width: 767px) {
-                font-size: 18px;
-            }
-        }
-
-        &:not(:first-child) {
-            background: rgba(91, 91, 91, 0.05);
-            padding: 32px;
-            @include border-radius(10px);
-            margin: 32px 0;
-
-            @media (max-width: 767px) {
-                padding: 1.5rem;
-            }
-
-        }
-
-        &:first-child {
-            padding: 0;
-            background: transparent;
-            margin: 0 0 16px;
-        }
-
         & *:last-child {
             margin-bottom: 0px !important;
         }
@@ -787,6 +751,7 @@
 
     img {
         margin-bottom: 30px;
+        margin-top: 15px;
         border-radius: 16px;
         text-align: center;
         width: 100%;
