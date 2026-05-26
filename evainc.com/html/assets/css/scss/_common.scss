@@ -357,6 +357,9 @@ img {
     }
     &.ratio-6x4 {
         --bs-aspect-ratio: 65.25%;
+        @media (max-width: 767px) {
+            --bs-aspect-ratio: 58%;
+        }
     }
 }
 

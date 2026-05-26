@@ -257,9 +257,22 @@
         }
     }
 }
-.filter-sidebar {
+.position-sticky {
     position: sticky;
     top: 120px;
+    background: var(--white);
+    z-index: 15;
+}
+.col-sidebar {
+    @media (max-width: 992px) {
+        position: sticky;
+        top: 61px;
+        background: #ffffff;
+        padding: 20px 0;
+        z-index: 10;
+    }
+}
+.filter-sidebar {
     .title {
         margin-bottom: 20px;
     }
@@ -268,7 +281,7 @@
             @include flexbox;
             @include flex-wrap(wrap);
             width: 100%;
-            gap: 15px;
+            gap: 10px;
         }
         .filter-by-category {
             margin-top: 20px;
@@ -278,20 +291,30 @@
             @media (max-width: 992px) {
                 flex: 1;
                 margin-top: 0;
-                padding: 15px;
                 background: rgba(#e5e5e5, 0.3);
+                padding: 15px;
+                position: relative;
                 &:not(:last-child) {
                     border-bottom: 0;
                 }
             }
             @media (max-width: 767px) { 
-                width: 100%;
-                flex: 100%;
+                width: calc(50% - 10px);
+                padding: 10px;
+                flex: auto;
             }
             &.is-open {
                 .category-title {
                     .collapse-icon { 
                         transform: unset; 
+                    }
+                }
+                .category-list { 
+                    @media (max-width: 992px) {
+                        opacity: 1;
+                        pointer-events: auto;
+                        visibility: visible;
+                        transform: translate(-50%, 0px);
                     }
                 }
             }
@@ -305,6 +328,7 @@
                 cursor: pointer;
                 @media (max-width: 992px) {
                     margin-bottom: 0;
+                    font-size: 14px;
                 }
                 .collapse-icon {
                     background-image: url('data:image/svg+xml,<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 4.70703L4.5 0.707031L8.5 4.70703" stroke="black" stroke-linecap="round"/></svg>');
@@ -329,8 +353,23 @@
             .category-list {
                 margin-bottom: 20px;
                 @media (max-width: 992px) {
-                    margin-bottom: 0;
-                    margin-top: 15px;
+                    position: absolute;
+                    top: calc(100% + 5px);
+                    left: 50%;
+                    display: block;
+                    min-width: 100%;
+                    padding: 15px;
+                    opacity: 0;
+                    pointer-events: none;
+                    transform-origin: 50% 0;
+                    transform: translate(-50%, 5px);
+                    @include transition(0.2s, ease-in-out);
+                    z-index: 9;
+                    background: #ffffff;
+                    border: 1px solid #E5E5E5;                    
+                }
+                @media (max-width: 767px) {
+                    padding: 10px;
                 }
                 .category-checkbox {
                     @include flexbox;

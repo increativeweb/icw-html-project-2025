@@ -43,28 +43,41 @@ jQuery(document).ready(function ($) {
             }
         });
         postSplide.mount();
-    }
-
-    // Blog Filter Collapse
-    if (jQuery('.filter-by-category').length) {
-        jQuery(document).on("click", ".filter-by-category .category-title", function () {
-            $(this).parent().toggleClass('is-open');
-            $(this).parent().find(".category-list").stop(true, true).slideToggle(300);
-            return false;
-        });
-    }
+    }   
     
 });
+function initCategoryCollapse() {
+
+    $(document)
+        .off('click.categoryFilter')
+        .on('click.categoryFilter', '.filter-by-category .category-title', function (e) {
+
+            if ($(window).width() <= 992) return;
+
+            e.preventDefault();
+
+            $(this).parent().toggleClass('is-open');
+
+            $(this).siblings('.category-list').stop(true, true).slideToggle(300);
+        });
+}
+
+// Load + resize
+$(window).on('load resize', initCategoryCollapse);
 function toggleCategoryFilter() {
+    const isMobile = jQuery(window).width() < 992;
 
-    const isMobile = $(window).width() < 768;
-
-    $('.filter-by-category')
-        .toggleClass('is-open', !isMobile);
-
-    $('.category-list')
-        .stop(true, true)
-        [isMobile ? 'slideUp' : 'slideDown'](300);
+    jQuery('.filter-by-category').removeClass('is-open', !isMobile);
+    jQuery(document).off('click.categoryFilter').on('click.categoryFilter', '.filter-by-category .category-title', function (e) {
+        e.preventDefault();
+        
+        if (jQuery(this).parent().hasClass("is-open")) {
+            jQuery(this).parent().removeClass("is-open");
+        } else {
+            jQuery('.filter-by-category').removeClass('is-open');
+            jQuery(this).parent().addClass("is-open");
+        }
+    });
 }
 
 $(window).on('load resize', toggleCategoryFilter);

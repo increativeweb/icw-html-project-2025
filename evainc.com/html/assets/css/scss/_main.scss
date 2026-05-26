@@ -440,6 +440,63 @@
 }
 
 // Blog Single
+
+.single-header {
+    .back-link-block {
+        margin-bottom: 15px;
+        @include inline-flex;
+        @include align-items(center);
+        gap: 10px;
+        .back-link {
+            @include inline-flex;
+            @include justify-content(center);
+            @include align-items(center);
+            gap: 5px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #233F61;
+            text-decoration: none;
+            @include transition(0.2s,ease-in-out);
+            line-height: 1;
+            padding-right: 10px;
+            border-right: 1px solid rgba(#737373, 0.5);
+            .icon-back-arrow {
+                background: url('data:image/svg+xml,<svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.70703 0.5L0.707031 4.5L4.70703 8.5" stroke="rgb(35 63 97)" stroke-linecap="round"/></svg>') no-repeat center center;
+                background-size: 8px;
+                width: 8px;
+                height: 8px;
+                @include transition(0.2s,ease-in-out);
+            }
+            &:hover, &:focus {
+                .icon-back-arrow {
+                    @include transform(translateX(-5px));
+                }
+            }
+        }
+        .energy-sector-labels {
+            .label {
+                gap: 5px;
+                span[class^="icon-"] {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+    .section-title {
+        text-align: left;
+        h1 {
+            margin-bottom: 15px;
+            em {
+                display: inline-block;
+            }
+        }
+        .sort-info {
+            max-width: 650px;
+            font-size: 16px;
+        }
+    }
+}
 .single-content-section {
     padding: 100px 0;
     @media (max-width: 992px) {
