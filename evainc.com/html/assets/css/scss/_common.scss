@@ -353,6 +353,9 @@ img {
 // Custom Ration
 .ratio {
     &.ratio-3x4 {
+        --bs-aspect-ratio: calc(4 / 3 * 100%);
+    }
+    &.ratio-9x16 {
         --bs-aspect-ratio: calc(3 / 4 * 100%);
     }
     &.ratio-6x4 {
