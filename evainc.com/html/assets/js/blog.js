@@ -46,38 +46,42 @@ jQuery(document).ready(function ($) {
     }   
     
 });
-function initCategoryCollapse() {
+function toggleCategoryFilter() {
 
     $(document)
         .off('click.categoryFilter')
         .on('click.categoryFilter', '.filter-by-category .category-title', function (e) {
 
-            if ($(window).width() <= 992) return;
-
             e.preventDefault();
 
-            $(this).parent().toggleClass('is-open');
+            const $parent = $(this).parent();
+            const $list = $(this).siblings('.category-list');
+            const isDesktop = $(window).width() > 992;
 
-            $(this).siblings('.category-list').stop(true, true).slideToggle(300);
+            // Desktop (>992px)
+            if (isDesktop) {
+                $parent.toggleClass('is-open');
+                $list.stop(true, true).slideToggle(300);
+            }
+
+            // Mobile (<992px)
+            else {
+                if ($parent.hasClass('is-open')) {
+                    $parent.removeClass('is-open');
+                } else {
+                    $('.filter-by-category').removeClass('is-open');
+                    $parent.addClass('is-open');
+                }
+            }
         });
-}
 
-// Load + resize
-$(window).on('load resize', initCategoryCollapse);
-function toggleCategoryFilter() {
-    const isMobile = jQuery(window).width() < 992;
-
-    jQuery('.filter-by-category').removeClass('is-open', !isMobile);
-    jQuery(document).off('click.categoryFilter').on('click.categoryFilter', '.filter-by-category .category-title', function (e) {
-        e.preventDefault();
-        
-        if (jQuery(this).parent().hasClass("is-open")) {
-            jQuery(this).parent().removeClass("is-open");
-        } else {
-            jQuery('.filter-by-category').removeClass('is-open');
-            jQuery(this).parent().addClass("is-open");
-        }
-    });
+    // Reset styles on resize
+    if ($(window).width() < 992) {
+        $('.filter-by-category').removeClass('is-open');
+    } else {
+        $('.filter-by-category').addClass('is-open');
+        $('.filter-by-category .category-list').removeAttr('style');
+    }
 }
 
 $(window).on('load resize', toggleCategoryFilter);
