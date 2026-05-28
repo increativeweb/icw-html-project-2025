@@ -845,68 +845,6 @@ h5,
     }
 }
 
-.btn-label {
-    @include inline-flex;
-    @include align-items(center);
-    min-height: 50px;
-    padding: 8px 25px;
-    font-family: var(--font-heading1);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 24px;
-    text-decoration: none;
-    @include border-radius(50px);
-    @include transition(0.2s, ease-in-out);
-    @media (max-width: 1200px) {
-        font-size: 20px;
-    }
-    @media (max-width: 767px) {
-        min-height: 44px;
-        font-size: 18px;
-        padding: 8px 20px;
-    }
-    &.btn-power {
-        color: var(--red);
-        background-color: #ffe7e7;
-        &:hover, &:focus {
-            color: var(--white);
-            background-color: var(--red);
-        }
-    }
-    &.btn-natural-gas {
-        color: var(--skyblue);
-        background-color: #ecf8fe;
-        &:hover, &:focus {
-            color: var(--white);
-            background-color: var(--skyblue);
-        }
-    }
-    &.btn-coal {
-        color: var(--orange);
-        background-color: #fee8d8;
-        &:hover, &:focus {
-            color: var(--white);
-            background-color: var(--orange);
-        }
-    }
-    &.btn-renewable-energy {
-        color: var(--green);
-        background-color: #ccefdc;
-        &:hover, &:focus {
-            color: var(--white);
-            background-color: var(--green);
-        }
-    }
-    &.btn-environmental {
-        color: var(--yellow);
-        background-color: #f3f0de;
-        &:hover, &:focus {
-            color: var(--white);
-            background-color: var(--yellow);
-        }
-    }
-}
-
 // Page Scroll Progress CSS
 .icw-progress-goto {
     position: fixed;

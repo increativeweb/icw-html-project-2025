@@ -631,9 +631,9 @@
     }
 
     a {
-        color: var(--gray);
+        color: var(--secondary);
         text-decoration: underline;
-        text-underline-offset: 5px;
+        text-underline-offset: 4px;
 
         &>img {
             @include transition(0.3s, ease-in-out);
@@ -641,7 +641,7 @@
 
         &:hover,
         &:focus {
-            color: #0703f5;
+            color: var(--primary);
             text-decoration: underline;
 
             &>img {

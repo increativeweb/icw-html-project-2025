@@ -9,6 +9,7 @@
     @media (max-width: 991px) {
         @include flexbox();
         @include flex-direction(column-reverse);
+        top: 66px;
     }
     @media (max-width: 767px) { 
         margin: 0px -12px 40px;
@@ -19,7 +20,7 @@
         @include justify-content(center);
         gap: 3px;
         margin: 0;
-        padding: 5px 0px;
+        padding: 10px 0px;
         max-width: 100%;
         &::-webkit-scrollbar {
             background-color: transparent;
@@ -56,7 +57,7 @@
                 font-weight: 500;
                 font-size: 14px;
                 border: 1px solid transparent;
-                padding: 12px 25px;
+                padding: 10px 20px;
                 white-space: nowrap;
                 text-decoration: none;
                 @include flexbox;
@@ -484,6 +485,26 @@
     }
     @media (max-width: 767px) {
         margin-bottom: 50px; 
+    }
+    a {
+        color: var(--secondary);
+        text-decoration: none;
+        text-underline-offset: 4px;
+        @include transition(0.2s, ease-in-out);
+
+        &>img {
+            @include transition(0.2s, ease-in-out);
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--primary);
+            text-decoration: underline;
+
+            &>img {
+                opacity: 0.8;
+            }
+        }
     }
 }
 .post-sidebar {

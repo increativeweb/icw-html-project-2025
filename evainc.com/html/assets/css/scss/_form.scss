@@ -1,0 +1,60 @@
+.wpcf7-form {
+    .form-group {
+        margin-bottom: 15px;
+        label {
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 10px;
+            line-height: 1;
+            span {
+                color: var(--secondary);
+            }
+        }
+        .form-control {
+            padding: 8px 15px;
+            border: 1px solid #E5E5E5;
+            @include border-radius(6px);
+            height: 44px;
+            font-size: 14px;
+            color: var(--black);
+            &::placeholder {
+                color: var(--dark-gray);
+            }
+            &:focus, &:active {
+                border-color: var(--primary);
+            }
+        }
+        textarea.form-control {
+            height: auto;
+        }
+    }
+    .wpcf7-not-valid-tip {
+		position: absolute;
+		white-space: nowrap;
+		background: #F00;
+		font-size: 10px;
+		color: #fff;
+		margin: 0px 0px 0px 5px;
+		padding: 2px 5px;
+		line-height: 100%;
+		top: -13px;
+		right: 0px;
+		-webkit-border-top-right-radius: 8px;
+		-moz-border-radius-topright: 8px;
+		border-top-right-radius: 8px;
+	}
+    .wpcf7-submit {
+        padding: 10px 25px;
+        height: 48px;
+        font-weight: 500;
+        font-size: 16px;
+        position: relative;
+        border: 1px solid transparent;
+        margin-top: 15px;
+        &:hover, &:focus {
+            background-color: var(--white)  !important;
+            border-color: var(--primary);
+        }
+    }
+}

@@ -182,24 +182,36 @@
             .tab-nav-block {
                 background: #F4F5F7;
                 padding: 0;
-                margin: 0 -12px;
-                // position: sticky;
-                // top: 100px;
+                margin: 0;
+                position: sticky;
+                top: 76px;
                 @media (max-width: 992px) {
                     display: flex;
+                    top: 66px;
+                }
+            }
+            .container-fluid {                
+                padding-left: calc((100% - 1320px) / 2);
+                @media (max-width: 1440px) {
+                    padding-left: calc((100% - 1140px) / 2);
+                }
+                @media (max-width: 1200px) {
+                    padding-left: calc((100% - 960px) / 2);
+                }
+                @media (max-width: 992px) {
+                    padding: 0;
                 }
             }
             .nav-tabs {
                 @include flexbox;
                 @include align-items(center);
-                @include justify-content(center);
                 @include flex-wrap(nowrap);
                 gap: 10px;
                 border: none;
-                padding: 5px 15px;
+                padding: 10px 0;
                 overflow: hidden;
                 overflow-x: auto;
-                @media (max-width: 1500px) {
+                @media (max-width: 1350px) {
                     @include justify-content(flex-start);
                 }
                 &::-webkit-scrollbar {
@@ -227,6 +239,12 @@
                     margin: 0;
                     &:hover, &:focus, &.active {
                         background: rgba(35, 63, 97, 0.1);
+                    }
+                    &:first-child {
+                        margin-left: 15px;
+                    }
+                    &:last-child {
+                        margin-right: 15px;
                     }
                 }
             }

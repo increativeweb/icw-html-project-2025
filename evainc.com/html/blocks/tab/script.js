@@ -40,7 +40,7 @@ if (jQuery(window).width() < 992) {
                 $('.tab-content-collapse-body').stop(true, true).slideUp(300, function () {
                     // STEP 2: After slideUp → scroll top
                     $('html, body').stop(true).animate({
-                        scrollTop: Math.max($tabPane.offset().top - 120, 0)
+                        scrollTop: Math.max($tabPane.offset().top - 70, 0)
                     }, 300, function () {
                         // STEP 3: After scroll → slideDown
                         $this.addClass("is-open");
