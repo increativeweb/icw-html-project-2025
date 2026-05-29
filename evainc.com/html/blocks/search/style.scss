@@ -1,0 +1,51 @@
+@import "../../assets/css/scss/mixins";
+
+.search-input-block {
+    background: #F4F5F7;
+    padding: 10px 0;
+    position: sticky;
+    top: 76px;
+    .search-form {
+        max-width: 870px;
+        margin: 0 auto;
+        @include flexbox;
+        @include align-items(center);
+        gap: 10px;
+        .form-group {
+            position: relative;
+            width: 100%;
+            @include border-radius(50px);
+            margin-bottom: 0;
+            .icon-search {
+                position: absolute;
+                top: 11px;
+                left: 11px;
+                display: inline-block;
+                line-height: 0.7;
+                svg {
+                    width: 14px;
+                    height: 14px
+                }
+            }
+            .form-control {
+                @include border-radius(50px);
+                height: 36px;
+                padding: 5px 10px 5px 36px;
+                font-size: 14px;
+            }
+        }
+        .btn {
+            height: 36px;
+            padding: 10px 25px;
+            margin-top: 0;
+            line-height: 1;
+        }
+    }
+}
+.search-result-block {
+    max-width: 870px;
+    margin: 30px auto;
+    .search-text {
+        font-size: 14px;
+    }
+}

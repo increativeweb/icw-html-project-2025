@@ -45,6 +45,13 @@
                     font-weight: 500;
                     font-size: 11px;
                     color: #233F61;
+                    text-decoration: none;
+                    @include transition(0.2s, ease-in-out);
+                    z-index: 4;
+                    &:hover, &:focus {
+                        background: rgba(35, 63, 97, 1);
+                        color: #ffffff;
+                    }
                 }
             }
             .card-title {

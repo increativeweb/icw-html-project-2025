@@ -78,6 +78,8 @@
             @media (max-width: 992px) {
                 margin: 0 -15px;
                 padding: 0;
+                position: sticky;
+                top: 76px;
             }
             .tab-pane {
                 @media (max-width: 992px) {

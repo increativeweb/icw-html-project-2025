@@ -152,6 +152,13 @@
             font-weight: 500;
             font-size: 11px;
             color: #233F61;
+            text-decoration: none;
+            @include transition(0.2s, ease-in-out);
+            z-index: 4;
+            &:hover, &:focus {
+                background: rgba(35, 63, 97, 1);
+                color: #ffffff;
+            }
         }
         .date {
             font-weight: 400;
@@ -481,10 +488,13 @@
         }
     }
 }
-.blog .single-header {
+.single-header {
     padding: 60px 0;
     @media (max-width: 992px) {
         padding-bottom: 0;
+    }
+    .energy-sector-labels { 
+        gap: 10px;
     }
     .media-block {
         max-width: 100%;
@@ -492,6 +502,7 @@
     .blog-meta-info {
         @include flexbox;
         @include flex-wrap(wrap);
+        @include align-items(center);
         gap: 20px 0;
         margin-top: 30px;
         @media (max-width: 575px) {
@@ -537,6 +548,12 @@
                 font-size: 11px;
                 color: #233F61;
                 width: max-content;
+                text-decoration: none;
+                @include transition(0.2s, ease-in-out);
+                &:hover, &:focus {
+                    background: rgba(35, 63, 97, 1);
+                    color: #ffffff;
+                }
             }
             &.user-info {
                 @media (max-width: 575px) {

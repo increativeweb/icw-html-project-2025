@@ -1,59 +1,86 @@
-// Tab Responsive collapse
-if (jQuery(window).width() < 992) {
-    // if (jQuery('.tab-content-collapse-title').length) {
-    //     jQuery(document).on("click", ".tab-content-collapse-title .btn-link-arrow", function () {
-
-    //         if ($(this).hasClass("is-open")) {
-    //             $(this).removeClass("is-open");
-    //             $(this).parents('.tab-pane').find(".tab-content-collapse-body").stop(true, true).slideUp(300);
-    //         } else {
-    //             $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
-    //             $('.tab-content-collapse-body').slideUp(300);
-    //             $(this).addClass("is-open");
-    //             $(this).parents('.tab-pane').find(".tab-content-collapse-body").stop(true, true).slideDown(300); 
-                
-    //             var collapsetop = $(this).parents('.tab-pane');
-    //             console.log(collapsetop);
-    //             $('html, body').animate({
-    //                 scrollTop: Math.max(collapsetop.offset().top - 120, 0)
-    //             }, 300);
-    //         }
-    //         return false;
-    //     });
-    // }
-    if (jQuery('.tab-content-collapse-title').length) {
-
-        jQuery(document).on("click", ".tab-content-collapse-title .btn-link-arrow", function () {
-
-            const $this = $(this);
-            const $tabPane = $this.parents('.tab-pane');
-            const $targetBody = $tabPane.find(".tab-content-collapse-body");
-
-            // Close current
-            if ($this.hasClass("is-open")) {
-                $this.removeClass("is-open");
-                $targetBody.stop(true, true).slideUp(300);
-            } else {
-                $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
-
-                // STEP 1: First slideUp (stay in same place)
-                $('.tab-content-collapse-body').stop(true, true).slideUp(300, function () {
-                    // STEP 2: After slideUp → scroll top
-                    $('html, body').stop(true).animate({
-                        scrollTop: Math.max($tabPane.offset().top - 70, 0)
-                    }, 300, function () {
-                        // STEP 3: After scroll → slideDown
-                        $this.addClass("is-open");
-                        $targetBody.stop(true, true).slideDown(300);
-                    });
-                });
+function initWhoWeHelpAccordion() {
+    const stickyOffset = 76;
+    const mobileBreakpoint = 992;
+    function mobileAccordion() {
+        if ($(window).width() < mobileBreakpoint) {
+            // Remove bootstrap tab classes
+            $('.tab-pane').removeClass('fade show active');
+            // Hide all bodies first
+            $('.tab-content-collapse-body').hide();
+            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
+            // Open first if none open
+            if (!$('.tab-pane.is-open').length) {
+                $('.tab-pane:first').addClass('is-open');
             }
+            // Restore open state
+            $('.tab-pane.is-open').each(function () {
+                $(this).addClass('show active').find('.tab-content-collapse-body').show();
+                $(this).find('.tab-content-collapse-title .btn-link-arrow').addClass('is-open');
+            });
+        } else {
+            // Desktop reset
+            $('.tab-pane').removeClass('is-open').addClass('fade');
+            $('.tab-content-collapse-body').removeAttr('style');
+            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
 
-            return false;
-        });
+            // Restore bootstrap first active tab
+            $('.tab-pane').removeClass('show active');
+            $('.tab-pane:first').addClass('show active');
+            $('.tab-nav .btn-link-arrow').removeClass('active').attr('aria-selected', 'false');
+            $('.tab-nav .btn-link-arrow:first').addClass('active').attr('aria-selected', 'true');
+        }
     }
+
+    // Mobile accordion click
+    $(document).on('click','.tab-content-collapse-title .btn-link-arrow',function (e) {
+        if ($(window).width() >= mobileBreakpoint) return;
+        e.preventDefault();
+        const $this = $(this);
+        const $tabPane = $this.closest('.tab-pane');
+        const $body = $tabPane.find('.tab-content-collapse-body');
+        // Already open → close
+        if ($tabPane.hasClass('is-open')) {
+            $tabPane.removeClass('is-open');
+            $this.removeClass('is-open');
+            $body.stop(true, true).slideUp(300);
+            return;
+        }
+        // Close all
+        $('.tab-pane').removeClass('is-open');
+        $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
+        $('.tab-content-collapse-body').stop(true, true).slideUp(300);
+
+        // Wait for collapse
+        setTimeout(function () {
+            const targetTop = $tabPane.find('.tab-content-collapse-title').offset().top - stickyOffset;
+            // Scroll correctly
+            $('html, body').stop(true).animate({
+                scrollTop: targetTop
+            }, 300, function () {
+                // Open selected
+                $tabPane.addClass('is-open show active');
+                $this.addClass('is-open');
+                $body.stop(true, true).slideDown(300);
+            });
+        }, 320);
+    });
+    // Initial load
+    mobileAccordion();
+    // Resize
+    let resizeTimer;
+
+    $(window).on('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            mobileAccordion();
+        }, 150);
+    });
 }
 
+// Init
+$(document).ready(function () {
+    initWhoWeHelpAccordion();
+});
 // Tab Wise add Class infocard
 if (jQuery('.classic-tab').length) {
     jQuery(document).on("click", ".nav-tabs .nav-link", function () {
