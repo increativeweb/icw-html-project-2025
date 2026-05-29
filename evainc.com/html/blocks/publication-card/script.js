@@ -18,6 +18,9 @@ jQuery(document).ready(function ($) {
 					autoWidth: true,
 					// focus: 'center'
                 },
+                992: {
+                    gap: 20,
+                },
                 767: {
 					perPage: 1,
                     gap: 20,
