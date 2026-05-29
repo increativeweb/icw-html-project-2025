@@ -36,7 +36,8 @@
             font-size: 16px;
             color: var(--black);
             @media (max-width: 767px) {
-                margin: auto;
+                margin: 0 20px;
+                max-width: 100%;
             }
             a {
                 color: rgba(0, 0, 0, 1);

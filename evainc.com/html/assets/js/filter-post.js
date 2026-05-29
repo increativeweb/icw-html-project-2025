@@ -274,3 +274,18 @@
 		$('a[data-term="all-terms"]').trigger('click');
 	});
 })(jQuery);
+
+if (jQuery('.nav-filter').length) {    
+    $(document).on('click', '.nav-filter li a', function () {
+        const $this = $(this);
+        // Small delay for Bootstrap tab update
+        setTimeout(function () {
+            $this[0].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center' // show on left side
+            });
+        }, 100);
+    });
+
+}

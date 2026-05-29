@@ -6,7 +6,7 @@
         @include justify-content(center);
         gap: 30px;
         @media (max-width: 992px) {
-            gap: 20px 10px;
+            gap: 10px 15px;
         }
         .label {
             font-size: 18px;
