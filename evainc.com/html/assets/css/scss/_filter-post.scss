@@ -2,7 +2,7 @@
 .posts-archive-categories {    
     position: relative;
     background: #F4F5F7;
-    margin: 0 -12px 50px;
+    margin: 0 0 50px;
     position: sticky;
     top: 76px;
     z-index: 6;
@@ -12,7 +12,7 @@
         top: 66px;
     }
     @media (max-width: 767px) { 
-        margin: 0px -12px 40px;
+        margin: 0px 0 40px;
     }
     ul.nav-filter {
         @include flexbox();
@@ -166,7 +166,7 @@
 
 .container-async {
     position: relative;
-    z-index: 9;
+    z-index: 8;
 }
 
 @keyframes lds-dual-ring {
@@ -348,7 +348,7 @@
 
 .posts-archive-list {
     .content {
-        --bs-gutter-y: 50px; 
+        --bs-gutter-y: 24px; 
         @media (max-width: 767px) {
             --bs-gutter-y: 30px; 
         }

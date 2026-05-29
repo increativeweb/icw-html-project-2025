@@ -118,7 +118,7 @@ function imageAnimation() {
                     mediaBlock.classList.add('is-complete');
                     setTimeout(() => {
                         mediaBlock.querySelectorAll('.imgSlideInUp').forEach((el) => el.classList.add('animate'));
-                    }, 20);
+                    }, 10);
                 }, 10);
             }
         }

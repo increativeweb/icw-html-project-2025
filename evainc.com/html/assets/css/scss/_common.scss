@@ -1243,7 +1243,8 @@ h5,
             transform: translateY(0%);
         }
         &.is-complete {    
-            animation: cubic-bezier(0.25, 0.1, 0.25, 1), 1.5s isComplete; 
+            // animation: cubic-bezier(0.25, 0.1, 0.25, 1), 1.5s isComplete; 
+            animation: linear, 1.5s isComplete; 
             animation-fill-mode: forwards;
             img { 
                 @include transition(0.6s, ease-in-out);
