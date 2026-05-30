@@ -62,7 +62,7 @@ function initWhoWeHelpAccordion() {
                 $this.addClass('is-open');
                 $body.stop(true, true).slideDown(300);
             });
-        }, 320);
+        }, 300);
     });
     // Initial load
     mobileAccordion();

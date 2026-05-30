@@ -5,6 +5,7 @@
     padding: 10px 0;
     position: sticky;
     top: 76px;
+    z-index: 7;
     .search-form {
         max-width: 870px;
         margin: 0 auto;
@@ -39,6 +40,10 @@
             padding: 10px 25px;
             margin-top: 0;
             line-height: 1;
+            @media (max-width: 767px) {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
         }
     }
 }
@@ -47,5 +52,82 @@
     margin: 30px auto;
     .search-text {
         font-size: 14px;
+    }
+}
+.search-list-block {
+    max-width: 870px;
+    margin: 30px auto;
+    .search-list {
+        position: relative;
+        padding: 20px;
+        border: 1px solid #E5E5E5;
+        border-radius: 16px;
+        @include flexbox;
+        @include align-items(flex-start);
+        gap: 30px;
+        @include transition(0.2s, ease-in-out);
+        margin-bottom: 30px;
+        @media (max-width: 767px) {
+            gap: 20px;
+        }
+        .title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-underline-offset: 5px;
+            @include transition(0.2s, ease-in-out);
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+        .sort-info {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: rgba(#000000, 0.8);
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
+        }
+        .search-category {
+            @include flexbox;
+            @include align-items(center);
+            @media (max-width: 575px) {
+                @include flex-direction(column);
+                @include align-items(flex-start);
+                gap: 10px 0;
+            }
+            .page {
+                font-weight: 500;
+                font-size: 12px;
+                color: #233F61;
+                padding-right: 10px;
+                margin-right: 10px;
+                border-right: 1px solid rgba(#737373, 0.5);
+                @media (max-width: 575px) {
+                   border-right: none;
+                }
+            }
+            .energy-sector-labels {
+                gap: 10px;
+                .label {
+                    gap: 5px;
+                    span[class^="icon-"] { 
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+        &:hover, &:focus {
+            background: rgba(#000000, 0.02);
+            .title {
+                color: var(--primary);
+                text-decoration: underline;
+            }
+        }
     }
 }
