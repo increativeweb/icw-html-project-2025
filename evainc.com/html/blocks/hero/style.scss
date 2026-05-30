@@ -7,13 +7,14 @@
     background-image: var(--hero-bg);
     background-size: auto;
     background-repeat: no-repeat;
-    background-position: calc(100% + 20%) bottom;
-    @media (min-width: 1920px) {
-        background-position: calc(100% + 20%) bottom;
+    background-position: calc(100% + 10%) bottom;
+    @media (min-width: 1600px) {
+        background-position: calc(100% + 25%) bottom;
+        background-size: 65%;
     }
     @media (min-width: 2100px) {
         background-position: calc(100% - 20%) bottom;
-        background-size: 47%;   
+        background-size: 40% 80%;  
     }
     @media (max-width: 1500px) {
         background-size: 65%;
@@ -26,6 +27,11 @@
         padding: 70px 0;
     }
     @media (max-width: 767px) {
+        padding: 310px 0 50px;
+        background-size: 100% 300px;
+        background-position: top center;
+    }
+    @media (max-width: 575px) {
         padding: 210px 0 50px;
         background-size: 100% 200px;
         background-position: top center;
