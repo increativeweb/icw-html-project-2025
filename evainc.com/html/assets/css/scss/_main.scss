@@ -201,7 +201,7 @@
 .page-header {
     position: relative;
     background-repeat: no-repeat;
-    background-position: bottom right;
+    background-position: calc(100% - 10%) bottom;
     background-size: 600px;
     background-image: var(--hero-bg);
     overflow: hidden;
@@ -227,7 +227,7 @@
         background-size: 350px;
     }
     @media (max-width: 575px) {
-        background-size: 280px;
+        background-size: 250px;
     }
     &::before {
         content: '';
