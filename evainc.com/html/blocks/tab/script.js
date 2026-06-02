@@ -1,86 +1,62 @@
-function initWhoWeHelpAccordion() {
-    const stickyOffset = 76;
-    const mobileBreakpoint = 992;
-    function mobileAccordion() {
-        if ($(window).width() < mobileBreakpoint) {
-            // Remove bootstrap tab classes
-            $('.tab-pane').removeClass('fade show active');
-            // Hide all bodies first
+function initResponsiveTabs() {
+    function handleLayout() {
+        if ($(window).width() < 992) {
+            // Mobile Accordion
             $('.tab-content-collapse-body').hide();
-            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
-            // Open first if none open
-            if (!$('.tab-pane.is-open').length) {
-                $('.tab-pane:first').addClass('is-open');
+            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-active');
+            const $activePane = $('.tab-pane.is-active').first();
+            if ($activePane.length) {
+                $activePane.find('.tab-content-collapse-body').show();
+                $activePane.find('.tab-content-collapse-title .btn-link-arrow').addClass('is-active');
             }
-            // Restore open state
-            $('.tab-pane.is-open').each(function () {
-                $(this).addClass('show active').find('.tab-content-collapse-body').show();
-                $(this).find('.tab-content-collapse-title .btn-link-arrow').addClass('is-open');
-            });
         } else {
-            // Desktop reset
-            $('.tab-pane').removeClass('is-open').addClass('fade');
-            $('.tab-content-collapse-body').removeAttr('style');
-            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
-
-            // Restore bootstrap first active tab
-            $('.tab-pane').removeClass('show active');
-            $('.tab-pane:first').addClass('show active');
-            $('.tab-nav .btn-link-arrow').removeClass('active').attr('aria-selected', 'false');
-            $('.tab-nav .btn-link-arrow:first').addClass('active').attr('aria-selected', 'true');
+            // Desktop Tabs
+            $('.tab-content-collapse-body').show();
+            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-active');
+            const $activeNav = $('.tab-nav .btn-link-arrow.is-active').first();
+            if ($activeNav.length) {
+                const targetId = $activeNav.attr('id');
+                $('.tab-pane').removeClass('is-active');
+                $('.tab-pane[data-id="' + targetId + '"]').addClass('is-active');
+            }
         }
     }
-
-    // Mobile accordion click
-    $(document).on('click','.tab-content-collapse-title .btn-link-arrow',function (e) {
-        if ($(window).width() >= mobileBreakpoint) return;
-        e.preventDefault();
-        const $this = $(this);
-        const $tabPane = $this.closest('.tab-pane');
-        const $body = $tabPane.find('.tab-content-collapse-body');
-        // Already open → close
-        if ($tabPane.hasClass('is-open')) {
-            $tabPane.removeClass('is-open');
-            $this.removeClass('is-open');
-            $body.stop(true, true).slideUp(300);
-            return;
-        }
-        // Close all
-        $('.tab-pane').removeClass('is-open');
-        $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-open');
-        $('.tab-content-collapse-body').stop(true, true).slideUp(300);
-
-        // Wait for collapse
-        setTimeout(function () {
-            const targetTop = $tabPane.find('.tab-content-collapse-title').offset().top - stickyOffset;
-            // Scroll correctly
-            $('html, body').stop(true).animate({
-                scrollTop: targetTop
-            }, 300, function () {
-                // Open selected
-                $tabPane.addClass('is-open show active');
-                $this.addClass('is-open');
-                $body.stop(true, true).slideDown(300);
-            });
-        }, 300);
-    });
-    // Initial load
-    mobileAccordion();
-    // Resize
-    let resizeTimer;
-
+    handleLayout();
     $(window).on('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-            mobileAccordion();
-        }, 150);
+        handleLayout();
+    });
+    // Desktop Tabs
+    $(document).on('click', '.tab-nav .btn-link-arrow', function () {
+        if ($(window).width() < 992) return;
+        const targetId = $(this).attr('id');
+        $('.tab-nav .btn-link-arrow').removeClass('is-active');
+        $(this).addClass('is-active');
+        $('.tab-pane').removeClass('is-active').stop(true, true).hide();
+        $('.tab-pane[data-id="' + targetId + '"]').addClass('is-active').fadeIn(300);
+    });
+    // Mobile Accordion
+    $(document).on('click', '.tab-content-collapse-title .btn-link-arrow', function () {
+        if ($(window).width() >= 992) return;
+        const $btn = $(this);
+        const $pane = $btn.closest('.tab-pane');
+        const $body = $pane.find('.tab-content-collapse-body');
+        if ($btn.hasClass('is-active')) {
+            $btn.removeClass('is-active');
+            $pane.removeClass('is-active');
+            $body.stop(true, true).slideUp(300);
+        } else {
+            $('.tab-content-collapse-title .btn-link-arrow').removeClass('is-active');
+            $('.tab-pane').removeClass('is-active');
+            $('.tab-content-collapse-body').stop(true, true).slideUp(300);
+            $btn.addClass('is-active');
+            $pane.addClass('is-active');
+            $body.stop(true, true).slideDown(300);
+        }
     });
 }
-
-// Init
-$(document).ready(function () {
-    initWhoWeHelpAccordion();
-});
+if ($('.tab-block').length) {
+    initResponsiveTabs();
+}
 // Tab Wise add Class infocard
 if (jQuery('.classic-tab').length) {
     jQuery(document).on("click", ".nav-tabs .nav-link", function () {
