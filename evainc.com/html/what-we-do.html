@@ -88,30 +88,26 @@
                                 <h2 class="title">Explore EVA’s Consulting Services by Client Type</h2>
                                 <div class="sort-info">EVA’s expertise can be tapped via project specific consulting.</div>
                             </div>
-                            <div class="nav tab-nav flex-column d-none d-lg-block" id="serve-tab" role="tablist" aria-orientation="vertical">
-                                <button class="btn-link-arrow active" id="energy-traders-marketers-tab" data-bs-toggle="tab" data-bs-target="#energy-traders-marketers" type="button" role="tab" aria-selected="true">Energy traders & marketers<span class="arrow-icon"></span></button>
-                                <button class="btn-link-arrow" id="utilities-power-generators-tab" data-bs-toggle="tab" data-bs-target="#utilities-power-generators" type="button" role="tab" aria-selected="false">Utilities & power generators<span class="arrow-icon"></span></button>
-                                <button class="btn-link-arrow" id="fuel-producers-developers-tab" data-bs-toggle="tab" data-bs-target="#fuel-producers-developers" type="button" role="tab" aria-selected="false">Fuel producers & developers<span class="arrow-icon"></span></button>
-                                <button class="btn-link-arrow" id="renewable-energy-developers-tab" data-bs-toggle="tab" data-bs-target="#renewable-energy-developers" type="button" role="tab" aria-selected="false">Renewable energy developers<span class="arrow-icon"></span></button>
-                                <button class="btn-link-arrow" id="financial-institutional-tab" data-bs-toggle="tab" data-bs-target="#financial-institutional" type="button" role="tab" aria-selected="false">Financial & institutional<span class="arrow-icon"></span></button>
-                                <button class="btn-link-arrow" id="esg-regulatory-compliance-tab" data-bs-toggle="tab" data-bs-target="#esg-regulatory-compliance" type="button" role="tab" aria-selected="false">ESG & regulatory compliance<span class="arrow-icon"></span></button>
+                            <div class="nav tab-nav flex-column d-none d-lg-block">
+                                <button class="btn-link-arrow is-active" id="energy-traders-marketers" type="button">Energy traders & marketers<span class="arrow-icon"></span></button>
+                                <button class="btn-link-arrow" id="utilities-power-generators" type="button">Utilities & power generators<span class="arrow-icon"></span></button>
+                                <button class="btn-link-arrow" id="fuel-producers-developers" type="button">Fuel producers & developers<span class="arrow-icon"></span></button>
+                                <button class="btn-link-arrow" id="renewable-energy-developers" type="button">Renewable energy developers<span class="arrow-icon"></span></button>
+                                <button class="btn-link-arrow" id="financial-institutional" type="button">Financial & institutional<span class="arrow-icon"></span></button>
+                                <button class="btn-link-arrow" id="esg-regulatory-compliance" type="button">ESG & regulatory compliance<span class="arrow-icon"></span></button>
                             </div>
                         </div>
                         <div class="tab-content-block">
                             <div class="tab-content" id="serve-tabContent">
-                                <div class="tab-pane fade show active" id="energy-traders-marketers" role="tabpanel" aria-labelledby="energy-traders-marketers-tab" tabindex="0">
+                                <div class="tab-pane is-active" data-id="energy-traders-marketers">
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">Energy traders & marketers<span class="arrow-icon"></span></button>
                                     </div>
                                     <div class="tab-content-collapse-body">
                                         <div class="row flex-lg-row-reverse">
                                             <div class="col-md-6 col-lg-12 col-xl-6">
-                                                <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                <div class="media-block ratio ratio-3x4"> 
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-lg-12 col-xl-6">
@@ -133,22 +129,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="utilities-power-generators" role="tabpanel" aria-labelledby="utilities-power-generators-tab" tabindex="0">
+                                <div class="tab-pane" data-id="utilities-power-generators">
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">Utilities & power generators<span class="arrow-icon"></span></button>
                                     </div>
                                     <div class="tab-content-collapse-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <div class="row flex-lg-row-reverse">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="tab-info">
                                                     <h3 class="title">Utilities & power generators</h3>
                                                     <div class="sort-info">
@@ -167,22 +159,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="fuel-producers-developers" role="tabpanel" aria-labelledby="fuel-producers-developers-tab" tabindex="0">    
+                                <div class="tab-pane" data-id="fuel-producers-developers">    
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">Fuel producers & developers<span class="arrow-icon"></span></button>
                                     </div>                                
                                     <div class="tab-content-collapse-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <div class="row flex-lg-row-reverse">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="tab-info">
                                                     <h3 class="title">Fuel producers & developers</h3>
                                                     <div class="sort-info">
@@ -201,22 +189,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="renewable-energy-developers" role="tabpanel" aria-labelledby="renewable-energy-developers-tab" tabindex="0">
+                                <div class="tab-pane" data-id="renewable-energy-developers">
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">Renewable energy developers<span class="arrow-icon"></span></button>
                                     </div>
                                     <div class="tab-content-collapse-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <div class="row flex-lg-row-reverse">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="tab-info">
                                                     <h3 class="title">Renewable energy developers</h3>
                                                     <div class="sort-info">
@@ -235,22 +219,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="financial-institutional" role="tabpanel" aria-labelledby="financial-institutional-tab" tabindex="0">
+                                <div class="tab-pane" data-id="financial-institutional">
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">Financial & institutional<span class="arrow-icon"></span></button>
                                     </div>
                                     <div class="tab-content-collapse-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <div class="row flex-lg-row-reverse">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="tab-info">
                                                     <h3 class="title">Financial & institutional</h3>
                                                     <div class="sort-info">
@@ -269,22 +249,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="esg-regulatory-compliance" role="tabpanel" aria-labelledby="esg-regulatory-compliance-tab" tabindex="0">
+                                <div class="tab-pane" data-id="esg-regulatory-compliance">
                                     <div class="tab-content-collapse-title">
                                         <button class="btn-link-arrow" type="button">ESG & regulatory compliance<span class="arrow-icon"></span></button>
                                     </div>
                                     <div class="tab-content-collapse-body">
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <div class="row flex-lg-row-reverse">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="media-block ratio ratio-3x4">
-                                                    <div class="animated-img">
-                                                        <div class="imgSlideInUp">
-                                                            <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
-                                                        </div>
-                                                    </div>
+                                                    <img src="uploads/img-journey-1.jpg" alt="Energy traders & marketers">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                            <div class="col-md-6 col-lg-12 col-xl-6">
                                                 <div class="tab-info">
                                                     <h3 class="title">ESG & regulatory compliance</h3>
                                                     <div class="sort-info">
