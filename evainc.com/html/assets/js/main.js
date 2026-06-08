@@ -109,6 +109,14 @@ jQuery(document).ready(function ($) {
 
 });
 
+/* WOW Animation - Init */
+try {
+    new WOW().init();
+
+} catch (e) {
+    //
+};
+
 // Image Animation
 function imageAnimation() {
     let winHeight = window.innerHeight;
