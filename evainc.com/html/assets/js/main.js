@@ -51,12 +51,51 @@ jQuery(document).ready(function ($) {
         }  
         $('.main-header').on('click', '.search-toggle', function(e) {
             var selector = $(this).data('selector');
-
             $(selector).toggleClass('show').find('.search-input').focus();
-            $(this).toggleClass('active');
-
+            setTimeout(() => {
+                $(this).parents('.main-header').find('.search-form-block').toggleClass('active');
+            }, 200);
             e.preventDefault();
-        });      
+        });
+
+        // custom jquery validation
+        $('.search-form').on('submit', function(e){
+            let valid = true;
+            $('.error').remove();
+            const search = $('#search').val();  
+            if (!search) {
+                valid = false;
+                $('#search').after('<span class="error wpcf7-not-valid-tip" aria-hidden="true">Please enter Search Keyword.</span>');
+            } 
+            if (!valid) {
+                e.preventDefault();
+            }
+        })        
+
+        function toggleResetButton() {
+            if ($('#search').val().trim() !== '') {
+                $('.search-reset').show();
+            } else {
+                $('.search-reset').hide();
+                $('#search').val('');
+            }
+        }
+
+        // Check on page load
+        toggleResetButton();
+
+        // Check while typing
+        $('#search').on('input', function () {
+            toggleResetButton();
+        });
+
+        // $('.search-reset').on('click', function () {
+        //     const url = new URL(window.location.href);
+        //     // Remove only the search parameter
+        //     url.searchParams.delete('s');
+        //     // Redirect with remaining query parameters intact
+        //     window.location.href = url.pathname + url.search;
+        // });
     }
 
 
