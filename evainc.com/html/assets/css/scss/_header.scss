@@ -57,6 +57,7 @@
                 height: 88px;
                 @media (max-width: 992px) {
                     height: 66px;
+                    min-width: 153px;
                 }
             }
         }
@@ -686,6 +687,10 @@
                         background-color: rgba(35, 63, 97, 0.8);         
                     }
                 }
+                @media (max-width: 992px) {
+                    height: 32px;
+                    width: 32px;  
+                }
                 @media (max-width: 575px) {
                     margin-left: auto;
                 }
@@ -710,7 +715,10 @@
                     padding: 5px 48px 5px 15px;
                     border: 1px solid #e5e5e5;
                     background: #e9ebef;
-                    @include border-radius(30px);        
+                    @include border-radius(30px);
+                    @media (max-width: 992px) {
+                        height: 32px;
+                    }        
                     &:focus {
                         outline: none;
                     }

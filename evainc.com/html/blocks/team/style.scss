@@ -18,8 +18,10 @@
             overflow: hidden;
             margin-bottom: 30px;
             @include border-radius(50%);
-            cursor: url('../../assets/images/icon-cursor-team.svg') 16 16, pointer;
+            cursor: none;
+            // cursor: url('../../assets/images/icon-cursor-team.svg') 16 16, pointer;
             z-index: 3;
+            position: relative;
             @media (max-width: 992px) {
                 margin-bottom: 20px;
             }
@@ -68,6 +70,40 @@
                     }
                 }
             }
+        }
+    }
+    /* THE CUSTOM CURSOR */
+    .cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background: transparent;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.35s cubic-bezier(0.23, 1, 0.32, 1), height 0.35s cubic-bezier(0.23, 1, 0.32, 1), background 0.3s ease;
+        will-change: transform, width, height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cursor-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+        &.is-view {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+        }
+        &.is-view .cursor-label {
+            opacity: 1;
         }
     }
 }
