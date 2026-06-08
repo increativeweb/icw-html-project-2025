@@ -48,7 +48,15 @@ jQuery(document).ready(function ($) {
             $(".menu-item-has-children").on("mouseleave", function () {
                 $('.bg-overlay').removeClass('is-active');
             });
-        }        
+        }  
+        $('.main-header').on('click', '.search-toggle', function(e) {
+            var selector = $(this).data('selector');
+
+            $(selector).toggleClass('show').find('.search-input').focus();
+            $(this).toggleClass('active');
+
+            e.preventDefault();
+        });      
     }
 
 
