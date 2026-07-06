@@ -1,0 +1,8 @@
+.main-footer {
+    background-color: var(--black);
+    padding: 50px 0 20px;
+    .footer-top-content-block {
+        @include flexbox;
+        @include align-items(flex-start);
+    }
+}

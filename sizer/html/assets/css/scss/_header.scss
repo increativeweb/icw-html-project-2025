@@ -1,0 +1,147 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 85.77%);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    width: 100%;
+    @include transition(0.3s, ease-in-out);
+    &.show-up {
+        transform: translateY(-100%);
+    }
+    @media (max-width: 1200px) {
+        &.is-visible  {
+            .navbar {
+                .navbar-collapse {
+                    transition: transform 0.3s ease-in-out;
+                    @include transform(translateX(0%));
+                }
+            }
+        }
+    }
+    .navbar {
+        padding: 20px 0;
+        z-index: 11;
+        @media (max-width: 992px) {
+            padding: 10px 0;
+        }
+        .navbar-brand {
+            padding: 0;
+            img {
+                height: 90px;
+                @media (max-width: 992px) {
+                    height: 50px;
+                    min-width: 100px;
+                }
+            }
+        }
+        .navbar-collapse {
+            @media (max-width: 992px) {
+                position: fixed;
+                top: 5px;
+                right: 5px;
+                bottom: 0;
+                z-index: 15;
+                min-height: calc(100vh - 10px);
+                width: 100%;
+                max-width: 320px;
+                background: var(--black);
+                @include flexbox;
+                @include flex-direction(column);
+                @include align-items(center);
+                @include justify-content(center);
+                transition: transform 0.3s ease-in-out;
+                @include transform(translateX(110%));
+                @include border-radius(8px);
+                box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.05);
+                overflow: hidden;
+                overflow-y: auto;
+            }
+        }
+        .mainMenu {
+            @include flexbox;
+            @include justify-content(center);
+            @include align-items(center);
+            gap: 30px;
+            width: 100%;
+            & > li {
+                line-height: 1;
+                & > a {             
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: var(--white);
+                    text-decoration: none;
+                    padding: 0;
+                    @include inline-flex;
+                    @include align-items(center);
+                    line-height: 1;
+                    @include transition(0.2s, ease-in-out);
+                    @media (max-width: 992px) {
+                        font-size: 16px;
+                    }
+                }
+                &:hover, &:focus, &.current-menu-item {
+                    & > a {                        
+                        color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+            }  
+        }
+        .nav-right {
+            @include flexbox;
+            @include align-items(center);
+            position: relative;
+            gap: 30px;
+            margin-left: auto;
+            .navbar-toggler {
+                @media (min-width: 992px) {
+                    display: none;
+                }
+                display: inline-block;
+                cursor: pointer;
+                border: none;
+                padding: 0;
+                background-color: transparent;
+                z-index: 15;
+                span {
+                    width: 25px;
+                    height: 2px;
+                    margin: 5px 0;
+                    background-color: var(--white);
+                    @include border-radius(4px);
+                    display: block;
+                    @include transition(0.2s, ease-in-out);
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    span {
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+
+                &.is-visible {
+                    span:nth-child(1) {
+                        @include transform(rotate(-45deg) translate(-4px, 5px));
+                    }
+
+                    span:nth-child(2) {
+                        @include opacity(0);
+                        visibility: hidden;
+                    }
+
+                    span:nth-child(3) {
+                        @include transform(rotate(45deg) translate(-4.5px, -6px));
+                    }
+                }
+            }
+            .nav-right-menu {
+                @include flexbox;
+                @include align-items(center);
+                gap: 20px;
+            } 
+        }   
+    }
+}
