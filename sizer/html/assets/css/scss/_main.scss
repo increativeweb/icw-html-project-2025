@@ -7,6 +7,9 @@
     clear: both;
     content-visibility: auto;
     @media (max-width: 992px) {
+        padding: 70px 0;
+    }
+    @media (max-width: 767px) {
         padding: 50px 0;
     }
 
@@ -58,11 +61,14 @@
     &.section-title-flex {
         .section-title {
             @include flexbox;
-            @include align-items(flex-end);
+            @include align-items(flex-start);
             @include justify-content(space-between);
-            gap: 10px;
+            gap: 50px;
+            @media (max-width: 992px) {
+                gap: 30px;
+            }
             @media (max-width: 767px) {
-                gap: 0;
+                gap: 10px;
                 @include flex-wrap(wrap);
             }
             .title {
@@ -70,6 +76,10 @@
             }
             .left-block {
                 max-width: 400px;
+                min-width: 400px;
+                @media (max-width: 992px) {
+                    min-width: 280px;
+                }
             }
             .right-block {
                 max-width: 650px;
@@ -106,11 +116,7 @@
         line-height: 1;
         display: inline-block;
         margin-bottom: 10px;
-        // font-family: var(--font-heading);
         color: var(--secondary);
-        @media (max-width: 992px) {
-            font-size: 16px;
-        }
     }
 
     h1,
@@ -132,10 +138,7 @@
         color: var(--black);
         strong {
             font-weight: 500;
-            font-size: 20px;
-            @media (max-width: 992px) {
-                font-size: 18px;
-            }
+            font-size: clamp(16px, 1.5vw, 18px);
         }
         h3 {
             font-weight: 400;
@@ -156,10 +159,9 @@
     }
 
     .action {
-        margin-top: 30px;
+        margin-top: 40px;
         @include flexbox;
         @include align-items(center);
-        @include justify-content(center);
         @include flex-wrap(wrap);
         gap: 10px 12px;
         @media (max-width: 992px) {
@@ -172,6 +174,7 @@
     }
 }
 
+// Hero Section
 .hero-section {
     min-height: 750px;
     padding: 180px 0 100px;
@@ -190,6 +193,123 @@
             font-size: 18px;
             @media (max-width: 992px) {
                 font-size: 16px;
+            }
+        }
+    }
+}
+
+// Info Card
+.info-card {
+    @include flexbox;
+    @include flex-direction(column);
+    height: 100%;
+    background: #F7F7F7;
+    @include border-radius(10px);
+    overflow: hidden;
+    position: relative;
+    @include transition(0.2s, ease-in-out);
+    .card-img {
+        img {
+            @include transition(0.2s, ease-in-out);
+            object-fit: cover;
+            object-position: center;
+        }
+        .card-img-splide {
+            .splide__arrows {
+                .splide__arrow { 
+                    left: -20px;
+                    @include transition(0.2s, ease-in-out);
+                    &.splide__arrow--next {
+                        left: auto;
+                        right: -20px;
+                    }
+                }
+            }
+        }
+    }
+    .card-body {
+        padding: 30px 30px 0;
+        @media (max-width: 992px) {
+            padding: 20px 20px 0;
+        }
+        .card-title {
+            font-family: var(--font-heading);
+            margin-bottom: 15px;
+            @media (max-width: 992px) {
+                margin-bottom: 10px;
+            }
+        }
+        .card-info {
+            font-size: 16px;
+            color: #5E5E5E;
+        }
+    }
+    .card-footer {
+        padding: 30px;
+        @media (max-width: 992px) {
+            padding: 20px;
+        }
+        a {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            background: #45D354;
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            color: var(--white);
+            @include transition(0.2s, ease-in-out);
+            @include border-radius(50%);
+            svg, img, .icon {
+                width: 18px;
+                height: 18px;
+                flex: none;
+            }
+            &:hover, &:focus {
+                @include transform(scale(1.07));
+            }
+        }
+    }
+    &:hover, &:focus {
+        @include box-shadow(0px 0px 0px 1px #D9D9D9);
+        .card-img {
+            .card-img-splide {
+                .splide__arrows {
+                    .splide__arrow { 
+                        left: 10px;
+                        &.splide__arrow--next {
+                            left: auto;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// CTA Section
+.cta-section {
+    .cta-block {
+        background: var(--black);
+        @include border-radius(20px);
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        gap: 30px;
+        padding: 50px;
+        color: var(--white);
+        @media (max-width: 992px) {
+            padding: 30px;
+        }
+        @media (max-width: 767px) {
+            padding: 25px;
+            @include flex-wrap(wrap);
+        }
+        .cta-content {
+            max-width: 620px;
+            .sort-info {
+                max-width: 490px;
             }
         }
     }

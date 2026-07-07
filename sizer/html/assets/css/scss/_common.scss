@@ -70,7 +70,7 @@ body ::selection {
     --bs-tooltip-opacity: 1;
     --bs-tooltip-max-width: 224px;
     --bs-tooltip-font-size: 12px;
-
+    --bs-tooltip-border-radius: 2px;
     .tooltip-inner {
         text-align: center;
         font-weight: 500;
@@ -201,13 +201,11 @@ img {
     transform: translateY(16px);
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
-
     &.active-progress {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-
     &::after {
         position: absolute;
         content: url(../images/icons/arrow-up.svg);
@@ -216,7 +214,7 @@ img {
         font-size: 28px;
         color: var(--text-white);
         left: 0;
-        top: -5px;
+        top: -6px;
         height: 40px;
         width: 40px;
         cursor: pointer;
@@ -275,25 +273,78 @@ img {
 // Video Player CSS
 .media-block {
     max-width: 100%;
-    @include border-radius(16px);
+    @include border-radius(20px);
     position: relative;
     overflow: hidden;
     line-height: 0.7;
 
-    img {
+    img, video {
         max-width: 100%;
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
-
-        &.mw-50 {
-            @media (max-width: 992px) {
-                max-width: 50%;
+    }
+    &.is-video {
+        height: 100%;
+        .play-icon {
+            position: absolute;
+            top: 0; 
+            bottom: 0;
+            left: 0; 
+            right: 0;
+            cursor: pointer;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            @include transition(0.3s, ease-in-out);
+            svg {
+                width: 60px;
+                height: 60px;
+                flex: none;
+                @include border-radius(50%);
+                @include transition(0.2s, ease-in-out);
+                @include transform(scale(1));
+                z-index: 2;
+                path {                    
+                    @include transition(0.2s, ease-in-out);
+                }
+            }
+            &::after {
+                content: '';
+                top: 0;
+                left: 0;
+                @include border-radius(20px);
+                opacity: 0.2;
+                background: var(--black);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            &.d-none {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+        video {
+            vertical-align: middle;
+            max-width: 100%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            .play-icon {
+                svg {
+                    @include transform(scale(1.1));
+                    path {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
-
     &.text-end {
         @media (max-width: 992px) {
             text-align: center !important;
@@ -355,7 +406,7 @@ h2,
 
 h3,
 .h3 {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(18px, 2vw, 24px);
 }
 
 h4,
@@ -453,66 +504,39 @@ h5,
         
     }
 }
+.icon {
+    background-size: contain !important;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    &.icon-wp {
+        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTguNzk1MyAzLjE5NDIxQzE2LjgxMjcgMS4yMjA3NSAxNC4wNzM4IDAgMTEuMDQ4MyAwQzQuOTk3ODkgMCAwLjA5MjEzMDQgNC44ODIyOSAwLjA5MjEzMDQgMTAuOTA1NEMwLjA5MjEzMDQgMTIuOTA5NiAwLjYzNTMzMSAxNC43ODcgMS41ODI0MyAxNi40MDFMMS41NTQ0MiAxNi4zNDk2TDAgMjJMNS44MDcxNiAyMC40ODM2QzcuMzE4ODQgMjEuMzE5MiA5LjEyMjM4IDIxLjgxMDcgMTEuMDQxNiAyMS44MTA3SDExLjA0NjFDMTcuMDk2NSAyMS44MDg1IDIyIDE2LjkyNTUgMjIgMTAuOTAzMkMyMiA3Ljg5MzA5IDIwLjc3NSA1LjE2ODQgMTguNzk0NiAzLjE5NDk0TDE4Ljc5NTMgMy4xOTQyMVpNMTEuMDQ2MSAxOS45Njg2SDExLjA0MjRDOS4zMzMxOCAxOS45Njg2IDcuNzMzMDYgMTkuNDk5MSA2LjM2NzMyIDE4LjY4MjVMNi40MDg1OSAxOC43MDUzTDYuMDc2MTggMTguNTA5NEwyLjYzMDUxIDE5LjQwOTZMMy41NDk2IDE2LjA2NUwzLjMzMjkxIDE1LjcyMjRDMi40NTk1MSAxNC4zNTYzIDEuOTQwNjMgMTIuNjkxNyAxLjk0MDYzIDEwLjkwNjFDMS45NDA2MyA1LjkwMTI5IDYuMDE3MjIgMS44NDM2IDExLjA0NTMgMS44NDM2QzE2LjA3MzQgMS44NDM2IDIwLjE1IDUuOTAxMjkgMjAuMTUgMTAuOTA2MUMyMC4xNSAxNS45MTA5IDE2LjA3NDkgMTkuOTY4NiAxMS4wNDYxIDE5Ljk2ODZaTTE2LjA0MDMgMTMuMTgxOEMxNS43NjY4IDEzLjA0NTQgMTQuNDIxIDEyLjM4NzMgMTQuMTcwNCAxMi4yOTU2QzEzLjkxOTEgMTIuMjA0NiAxMy43MzYzIDEyLjE1OTkgMTMuNTUzNSAxMi40MzI4QzEzLjM3MjIgMTIuNzA0OSAxMi44NDc0IDEzLjMxODMgMTIuNjg3NSAxMy41MDAyQzEyLjUyODMgMTMuNjgyOSAxMi4zNjc2IDEzLjcwNDkgMTIuMDk0MSAxMy41NjkyQzExLjI0NjUgMTMuMjI3MyAxMC41MTgzIDEyLjc3MTcgOS44ODUyMiAxMi4yMTA1TDkuODkyNTkgMTIuMjE3MUM5LjMwMzcgMTEuNjc0MiA4Ljc5ODgyIDExLjA1MjggOC4zOTEyNCAxMC4zNjc2TDguMzcwNiAxMC4zMjk1QzguMjExNCAxMC4wNTczIDguMzUzNjUgOS45MDk4MyA4LjQ5IDkuNzc0MTFDOC42MTMwOSA5LjY1MjMzIDguNzY0MTggOS40NTU3MiA4LjkwMDUzIDkuMjk3MjVDOS4wMDgxNCA5LjE2NTkzIDkuMTAwMjcgOS4wMTU1NCA5LjE3MDI5IDguODU0MTRMOS4xNzQ3MSA4Ljg0MTY3QzkuMjA2NDEgOC43Nzc4NCA5LjIyNDgzIDguNzAzNzUgOS4yMjQ4MyA4LjYyNDUyQzkuMjI0ODMgOC41Mjg0MSA5LjE5NzU2IDguNDM4OTEgOS4xNTAzOSA4LjM2MjYxTDkuMTUxODcgOC4zNjQ4MUM5LjA4MjU4IDguMjI4MzYgOC41MzU3IDYuODg3MjkgOC4zMDc5NSA2LjM0MTQ3QzguMDg1MzYgNS44MTAzMiA3Ljg1OTA5IDUuODgyOTUgNy42OTE3OCA1Ljg3NDE1QzcuNTMyNTggNS44NjY4MSA3LjM0OTc5IDUuODY1MzUgNy4xNjcwMSA1Ljg2NTM1QzYuODc1ODggNS44NzI2OCA2LjYxNzE3IDYuMDAzMjcgNi40Mzg4MSA2LjIwNTAyTDYuNDM4MDcgNi4yMDY0OEM1Ljg0Njk2IDYuNzY0NzcgNS40Nzk5MiA3LjU1MTk1IDUuNDc5OTIgOC40MjQyNEM1LjQ3OTkyIDguNDQzMzEgNS40Nzk5MiA4LjQ2MzEyIDUuNDgwNjUgOC40ODIxOVY4LjQ3OTI2QzUuNTc3MjEgOS41NTU0OSA1Ljk4MjU4IDEwLjUyMTcgNi42MDYxMiAxMS4zMDg5TDYuNTk3MjcgMTEuMjk3OUM3Ljc3OTQ5IDEzLjA0MzIgOS4zNTUyOSAxNC40MzkyIDExLjIwNDUgMTUuMzc5OEwxMS4yNzM4IDE1LjQxMTNDMTEuNjc3NyAxNS41OTMyIDEyLjE5NTEgMTUuNzg3NiAxMi43MjQzIDE1Ljk1NDJMMTIuODM0MSAxNS45ODQzQzEzLjE1OTkgMTYuMDg3IDEzLjUzNTEgMTYuMTQ2NCAxMy45MjQyIDE2LjE0NjRDMTQuMTQ3NSAxNi4xNDY0IDE0LjM2NzIgMTYuMTI2NiAxNC41Nzk1IDE2LjA4OTJMMTQuNTU2NiAxNi4wOTIxQzE1LjM0NDUgMTUuOTI4NSAxNS45OTgzIDE1LjQ1NTMgMTYuMzk3IDE0LjgwOUwxNi40MDM2IDE0Ljc5NjVDMTYuNTI1MiAxNC41MjggMTYuNTk2IDE0LjIxNDggMTYuNTk2IDEzLjg4NTRDMTYuNTk2IDEzLjc0OTYgMTYuNTg0MiAxMy42MTY4IDE2LjU2MTQgMTMuNDg3N0wxNi41NjM2IDEzLjUwMTdDMTYuNDk1OCAxMy4zODggMTYuMzEzIDEzLjMyMDUgMTYuMDM4OCAxMy4xODMzTDE2LjA0MDMgMTMuMTgxOFoiIGZpbGw9IndoaXRlIi8+PC9zdmc+') no-repeat center center;
+    }
+}
 
 .splide__arrows {
     .splide__arrow {
-        background: transparent;
-        width: 40px;
-        height: 40px;
-        border: 1px solid #e5e5e5;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-image: url('data:image/svg+xml,<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.75 0.75L0.75 3.75L3.75 6.75" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 5px;
+        width: 18px;
+        height: 18px;
+        border: none;
         opacity: 1;
         @include transition(0.2s, ease-in-out);
-        top: auto;
-        left: calc(50% - 48px);
-        bottom: -65px;
-        transform: scaleX(-1);
+        left: 10px;
         z-index: 1;
-        opacity: 1;
         overflow: hidden;
-        &::before {
-            content: '';
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            background: rgba(#e5e5e5, 0.5) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-            background-size: 18px !important;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-        &::after {
-            content: '';
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            background-color: var(--primary);
-            -webkit-transform: scale(0);
-            transform: scale(0);
-            will-change: transform;
-            transform-origin: center;
-            border-radius: 50%;
-            transition: all .2s ease-in-out;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
         &.splide__arrow--next {
-            transform: unset;
             left: auto;
-            right: calc(50% - 48px)
+            right: 10px;
+            transform: scaleX(-1);
         }
         &:hover,
         &:focus {
-            opacity: 1;
-            border-color: transparent;
-            &::before {                
-                background: rgba(#e5e5e5, 0) url('data:image/svg+xml,<svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6H23M23 6L18 1M23 6L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-            }
-            &::after {
-                transform: scale(1);
-            }
+            background-color: rgba(255, 255, 255, 1);
         }
         svg {
             display: none;
@@ -526,36 +550,22 @@ h5,
 }
 
 .splide__pagination {
-    bottom: 50px;
+    bottom: 10px;
+    display: flex !important;
     li {
         .splide__pagination__page {
             width: 10px;
             height: 10px;
             @include transform (unset);
             opacity: 1;
-            background: var(--primary);
-            border: 1px solid transparent;
-            @include border-radius(0.5rem);
-            margin: 0 0.15rem;
+            background: transparent;
+            border: 1px solid var(--white);
+            @include border-radius(8px);
+            margin: 0 4x;
             @include transition(0.2s, ease-in-out);
-
             &.is-active {
                 background: var(--white);
-                border-color: var(--primary);
-                width: 20px;
-            }
-        }
-    }
-
-    &.is-light {
-        li {
-            .splide__pagination__page {
-                background: rgba(255, 255, 255, 0.4);
-
-                &.is-active {
-                    background: var(--white);
-                    border-color: var(--white);
-                }
+                width: 18px;
             }
         }
     }
