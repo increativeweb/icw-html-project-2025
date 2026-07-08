@@ -9,13 +9,15 @@ jQuery(document).ready(function ($) {
         var lastScrollTop = 0;
         $(window).on('scroll', function () {
             var scrollTop = $(this).scrollTop();
-
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                $('.main-header').addClass('show-up');
-            } else {
-                $('.main-header').removeClass('show-up');
+            if (scrollTop < 150) {
+                $('.main-header').removeClass('show-up show-down');
             }
-
+            else if (scrollTop > lastScrollTop) {
+                $('.main-header').addClass('show-up').removeClass('show-down');
+            }
+            else {
+                $('.main-header').addClass('show-down').removeClass('show-up');
+            }
             lastScrollTop = scrollTop;
         });
         $('.navbar-toggler').on('click', function () {

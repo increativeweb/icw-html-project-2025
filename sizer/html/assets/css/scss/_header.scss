@@ -2,12 +2,15 @@
     position: fixed;
     top: 0;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 85.77%);
-    backdrop-filter: blur(20px);
     z-index: 10;
     width: 100%;
     @include transition(0.3s, ease-in-out);
     &.show-up {
         transform: translateY(-100%);
+    }
+    &.show-down {        
+        backdrop-filter: blur(20px);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 100%, transparent 100%);
     }
     @media (max-width: 1200px) {
         &.is-visible  {
