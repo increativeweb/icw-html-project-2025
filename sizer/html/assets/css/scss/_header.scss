@@ -8,9 +8,8 @@
     &.show-up {
         transform: translateY(-100%);
     }
-    &.show-down {        
+    &.fixed-header {        
         backdrop-filter: blur(20px);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 100%, transparent 100%);
     }
     @media (max-width: 1200px) {
         &.is-visible  {
@@ -30,8 +29,10 @@
         }
         .navbar-brand {
             padding: 0;
+            margin-bottom: -33px;
             img {
                 height: 90px;
+                @include transition(0.2s, ease-in-out);
                 @media (max-width: 992px) {
                     height: 50px;
                     min-width: 100px;

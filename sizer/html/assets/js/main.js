@@ -9,16 +9,23 @@ jQuery(document).ready(function ($) {
         var lastScrollTop = 0;
         $(window).on('scroll', function () {
             var scrollTop = $(this).scrollTop();
-            if (scrollTop < 150) {
-                $('.main-header').removeClass('show-up show-down');
-            }
+            if (scrollTop < 50) {
+                $('.main-header').removeClass('show-up show-down fixed-header');
+            } 
             else if (scrollTop > lastScrollTop) {
                 $('.main-header').addClass('show-up').removeClass('show-down');
             }
             else {
                 $('.main-header').addClass('show-down').removeClass('show-up');
+                
             }
             lastScrollTop = scrollTop;
+        });
+        $(window).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+            if (scrollTop > 50) {
+                $('.main-header').addClass('fixed-header');
+            }
         });
         $('.navbar-toggler').on('click', function () {
             $('.main-header').toggleClass('is-visible');
@@ -69,14 +76,15 @@ if ($('.card-img-splide').length > 0) {
         var slider = this;
         var slideCount = $(slider).find('.splide__slide').length;
         var splide = new Splide(slider, {
-            type: 'loop',
+            type: 'fade',
             perPage: 1,
             perMove: 1,
+            rewind: true,     
             arrows: true,
             pagination: true,
-            // autoplay: true,
-            // interval: 5000,
-            // speed: 1000,
+            autoplay: true,
+            interval: 5000,
+            speed: 1000,
             pauseOnHover: true,
             pauseOnFocus: false,
             updateOnMove: true,

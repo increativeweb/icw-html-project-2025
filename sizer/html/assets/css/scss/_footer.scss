@@ -12,7 +12,7 @@
             font-size: 13px;
             font-weight: 500;
         }
-        &:hover, &:focus {
+        &:hover, &:focus, .active {
             color: rgba(#ffffff, 0.7);
             text-decoration: underline;
         }
