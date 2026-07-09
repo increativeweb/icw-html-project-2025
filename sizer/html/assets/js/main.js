@@ -32,6 +32,14 @@ jQuery(document).ready(function ($) {
             $('body').toggleClass('overflow-hidden');
             $(this).toggleClass('is-visible');
         });
+        $('.mainMenu > li > a').on('click', function () {
+            if ($(window).width() < 992) {
+                $('.main-header').removeClass('is-visible');
+                $('body').removeClass('overflow-hidden');
+                $('.navbar-toggler').removeClass('is-visible');
+            }
+
+        });
     }
     if ($('.icw-progress-goto').length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');

@@ -75,7 +75,7 @@
                 margin-bottom: 5px;
             }
             .left-block {
-                max-width: 400px;
+                max-width: 500px;
                 min-width: 400px;
                 @media (max-width: 992px) {
                     min-width: 280px;
@@ -83,6 +83,7 @@
             }
             .right-block {
                 max-width: 650px;
+                margin-top: 5px;
             }
         }
     }
@@ -182,13 +183,17 @@
     position: relative;
     @media (max-width: 992px) {
         min-height: 500px;
-        padding: 120px 0 70px;
+        padding: 100px 0 70px;
     }
     .hero-title {
         max-width: 760px;
         .title {            
             font-family: var(--font-heading);
             margin-bottom: 20px;
+            font-weight: 200;
+            strong {
+                font-weight: 500;
+            }
         }
         .sort-info {
             font-size: 18px;

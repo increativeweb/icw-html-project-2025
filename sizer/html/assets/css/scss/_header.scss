@@ -1,35 +1,45 @@
 .main-header {
     position: fixed;
     top: 0;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 85.77%);
+    background: linear-gradient(180deg, #000 10%, transparent 100%);
     z-index: 10;
     width: 100%;
     @include transition(0.3s, ease-in-out);
     &.show-up {
-        transform: translateY(-100%);
+        transform: translateY(-150%);
     }
     &.fixed-header {        
-        backdrop-filter: blur(20px);
+        // backdrop-filter: blur(20px);
     }
     @media (max-width: 1200px) {
         &.is-visible  {
             .navbar {
                 .navbar-collapse {
                     transition: transform 0.3s ease-in-out;
-                    @include transform(translateX(0%));
+                    @include transform(translateY(0%));
+                    .mainMenu {
+                        li {
+                            a {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
     .navbar {
-        padding: 20px 0;
+        padding: 15px 0;
         z-index: 11;
         @media (max-width: 992px) {
             padding: 10px 0;
         }
         .navbar-brand {
             padding: 0;
-            margin-bottom: -33px;
+            margin-bottom: -40px;
+            @media (max-width: 992px) {
+                margin-bottom: 0px;
+            }
             img {
                 height: 90px;
                 @include transition(0.2s, ease-in-out);
@@ -42,24 +52,25 @@
         .navbar-collapse {
             @media (max-width: 992px) {
                 position: fixed;
-                top: 5px;
-                right: 5px;
+                top: 0;
+                right: 0;
                 bottom: 0;
-                z-index: 15;
-                min-height: calc(100vh - 10px);
+                z-index: -1;
+                height: 100%;
                 width: 100%;
-                max-width: 320px;
+                max-width: 100%;
                 background: var(--black);
                 @include flexbox;
                 @include flex-direction(column);
                 @include align-items(center);
                 @include justify-content(center);
                 transition: transform 0.3s ease-in-out;
-                @include transform(translateX(110%));
+                @include transform(translateY(-110%));
                 @include border-radius(8px);
                 box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.05);
                 overflow: hidden;
                 overflow-y: auto;
+                transition-delay: 0.2s;
             }
         }
         .mainMenu {
@@ -86,6 +97,8 @@
                     }
                     @media (max-width: 992px) {
                         font-size: 16px;
+                        opacity: 0;
+                        transition-delay: 0.2s;
                     }
                 }
                 &:hover, &:focus, &.current-menu-item {
