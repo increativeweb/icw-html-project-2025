@@ -55,10 +55,10 @@ body {
     box-shadow: none !important;
 }
 
-body ::selection {
-    color: var(--text-white);
-    background: var(--black);
-}
+// body ::selection {
+//     color: var(--text-white);
+//     background: var(--black);
+// }
 
 .clear {
     clear: both;
@@ -255,7 +255,7 @@ img {
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--blue);
+    background: var(--black);
     z-index: -1;
 
     img,
@@ -278,6 +278,7 @@ img {
     position: relative;
     overflow: hidden;
     line-height: 0.7;
+    background: var(--black);
     @media (max-width: 767px) {
         @include border-radius(10px);
     }
@@ -310,6 +311,10 @@ img {
                 @include transition(0.2s, ease-in-out);
                 @include transform(scale(1));
                 z-index: 2;
+                @media (max-width: 767px) {
+                    width: 45px;
+                    height: 45px;
+                }
                 path {                    
                     @include transition(0.2s, ease-in-out);
                 }
@@ -590,13 +595,18 @@ h5,
     bottom: 50%;
     right: 20px;
     z-index: 1;
-    @include transform(translateY(50%) translateX(100px));
     @include transition(0.2s, ease-in-out);
+    @media (min-width: 768px) {
+        @include transform(translateY(50%) translateX(100px));
+        &.is-show {
+            @include transform(translateY(50%) translateX(0px));
+        }
+    }
     @media(max-width: 992px) {
         right: 10px;
     }
-    &.is-show {
-        @include transform(translateY(50%) translateX(0px));
+    @media(max-width: 767px) {
+        bottom: 20px;
     }
     ul {
         @include flexbox;
