@@ -1,3 +1,8 @@
+<?php
+if ( ! in_array( $_SERVER['HTTP_HOST'], [ 'sizer.co.in', 'www.sizer.co.in' ], true ) ) {
+    echo '<meta name="robots" content="noindex, nofollow">';
+}
+?>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWLB6GFGF9"></script>
 <script>
