@@ -62,7 +62,7 @@
                 </div>
             </nav>
         </header>
-        <main class="main-conten-wrapper" data-bs-spy="scroll" data-bs-target="#main-menu" data-bs-smooth-scroll="true">
+        <main class="main-content-wrapper">
             <section class="hero-section">
                 <div class="container">
                     <div class="hero-title">

@@ -5,9 +5,6 @@ var $ = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
     $('[data-bs-toggle="tooltip"]').tooltip();
-    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-        offset: 200 // Header height
-    });
     if ($('.main-header').length) {        
         $('.navbar-toggler').on('click', function () {
             $('.main-header').toggleClass('is-visible');
@@ -121,3 +118,33 @@ if ($('.media-block.is-video').length > 0) {
         });
     });
 }
+$(function () {
+    const offset = 50; // Header height / top offset
+    const $links = $('.mainMenu a[href^="#"]');
+    const $sections = $($links.map(function () {
+        const target = $($(this).attr('href'));
+        return target.length ? target[0] : null;
+    }));
+    function setActiveMenu() {
+        const scrollPos = $(window).scrollTop() + offset;
+        let currentId = '';
+        $sections.each(function () {
+            if (scrollPos >= $(this).offset().top) { currentId = this.id; }
+        });
+        $links.removeClass('active');
+        if (currentId) {
+            $links.filter(`[href="#${currentId}"]`).addClass('active');
+        }
+    }
+    // Smooth scroll
+    $links.on('click', function (e) {
+        const target = $($(this).attr('href'));
+        if (!target.length) return;
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top - offset
+        }, 600);
+    });
+    $(window).on('scroll', setActiveMenu);
+    setActiveMenu();
+});

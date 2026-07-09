@@ -1,4 +1,3 @@
-<meta name='robots' content='noindex, nofollow' />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWLB6GFGF9"></script>
 <script>
