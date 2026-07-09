@@ -4,9 +4,9 @@
     background: linear-gradient(180deg, #000 10%, transparent 100%);
     z-index: 10;
     width: 100%;
-    @include transition(0.3s, ease-in-out);   
     @media (max-width: 1200px) {
         &.is-visible  {
+            // background: var(--black);
             .navbar {
                 .navbar-collapse {
                     max-height: 100%;
@@ -49,7 +49,7 @@
                 @include flex-direction(column);
                 @include align-items(center);
                 @include justify-content(center);
-                transition: max-height 0.3s ease-in-out;
+                transition: max-height 0.1s ease-in-out;
                 box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.05);
                 overflow: hidden;
                 overflow-y: auto;

@@ -66,7 +66,7 @@ body ::selection {
 
 .tooltip {
     pointer-events: none !important;
-    --bs-tooltip-bg: var(--black);
+    --bs-tooltip-bg: #393636;
     --bs-tooltip-opacity: 1;
     --bs-tooltip-max-width: 224px;
     --bs-tooltip-font-size: 12px;
@@ -235,7 +235,7 @@ img {
     }
 
     svg.progress-circle path {
-        stroke: var(--black);
+        stroke: #393636;
         stroke-width: 4;
         box-sizing: border-box;
         -webkit-transition: all 200ms linear;
@@ -585,9 +585,13 @@ h5,
     bottom: 50%;
     right: 20px;
     z-index: 1;
-    @include transform(translateY(50%));
+    @include transform(translateY(50%) translateX(100px));
+    @include transition(0.2s, ease-in-out);
     @media(max-width: 992px) {
         right: 10px;
+    }
+    &.is-show {
+        @include transform(translateY(50%) translateX(0px));
     }
     ul {
         @include flexbox;

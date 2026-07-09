@@ -20,6 +20,16 @@ jQuery(document).ready(function ($) {
 
         });
     }
+    if ($('.sticky-action').length) {  
+        $(window).on('scroll', function () { 
+            var scrollTop = $(this).scrollTop();
+            if (scrollTop > 300) { 
+                $('.sticky-action').addClass('is-show');
+            } else {
+                $('.sticky-action').removeClass('is-show');
+            }
+        });
+    }
     if ($('.icw-progress-goto').length > 0) {
         var progressPath = document.querySelector('.icw-progress-goto path');
         var pathLength = progressPath.getTotalLength();
