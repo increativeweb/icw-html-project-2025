@@ -13,7 +13,6 @@
             font-weight: 500;
         }
         &:hover, &:focus, .active {
-            color: rgba(#ffffff, 0.7);
             text-decoration: underline;
         }
     }
@@ -80,7 +79,8 @@
             @include align-items(center);
             gap: 30px;
             @media (max-width: 767px) {
-                gap: 15px;
+                gap: 5px 15px;
+                @include flex-wrap(wrap);
             }
         }
     }

@@ -88,6 +88,10 @@
         }
     }
 }
+section[id] {
+    scroll-margin-top: 200px;
+    scroll-margin-bottom: 100px;
+}
 
 // Section Title CSS
 .section-title {
@@ -166,7 +170,8 @@
         @include flex-wrap(wrap);
         gap: 10px 12px;
         @media (max-width: 992px) {
-            gap: 10px;            
+            gap: 10px; 
+            margin-top: 30px;           
         }
     }
 
@@ -182,6 +187,10 @@
     color: var(--text-white);
     position: relative;
     @media (max-width: 992px) {
+        min-height: 600px;
+        padding: 130px 0 70px;
+    }
+    @media (max-width: 767px) {
         min-height: 500px;
         padding: 100px 0 70px;
     }
@@ -219,6 +228,7 @@
             @include transition(0.2s, ease-in-out);
             object-fit: cover;
             object-position: center;
+            width: 100%;
         }
         .card-img-splide {
             .splide__arrows {
@@ -246,7 +256,6 @@
             }
         }
         .card-info {
-            font-size: 16px;
             color: #5E5E5E;
         }
     }
@@ -298,6 +307,16 @@
     }
 }
 
+.video-card {
+    .media-block {
+        display: block;
+    }
+    .card-title {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
 // CTA Section
 .cta-section {
     .cta-block {
@@ -315,6 +334,7 @@
         @media (max-width: 767px) {
             padding: 25px;
             @include flex-wrap(wrap);
+            @include border-radius(10px);
         }
         .cta-content {
             max-width: 620px;

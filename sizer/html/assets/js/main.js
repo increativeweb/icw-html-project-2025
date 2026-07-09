@@ -5,6 +5,9 @@ var $ = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
     $('[data-bs-toggle="tooltip"]').tooltip();
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        offset: 200 // Header height
+    });
     if ($('.main-header').length) {        
         $('.navbar-toggler').on('click', function () {
             $('.main-header').toggleClass('is-visible');

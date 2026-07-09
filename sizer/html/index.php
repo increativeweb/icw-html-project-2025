@@ -25,25 +25,26 @@
         <meta property="og:image:type" content="image/jpeg" />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <link rel='dns-prefetch' href='//challenges.cloudflare.com' />
-        <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
-        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' media='all' />
-        <link rel='stylesheet' href='assets/css/splide.css' media='all' />
-        <link rel='stylesheet' href='assets/css/glightbox.css' media='all' />
-        <link rel='stylesheet' href='assets/css/main.css' media='all' />
+        <link rel="dns-prefetch" href="//challenges.cloudflare.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" href="assets/css/splide.css" media="all" />
+        <link rel="stylesheet" href="assets/css/glightbox.css" media="all" />
+        <link rel="stylesheet" href="assets/css/main.css" media="all" />
 
         <script src="assets/js/jquery.min.js"></script>
         
         <link rel="icon" href="uploads/favicon-150x150.png" sizes="32x32" />
         <link rel="icon" href="uploads/favicon-300x300.png" sizes="192x192" />
         <link rel="apple-touch-icon" href="uploads/favicon-300x300.png" />
-        <meta name="msapplication-TileImage" content="uploads/favicon-300x300.png" />
+        <meta name="msapplication-TileImage" content="uploads/favicon-300x300.png" />        
     </head>
+    <?php include_once("include_head.php");?>
     <body>
         <header class="main-header">
-            <nav class="navbar navbar-expand-lg" id="main-menu">
+            <nav class="navbar navbar-expand-md" id="main-menu">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html" title="Energy Ventures Analysis" rel="home"><img src="assets/images/logo.svg" alt="Sizer Engineering"></a>
+                    <a class="navbar-brand" href="/" title="Sizer Engineering" rel="home"><img src="assets/images/logo.svg" alt="Sizer Engineering"></a>
                     <div class="collapse navbar-collapse">                        
                         <ul class="navbar-nav mainMenu">
                             <li><a href="#products">Products</a></li>
@@ -54,7 +55,7 @@
                     </div>
                     <div class="nav-right" id="nav-right">
                         <div class="nav-right-menu">
-                            <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white btn-md"><span class="icon icon-wp"></span>Get in Touch</a>
+                            <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white btn-md"><span class="icon icon-wp"></span><span class="d-none d-sm-inline">Connect Now</span></a>
                         </div>
                         <button class="navbar-toggler" type="button"><span></span><span></span><span></span></button>
                     </div>
@@ -95,10 +96,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" class="card-img-top" alt="Jumbo Diamond Polishing Motor">
+                                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" class="card-img-top" alt="Jumbo Diamond Polishing Motor">
+                                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" alt="Jumbo Diamond Polishing Motor">
                                                 </li>
                                             </ul>
                                         </div>
@@ -109,7 +110,7 @@
                                     <div class="card-info">High-performance diamond polishing motor delivering smooth operation, reliable power, precision, and long-lasting industrial durability.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -120,10 +121,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-product-angur-stand-plate.jpg" class="card-img-top" alt="Angur Stand Plate">
+                                                    <img src="uploads/img-product-angur-stand-plate.jpg" alt="Angur Stand Plate">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-product-angur-stand-plate-2.jpg" class="card-img-top" alt="Angur Stand Plate">
+                                                    <img src="uploads/img-product-angur-stand-plate-2.jpg" alt="Angur Stand Plate">
                                                 </li>
                                             </ul>
                                         </div>
@@ -134,7 +135,7 @@
                                     <div class="card-info">Precision-engineered Angur Stand Plate offering superior strength, dimensional accuracy, durability, and reliable support for industrial applications.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -160,10 +161,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-cast-iron-machining.jpg" class="card-img-top" alt="Cast Iron Machining">
+                                                    <img src="uploads/img-service-cast-iron-machining.jpg" alt="Cast Iron Machining">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-cast-iron-machining-2.jpg" class="card-img-top" alt="Cast Iron Machining">
+                                                    <img src="uploads/img-service-cast-iron-machining-2.jpg" alt="Cast Iron Machining">
                                                 </li>
                                             </ul>
                                         </div>
@@ -174,7 +175,7 @@
                                     <div class="card-info">Accurate cast iron machining with excellent dimensional precision, smooth finishing, and consistent quality results.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -185,10 +186,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-mild-steel-shaft-machining.jpg" class="card-img-top" alt="Mild Steel Shaft Machining">
+                                                    <img src="uploads/img-service-mild-steel-shaft-machining.jpg" alt="Mild Steel Shaft Machining">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" class="card-img-top" alt="Mild Steel Shaft Machining">
+                                                    <img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" alt="Mild Steel Shaft Machining">
                                                 </li>
                                             </ul>
                                         </div>
@@ -199,7 +200,7 @@
                                     <div class="card-info">Precision mild steel shaft machining with accurate dimensions, smooth finishing, and dependable industrial performance.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -210,10 +211,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-lathe-machine-work.jpg" class="card-img-top" alt="Lathe Machine Work">
+                                                    <img src="uploads/img-service-lathe-machine-work.jpg" alt="Lathe Machine Work">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-lathe-machine-work-2.jpg" class="card-img-top" alt="Lathe Machine Work">
+                                                    <img src="uploads/img-service-lathe-machine-work-2.jpg" alt="Lathe Machine Work">
                                                 </li>
                                             </ul>
                                         </div>
@@ -224,7 +225,7 @@
                                     <div class="card-info">Accurate lathe machine work delivering precision turning, superior finishing, and consistent quality for industrial components.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -235,10 +236,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-cylindrical-grinding-work.jpg" class="card-img-top" alt="Cylindrical Grinding Work">
+                                                    <img src="uploads/img-service-cylindrical-grinding-work.jpg" alt="Cylindrical Grinding Work">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-cylindrical-grinding-work-2.jpg" class="card-img-top" alt="Cylindrical Grinding Work">
+                                                    <img src="uploads/img-service-cylindrical-grinding-work-2.jpg" alt="Cylindrical Grinding Work">
                                                 </li>
                                             </ul>
                                         </div>
@@ -249,7 +250,7 @@
                                     <div class="card-info">Precision cylindrical grinding work ensuring accurate dimensions, smooth surface finish, and high-performance machined components.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -260,10 +261,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-surface-grinding-work.jpg" class="card-img-top" alt="Surface Grinding Work">
+                                                    <img src="uploads/img-service-surface-grinding-work.jpg" alt="Surface Grinding Work">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-surface-grinding-work-2.jpg" class="card-img-top" alt="Surface Grinding Work">
+                                                    <img src="uploads/img-service-surface-grinding-work-2.jpg" alt="Surface Grinding Work">
                                                 </li>
                                             </ul>
                                         </div>
@@ -274,7 +275,7 @@
                                     <div class="card-info">Precision surface grinding work delivering excellent flatness, smooth finishes, and high dimensional accuracy for industrial components.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -285,10 +286,10 @@
                                         <div class="splide__track">
                                             <ul class="splide__list">
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-shaft-slitting-work.jpg" class="card-img-top" alt="Shaft Slitting Work">
+                                                    <img src="uploads/img-service-shaft-slitting-work.jpg" alt="Shaft Slitting Work">
                                                 </li>
                                                 <li class="splide__slide">
-                                                    <img src="uploads/img-service-shaft-slitting-work-2.jpg" class="card-img-top" alt="Shaft Slitting Work">
+                                                    <img src="uploads/img-service-shaft-slitting-work-2.jpg" alt="Shaft Slitting Work">
                                                 </li>
                                             </ul>
                                         </div>
@@ -299,7 +300,7 @@
                                     <div class="card-info">Precision shaft slitting work ensuring accurate keyways, clean cuts, and reliable performance for industrial applications.</div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="Chat with WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -318,7 +319,7 @@
                                     <p>We specialize in precision machining of a wide range of materials, including cast iron, mild steel (EN-8, EN-31, and other grades), stainless steel, and various engineering metals, delivering customized solutions to meet diverse industrial requirements.</p>
                                 </div>
                                 <div class="action">
-                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Get in Touch</a>
+                                    <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
                                 </div>
                             </div>
                         </div>
@@ -333,23 +334,41 @@
                     </div>
                     <div class="video-block mt-5">
                         <div class="row g-15">
-                            <div class="col-lg-4">
-                                <a href="uploads/video-surface-grinding-jobwork.mp4" class="d-block media-block is-video glightbox">
-                                    <img src="uploads/img-service-shaft-slitting-work-2.jpg" class="card-img-top" alt="Shaft Slitting Work">
-                                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
-                                </a>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="video-card">
+                                    <a href="uploads/video-lathe-machine-job-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox" data-glightbox="title:Lathe machine job work;">
+                                        <img src="uploads/img-poster-video-lathe-machine-job-work.png" class="ratio ratio-4x3" alt="Lathe machine job work">
+                                        <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                                    </a>
+                                    <div class="card-title">Lathe machine job work</div>
+                                </div>
                             </div>
-                            <div class="col-lg-4">
-                                <a href="uploads/video-lathe-machine-job-work.mp4" class="d-block media-block is-video glightbox">
-                                    <img src="uploads/img-service-shaft-slitting-work-2.jpg" class="card-img-top" alt="Shaft Slitting Work">
-                                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
-                                </a>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="video-card">
+                                    <a href="uploads/video-cyllindrical-grinding-job-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox" data-glightbox="title:Cyllindrical grinding job work;">
+                                        <img src="uploads/img-poster-video-cyllindrical-grinding-job-work.png" class="ratio ratio-4x3" alt="Cyllindrical grinding job work">
+                                        <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                                    </a>
+                                    <div class="card-title">Cyllindrical grinding job work</div>
+                                </div>
                             </div>
-                            <div class="col-lg-4">
-                                <a href="uploads/video-drilling-work.mp4" class="d-block media-block is-video glightbox">
-                                    <img src="uploads/img-service-shaft-slitting-work-2.jpg" class="card-img-top" alt="Shaft Slitting Work">
-                                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
-                                </a>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="video-card">
+                                    <a href="uploads/video-drilling-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox" data-glightbox="title:Drilling work;">
+                                        <img src="uploads/img-poster-video-drilling-work.png" class="ratio ratio-4x3" alt="Drilling work">
+                                        <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                                    </a>
+                                    <div class="card-title">Drilling work</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="video-card">
+                                    <a href="uploads/video-surface-grinding-jobwork.mp4" class="ratio ratio-4x3 media-block is-video glightbox" data-glightbox="title:Surface Grinding Job Work;">
+                                        <img src="uploads/img-poster-video-surface-grinding-jobwork.png" class="ratio ratio-4x3" alt="Surface grinding job work">
+                                        <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                                    </a>
+                                    <div class="card-title">Surface grinding job work</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -395,7 +414,7 @@
         <footer class="main-footer">
             <div class="container">
                 <div class="footer-top-content-block">
-                    <a class="footer-logo"><img src="assets/images/logo.svg" alt="Sizer Engineering"></a>
+                    <a href="/" class="footer-logo"><img src="assets/images/logo.svg" alt="Sizer Engineering"></a>
                     <div class="footer-info-block">
                         <div class="contact-info">
                             <ul class="contact-list">
