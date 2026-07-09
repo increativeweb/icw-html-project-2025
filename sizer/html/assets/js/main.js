@@ -5,28 +5,7 @@ var $ = jQuery.noConflict();
 
 jQuery(document).ready(function ($) {
     $('[data-bs-toggle="tooltip"]').tooltip();
-    if ($('.main-header').length) {
-        var lastScrollTop = 0;
-        $(window).on('scroll', function () {
-            var scrollTop = $(this).scrollTop();
-            if (scrollTop < 50) {
-                $('.main-header').removeClass('show-up show-down fixed-header');
-            } 
-            else if (scrollTop > lastScrollTop) {
-                $('.main-header').addClass('show-up').removeClass('show-down');
-            }
-            else {
-                $('.main-header').addClass('show-down').removeClass('show-up');
-                
-            }
-            lastScrollTop = scrollTop;
-        });
-        $(window).on('scroll', function () {
-            var scrollTop = $(this).scrollTop();
-            if (scrollTop > 50) {
-                $('.main-header').addClass('fixed-header');
-            }
-        });
+    if ($('.main-header').length) {        
         $('.navbar-toggler').on('click', function () {
             $('.main-header').toggleClass('is-visible');
             $('body').toggleClass('overflow-hidden');
