@@ -1,0 +1,145 @@
+.main-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #EEEEEE;
+    z-index: 10;
+     @media (max-width: 992px) {
+        &.is-visible  {
+            .navbar {
+                .navbar-collapse {
+                    @include transform(translateX(0));                    
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+    .navbar {
+        padding: 15px 0;
+        .navbar-brand {
+            padding: 0;
+            img {
+                height: 40px;
+                @media (max-width: 575px) {
+                    height: 30px;
+                }
+            }
+        }
+        .navbar-collapse {
+            @media (max-width: 992px) {
+                position: fixed;
+                top: 71px;
+                left: 0;
+                bottom: 0;
+                z-index: 15;
+                min-height: calc(100vh - 71px);
+                width: 100%;
+                max-width: 300px;
+                background: rgba(255, 255, 255, 1);
+                @include flexbox;
+                @include flex-direction(column);
+                @include align-items(flex-start);
+                transition: transform 0.3s ease-in-out;
+                @include transform(translateX(-110%));
+                @include border-radius(0px);
+                overflow: hidden;
+                overflow-y: auto;
+                border-right: 1px solid #EEEEEE;
+                @media (max-width: 575px) {
+                    top: 63px;
+                    min-height: calc(100vh - 63px);
+                }
+            }
+        }
+        .mainMenu {
+            @media (min-width: 992px) {
+                gap: 20px;
+                margin-left: auto;
+            }
+            @media (min-width: 1200px) {
+                gap: 30px;
+            }
+            @media (max-width: 992px) {
+                gap: 15px;
+                padding: 15px;
+                flex: 1 1 auto;
+            }
+            li {
+                a {
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: var(--black);
+                }
+                &:hover, &:focus, &.current-menu-item {
+                    a {
+                        color: var(--primary);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .mobile-bottom-menu {
+            @media (min-width: 992px) {
+                display: none;
+            } 
+            @media (max-width: 992px) {
+                padding: 15px;
+                width: 100%;
+                border-top: 1px solid #EEEEEE;
+                text-align: center;
+                a {
+                    width: 100%;
+                }
+            }
+        }
+        .nav-right {
+            margin-left: 30px;
+            @include flexbox;
+            gap: 20px;
+            .navbar-toggler {
+                @media (min-width: 992px) {
+                    display: none;
+                }
+                display: inline-block;
+                cursor: pointer;
+                border: none;
+                padding: 0;
+                background-color: transparent;
+                z-index: 15;
+                span {
+                    width: 25px;
+                    height: 2px;
+                    margin: 5px 0;
+                    background-color: var(--black);
+                    @include border-radius(4px);
+                    display: block;
+                    @include transition(0.2s, ease-in-out);
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    span {
+                        background-color: var(--primary);
+                    }
+                }
+
+                &.is-visible {
+                    span:nth-child(1) {
+                        @include transform(rotate(-45deg) translate(-4px, 5px));
+                    }
+
+                    span:nth-child(2) {
+                        @include opacity(0);
+                        visibility: hidden;
+                    }
+
+                    span:nth-child(3) {
+                        @include transform(rotate(45deg) translate(-4.5px, -6px));
+                    }
+                }
+            }
+        }
+    }
+}
