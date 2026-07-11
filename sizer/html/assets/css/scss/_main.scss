@@ -243,6 +243,8 @@
     position: relative;
     @include transition(0.2s, ease-in-out);
     .card-img {
+        position: relative;
+        z-index: 1;
         img {
             @include transition(0.2s, ease-in-out);
             object-fit: cover;
@@ -250,6 +252,11 @@
             width: 100%;
         }
         .card-img-splide {
+            .splide__slide {                
+                .ratio-4x3 {
+                    --bs-aspect-ratio: 62%;
+                }
+            }
             .splide__arrows {
                 .splide__arrow { 
                     left: -20px;
@@ -260,30 +267,12 @@
                     }
                 }
             }
-        }
-    }
-    .card-body {
-        padding: 30px 30px 0;
-        @media (max-width: 992px) {
-            padding: 20px 20px 0;
-        }
-        .card-title {
-            font-family: var(--font-heading);
-            margin-bottom: 15px;
-            @media (max-width: 992px) {
-                margin-bottom: 10px;
-            }
-        }
-        .card-info {
-            color: #5E5E5E;
-        }
-    }
-    .card-footer {
-        padding: 30px;
-        @media (max-width: 992px) {
-            padding: 20px;
-        }
-        a {
+        }        
+        .card-action {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 5;
             width: 40px;
             height: 40px;
             flex: none;
@@ -294,6 +283,8 @@
             color: var(--white);
             @include transition(0.2s, ease-in-out);
             @include border-radius(50%);
+            @include transform(scale(0));
+            transform-origin: center;
             svg, img, .icon {
                 width: 18px;
                 height: 18px;
@@ -308,6 +299,20 @@
             }
         }
     }
+    .card-body {
+        padding: 20px;
+        .card-title {
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+            font-size: clamp(18px, 2vw, 20px);
+        }
+        .card-info {
+            color: #5E5E5E;
+        }
+    }
+    .card-footer {
+        padding: 0 20px 20px;
+    }
     &:hover, &:focus {
         @include box-shadow(0px 0px 0px 1px #D9D9D9);
         .card-img {
@@ -321,6 +326,9 @@
                         }
                     }
                 }
+            }
+            .card-action { 
+                @include transform(scale(1));
             }
         }
     }

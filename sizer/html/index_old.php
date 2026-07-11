@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
     <link rel="icon" href="https://sizer.co.in/uploads/favicon-300x300.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="https://sizer.co.in/uploads/favicon-300x300.png" />
     <meta name="msapplication-TileImage" content="https://sizer.co.in/uploads/favicon-300x300.png" />   
-    <?php include_once("include_head.php");?> 
+    <?php include_once("include_head.php");?>     
 </head>
 <body>
     <header class="main-header">
@@ -90,47 +91,51 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-15">
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor"></div>
+                                                <img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" alt="Jumbo Diamond Polishing Motor"></div>
+                                                <img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" alt="Jumbo Diamond Polishing Motor">
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Jumbo Diamond Polishing Motor</h3>
-                                <div class="card-info">Powering Precision Diamond Polishing</div>
+                                <div class="card-info">High-performance diamond polishing motor delivering smooth operation, reliable power, precision, and long-lasting industrial durability.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-product-angur-stand-plate.jpg" alt="Angur Stand Plate"></div>
+                                                <img src="uploads/img-product-angur-stand-plate.jpg" alt="Angur Stand Plate">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-product-angur-stand-plate-2.jpg" alt="Angur Stand Plate"></div>
+                                                <img src="uploads/img-product-angur-stand-plate-2.jpg" alt="Angur Stand Plate">
                                             </li>
                                         </ul>
                                     </div>
-                                </div>   
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Angur Stand Plate</h3>
-                                <div class="card-info">Engineered for Reliable Support</div>
+                                <div class="card-info">Precision-engineered Angur Stand Plate offering superior strength, dimensional accuracy, durability, and reliable support for industrial applications.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
@@ -151,139 +156,151 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-15">
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining.jpg" alt="Cast Iron Machining"></div>
+                                                <img src="uploads/img-service-cast-iron-machining.jpg" alt="Cast Iron Machining">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining-2.jpg" alt="Cast Iron Machining"></div>
+                                                <img src="uploads/img-service-cast-iron-machining-2.jpg" alt="Cast Iron Machining">
                                             </li>
                                         </ul>
                                     </div>
-                                </div>   
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Cast Iron Machining</h3>
-                                <div class="card-info">Precision Machining for Cast Iron</div>
+                                <div class="card-info">Accurate cast iron machining with excellent dimensional precision, smooth finishing, and consistent quality results.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" alt="Mild Steel Shaft Machining"></div>
+                                                <img src="uploads/img-service-mild-steel-shaft-machining.jpg" alt="Mild Steel Shaft Machining">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" alt="Mild Steel Shaft Machining"></div>
+                                                <img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" alt="Mild Steel Shaft Machining">
                                             </li>
                                         </ul>
                                     </div>
-                                </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Mild Steel Shaft Machining</h3>
-                                <div class="card-info">Precision Shafts, Superior Performance</div>
+                                <div class="card-info">Precision mild steel shaft machining with accurate dimensions, smooth finishing, and dependable industrial performance.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-lathe-machine-work.jpg" alt="Lathe Machine Work"></div>
+                                                <img src="uploads/img-service-lathe-machine-work.jpg" alt="Lathe Machine Work">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-lathe-machine-work-2.jpg" alt="Lathe Machine Work"></div>
+                                                <img src="uploads/img-service-lathe-machine-work-2.jpg" alt="Lathe Machine Work">
                                             </li>
                                         </ul>
                                     </div>
-                                </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Lathe Machine Work</h3>
-                                <div class="card-info">Precision Turning, Exceptional Quality</div>
+                                <div class="card-info">Accurate lathe machine work delivering precision turning, superior finishing, and consistent quality for industrial components.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-cylindrical-grinding-work.jpg" alt="Cylindrical Grinding Work"></div>
+                                                <img src="uploads/img-service-cylindrical-grinding-work.jpg" alt="Cylindrical Grinding Work">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-cylindrical-grinding-work-2.jpg" alt="Cylindrical Grinding Work"></div>
+                                                <img src="uploads/img-service-cylindrical-grinding-work-2.jpg" alt="Cylindrical Grinding Work">
                                             </li>
                                         </ul>
                                     </div>
-                                </div>  
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Cylindrical Grinding Work</h3>
-                                <div class="card-info">Precision Grinding, Superior Accuracy</div>
+                                <div class="card-info">Precision cylindrical grinding work ensuring accurate dimensions, smooth surface finish, and high-performance machined components.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-surface-grinding-work.jpg" alt="Surface Grinding Work"></div>
+                                                <img src="uploads/img-service-surface-grinding-work.jpg" alt="Surface Grinding Work">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-surface-grinding-work-2.jpg" alt="Surface Grinding Work"></div>
+                                                <img src="uploads/img-service-surface-grinding-work-2.jpg" alt="Surface Grinding Work">
                                             </li>
                                         </ul>
                                     </div>
-                                </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Surface Grinding Work</h3>
-                                <div class="card-info">Superior Surface Finish Guaranteed</div>
+                                <div class="card-info">Precision surface grinding work delivering excellent flatness, smooth finishes, and high dimensional accuracy for industrial components.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="info-card">
-                            <div class="card-img">
+                            <div class="card-img ratio-4x3">
                                 <div class="splide card-img-splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-shaft-slitting-work.jpg" alt="Shaft Slitting Work"></div>
+                                                <img src="uploads/img-service-shaft-slitting-work.jpg" alt="Shaft Slitting Work">
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-shaft-slitting-work-2.jpg" alt="Shaft Slitting Work"></div>
+                                                <img src="uploads/img-service-shaft-slitting-work-2.jpg" alt="Shaft Slitting Work">
                                             </li>
                                         </ul>
                                     </div>
-                                </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                </div>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Shaft Slitting Work</h3>
-                                <div class="card-info">Accurate Slitting, Reliable Results</div>
+                                <div class="card-info">Precision shaft slitting work ensuring accurate keyways, clean cuts, and reliable performance for industrial applications.</div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="right"><span class="icon icon-wp"></span></a>
                             </div>
                         </div>
                     </div>
@@ -309,7 +326,7 @@
                     <div class="col-lg-6">
                         <div class="media-block is-video">
                             <video poster="uploads/img-our-infrastructure.jpg" muted loop playsinline controlslist="nodownload" oncontextmenu="return false">
-                                <source src="uploads/video-cyllindrical-grinding-job-work.mp4" type="video/mp4">
+                                <source src="uploads/video-our-infrastructure.mp4" type="video/mp4">
                             </video>
                             <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                         </div>
