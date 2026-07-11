@@ -1,54 +1,249 @@
 .main-footer {
     background: var(--dark-black1);
-    padding: 250px 0 30px;
-    text-align: center;
+    padding: 50px 0 30px;
     color: var(--white);
     a {
         color: var(--white);
         line-height: 1;
+        @include transition(0.1s, ease-in-out);
         &:hover, &:focus, &:active {
             color: var(--primary);
             text-decoration: none;
         }
     }
-    .footer-logo {
-        img {
-            height: 70px;
+    .footer-info-block {
+        @include flexbox;
+        @include align-items(center); 
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);  
+        gap: 20px; 
+        @media (max-width: 992px) {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }    
+        @media (max-width: 767px) {
+            @include flex-wrap(wrap); 
+        }
+        .footer-info {
+            font-size: clamp(20px, 3vw, 38px);
+            font-weight: 600;
+            max-width: 480px;
+            line-height: 1.3;
+            @media (max-width: 992px) {
+                max-width: 300px;
+            }
+        }
+        .contact-info-block {
+            @include flexbox;
+            @include align-items(center);
+            margin-left: auto;
+            gap: 30px;
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
+            @media (max-width: 575px) {
+                @include flex-wrap(wrap);
+            }
+            .contact-info {
+                @include flexbox;
+                @include align-items(center);
+                gap: 8px;
+                .icon {
+                    width: 34px;
+                    height: 34px;
+                    border: 1px solid rgba(212, 212, 216, 0.7);
+                    @include border-radius(50%);
+                    @include inline-flex;
+                    @include align-items(center);
+                    @include justify-content(center);
+                    .icon-phone {
+                        background: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.23 9.62889C12.2733 9.62889 11.3478 9.47333 10.4844 9.19333C10.2122 9.1 9.90889 9.17 9.69889 9.38L8.47778 10.9122C6.27667 9.86222 4.21556 7.87889 3.11889 5.6L4.63556 4.30889C4.84556 4.09111 4.90778 3.78778 4.82222 3.51556C4.53444 2.65222 4.38667 1.72667 4.38667 0.77C4.38667 0.35 4.03667 0 3.61667 0H0.925556C0.505556 0 0 0.186667 0 0.77C0 7.99556 6.01222 14 13.23 14C13.7822 14 14 13.51 14 13.0822V10.3989C14 9.97889 13.65 9.62889 13.23 9.62889Z" fill="white"/></svg>') no-repeat center center;
+                        background-size: contain;
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                    }
+                }
+                .info {
+                    strong {
+                        display: block;
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: var(--white);
+                        margin-bottom: 5px;
+                    }
+                    small {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.9);
+                        @include transition(0.1s, ease-in-out);
+                        span {
+                            color: rgba(255, 255, 255, 0.9);
+                        }
+                    }
+                }
+                &:hover, &:focus {
+                    .info {
+                        small {
+                            color: var(--primary);
+                        }
+                    }
+                }
+            }
         }
     }
-    .footer-info {
-        font-size: clamp(20px, 3vw, 30px);
-        max-width: 350px;
-        margin: 50px auto;
-        line-height: 1.3;
-        font-weight: 500;
+    .footer-logo {
+        display: inline-block;
+        img {
+            height: 50px;
+        }
     }
-    .footer-contact-list {
+    .social-list {
         @include flexbox;
         @include align-items(center);
-        @include justify-content(center);
-        gap: 70px;
+        gap: 10px;
+        margin-top: 30px;
         li {
             a {
-                @include inline-flex;
+                @include flexbox;
                 @include align-items(center);
-                gap: 10px;
-                font-size: 16px;
-                .icon {
-                    width: 18px;
-                    height: 18px;
-                    background-size: contain !important;
-                    display: inline-block;
-                    &.icon-phone {
-                        background: url('data:image/svg+xml,<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.065 11.6922C14.9033 11.6922 13.7794 11.5033 12.7311 11.1633C12.4006 11.05 12.0322 11.135 11.7772 11.39L10.2944 13.2506C7.62167 11.9756 5.11889 9.56722 3.78722 6.8L5.62889 5.23222C5.88389 4.96778 5.95944 4.59944 5.85556 4.26889C5.50611 3.22056 5.32667 2.09667 5.32667 0.935C5.32667 0.425 4.90167 0 4.39167 0H1.12389C0.613889 0 0 0.226667 0 0.935C0 9.70889 7.30056 17 16.065 17C16.7356 17 17 16.405 17 15.8856V12.6272C17 12.1172 16.575 11.6922 16.065 11.6922Z" fill="rgb(32 162 227)"/></svg>') no-repeat center center;
+                @include justify-content(center);
+                width: 32px;
+                height: 32px;
+                flex: none;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                @include border-radius(50%);
+                svg {
+                    width: 14px;
+                    height: 14px
+                }
+                &:hover, &:focus {
+                    border-color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+    .footer-main-menu {
+        @include flexbox;
+        @include justify-content(space-between);
+        gap: 80px;
+        @media (max-width: 1399px) {
+            gap: 30px;
+        }
+        @media (max-width: 1199px) {
+            margin-top: 30px;
+        }
+        @media (max-width: 767px) {
+            @include flex-wrap(wrap);
+        }
+        & > li {
+            line-height: 1;
+            @media (max-width: 767px) {
+                &:last-child {
+                    width: 100%;
+                }
+            }
+            @media (max-width: 575px) {
+                width: calc(50% - 15px);
+            }
+            & > a {
+                font-weight: 600;
+                font-size: 14px;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+            & > ul {
+                li {
+                    line-height: 1;
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
                     }
-                    &.icon-mail {
-                        background: url('data:image/svg+xml,<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.890909 0H16.9273C17.4193 0 17.8182 0.348227 17.8182 0.777778V13.2222C17.8182 13.6518 17.4193 14 16.9273 14H0.890909C0.398878 14 0 13.6518 0 13.2222V0.777778C0 0.348227 0.398878 0 0.890909 0ZM8.96308 6.75337L3.82526 2.94509C3.49548 2.70065 3.03574 2.73785 2.74954 3.03213C2.40368 3.38776 2.45052 3.9667 2.84906 4.26211L8.97422 8.80219L14.9794 4.26514C15.3759 3.96564 15.4173 3.38538 15.0676 3.03253C14.7783 2.74073 14.3178 2.70781 13.99 2.95549L8.96308 6.75337Z" fill="rgb(32 162 227)"/></svg>') no-repeat center center;
-                        margin-top: 2px;
+                    a {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.75);
+                        @include inline-flex;
+                        @include align-items(flex-start);
+                        gap: 10px;
+                        margin-bottom: 0;
+                        line-height: 1.5;
+                        &:hover, &:focus {
+                            color: var(--primary);
+                        }
+                        span {
+                            strong {
+                                display: block;
+                                color: white;
+                                margin-bottom: 5px;
+                                font-weight: 600;
+                            }
+                        }
+                        .icon {
+                            min-width: 14px;
+                            height: 14px;
+                            background-size: contain !important;
+                            display: inline-block;
+                            margin-top: 3px;
+                            &.icon-phone {
+                                background: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.23 9.62889C12.2733 9.62889 11.3478 9.47333 10.4844 9.19333C10.2122 9.1 9.90889 9.17 9.69889 9.38L8.47778 10.9122C6.27667 9.86222 4.21556 7.87889 3.11889 5.6L4.63556 4.30889C4.84556 4.09111 4.90778 3.78778 4.82222 3.51556C4.53444 2.65222 4.38667 1.72667 4.38667 0.77C4.38667 0.35 4.03667 0 3.61667 0H0.925556C0.505556 0 0 0.186667 0 0.77C0 7.99556 6.01222 14 13.23 14C13.7822 14 14 13.51 14 13.0822V10.3989C14 9.97889 13.65 9.62889 13.23 9.62889Z" fill="white"/></svg>') no-repeat center center;
+                            }
+                            &.icon-mail {
+                                background: url('data:image/svg+xml,<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.7 0H13.3C13.6866 0 14 0.273607 14 0.611111V10.3889C14 10.7264 13.6866 11 13.3 11H0.7C0.313404 11 0 10.7264 0 10.3889V0.611111C0 0.273607 0.313404 0 0.7 0ZM7.04242 5.30622L3.00556 2.314C2.74645 2.12194 2.38522 2.15117 2.16035 2.38239C1.8886 2.66181 1.92541 3.11669 2.23855 3.3488L7.05117 6.91601L11.7696 3.35118C12.081 3.11586 12.1136 2.65994 11.8388 2.3827C11.6115 2.15343 11.2497 2.12756 10.9921 2.32217L7.04242 5.30622Z" fill="white"/></svg>') no-repeat center center;
+                            }
+                            &.icon-location {
+                                background: url('data:image/svg+xml,<svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C7.5913 0 9.11795 0.632594 10.2432 1.75781C11.3682 2.88294 11.9999 4.4089 12 6C12 7.88896 10.9655 9.73537 9.86328 11.1836C8.74557 12.6521 7.47372 13.8212 6.83691 14.3711C6.82556 14.3809 6.81375 14.3904 6.80176 14.3994C6.57073 14.5731 6.28904 14.667 6 14.667C5.71116 14.6669 5.43012 14.5729 5.19922 14.3994C5.18728 14.3904 5.17537 14.3809 5.16406 14.3711C4.52727 13.8213 3.25544 12.6522 2.1377 11.1836C1.03547 9.73535 0 7.88903 0 6C8.62396e-05 4.40882 0.632671 2.88295 1.75781 1.75781C2.88295 0.632671 4.40882 8.62396e-05 6 0ZM6.00098 2.33398C3.97593 2.33398 2.33398 3.97593 2.33398 6.00098C2.33398 8.02602 3.97593 9.66797 6.00098 9.66797C8.02602 9.66797 9.66797 8.02602 9.66797 6.00098C9.66797 3.97593 8.02602 2.33398 6.00098 2.33398ZM6.00098 3.66797C7.28964 3.66797 8.33398 4.71231 8.33398 6.00098C8.33398 7.28964 7.28964 8.33398 6.00098 8.33398C4.71231 8.33398 3.66797 7.28964 3.66797 6.00098C3.66797 4.71231 4.71231 3.66797 6.00098 3.66797Z" fill="white"/></svg>') no-repeat center center;
+                            }
+                        }
                     }
-                    &.icon-location {
-                        background: url('data:image/svg+xml,<svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.20151 0C6.25284 0.000384467 5.31359 0.185977 4.43768 0.546124C3.56176 0.906267 2.76642 1.43388 2.09731 2.09866C1.4282 2.76345 0.898487 3.55233 0.538586 4.42002C0.178686 5.2877 -0.00431804 6.21711 7.73355e-05 7.15489C7.73355e-05 12.0988 5.15912 16.6318 6.74629 17.8318C6.87953 17.9404 7.04693 18 7.21972 18C7.39251 18 7.5599 17.9404 7.69313 17.8318C9.28334 16.5957 14.3999 12.0988 14.3999 7.15489C14.4043 6.21736 14.2214 5.2882 13.8617 4.42071C13.5019 3.55323 12.9726 2.76448 12.3037 2.09973C11.6349 1.43498 10.8399 0.907313 9.96439 0.546987C9.08884 0.186663 8.14991 0.000778895 7.20151 0ZM7.20151 10.1128C6.60129 10.1128 6.01456 9.93694 5.5155 9.60725C5.01644 9.27762 4.62747 8.80909 4.39778 8.26092C4.16809 7.71276 4.10799 7.10956 4.22508 6.52763C4.34218 5.94569 4.6312 5.41115 5.05563 4.9916C5.48004 4.57205 6.02078 4.28633 6.60946 4.17058C7.19814 4.05483 7.80832 4.11423 8.36285 4.3413C8.91737 4.56835 9.39133 4.95287 9.7248 5.4462C10.0583 5.93954 10.2362 6.51955 10.2362 7.11289C10.2362 7.90853 9.91654 8.67157 9.34739 9.23418C8.77826 9.7968 8.00636 10.1128 7.20151 10.1128Z" fill="rgb(32 162 227)"/></svg>') no-repeat center center;
+                }
+            }
+        }
+    }
+    .copyright-content-block {
+        @include flexbox;
+        @include align-items(flex-end);
+        gap: 20px;
+        margin-top: 50px;
+        .footer-inline-menu {
+            @include inline-flex;
+            @include align-items(center);
+            margin-bottom: 10px;
+            li {
+                line-height: 1;
+                &:not(:last-child) {
+                    &::after {
+                        content: '';
+                        width: 1px;
+                        height: 10px;
+                        border-right: 1px solid rgba(255, 255, 255, 0.75);
+                        margin: 0 6px;
+                        display: inline-block;
+                        margin-bottom: -1px;
                     }
+                }
+                a {
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: rgba(255, 255, 255, 0.75);
+                    &:hover, &:focus {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+        .copyright-text {
+            font-weight: 400;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .design-by {
+            margin-left: auto;
+            a {
+                color: rgba(#ffffff, 0.3);
+                &:hover, &:focus {
+                    color: var(--primary);
+                    text-decoration: none;
                 }
             }
         }

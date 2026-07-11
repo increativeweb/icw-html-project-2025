@@ -1,0 +1,26 @@
+@import "../../assets/css/scss/mixins";
+
+.image-content-section {
+    .image-content-block {
+        .media-block {
+            margin-left: auto;
+        }
+        .flex-lg-row-reverse {
+            .media-block {
+                margin-left: 0;
+            }
+        }
+    }
+    .media-block {
+        max-width: 535px;
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+    .section-title {
+        margin-bottom: 0;
+        @media (max-width: 992px) {
+            margin-bottom: 30px;
+        }
+    }
+}

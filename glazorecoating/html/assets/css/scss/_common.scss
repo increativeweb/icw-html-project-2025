@@ -40,7 +40,7 @@ body {
     background-color: var(--white);
     color: var(--black);
     font-family: 'Inter', sans-serif;;
-    font-size: clamp(16px, 2vw, 18px);
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 400;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -106,6 +106,8 @@ img {
     max-width: 100%;
     height: auto;
     image-rendering: smooth;
+    object-fit: cover;
+    object-position: center;
     &.aligncenter {
         margin: 0 auto;
         display: table;
@@ -154,13 +156,13 @@ img {
     }
 }
 
-.g-50 {
+.g-40 {
     @media (min-width: 992px) {
         --bs-gutter-x: 50px;
     }
 
     @media (min-width: 1400px) {
-        --bs-gutter-x: 100px;
+        --bs-gutter-x: 80px;
     }
 
     @media (max-width: 992px) {
@@ -192,7 +194,7 @@ h4,
 .h4,
 h5,
 .h5 {
-    line-height: 1.1;
+    line-height: 1.25;
     font-weight: 600;
 }
 
@@ -250,6 +252,20 @@ h5,
 }
 .bg-gradient {
     background-image: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
+}
+.bg-gradient-with-vector {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image:  url('../../assets/images/img-bg-vector-r.png'), linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
+    &-r {
+        @extend .bg-gradient-with-vector;
+        background-position: top right;
+    }
+    &-l {
+        @extend .bg-gradient-with-vector;
+        background-image:  url('../../assets/images/img-bg-vector-l.png'), linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
+        background-position: top left;
+    }
 }
 .bg-transprent {
     background-color: transparent !important;
@@ -592,4 +608,9 @@ h5,
             }
         }
     }
+}
+
+// In Mobile Sticky Card 
+.is-sticky-card {
+
 }

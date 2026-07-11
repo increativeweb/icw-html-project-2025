@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
             $(this).toggleClass('is-visible');
         });
         if ($('li.menu-item-has-children').length) {
-            $("li.menu-item-has-children > a").append('<i class="arrow"></i>');
+            $("li.menu-item-has-children").append('<i class="arrow"></i>');
         }
         $('.menu-item-has-children .arrow').on('click', function (e) {
             e.preventDefault();

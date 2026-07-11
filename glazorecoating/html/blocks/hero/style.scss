@@ -2,7 +2,8 @@
 
 .hero-section {
     padding: 60px 0;
-    background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);   
+    background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%), url('../../assets/images/img-bg-vector-r.png') no-repeat top right;
+    background-size: auto;
     @media (max-width: 767px) {
         padding: 40px 0;
     }
@@ -21,6 +22,10 @@
         }
         .title {
             margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .sort-info {
+            font-size: clamp(16px, 2vw, 18px);
         }
         .action {
             margin-top: 40px;
@@ -32,7 +37,7 @@
     .media-block {
         display: grid;
         grid-template-columns: 180px 1fr;
-        gap: 20px;
+        gap: 18px;
         background: transparent;
         max-width: 500px;
         margin-left: auto;
