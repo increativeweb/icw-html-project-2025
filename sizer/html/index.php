@@ -377,6 +377,7 @@
                         <div class="section-title mb-md-0">
                             <h2 class="title">Our Location</h2>
                             <div class="sort-info">
+                                <p><strong>Sizer Engineering</strong></p>
                                 <ul class="contact-info-list">
                                     <li><a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank"><span class="icon icon-location"></span>Plot No. 1, Laxminarayan Ind. Estate, <br>Taas Wadi, A.K. Road, <br>Surat-395006, Gujarat, India</a></li>
                                     <li><a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?"><span class="icon icon-chat"></span>+91 9876543210</a></li>
@@ -403,15 +404,18 @@
                         <ul class="contact-list">
                             <li><a href="tel:+919879173737">+91 98791 73737</a></li>
                             <li><a href="mailto:sizerengg@yahoo.com">sizerengg@yahoo.com</a></li>
+                            <li>                                
+                                <ul class="social-list">
+                                    <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook"><svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5105 2.89875V4.95975H0V7.47975H1.5105V14.9692H4.611V7.4805H6.69225C6.69225 7.4805 6.88725 6.27225 6.98175 4.95075H4.62375V3.22725C4.62375 2.97 4.96125 2.6235 5.29575 2.6235H6.98625V0H4.68825C1.43325 0 1.5105 2.52225 1.5105 2.89875Z" fill="currentColor"/></svg></a></li> 
+                                    <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7814 3.31421C13.1789 3.31421 12.7271 3.76609 12.7271 4.3686C12.7271 4.97111 13.1789 5.423 13.7814 5.423C14.384 5.423 14.8358 4.97111 14.8358 4.3686C14.8358 3.76609 14.384 3.31421 13.7814 3.31421Z" fill="currentColor"/><path d="M9.03873 4.66895C6.55337 4.66895 4.59521 6.70242 4.59521 9.11246C4.59521 11.5225 6.62869 13.556 9.03873 13.556C11.4488 13.556 13.4822 11.5225 13.4822 9.11246C13.4822 6.70242 11.5241 4.66895 9.03873 4.66895ZM9.03873 11.9744C7.45714 11.9744 6.1768 10.6941 6.1768 9.11246C6.1768 7.53087 7.45714 6.25054 9.03873 6.25054C10.6203 6.25054 11.9007 7.53087 11.9007 9.11246C11.9007 10.6941 10.6203 11.9744 9.03873 11.9744Z" fill="currentColor"/><path d="M12.6527 0H5.49791C2.41004 0 0 2.41004 0 5.42259V12.5774C0 15.59 2.41004 18 5.42259 18H12.5774C15.59 18 18 15.59 18 12.5774V5.42259C18.0753 2.41004 15.6653 0 12.6527 0ZM16.3431 12.6527C16.3431 14.6862 14.6862 16.4184 12.5774 16.4184H5.42259C3.38912 16.4184 1.6569 14.7615 1.6569 12.6527V5.49791C1.6569 3.46444 3.31381 1.73222 5.42259 1.73222H12.5774C14.6109 1.73222 16.3431 3.38912 16.3431 5.49791V12.6527Z" fill="currentColor"/></svg></a></li>                           
+                                </ul>      
+                            </li>
                         </ul>
                         <div class="address-info">
+                            <p><strong>Sizer Engineering</strong></p>
                             <a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank">Plot No. 1, Laxminarayan Ind. Estate, Taas Wadi, A.K. Road, Surat-395006, Gujarat, India</a>
                         </div>
                     </div>
-                    <ul class="social-list">
-                        <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook"><svg width="7" height="15" viewBox="0 0 7 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5105 2.89875V4.95975H0V7.47975H1.5105V14.9692H4.611V7.4805H6.69225C6.69225 7.4805 6.88725 6.27225 6.98175 4.95075H4.62375V3.22725C4.62375 2.97 4.96125 2.6235 5.29575 2.6235H6.98625V0H4.68825C1.43325 0 1.5105 2.52225 1.5105 2.89875Z" fill="currentColor"/></svg></a></li> 
-                        <li><a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7814 3.31421C13.1789 3.31421 12.7271 3.76609 12.7271 4.3686C12.7271 4.97111 13.1789 5.423 13.7814 5.423C14.384 5.423 14.8358 4.97111 14.8358 4.3686C14.8358 3.76609 14.384 3.31421 13.7814 3.31421Z" fill="currentColor"/><path d="M9.03873 4.66895C6.55337 4.66895 4.59521 6.70242 4.59521 9.11246C4.59521 11.5225 6.62869 13.556 9.03873 13.556C11.4488 13.556 13.4822 11.5225 13.4822 9.11246C13.4822 6.70242 11.5241 4.66895 9.03873 4.66895ZM9.03873 11.9744C7.45714 11.9744 6.1768 10.6941 6.1768 9.11246C6.1768 7.53087 7.45714 6.25054 9.03873 6.25054C10.6203 6.25054 11.9007 7.53087 11.9007 9.11246C11.9007 10.6941 10.6203 11.9744 9.03873 11.9744Z" fill="currentColor"/><path d="M12.6527 0H5.49791C2.41004 0 0 2.41004 0 5.42259V12.5774C0 15.59 2.41004 18 5.42259 18H12.5774C15.59 18 18 15.59 18 12.5774V5.42259C18.0753 2.41004 15.6653 0 12.6527 0ZM16.3431 12.6527C16.3431 14.6862 14.6862 16.4184 12.5774 16.4184H5.42259C3.38912 16.4184 1.6569 14.7615 1.6569 12.6527V5.49791C1.6569 3.46444 3.31381 1.73222 5.42259 1.73222H12.5774C14.6109 1.73222 16.3431 3.38912 16.3431 5.49791V12.6527Z" fill="currentColor"/></svg></a></li>                           
-                    </ul>      
                 </div>
             </div>
             <div class="footer-main-menu">
