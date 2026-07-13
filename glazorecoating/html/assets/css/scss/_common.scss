@@ -146,6 +146,9 @@ img {
 .g-15 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
+    @media (max-width: 767px) {
+        --bs-gutter-y: 20px;
+    }
 }
 
 .g-30 {
@@ -237,7 +240,7 @@ h5,
     color: var(--primary) !important;
 }
 .text-darkblue {
-    color: var(--dark-blue) !important;
+    color: var(--darkblue) !important;
 }
 
 // Background Color CSS
@@ -528,6 +531,26 @@ h5,
         &:hover, &:focus, &:active {
             background: var(--black);
             border-color: var(--black);
+        }
+    }
+    &.btn-ouline-black {
+        background: var(--white);
+        border-color: var(--black);
+        color: var(--black);
+        span.icons {  
+            .icon {
+                filter: brightness(0);
+            }
+        }
+        &:hover, &:focus, &:active {
+            background: var(--black);
+            border-color: var(--black);
+            color: var(--white);
+            span.icons {  
+                .icon {
+                    filter: unset;
+                }
+            }
         }
     }
 }

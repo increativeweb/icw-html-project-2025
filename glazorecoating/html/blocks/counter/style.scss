@@ -1,0 +1,28 @@
+@import "../../assets/css/scss/mixins";
+
+.counter-section {
+    .counter-block {
+        margin-top: 50px;
+        @media (max-width: 992px) {
+            margin-top: 30px;
+        }
+    }
+    .counter-card {
+        .card-title {
+            font-weight: 600;
+            font-size: clamp(24px, 3vw, 32px);
+            color: var(--darkblue);
+            margin-bottom: 10px;
+        }
+        .card-info {
+
+        }
+    }
+    .media-block {
+        max-width: 532px;
+        margin-left: auto;
+        @media (max-width: 992px) {
+            margin: 0 auto;
+        }
+    }
+}

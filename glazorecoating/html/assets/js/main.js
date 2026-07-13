@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
             $(this).toggleClass('is-visible');
         });
         if ($('li.menu-item-has-children').length) {
-            $("li.menu-item-has-children").append('<i class="arrow"></i>');
+            $('li.menu-item-has-children > a').after('<i class="arrow"></i>');
         }
         $('.menu-item-has-children .arrow').on('click', function (e) {
             e.preventDefault();
@@ -23,6 +23,12 @@ jQuery(document).ready(function ($) {
 
             $(this).toggleClass('is-active');
             $submenu.stop(true, true).slideToggle(300);
+        });
+        $(window).on('resize', function () {
+            if ($(window).width() >= 1200) {
+                $('.main-header, .navbar-toggler').removeClass('is-visible');
+                $('body').removeClass('overflow-hidden');
+            }
         });
     }
 });
