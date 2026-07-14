@@ -144,6 +144,9 @@
             display: inline-block;
             img {
                 height: 45px;
+                @media (max-width: 575px) {
+                    height: 40px;
+                }
             }
         }
         .social-list {
