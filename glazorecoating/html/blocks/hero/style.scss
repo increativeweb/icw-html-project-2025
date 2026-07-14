@@ -4,9 +4,6 @@
     padding: 60px 0;
     background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%), url('../../assets/images/img-bg-vector-r.png') no-repeat top right;
     background-size: auto;
-    @media (max-width: 767px) {
-        padding: 50px 0;
-    }
     .hero-title {
         @media (max-width: 767px) {
             margin-top: 30px;
@@ -58,6 +55,10 @@
             @media (max-width: 767px) {
                 width: 100%;
                 max-height: 250px;
+            }
+            @media (max-width: 575px) {
+                width: 100%;
+                max-height: 200px;
             }
             &:nth-child(1) {
                 grid-column: 1;

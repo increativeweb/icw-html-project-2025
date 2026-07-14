@@ -76,3 +76,53 @@ jQuery(document).ready(function ($) {
         });
     }
 });
+
+// Multiple Img Splide Slider 
+if (jQuery('.multiple-img-splide').length) {
+    $('.multiple-img-splide').each(function () {
+        const $slider = $(this);
+        const multiImgSplide = new Splide(this, {
+            type: 'fade',
+            rewind: true,
+            arrows: false,
+            pagination: true,
+            perPage: 1,
+            perMove: 1,
+            gap: 10,
+            omitEnd: true,
+            autoplay: true,
+            interval: 5000,
+            speed: 1000,
+            pauseOnHover: true,
+            pauseOnFocus: false,
+            updateOnMove: true,
+            classes: {
+                pagination: 'splide__pagination is-light',
+            },
+        });
+        multiImgSplide.on('mounted resize', function () {
+            const slideLength = multiImgSplide.length;
+            const isDesktop = window.innerWidth > 1200;
+
+            if (isDesktop && slideLength <= 1) {
+                multiImgSplide.options = {
+                    drag: false,
+                    arrows: false,
+                    pagination: false,
+                    autoplay: false,
+                    gap: 30,
+                };
+                $slider.addClass('slider-disabled');
+
+            } else {
+                multiImgSplide.options = {
+                    drag: true,
+                    pagination: true,
+                };
+
+                $slider.removeClass('slider-disabled');
+            }
+        });
+        multiImgSplide.mount();
+    });
+}

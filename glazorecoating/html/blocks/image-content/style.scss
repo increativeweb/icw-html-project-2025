@@ -10,11 +10,20 @@
                 margin-left: auto;
             }
         }
+        .multiple-img-splide {
+            max-width: 580px;
+            @media (max-width: 767px) {
+                max-width: 100% !important;
+            }
+        }
     }
     .media-block {
-        max-width: 535px;
+        max-width: 580px;
+        &:not(.ratio-1x1) {
+            max-width: 535px;
+        }
         @media (max-width: 767px) {
-            max-width: 100%;
+            max-width: 100% !important;
         }
     }
     .section-title {
