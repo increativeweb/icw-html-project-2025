@@ -126,3 +126,27 @@ if (jQuery('.multiple-img-splide').length) {
         multiImgSplide.mount();
     });
 }
+
+if ($('.media-block.is-video').length > 0) {
+    $('.media-block.is-video:not(:has(.glightbox))').each(function () {
+        const $block = $(this);
+        const $icon = $block.find('.play-icon');
+        const video = $block.find('video').get(0);
+        if (!video) return;
+        const playVideo = () => {
+            video.play().then(() => { $block.addClass('video-playing'); $icon.addClass('d-none'); }).catch(() => {});
+        };
+        const pauseVideo = () => { video.pause(); $block.removeClass('video-playing'); $icon.removeClass('d-none'); };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { entry.isIntersecting ? playVideo() : pauseVideo(); });
+        }, {
+            threshold: 0.9
+        });
+        observer.observe(video);
+        $(video).on('click', pauseVideo);
+        $icon.on('click', function (e) {
+            e.stopPropagation();
+            playVideo();
+        });
+    });
+}

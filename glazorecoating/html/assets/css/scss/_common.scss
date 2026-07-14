@@ -332,8 +332,8 @@ h5,
             @include justify-content(center);
             @include transition(0.3s, ease-in-out);
             svg {
-                width: 40px;
-                height: 40px;
+                width: 52px;
+                height: 52px;
                 flex: none;
                 @include border-radius(50%);
                 @include transition(0.2s, ease-in-out);
@@ -344,7 +344,7 @@ h5,
                 content: '';
                 top: 0;
                 left: 0;
-                @include border-radius(20px);
+                @include border-radius(0px);
                 opacity: 0.2;
                 background: var(--black);
                 position: absolute;

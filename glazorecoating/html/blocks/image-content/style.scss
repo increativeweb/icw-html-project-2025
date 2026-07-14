@@ -5,7 +5,7 @@
         .media-block {
             margin-left: 0;
         }
-        .flex-lg-row-reverse {
+        .flex-md-row-reverse {
             .media-block {
                 margin-left: auto;
             }
@@ -34,6 +34,23 @@
         .sort-info {
             .font-md {
                 font-size: clamp(16px, 2vw, 18px);
+            }
+        }
+    }
+    .history-list {
+        margin-top: 30px;
+        li {
+            @include flexbox;
+            @include align-items(flex-start);
+            gap: 15px;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            strong {
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--darkblue);
+                min-width: 45px;
             }
         }
     }
