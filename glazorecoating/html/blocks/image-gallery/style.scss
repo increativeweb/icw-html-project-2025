@@ -3,13 +3,16 @@
 .image-gallery-slider-section {
     .image-slider-block {
         .image-gallery-splide {
-
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
         }
     }
     .media-block {
         max-height: 140px;
         display: inline-block;
         position: relative;
+        line-height: 0.7;
         img {
             height: 100%;
         }

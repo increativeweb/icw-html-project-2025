@@ -28,7 +28,7 @@
         .navbar-brand {
             padding: 15px 0;
             img {
-                height: 50px;
+                height: 45px;
                 @media (max-width: 575px) {
                     height: 40px;
                 }
@@ -40,11 +40,11 @@
             }
             @media (max-width: 1200px) {
                 position: fixed;
-                top: 81px;
+                top: 76px;
                 left: 0;
                 bottom: 0;
                 z-index: 15;
-                min-height: calc(100vh - 81px);
+                min-height: calc(100vh - 76px);
                 width: 100%;
                 max-width: 300px;
                 background: rgba(255, 255, 255, 1);
@@ -91,8 +91,9 @@
                     height: 100%;
                     @include inline-flex;
                     @include align-items(center);
-                    @include transition(0.2s, ease-in-out);
+                    @include transition(0.1s, ease-in-out);
                     position: relative;
+                    text-underline-offset: 5px;
                     @media (max-width: 1200px) {
                         height: auto;
                         display: block;
@@ -132,8 +133,9 @@
                             background-size: 10px;
                             margin-top: 2px;
                             filter: brightness(0);
-                            @include transition(0.2s, ease-in-out);
+                            @include transition(0.1s, ease-in-out);
                             animation: .3s menuArrowMoveOut ease-in-out;
+                            opacity: 0.5;
                             @media (max-width: 1200px) {
                                 content: none;
                             }
@@ -149,11 +151,12 @@
                             background: url('data:image/svg+xml,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.65002 0.650002L4.65002 4.65L0.650024 0.650002" stroke="rgb(32 162 227)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
                             background-size: 12px;
                             filter: brightness(0);
-                            @include transition(0.2s, ease-in-out);
+                            @include transition(0.1s, ease-in-out);
                             animation: .3s menuArrowMoveOut ease-in-out;
                             float: right;
                             position: relative;
                             margin-top: 3px;
+                            opacity: 0.5;
                             &:hover, &:focus {
                                 filter: unset;
                             }
@@ -174,9 +177,8 @@
                             min-width: 160px;
                             padding: 30px;
                             background: #FFFFFF;
+                            border: 1px solid rgba(#CAE0F0, 0.5);
                             @include transform(translate(-50%, 5px));
-                            @include transition(0.2s, ease-in-out);
-                            @include box-shadow(0px 5px 10px 6px rgba(0, 0, 0, 0.02))
                         }
                         @media (max-width: 1200px) {
                             display: none;
@@ -200,7 +202,8 @@
                                     padding: 10px;
                                 }
                                 &:hover, &:focus {
-                                    color: var(--darkblue);
+                                    color: var(--primary);
+                                    text-decoration: underline;
                                     @media (max-width: 1200px) {
                                         background: #F4F9FD;
                                     }
@@ -208,7 +211,8 @@
                             }
                             &.current-menu-item {
                                 a {
-                                    color: var(--darkblue);
+                                    color: var(--primary);
+                                    text-decoration: underline;
                                 }
                             }
                         }
@@ -275,8 +279,9 @@
                                                     font-size: clamp(15px, 1vw, 18px);
                                                     color: var(--black);
                                                     line-height: 1;
-                                                    @include transition(0.2s, ease-in-out);
+                                                    @include transition(0.1s, ease-in-out);
                                                     margin-bottom: 3px;
+                                                    text-underline-offset: 5px;
                                                 }
                                                 .menu-info {
                                                     font-weight: 400;
@@ -287,7 +292,8 @@
                                                 &:hover, &:focus {
                                                     background: #F4F9FD;
                                                     .menu-name {
-                                                        color: var(--darkblue);
+                                                        color: var(--primary);
+                                                        text-decoration: underline;
                                                     }
                                                 }
                                             }
@@ -295,56 +301,26 @@
                                                 a {
                                                     background: #F4F9FD;
                                                     .menu-name {
-                                                        color: var(--darkblue);
+                                                        color: var(--primary);
+                                                        text-decoration: underline;
                                                     }
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                .img-content-menu-block {
-                                    background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%);
-                                    padding: 15px;
+                                .img-content-menu-block {                                    
                                     @media (max-width: 1200px) {
                                         margin: 0 10px;
                                     }
-                                    .logo {
-                                        margin-bottom: 20px;
+                                    a {
                                         img {
-                                            height: 24px;
+                                            @include transition(0.1s, ease-in-out);
                                         }
-                                    }
-                                    .content-info {
-                                        margin-bottom: 15px;
-                                        .title {
-                                            font-size: clamp(14px, 2vw, 16px);
-                                            font-weight: 600;
-                                            margin-bottom: 5px;
-                                        }
-                                        .info {
-                                            font-weight: 400;
-                                            font-size: 12px;
-                                            color: #787878;
-                                        }
-                                    }
-                                    .img-block {
-                                        max-height: 81px;
-                                    }
-                                    .menu-link {
-                                        font-family: var(--font-allerta);
-                                        font-weight: 400;
-                                        font-size: 12px;
-                                        letter-spacing: 0.02em;
-                                        text-transform: uppercase;
-                                        color: var(--primary);
-                                        text-decoration: none;
-                                        z-index: 5;
-                                        position: relative;
-                                        margin-top: 15px;
-                                        display: inline-block;
                                         &:hover, &:focus {
-                                            color: var(--darkblue);
-                                            text-decoration: underline;
+                                            img {
+                                                opacity: 0.8;
+                                            }
                                         }
                                     }
                                 }

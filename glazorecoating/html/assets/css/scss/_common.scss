@@ -146,9 +146,6 @@ img {
 .g-15 {
     --bs-gutter-y: 30px;
     --bs-gutter-x: 30px;
-    @media (max-width: 767px) {
-        --bs-gutter-y: 20px;
-    }
 }
 
 .g-30 {
@@ -566,6 +563,16 @@ h5,
     }
 }
 
+// Ratio
+.ratio {
+    &.ratio-3x4 {
+        --bs-aspect-ratio: 130%;
+        @media (max-width: 767px) {
+            --bs-aspect-ratio: 70%;
+        }
+    }
+}
+
 
 // Splide Arrows & Pagination
 .splide__arrows {
@@ -614,8 +621,8 @@ h5,
             opacity: 1;
             background: rgba(#20A2E3, 0.6);
             border: 1px solid transparent;
-            @include border-radius(4px);
-            margin: 0 4px;
+            @include border-radius(8px);
+            margin: 0 3px;
             @include transition(0.2s, ease-in-out);
             &.is-active {
                 background: var(--primary);
@@ -626,6 +633,31 @@ h5,
 }
 
 // In Mobile Sticky Card 
-.is-sticky-card {
-
+.is-mobile-stack-card {
+    [class*="col-"], [class*="col"] {
+        @media (max-width: 767px) {
+            position: sticky;
+            &:first-child {
+                top: 100px;
+            }
+            &:nth-child(2) {
+                top: 120px;
+            }
+            &:nth-child(3) {
+                top: 140px;
+            }
+            &:nth-child(4) {
+                top: 160px;
+            }
+            &:nth-child(5) {
+                top: 190px;
+            }
+            &:nth-child(6) {
+                top: 200px;
+            }
+            &:nth-child(7) {
+                top: 220px;
+            }
+        }
+    }
 }

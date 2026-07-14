@@ -7,15 +7,16 @@
         height: 100%;
         padding: 30px;
         border: 1px solid #E6E6E6;
+        background: var(--white);
         @media (max-width: 1200px) {
             padding: 20px;
         }
         .card-title {
-            font-size: clamp(16px, 2vw, 20px);
+            font-size: clamp(18px, 2vw, 20px);
             margin-bottom: 10px;
         }
         .card-info {
-            color: var(--dark-black);
+            color: var(--lightblack);
         }
         &.is-image {
             padding: 0;

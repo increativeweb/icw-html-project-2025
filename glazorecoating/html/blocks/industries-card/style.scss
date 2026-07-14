@@ -15,11 +15,15 @@
         }
         .card-title {
             font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 10px;
             a {
                 color: var(--black);
                 text-decoration: none;
                 @include transition(0.2s, ease-in-out);
             }
+        }
+        .card-info {
+            color: var(--lightblack);
         }
         &:hover, &:focus {
             .card-img {

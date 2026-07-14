@@ -5,11 +5,11 @@
     background: linear-gradient(96.39deg, rgba(202, 224, 240, 0.8) 0.12%, rgba(243, 248, 251, 0.7) 49.04%, rgba(202, 224, 240, 0.3) 99.88%), url('../../assets/images/img-bg-vector-r.png') no-repeat top right;
     background-size: auto;
     @media (max-width: 767px) {
-        padding: 40px 0;
+        padding: 50px 0;
     }
     .hero-title {
         @media (max-width: 767px) {
-            margin-bottom: 40px;
+            margin-top: 30px;
         }
         .tagline {
             font-family: var(--font-allerta);
@@ -23,6 +23,9 @@
         .title {
             margin-bottom: 20px;
             line-height: 1.1;
+            @media (max-width: 767px) {
+                margin-bottom: 15px;
+            }
         }
         .sort-info {
             font-size: clamp(16px, 2vw, 18px);
@@ -46,7 +49,7 @@
         }
         @media (max-width: 767px) {
             max-width: 100%;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             margin: 0 auto;
         }
         img {
@@ -54,14 +57,14 @@
             max-height: 450px;
             @media (max-width: 767px) {
                 width: 100%;
-                max-height: 300px;
+                max-height: 250px;
             }
             &:nth-child(1) {
                 grid-column: 1;
                 grid-row: 1;
                 @media (max-width: 767px) {
                     grid-column: 1;
-                    grid-row: 1;
+                    grid-row: 2;
                 }
             }
             &:nth-child(2) {
@@ -69,7 +72,7 @@
                 grid-row: 2;
                 @media (max-width: 767px) {
                     grid-column: 2;
-                    grid-row: 1;
+                    grid-row: 2;
                 }
             }
             &:nth-child(3) {
@@ -77,7 +80,7 @@
                 grid-row: 1 / span 2;
                 @media (max-width: 767px) {
                     grid-column: 1 / span 2;
-                    grid-row: 2;
+                    grid-row: 1;
                 }
             }
         }

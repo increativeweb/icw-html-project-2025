@@ -10,6 +10,13 @@ jQuery(document).ready(function ($) {
             $(".main-header").toggleClass('is-visible');
             $('body').toggleClass('overflow-hidden');
             $(this).toggleClass('is-visible');
+        });        
+        $(document).on('click', function (e) {
+            if ($(window).width() >= 1200) return;
+            if (!$(e.target).closest('.navbar-collapse, .navbar-toggler').length) {
+                $('.main-header, .navbar-toggler').removeClass('is-visible');
+                $('body').removeClass('overflow-hidden');
+            }
         });
         if ($('li.menu-item-has-children').length) {
             $('li.menu-item-has-children > a').after('<i class="arrow"></i>');
@@ -29,6 +36,43 @@ jQuery(document).ready(function ($) {
                 $('.main-header, .navbar-toggler').removeClass('is-visible');
                 $('body').removeClass('overflow-hidden');
             }
+        });
+    }
+    if ($('.icw-progress-goto').length > 0) {
+        var progressPath = document.querySelector('.icw-progress-goto path');
+        var pathLength = progressPath.getTotalLength();
+
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+
+        var updateProgress = function () {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
+        }
+
+        updateProgress();
+        $(window).scroll(updateProgress);
+
+        var offset = 200;
+        var duration = 550;
+
+        jQuery(window).on('scroll', function () {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.icw-progress-goto').addClass('active-progress');
+            } else {
+                jQuery('.icw-progress-goto').removeClass('active-progress');
+            }
+        });
+
+        jQuery('.icw-progress-goto').on('click', function (event) {
+            event.preventDefault();
+            jQuery('html, body').animate({ scrollTop: 0 }, duration);
+            return false;
         });
     }
 });
