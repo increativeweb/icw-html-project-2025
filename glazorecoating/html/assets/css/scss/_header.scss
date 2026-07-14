@@ -43,22 +43,24 @@
                 top: 76px;
                 left: 0;
                 bottom: 0;
-                z-index: 15;
-                min-height: calc(100vh - 76px);
-                min-height: calc(100dvh - 76px);
                 width: 100%;
                 max-width: 300px;
-                background: rgba(255, 255, 255, 1);
+                height: calc(100dvh - 76px);
+                height: calc(100vh - 76px);
+                background: #fff;
+                border-right: 1px solid #EEEEEE;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                z-index: 15;
+                transform: translateX(-110%);
+                transition: transform .3s ease-in-out;
+                padding-bottom: env(safe-area-inset-bottom);
                 @include flexbox;
                 @include flex-direction(column);
-                @include align-items(flex-start);
-                transition: transform 0.3s ease-in-out;
-                @include transform(translateX(-110%));
-                @include border-radius(0px);
-                border-right: 1px solid #EEEEEE;
                 @media (max-width: 575px) {
                     top: 71px;
-                    min-height: calc(100vh - 71px);
+                    height: calc(100dvh - 71px);
+                    height: calc(100vh - 71px);
                 }
             }
         }
