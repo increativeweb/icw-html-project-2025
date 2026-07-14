@@ -14,7 +14,7 @@
         .tagline {
             font-family: var(--font-allerta);
             font-weight: 400;
-            font-size: 14px;
+            font-size: clamp(13px, 2vw, 14px);
             letter-spacing: 0.02em;
             text-transform: uppercase;
             color: var(--primary);
