@@ -57,4 +57,58 @@
             }
         }
     }
+    // Info List Card
+    .info-list-cards {
+        margin-top: 20px;
+        &>[class^="col-"] {
+            margin-bottom: 10px;
+        }
+        .info-list-card {
+            @include flexbox;
+            height: 100%;
+            gap: 10px;
+            position: relative;
+            @include transition(0.2s, ease-in-out);
+            border: none;
+            .card-icon {
+                max-width: 16px;
+                min-width: 16px;
+                line-height: 0.7;
+                margin-top: 2px;
+            }
+            .card-content {
+                .card-title {
+                    font-weight: 500;
+                    font-size: clamp(14px, 2vw, 16px);
+                    margin-bottom: 5px;
+                    a {
+                        color: var(--black);
+                        text-decoration: none;
+                        @include transition(0.2s, ease-in-out);
+                    }
+                }
+                .card-info {
+                    font-size: clamp(14px, 2vw, 16px);
+                    line-height: 1.5;
+                    color: var(--lightblack);
+                }
+            }
+            &:has(a:hover),
+            &:has(a:focus) {
+                .card-title {
+                    a {
+                        color: var(--primary);
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &.only-card-title {
+                .card-content {
+                    .card-title {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
 }
