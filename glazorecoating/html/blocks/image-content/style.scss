@@ -1,12 +1,32 @@
 @import "../../assets/css/scss/mixins";
 
 .image-content-section {
+    &.is-full {
+        .image-content-block {
+            .row {
+                flex-direction: column-reverse;
+            }
+            .media-block, .multiple-img-splide {
+                max-width: 100%;
+            }
+            .section-title {
+                margin-bottom: 50px !important;
+                @media (max-width: 992px) {
+                    margin-bottom: 30px !important;
+                }
+            }
+        }
+    }
     .image-content-block {
         .media-block {
             margin-left: 0;
+            @media (max-width: 1200px) {
+                position: sticky;
+                top: 100px;
+            }
         }
         .flex-md-row-reverse {
-            .media-block {
+            .media-block, .multiple-img-splide {
                 margin-left: auto;
             }
         }
@@ -14,6 +34,10 @@
             max-width: 580px;
             &:has(.ratio-3x4) {
                 max-width: 535px;
+            }
+            @media (max-width: 1200px) {
+                position: sticky;
+                top: 100px;
             }
             @media (max-width: 767px) {
                 max-width: 100% !important;
@@ -33,11 +57,6 @@
         margin-bottom: 0;
         @media (max-width: 767px) {
             margin-top: 30px;
-        }
-        .sort-info {
-            .font-md {
-                font-size: clamp(16px, 2vw, 18px);
-            }
         }
     }
     .history-list {
@@ -59,8 +78,10 @@
     }
     // Info List Card
     .info-list-cards {
-        margin-top: 20px;
-        &>[class^="col"] {
+        &:not(.g-15) {
+            margin-top: 20px;
+        }
+        &:not(.g-15) > [class^="col"] {
             margin-bottom: 10px;
         }
         .info-list-card {
@@ -85,10 +106,9 @@
             }
             .card-content {
                 .card-title {
-                    font-weight: 500;
-                    font-size: clamp(14px, 2vw, 16px);
+                    font-weight: 700;
+                    font-size: clamp(14px, 2vw, 18px);
                     margin-bottom: 5px;
-                    letter-spacing: -0.01em;
                     a {
                         color: var(--darkblue);
                         text-decoration: none;
@@ -113,8 +133,15 @@
             &.only-card-title {
                 .card-content {
                     .card-title {
+                        font-size: clamp(14px, 2vw, 16px);
                         margin-bottom: 0;
+                        font-weight: 500;
                     }
+                }
+            }
+            &.only-card-info {
+                .card-icon { 
+                    display: none;
                 }
             }
         }

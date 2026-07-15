@@ -135,8 +135,12 @@
 
     .sort-info {
         color: var(--lightblack);
+        .font-md {
+            font-size: clamp(16px, 2vw, 18px);
+        }
         h3 {
-            font-weight: 400;
+            font-size: clamp(20px, 2vw, 30px);
+            font-weight: 500;
         }
 
         h4 {
@@ -153,7 +157,9 @@
         }
     }
 
-    .info-list-cards,
+    .info-list-cards {
+        margin-top: 0;
+    }
     .counter-cards {
         margin-top: 16px;
     }
@@ -231,3 +237,4 @@
         }
     }
 }
+

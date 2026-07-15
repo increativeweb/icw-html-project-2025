@@ -1,4 +1,4 @@
-// Counter
+// Process Splide
 if (jQuery('.process-splide').length) {
     var processSplide = new Splide('.process-splide', {
         type: 'slide',        
