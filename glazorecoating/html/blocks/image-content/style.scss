@@ -60,7 +60,7 @@
     // Info List Card
     .info-list-cards {
         margin-top: 20px;
-        &>[class^="col-"] {
+        &>[class^="col"] {
             margin-bottom: 10px;
         }
         .info-list-card {
@@ -74,13 +74,13 @@
                 gap: 8px;
             }
             .card-icon {
-                max-width: 16px;
-                min-width: 16px;
+                max-width: 18px;
+                min-width: 18px;
                 line-height: 0.7;
                 margin-top: 2px;
                 @media (max-width: 767px) {
-                    max-width: 14px;
-                    min-width: 14px;
+                    max-width: 16px;
+                    min-width: 16px;
                 }
             }
             .card-content {

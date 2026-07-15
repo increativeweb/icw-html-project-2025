@@ -1,7 +1,8 @@
 // Counter
 if (jQuery('.process-splide').length) {
     var processSplide = new Splide('.process-splide', {
-        type: 'slide',        arrows: true,
+        type: 'slide',        
+        arrows: true,
         pagination: false,
         perPage: 4,
         perMove: 1,
