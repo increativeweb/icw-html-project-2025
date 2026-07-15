@@ -12,6 +12,9 @@
         }
         .multiple-img-splide {
             max-width: 580px;
+            &:has(.ratio-3x4) {
+                max-width: 535px;
+            }
             @media (max-width: 767px) {
                 max-width: 100% !important;
             }
@@ -28,7 +31,7 @@
     }
     .section-title {
         margin-bottom: 0;
-        @media (max-width: 992px) {
+        @media (max-width: 767px) {
             margin-top: 30px;
         }
         .sort-info {

@@ -179,6 +179,9 @@
 // Page Header
 .page-header {
     padding: 50px 0;
+    @media (max-width: 767px) {
+        padding: 15px 0 50px;
+    }
     .section-title {
         @include flexbox;
         @include align-items(flex-end);
@@ -188,6 +191,8 @@
             gap: 10px;
             @include flex-direction(column);
             @include align-items(flex-start);
+            margin-top: 30px;
+            margin-bottom: 0;
         }
         .title {
             font-size: clamp(30px, 5vw, 54px);

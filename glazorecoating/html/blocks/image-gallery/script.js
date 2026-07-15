@@ -6,7 +6,6 @@ const splideConfig = (direction = 'ltr') => ({
     gap: 15,
     type: 'loop',
     focus: 'center',
-    mediaQuery: 'min',
     direction: direction,
     autoScroll: {
         // speed: 1

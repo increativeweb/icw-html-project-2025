@@ -82,7 +82,7 @@ a {
     text-decoration: none;
     word-break: break-word;
     text-underline-offset: 4px;
-    @include transition(0.2s, ease-in-out);
+    @include transition(0.1s, ease-in-out);
     &:focus,
     &:hover {
         text-decoration: underline;
@@ -517,8 +517,8 @@ h5,
         border-color: var(--primary);
         color: var(--white);
         &:hover, &:focus, &:active {
-            background: var(--black);
-            border-color: var(--black);
+            background: var(--darkblue);
+            border-color: var(--darkblue);
         }
     }
     &.btn-ouline-black {
@@ -571,7 +571,7 @@ h5,
             --bs-aspect-ratio: 70%;
         }
     }
-    &.ratio-21x6 {
+    &.ratio-hero-img {
         --bs-aspect-ratio: 32%;
         @media (max-width: 767px) {
             --bs-aspect-ratio: 50%;
@@ -652,7 +652,7 @@ h5,
 // In Mobile Sticky Card 
 .is-mobile-stack-card {
     [class*="col-"], [class*="col"] {
-        @media (max-width: 767px) {
+        @media (max-width: 575px) {
             position: sticky;
             &:first-child {
                 top: 100px;

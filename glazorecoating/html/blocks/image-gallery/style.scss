@@ -6,6 +6,12 @@
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
+            @media (max-width: 992px) {
+                margin: 0 -15px;
+            }
+            .splide__slide {
+                line-height: 0.7;
+            }
         }
     }
     .media-block {

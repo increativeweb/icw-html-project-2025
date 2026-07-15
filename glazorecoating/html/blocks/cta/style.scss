@@ -1,8 +1,8 @@
 @import "../../assets/css/scss/mixins";
 
 .cta-section {
-    @media (max-width: 767px) {
-        padding-bottom: 0;
+    @media (max-width: 992px) {
+        padding-bottom: 0 !important;
     }
     .cta-block {
         padding: 60px;
@@ -11,10 +11,10 @@
         position: relative;
         @media (max-width: 992px) {
             padding: 30px;
+            margin: 0 -15px;
         }
         @media (max-width: 767px) {
             padding: 20px;
-            margin: 0 -15px;
         }
         .cta-title {
             max-width: 640px;

@@ -25,15 +25,14 @@
         .card-info {
             color: var(--lightblack);
         }
-        &:hover, &:focus {
+        &:has(.card-title a):hover,
+        &:has(.card-title a):focus {
             .card-img {
-                opacity: 0.8;
+                opacity: .8;
             }
-            .card-title {
-                a {
-                    color: var(--primary);
-                    text-decoration: none;
-                }
+
+            .card-title a {
+                color: var(--primary);
             }
         }
     }

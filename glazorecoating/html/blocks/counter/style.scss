@@ -28,6 +28,9 @@
     .multiple-img-splide {
         max-width: 580px;
         width: 100%;
+        &:has(.ratio-3x4) {
+            max-width: 535px;
+        }
         @media (max-width: 767px) {
             max-width: 100% !important;
         }
