@@ -541,6 +541,34 @@ h5,
             }
         }
     }
+    &.btn-link {
+        padding: 0;
+        color: var(--black);
+        gap: 8px;
+        .icon {
+            width: 16px;
+            height: 16px;
+            line-height: 0.7;
+            filter: brightness(0);
+	        @include transition(0.2s, ease-in-out);
+            svg, img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        &:hover, &:focus {
+            color: var(--primary);
+            .icon { 
+                filter: unset;
+            }
+        }
+    }
+    &.btn-download {
+        .icon-download {
+            background: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 11.4164C0.75 13.9305 0.75 15.1875 1.53103 15.9686C2.31207 16.7497 3.56912 16.7497 6.08322 16.7497H11.4164C13.9305 16.7497 15.1876 16.7497 15.9686 15.9686C16.7497 15.1875 16.7497 13.9305 16.7497 11.4164" stroke="rgb(32 162 227)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.74982 0.75V12.3055M5.19434 8.41666L8.74982 12.3055L12.3053 8.41666" stroke="rgb(32 162 227)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            background-size: contain;
+        }
+    }
 }
 
 // Glightbox
@@ -583,29 +611,31 @@ h5,
 // Splide Arrows & Pagination
 .splide__arrows {
     .splide__arrow {
-        background: transparent url('data:image/svg+xml,<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0713 6.99959H0.929153M6.23245 12.3029L0.929153 6.99959L6.23245 1.69629" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background: transparent url('data:image/svg+xml,<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0713 6.99959H0.929153M6.23245 12.3029L0.929153 6.99959L6.23245 1.69629" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
         width: 16px;
         height: 16px;
-        border: 1px solid #e5e5e5;
+        border: 1px solid transparent;
         opacity: 1;
-        @include transition(0.3s, ease-in-out);
+        @include transition(0.2s, ease-in-out);
         top: auto;
         left: 0;
-        bottom: -65px;
+        bottom: -30px;
         z-index: 1;
         opacity: 1;
         overflow: hidden;
-        &--next {            
-            @include transform(scaleX(-1));
-            left: auto;
-            right: 46px;
-        }
+        @include transform(translate(0, 0));
         &:hover,
         &:focus {
             opacity: 1;
-            @include transform(translateX(-5px));
-            &--next {            
-                @include transform(scaleX(-1) translateX(5px));
+            @include transform(translate(-5px, 0));
+        }
+        &--next {            
+            @include transform(scaleX(-1));
+            left: 46px;
+            right: auto;
+            &:hover,
+            &:focus {     
+                @include transform(scaleX(-1) translate(-5px, 0));
             }
         }
         svg {

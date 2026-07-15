@@ -18,6 +18,10 @@
         .card-info {
             color: var(--lightblack);
         }
+        &.no-border {
+            padding: 0;
+            border: none;
+        }
         &.is-image {
             padding: 0;
             .card-img {
