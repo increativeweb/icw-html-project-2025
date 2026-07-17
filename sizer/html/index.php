@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,12 +44,12 @@
                         <li><a href="#products">Products</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#infrastructure">Infrastructure</a></li>
-                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="nav-right" id="nav-right">
                     <div class="nav-right-menu">
-                        <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white btn-md"><span class="icon icon-wp"></span><span class="d-none d-sm-inline">Connect Now</span></a>
+                        <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white btn-md"><span class="icon icon-wp"></span><span class="d-none d-sm-inline">Connect Now</span></a>
                     </div>
                     <button class="navbar-toggler" type="button"><span></span><span></span><span></span></button>
                 </div>
@@ -65,7 +66,7 @@
                         <p><strong>We Undertake Job</strong> on CNC Turning Machining, Cylindrical Grinding Machine, <br class="d-none d-lg-block">Surface Grinding Machine, Internal Grinding Machine and Shaft Keyway Slotting Machine.</p>
                     </div>
                     <div class="action">
-                        <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white"><span class="icon icon-wp"></span>Connect Now</a>
+                        <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white"><span class="icon icon-wp"></span>Connect Now</a>
                     </div>
                 </div>
             </div>
@@ -103,7 +104,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Jumbo Diamond Polishing Motor</h3>
@@ -126,7 +127,7 @@
                                         </ul>
                                     </div>
                                 </div>   
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Angur Stand Plate</h3>
@@ -164,7 +165,7 @@
                                         </ul>
                                     </div>
                                 </div>   
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Cast Iron Machining</h3>
@@ -187,7 +188,7 @@
                                         </ul>
                                     </div>
                                 </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Mild Steel Shaft Machining</h3>
@@ -210,7 +211,7 @@
                                         </ul>
                                     </div>
                                 </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Lathe Machine Work</h3>
@@ -233,7 +234,7 @@
                                         </ul>
                                     </div>
                                 </div>  
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Cylindrical Grinding Work</h3>
@@ -256,7 +257,7 @@
                                         </ul>
                                     </div>
                                 </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Surface Grinding Work</h3>
@@ -279,7 +280,7 @@
                                         </ul>
                                     </div>
                                 </div> 
-                                <a class="card-action" href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Shaft Slitting Work</h3>
@@ -302,7 +303,7 @@
                                 <p>We specialize in precision machining of a wide range of materials, including cast iron, mild steel (EN-8, EN-31, and other grades), stainless steel, and various engineering metals, delivering customized solutions to meet diverse industrial requirements.</p>
                             </div>
                             <div class="action">
-                                <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+                                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
                             </div>
                         </div>
                     </div>
@@ -365,7 +366,7 @@
                         <div class="sort-info">We Undertake Job on CNC Turning Machining, Cylindrical Grinding Machine, Surface Grinding Machine,etc.</div>
                     </div>
                     <div class="cta-action">
-                        <a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white"><span class="icon icon-wp"></span>Chat with WhatsApp</a>
+                        <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white"><span class="icon icon-wp"></span>Chat with WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -380,7 +381,7 @@
                                 <p><strong>Sizer Engineering</strong></p>
                                 <ul class="contact-info-list">
                                     <li><a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank"><span class="icon icon-location"></span>Plot No. 1, Laxminarayan Ind. Estate, <br>Taas Wadi, A.K. Road, <br>Surat-395006, Gujarat, India</a></li>
-                                    <li><a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?"><span class="icon icon-chat"></span>+91 9876543210</a></li>
+                                    <li><a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?"><span class="icon icon-chat"></span>+91 98791 73737</a></li>
                                     <li><a href="mailto:sizerengg@yahoo.com"><span class="icon icon-mail"></span>sizerengg@yahoo.com</a></li>
                                 </ul>
                             </div>
@@ -440,7 +441,7 @@
     </footer>
     <div class="sticky-action">
         <ul>
-            <li><a href="https://wa.me/919876543210?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="icon-whatsup" data-bs-toggle="tooltip" data-bs-title="+91 98791 73737"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.6854 3.07557C13.9427 2.33092 13.0573 1.74153 12.0816 1.34217C11.1059 0.942805 10.0595 0.741549 9.00424 0.750272C7.6063 0.757538 6.23473 1.12897 5.02654 1.82746C3.81835 2.52595 2.81582 3.52707 2.11907 4.73081C1.42233 5.93455 1.05576 7.29879 1.05598 8.68727C1.0562 10.0758 1.4232 11.4399 2.12032 12.6434L1.04639 16.75L5.27769 15.6834C6.44746 16.3156 7.75843 16.6457 9.09016 16.6433H9.00424C10.5914 16.6536 12.1457 16.1941 13.469 15.3235C14.7922 14.4529 15.8243 13.2106 16.4338 11.755C17.0433 10.2994 17.2025 8.69649 16.8911 7.15067C16.5797 5.60486 15.8118 4.18619 14.6854 3.07557Z" stroke="white" stroke-width="1.5"/><path d="M12.6774 10.3394C12.4734 10.2434 11.4961 9.76345 11.3135 9.68879C11.1309 9.61412 11.0021 9.59279 10.8625 9.79545C10.7228 9.99812 10.347 10.4354 10.2288 10.5741C10.1107 10.7128 10.0033 10.7234 9.79926 10.5741C9.21319 10.3405 8.67192 10.0086 8.1991 9.59279C7.77108 9.19254 7.40873 8.72827 7.12516 8.21681C7.00703 8.02482 7.12516 7.91815 7.21108 7.81149C7.29699 7.70482 7.40439 7.58749 7.51178 7.47016C7.59031 7.36869 7.65529 7.25754 7.70509 7.1395C7.73173 7.0846 7.74557 7.02444 7.74557 6.9635C7.74557 6.90256 7.73173 6.8424 7.70509 6.7875C7.70509 6.6915 7.25403 5.72085 7.0822 5.32619C6.91038 4.93153 6.76002 4.98487 6.64189 4.98487H6.21232C6.00768 4.99279 5.81457 5.08102 5.67535 5.2302C5.45064 5.44318 5.27264 5.69996 5.15252 5.98446C5.0324 6.26896 4.97275 6.57503 4.97729 6.8835C5.03222 7.6408 5.31258 8.36479 5.78274 8.96347C6.64551 10.2364 7.82587 11.2655 9.2086 11.9501C9.68113 12.1527 10.0463 12.2701 10.3362 12.3661C10.7434 12.4883 11.1738 12.5139 11.5927 12.4407C11.871 12.3847 12.1347 12.2724 12.3674 12.111C12.6002 11.9495 12.7971 11.7423 12.9459 11.5021C13.0697 11.2055 13.1105 10.8812 13.064 10.5634C13.0103 10.4888 12.8815 10.4354 12.6774 10.3394Z" fill="white"/></svg></a></li>
+            <li><a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="icon-whatsup" data-bs-toggle="tooltip" data-bs-title="+91 98791 73737"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.6854 3.07557C13.9427 2.33092 13.0573 1.74153 12.0816 1.34217C11.1059 0.942805 10.0595 0.741549 9.00424 0.750272C7.6063 0.757538 6.23473 1.12897 5.02654 1.82746C3.81835 2.52595 2.81582 3.52707 2.11907 4.73081C1.42233 5.93455 1.05576 7.29879 1.05598 8.68727C1.0562 10.0758 1.4232 11.4399 2.12032 12.6434L1.04639 16.75L5.27769 15.6834C6.44746 16.3156 7.75843 16.6457 9.09016 16.6433H9.00424C10.5914 16.6536 12.1457 16.1941 13.469 15.3235C14.7922 14.4529 15.8243 13.2106 16.4338 11.755C17.0433 10.2994 17.2025 8.69649 16.8911 7.15067C16.5797 5.60486 15.8118 4.18619 14.6854 3.07557Z" stroke="white" stroke-width="1.5"/><path d="M12.6774 10.3394C12.4734 10.2434 11.4961 9.76345 11.3135 9.68879C11.1309 9.61412 11.0021 9.59279 10.8625 9.79545C10.7228 9.99812 10.347 10.4354 10.2288 10.5741C10.1107 10.7128 10.0033 10.7234 9.79926 10.5741C9.21319 10.3405 8.67192 10.0086 8.1991 9.59279C7.77108 9.19254 7.40873 8.72827 7.12516 8.21681C7.00703 8.02482 7.12516 7.91815 7.21108 7.81149C7.29699 7.70482 7.40439 7.58749 7.51178 7.47016C7.59031 7.36869 7.65529 7.25754 7.70509 7.1395C7.73173 7.0846 7.74557 7.02444 7.74557 6.9635C7.74557 6.90256 7.73173 6.8424 7.70509 6.7875C7.70509 6.6915 7.25403 5.72085 7.0822 5.32619C6.91038 4.93153 6.76002 4.98487 6.64189 4.98487H6.21232C6.00768 4.99279 5.81457 5.08102 5.67535 5.2302C5.45064 5.44318 5.27264 5.69996 5.15252 5.98446C5.0324 6.26896 4.97275 6.57503 4.97729 6.8835C5.03222 7.6408 5.31258 8.36479 5.78274 8.96347C6.64551 10.2364 7.82587 11.2655 9.2086 11.9501C9.68113 12.1527 10.0463 12.2701 10.3362 12.3661C10.7434 12.4883 11.1738 12.5139 11.5927 12.4407C11.871 12.3847 12.1347 12.2724 12.3674 12.111C12.6002 11.9495 12.7971 11.7423 12.9459 11.5021C13.0697 11.2055 13.1105 10.8812 13.064 10.5634C13.0103 10.4888 12.8815 10.4354 12.6774 10.3394Z" fill="white"/></svg></a></li>
             <li><a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank" data-bs-toggle="tooltip" data-bs-title="Plot No. 1, Laxminarayan Ind. Estate, Taas Wadi, A.K. Road, Surat-395006, Gujarat, India"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.74996 16.75C6.64095 16.7499 6.53363 16.7234 6.43753 16.6728C6.34143 16.6221 6.25953 16.5489 6.19908 16.4597L1.94271 10.1804C1.93569 10.1703 1.92939 10.1597 1.92388 10.1487C0.919426 8.8115 0.541972 7.16775 0.859787 5.51397C1.30944 3.17458 3.20299 1.30385 5.57208 0.859131C7.36754 0.521735 9.18968 0.974942 10.5732 2.1014C11.2549 2.65479 11.8037 3.34983 12.1801 4.13662C12.5564 4.92341 12.7511 5.78243 12.75 6.65201C12.7519 7.90739 12.3433 9.13009 11.5847 10.1395C11.5776 10.1537 11.5695 10.1674 11.5603 10.1804L7.30084 16.4597C7.24054 16.5491 7.15867 16.6224 7.06254 16.673C6.9664 16.7237 6.85901 16.7501 6.74996 16.75ZM6.74996 4.34891C6.12953 4.34952 5.53469 4.59228 5.09597 5.02392C4.65726 5.45556 4.41052 6.04081 4.4099 6.65124C4.41031 7.2618 4.65696 7.84724 5.0957 8.27905C5.53443 8.71085 6.12939 8.95372 6.74996 8.95433C7.37046 8.95352 7.9653 8.71058 8.40399 8.27882C8.84268 7.84706 9.0894 7.26173 9.09002 6.65124C9.08919 6.04087 8.84238 5.45574 8.40372 5.02415C7.96505 4.59255 7.37033 4.34973 6.74996 4.34891Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a href="mailto:sizerengg@yahoo.com" data-bs-toggle="tooltip" data-bs-title="sizerengg@yahoo.com"><svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 3.41667L5.59437 6.64627C6.73484 7.40653 7.30511 7.78671 7.92138 7.93445C8.46609 8.06493 9.03391 8.06493 9.57862 7.93445C10.1949 7.78671 10.7652 7.40653 11.9056 6.64627L16.75 3.41667M3.59444 13.1944H13.9056C14.9012 13.1944 15.3991 13.1944 15.7793 13.0007C16.1138 12.8303 16.3858 12.5583 16.5562 12.2238C16.75 11.8435 16.75 11.3456 16.75 10.35V3.59445C16.75 2.5988 16.75 2.10097 16.5562 1.72069C16.3858 1.38617 16.1138 1.11421 15.7793 0.94377C15.3991 0.750001 14.9012 0.750001 13.9056 0.750001H3.59444C2.5988 0.750001 2.10097 0.750001 1.72068 0.94377C1.38617 1.11421 1.1142 1.38617 0.943769 1.72069C0.75 2.10097 0.75 2.59879 0.75 3.59445V10.35C0.75 11.3456 0.75 11.8435 0.943769 12.2238C1.1142 12.5583 1.38617 12.8303 1.72068 13.0007C2.10097 13.1944 2.59879 13.1944 3.59444 13.1944Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         </ul>
