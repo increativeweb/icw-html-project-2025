@@ -109,6 +109,42 @@
                         display: inline-block;
                         transform: translateX(-50%);
                     }
+                    & > a {
+                        @media (min-width: 1200px) {
+                            &::after {
+                                content: '';
+                                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4 7 4 4 4-4"></path></svg>') no-repeat center center;
+                                background-size: 14px;
+                                width: 14px;
+                                height: 8px;
+                                display: inline-block;
+                                line-height: 0.7;
+                                margin-left: 4px;
+                                @include transition(0.2s, ease-in-out);
+                            }
+                        } 
+                    }
+                    @media (max-width: 1200px) { 
+                        width: 100%;
+                        .arrow {
+                            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="rgb(0 0 0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4 7 4 4 4-4"></path></svg>') no-repeat center center;
+                            background-size: 16px;
+                            width: 20px;
+                            height: 20px;
+                            line-height: 0.7;
+                            margin-left: auto;
+                            @include transition(0.2s, ease-in-out);
+                            display: block;
+                            float: right;
+                            &:hover, &:focus {
+                                filter: invert(0);
+                            }
+                            &.is-active {
+                                filter: invert(0);
+                                @include transform(rotate(180deg));
+                            }
+                        }
+                    }
                     .sub-menu {
                         @media (min-width: 1200px) {
                             position: absolute;
@@ -142,6 +178,7 @@
                         @media (max-width: 1200px) {
                             display: none;
                             padding: 10px 0 0;
+                            width: 100%;
                         }
                         li {  
                             &:not(:last-child) {
@@ -172,13 +209,20 @@
                         text-decoration: underline;
                     }
                     @media (min-width: 1200px) {
-                        .sub-menu {
-                            opacity: 1;
-                            pointer-events: auto;
-                            visibility: visible;
-                            transform: translate(-50%, 0px);
-                            &::before {
+                        &.menu-item-has-children {
+                            & > a {
+                                &::after {
+                                    @include transform(rotate(180deg));
+                                }
+                            }
+                            .sub-menu {
                                 opacity: 1;
+                                pointer-events: auto;
+                                visibility: visible;
+                                transform: translate(-50%, 0px);
+                                &::before {
+                                    opacity: 1;
+                                }
                             }
                         }
                     }
