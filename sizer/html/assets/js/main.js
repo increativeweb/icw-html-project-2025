@@ -19,6 +19,19 @@ jQuery(document).ready(function ($) {
             }
 
         });
+        if ($('li.menu-item-has-children').length) {
+            $('li.menu-item-has-children > a').after('<i class="arrow"></i>');
+        }
+        $('.menu-item-has-children .arrow').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const $li = $(this).closest('.menu-item-has-children');
+            const $submenu = $li.children('.sub-menu');
+
+            $(this).toggleClass('is-active');
+            $submenu.stop(true, true).slideToggle(300);
+        });
     }
     if ($('.sticky-action').length) {  
         $(window).on('scroll', function () { 
@@ -95,28 +108,30 @@ if ($('.card-img-splide').length > 0) {
 
     });
 }
-if ($('.media-block.is-video').length > 0) {
-    $('.media-block.is-video').each(function () {
-        const $block = $(this);
-        const $icon = $block.find('.play-icon');
-        const video = $block.find('video').get(0);
-        if (!video) return;
-        const playVideo = () => {
-            video.play().then(() => { $block.addClass('video-playing'); $icon.addClass('d-none'); }).catch(() => {});
-        };
-        const pauseVideo = () => { video.pause(); $block.removeClass('video-playing'); $icon.removeClass('d-none'); };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { entry.isIntersecting ? playVideo() : pauseVideo(); });
-        }, {
-            threshold: 0.9
+if ($('.media-block.is-video').length) {
+    const $videos = $('.media-block.is-video');
+    function checkVideos() {
+        const triggerPoint = window.innerHeight * 0.4; 
+        $videos.each(function () {
+            const $block = $(this);
+            const video = $block.find('video').get(0);
+            if (!video) return;
+            const rect = video.getBoundingClientRect();
+            // Play when video reaches top 20% of viewport
+            if (rect.top <= triggerPoint && rect.bottom > triggerPoint) {
+                if (video.paused) {
+                    video.play().then(() => { $block.addClass('video-playing'); }).catch(() => {});
+                }
+            } else {
+                if (!video.paused) {
+                    video.pause();
+                    $block.removeClass('video-playing');
+                }
+            }
         });
-        observer.observe(video);
-        $(video).on('click', pauseVideo);
-        $icon.on('click', function (e) {
-            e.stopPropagation();
-            playVideo();
-        });
-    });
+    }
+    $(window).on('scroll resize load', checkVideos);
+    checkVideos();
 }
 $(function () {
     const offset = 50; // Header height / top offset
@@ -125,7 +140,7 @@ $(function () {
         const target = $($(this).attr('href'));
         return target.length ? target[0] : null;
     }));
-    function setActiveMenu() {
+    function setPageActiveMenu() {
         const scrollPos = $(window).scrollTop() + offset;
         let currentId = '';
         $sections.each(function () {
@@ -145,6 +160,32 @@ $(function () {
             scrollTop: target.offset().top - offset
         }, 600);
     });
-    $(window).on('scroll', setActiveMenu);
-    setActiveMenu();
+    $(window).on('scroll', setPageActiveMenu);
+    setPageActiveMenu();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const currentPage = window.location.pathname.replace(/^\/|\/$/g, '').split('/').pop();
+    function setActiveMenu(selector) {
+        document.querySelectorAll(selector + ' a').forEach(function (link) {
+            const href = (link.getAttribute('href') || '').replace(/^\/|\/$/g, '').split('/').pop();            
+            if (href === currentPage) {
+                // Active item
+                const li = link.closest('li');
+                if (li) { li.classList.add('current-menu-item'); }
+                // Active parent (for submenu)
+                const parentMenu = link.closest('.sub-menu');
+                if (parentMenu) {
+                    const parentLi = parentMenu.closest('li');
+                    if (parentLi) {
+                        parentLi.classList.add('current-menu-item');
+                    }
+                }
+            }
+        });
+    }
+    // Header
+    setActiveMenu('.mainMenu');
+    // Footer
+    setActiveMenu('.main-footer .main-menu');
 });

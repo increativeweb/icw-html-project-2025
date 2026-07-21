@@ -83,6 +83,13 @@
                 gap: 5px 15px;
                 @include flex-wrap(wrap);
             }
+            li {
+                &.current-menu-item {
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     }
     .footer-copyright-block {
