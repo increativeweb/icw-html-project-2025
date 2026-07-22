@@ -38,7 +38,7 @@ section {
 body {
     margin: 0;
     background-color: var(--white);
-    color: var(--black);
+    color: #333333;
     font-family: 'Inter', sans-serif;;
     font-size: clamp(14px, 2vw, 16px);
     font-weight: 400;
@@ -194,18 +194,19 @@ h4,
 .h4,
 h5,
 .h5 {
-    line-height: 1.25;
     font-weight: 600;
 }
 
 h1,
 .h1 {
-    font-size: clamp(30px, 5vw, 64px);
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
 }
 
 h2,
 .h2 {
-    font-size: clamp(28px, 3vw, 48px);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
     &.font-sm {
         font-size: clamp(22px, 3vw, 36px);
     }
@@ -560,6 +561,27 @@ h5,
             color: var(--primary);
             .icon { 
                 filter: unset;
+            }
+        }
+    }
+    &.btn-link-arrow {
+        padding: 0;
+        color: var(--primary);
+        gap: 10px;
+        min-height: auto;
+        .icon-arrow {
+            width: 12px;
+            height: 8px;
+            background: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="rgb(32 162 227)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+            background-size: contain;
+	        @include transition(0.2s, ease-in-out);
+            margin-top: 2px;
+        }
+        &:hover, &:focus {
+            color: var(--black);
+            .icon-arrow { 
+                filter: brightness(0);
+                @include transform(translateX(5px));
             }
         }
     }
