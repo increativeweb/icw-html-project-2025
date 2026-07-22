@@ -110,7 +110,7 @@
                         transform: translateX(-50%);
                     }
                     & > a {
-                        @media (min-width: 1200px) {
+                        @media (min-width: 767px) {
                             &::after {
                                 content: '';
                                 background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4 7 4 4 4-4"></path></svg>') no-repeat center center;
@@ -124,7 +124,7 @@
                             }
                         } 
                     }
-                    @media (max-width: 1200px) { 
+                    @media (max-width: 767px) { 
                         width: 100%;
                         .arrow {
                             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path stroke="rgb(0 0 0)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4 7 4 4 4-4"></path></svg>') no-repeat center center;
@@ -146,22 +146,23 @@
                         }
                     }
                     .sub-menu {
-                        @media (min-width: 1200px) {
+                        @media (min-width: 767px) {
                             position: absolute;
                             top: calc(100% + 20px);
                             left: 50%;
                             display: block;
-                            min-width: 200px;
-                            padding: 5px;
+                            min-width: 300px;
+                            padding: 10px;
                             opacity: 0;
                             pointer-events: none;
                             transform-origin: 50% 0;
                             transform: translate(-50%, 5px);
                             transition: all .2s ease-in-out;
-                            border-radius: 0;
+                            border-radius: 10px;
                             z-index: 9;
-                            border: 1px solid transparent;
-                            background: var(--white);
+                            border: 2px solid var(--white);
+                            background: var(--black);
+                            box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
                             &::before {
                                 opacity: 0;
                                 content: "";
@@ -169,13 +170,13 @@
                                 height: 0;
                                 border-style: solid;
                                 border-width: 0 8px 8px;
-                                border-color: transparent transparent var(--white);
+                                border-color: transparent transparent var(--black);
                                 position: absolute;
-                                top: -8px;
+                                top: -10px;
                                 left: calc(50% - 8px);
                             }
                         }
-                        @media (max-width: 1200px) {
+                        @media (max-width: 767px) {
                             display: none;
                             padding: 10px 0 0;
                             width: 100%;
@@ -185,20 +186,29 @@
                                 margin-bottom: 3px;
                             }  
                             a {
-                                color: var(--black);
+                                color: var(--white);
                                 font-size: 13px;
                                 text-decoration: none;
                                 line-height: 1.4;
-                                padding: 5px 8px;
-                                display: block;
+                                padding: 10px;
+                                @include flexbox;
+                                @include align-items(center);
+                                gap: 10px;
                                 @include transition(0.1s, ease-in-out);
+                                @include border-radius(10px);
+                                .icon {
+                                    width: 35px;
+                                    @include border-radius(5px);
+                                    display: inline-block;
+                                    overflow: hidden;
+                                }
                                 &:hover, &:focus {
-                                    background: rgba(0, 0, 0, 0.08);
+                                    background: rgba(255, 255, 255, 0.2);
                                 }
                             }
                             &.current-menu-item {
                                 & > a {                        
-                                    background: rgba(0, 0, 0, 0.08);
+                                    background: rgba(255, 255, 255, 0.2);
                                 }
                             }
                         }
@@ -208,7 +218,7 @@
                     & > a {                        
                         text-decoration: underline;
                     }
-                    @media (min-width: 1200px) {
+                    @media (min-width: 767px) {
                         &.menu-item-has-children {
                             & > a {
                                 &::after {

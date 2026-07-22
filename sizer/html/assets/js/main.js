@@ -134,58 +134,54 @@ if ($('.media-block.is-video').length) {
     checkVideos();
 }
 $(function () {
-    const offset = 50; // Header height / top offset
-    const $links = $('.mainMenu a[href^="#"]');
-    const $sections = $($links.map(function () {
-        const target = $($(this).attr('href'));
-        return target.length ? target[0] : null;
-    }));
-    function setPageActiveMenu() {
-        const scrollPos = $(window).scrollTop() + offset;
-        let currentId = '';
-        $sections.each(function () {
-            if (scrollPos >= $(this).offset().top) { currentId = this.id; }
-        });
-        $links.removeClass('active');
-        if (currentId) {
-            $links.filter(`[href="#${currentId}"]`).addClass('active');
-        }
-    }
-    // Smooth scroll
-    $links.on('click', function (e) {
-        const target = $($(this).attr('href'));
-        if (!target.length) return;
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: target.offset().top - offset
-        }, 600);
+    const offset = 80;    
+    const $sectionLinks = $('.mainMenu a').filter(function () {
+        return this.hash && $(this.hash).length;
     });
-    $(window).on('scroll', setPageActiveMenu);
-    setPageActiveMenu();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const currentPage = window.location.pathname.replace(/^\/|\/$/g, '').split('/').pop();
-    function setActiveMenu(selector) {
-        document.querySelectorAll(selector + ' a').forEach(function (link) {
-            const href = (link.getAttribute('href') || '').replace(/^\/|\/$/g, '').split('/').pop();            
-            if (href === currentPage) {
-                // Active item
-                const li = link.closest('li');
-                if (li) { li.classList.add('current-menu-item'); }
-                // Active parent (for submenu)
-                const parentMenu = link.closest('.sub-menu');
-                if (parentMenu) {
-                    const parentLi = parentMenu.closest('li');
-                    if (parentLi) {
-                        parentLi.classList.add('current-menu-item');
-                    }
-                }
+    const $sections = $sectionLinks.map(function () {
+        return $(this.hash)[0];
+    });
+    // Highlight current section while scrolling
+    function setScrollActiveMenu() {
+        if (window.location.pathname !== "/") return;
+        const scrollPos = $(window).scrollTop() + offset;
+        $('.mainMenu li').removeClass('current-menu-item');
+        $sections.each(function () {
+            const $section = $(this);
+            const top = $section.offset().top - offset;
+            const bottom = top + $section.outerHeight();
+            if (scrollPos >= top && scrollPos < bottom) {
+                $sectionLinks.filter(function () { return this.hash === "#" + $section.attr("id"); }).parent().addClass("current-menu-item");
+                return false; // Stop after first matching section
             }
         });
     }
-    // Header
-    setActiveMenu('.mainMenu');
-    // Footer
-    setActiveMenu('.main-footer .main-menu');
+    // Smooth scroll
+    $sectionLinks.on('click', function (e) {
+        const pathname = this.pathname.replace(/\/$/, '');
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        if (pathname !== currentPath) return;
+        const $target = $(this.hash);
+        if (!$target.length) return;
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $target.offset().top - offset }, 600);
+    });
+    // Highlight current page (header & footer)
+    function setPageActiveMenu(selector) {
+        const currentPage = window.location.pathname.replace(/^\/|\/$/g, '').split('/').pop() || '';
+        $(selector + ' a').each(function () {
+            let href = $(this).attr('href') || '';
+            // Ignore anchor links
+            if (href.indexOf('#') !== -1) return;
+            href = href.replace(/^\/|\/$/g, '').split('/').pop();
+            if (href === currentPage) {
+                $(this).closest('li').addClass('current-menu-item');
+                $(this).closest('.sub-menu').closest('li').addClass('current-menu-item');
+            }
+        });
+    }
+    setPageActiveMenu('.mainMenu');
+    setPageActiveMenu('.main-footer .main-menu');
+    $(window).on('scroll', setScrollActiveMenu);
+    setScrollActiveMenu();
 });

@@ -51,7 +51,7 @@
                 </div>
             </div>
         </section>
-        <section class="theme-section contact-section">
+        <section class="theme-section contact-section pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -87,6 +87,8 @@
                     </div>
                     <div class="col-md-6">
                         <script src="https://js-na2.hsforms.net/forms/embed/246723240.js" defer></script>
+                        <h3>Get in Touch</h3>
+                        <p>We’re here to help and answer your questions.</p>
                         <div class="hs-form-frame" data-region="na2" data-form-id="89905c52-c44c-49ac-9a8e-ad08682c6307" data-portal-id="246723240"></div>
                     </div>
                 </div>

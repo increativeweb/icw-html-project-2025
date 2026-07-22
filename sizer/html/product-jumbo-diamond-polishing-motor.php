@@ -46,7 +46,7 @@
         <section class="page-header">
             <div class="container">
                 <div class="section-title mb-0">
-                    <div class="tagline">Product</div>
+                    <div class="tagline"><a href="/">Home</a>Products</div>
                     <h1 class="title">Jumbo Diamond Polishing Motor</h1>
                     <div class="sort-info">Sizer Engineering has vast experience in manufacturing diamond polishing motors. We possess high-precision machinery and measuring instruments to manufacture and test every diamond polishing mill</div>
                 </div>
@@ -107,6 +107,19 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="theme-section cta-section pt-0">
+            <div class="container">
+                <div class="cta-block">
+                    <div class="cta-content">
+                        <h2 class="title font-sm">Looking for Reliable Machining Services and Job Work?</h2>
+                        <div class="sort-info">We Undertake Job on CNC Turning Machining, Cylindrical Grinding Machine, Surface Grinding Machine,etc.</div>
+                    </div>
+                    <div class="cta-action">
+                        <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-white"><span class="icon icon-wp"></span>Chat with WhatsApp</a>
                     </div>
                 </div>
             </div>

@@ -4,8 +4,8 @@
         <li class="menu-item-has-children">
             <a href="product-jumbo-diamond-polishing-motor">Products</a>
             <ul class="sub-menu">
-                <li><a href="product-jumbo-diamond-polishing-motor">Jumbo Diamond Polishing Motor</a></li>
-                <li><a href="product-angur-stand-plate">Angur Stand Plate</a></li>
+                <li><a href="product-jumbo-diamond-polishing-motor"><span class="icon ratio ratio-1x1"><img src="assets/images/menu-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor"></span>Jumbo Diamond Polishing Motor</a></li>
+                <li><a href="product-angur-stand-plate"><span class="icon ratio ratio-1x1"><img src="assets/images/menu-product-angur-stand-plate.jpg" alt="Angur Stand Plate"></span>Angur Stand Plate</a></li>
             </ul>
         </li>
         <li><a href="/#services">Services</a></li>

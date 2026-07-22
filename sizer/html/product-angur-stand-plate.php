@@ -46,9 +46,9 @@
         <section class="page-header">
             <div class="container">
                 <div class="section-title mb-0">
-                    <div class="tagline">Product</div>
+                    <div class="tagline"><a href="/">Home</a>Products</div>
                     <h1 class="title">Angur Stand Plate</h1>
-                    <div class="sort-info">Sizer Engineering manufactures diamond holding angur plates for the diamond industry. </div>
+                    <div class="sort-info">Sizer Engineering manufactures diamond holding angur plates for the diamond industry.</div>
                 </div>
             </div>
             <div class="media-bg-block">

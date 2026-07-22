@@ -207,6 +207,25 @@
         max-width: 900px;
         .tagline {
             color: var(--white);
+            a {
+                color: var(--white);
+                text-decoration: none;
+                opacity: 0.8;
+                &::after {
+                    content: '';
+                    background: url('data:image/svg+xml,<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.72222 1.72571L7.5 7.50349L1.72222 13.2812" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                    background-size: contain;
+                    width: 8px;
+                    height: 12px;
+                    display: inline-block;
+                    margin: 0 8px -1px;
+                    opacity: 0.7;
+                }
+                &:hover, &:focus {
+                    opacity: 1;
+                    text-decoration: underline;
+                }
+            }
         }
         .title {
             color: var(--white);
@@ -223,7 +242,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background: rgba(#000000, 0.3);
+            background: rgba(#000000, 0.5);
         }
     }
 }
@@ -357,6 +376,7 @@
             font-family: var(--font-heading);
             margin-bottom: 10px;
             font-size: clamp(18px, 2vw, 20px);
+            text-underline-offset: 5px;
             a {
                 text-decoration: none;
                 color: var(--black);
@@ -368,6 +388,23 @@
     }
     .card-footer {
         padding: 0 20px 20px;
+        a {
+            color: var(--black);
+            text-decoration: none;
+            @include transition(0.2s, ease-in-out);
+            @include inline-flex;
+            @include align-items(center);
+            gap: 8px;
+            .icon-arrow {
+                width: 14px;
+                height: 10px;
+                background: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="rgb(0 0 0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+                background-size: contain;
+                @include transition(0.2s, ease-in-out);
+                margin-top: 2px;
+                display: inline-block;
+            }
+        }
     }
     &:hover, &:focus {
         @include box-shadow(0px 0px 0px 1px #D9D9D9);
@@ -385,6 +422,20 @@
             }
             .card-action { 
                 @include transform(scale(1));
+            }
+        }
+        .card-body {
+            .card-title {
+                text-decoration: underline;
+            }
+        }
+        .card-footer {
+            padding: 0 20px 20px;
+            a {
+                opacity: 0.6;
+                .icon-arrow {
+                    transform: translateX(5px);
+                }
             }
         }
     }
@@ -416,7 +467,7 @@
 .cta-section {
     .cta-block {
         background: var(--black);
-        @include border-radius(20px);
+        @include border-radius(10px);
         @include flexbox;
         @include align-items(center);
         @include justify-content(space-between);
@@ -538,7 +589,7 @@
     margin: 15px;
     width: calc(100% - 10px);
     max-width: 950px;
-    @include border-radius(16px);
+    @include border-radius(10px);
     overflow: hidden;
     @media (max-width: 1200px) {        
         max-width: 750px;
@@ -550,38 +601,47 @@
         position: absolute;
         padding: 0;
         right: 32px;
-        top: 32px;
+        top: 42px;
+        @media (max-width: 767px) { 
+            right: 15px;
+            top: 20px;
+        }
+    }
+    .offcanvas-header {
+        padding: 35px 35px 20px;
+        @media (max-width: 767px) { 
+            padding: 15px;
+        }
+        h3 {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
     }
     .offcanvas-body {
-        padding: 60px;    
+        padding: 0 35px 35px; 
+        @media (max-width: 767px) { 
+            padding: 0 15px 15px;
+        }   
         &::-webkit-scrollbar {
             background-color: transparent;
             width: 5px;
             height: 5px;
-            border-radius: 16px;
+            border-radius: 10px;
         }
         &::-webkit-scrollbar-thumb {
             background-color: rgba(#233F61, 0.1);
-            border-radius: 16px;
+            border-radius: 10px;
         }
         &::-webkit-scrollbar-track {
             background-color: #eeeeee;
         }
-        @media (max-width: 1200px) {  
-            padding: 40px;
-        }
-        @media (max-width: 767px) { 
-            padding: 15px;
-        }
         .service-info {
-            font-size: 16px;
-            h3 {
-                font-weight: 600;
-                margin-bottom: 30px;
-            }
             h4 {
                 font-weight: 600;
                 margin: 30px 0 20px;
+                @media (max-width: 767px) { 
+                    margin: 20px 0 15px;
+                }
             }
             ul {
                 list-style-type: disc;
@@ -595,6 +655,9 @@
             }
             .table {
                 margin-top: 30px;
+                @media (max-width: 767px) { 
+                    margin-top: 20px;
+                }
                 thead {
                     tr {
                         th {
@@ -604,6 +667,12 @@
                 }
             }
         }
+        .action {
+            margin-top: 40px;
+            @media (max-width: 767px) { 
+                margin-top: 20px;   
+            }
+        }
         .service-images-block {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -611,12 +680,26 @@
             margin-top: 40px;
             @media (max-width: 767px) { 
                 grid-template-columns: repeat(2, 1fr);
+                margin-top: 20px;   
             }
         }
     }
 }
 
 // Form 
-.hsfc-Step__Content {
-    padding: 0 !important;
+.hs-form-frame {    
+    position: relative;
+    overflow: hidden;
+    iframe {
+        margin: -20px -40px;
+    }
+    &::after {
+        content: '';
+        background: var(--white);
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
 }

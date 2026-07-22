@@ -93,9 +93,10 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                    
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="product-jumbo-diamond-polishing-motor" class="stretched-link">Jumbo Diamond Polishing Motor</a></h3>
+                                <h3 class="card-title">Jumbo Diamond Polishing Motor</h3>
                                 <div class="card-info">Powering Precision Diamond Polishing</div>
                             </div>
+                            <div class="card-footer"><a href="product-jumbo-diamond-polishing-motor" class="stretched-link">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -116,9 +117,10 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="product-angur-stand-plate" class="stretched-link">Angur Stand Plate</a></h3>
+                                <h3 class="card-title">Angur Stand Plate</h3>
                                 <div class="card-info">Engineered for Reliable Support</div>
                             </div>
+                            <div class="card-footer"><a href="product-angur-stand-plate" class="stretched-link">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -154,9 +156,10 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                 
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasService" aria-controls="offcanvasRight">Cast Iron Machining</a></h3>
+                                <h3 class="card-title">Cast Iron Machining</h3>
                                 <div class="card-info">Precision Machining for Cast Iron</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-cast-iron" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -180,6 +183,7 @@
                                 <h3 class="card-title">Mild Steel Shaft Machining</h3>
                                 <div class="card-info">Precision Shafts, Superior Performance</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-mild-steel-shaft" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -189,20 +193,21 @@
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-lathe-machine-work.jpg" alt="Lathe Machine Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" alt="Lathe Machine Work"></div>
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-lathe-machine-work-2.jpg" alt="Lathe Machine Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" alt="Lathe Machine Work"></div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div> 
-                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
+                                <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>  
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Lathe Machine Work</h3>
                                 <div class="card-info">Precision Turning, Exceptional Quality</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-lathe-machine" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -226,6 +231,7 @@
                                 <h3 class="card-title">Cylindrical Grinding Work</h3>
                                 <div class="card-info">Precision Grinding, Superior Accuracy</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-cylindrical-grinding" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -249,6 +255,7 @@
                                 <h3 class="card-title">Surface Grinding Work</h3>
                                 <div class="card-info">Superior Surface Finish Guaranteed</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-surface-grinding" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                     <div class="col">
@@ -258,7 +265,7 @@
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-shaft-slitting-work.jpg" alt="Shaft Slitting Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-shaft-slitting-work.jpg" alt="Shaft Slitting Work"></div>
                                             </li>
                                             <li class="splide__slide">
                                                 <div class="ratio ratio-4x3"><img src="uploads/img-service-shaft-slitting-work-2.jpg" alt="Shaft Slitting Work"></div>
@@ -272,6 +279,7 @@
                                 <h3 class="card-title">Shaft Slitting Work</h3>
                                 <div class="card-info">Accurate Slitting, Reliable Results</div>
                             </div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-shaft-slitting" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -382,11 +390,13 @@
         </section>
     </main>
     <?php include_once("footer.php");?>  
-    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvasService" aria-modal="false" role="dialog">
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-cast-iron" aria-modal="false" role="dialog">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header"> 
+            <h3>Precision Cast Iron Machining</h3>
+        </div>
         <div class="offcanvas-body">
             <div class="service-info">
-                <h3>Precision Cast Iron Machining</h3>
                 <p>Machining cast iron requires exceptional control due to natural variations in component shape, hardness, and material composition. At <strong>Sizer Engineering</strong>, we combine cutting-edge technology with rigorous quality control to deliver unmatched precision on every job.</p>
                 <h4>Why Choose Sizer Engineering?</h4>
                 <ul>
@@ -416,9 +426,143 @@
                 </table>
                 <p><strong>Complete Frame Range:</strong> 56f through 160f for all standard AC induction motor specifications.</p>
             </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
             <div class="service-images-block">
                 <a href="uploads/img-service-cast-iron-machining.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining.jpg" class="" alt="Cast Iron Machining"></a>
                 <a href="uploads/img-service-cast-iron-machining-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining-2.jpg" class="" alt="Cast Iron Machining"></a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-mild-steel-shaft" aria-modal="false" role="dialog">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header"> 
+            <h3>Mild Steel Shaft Machining</h3>
+        </div>
+        <div class="offcanvas-body">
+            <div class="service-info">
+                <p>A shaft is a very important part of any machine. Sizer Engineering is a well-known name in manufacturing shafts for various industries like textile, automotive, food machinery, gearbox manufacturing, etc.</p>
+                <p>We have all the required machinery to manufacture shafts, like CNC lathe machines, keyway slotting machines, centering and facing machines, grinding machines, drilling machines, tapping machines, etc.</p>
+                <p>Different types and grades of shafts, like EN-8, EN-9, EN-31, SS 304, SS 302, and mild steel (MS), can be machined. Accuracy can be achieved by consistently measuring components with highly accurate, Japanese-made measuring instruments like micrometers, verniers, etc.</p>
+                <p>At Sizer Engineering, we can also manufacture shafts as per customer drawings and specifications at reasonable prices.</p>
+                <p>We have covered various ranges of electric motor shafts from 56F to 132F motors. Keeping accuracy in mind, Sizer Engineering workers check each and every component during every machining process.</p>
+                <p>Sizer Engineering consistently receives repeat orders for electric motor shafts from customers across India.</p>
+            </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
+            <div class="service-images-block">
+                <a href="uploads/img-service-mild-steel-shaft-machining.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" class="" alt="Mild Steel Shaft Machining"></a>
+                <a href="uploads/img-service-mild-steel-shaft-machining-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" class="" alt="Mild Steel Shaft Machining"></a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-lathe-machine" aria-modal="false" role="dialog">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header">            
+            <h3>Lathe Machine Work</h3>
+        </div>
+        <div class="offcanvas-body">
+            <div class="service-info">
+                <p>The lathe machine is the most basic machine in metal machining work. Achieving consistent accuracy on a conventional lathe machine can be difficult. A CNC lathe machine has the ability to consistently provide high accuracy.</p>
+                <p>Sizer Engineering has accurate CNC machines to make components on time with accurate dimensions. On a CNC lathe machine, various materials can be machined, such as cast iron, mild steel, EN-8, EN-9, EN-31, and stainless steel 304 or 302 , brass, aluminum etc.</p>
+                <p>Our engineers have the proper knowledge to understand drawing specifications and required tolerances. We ensure that each and every part is machined and measured accurately, and checked twice to guarantee perfect dimensional accuracy.</p>
+            </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
+            <div class="service-images-block">
+                <a href="uploads/img-lathe-machine-work.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" class="" alt="Lathe Machine Work"></a>
+                <a href="uploads/img-lathe-machine-work-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" class="" alt="Lathe Machine Work"></a>
+                <a href="uploads/video/video-lathe-machine-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work.jpg"  alt="Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+                <a href="uploads/video/video-lathe-machine-work-2.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work-2.jpg" alt="Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+                <a href="uploads/video/video-lathe-machine-work-3.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work-3.jpg"  alt="Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+                <a href="uploads/video/video-lathe-machine-work-4.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work-4.jpg"  alt="Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+                <a href="uploads/video/video-lathe-machine-work-5.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work-5.jpg"  alt="Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-cylindrical-grinding" aria-modal="false" role="dialog">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header">  
+            <h3>Cylindrical Grinding Work</h3>
+        </div>
+        <div class="offcanvas-body">
+            <div class="service-info">
+                <p>Cylindrical grinding plays a very important role in the machine tool industry. Without maintaining roundness, dimensional accuracy, and surface finish on a shaft or spindle, your machine may vibrate, make excessive noise above a certain RPM, and shorten the life of its bearings.</p>
+                <p>At Sizer Engineering, we maintain precise dimensional accuracy and surface finishes using high-quality cylindrical grinding machines. Our experienced team brings extensive expertise to every grinding project.</p>
+                <p>Sizer Engineering specializes in motor shaft grinding, gearbox shaft grinding, and any application requiring precise bearing fits. We reliably meet customer accuracy requirements on time. We verify all dimensions using high-precision Japanese instruments, such as micrometers and dial gauges, ensuring our customers receive exact accuracy every time.</p>
+            </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
+            <div class="service-images-block">
+                <a href="uploads/img-service-cylindrical-grinding-work.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cylindrical-grinding-work.jpg" class="" alt="Cylindrical Grinding Work"></a>
+                <a href="uploads/img-service-cylindrical-grinding-work-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cylindrical-grinding-work-2.jpg" class="" alt="Cylindrical Grinding Work"></a> 
+                <a href="uploads/video/video-cyllindrical-grinding-job-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-cyllindrical-grinding-job-work.jpg" class="ratio ratio-4x3" alt="Cyllindrical grinding job work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-surface-grinding" aria-modal="false" role="dialog">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header">     
+            <h3>Surface Grinding Work</h3>
+        </div>
+        <div class="offcanvas-body">
+            <div class="service-info">
+                <p>Surface grinding is a very important process in the machine tool industry where flatness and a high-quality finish are required. By grinding a metal surface-whether it is normal metal or heat-treated metal-we can achieve a mirror-like finish or a smooth surface. Surface grinding is essential where die plates need perfectly flat and parallel dimensions.</p>
+                <p>Generally, dies and moulds experience wear and tear after long periods of use. To smoothen the surface, dies and moulds should be ground from time to time to protect them from further damage. Sharpening blades at different angles can also be done. In the diamond industry, angur stand plates can be ground to achieve a smooth finish so that the diamonds get their perfect finish.</p>
+                <p>Our engineers have the proper knowledge to understand drawing specifications and required tolerances. We ensure that each and every part is machined and measured accurately, and checked twice to guarantee perfect dimensional accuracy.</p>
+            </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
+            <div class="service-images-block">
+                <a href="uploads/img-service-surface-grinding-work.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-surface-grinding-work.jpg" class="" alt="Surface Grinding Work"></a>
+                <a href="uploads/img-service-surface-grinding-work-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-surface-grinding-work-2.jpg" class="" alt="Surface Grinding Work"></a>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-shaft-slitting" aria-modal="false" role="dialog">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-header">            
+            <h3>Shaft Slitting Work</h3>
+        </div>
+        <div class="offcanvas-body">
+            <div class="service-info">
+                <p>A machine cannot run without mounting a pulley onto the motor shaft, and the pulley must be held in place with a key secured in a keyway slot. Because of this, keyway milling on a shaft is a important operation. At Sizer Engineering, we undertake keyway milling on both motor and gearbox shafts.</p>
+                <p>We have a dedicated keyway milling and slotting machine with a capacity ranging from 3mm to 14mm. We perform keyway milling on both round shafts and flat bars, and we can do both open and closed keyways.</p>
+            </div>
+            <div class="action">
+                <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
+            </div>
+            <div class="service-images-block">
+                <a href="uploads/img-shaft-slitting-work.jpg" class="ratio ratio-4x3 media-block glightbox">
+                    <img src="uploads/img-shaft-slitting-work.jpg" alt="Shaft Slitting Work">
+                </a>
+                <a href="uploads/video/video-shaft-slitting-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-shaft-slitting-work.jpg"  alt="Shaft Slitting Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
             </div>
         </div>
     </div>
