@@ -196,6 +196,9 @@
                                 gap: 10px;
                                 @include transition(0.1s, ease-in-out);
                                 @include border-radius(10px);
+                                @media (max-width: 767px) {
+                                    color: var(--black);
+                                }
                                 .icon {
                                     width: 35px;
                                     @include border-radius(5px);
@@ -204,11 +207,17 @@
                                 }
                                 &:hover, &:focus {
                                     background: rgba(255, 255, 255, 0.2);
+                                    @media (max-width: 767px) {
+                                        background: rgba(0, 0, 0, 0.08);
+                                    }
                                 }
                             }
                             &.current-menu-item {
                                 & > a {                        
                                     background: rgba(255, 255, 255, 0.2);
+                                    @media (max-width: 767px) {
+                                        background: rgba(0, 0, 0, 0.08);
+                                    }
                                 }
                             }
                         }
