@@ -21,7 +21,7 @@
             @include flexbox;
             @include flex-direction(column);
             .card-title {
-                font-size: clamp(20px, 2vw, 24px);
+                font-size: clamp(20px, 1.5vw, 24px);
                 margin-bottom: 5px;
             }
             .designation {
@@ -30,6 +30,7 @@
             .card-info {
                 color: var(--lightblack);
                 margin-bottom: 15px;
+                font-size: clamp(14px, 1.5vw, 16px);
             }
             .social-list {
                 a {

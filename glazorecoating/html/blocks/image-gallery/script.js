@@ -1,4 +1,4 @@
-const splideConfig = (direction = 'ltr') => ({
+const splideImageGallery = (direction = 'ltr') => ({
     perPage: 7,
     autoWidth: true,
     pagination: false,
@@ -13,10 +13,10 @@ const splideConfig = (direction = 'ltr') => ({
 });
 // Left slider
 if (document.querySelector('.image-gallery-splide.is-left')) {
-    new Splide('.image-gallery-splide.is-left', splideConfig()).mount(window.splide.Extensions);
+    new Splide('.image-gallery-splide.is-left', splideImageGallery()).mount(window.splide.Extensions);
 }
 
 // Right slider
 if (document.querySelector('.image-gallery-splide.is-right')) {
-    new Splide('.image-gallery-splide.is-right', splideConfig('rtl')).mount(window.splide.Extensions);
+    new Splide('.image-gallery-splide.is-right', splideImageGallery('rtl')).mount(window.splide.Extensions);
 }

@@ -1,6 +1,12 @@
 @import "../../assets/css/scss/mixins";
 
 .industries-card-section {
+    .row {
+        --bs-gutter-y: 50px; 
+        @media (max-width: 992px) {
+            --bs-gutter-y: 30px; 
+        }
+    }
     .industries-card {
         @include flexbox;
         @include flex-direction(column);
@@ -8,7 +14,6 @@
         position: relative;
         .card-img {
             margin-bottom: 20px;
-            @include transition(0.2s, ease-in-out);
             @media (max-width: 992px) {
                 margin-bottom: 15px;
             }
@@ -24,6 +29,7 @@
         }
         .card-info {
             color: var(--lightblack);
+            font-size: clamp(14px, 1.5vw, 16px);
         }
         .card-action {
             margin-top: 15px;

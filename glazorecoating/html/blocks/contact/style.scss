@@ -32,16 +32,17 @@
                         color: var(--black);
                         text-decoration: none;
                         @include transition(0.2s, ease-in-out);
+                        text-underline-offset: 5px;
                         &:hover, &:focus {
                             color: var(--primary);
-                            text-decoration: none;
+                            text-decoration: underline;
                             &.social-link {
                                 border: 1px solid rgba(0, 0, 0, 1);
                             }
                         }
                         &.social-link {
-                            width: 32px;
-                            height: 32px;
+                            width: 25px;
+                            height: 25px;
                             border: 1px solid rgba(0, 0, 0, 0.3);
                             @include border-radius(50%);
                             @include inline-flex;

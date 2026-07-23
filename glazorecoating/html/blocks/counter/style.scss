@@ -19,6 +19,10 @@
             color: var(--darkblue);
             margin-bottom: 10px;
         }
+        .card-info {
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: var(--lightblack);
+        }
     }
     .row.flex-md-row-reverse {
         .media-block, .multiple-img-splide {

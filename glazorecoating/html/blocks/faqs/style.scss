@@ -59,6 +59,7 @@
                     font-weight: 400;
                     color: var(--lightblack);
                     padding-top: 10px;
+                    font-size: clamp(14px, 1.5vw, 16px);
                 }
             }
         }

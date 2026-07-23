@@ -40,12 +40,12 @@ body {
     background-color: var(--white);
     color: #333333;
     font-family: 'Inter', sans-serif;;
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: clamp(16px, 1.5vw, 18px);
     font-weight: 400;
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    // text-rendering: optimizeLegibility;
 }
 
 :focus {
@@ -215,6 +215,7 @@ h2,
 h3,
 .h3 {
     font-size: clamp(20px, 3vw, 24px);
+    line-height: 1.3;
 }
 
 h4,
@@ -287,7 +288,7 @@ h5,
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--blue);
+    background: var(--black);
     z-index: -1;
 
     img,
@@ -310,7 +311,7 @@ h5,
     position: relative;
     overflow: hidden;
     line-height: 0.7;
-    background: var(--black);
+    background: var(--white);
 
     img, video, iframe {
         max-width: 100%;
@@ -379,7 +380,6 @@ h5,
             text-align: center !important;
         }
     }
-
     &.text-center {
         text-align: center;
     }
@@ -627,8 +627,10 @@ h5,
             --bs-aspect-ratio: 50%;
         }
     }
+    &.ratio-6x4 {
+        --bs-aspect-ratio: 66.6667%;
+    }
 }
-
 
 // Splide Arrows & Pagination
 .splide__arrows {
@@ -727,6 +729,78 @@ h5,
             &:nth-child(7) {
                 top: 220px;
             }
+        }
+    }
+}
+
+// Offcanvas
+.offcanvas.enquire-popup-model {
+    margin: 20px;
+    width: calc(100% - 10px);
+    max-width: 700px;
+    @include border-radius(0px);
+    overflow: hidden;
+    .btn-close {
+        position: absolute;
+        padding: 0;
+        right: 30px;
+        top: 30px;
+        opacity: 1;
+        @media (max-width: 767px) { 
+            right: 15px;
+            top: 15;
+        }
+        &:hover, &:focus {
+            opacity: 0.5;
+        }
+    }
+    .offcanvas-header {
+        padding: 30px;
+        @media (max-width: 767px) { 
+            padding: 15px;
+        }
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+    .offcanvas-body {
+        padding: 0 30px 30px; 
+        @media (max-width: 767px) { 
+            padding: 0 15px 15px;
+        }   
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 5px;
+            height: 5px;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(#233F61, 0.1);
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #eeeeee;
+        }
+    }
+}
+
+.is-sticky {
+    position: sticky;
+    top: 120px;
+}
+
+// Image Animation
+.img-animation {
+    overflow: hidden;
+    .media-block, img {
+        width: 100%;
+        display: block;
+        clip-path: inset(0 0 100% 0) !important;
+        transition: clip-path 1.2s cubic-bezier(.25,.1,.25,1) !important;
+    }
+    &.show  {
+        .media-block, img {
+            clip-path: inset(0 0 0 0) !important;
         }
     }
 }

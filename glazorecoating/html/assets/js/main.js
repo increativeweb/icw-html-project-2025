@@ -131,8 +131,8 @@ if ($('.multiple-img-splide').length) {
 if ($('.media-block.is-video').length > 0) {
     $('.media-block.is-video:not(:has(.glightbox))').each(function () {
         const $block = $(this);
-        const $icon = $block.find('.play-icon');
         const video = $block.find('video').get(0);
+        const $icon = $block.find('.play-icon');
         if (!video) return;
         const playVideo = () => {
             video.play().then(() => { $block.addClass('video-playing'); $icon.addClass('d-none'); }).catch(() => {});
@@ -144,10 +144,19 @@ if ($('.media-block.is-video').length > 0) {
             threshold: 0.9
         });
         observer.observe(video);
-        $(video).on('click', pauseVideo);
-        $icon.on('click', function (e) {
-            e.stopPropagation();
-            playVideo();
-        });
     });
+}
+if ($('.img-animation').length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+            }
+        });
+    }, {
+    threshold: 0.25
+    });
+    document.querySelectorAll(".img-animation").forEach(el => observer.observe(el));
+    document.querySelectorAll(".img-animation").forEach((el, i) => {el.style.setProperty("--delay", `${i * 0.15}s`);});
 }
