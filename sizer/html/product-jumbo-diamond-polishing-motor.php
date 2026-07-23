@@ -13,7 +13,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Jumbo Diamond Polishing Motor - Sizer Engineering" />
-    <meta property="og:description" content="Sizer Engineering has vast experience in manufacturing diamond polishing motors.">
+    <meta property="og:description" content="Jumbo Diamond Polishing Motor for diamond cutting, rough diamond polishing, CVD polishing, gemstone polishing, Heera Ghanti repair & disc grinding services.">
     <meta property="og:url" content="https://sizer.co.in" />
     <meta property="og:site_name" content="Sizer Engineering" />
     <meta property="og:image" content="https://sizer.co.in/uploads/img-social.jpg" />

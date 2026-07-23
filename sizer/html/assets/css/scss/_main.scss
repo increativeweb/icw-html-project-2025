@@ -371,7 +371,7 @@
         }
     }
     .card-body {
-        padding: 20px;
+        padding: 20px 20px 15px;
         .card-title {
             font-family: var(--font-heading);
             margin-bottom: 10px;
@@ -395,9 +395,10 @@
             @include inline-flex;
             @include align-items(center);
             gap: 8px;
+            font-size: 13px;
             .icon-arrow {
-                width: 14px;
-                height: 10px;
+                width: 12px;
+                height: 8px;
                 background: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="rgb(0 0 0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
                 background-size: contain;
                 @include transition(0.2s, ease-in-out);
