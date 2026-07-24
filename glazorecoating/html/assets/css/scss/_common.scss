@@ -43,9 +43,8 @@ body {
     font-size: clamp(16px, 1.5vw, 18px);
     font-weight: 400;
     line-height: 1.5;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-    // text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :focus {
@@ -570,18 +569,55 @@ h5,
         gap: 10px;
         min-height: auto;
         .icon-arrow {
-            width: 12px;
-            height: 8px;
-            background: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="rgb(32 162 227)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
-            background-size: contain;
+            width: 25px;
+            height: 25px;
+            flex: none;
+            display: inline-block;
+            @include border-radius(50%);         
 	        @include transition(0.2s, ease-in-out);
-            margin-top: 2px;
+            position: relative;
+            z-index: 1;
+            &::before {
+                content: '';
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                @include border-radius(50%);
+                transform-origin: center;
+                @include transform(scale(0));
+                background-color: var(--black);     
+	            @include transition(0.2s, ease-in-out);
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &::after {
+                content: '';
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                @include border-radius(50%);
+                background-image: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="rgb(32 162 227)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 12px;
+	            @include transition(0.2s, ease-in-out);
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
         &:hover, &:focus {
             color: var(--black);
             .icon-arrow { 
-                filter: brightness(0);
-                @include transform(translateX(5px));
+                &::after {
+                    background-image: url('data:image/svg+xml,<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.75 4.99264H12.0637M7.82107 9.23528L12.0637 4.99264L7.82107 0.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+                }
+                &::before {
+                    @include transform(scale(1));
+                }
             }
         }
     }
@@ -795,12 +831,74 @@ h5,
     .media-block, img {
         width: 100%;
         display: block;
-        clip-path: inset(0 0 100% 0) !important;
+        clip-path: inset(100% 0 0 0) !important;
         transition: clip-path 1.2s cubic-bezier(.25,.1,.25,1) !important;
     }
     &.show  {
         .media-block, img {
             clip-path: inset(0 0 0 0) !important;
+        }
+    }
+}
+
+.icw-pagenavi {
+    list-style: none;
+    margin: 50px auto 0;
+    padding: 0;
+    text-align: center;
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    gap: 10px;
+    padding: 10px 50px;
+    border: 1px solid #E6E6E6;
+    border-radius: 50px;
+    max-width: max-content;
+    .prev, .next {
+        color: var(--black);
+        font-weight: 500;
+        font-size: 14px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        gap: 5px;
+        line-height: 1;
+        padding: 0;
+        width: auto;
+        span.icon {
+            padding: 0;
+            margin-top: 0;
+            height: auto
+        }
+        &:hover:not(span), &:focus:not(span) {
+            opacity: 0.5;
+        }
+        &:disabled, &.disabled {
+            opacity: 0.5 !important;
+            pointer-events: none !important
+        }
+    }
+    a, span:not(.icon) {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        gap: 10px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--black);
+        @include transition(0.2s, ease-in-out);
+        line-height: 1;
+        &:hover:not(span), &:focus:not(span) {
+            opacity: 0.5
+        }
+        &.current {
+            color: var(--primary);
+            opacity: 1;
+            cursor: default;
         }
     }
 }

@@ -148,7 +148,7 @@
         gap: 80px;
         @media (max-width: 1399px) {
             grid-template-columns: 330px auto 255px;
-            gap: 30px;
+            gap: 25px;
         }
         @media (max-width: 1200px) and (min-width: 768px) {
             gap: 30px 80px;
@@ -183,7 +183,7 @@
         .social-list {
             @include flexbox;
             @include align-items(center);
-            gap: 5px;
+            gap: 15px;
             margin-top: 30px;
             @media (max-width: 767px) {
                 @include justify-content(center);
@@ -193,8 +193,8 @@
                     @include flexbox;
                     @include align-items(center);
                     @include justify-content(center);
-                    width: 32px;
-                    height: 32px;
+                    width: auto;
+                    height: 24px;
                     flex: none;
                     @include border-radius(50%);
                     color: var(--white);
@@ -214,7 +214,7 @@
         @include justify-content(space-between);
         gap: 80px;
         @media (max-width: 1399px) {
-            gap: 30px;
+            gap: 25px;
         }
         @media (max-width: 575px) {
             @include flex-wrap(wrap);

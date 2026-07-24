@@ -38,53 +38,55 @@
         }
     }
     .media-block {
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 18px;
-        background: transparent;
-        max-width: 500px;
-        margin-left: auto;
-        @media (max-width: 992px) {
-            grid-template-columns: 150px 1fr;
-        }
-        @media (max-width: 767px) {
-            max-width: 100%;
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0 auto;
-        }
-        div {
-            height: 100%;
-            max-height: 450px;
+        &.multi-images{
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 18px;
+            background: transparent;
+            max-width: 500px;
+            margin-left: auto;
+            @media (max-width: 992px) {
+                grid-template-columns: 150px 1fr;
+            }
             @media (max-width: 767px) {
-                width: 100%;
-                max-height: 250px;
+                max-width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 0 auto;
             }
-            @media (max-width: 575px) {
-                width: 100%;
-                max-height: 200px;
-            }
-            &:nth-child(1) {
-                grid-column: 1;
-                grid-row: 1;
+            div {
+                height: 100%;
+                max-height: 450px;
                 @media (max-width: 767px) {
+                    width: 100%;
+                    max-height: 250px;
+                }
+                @media (max-width: 575px) {
+                    width: 100%;
+                    max-height: 200px;
+                }
+                &:nth-child(1) {
+                    grid-column: 1;
+                    grid-row: 1;
+                    @media (max-width: 767px) {
+                        grid-column: 1;
+                        grid-row: 2;
+                    }
+                }
+                &:nth-child(2) {
                     grid-column: 1;
                     grid-row: 2;
+                    @media (max-width: 767px) {
+                        grid-column: 2;
+                        grid-row: 2;
+                    }
                 }
-            }
-            &:nth-child(2) {
-                grid-column: 1;
-                grid-row: 2;
-                @media (max-width: 767px) {
+                &:nth-child(3) {
                     grid-column: 2;
-                    grid-row: 2;
-                }
-            }
-            &:nth-child(3) {
-                grid-column: 2;
-                grid-row: 1 / span 2;
-                @media (max-width: 767px) {
-                    grid-column: 1 / span 2;
-                    grid-row: 1;
+                    grid-row: 1 / span 2;
+                    @media (max-width: 767px) {
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+                    }
                 }
             }
         }

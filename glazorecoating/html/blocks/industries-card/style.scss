@@ -18,28 +18,32 @@
                 margin-bottom: 15px;
             }
         }
-        .card-title {
-            font-size: clamp(16px, 2vw, 18px);
-            margin-bottom: 10px;
-            a {
-                color: var(--black);
-                text-decoration: none;
-                @include transition(0.2s, ease-in-out);
+        .card-body {
+            @include flexbox;
+            @include flex-direction(column);
+            .card-title {
+                font-size: clamp(16px, 2vw, 18px);
+                margin-bottom: 10px;
+                a {
+                    color: var(--black);
+                    text-decoration: none;
+                    @include transition(0.2s, ease-in-out);
+                }
             }
-        }
-        .card-info {
-            color: var(--lightblack);
-            font-size: clamp(14px, 1.5vw, 16px);
-        }
-        .card-action {
-            margin-top: 15px;
+            .card-info {
+                color: var(--lightblack);
+                font-size: clamp(14px, 1.5vw, 16px);
+                flex: 1 1 auto;
+            }
+            .card-action {
+                margin-top: 15px;
+            }
         }
         &:has(a):hover,
         &:has(a):focus {
             .card-img {
                 opacity: .8;
             }
-
             .card-title {
                 color: var(--primary);
             }

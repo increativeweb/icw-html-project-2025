@@ -5,7 +5,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #EEEEEE;
     z-index: 10;
-     @media (max-width: 1200px) {
+    @media (max-width: 992px) {
         &.is-visible  {
             backdrop-filter: unset;
             background: rgba(255, 255, 255, 1);
@@ -23,31 +23,31 @@
         & > .container {
             position: relative;
             height: 100%;
-            @media (max-width: 1200px) {
+            @media (max-width: 992px) {
                 max-width: 100%;
             }
         }
         .navbar-brand {
-            padding: 12px 0;
+            padding: 15px 0;
             img {
                 height: 40px;
                 @media (max-width: 767px) {
-                    height: 30px;
+                    height: 35px;
                 }
             }
         }
         .navbar-collapse {
-            @media (min-width: 1200px) {
+            @media (min-width: 992px) {
                 height: stretch;
             }
-            @media (max-width: 1200px) {
+            @media (max-width: 992px) {
                 position: fixed;
-                top: 65px;
+                top: 71px;
                 left: 0;
                 bottom: 0;
                 width: 100%;
                 max-width: 300px;
-                height: calc(100dvh - 65px);
+                height: calc(100dvh - 71px);
                 background: #fff;
                 border-right: 1px solid #EEEEEE;
                 overflow-y: auto;
@@ -59,8 +59,8 @@
                 @include flexbox;
                 @include flex-direction(column);
                 @media (max-width: 767px) {
-                    top: 57px;
-                    height: calc(100dvh - 57px);
+                    top: 66px;
+                    height: calc(100dvh - 66px);
                 }
             }
         }
@@ -70,6 +70,9 @@
             height: stretch;
             @include align-items(center);
             @media (max-width: 1200px) {
+                gap: 20px;
+            }
+            @media (max-width: 992px) {
                 padding: 15px;
                 gap: 15px;
                 flex: 1 1 auto;
@@ -82,7 +85,7 @@
             }
             & > li {
                 height: 100%;
-                @media (max-width: 1200px) {
+                @media (max-width: 992px) {
                     height: auto;
                     width: 100%;
                 }
@@ -96,6 +99,7 @@
                     @include align-items(center);
                     position: relative;
                     text-underline-offset: 5px;
+                    transition: unset;
                     &::before {
                         content: '';
                         position: absolute;
@@ -107,15 +111,13 @@
                         @include border-radius(5px);
                         transition: width 0.05s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
                         will-change: transform;
-                        @media (max-width: 1200px) {
+                        @media (max-width: 992px) {
                             content: none;
                         }
                     }
-                    @media (max-width: 1200px) {
+                    @media (max-width: 992px) {
                         height: auto;
                         display: block;
-                    }
-                    @media (max-width: 1200px) {
                         padding: 5px 0;
                     }
                 }
@@ -138,14 +140,14 @@
                             @include transition(0.05s, ease-in-out);
                             animation: .3s menuArrowMoveOut ease-in-out;
                             opacity: 0.5;
-                            @media (max-width: 1200px) {
+                            @media (max-width: 992px) {
                                 content: none;
                             }
                         }
                     }
                     .arrow {
                         display: none;
-                        @media (max-width: 1200px) {
+                        @media (max-width: 992px) {
                             display: inline-block;
                             vertical-align: middle;
                             width: 22px;
@@ -169,7 +171,7 @@
                         }
                     }                    
                     .sub-menu {
-                        @media (min-width: 1200px) {
+                        @media (min-width: 992px) {
                             visibility: hidden;
                             opacity: 0;
                             position: absolute;
@@ -177,44 +179,39 @@
                             top: calc(100% + 1px);
                             z-index: 1;
                             min-width: 160px;
-                            padding: 20px;
+                            padding: 10px;
                             background: #FFFFFF;
                             border: 1px solid rgba(#CAE0F0, 0.5);
                             @include transform(translate(-50%, 5px));
                         }
-                        @media (max-width: 1200px) {
+                        @media (max-width: 992px) {
                             display: none;
                             padding: 10px 0 0;
                         }
                         & > li {
                             &:not(:last-child) {
-                                margin-bottom: 15px;
-                                @media (max-width: 1200px) {
+                                margin-bottom: 5px;
+                                @media (max-width: 992px) {
                                     margin-bottom: 3px;
                                 }
                             }
                             & > a:not(.btn) {
                                 color: var(--black);
                                 text-decoration: none;
-                                @include border-radius(7px);
+                                @include border-radius(3px);
                                 display: block;
                                 font-size: 14px;
-                                font-weight: 500;
-                                @media (max-width: 1200px) {                                    
-                                    padding: 10px;
-                                }
+                                font-weight: 500;                                  
+                                padding: 8px 12px;
                                 &:hover, &:focus {
-                                    color: var(--primary);
-                                    text-decoration: underline;
-                                    @media (max-width: 1200px) {
-                                        background: #F4F9FD;
-                                    }
+                                    background: #F4F9FD;
+                                    text-decoration: none;
                                 }
                             }
                             &.current-menu-item {
                                 a {
-                                    color: var(--primary);
-                                    text-decoration: underline;
+                                    background: #F4F9FD;
+                                    text-decoration: none;
                                 }
                             }
                         }
@@ -223,7 +220,7 @@
                         position: unset;
                         .sub-menu {
                             padding: 10px 0;
-                            @media (min-width: 1200px) {
+                            @media (min-width: 992px) {
                                 width: calc(100% - 24px);
                                 padding: 0;
                                 left: 0;
@@ -241,8 +238,12 @@
                                     display: grid;
                                     grid-template-columns: auto 308px;
                                     gap: 50px;
-                                    padding: 30px 30px 30px 20px;
-                                    @media (max-width: 1200px) {
+                                    padding: 30px 30px 30px 15px;
+                                    @media (max-width: 1200px) { 
+                                        gap: 20px;
+                                        padding: 20px 20px 20px 5px;
+                                    }
+                                    @media (max-width: 992px) {
                                         grid-template-columns: 100%;
                                         gap: 20px;
                                         padding: 0;
@@ -256,33 +257,38 @@
                                         letter-spacing: 0.02em;
                                         text-transform: uppercase;
                                         color: var(--primary);
-                                        margin-bottom: 20px;
-                                        padding-left: 10px;
+                                        margin-bottom: 10px;
+                                        padding-left: 15px;
                                     }
                                     .menu-grid {
                                         display: grid;                                        
-                                        gap: 10px 75px;
+                                        gap: 5px 75px;
                                         grid-template-columns: repeat(1, 300px);
                                         &:has(li:nth-child(3)) {
-                                            grid-template-columns: repeat(2, 300px);
+                                            grid-template-columns: repeat(2, 310px);
+                                            @media(max-width: 1200px) {
+                                                grid-template-columns: repeat(2, 1fr);
+                                            }
                                         }
                                         @media (max-width: 1200px) { 
+                                            gap: 5px 20px;
+                                        }
+                                        @media (max-width: 992px) { 
                                             gap: 3px;
                                             grid-template-columns: 100% !important;
                                         }
                                         li {
                                             a {
-                                                padding: 10px 12px 8px;
+                                                padding: 15px 15px 13px;
                                                 display: block;
                                                 text-decoration: none;
-                                                @include border-radius(7px);
+                                                @include border-radius(3px);
                                                 line-height: 1;
                                                 .menu-name {
                                                     font-weight: 600;
                                                     font-size: clamp(15px, 1vw, 18px);
                                                     color: var(--black);
                                                     line-height: 1;
-                                                    @include transition(0.05s, ease-in-out);
                                                     margin-bottom: 3px;
                                                     text-underline-offset: 5px;
                                                 }
@@ -296,7 +302,6 @@
                                                 &:hover, &:focus {
                                                     background: #F4F9FD;
                                                     .menu-name {
-                                                        color: var(--primary);
                                                         text-decoration: none;
                                                     }
                                                 }
@@ -305,7 +310,6 @@
                                                 a {
                                                     background: #F4F9FD;
                                                     .menu-name {
-                                                        color: var(--primary);
                                                         text-decoration: none;
                                                     }
                                                 }
@@ -314,7 +318,7 @@
                                     }
                                 }
                                 .img-content-menu-block {                                    
-                                    @media (max-width: 1200px) {
+                                    @media (max-width: 992px) {
                                         margin: 0 10px;
                                     }
                                     a {
@@ -358,7 +362,7 @@
                                 animation: .3s menuArrowMoveIn ease-in-out forwards;
                             }
                         }
-                        @media (min-width: 1200px) {
+                        @media (min-width: 992px) {
                             .sub-menu {
                                 opacity: 1;
                                 visibility: visible;
@@ -393,10 +397,10 @@
             }
         }
         .mobile-bottom-menu {
-            @media (min-width: 1200px) {
+            @media (min-width: 992px) {
                 display: none;
             } 
-            @media (max-width: 1200px) {
+            @media (max-width: 992px) {
                 padding: 15px;
                 width: 100%;
                 border-top: 1px solid #EEEEEE;
@@ -411,11 +415,30 @@
             @include flexbox;
             @include align-items(center);
             gap: 20px;
-            @media (max-width: 575px) {
+            @media (max-width: 1200px) {
                 margin-left: 20px;
             }
+            @media (max-width: 992px) {
+                margin-left: 15px;
+                gap: 20px;
+                .btn {
+                    &.btn-primary {
+                        background: transparent !important;
+                        color: var(--black) !important;
+                        border-color: transparent !important;
+                        text-underline-offset: 5px;
+                        padding: 0 !important;
+                        .icons {
+                            filter: brightness(0);
+                        }
+                        &:hover, &:focus {
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+            }
             .navbar-toggler {
-                @media (min-width: 1200px) {
+                @media (min-width: 992px) {
                     display: none;
                 }
                 display: flex;
@@ -428,8 +451,8 @@
                 z-index: 10;
                 width: 40px;
                 height: 40px;
-                background: transparent;
-                border: 1px solid #EEEEEE;
+                background: #F4F9FD;
+                border: 1px solid transparent;
                 border-radius: 3px;
                 line-height: 1;
                 span {
@@ -440,7 +463,6 @@
                     display: block;
                     @include transition(0.1s, ease-in-out);
                 }
-
                 &:hover,
                 &:active,
                 &:focus {
@@ -448,18 +470,15 @@
                         background-color: var(--primary);
                     }
                 }
-
                 &.is-visible {
                     span:nth-child(1) {
                         @include transform(translateY(7px) rotate(135deg));
                     }
-
                     span:nth-child(2) {
                         @include opacity(0);
                         visibility: hidden;
                         left: 0;
                     }
-
                     span:nth-child(3) {
                         @include transform(translateY(-7px) rotate(-135deg));
                     }
