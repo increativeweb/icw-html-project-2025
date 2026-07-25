@@ -150,13 +150,42 @@ if ($('.img-animation').length > 0) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
             }
         });
     }, {
-    threshold: 0.25
+        threshold: 0.25
     });
+
     document.querySelectorAll(".img-animation").forEach(el => observer.observe(el));
-    document.querySelectorAll(".img-animation").forEach((el, i) => {el.style.setProperty("--delay", `${i * 0.15}s`);});
+
+    // Fixed delay for media-block
+    document.querySelectorAll(".img-animation > .media-block").forEach(el => {
+        el.parentNode.style.setProperty("--delay", "0.1s");
+    });
+
+    // Restart delay for each theme-section
+    document.querySelectorAll(".theme-section").forEach(section => {
+        section.querySelectorAll(".card-img > .img-animation").forEach((el, index) => {
+            el.style.setProperty("--delay", `${index * 0.1}s`);
+        });
+
+    });
 }
+
+function playAnimReveal(section) {
+    section.querySelectorAll('.icw-anim').forEach((el, i) => {
+        el.classList.remove('animated');
+        const delay = i * 150;
+        setTimeout(() => {el.classList.add('animated');}, delay);
+    });
+}
+const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {playAnimReveal(entry.target);observer.unobserve(entry.target);}
+    });
+}, {
+    root: null,rootMargin: '0px 0px -32% 0px'
+});
+document.querySelectorAll('section').forEach(section => {io.observe(section);});

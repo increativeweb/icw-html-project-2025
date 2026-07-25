@@ -89,7 +89,7 @@
                     height: auto;
                     width: 100%;
                 }
-                & > a {
+                & > a:not(.btn) {
                     font-weight: 500;
                     font-size: 14px;
                     color: var(--black);
@@ -209,7 +209,7 @@
                                 }
                             }
                             &.current-menu-item {
-                                a {
+                                a:not(.btn) {
                                     background: #F4F9FD;
                                     text-decoration: none;
                                 }
@@ -278,7 +278,7 @@
                                             grid-template-columns: 100% !important;
                                         }
                                         li {
-                                            a {
+                                            a:not(.btn) {
                                                 padding: 15px 15px 13px;
                                                 display: block;
                                                 text-decoration: none;
@@ -307,7 +307,7 @@
                                                 }
                                             }
                                             &.current-menu-item {
-                                                a {
+                                                a:not(.btn) {
                                                     background: #F4F9FD;
                                                     .menu-name {
                                                         text-decoration: none;
@@ -344,7 +344,7 @@
                     }
                 }
                 &:hover, &:focus {
-                    & > a {
+                    & > a:not(.btn) {
                         color: var(--primary);
                         text-decoration: none;
                         &::before {
@@ -354,7 +354,7 @@
                         }
                     }
                     &.menu-item-has-children {
-                        & > a {
+                        & > a:not(.btn) {
                             &::after {
                                 filter: unset;
                                 margin-top: 0;
