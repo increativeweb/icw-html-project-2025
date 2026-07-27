@@ -157,20 +157,14 @@ if ($('.img-animation').length > 0) {
     }, {
         threshold: 0.25
     });
-
     document.querySelectorAll(".img-animation").forEach(el => observer.observe(el));
-
-    // Fixed delay for media-block
     document.querySelectorAll(".img-animation > .media-block").forEach(el => {
         el.parentNode.style.setProperty("--delay", "0.1s");
     });
-
-    // Restart delay for each theme-section
     document.querySelectorAll(".theme-section").forEach(section => {
         section.querySelectorAll(".card-img > .img-animation").forEach((el, index) => {
             el.style.setProperty("--delay", `${index * 0.1}s`);
         });
-
     });
 }
 

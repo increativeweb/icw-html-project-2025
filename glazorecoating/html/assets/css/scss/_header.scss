@@ -343,7 +343,7 @@
                         }
                     }
                 }
-                &:hover, &:focus {
+                &:hover, &:focus, &:focus-within {
                     & > a:not(.btn) {
                         color: var(--primary);
                         text-decoration: none;
