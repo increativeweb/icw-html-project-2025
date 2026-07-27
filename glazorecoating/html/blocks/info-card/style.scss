@@ -26,8 +26,13 @@
         &.is-image {
             padding: 0;
             .card-img {
+                overflow: hidden;
+                height: 100%;
                 @media (max-width: 992px) {
                     max-height: 180px;
+                }
+                .img-animation, img {
+                    height: 100%;
                 }
             }
         }
