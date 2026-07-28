@@ -25,7 +25,11 @@
                 .content {
                     @include flexbox;
                     @include align-items(center);
-                    gap: 10px;
+                    gap: 15px;
+                    &.social-list {
+                        margin-top: 15px;
+                        gap: 20px;
+                    }
                     a {
                         font-weight: 500;
                         font-size: clamp(14px, 2vw, 16px);
@@ -36,15 +40,10 @@
                         &:hover, &:focus {
                             color: var(--primary);
                             text-decoration: underline;
-                            &.social-link {
-                                border: 1px solid rgba(0, 0, 0, 1);
-                            }
                         }
                         &.social-link {
-                            width: 25px;
-                            height: 25px;
-                            border: 1px solid rgba(0, 0, 0, 0.3);
-                            @include border-radius(50%);
+                            width: auto;
+                            height: 14px;
                             @include inline-flex;
                             @include align-items(center);
                             @include justify-content(center);
@@ -56,7 +55,7 @@
     }
 }
 .map-section {
-    height: 450px;
+    height: 600px;
     padding: 0;
     @media (max-width: 992px) {
         height: 350px;

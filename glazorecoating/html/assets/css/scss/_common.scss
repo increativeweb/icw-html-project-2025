@@ -461,6 +461,7 @@ h5,
 	@include justify-content(center);	
 	@include border-radius(0px);
     text-decoration: none !important;
+    line-height: 1;
     gap: 10px;
     .icons { 
         display: flex !important;

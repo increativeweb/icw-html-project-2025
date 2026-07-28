@@ -144,10 +144,10 @@
     }
     .footer-main-block {
         display: grid;
-        grid-template-columns: 330px auto 255px;
-        gap: 80px;
+        grid-template-columns: 330px auto 251px;
+        gap: 60px;
         @media (max-width: 1399px) {
-            grid-template-columns: 330px auto 255px;
+            grid-template-columns: 280px auto 251px;
             gap: 25px;
         }
         @media (max-width: 1200px) and (min-width: 768px) {
@@ -183,7 +183,7 @@
         .social-list {
             @include flexbox;
             @include align-items(center);
-            gap: 15px;
+            gap: 10px;
             margin-top: 30px;
             @media (max-width: 767px) {
                 @include justify-content(center);
@@ -193,10 +193,9 @@
                     @include flexbox;
                     @include align-items(center);
                     @include justify-content(center);
-                    width: auto;
-                    height: 24px;
+                    width: 20px;
+                    height: 20px;
                     flex: none;
-                    @include border-radius(50%);
                     color: var(--white);
                     svg {
                         width: 14px;
@@ -212,7 +211,7 @@
     .footer-main-menu {
         @include flexbox;
         @include justify-content(space-between);
-        gap: 80px;
+        gap: 50px;
         @media (max-width: 1399px) {
             gap: 25px;
         }
@@ -221,7 +220,8 @@
         }
         & > li {
             line-height: 1;
-            max-width: 170px;
+            max-width: 200px;
+            min-width: 90px;
             @media (max-width: 480px) {
                 width: calc(50% - 15px);
                 &:last-child {

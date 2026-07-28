@@ -264,7 +264,7 @@
                                         display: grid;                                        
                                         gap: 5px 75px;
                                         grid-template-columns: repeat(1, 300px);
-                                        &:has(li:nth-child(3)) {
+                                        &:has(li:nth-child(4)) {
                                             grid-template-columns: repeat(2, 310px);
                                             @media(max-width: 1200px) {
                                                 grid-template-columns: repeat(2, 1fr);

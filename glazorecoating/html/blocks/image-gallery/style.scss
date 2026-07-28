@@ -4,10 +4,13 @@
     .image-slider-block {
         .image-gallery-splide {
             &:not(:last-child) {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
             @media (max-width: 992px) {
                 margin: 0 -15px;
+            }
+            .splide__track {                
+                padding: 5px 0;
             }
             .splide__slide {
                 line-height: 0.7;
@@ -27,6 +30,9 @@
             .play-icon {
                 opacity: 1;
             }
+        }
+        &:focus-visible {            
+            outline: 2px solid var(--primary) !important;
         }
         &.is-video {
             .play-icon {
