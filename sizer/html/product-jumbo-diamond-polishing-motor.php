@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="media-bg-block">
-                <img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor">
+                <img src="uploads/img-hero-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor">
                 <!-- <video muted autoplay loop playsinline controlslist="nodownload" oncontextmenu="return false">
                     <source src="uploads/video-cyllindrical-grinding-job-work.mp4" type="video/mp4">
                 </video> -->
@@ -83,11 +83,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="media-block is-sticky">
-                            <img src="uploads/img-product-jumbo-diamond-polishing-motor.jpg" alt="Jumbo Diamond Polishing Motor">
-                            <!-- <video poster="uploads/img-our-infrastructure.jpg" muted loop playsinline controlslist="nodownload" oncontextmenu="return false">
-                                <source src="uploads/video-cyllindrical-grinding-job-work.mp4" type="video/mp4">
-                            </video>
-                            <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span>  -->
+                            <img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" alt="Jumbo Diamond Polishing Motor">
                         </div>
                     </div>
                 </div>
@@ -103,7 +99,21 @@
                         <div class="col-sm-6 col-lg-3">
                             <div class="video-card">
                                 <a href="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" class="ratio ratio-4x3 media-block glightbox">
-                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" class="ratio ratio-4x3" alt="Jumbo Diamond Polishing Motor">
+                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-3.jpg" class="ratio ratio-4x3" alt="Jumbo Diamond Polishing Motor">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="video-card">
+                                <a href="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" class="ratio ratio-4x3 media-block glightbox">
+                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-4.jpg" class="ratio ratio-4x3" alt="Jumbo Diamond Polishing Motor">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="video-card">
+                                <a href="uploads/img-product-jumbo-diamond-polishing-motor-2.jpg" class="ratio ratio-4x3 media-block glightbox">
+                                    <img src="uploads/img-product-jumbo-diamond-polishing-motor-5.jpg" class="ratio ratio-4x3" alt="Jumbo Diamond Polishing Motor">
                                 </a>
                             </div>
                         </div>

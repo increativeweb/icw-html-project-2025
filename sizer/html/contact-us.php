@@ -43,7 +43,7 @@
         </nav>
     </header>
     <main class="main-content-wrapper">
-        <section class="page-header">
+        <section class="page-header contact-page-header">
             <div class="container">
                 <div class="section-title mb-0">
                     <h1 class="title">Contact Us</h1>
@@ -51,7 +51,23 @@
                 </div>
             </div>
         </section>
-        <section class="theme-section contact-section pb-0">
+        <section class="theme-section pt-5 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title mb-0">
+                            <div class="sort-info">
+                                <p>We believe that if our product meets our expectations, it will exceed yours. The employees at Sizer Engineering are proud to work for a privately held company known for delivering quality and accuracy on time.</p>
+                                <p>With a proven track record of developing vibration-free diamond polishing machine, bench arm grinders, and double belt grinders (sanders), our capabilities have expanded to manufacturing precision components for several engineering sectors. Operating from a 3,500-square-foot factory, Sizer Engineering is well-equipped to handle your precision engineering needs. Backed by two decades of expertise, we define precision through advanced CNC machining.</p>
+                                <p>We specialize in high-precision CNC lathe-turned solutions for the food processing, textile machinery, A.C. induction motor, general engineering workshops and gearbox manufacturing industries.</p>
+                                <p>Our clients place their trust in us, resulting in repeat orders for cast iron end shield machining for A.C. induction motors and shaft machining for gearbox manufacturers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="theme-section contact-section pt-5 pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -59,13 +75,13 @@
                             <h2 class="title font-sm">Contact Details</h2>
                             <div class="sort-info">
                                 <h3 class="mb-2"><strong>Sizer Engineering</strong></h3>
-                                <p>Mr. Prashant Parvadia</p>
                             </div>
                         </div>
                         <div class="contact-info-block">
                             <div class="contact-item">
                                 <span>Call Us</span>
                                 <a href="tel:+919879173737">+91 98791 73737</a>
+                                <a href="tel:+919998861901">+91 99988 61901</a>
                             </div>
                             <div class="contact-item">
                                 <span>Address</span>
@@ -82,6 +98,22 @@
                             <div class="contact-item qr-image">
                                 <a href="https://sizer.co.in/" data-bs-toggle="tooltip" data-bs-title="Scan Our Website"><img src="uploads/sizer-website-qr-code.jpg" alt="Scan QR Code"></a>
                                 <a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" data-bs-toggle="tooltip" data-bs-title="Scan Our Address"><img src="uploads/sizer-location-qr-code.jpg" alt="Scan QR Code"></a>
+                            </div>
+                            <div class="contact-item site-visitor">
+                                <!-- <strong>Site Visitors: </strong> <span class="website-counter d-inline"></span> -->
+                                <!-- <script>
+                                    var counterContainer = document.querySelector(".website-counter");
+                                    var visitCount = localStorage.getItem("page_view");
+                                    // Check if page_view entry is present
+                                    if (visitCount) {
+                                        visitCount = Number(visitCount) + 1;
+                                        localStorage.setItem("page_view", visitCount);
+                                    } else {
+                                        visitCount = 1;
+                                        localStorage.setItem("page_view", 1);
+                                    }
+                                    counterContainer.innerHTML = visitCount;
+                                </script> -->
                             </div>
                         </div>
                     </div>

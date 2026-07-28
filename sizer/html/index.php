@@ -147,9 +147,6 @@
                                             <li class="splide__slide">
                                                 <div class="ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining.jpg" alt="Cast Iron Machining"></div>
                                             </li>
-                                            <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining-2.jpg" alt="Cast Iron Machining"></div>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>   
@@ -169,10 +166,7 @@
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" alt="Mild Steel Shaft Machining"></div>
-                                            </li>
-                                            <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" alt="Mild Steel Shaft Machining"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" alt="Shaft Machining"></div>
                                             </li>
                                         </ul>
                                     </div>
@@ -180,7 +174,7 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Mild Steel Shaft Machining</h3>
+                                <h3 class="card-title">Shaft Machining</h3>
                                 <div class="card-info">Precision Shafts, Superior Performance</div>
                             </div>
                             <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-mild-steel-shaft" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
@@ -193,10 +187,10 @@
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" alt="Lathe Machine Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" alt="CNC Lathe Machine Work"></div>
                                             </li>
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" alt="Lathe Machine Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" alt="CNC Lathe Machine Work"></div>
                                             </li>
                                         </ul>
                                     </div>
@@ -204,7 +198,7 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>  
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Lathe Machine Work</h3>
+                                <h3 class="card-title">CNC Lathe Machine Work</h3>
                                 <div class="card-info">Precision Turning, Exceptional Quality</div>
                             </div>
                             <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-lathe-machine" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
@@ -265,10 +259,7 @@
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-shaft-slitting-work.jpg" alt="Shaft Slitting Work"></div>
-                                            </li>
-                                            <li class="splide__slide">
-                                                <div class="ratio ratio-4x3"><img src="uploads/img-service-shaft-slitting-work-2.jpg" alt="Shaft Slitting Work"></div>
+                                                <div class="ratio ratio-4x3"><img src="uploads/img-shaft-slotting-work.jpg" alt="Shaft Slotting Work"></div>
                                             </li>
                                         </ul>
                                     </div>
@@ -276,10 +267,10 @@
                                 <a class="card-action" href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" data-bs-toggle="tooltip" data-bs-title="WhatsApp" data-bs-placement="left"><span class="icon icon-wp"></span></a>                                     
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">Shaft Slitting Work</h3>
-                                <div class="card-info">Accurate Slitting, Reliable Results</div>
+                                <h3 class="card-title">Shaft Slotting Work</h3>
+                                <div class="card-info">Accurate Slotting, Reliable Results</div>
                             </div>
-                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-shaft-slitting" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
+                            <div class="card-footer"><a href="#" class="stretched-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-service-shaft-slotting" aria-controls="offcanvasRight">Read More <span class="icon-arrow"></span></a></div>
                         </div>
                     </div>
                 </div>
@@ -375,6 +366,7 @@
                                 <ul class="contact-info-list">
                                     <li><a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank"><span class="icon icon-location"></span>Plot No. 1, Laxminarayan Ind. Estate, <br>Taas Wadi, A.K. Road, <br>Surat-395006, Gujarat, India</a></li>
                                     <li><a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?"><span class="icon icon-chat"></span>+91 98791 73737</a></li>
+                                    <li><a href="tel:+919998861901"><span class="icon icon-phone"></span>+91 99988 61901</a></li>
                                     <li><a href="mailto:sizerengg@yahoo.com"><span class="icon icon-mail"></span>sizerengg@yahoo.com</a></li>
                                 </ul>
                             </div>
@@ -431,14 +423,13 @@
             </div>
             <div class="service-images-block">
                 <a href="uploads/img-service-cast-iron-machining.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining.jpg" class="" alt="Cast Iron Machining"></a>
-                <a href="uploads/img-service-cast-iron-machining-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-cast-iron-machining-2.jpg" class="" alt="Cast Iron Machining"></a>
             </div>
         </div>
     </div>
     <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-mild-steel-shaft" aria-modal="false" role="dialog">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-header"> 
-            <h3>Mild Steel Shaft Machining</h3>
+            <h3>Shaft Machining</h3>
         </div>
         <div class="offcanvas-body">
             <div class="service-info">
@@ -453,15 +444,14 @@
                 <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
             </div>
             <div class="service-images-block">
-                <a href="uploads/img-service-mild-steel-shaft-machining.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" class="" alt="Mild Steel Shaft Machining"></a>
-                <a href="uploads/img-service-mild-steel-shaft-machining-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining-2.jpg" class="" alt="Mild Steel Shaft Machining"></a>
+                <a href="uploads/img-service-mild-steel-shaft-machining.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-service-mild-steel-shaft-machining.jpg" class="" alt="Shaft Machining"></a>
             </div>
         </div>
     </div>
     <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-lathe-machine" aria-modal="false" role="dialog">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-header">            
-            <h3>Lathe Machine Work</h3>
+            <h3>CNC Lathe Machine Work</h3>
         </div>
         <div class="offcanvas-body">
             <div class="service-info">
@@ -473,26 +463,26 @@
                 <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
             </div>
             <div class="service-images-block">
-                <a href="uploads/img-lathe-machine-work.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" class="" alt="Lathe Machine Work"></a>
-                <a href="uploads/img-lathe-machine-work-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" class="" alt="Lathe Machine Work"></a>
+                <a href="uploads/img-lathe-machine-work.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work.jpg" class="" alt="CNC Lathe Machine Work"></a>
+                <a href="uploads/img-lathe-machine-work-2.jpg" class="media-block glightbox ratio ratio-4x3"><img src="uploads/img-lathe-machine-work-2.jpg" class="" alt="CNC Lathe Machine Work"></a>
                 <a href="uploads/video/video-lathe-machine-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-lathe-machine-work.jpg"  alt="Lathe Machine Work">
+                    <img src="uploads/img-poster-video-lathe-machine-work.jpg"  alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
                 <a href="uploads/video/video-lathe-machine-work-2.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-lathe-machine-work-2.jpg" alt="Lathe Machine Work">
+                    <img src="uploads/img-poster-video-lathe-machine-work-2.jpg" alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
                 <a href="uploads/video/video-lathe-machine-work-3.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-lathe-machine-work-3.jpg"  alt="Lathe Machine Work">
+                    <img src="uploads/img-poster-video-lathe-machine-work-3.jpg" alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
                 <a href="uploads/video/video-lathe-machine-work-4.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-lathe-machine-work-4.jpg"  alt="Lathe Machine Work">
+                    <img src="uploads/img-poster-video-lathe-machine-work-4.jpg" alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
                 <a href="uploads/video/video-lathe-machine-work-5.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-lathe-machine-work-5.jpg"  alt="Lathe Machine Work">
+                    <img src="uploads/img-poster-video-lathe-machine-work-5.jpg" alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
             </div>
@@ -542,10 +532,10 @@
             </div>
         </div>
     </div>
-    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-shaft-slitting" aria-modal="false" role="dialog">
+    <div class="offcanvas offcanvas-end service-popup-model" tabindex="-1" id="offcanvas-service-shaft-slotting" aria-modal="false" role="dialog">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <div class="offcanvas-header">            
-            <h3>Shaft Slitting Work</h3>
+            <h3>Shaft Slotting Work</h3>
         </div>
         <div class="offcanvas-body">
             <div class="service-info">
@@ -556,11 +546,11 @@
                 <a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?" class="btn btn-primary"><span class="icon icon-wp"></span>Connect Now</a>
             </div>
             <div class="service-images-block">
-                <a href="uploads/img-shaft-slitting-work.jpg" class="ratio ratio-4x3 media-block glightbox">
-                    <img src="uploads/img-shaft-slitting-work.jpg" alt="Shaft Slitting Work">
+                <a href="uploads/img-shaft-slotting-work.jpg" class="ratio ratio-4x3 media-block glightbox">
+                    <img src="uploads/img-shaft-slotting-work.jpg" alt="Shaft Slotting Work">
                 </a>
-                <a href="uploads/video/video-shaft-slitting-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
-                    <img src="uploads/img-poster-video-shaft-slitting-work.jpg"  alt="Shaft Slitting Work">
+                <a href="uploads/video/video-shaft-slotting-work.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-shaft-slotting-work.jpg"  alt="Shaft Slotting Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
             </div>
