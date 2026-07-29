@@ -366,7 +366,7 @@
                                 <ul class="contact-info-list">
                                     <li><a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" target="_blank"><span class="icon icon-location"></span>Plot No. 1, Laxminarayan Ind. Estate, <br>Taas Wadi, A.K. Road, <br>Surat-395006, Gujarat, India</a></li>
                                     <li><a href="https://wa.me/919879173737?text=Hello,Looking%20for%20Reliable%20Machining%20Services%20and%20Job%20Work?"><span class="icon icon-chat"></span>+91 98791 73737</a></li>
-                                    <li><a href="tel:+919998861901"><span class="icon icon-phone"></span>+91 99988 61901</a></li>
+                                    <li><a href="tel:+919998861909"><span class="icon icon-phone"></span>+91 99988 61909</a></li>
                                     <li><a href="mailto:sizerengg@yahoo.com"><span class="icon icon-mail"></span>sizerengg@yahoo.com</a></li>
                                 </ul>
                             </div>
@@ -483,6 +483,10 @@
                 </a>
                 <a href="uploads/video/video-lathe-machine-work-5.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
                     <img src="uploads/img-poster-video-lathe-machine-work-5.jpg" alt="CNC Lathe Machine Work">
+                    <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
+                </a>
+                <a href="uploads/video/video-lathe-machine-work-6.mp4" class="ratio ratio-4x3 media-block is-video glightbox">
+                    <img src="uploads/img-poster-video-lathe-machine-work-6.jpg" alt="CNC Lathe Machine Work">
                     <span class="play-icon"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd" d="M30 60C46.5684 60 60 46.5684 60 30C60 13.4314 46.5684 0 30 0C13.4314 0 0 13.4314 0 30C0 46.5684 13.4314 60 30 60Z" fill="white"/><path d="M40.2411 33.177L26.0805 41.5374C23.8011 42.8832 21 41.1315 21 38.3604V21.6395C21 18.8684 23.8011 17.1168 26.0805 18.4626L40.2411 26.823C42.5862 28.2078 42.5862 31.7922 40.2411 33.177Z" fill="black"/></svg></span> 
                 </a>
             </div>

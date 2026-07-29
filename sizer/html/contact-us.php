@@ -81,7 +81,7 @@
                             <div class="contact-item">
                                 <span>Call Us</span>
                                 <a href="tel:+919879173737">+91 98791 73737</a>
-                                <a href="tel:+919998861901">+91 99988 61901</a>
+                                <a href="tel:+919998861909">+91 99988 61909</a>
                             </div>
                             <div class="contact-item">
                                 <span>Address</span>
@@ -100,20 +100,14 @@
                                 <a href="https://maps.app.goo.gl/QcvGbudqaRJkFe7Y7" data-bs-toggle="tooltip" data-bs-title="Scan Our Address"><img src="uploads/sizer-location-qr-code.jpg" alt="Scan QR Code"></a>
                             </div>
                             <div class="contact-item site-visitor">
-                                <!-- <strong>Site Visitors: </strong> <span class="website-counter d-inline"></span> -->
-                                <!-- <script>
-                                    var counterContainer = document.querySelector(".website-counter");
-                                    var visitCount = localStorage.getItem("page_view");
-                                    // Check if page_view entry is present
-                                    if (visitCount) {
-                                        visitCount = Number(visitCount) + 1;
-                                        localStorage.setItem("page_view", visitCount);
-                                    } else {
-                                        visitCount = 1;
-                                        localStorage.setItem("page_view", 1);
-                                    }
-                                    counterContainer.innerHTML = visitCount;
-                                </script> -->
+                                <strong>Site Visitors: </strong> <span class="website-counter d-inline" id="visitor-count"></span>
+                                <script>
+                                    fetch('counter.php').then(response => response.text()).then(count => {
+                                        document.getElementById("visitor-count").textContent = count;
+                                    }).catch(error => {
+                                        console.error("Counter Error:", error);
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
