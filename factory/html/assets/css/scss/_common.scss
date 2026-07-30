@@ -282,9 +282,9 @@ h5,
 // Button
 .btn {
 	min-height: 52px;
-	padding: 15px 28px;
+	padding: 15px 25px;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: clamp(16px, 2vw, 18px);
 	@include transition(0.2s, ease-in-out);
 	@include inline-flex;
 	@include align-items(center);
@@ -292,12 +292,15 @@ h5,
 	@include border-radius(12px);
     text-decoration: none !important;
     line-height: 1;
-    gap: 10px;
-    &:hover, &:focus {
-        span.icons {  
-            .icon {
-                @include transform(translate(12px, -12px));
-            }
+    gap: 10px;    
+    min-width: 180px;    
+    @media (max-width: 767px) {
+        padding: 15px 20px;
+    }
+    &.btn-lg {
+	    padding: 20px 25px;        
+        @media (max-width: 767px) {
+            padding: 15px 20px;
         }
     }
     &.btn-black {
@@ -306,6 +309,15 @@ h5,
         color: var(--white);
         &:hover, &:focus {
             background-color: var(--primary);
+        }
+    }
+    &.btn-white {
+        background-color: var(--white);
+        border-color: transparent;
+        color: var(--darkblack);
+        &:hover, &:focus {
+            background-color: var(--primary);
+            color: var(--white);
         }
     }
     &.btn-link-arrow {
@@ -317,6 +329,7 @@ h5,
         @include border-radius(0);
         padding-bottom: 10px;
         line-height: 1.5;
+        min-width: auto;
         &::before {
             content: '';
             display: inline-block;
@@ -347,5 +360,70 @@ h5,
                 transform: rotateZ(-45deg);
             }
         }
+    }
+}
+
+// Page Scroll Progress CSS
+.icw-progress-goto {
+    position: fixed;
+    right: 20px;
+    bottom: 64px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    border-radius: 40px;
+    box-shadow: inset 0 0 0 2px rgba(#233F61, 0.23);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+
+    &.active-progress {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &::after {
+        position: absolute;
+        content: url(../images/icons/arrow-up.svg);
+        text-align: center;
+        line-height: 40px;
+        font-size: 28px;
+        color: var(--text-white);
+        left: 0;
+        top: -5px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+
+    // &:hover::after {opacity: 0;}
+    &:hover::after {
+        opacity: 1;
+        @include transform(translateY(-5px));
+    }
+
+    svg path {
+        fill: none;
+    }
+
+    svg.progress-circle path {
+        stroke: var(--slate-grey);
+        stroke-width: 4;
+        box-sizing: border-box;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+
+    @media (max-width: 768px) {
+        display: none !important;
     }
 }
